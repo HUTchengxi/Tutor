@@ -1,0 +1,23 @@
+禁用了蓝牙服务
+
+禁用了
+    Diagnostic System Host
+    Diagnostic Service Host
+    Diagnostic Policy Service
+    HomeGroup Provider
+    HomeGroup Listener
+
+    前三个用于诊断你的系统错误，反馈给微软，帮你自动解决。但事实是只有大约1%的可能性会成功。
+    大多数时候，我们的电脑出故障了，是交给第三方软件解决的（或者百度）。微软的那些东西卵用没有（
+    难道你不这么觉得？）
+    后两个用于家庭组功能。我敢说，在中国，用家庭组功能的人数“凤毛麟角”
+
+
+
+SuperFetch:
+    可能会有时会占用大量的系统内存   Superfetch技术就是将多余的物理内存作为缓存使用的，
+    nicai如果有4G以上的内存完全可以关闭。
+
+
+整合jpa使用时发现，集成JpaRepository接口时自定义方法比较麻烦，于是使用了mybatis进行整合
+

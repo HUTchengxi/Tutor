@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>勤成家教网---联系我们</title>
+    <link rel="icon" href="/images/logo/web_logo.ico" type="images/x-icon" />
+
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.css" />
+
+    <!--layui css-->
+    <link rel="stylesheet" href="/layui/css/layui.css" />
+</head>
+<body>
+    <!--头部-->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid" style="padding-top: 13px;">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/forward_con/welcome">勤成家教网</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#navbar-collapse">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse" style="">
+                <ul class="nav navbar-nav">
+                    <li style="margin:0 10px;"><a href="/forward_con/welcome">首页</a></li>
+                    <li style="margin:0 10px;"><a href="/forward_con/classify">分类</a></li>
+                    <li style="margin:0 10px;"><a href="/forward_con/gabble">七嘴八舌</a></li>
+                    <li style="margin:0 10px;" class="active"><a href="/forward_con/gorank">勤成榜</a></li>
+                    <li style="margin:0 10px;"><a href="/forward_con/contact">联系我们</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+        <!--勤成榜-->
+        <div class="section" style="background-color: #eee;">
+            <div class="div-cls-rank clearfix" style="position:relative;top: 65px;">
+                <div class="rank-bg" style="height: 100px;background: url(/images/welcome/rank/rank_logo.jpg);background-repeat: no-repeat;background-size: cover;">
+                </div>
+                <ul style="margin-left: 3%;" class="clearfix">
+                    <!--最赞神评榜-->
+                    <li class="pull-left" style="margin: 4% 6%; width: 20%; background-color: white;">
+                        <div class="rank" data-type="command">
+                            <header style="margin-bottom: 4%; padding-top: 4%;">
+                                <h1 style="font-size: 16px; font-weight: bold;">最赞神评榜<i class="glyphicon glyphicon-fire" style="opacity: 0;"></i></h1>
+                            </header>
+                            <nav class="clearfix" style="border:1px solid #80808047; border-left: none; border-right: none;">
+                                <ul>
+                                    <li class="pull-left cli" style="width: 33%;height: 42px;line-height: 42px; text-align: center;">
+                                        <a data-mark="day" href="javascript:void(0);" style="display: inline-block; width:100%;">日榜</a>
+                                    </li>
+                                    <li class="pull-left" style="width: 34%;height: 42px; line-height: 42px; text-align: center;">
+                                        <a data-mark="week" href="javascript:void(0);" style="display: inline-block; width:100%;">周榜</a>
+                                    </li>
+                                    <li class="pull-left" style="width: 33%;height: 42px; line-height: 42px; text-align: center;">
+                                        <a data-mark="total" href="javascript:void(0);" style="display: inline-block; width:100%;">总榜</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="rank-show">
+                                <table style="width: 100%;">
+                                    <thead>
+                                        <tr>
+                                            <td style="">排行</td>
+                                            <td style="">用户</td>
+                                            <td style="">点赞</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style='color: red;'>1</td>
+                                            <td style="">用户111</td>
+                                            <td style="">111</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="color: #00bc9b;">2</td>
+                                            <td style="">用户222</td>
+                                            <td style="">222</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="color: #a4b2ba;">3</td>
+                                            <td style="">用户222</td>
+                                            <td style="">222</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="color: #d4d4d4;">4</td>
+                                            <td style="">用户222</td>
+                                            <td style="">222</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <footer style="height: 36px; line-height: 36px; text-align: center;">
+                                <a href="javascript:void(0);" style="width: 100%; display: inline-block; background: #d0d0d0;">查看全部排行<i class="layui-icon">&#xe602;</i></a>
+                            </footer>
+                        </div>
+                    </li>
+                    <!--最火家教榜-->
+                    <li class="pull-left" style="margin: 4% 6%; width: 20%; background-color: white;">
+                        <div class="rank" data-type="tutor">
+                            <header style="margin-bottom: 4%; padding-top: 4%;">
+                                <h1 style="font-size: 16px; font-weight: bold;">最火家教榜<i class="glyphicon glyphicon-fire"></i></h1>
+                            </header>
+                            <nav class="clearfix" style="border:1px solid #80808047; border-left: none; border-right: none;">
+                                <ul>
+                                    <li class="pull-left cli" style="width: 33%;height: 42px;line-height: 42px; text-align: center;">
+                                        <a data-mark="day" href="javascript:void(0);" style="display: inline-block; width:100%;">日榜</a>
+                                    </li>
+                                    <li class="pull-left" style="width: 34%;height: 42px; line-height: 42px; text-align: center;">
+                                        <a data-mark="week" href="javascript:void(0);" style="display: inline-block; width:100%;">周榜</a>
+                                    </li>
+                                    <li class="pull-left" style="width: 33%;height: 42px; line-height: 42px; text-align: center;">
+                                        <a data-mark="total" href="javascript:void(0);" style="display: inline-block; width:100%;">总榜</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="rank-show">
+                                <table style="width: 100%;">
+                                    <thead>
+                                    <tr>
+                                        <td style="">排行</td>
+                                        <td style="">用户</td>
+                                        <td style="">点赞</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style='color: red;'>1</td>
+                                        <td style="">用户111</td>
+                                        <td style="">111</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #00bc9b;">2</td>
+                                        <td style="">用户222</td>
+                                        <td style="">222</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #a4b2ba;">3</td>
+                                        <td style="">用户222</td>
+                                        <td style="">222</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #d4d4d4;">4</td>
+                                        <td style="">用户222</td>
+                                        <td style="">222</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <footer style="height: 36px; line-height: 36px; text-align: center;">
+                                <a href="javascript: void(0);" style="width: 100%; display: inline-block; background: #d0d0d0;">查看全部排行<i class="layui-icon">&#xe602;</i></a>
+                            </footer>
+                        </div>
+                    </li>
+                    <!--最勤打卡榜-->
+                    <li class="pull-left" style="margin: 4% 6%; width: 20%; background-color: white;">
+                        <div class="rank" data-type="sign">
+                            <header style="margin-bottom: 4%; padding-top: 4%;">
+                                <h1 style="font-size: 16px; font-weight: bold;">最勤打卡榜<i class="glyphicon glyphicon-fire" style="opacity: 0;"></i></h1>
+                            </header>
+                            <nav class="clearfix" style="border:1px solid #80808047; border-left: none; border-right: none;">
+                                <ul>
+                                    <li class="pull-left cli" style="width: 33%;height: 42px;line-height: 42px; text-align: center;">
+                                        <a data-mark="day" href="javascript:void(0);" style="display: inline-block; width:100%;">日榜</a>
+                                    </li>
+                                    <li class="pull-left" style="width: 34%;height: 42px; line-height: 42px; text-align: center;">
+                                        <a data-mark="week" href="javascript:void(0);" style="display: inline-block; width:100%;">周榜</a>
+                                    </li>
+                                    <li class="pull-left" style="width: 33%;height: 42px; line-height: 42px; text-align: center;">
+                                        <a data-mark="total" href="javascript:void(0);" style="display: inline-block; width:100%;">总榜</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="rank-show">
+                                <table style="width: 100%;">
+                                    <thead>
+                                    <tr>
+                                        <td style="">排行</td>
+                                        <td style="">用户</td>
+                                        <td style="">点赞</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style='color: red;'>1</td>
+                                        <td style="">用户111</td>
+                                        <td style="">111</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #00bc9b;">2</td>
+                                        <td style="">用户222</td>
+                                        <td style="">222</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #a4b2ba;">3</td>
+                                        <td style="">用户222</td>
+                                        <td style="">222</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #d4d4d4;">4</td>
+                                        <td style="">用户222</td>
+                                        <td style="">222</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <footer style="height: 36px; line-height: 36px; text-align: center;">
+                                <a href="javascript:void(0);" style="width: 100%; display: inline-block; background: #d0d0d0;">查看全部排行<i class="layui-icon">&#xe602;</i></a>
+                            </footer>
+                        </div>
+                    </li>
+                    <!--最成名文榜-->
+                    <li class="pull-left" style="margin: 4% 6%; width: 20%; background-color: white;">
+                        <div class="rank" data-type="blog">
+                            <header style="margin-bottom: 4%; padding-top: 4%;">
+                                <h1 style="font-size: 16px; font-weight: bold;">最成名文榜<i class="glyphicon glyphicon-fire" style="opacity: 0;"></i></h1>
+                            </header>
+                            <nav class="clearfix" style="border:1px solid #80808047; border-left: none; border-right: none;">
+                                <ul>
+                                    <li class="pull-left cli" style="width: 33%;height: 42px;line-height: 42px; text-align: center;">
+                                        <a data-mark="day" href="javascript:void(0);" style="display: inline-block; width:100%;">日榜</a>
+                                    </li>
+                                    <li class="pull-left" style="width: 34%;height: 42px; line-height: 42px; text-align: center;">
+                                        <a data-mark="week" href="javascript:void(0);" style="display: inline-block; width:100%;">周榜</a>
+                                    </li>
+                                    <li class="pull-left" style="width: 33%;height: 42px; line-height: 42px; text-align: center;">
+                                        <a data-mark="total" href="javascript:void(0);" style="display: inline-block; width:100%;">总榜</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="rank-show">
+                                <table style="width: 100%;">
+                                    <thead>
+                                    <tr>
+                                        <td style="">排行</td>
+                                        <td style="">用户</td>
+                                        <td style="">点赞</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style='color: red;'>1</td>
+                                        <td style="">用户111</td>
+                                        <td style="">111</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #00bc9b;">2</td>
+                                        <td style="">用户222</td>
+                                        <td style="">222</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #a4b2ba;">3</td>
+                                        <td style="">用户222</td>
+                                        <td style="">222</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #d4d4d4;">4</td>
+                                        <td style="">用户222</td>
+                                        <td style="">222</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <footer style="height: 36px; line-height: 36px; text-align: center;">
+                                <a href="javascript: void(0);" style="width: 100%; display: inline-block; background: #d0d0d0;">查看全部排行<i class="layui-icon">&#xe602;</i></a>
+                            </footer>
+                        </div>
+                    </li>
+                    <!--最水评友榜-->
+                    <li class="pull-left" style="margin: 4% 6%; width: 20%; background-color: white;">
+                        <div class="rank" data-type="user">
+                            <header style="margin-bottom: 4%; padding-top: 4%;">
+                                <h1 style="font-size: 16px; font-weight: bold;">最水评友榜<i class="glyphicon glyphicon-fire"></i></h1>
+                            </header>
+                            <nav class="clearfix" style="border:1px solid #80808047; border-left: none; border-right: none;">
+                                <ul>
+                                    <li class="pull-left cli" style="width: 33%;height: 42px;line-height: 42px; text-align: center;">
+                                        <a data-mark="day" href="javascript:void(0);" style="display: inline-block; width:100%;">日榜</a>
+                                    </li>
+                                    <li class="pull-left" style="width: 34%;height: 42px; line-height: 42px; text-align: center;">
+                                        <a data-mark="week" href="javascript:void(0);" style="display: inline-block; width:100%;">周榜</a>
+                                    </li>
+                                    <li class="pull-left" style="width: 33%;height: 42px; line-height: 42px; text-align: center;">
+                                        <a data-mark="total" href="javascript:void(0);" style="display: inline-block; width:100%;">总榜</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="rank-show">
+                                <table style="width: 100%;">
+                                    <thead>
+                                    <tr>
+                                        <td style="">排行</td>
+                                        <td style="">用户</td>
+                                        <td style="">点赞</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style='color: red;'>1</td>
+                                        <td style="">用户111</td>
+                                        <td style="">111</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #00bc9b;">2</td>
+                                        <td style="">用户222</td>
+                                        <td style="">222</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #a4b2ba;">3</td>
+                                        <td style="">用户222</td>
+                                        <td style="">222</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #d4d4d4;">4</td>
+                                        <td style="">用户222</td>
+                                        <td style="">222</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <footer style="height: 36px; line-height: 36px; text-align: center;">
+                                <a href="javascript: void(0);" style="width: 100%; display: inline-block; background: #d0d0d0;">查看全部排行<i class="layui-icon">&#xe602;</i></a>
+                            </footer>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <br />
+            <Br />
+            <Br />
+            <Br />
+        </div>
+
+    <style>
+        .div-cls-rank nav li.cli{background-color: #00bc9b;}
+        .div-cls-rank nav li.cli a{color: white;}
+        .div-cls-rank nav a:hover{text-decoration: none;}
+        .div-cls-rank header h1:before{background-color: red;content: "";width: 7px;height: 7px;display: inline-block; margin-right: 2%; margin-left: 2%; margin-bottom: 1%; vertical-align: middle;}
+
+        .div-cls-rank .rank-show tr{border:1px dashed #80808047; border-left: none; border-right: none;}
+        .div-cls-rank .rank-show td{height: 45px;line-height: 45px; text-align: center;}
+        .div-cls-rank footer a:hover{text-decoration: none;color: #25bb9b;}
+        .div-cls-rank footer a:hover i{text-decoration: none;}
+
+        i.glyphicon-fire{color: red;}
+    </style>
+    <!--jquery-->
+    <script src="/js/custom/jquery.min.js"></script>
+    <!--bootstrap-->
+    <script src="/bootstrap/js/bootstrap.js"></script>
+    <!--layui-->
+    <script src="/layui/layui.js"></script>
+
+    <!--My JS-->
+    <script src="/js/welcome/rank.js"></script>
+</body>
+</html>

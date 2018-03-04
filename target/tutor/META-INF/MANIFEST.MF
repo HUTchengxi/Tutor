@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: tutor Maven Webapp
+Implementation-Version: 1.0-SNAPSHOT
+Built-By: admin
+Implementation-Vendor-Id: org.framework
+Created-By: IntelliJ IDEA
+Build-Jdk: 1.8.0_161
+Main-Class: ${start-class}
+

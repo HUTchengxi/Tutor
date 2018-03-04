@@ -1,0 +1,401 @@
+1.修改placeholder的文字颜色，设置兼容性
+            #password::-webkit-input-placeholder {
+                color: red;
+            }
+            #password:-moz-placeholder {/* Firefox 18- */
+                color: red;
+            }
+            #password::-moz-placeholder{/* Firefox 19+ */
+                color: red;
+            }
+            #password:-ms-input-placeholder {
+                color: red;
+            }
+
+2.change事件和keyup事件的区别
+            keyup是键盘内容按下时触发
+            change是输入框内容改变时触发
+            比如：按下ctrl键就不会触发change，因为内容没有改变，但是会触发keyup
+            按下a在放下则会触发change和keyup事件
+
+3.Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver'. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
+
+   这是因为mysql的版本过高导致的，把mysql的版本由6改成5就可以了
+
+    最终原因就是没有打开mysql服务
+
+
+4.在为元素设置相应事件时，传入的值应为定义的函数名，比如：
+    var a = function(){...};
+    $("#a").focus(a);
+
+
+5.html修改data自定义属性：
+    $("dd").data("status")  获取设置的自定义属性值
+    $("dd").data("status",1)  修改设置的自定义属性值
+
+
+6.在启动类中添加@MapperScan注解进行修饰可以指定mapper所处的包，这样会自动扫描该包并注册为mapper
+    也可以在每个mapper上添加Mapper进行修饰，不过前者比较简单，一劳永逸
+
+
+7. 使用SpringBoot结合Mybatis实现的登陆功能，api：{status: nouser/passerr/ok, url: # /forward_con/welcome}
+
+8.使用gson写入json格式输入到输出响应流：
+
+    String res = "{\"name\": \"chengxi\"}";
+    new JsonParser().parse(res).getAsJsonObject()
+
+
+9.mysql遇到问题：
+    Sat Jan 27 00:00:46 CST 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+
+    解决办法：http://blog.csdn.net/wangxilong1991/article/details/53515013
+    在mysql链接url后面添加ssl=true/false即可
+
+
+10.input输入框的autocomplete属性设置是否运行浏览器自动完成预测对字段接下来的输入 on/off
+
+
+11.在static静态资源文件中引用静态资源文件依然可以使用/.../的格式
+
+12.在使用bootstrap和jquery时，编写自定义js：$.ready = function(){...}格式时会发现bootstrap的一些特效比如fadeinleft失效了
+   这时可以使用：;(function(){}());来解决，这样不会失效
+
+
+
+14.ajax的async属性默认为true，即异步调用，如果为false则会同步执行，true的话分成两个线程分别执行
+
+
+
+15.在js中，对大部分的元素不管在事件中访问多少次有些我都一直都是使用js的选择器来寻找的，应该优化成一个变量：var i = $(".dd")而不能总是寻找
+
+
+
+16.快速定位idea打开项目所在的文件夹：项目右击，选择：show in explore
+
+
+
+17.使用fullpage.js来设计实现首页全屏滚动
+
+
+18.fullpage.js
+
+    1.引入：需要引入一个css文件和两个js文件
+
+    2.简单使用：一个自定义div，包含多个div，这些div使用section类名可实现全屏滚动
+
+    3.横屏滚动：在section类名 的div中添加多个div，使用slide类名即可
+
+    4.设置各个全屏的div的颜色（竖屏从上往下）：sectionsColor: ['red'.'white','black']
+
+    5.设置竖屏循环滚动：continuosVertical: true
+
+    6.滑到相应页面的回调函数：afterLoad: function(anchorLink, index){...}针对index即可
+
+    7.滑出相应页面的回调函数：onLeave: function(index, direction){...}针对index即可
+
+    8.绑定菜单：
+        1.menu: "菜单对应的class或者id"
+        2.anchors: []  为对应的页面进行命名
+        3:定义ul，其中的每个li中包含a，a的href为锚点，#anchors对应的名字，li中包含一个属性：data-menuanchor，值同样为anchors对应的名字，没有#
+
+    9.实现一个点击下滑到下一个页面：<a href="#pagename">点击</a>即可实现
+
+
+19.img:nth-child(1)：表示img的直接父元素的第一个子元素
+
+
+20.overflow想要对应的元素从hidden变成溢出也显示，则值设置为：visible
+
+
+21.li元素本来就是快级元素，所以可以在里面添加div等块级元素
+
+
+22.div中的文字内容自动换行：word-wrap: break-word;
+
+
+23.设置svg的文字大小：svg.style.font-size: em单位
+
+
+24.时光轴使用layui的，流程图使用processON在线制作并生成png，然后作为div的背景图片
+
+
+25.js为动态添加的元素绑定事件使用格式：$(document).on("click","ss",function(){ddd});
+
+
+26.设置全屏页面的背景图片：section.style.backgroundImage: ...
+
+
+27.在设置了div的height:0;overflow:hidden之后使用js修改：minHeight: 10px;overflow: visible却还是无法显示回来   问题未解决
+
+
+28.在设置i等元素的transform前，需要先设置它为inline-block元素
+
+
+
+29.查找指定元素的最近父类：$(".dd").closest("div")....;
+
+
+
+30.判断指定元素是否存在指定的class：$(".dd").is("cli");
+
+
+31.自定义404错误页面:
+    首先在main启动类中修改代码，设置错误页面
+
+    然后在static下创建对应的错误页面即可
+
+
+32.如何让一个div一直居中，不管里面的内容如何排榜
+
+    display:-webkit-box; -webkit-box-orient:horizontal; -webkit-box-pack:center; -webkit-box-align:center;
+
+
+
+33.有时候点击链接之后出现下划线：
+    修改他的css代码中添加text-decoration: none;
+    不需要添加任何伪类前缀
+
+
+34.下载模板找不到文件时，可以到console控制台去看，该文件在哪里被引入的，而不需要到idea使用关键字查找，那样太麻烦，找不到哪个地方引入的
+
+
+35.idea全局替换文本的快捷键：ctrl+shift+r
+
+
+36.wmuSlider.js用于阅读图片进行切换
+
+
+37.windows+<- 可以实现双屏显示数据
+
+
+38.实现背景图片的居中显示:
+    background: url() no-repeat center center;
+    background-size: contain;
+
+   这样就可以不通过position来手动进行居中显示了
+
+   background-size不要赋值cover，否则背景图片会出现一些意想不到的截断
+
+   background-size: contain；可以自动调整比例
+
+   background-size: 100% 100%; 这样也可以自动调整比例
+
+   相比之下，contain的效果好一点
+
+39.遮罩层的设计：
+        遮罩层为fixed布局，上一层也为fixed布局，然后上一层的zindex大于遮罩层即可
+
+
+40.点击链接，其父类也发生了click事件，可以在子类中使用return false；来阻止事件冒泡
+    也可以使用event.stopPropagation()；
+    这两个方法有区别：
+        return false阻止事件冒泡的同时还阻止了自身事件的往下执行
+        event.stopPropagation只会组织事件的冒泡，自身事件还可以往下继续执行
+
+
+
+41.前端上传指定类型的文件的实现：
+    <input type="file" accept="image/png, image/jpeg, image/png, image/gif" />
+
+
+
+42.实现头像的在线预览：
+            var imgfile = this.files[0];
+            var reader = new FileReader();
+            reader.onload = function(e){
+                $(".modface .show").css("background","url("+e.target.result+") no-repeat center center")
+                    .css("background-size","100% 100%");
+            };
+            reader.readAsDataURL(imgfile);
+
+
+
+43.jquery获取input的文件：
+            var imgfile = $(".modface .modlink input").get(0).files[0];
+   js获取input的文件：
+            var imgfile = this.files[0];
+
+
+
+
+44.生成随机数：Math.ceil(Math.random()*10);
+
+
+
+45.上传文件到static静态资源路径下的方式：
+        imgsrc = "src/main/resources/static/...";
+        这样就可以将文件上传到static静态资源路径下了
+
+
+46.删除指定的文件：new File("ccc").delete();
+    删除static下的文件：new File("src/main/resources/static/...").delete();
+
+
+
+
+47.在实现文件的上传之后发现，每次需要重新刷新界面才能将新上传的文件显示出来，即要刷新一下static文件夹？
+    这是因为文件自动保存到了临时workSpace工作空间中，如果打包成war部署到tomcat就不会出现这种情况了
+
+
+
+48.formData添加数据：append
+    $.ajax({
+        async: true,
+        type: "post",
+        url: "ddd",
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function(data){
+            ....
+        },
+        error: function(xhr, status){
+            ....
+        }
+    }
+
+
+49.jquery获取radio选中的值：$("input:checked").val();
+
+
+50.win10关闭大小写切换的提示：在任务管理器里面把Lenovo Utility这个进程停止，然后在启动项里面把它禁用就可以了。
+
+
+51.p标签实现input输入框输入文本：contenteditable="true"
+
+
+
+52.买不了吃亏，买不了上当，什么都买不到
+
+
+53.编写domain时要为每个domain添加无参构造器，因为使用Mybatis的话重写了默认生成的无参构造器
+
+
+54.登录状态的获取出了问题
+
+
+55.登录状态弄了半天都是缺少构造器，最后的原因是出在返回值的问题上面，
+    返回的是一个数组，修改成返回一个List集合
+    网上大多数的解决办法是添加无参构造器，因为Mybatis重写了默认构造器的使用方法
+
+
+
+56.按照时间进行降序排列：order by time desc/  order by id desc;
+
+
+
+57.使用js实现刷新页面：window.history.go(0);
+
+
+
+58.使用mysql进行登录时发现，自动忽略大小写
+
+
+59.在创建表的过程中发现，对普通的建无法使用自增长，解决办法：http://blog.csdn.net/likika2012/article/details/9951529
+       设置该建为一个key: key(cid);
+
+
+
+60.登录和注册的时候自动获取username的focus
+
+
+61.jquery删除元素：$(".dd").remove();
+    jquery将指定元素置空：$(this).empty();
+
+
+
+62.数据库中那些可以改变的数据值应该使用外键来获取，而不是在另一表中写死
+
+
+
+63.我的课程收藏表不能将cid设置成主键，因为可以重复，应该设置username和cid的复合主键
+    设置复合主键的方式：primary key(cid, usename);
+    设置了复合主键之后，仍然可以使用cid来做外键
+
+
+
+
+
+64.decimal(n,m)表示：数值总位数为n，其中包含m个小数，超出的小数按照四舍五入进行计算
+
+
+65.在使用mapper的过程中对函数进行了重载的时候报错：Mapped Statements collection already contains value for org.framework.tutor.mapper.CourseMMapper.getCourseListMore
+    这是因为；在mapper中使用的是每个注解对应的方法名作为id的，如果方法重载的话，就会使id重复，所以mapper中不能进行方法重载
+
+
+
+66.select * from course_main where stype=? order by ptime desc limit ?，8
+   ### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Undeclared variable: 0，8
+
+   遇到这个问题，百度了一下，下面是基本的几个答案：
+            1.没有创建对应的数据库或者表
+            2.对应的参数没有写完整
+            3.sql语句中的标点符号为中文
+    而我的就是第三种情况~~~~
+
+
+
+67.获取不重复的数据：select distinct ctype from course_main;
+
+
+
+68.在使用Mybatis进行模糊查询时报错 "select * from course_main where name like %#{keyword}%"，
+    这是因为最后的变成了%？%一串字符串了，所以无法识别？，三种解决办法：
+        1.将#{keyword}改成${keyword}，但是无法防止sql注入
+        2.改成'%'#{keyword}'%'，这种方式貌似无法正确进行模糊查询
+        3.使用CONCAT('%', #{mkName}, '%')  的方式进行连接，目前使用的这种方式，可以实现
+        参考博客：http://blog.csdn.net/lonely_dog/article/details/74171314
+        http://blog.csdn.net/rainbow702/article/details/50519424 好
+
+
+
+
+69. 设置文字超过时使用省略号：
+        1.长度超出时：
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: eclipse;
+        2.宽度超出时：
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3;   //指定几行文字
+
+
+
+70.获取display：none元素的宽度和高度：
+    这是不可能的，想要获得的话，只能将该元素该成visibility: hidden；它会占有物理空间
+
+
+
+
+
+71.blur事件优先执行于click事件，解决办法：
+        1.将click事件替换为mousedown事件
+        2.让blur事件延迟执行
+
+
+
+72.点击链接的时候回显示下划线：链接本身和链接的hoveer都设置text-decoration: none;
+
+
+
+
+73.js将数值转换成指定小数位数的值：num.toFixed(2);
+
+
+
+
+74.实现数据表中的指定用户的数据统计：select username, count(*) from user_sign group by username desc;
+
+
+
+
+实现打卡，个人的打卡数据显示放在个人中心中新增一栏进行显示，创建一个打卡表进行记录，使用bootstrap或者layui的日期插件来显示
+
+
+s
+
+实现签到状态的设置，避免重复签到
+

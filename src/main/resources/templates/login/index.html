@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+        <title>勤成家教网，学海无涯----用户登录界面</title>
+        <link rel="icon" href="/images/logo/web_logo.ico" type="images/x-icon" />
+
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css' />
+
+        <!-- bootstrap css -->
+        <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" />
+
+        <link rel="stylesheet" href="/css/login/animate.css" />
+        <link rel="stylesheet" href="/css/login/style.css" />
+
+        <!-- Modernizr JS -->
+        <script src="/js/login/modernizr-2.6.2.min.js"></script>
+        <!-- FOR IE9 below -->
+        <!--[if lt IE 9]>
+        <script src="/js/login/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+    <body class="style-2">
+
+        <div class="row" style="margin-right: 0; position:relative; right: -15px; margin-left: 0; left: -15px;">
+            <a href="/forward_con/welcome">
+                <img src="/images/logo/web_logo.jpg" />
+            </a>
+        </div>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-4" style="position:relative; top: -90px;">
+                    <!-- Start Sign In Form -->
+                    <form method="post" action="javascript:void(0);" class="fh5co-form animate-box" data-animate-effect="fadeInLeft">
+                        <h2>您正在登录</h2>
+                        <div class="form-group">
+                            <label for="username" class="sr-only">用户名</label>
+                            <input type="text" class="form-control" name="username" id="username" placeholder="请输入注册时的用户名" autocomplete="off" />
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="sr-only">密&nbsp;&nbsp;码</label>
+                            <input type="password" class="form-control" name="password" id="password" placeholder="请输入您的密码" autocomplete="off" />
+                        </div>
+                        <div class="form-group">
+                            <!--
+                            0：不记住
+                            1：记住
+                            -->
+                            <label for="remember"><input type="checkbox" id="remember" name="remember" data-status="0" /> 记住我</label>
+                        </div>
+                        <div class="form-group">
+                            <p>登录遇到问题?
+                                <a href="/forward_con/goregister">注册</a> |
+                                <a href="/forward_con/goforget">忘记密码?</a>
+                            </p>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="登录" class="btn btn-primary button_class_submit" />
+                            <!--
+                                0：无状态或可以登录
+                                1：用户名为空
+                                2：密码为空
+                            -->
+                            <p id="p_id_err" style="display: none;color: red;position: relative; top:-34px;left: 103px;" data-status="0">内容不能为空</p>
+                        </div>
+                    </form>
+                    <!-- END Sign In Form -->
+                </div>
+            </div>
+        </div>
+
+        <!-- jQuery -->
+        <script src="/js/login/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="/bootstrap/js/bootstrap.js"></script>
+        <!-- Placeholder -->
+        <script src="/js/login/jquery.placeholder.min.js"></script>
+        <!-- Waypoints -->
+        <script src="/js/login/jquery.waypoints.min.js"></script>
+        <!-- Main JS -->
+        <script src="/js/login/main.js"></script>
+        <!--IP JS-->
+        <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+
+        <!--Login JS-->
+        <script src="/js/login/mine/login.js"></script>
+
+    </body>
+</html>
+
+
+

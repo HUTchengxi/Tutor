@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>勤成家教网---七嘴八舌--让你更好的选择</title>
+    <link rel="icon" href="/images/logo/web_logo.ico" type="images/x-icon" />
+
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.css" />
+
+    <!--layui css-->
+    <link rel="stylesheet" href="/layui/css/layui.css" />
+</head>
+<body style="font-size: 16px;">
+<!--头部-->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid" style="padding-top: 13px;">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/forward_con/welcome">勤成家教网</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#navbar-collapse">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse" style="">
+            <ul class="nav navbar-nav">
+                <li style="margin:0 10px;"><a href="/forward_con/welcome">首页</a></li>
+                <li style="margin:0 10px;" class="active"><a href="/forward_con/classify">分类</a></li>
+                <li style="margin:0 10px;"><a href="/forward_con/gabble" target="_blank">七嘴八舌</a></li>
+                <li style="margin:0 10px;"><a href="/forward_con/gorank">勤成榜</a></li>
+                <li style="margin:0 10px;"><a href="/forward_con/contact">联系我们</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!--搜索输入框-->
+<header class="clearfix" style="margin-top: 70px; background: url(/images/welcome/classify/header_search_bg.png);
+        background-size: cover; background-repeat: no-repeat;">
+    <p class="none"></p>
+    <div class="searchbox" style="display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-pack:center;-webkit-box-align:center;
+            margin-top: 5%;">
+        <input class="form-control" style="width: 71.6%; height: 48px;border-bottom-right-radius: 0; border-top-right-radius: 0;"
+               placeholder="输你所要，搜你所想" />
+        <input class="btn" style="width: 104px; height: 48px; background: #F01414; line-height: 48px; text-align: center;
+                   color: white; border-radius: 0 4px 0 0;letter-spacing: 1em;" value="搜索"
+               readonly="readonly" />
+        <i class="layui-icon del">&#x1006;</i>
+    </div>
+    <div class="searchshow">
+        <ul>
+            <!--<li class="none">抱歉，没有找到对应的课程</li>-->
+            <!--<li>sdsdasad</li>-->
+        </ul>
+    </div>
+    <style>
+    </style>
+    <div class="searchmain" style="margin: 1% 0;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-pack:center;
+            -webkit-box-align:center;">
+        <ul class="clearfix">
+            <li class="pull-left cli" style="width: 112px; height: 52px; text-align: center; line-height: 52px; -webkit-border-radius: 26px;
+                     -moz-border-radius: 26px;border-radius: 26px;">
+                <a href="javascript: void(0);" style="width: 100%; display: inline-block;  -webkit-border-radius: 26px;
+                     -moz-border-radius: 26px;border-radius: 26px;" data-stype="1">小学家教</a>
+            </li>
+            <li class="pull-left" style="width: 112px; height: 52px; text-align: center; line-height: 52px; -webkit-border-radius: 26px;
+                     -moz-border-radius: 26px;border-radius: 26px;">
+                <a href="javascript: void(0);" style="width: 100%; display: inline-block;  -webkit-border-radius: 26px;
+                     -moz-border-radius: 26px;border-radius: 26px;" data-stype="2">初中家教</a>
+            </li>
+            <li class="pull-left" style="width: 112px; height: 52px; text-align: center; line-height: 52px; -webkit-border-radius: 26px;
+                     -moz-border-radius: 26px;border-radius: 26px;">
+                <a href="javascript: void(0);" style="width: 100%; display: inline-block;  -webkit-border-radius: 26px;
+                     -moz-border-radius: 26px;border-radius: 26px;" data-stype="3">高中家教</a>
+            </li>
+            <li class="pull-left" style="width: 112px; height: 52px; text-align: center; line-height: 52px; -webkit-border-radius: 26px;
+                     -moz-border-radius: 26px;border-radius: 26px;">
+                <a href="javascript: void(0);" style="width: 100%; display: inline-block;  -webkit-border-radius: 26px;
+                     -moz-border-radius: 26px;border-radius: 26px;" data-stype="4">其他兴趣</a>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<!--主要内容选择展示-->
+<div class="mainshow">
+    <!--学科详细分类-->
+    <header style="border-bottom: 1px solid #D9DDE1;">
+        <ul class="clearfix">
+        </ul>
+    </header>
+    <!--排序分类-->
+    <nav class="sortshow">
+        <ul class="clearfix">
+            <li class="pull-left cli">
+                <a href="javascript:void(0);" data-sort="new">最新发布</a>
+            </li>
+            <li class="pull-left">
+                <a href="javascript:void(0);" data-sort="hot">最热搜索</a>
+            </li>
+            <li class="pull-left">
+                <a href="javascript:void(0);" data-sort="more">最多评论</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!--主要课程内容卡片-->
+    <div class="listshow">
+        <!--<div class="none">-->
+            <!--<p>课程制作中，敬请期待!</p>-->
+        <!--</div>-->
+        <ul class="clearfix main">
+            <!--<li class="pull-left">-->
+                <!--<div class="course">-->
+                    <!--<a href="#">-->
+                        <!--<img src="/images/welcome/classify/courses/bg.png" />-->
+                    <!--</a>-->
+                    <!--<div class="coursebody">-->
+                        <!--<p class="title">小学数学从入门到精通</p>-->
+                        <!--<p class="type">一对一&nbsp;&nbsp;&nbsp;&nbsp;-->
+                            <!--<i class="layui-icon">&#xe612;2/100</i>-->
+                        <!--</p>-->
+                        <!--<p class="descript">入门就是最新版本，让你彻底搞懂小学数学的奥秘。书山有路勤为径，学海无涯苦作舟。</p>-->
+                        <!--<ul class="clearfix price">-->
+                            <!--<li class="pull-left">-->
+                                <!--<a href="#">-->
+                                    <!--￥300-->
+                                <!--</a>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+                        <!--<div class="author">-->
+                            <!--<span>讲师：</span>-->
+                            <!--<a href="javascript: void(0);"><img src="/images/welcome/classify/courses/bg.png" /></a>-->
+                            <!--<a href="javascript: void(0);">成兮有梦</a>-->
+                        <!--</div>-->
+                        <!--<footer class="listmore">-->
+                            <!--<a href="javascript: void(0);">查看详情-->
+                                <!--<i class="layui-icon">&#xe65b;</i>-->
+                            <!--</a>-->
+                        <!--</footer>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</li>-->
+        </ul>
+    </div>
+
+    <!--页面分页展示-->
+    <div class="pageshow">
+        <ul class="pagination">
+            <li class="disabled"><a href="javascript:void(0);">首页</a></li>
+            <li class="disabled"><a href="#">上一页</a></li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">下一页</a></li>
+            <li><a href="#">尾页</a></li>
+        </ul>
+    </div>
+</div>
+
+<!--页脚-->
+<footer class="footer">
+    <br />
+    <!--网站地图-->
+    <div class="webmap">
+        <h4>网站地图:</h4>
+        <ul class="clearfix">
+            <li class="pull-left">
+                <a href="javascript:void(0);">网站首页</a>
+            </li>
+            <li class="pull-left">
+                <a href="javascript:void(0);">家教分类</a>
+            </li>
+            <li class="pull-left">
+                <a href="javascript:void(0);">用户经验总结</a>
+            </li>
+            <li class="pull-left">
+                <a href="javascript:void(0);">勤成家教榜</a>
+            </li>
+            <li class="pull-left">
+                <a href="javascript:void(0);">联系我们</a>
+            </li>
+            <li class="pull-left">
+                <a href="javascript:void(0);">个人信息</a>
+            </li>
+        </ul>
+    </div>
+    <!--友情链接-->
+    <div class="link">
+        <h4>友情链接:</h4>
+        <ul class="clearfix">
+            <li class="pull-left">
+                <a href="">CSDN博客</a>
+            </li>
+            <li class="pull-left">
+                <a href="">前端网</a>
+            </li>
+            <li class="pull-left">
+                <a href="">慕课网</a>
+            </li>
+            <li class="pull-left">
+                <a href="">牛客网</a>
+            </li>
+            <li class="pull-left">
+                <a href="">模板之家</a>
+            </li>
+            <li class="pull-left">
+                <a href="">Bootstrap</a>
+            </li>
+            <li class="pull-left">
+                <a href="">LayUI</a>
+            </li>
+            <li class="pull-left">
+                <a href="">知乎</a>
+            </li>
+            <li class="pull-left">
+                <a href="">简书</a>
+            </li>
+            <li class="pull-left">
+                <a href="">脚本之家</a>
+            </li>
+            <li class="pull-left">
+                <a href="">码农网</a>
+            </li>
+            <li class="pull-left">
+                <a href="">博客园</a>
+            </li>
+            <li class="pull-left">
+                <a href="">CSS探索之旅</a>
+            </li>
+            <li class="pull-left">
+                <a href="">苏文宅博客</a>
+            </li>
+            <li class="pull-left">
+                <a href="">爱前端网</a>
+            </li>
+            <li class="pull-left">
+                <a href="">CSS3按钮特效</a>
+            </li>
+            <li class="pull-left">
+                <a href="">ProcessOn</a>
+            </li>
+            <li class="pull-left">
+                <a href="">5iweb</a>
+            </li>
+        </ul>
+    </div>
+    <!--慕课网抄袭而来的copyright-->
+    <div class="copyright">
+        <h5>Copyright © 2018 imooc.com All Rights Reserved | 京ICP备 13046642号-2</h5>
+    </div>
+    <br />
+</footer>
+
+<style>
+    header .searchbox i.del{background-color: grey;color: white;border: 1px solid grey;border-radius:  10px;font-size: 14px;
+        position: relative;right: 105%; visibility: hidden;}
+    header .searchbox i.del:hover{cursor: pointer;}
+    header .searchshow{position: absolute; width: 71.6%; background-color: white;margin-left: 7.5%; border: 1px solid grey;border-radius:  4px;
+        overflow: hidden; height: 0; display: none;}
+    header .searchshow ul li{font-size: 16px;color: #0000009c;height: 30px;line-height:  30px;border-bottom: 1px solid #00000036;
+        padding-left: 12px;}
+    header .searchshow ul li:hover{cursor: pointer; color: #000000b5;}
+    header .searchshow ul li.none{color: #000000b5; text-align: center; height: 31px; line-height: 31px;}
+    header .searchshow ul li.smore{color: #000000b5; text-align: center;}
+    header .searchshow ul li.smore span{color: red;}
+    header .searchshow ul li.none:hover{cursor: auto;}
+
+    .listshow ul{width: 98%;}
+    .listshow .none{margin: 12% 0 12% 0;}
+    .listshow .none p{font-size: 20px;color: #00000070;}
+
+    footer.footer{background-color: #000000; width: 100%;}
+    footer.footer .webmap, footer.footer .link, footer.footer .copyright{margin: 0 auto; width: 80%;margin-bottom: 1%;}
+    footer.footer h4{color: white;}
+    footer.footer ul{margin-left: 1%;}
+    footer.footer ul li{margin: 1%;}
+    footer.footer ul li a{color: #c8cdd2ad; font-size: 14px; text-decoration: none;}
+    footer.footer ul li a:hover{color: #c8cdd2; text-decoration: none;}
+    footer.footer .copyright{margin-top: -1%;}
+    footer.footer .copyright h5{color: #787d82c7;}
+
+    .searchmain li{margin: 0 40px;}
+    .searchmain li.cli a{background-color: white;color: black;}
+    .searchmain a{color: white; text-decoration: none;}
+    .searchmain a:hover{text-decoration: none; background: rgba(255, 255, 255, 0.2);}
+
+    .mainshow header{display:-webkit-box; -webkit-box-orient:horizontal; -webkit-box-pack:center;
+        -webkit-box-align:center;}
+    .mainshow header ul{padding: 24px 0 10px; width: 80%;}
+    .mainshow header li{margin: 0 1%;}
+    .mainshow header a{margin-right: 30px; margin-left: 30px; font-size: 14px; line-height: 32px; height: 32px; width: 100%;
+        display: inline-block; border-radius: 16px; margin-bottom: 12px; text-align: center; text-decoration: none;}
+    .mainshow header a:hover{text-decoration: none; background-color: #D9DDE1;}
+    .mainshow header li.cli a{background-color: black; color: white;}
+
+    .sortshow{padding: 20px 12px; box-sizing: border-box; margin-left: 38%;}
+    .sortshow li{margin: 0 1%;}
+    .sortshow li a{color: #4D555D; display: inline-block; width: 100%; height: 16px; line-height: 16px; text-align: center;
+        font-size: 12px; text-decoration: none; padding: 0 6px;}
+    .sortshow li a:hover{color: #07111B; text-decoration: none;}
+    .sortshow li.cli a{background-color: #93999F; color: white; border-radius: 10px;}
+
+    .listshow{display:-webkit-box; -webkit-box-orient:horizontal; -webkit-box-pack:center;
+        -webkit-box-align:center;}
+    .listshow ul{margin-left: 2%; margin-right: 2%; margin-bottom: 2%;}
+    .listshow ul li{width: 20%; margin-top: 4%; margin-left: 2.3%; margin-right: 2.3%; border-radius: 13px;}
+    .listshow ul li div.course:hover{background-color: #0000000f; cursor: pointer; border-radius: 13px;}
+    .listshow ul li img{width: 100%; height: 148px; border-radius: 13px; border: 1px solid grey;}
+    .listshow ul li .coursebody p.title{ font-size: .9em; line-height: 24px; min-height: 48px; margin: 16px 2% 0 2%;
+        font-weight: 700;-ms-word-wrap: break-word;word-wrap: break-word; text-align: center;}
+    .listshow ul li .coursebody p.type{font-size: 12px; color: #93999f; margin: 2%;}
+    .listshow ul li .coursebody p.type i{font-size: 12px; color: #93999f;}
+    .listshow ul li .coursebody p.descript{font-size: 12px; color: #93999f;word-break: break-all;-ms-word-wrap: break-word;
+        word-wrap: break-word; height: 44px; line-height: 20px; margin-top: 6px; overflow: hidden;display: -webkit-box;
+        -webkit-box-orient: vertical; -webkit-line-clamp: 2;}
+    /*.listshow ul li .coursebody p.descript:after{content: "..."}*/
+    .listshow ul li .coursebody p.descript:hover{color: #1c1f21c2;}
+    .listshow ul li .coursebody ul{margin-top: 2%;}
+    .listshow ul li .coursebody ul li a{text-decoration: none; color: #4D555D; font-size: 12px;}
+    .listshow ul li .coursebody ul li a:hover{text-decoration: none;}
+    .listshow ul li .coursebody div.author span{font-size: 14px; color: #93999f;}
+    .listshow ul li .coursebody div.author img{width: 30px; height: 30px; border-radius: 30px;}
+    .listshow ul li .coursebody div.author a{text-decoration: none; color: #ff0000ab; font-size: 14px;}
+    .listshow ul li .coursebody div.author a:hover{text-decoration: none; color: red;}
+    .listshow ul li .coursebody footer{text-align: center; background-color: #11cee2; width: 0; opacity: 0;-webkit-transition: all 1s;
+        transition: all .3s linear; height: 21px; overflow: hidden; margin: 3% 0 0 0;}
+    .listshow ul li .course:hover .coursebody footer{width: 100%; opacity: 1;}
+    .listshow ul li .coursebody footer a{text-decoration: none; color: white;}
+    .listshow ul li .coursebody footer a:hover{text-decoration: none;}
+
+    .mainshow .pageshow{display:-webkit-box; -webkit-box-orient:horizontal; -webkit-box-pack:center;
+        -webkit-box-align:center;}
+</style>
+
+
+<!--jquery-->
+<script src="/js/custom/jquery.min.js"></script>
+<!--bootstrap-->
+<script src="/bootstrap/js/bootstrap.js"></script>
+<!--layui-->
+<script src="/layui/layui.js"></script>
+
+<!--My JS-->
+<script src="/js/welcome/classify.js"></script>
+</body>
+</html>
