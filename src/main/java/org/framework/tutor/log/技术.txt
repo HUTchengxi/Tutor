@@ -392,6 +392,25 @@
 
 
 
+
+75.js实现在新的窗口中打开链接：window.open(url);
+
+
+
+
+76.外键可以为空，只是不能将外键对应的列定义成主键了：
+    primary key(username),
+    foreign key(username) references user_main(username);
+   上面这样的话就不能将username设置为空的值了
+    foreign key(username) references user_main(username);
+   上面这样直接定义的话就能够将username的值设置为空的值
+
+
+
+77.
+
+
+
 实现打卡，个人的打卡数据显示放在个人中心中新增一栏进行显示，创建一个打卡表进行记录，使用bootstrap或者layui的日期插件来显示
 
 
