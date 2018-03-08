@@ -59,16 +59,6 @@ create table course_log(
   foreign key(cid) references course_main(id)
 );
 
-#####没有创建课程表, 所以暂时使用临时的课程记录, 没有外键
-create table course_log(
-  id int primary key auto_increment comment "唯一标识",
-  cid int comment "对应的课程id",
-  username varchar(20) not null comment "用户名",
-  ctype varchar(20) not null comment "课程类型",
-  cname varchar(50) not null comment "课程名称",
-  logtime datetime default now() comment "浏览时间"
-);
-drop table course_log;
 
 #用户课程收藏表
 create table course_collect(
@@ -174,6 +164,22 @@ create table user_sign(
 );
 
 
+#我的通知表
+create table user_message(
+  id int auto_increment comment "唯一标识",
+  identity int default 0 comment "是否私信通知，0表示否，1表示是",
+  suser varchar(20) not null comment "发送的管理员用户名，模拟admin",
+  username varchar(20) comment "发送私信通知的用户名",
+  title varchar(50) not null comment "通知的标题",
+  descript text not null comment "通知的信息",
+  stime datetime default now() comment "通知发送的时间",
+  status int default 0 comment "0表示未读，1表示已读",
+  primary key(id),
+  #后续创建了管理员表就将suser设置成一个外键
+  foreign key(username) references user_main(username)
+);
+
+
 #家教老师标签表
 #实名认证表
 #课程表
@@ -185,15 +191,3 @@ create table user_sign(
 
 #修改了user表的主键为username
 
-
-
-#####没有创建课程表,所以暂时使用临时的用户课程收藏表.没有外键
-create table course_collect(
-  id int primary key auto_increment comment "唯一标识",
-  cid int comment "收藏的课程的id",
-  cimgsrc varchar(100) not null comment "课程封面图片",
-  username varchar(20) not null comment "用户名",
-  coltime datetime default now() comment "收藏的时间",
-  descript varchar(50) comment "收藏笔记"
-);
-drop table course_collect;

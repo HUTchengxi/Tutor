@@ -148,4 +148,23 @@ public class ForwardAll {
 
         return "/home/order/mycart";
     }
+
+    /**
+     * 进入我的通知界面
+     * @return
+     */
+    @RequestMapping("/gomessage")
+    public String goMessage(){
+
+        return "/home/mymessage";
+    }
+
+    /**
+     * 进入设置中心
+     */
+    @RequestMapping("/gosetting")
+    public String goSetting(){
+
+        return "/home/mysetting";
+    }
 }

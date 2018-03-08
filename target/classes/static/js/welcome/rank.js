@@ -56,7 +56,7 @@ $(function(){
                         "                        <ul class=\"dropdown-menu\">\n" +
                         "                            <li><a>基本信息</a></li>\n" +
                         "                            <li><a>我的订单</a></li>\n" +
-                        "                            <li><a>私信</a></li>\n" +
+                        "                            <li><a>通知</a></li>\n" +
                         "                            <li><a>设置</a></li>\n" +
                         "                            <li class='nav-logoff'><a href='#' style=\"color: red;\">注销</a></li>\n" +
                         "                        </ul>\n" +
@@ -199,7 +199,7 @@ $(function(){
     var rank_more = function(){
 
         var ranktype = $(this).closest("div.rank").data("type");
-        window.location.href = "/forward_con/rank_more?type=" + ranktype;
+        window.open("/forward_con/rank_more?type=" + ranktype);
     };
     $("footer a").click(rank_more);
 });

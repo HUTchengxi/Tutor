@@ -162,7 +162,7 @@
                     </li>
                     <!--最勤打卡榜-->
                     <li class="pull-left" style="margin: 4% 6%; width: 20%; background-color: white;"   >
-                        <div class="rank" data-type="sign" style="height: 346.28px;">
+                        <div class="rank" data-type="sign">
                             <header style="margin-bottom: 4%; padding-top: 4%;">
                                 <h1 style="font-size: 16px; font-weight: bold;">最勤打卡榜<i class="glyphicon glyphicon-fire" style="opacity: 0;"></i></h1>
                             </header>
@@ -179,7 +179,7 @@
                                     </li>
                                 </ul>
                             </nav>
-                            <div class="rank-show" style="height: 225px;">
+                            <div class="rank-show">
                                 <table style="width: 100%;">
                                     <thead>
                                     <tr>
@@ -193,7 +193,7 @@
                                 </table>
                             </div>
                             <footer style="height: 36px; line-height: 36px; text-align: center;">
-                                <a href="javascript:void(0);" style="width: 100%; display: inline-block; background: #d0d0d0;">查看全部排行<i class="layui-icon">&#xe602;</i></a>
+                                <a href="javascript:void(0);" target="_blank" style="width: 100%; display: inline-block; background: #d0d0d0;">查看全部排行<i class="layui-icon">&#xe602;</i></a>
                             </footer>
                         </div>
                     </li>
@@ -430,6 +430,9 @@
         .div-cls-rank nav li.cli a{color: white;}
         .div-cls-rank nav a:hover{text-decoration: none;}
         .div-cls-rank header h1:before{background-color: red;content: "";width: 7px;height: 7px;display: inline-block; margin-right: 2%; margin-left: 2%; margin-bottom: 1%; vertical-align: middle;}
+
+        .div-cls-rank .rank{height: 346.28px;}
+        .div-cls-rank .rank-show{height: 228px;}
 
         .div-cls-rank .rank-show tr{border:1px dashed #80808047; border-left: none; border-right: none;}
         .div-cls-rank .rank-show td{height: 45px;line-height: 45px; text-align: center;}
