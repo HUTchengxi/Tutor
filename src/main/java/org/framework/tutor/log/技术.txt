@@ -411,6 +411,28 @@
 
 
 
+
+
+
+78.java实现记住密码：
+    添加cookie:   Cookie cookie = new Cookie("username", username);
+                  cookie.setValue("value");
+                  cookie.setMaxAge(1*60*60*24);
+                  cookie.setPath("/");
+                  response.addCookie(cookie);
+
+    删除cookie:   Cookie[] cookies = request.getCookies();
+                  for(Cookie cookie: cookies){
+                    if("name".equals(cookie.getName()){
+                        cookie.setMaxAge(0);
+                        cookie.setValue(null);
+                        cookie.setPath("/");
+                        response.addCookie(cookie);
+                    }
+                  }
+
+
+
 实现打卡，个人的打卡数据显示放在个人中心中新增一栏进行显示，创建一个打卡表进行记录，使用bootstrap或者layui的日期插件来显示
 
 

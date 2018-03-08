@@ -116,4 +116,50 @@
         });
     };
     $(".button_class_submit").click(login_all_check);
+
+    /**
+     * 点击记住我按钮事件
+     */
+    var cli_remember = function(){
+
+        var status = $(this).find("input").data("status");
+        if(status == 1){
+            $(this).find("input").data("status", "0");
+        }
+        else{
+            $(this).find("input").data("status", "1");
+        }
+    };
+    $(".rem-div label").mousedown(cli_remember);
+
+    /**
+     * 在页面加载完成的时候判断用户之前是否已经记住了用户名和密码
+     */
+    var async_userremember = function(){
+
+        $.ajax({
+            async: true,
+            type: "post",
+            url: "/login_con/getrememberuser",
+            dataType: "json",
+            success: function(data){
+                var status = data.status;
+                if(status == "none"){
+                    return;
+                }
+                else{
+                    var username = data.username;
+                    var password = data.password;
+                    $("#username").val(username);
+                    $("#password").val(password);
+                    $("#remember").trigger("click").data("status","1");
+                }
+            },
+            error: function(xhr, status){
+                window.alert("后台环境异常导致无法获取记住密码数据，请稍后重试");
+                window.console.log(xhr);
+            }
+        })
+    };
+    async_userremember();
 }());

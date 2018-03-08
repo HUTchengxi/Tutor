@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -64,6 +65,70 @@ public class Login {
             session.setAttribute("nickname",userMain.getNickname());
             session.setAttribute("identity",userMain.getIdentity());
             res = "{status: \"ok\",url: \"/forward_con/welcome\"}";
+
+            //记住密码
+            if(remember == 1){
+                Cookie usercookie = new Cookie("username", username);
+                Cookie passcookie = new Cookie("password", password);
+                usercookie.setMaxAge(2*60*60*24);
+                passcookie.setMaxAge(2*60*60*24);
+                usercookie.setPath("/");
+                passcookie.setPath("/");
+                response.addCookie(usercookie);
+                response.addCookie(passcookie);
+            }
+            //清空之前记住的密码
+            else{
+                Cookie[] cookies = request.getCookies();
+                for(Cookie cookie: cookies){
+                    if("username".equals(cookie.getName())){
+                        cookie.setMaxAge(0);
+                        cookie.setPath("/");
+                        response.addCookie(cookie);
+                    }
+                    if("password".equals(cookie.getName())){
+                        cookie.setMaxAge(0);
+                        cookie.setPath("/");
+                        response.addCookie(cookie);
+                    }
+                }
+            }
+        }
+
+        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.flush();
+        writer.close();
+    }
+
+    /**
+     *  登录时判断是否已经记住密码并获取相关信息
+     * @param request
+     * @param response
+     * @throws IOException
+     */
+    @RequestMapping("/getrememberuser")
+    public void getRememberUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        Cookie[] cookies = request.getCookies();
+        PrintWriter writer = response.getWriter();
+        String res = null;
+
+        String user = null;
+        String pass = null;
+        for(int i=0; i<cookies.length; i++){
+            if("username".equals(cookies[i].getName())){
+                user = cookies[i].getValue();
+            }
+            if("password".equals(cookies[i].getName())){
+                pass = cookies[i].getValue();
+            }
+        }
+
+        if(user == null){
+            res = "{\"status\": \"none\"}";
+        }
+        else{
+            res = "{\"username\": \""+user+"\", \"password\": \""+pass+"\"}";
         }
 
         writer.print(new JsonParser().parse(res).getAsJsonObject());
