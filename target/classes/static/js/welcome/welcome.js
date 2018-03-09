@@ -236,4 +236,5 @@ $(function(){
         }
     };
     $(document).on("click", ".navbar-right .nav-logoff a", logoff_btn);
+
 });

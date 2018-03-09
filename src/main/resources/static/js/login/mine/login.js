@@ -106,7 +106,12 @@
                             console.log("/usermain_con/loginlog error");
                         }
                     })
-                    window.location.href = url;
+                    if(document.referrer == window.location.href || document.referrer.trim() == ""){
+                        window.location.href = "/forward_con/welcome";
+                    }
+                    else{
+                        window.location.href = document.referrer;
+                    }
                 }
             },
             error: function(xhr, status){

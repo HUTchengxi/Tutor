@@ -433,6 +433,19 @@
 
 
 
+
+
+79.登录之后跳转到上一个页面的简单实现：通过document.referrer，她的值为上一个页面的url，
+    如果没有，则为空或者为当前本页面的url
+        if(document.referrer == window.location.href || document.referrer.trim() == ""){
+                                window.location.href = "/forward_con/welcome";
+                            }
+                            else{
+                                window.location.href = document.referrer;
+                            }
+
+
+
 实现打卡，个人的打卡数据显示放在个人中心中新增一栏进行显示，创建一个打卡表进行记录，使用bootstrap或者layui的日期插件来显示
 
 
