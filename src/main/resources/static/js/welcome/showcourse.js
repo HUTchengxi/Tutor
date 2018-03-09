@@ -51,15 +51,41 @@ $(function() {
                         hello = "晚上好";
                     }
                     var nickname = data.nick;
-                    $("nav ul.navbar-right").append("<li class='nav-time'><a>现在是：<i style='color: #00b6ff;'>" + now + "</i></a></li>" +
-                        "                   <li><a style=\"color: black;\"><p>" + hello + "：<span class=\"span-cls-nick\" style=\"color: red;\">" + nickname + "</span></p></a></li>\n" +
+
+                    //获取我的通知数量
+                    var count = 0;
+                    $.ajax({
+                        async: false,
+                        type: "post",
+                        url: "/usermessage_con/getmymessagecount",
+                        dataType: "json",
+                        success: function(data){
+                            var status = data.status;
+                            if(status === "invalid"){
+                                window.location = "/forward_con/welcome";
+                            }
+                            else if(status === "mysqlerr"){
+                                window.alert("后台服务器异常导致无法获取通知数据，请刷新页面重试");
+                            }
+                            else{
+                                count = data.count;
+                            }
+                        },
+                        error: function(xhr, status){
+                            window.alert("后台环境异常导致");
+                            window.console.log(xhr);
+                        }
+                    });
+                    $("nav ul.navbar-right").append("<li class='nav-time'><a>现在是：<i style='color: #00b6ff;'>"+now+"</i></a></li>" +
+                        "                   <li><a style=\"color: black;\"><p>"+hello+"：<span class=\"span-cls-nick\" style=\"color: red;\">"+nickname+"</span></p></a></li>\n" +
                         "                    <li class=\"dropdown\">\n" +
                         "                        <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">个人中心<i class=\"caret\"></i></a>\n" +
                         "                        <ul class=\"dropdown-menu\">\n" +
-                        "                            <li><a>基本信息</a></li>\n" +
-                        "                            <li><a>我的订单</a></li>\n" +
-                        "                            <li><a>私信</a></li>\n" +
-                        "                            <li><a>设置</a></li>\n" +
+                        "                            <li><a href='/forward_con/personal' target='_blank'>基本信息</a></li>\n" +
+                        "                            <li><a href='/forward_con/gomyorder'>我的订单</a></li>\n" +
+                        "                            <li><a href='/forward_con/gomycourse' target='_blank'>我的课程</a></li>\n" +
+                        "                            <li><a href='/forward_con/gomessage' target='_blank'>通知<span class='mcount'>("+count+")</span></a></li>\n" +
+                        "                            <li><a href='/forward_con/gosetting'>设置</a></li>\n" +
                         "                            <li class='nav-logoff'><a href='#' style=\"color: red;\">注销</a></li>\n" +
                         "                        </ul>\n" +
                         "                    </li>");
