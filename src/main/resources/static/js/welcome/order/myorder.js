@@ -51,17 +51,7 @@ $(function() {
                     }
                     var nickname = data.nick;
                     $("nav ul.navbar-right").append("<li class='nav-time'><a>现在是：<i style='color: #00b6ff;'>" + now + "</i></a></li>" +
-                        "                   <li><a style=\"color: black;\"><p>" + hello + "：<span class=\"span-cls-nick\" style=\"color: red;\">" + nickname + "</span></p></a></li>\n" +
-                        "                    <li class=\"dropdown\">\n" +
-                        "                        <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">个人中心<i class=\"caret\"></i></a>\n" +
-                        "                        <ul class=\"dropdown-menu\">\n" +
-                        "                            <li><a>基本信息</a></li>\n" +
-                        "                            <li><a>我的订单</a></li>\n" +
-                        "                            <li><a>私信</a></li>\n" +
-                        "                            <li><a>设置</a></li>\n" +
-                        "                            <li class='nav-logoff'><a href='#' style=\"color: red;\">注销</a></li>\n" +
-                        "                        </ul>\n" +
-                        "                    </li>");
+                        "                   <li><a style=\"color: black;\"><p>" + hello + "：<span class=\"span-cls-nick\" style=\"color: red;\">" + nickname + "</span></p></a></li>\n");
                 }
 
                 //让时间一直轮播

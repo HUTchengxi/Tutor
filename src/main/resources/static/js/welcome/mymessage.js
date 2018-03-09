@@ -69,7 +69,7 @@ $(function () {
      * 获取发送通知的所有管理员
      */
     var async_getsuser = function () {
-        $(".container .m-main .main-left").empty();
+        $(".container .m-main .main-left .left-show").empty();
         $(".container .m-main .main-right .right-show").css("display", "none");
         $(".container .m-main .main-right .right-footer").css("display", "none");
         $.ajax({
