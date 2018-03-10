@@ -121,15 +121,6 @@
 
     <!--页面分页展示-->
     <div class="pageshow">
-        <!--<ul class="pagination">-->
-        <!--<li class="disabled"><a href="javascript:void(0);">首页</a></li>-->
-        <!--<li class="disabled"><a href="#">上一页</a></li>-->
-        <!--<li class="active"><a href="#">1</a></li>-->
-        <!--<li><a href="#">2</a></li>-->
-        <!--<li><a href="#">3</a></li>-->
-        <!--<li><a href="#">下一页</a></li>-->
-        <!--<li><a href="#">尾页</a></li>-->
-        <!--</ul>-->
         <div class="layui-box layui-laypage layui-laypage-default" id="layui-laypage-10">
             <span class="layui-laypage-count">共 100 条</span>
             <a href="javascript:;" class="layui-laypage-prev layui-disabled " data-current="1">上一页</a>
@@ -142,16 +133,16 @@
             <a href="javascript:;" class="layui-laypage-next" data-current="1">下一页</a>
             <!--<span class="layui-laypage-limits">-->
                 <!--<select lay-ignore="">-->
-                    <!--<option value="10" selected="">10 条/页</option>-->
-                    <!--<option value="20">20 条/页</option>-->
-                    <!--<option value="30">30 条/页</option>-->
-                    <!--<option value="40">40 条/页</option>-->
-                    <!--<option value="50">50 条/页</option>-->
+                    <!--<option value="4" selected="">4 条/页</option>-->
+                    <!--<option value="8">8 条/页</option>-->
+                    <!--<option value="16">16 条/页</option>-->
+                    <!--<option value="32">32 条/页</option>-->
                 <!--</select>-->
             <!--</span>-->
             <span class="layui-laypage-skip">到第
-                <input type="text" min="1" value="1" class="layui-input" />页
+                <input type="text" value="" class="layui-input input-page" />页
                 <button type="button" class="layui-laypage-btn">确定</button>
+                <span class="err-info">页码不存在</span>
             </span>
         </div>
     </div>
@@ -252,6 +243,12 @@
 </footer>
 
 <style>
+    .coursebody .author a:nth-child(3){margin-left: 2%;}
+    .pageshow{position: relative;}
+    .pageshow .err-info{border: none; position: absolute; top: 20%; left: 70%; color: red; display: none;}
+    .listshow ul li ul.price li{margin-left: -3%;}
+    .listshow ul li .coursebody ul.price li a{color: red; font-weight: bold; font-size: 14px;}
+
     .pageshow .btn-cli{background-color: #009688; color: white;}
     .pageshow .pgmorep{display: none;}
     .pageshow .btn-cli:hover{background-color: #009688; color: white;}

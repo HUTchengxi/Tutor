@@ -760,6 +760,7 @@ $(function() {
                 glo_keyword = keyword;
                 glo_stype = stype;
                 glo_sort = $(".sortshow ul li.cli a").data("sort");
+                $(".pageshow .err-info").css("display", "none");
                 var total = data.total;
                 var count = 8;
                 if(total/count <= 1){
@@ -776,6 +777,7 @@ $(function() {
                         $(".layui-box span:nth-child(1)").text("共"+total+"条");
                         $(".layui-box.layui-laypage a").data("current", "1");
                         $(".layui-box.layui-laypage a.layui-laypage-prev").addClass("layui-disabled");
+                        $(".pageshow a.btn-cli").removeClass("btn-cli");
                         $(".layui-box.layui-laypage a.pgone").addClass("btn-cli");
                         $(".layui-box.layui-laypage a.layui-laypage-next").data("page", page);
                         if(page == 2){
@@ -815,6 +817,7 @@ $(function() {
             return ;
         }
         else{
+            $(".pageshow .err-info").css("display", "none");
             $(".layui-laypage-next").removeClass("layui-disabled");
             var current = $(this).data("current");
             var count = 8;
@@ -872,6 +875,7 @@ $(function() {
             return ;
         }
         else{
+            $(".pageshow .err-info").css("display", "none");
             $(".layui-laypage-prev").removeClass("layui-disabled");
             var current = $(this).data("current");
             var count = 8;
@@ -920,6 +924,7 @@ $(function() {
             return ;
         }
 
+        $(".pageshow .err-info").css("display", "none");
         $(".pageshow .pglink.btn-cli").removeClass("btn-cli");
         $(this).addClass("btn-cli");
 
@@ -956,6 +961,93 @@ $(function() {
         }
     };
     $(".pageshow .pglink").click(pageshow_clilink);
+
+    /**
+     * 点击跳转到指定页面
+     */
+    var pageshow_gopage = function(){
+
+        var page = $(this).closest("span").find("input").val();
+        if(page.trim() == ""){
+            $(".pageshow .err-info").text("请输入页码").css("display", "inline-block");
+        }
+        else{
+            //获取总页数
+            var pages = 0;
+            if($(".pageshow .pgend").css("display") == "none"){
+                if($(".pageshow .pgthree").css("display") == "none"){
+                    pages = $(".pageshow .pgtwo").data("page");
+                }
+                else{
+                    pages = $(".pageshow .pgthree").data("page");
+                }
+            }
+            else{
+                pages = $(".pageshow .pgend").data("page");
+            }
+
+            page = parseInt(page);
+            pages = parseInt(pages);
+
+            if(page <= 0 || page > pages){
+                $(".pageshow .err-info").text("页码不存在").css("display", "inline-block");
+            }
+
+            else{
+                $(".pageshow .err-info").text("").css("display", "none");
+                var count = 8;
+                var startpos = count * (page - 1);
+                getcourse_byparam(startpos);
+                $(".pageshow span input").val("");
+                $(".layui-laypage-prev").data("current", page);
+                $(".layui-laypage-next").data("current", page);
+
+                //解决上下翻页
+                if(page == 1){
+                    $(".layui-laypage-prev").addClass("layui-disabled");
+                    $(".layui-laypage-next").removeClass("layui-disabled");
+                }
+                else{
+                    $(".layui-laypage-prev").removeClass("layui-disabled");
+                    if(page == pages){
+                        $(".layui-laypage-next").addClass("layui-disabled");
+                    }
+                    else{
+                        $(".layui-laypage-next").removeClass("layui-disabled");
+                    }
+                }
+
+                //解决两边的省略号的显示 pgmoren/pgmorep
+                if(pages - page <= 1){
+                    $(".pageshow .pgmoren").css("display", "none");
+                }
+                else{
+                    $(".pageshow .pgmoren").css("display", "inline-block");
+                }
+                if(page <= 3){
+                    $(".pageshow .pgmorep").css("display", "none");
+                }
+                else{
+                    $(".pageshow .pgmorep").css("display", "inline-block");
+                }
+
+                //解决当前页码的标识
+                $(".pageshow a.btn-cli").removeClass("btn-cli");
+                if(page <= 3){
+                    $(".pgone").text("1").data("page", "1");
+                    $(".pgtwo").text("2").data("page", "2");
+                    $(".pgthree").text("3").data("page", "3");
+                    $(".pageshow a:nth-child("+(page+3)+")").addClass("btn-cli");
+                }
+                else{
+                    $(".pgone").text(""+(page-2)).data("page", ""+(page-2));
+                    $(".pgtwo").text(""+(page-1)).data("page", ""+(page-1));
+                    $(".pgthree").text(""+(page)).data("page", ""+page).addClass("btn-cli");
+                }
+            }
+        }
+    };
+    $(".pageshow span button").click(pageshow_gopage);
 
     /**
      * 根据指定参数获取课程数据列表
