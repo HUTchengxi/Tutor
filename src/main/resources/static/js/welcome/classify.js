@@ -665,6 +665,9 @@ $(function() {
         $("header .searchshow").css("display","none");
         $(this).closest("div").find("i.del").delay(10).css("visibility","hidden");
         $(".mainshow ul.main").empty();
+
+        async_defaultct();
+
         $.ajax({
             async: true,
             type: "post",
