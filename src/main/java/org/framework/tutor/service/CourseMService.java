@@ -125,5 +125,113 @@ public interface CourseMService {
      * @param startpos
      * @return
      */
-    List<CourseMain> getCourseListMoreac(String ctype, Integer startpos);
+    List<CourseMain> getCourseListMoreAC(String ctype, Integer startpos);
+
+    /**
+     * 未指定主类别获取最新发布课程数据(关键字)
+     * @param keyword
+     * @param startpos
+     * @return
+     */
+    List<CourseMain> getCourseListNewKW(String keyword, Integer startpos);
+
+    /**
+     * 指定主类别获取最新发布课程数据(关键字)
+     * @param stype
+     * @param keyword
+     * @param startpos
+     * @return
+     */
+    List<CourseMain> getCourseListNewKW(Integer stype, String keyword, Integer startpos);
+
+    /**
+     * 未指定主类别获取最热发布课程数据(关键字)
+     * @param keyword
+     * @param startpos
+     * @return
+     */
+    List<CourseMain> getCourseListHotKW(String keyword, Integer startpos);
+
+    /**
+     * 指定主类别获取最热发布课程数据(关键字)
+     * @param stype
+     * @param keyword
+     * @param startpos
+     * @return
+     */
+    List<CourseMain> getCourseListHotSKW(Integer stype, String keyword, Integer startpos);
+
+    /**
+     * 未指定主类别获取最多发布课程数据(关键字)
+     * @param keyword
+     * @param startpos
+     * @return
+     */
+    List<CourseMain> getCourseListMoreKW(String keyword, Integer startpos);
+
+    /**
+     * 指定主类别获取最多发布课程数据(关键字)
+     * @param keyword
+     * @param startpos
+     * @param stype
+     * @return
+     */
+    List<CourseMain> getCourseListMoreSKW(Integer stype, String keyword, Integer startpos);
+
+    /**
+     * 未指定科目类别获取最新发布课程数据(关键字)
+     * @param ctype
+     * @param keyword
+     * @param startpos
+     * @return
+     */
+    List<CourseMain> getCourseListNewACK(String ctype, String keyword, Integer startpos);
+
+    /**
+     * 指定科目类别获取最新发布课程数据(关键字)
+     * @param stype
+     * @param ctype
+     * @param keyword
+     * @param startpos
+     * @return
+     */
+    List<CourseMain> getCourseListNewKW(Integer stype, String ctype, String keyword, Integer startpos);
+
+    /**
+     * 未指定科目类别获取最热发布课程数据(关键字)
+     * @param ctype
+     * @param keyword
+     * @param startpos
+     * @return
+     */
+    List<CourseMain> getCourseListHotACK(String ctype, String keyword, Integer startpos);
+
+    /**
+     * 指定科目类别获取最热发布课程数据(关键字)
+     * @param stype
+     * @param ctype
+     * @param keyword
+     * @param startpos
+     * @return
+     */
+    List<CourseMain> getCourseListHotKW(Integer stype, String ctype, String keyword, Integer startpos);
+
+    /**
+     * 未指定科目类别获取最多发布课程数据(关键字)
+     * @param ctype
+     * @param keyword
+     * @param startpos
+     * @return
+     */
+    List<CourseMain> getCourseListMoreACK(String ctype, String keyword, Integer startpos);
+
+    /**
+     * 指定科目类别获取最多发布课程数据(关键字)
+     * @param stype
+     * @param ctype
+     * @param keyword
+     * @param startpos
+     * @return
+     */
+    List<CourseMain> getCourseListMoreKW(Integer stype, String ctype, String keyword, Integer startpos);
 }

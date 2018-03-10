@@ -191,8 +191,164 @@ public class CourseMServiceImpl implements CourseMService {
      * @return
      */
     @Override
-    public List<CourseMain> getCourseListMoreac(String ctype, Integer startpos) {
+    public List<CourseMain> getCourseListMoreAC(String ctype, Integer startpos) {
 
         return courseMMapper.getCourseListMoreAC(ctype, startpos);
+    }
+
+    /**
+     * 未指定主类别获取最新发布课程数据(关键字)
+     * @param keyword
+     * @param startpos
+     * @return
+     */
+    @Override
+    public List<CourseMain> getCourseListNewKW(String keyword, Integer startpos) {
+
+        return courseMMapper.getCourseListNewKW(keyword, startpos);
+    }
+
+    /**
+     * 指定主类别获取最新发布课程数据(关键字)
+     * @param stype
+     * @param keyword
+     * @param startpos
+     * @return
+     */
+    @Override
+    public List<CourseMain> getCourseListNewKW(Integer stype, String keyword, Integer startpos) {
+
+        return courseMMapper.getCourseListNewSKW(stype, keyword, startpos);
+    }
+
+    /**
+     * 未定主类别获取最热发布课程数据(关键字)
+     * @param keyword
+     * @param startpos
+     * @return
+     */
+    @Override
+    public List<CourseMain> getCourseListHotKW(String keyword, Integer startpos) {
+
+        return courseMMapper.getCourseListHotKW(keyword, startpos);
+    }
+
+    /**
+     * 指定主类别获取最热发布课程数据(关键字)
+     * @param stype
+     * @param keyword
+     * @param startpos
+     * @return
+     */
+    @Override
+    public List<CourseMain> getCourseListHotSKW(Integer stype, String keyword, Integer startpos) {
+
+        return courseMMapper.getCourseListHotSKW(stype, keyword, startpos);
+    }
+
+    /**
+     * 未指定主类别获取最多发布课程数据(关键字)
+     * @param keyword
+     * @param startpos
+     * @return
+     */
+    @Override
+    public List<CourseMain> getCourseListMoreKW(String keyword, Integer startpos) {
+
+        return courseMMapper.getCourseListMoreKW(keyword, startpos);
+    }
+
+    /**
+     * 指定主类别获取最多发布课程数据(关键字)
+     * @param keyword
+     * @param startpos
+     * @param stype
+     * @return
+     */
+    @Override
+    public List<CourseMain> getCourseListMoreSKW(Integer stype, String keyword, Integer startpos) {
+
+        return courseMMapper.getCourseListMoreSKW(stype, keyword, startpos);
+    }
+
+    /**
+     * 未指定科目类别获取最新发布课程数据(关键字)
+     * @param ctype
+     * @param keyword
+     * @param startpos
+     * @return
+     */
+    @Override
+    public List<CourseMain> getCourseListNewACK(String ctype, String keyword, Integer startpos) {
+
+        return courseMMapper.getCourseListNewACK(ctype, keyword, startpos);
+    }
+
+    /**
+     * 指定科目类别获取最新发布课程数据(关键字)
+     * @param stype
+     * @param ctype
+     * @param keyword
+     * @param startpos
+     * @return
+     */
+    @Override
+    public List<CourseMain> getCourseListNewKW(Integer stype, String ctype, String keyword, Integer startpos) {
+
+        return courseMMapper.getCourseListNewCKW(stype, ctype, keyword, startpos);
+    }
+
+    /**
+     * 未指定科目类别获取最热发布课程数据(关键字)
+     * @param ctype
+     * @param keyword
+     * @param startpos
+     * @return
+     */
+    @Override
+    public List<CourseMain> getCourseListHotACK(String ctype, String keyword, Integer startpos) {
+
+        return courseMMapper.getCourseListHotACK(ctype, keyword, startpos);
+    }
+
+    /**
+     * 指定科目类别获取最热发布课程数据(关键字)
+     * @param stype
+     * @param ctype
+     * @param keyword
+     * @param startpos
+     * @return
+     */
+    @Override
+    public List<CourseMain> getCourseListHotKW(Integer stype, String ctype, String keyword, Integer startpos) {
+
+        return courseMMapper.getCourseListHotCKW(stype, ctype, keyword, startpos);
+    }
+
+    /**
+     * 未指定科目类别获取最多发布课程数据(关键字)
+     * @param ctype
+     * @param keyword
+     * @param startpos
+     * @return
+     */
+    @Override
+    public List<CourseMain> getCourseListMoreACK(String ctype, String keyword, Integer startpos) {
+
+        return courseMMapper.getCourseListMoreACK(ctype, keyword, startpos);
+    }
+
+    /**
+     * 指定科目类别获取最热发布课程数据(关键字)
+     * @param stype
+     * @param ctype
+     * @param keyword
+     * @param startpos
+     * @return
+     */
+    @Override
+    public List<CourseMain> getCourseListMoreKW(Integer stype, String ctype, String keyword, Integer startpos) {
+
+        return courseMMapper.getCourseListMoreCKW(stype, ctype, keyword, startpos);
     }
 }

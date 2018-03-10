@@ -233,6 +233,8 @@ $(function() {
      */
     var coursecli_stype = function () {
 
+        $("header .searchbox input.btn").data("status", "0");
+
         if($(this).closest("li").hasClass("cli")){
             return ;
         }
@@ -240,6 +242,7 @@ $(function() {
         $(".searchmain ul li.cli").removeClass("cli");
         $(this).closest("li").addClass("cli");
         $(".mainshow header ul").empty();
+
         //异步获取所有课程类别
         $.ajax({
             async: true,
@@ -340,13 +343,17 @@ $(function() {
         if(stype == undefined){
             stype = -1;
         }
+
+        var status = $("header .searchbox input.btn").data("status");
+        var keyword = $(".searchbox input:nth-child(1)").val();
+
         //异步获取指定科目类别的课程数据
         $(".listshow ul.main").empty();
         $.ajax({
             async: true,
             type: "post",
             url: "/coursemain_con/getcourselist",
-            data: {stype: stype, ctype: ctype, sort: sort, startpos: 0},
+            data: {stype: stype, ctype: ctype, sort: sort, startpos: 0, status: status, keyword: keyword},
             dataType: "json",
             success: function (data) {
                 $("div.listshow div.none").remove();
@@ -414,13 +421,21 @@ $(function() {
         var sort = $(this).data("sort");
         var stype = $(".searchmain ul li.cli a").data("stype");
         var ctype = $(".mainshow header ul li.cli a").data("ctype");
+
+        if(stype == undefined){
+            stype = -1;
+        }
+
+        var status = $("header .searchbox input.btn").data("status");
+        var keyword = $(".searchbox input:nth-child(1)").val();
+
         //异步获取指定科目类别的课程数据
         $(".listshow ul.main").empty();
         $.ajax({
             async: true,
             type: "post",
             url: "/coursemain_con/getcourselist",
-            data: {stype: stype, ctype: ctype, sort: sort, startpos: 0},
+            data: {stype: stype, ctype: ctype, sort: sort, startpos: 0, status: status, keyword: keyword},
             dataType: "json",
             success: function (data) {
                 $("div.listshow div.none").remove();
@@ -595,6 +610,7 @@ $(function() {
             data: {id: id},
             dataType: "json",
             success: function(data){
+                $("header .searchbox input.btn").data("status", "1");
                 var stype = data.stype;
                 $(".cli").removeClass("cli");
                 $(".searchmain ul li a").each(function(){
@@ -656,6 +672,7 @@ $(function() {
             data: {keyword: keyword},
             dataType: "json",
             success: function(data){
+                $("header .searchbox input.btn").data("status", "1");
                 var status = data.status;
                 if(status === "valid"){
                     $("nav.sortshow").css("display","none");
@@ -720,6 +737,7 @@ $(function() {
 
         var id = $(this).data("id");
         window.location = "/forward_con/showcourse?id="+id+"";
+        $("header .searchbox input.btn").data("status", "0");
     };
     $(document).on("click", ".listshow .main li", course_cli);
 });
