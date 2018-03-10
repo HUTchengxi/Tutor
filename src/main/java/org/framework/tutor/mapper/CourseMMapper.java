@@ -266,4 +266,72 @@ public interface CourseMMapper {
      */
     @Select("select * from course_main where ctype=#{ctype} and stype=#{stype} and name like CONCAT('%', #{keyword}, '%') order by ccount desc limit #{startpos}, 8")
     List<CourseMain> getCourseListMoreCKW(@Param("stype") Integer stype, @Param("ctype") String ctype, @Param("keyword") String keyword, @Param("startpos") Integer startpos);
+
+    /**
+     * 获取所有课程数
+     * @return
+     */
+    @Select("select count(*) from course_main")
+    Integer getCourseCount();
+
+    /**
+     * 关键字获取课程数
+     * @param keyword
+     * @return
+     */
+    @Select("select count(*) from course_main where name like CONCAT('%', #{keyword}, '%')")
+    Integer getCourseCountK(@Param("keyword") String keyword);
+
+    /**
+     * 科目类别获取课程数
+     * @param stype
+     * @return
+     */
+    @Select("select count(*) from course_main where stype=#{stype}")
+    Integer getCourseCountS(@Param("stype") Integer stype);
+
+    /**
+     * 科目类别+关键字获取课程数
+     * @param stype
+     * @param keyword
+     * @return
+     */
+    @Select("select count(*) from course_main where stype=#{stype} and name like CONCAT('%', #{keyword}, '%')")
+    Integer getCourseCountSK(@Param("stype") Integer stype, @Param("keyword") String keyword);
+
+    /**
+     * 课程主类别获取课程数
+     * @param ctype
+     * @return
+     */
+    @Select("select count(*) from course_main where ctype=#{ctype}")
+    Integer getCourseCountC(@Param("ctype") String ctype);
+
+    /**
+     * 课程主类别+关键字获取课程数
+     * @param ctype
+     * @param keyword
+     * @return
+     */
+    @Select("select count(*) from course_main where ctype=#{ctype} and name like CONCAT('%', #{keyword}, '%')")
+    Integer getCourseCountCK(@Param("ctype") String ctype, @Param("keyword") String keyword);
+
+    /**
+     * 课程主类别+科目类别获取课程数
+     * @param ctype
+     * @param stype
+     * @return
+     */
+    @Select("select count(*) from course_main where ctype=#{ctype} and stype=#{stype}")
+    Integer getCourseCountCS(@Param("ctype") String ctype, @Param("stype") Integer stype);
+
+    /**
+     * 课程主类别+科目类别+关键字获取课程数
+     * @param ctype
+     * @param stype
+     * @param keyword
+     * @return
+     */
+    @Select("select count(*) from course_main where ctype=#{ctype} and stype=#{stype} and name like CONCAT('%', #{keyword}, '%')")
+    Integer getCourseCountCSK(@Param("ctype") String ctype, @Param("stype") Integer stype, @Param("keyword") String keyword);
 }

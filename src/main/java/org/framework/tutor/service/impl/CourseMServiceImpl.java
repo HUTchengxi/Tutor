@@ -351,4 +351,96 @@ public class CourseMServiceImpl implements CourseMService {
 
         return courseMMapper.getCourseListMoreCKW(stype, ctype, keyword, startpos);
     }
+
+    /**
+     * 获取所有课程数
+     * @return
+     */
+    @Override
+    public Integer getCourseCount() {
+
+        return courseMMapper.getCourseCount();
+    }
+
+    /**
+     * 关键字获取课程数
+     * @param keyword
+     * @return
+     */
+    @Override
+    public Integer getCourseCountK(String keyword) {
+
+        return courseMMapper.getCourseCountK(keyword);
+    }
+
+    /**
+     * 科目类别获取课程数
+     * @param stype
+     * @return
+     */
+    @Override
+    public Integer getCourseCountS(Integer stype) {
+
+        return courseMMapper.getCourseCountS(stype);
+    }
+
+    /**
+     * 关键字+科目类别获取课程数
+     * @param stype
+     * @param keyword
+     * @return
+     */
+    @Override
+    public Integer getCourseCountSK(Integer stype, String keyword) {
+
+        return courseMMapper.getCourseCountSK(stype, keyword);
+    }
+
+    /**
+     * 课程主类别获取课程数
+     * @param ctype
+     * @return
+     */
+    @Override
+    public Integer getCourseCountC(String ctype) {
+
+        return courseMMapper.getCourseCountC(ctype);
+    }
+
+    /**
+     * 课程主类别+关键字获取课程数
+     * @param ctype
+     * @param keyword
+     * @return
+     */
+    @Override
+    public Integer getCourseCountCK(String ctype, String keyword) {
+
+        return courseMMapper.getCourseCountCK(ctype, keyword);
+    }
+
+    /**
+     * 课程主类别+科目类别获取课程数
+     * @param ctype
+     * @param stype
+     * @return
+     */
+    @Override
+    public Integer getCourseCountCS(String ctype, Integer stype) {
+
+        return courseMMapper.getCourseCountCS(ctype, stype);
+    }
+
+    /**
+     * 课程主类别+科目类别+关键字获取课程数
+     * @param ctype
+     * @param stype
+     * @param keyword
+     * @return
+     */
+    @Override
+    public Integer getCourseCountCSK(String ctype, Integer stype, String keyword) {
+
+        return courseMMapper.getCourseCountCSK(ctype, stype, keyword);
+    }
 }

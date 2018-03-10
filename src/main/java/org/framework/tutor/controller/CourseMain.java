@@ -277,7 +277,6 @@ public class CourseMain {
 
     /**
      * 获取指定的课程的数据
-     *
      * @param id
      * @param response
      * @throws IOException
@@ -303,6 +302,71 @@ public class CourseMain {
                 "\"uimgsrc\": \"" + userMain.getImgsrc() + "\", " +
                 "\"total\": \"" + courseMain.getTotal() + "\", " +
                 "\"descript\": \"" + courseMain.getDescript() + "\"}";
+
+        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.flush();
+        writer.close();
+    }
+
+    /**
+     * 获取所搜索的课程数量，便于实现分页
+     * @param stype
+     * @param ctype
+     * @param status
+     * @param keyword
+     * @param request
+     * @param response
+     * @throws IOException
+     */
+    @RequestMapping("/getcoursecount")
+    public void getCourseCount(Integer stype, String ctype, Integer status, String keyword, HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        request.setCharacterEncoding("utf-8");
+        PrintWriter writer = response.getWriter();
+        String res = null;
+
+        Integer total = 0;
+        //默认，不限课程类别进行排序
+        if(ctype.equals("all")){
+            //未指定主类别
+            if(stype == -1){
+                //不是通过用户搜素
+                if(status == null || status == 0){
+                    total = courseMService.getCourseCount();
+                }
+                else{
+                    total = courseMService.getCourseCountK(keyword);
+                }
+            }
+            else{
+                if(status == null || status == 0){
+                    total = courseMService.getCourseCountS(stype);
+                }
+                else{
+                    total = courseMService.getCourseCountSK(stype, keyword);
+                }
+            }
+        }
+        else{
+            if(stype == -1){
+                if(status == null || status == 0){
+                    total = courseMService.getCourseCountC(ctype);
+                }
+                else{
+                    total = courseMService.getCourseCountCK(ctype, keyword);
+                }
+            }
+            else{
+                if(status == null || status == 0){
+                    total = courseMService.getCourseCountCS(ctype, stype);
+                }
+                else{
+                    total = courseMService.getCourseCountCSK(ctype, stype, keyword);
+                }
+            }
+        }
+
+        res = "{\"total\": \""+total+"\"}";
 
         writer.print(new JsonParser().parse(res).getAsJsonObject());
         writer.flush();

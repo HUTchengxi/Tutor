@@ -135,14 +135,23 @@ $(function() {
     /**
      * 默认异步加载小学家教/不限类别/最新发布
      */
+    var glo_stype = "";
+    var glo_ctype = "";
+    var glo_status = "";
+    var glo_keyword = "";
+    var glo_sort = "";
     var async_defaultcm = function () {
 
         $(".listshow ul.main").empty();
+        var stype = 1;
+        var ctype = "all";
+        var status = 0;
+        var keyword = "";
         $.ajax({
             async: true,
             type: "post",
             url: "/coursemain_con/getcourselist",
-            data: {stype: 1, ctype: "all", sort: "new", startpos: 0},
+            data: {stype: stype, ctype: ctype, sort: "new", startpos: 0, status: status, keyword: keyword},
             dataType: "json",
             success: function (data) {
                 $("div.pageshow").css("display", "none");
@@ -150,12 +159,11 @@ $(function() {
                 if (status === "valid") {
                     $("nav.sortshow").css("display", "none");
                     $("div.listshow ul.main").css("display", "none");
-                    $("div.listshow").empty().append("<div class='none'><p>课程制作中，敬请期待！</p></div>");
+                    $("div.listshow div.none").remove();
+                    $("div.listshow").append("<div class='none'><p>课程制作中，敬请期待！</p></div>");
                     return;
                 }
-                var count = 0;
                 $.each(data, function (index, item) {
-                    count++;
                     var imgsrc = item.imgsrc;
                     var id = item.id;
                     var descript = item.descript;
@@ -178,12 +186,9 @@ $(function() {
 
                     $(".listshow ul.main").append($li.append($div.append($alink).append($bodydiv.append($ptitle).append($ptype).append($desp).append($ul).append($authordiv).append($footer))))
                 });
-                if (count < 3) {
-                    $(".pageshow").css("display", "none");
-                }
-                else {
-                    $(".pageshow").css("display", "-webkit-box");
-                }
+
+                //获取课程分页数据
+                get_coursecount(stype, ctype, status, keyword);
             },
             error: function (xhr, status) {
                 window.alert("后台环境异常导致无法获取课程数据，请刷新页面重试");
@@ -196,13 +201,13 @@ $(function() {
     /**
      * 默认异步小学所有学科类别
      */
-    var async_defaultct = function () {
+    var async_defaultct = function (stype) {
 
         $.ajax({
             async: true,
             type: "post",
             url: "/coursemain_con/getcoursetype",
-            data: {stype: 1},
+            data: {stype: stype},
             dataType: "json",
             success: function (data) {
                 $(".mainshow header ul").empty().append("<li class='pull-left cli'><a href='javascript:void(0);' data-ctype='all'>不限</a>");
@@ -212,7 +217,8 @@ $(function() {
                     $("nav.sortshow").css("display", "none");
                     $("div.listshow ul.main").css("display", "none");
                     $("div.pageshow").css("display", "none");
-                    $("div.listshow").empty().append("<div class='none'><p>课程制作中，敬请期待！</p></div>");
+                    $("div.listshow div.none").remove();
+                    $("div.listshow").append("<div class='none'><p>课程制作中，敬请期待！</p></div>");
                     return;
                 }
                 $(".mainshow header ul").css("display", "block");
@@ -226,7 +232,7 @@ $(function() {
             }
         });
     };
-    async_defaultct();
+    async_defaultct(1);
 
     /**
      * 主类别按钮点击事件：小学/初中/高中/其他兴趣
@@ -269,20 +275,26 @@ $(function() {
 
         //异步获取所有课程数据
         $(".listshow ul.main").empty();
+        var ctype = "all";
+        var status = 0;
+        var keyword = "";
+
+        var sort = $(".sortshow ul li.cli a").data("sort");
         $.ajax({
             async: true,
             type: "post",
             url: "/coursemain_con/getcourselist",
-            data: {stype: stype, ctype: "all", sort: "new", startpos: 0},
+            data: {stype: stype, ctype: ctype, sort: sort, startpos: 0, status: status, keyword: keyword},
             dataType: "json",
             success: function (data) {
                 $("div.listshow div.none").remove();
-                var status = data.status;
-                if (status === "valid") {
+                var stat = data.status;
+                if (stat === "valid") {
                     $("nav.sortshow").css("display","none");
                     $("div.listshow ul.main").empty().css("display", "none");
                     $("div.pageshow").css("display", "none");
-                    $("div.listshow").empty().append("<div class='none'><p>课程制作中，敬请期待！</p></div>");
+                    $("div.listshow div.none").remove();
+                    $("div.listshow").append("<div class='none'><p>课程制作中，敬请期待！</p></div>");
                     return;
                 }
                 $("div.mainshow ul").css("display","block");
@@ -312,12 +324,7 @@ $(function() {
 
                     $(".listshow ul.main").append($li.append($div.append($alink).append($bodydiv.append($ptitle).append($ptype).append($desp).append($ul).append($authordiv).append($footer))));
                 });
-                if (count < 3) {
-                    $(".pageshow").css("display", "none");
-                }
-                else {
-                    $(".pageshow").css("display", "-webkit-box");
-                }
+                get_coursecount(stype, ctype, status, keyword);
             },
             error: function (xhr, status) {
                 window.alert("后台环境异常导致无法获取课程数据，请刷新页面重试");
@@ -357,13 +364,14 @@ $(function() {
             dataType: "json",
             success: function (data) {
                 $("div.listshow div.none").remove();
-                var status = data.status;
-                if (status === "valid") {
+                var stat = data.status;
+                if (stat === "valid") {
                     $("nav.sortshow").css("display","none");
                     $("div.listshow ul.main").empty();
                     $("div.pageshow").css("display", "none");
                     $("div.mainshow ul").empty().css("display","none");
-                    $("div.listshow").empty().append("<div class='none'><p>课程制作中，敬请期待！</p></div>");
+                    $("div.listshow div.none").remove();
+                    $("div.listshow").append("<div class='none'><p>课程制作中，敬请期待！</p></div>");
                     return;
                 }
                 $("div.mainshow ul").css("display","block");
@@ -393,12 +401,7 @@ $(function() {
 
                     $(".listshow ul.main").append($li.append($div.append($alink).append($bodydiv.append($ptitle).append($ptype).append($desp).append($ul).append($authordiv).append($footer))))
                 });
-                if (count < 3) {
-                    $(".pageshow").css("display", "none");
-                }
-                else {
-                    $(".pageshow").css("display", "-webkit-box");
-                }
+                get_coursecount(stype, ctype, status, keyword);
             },
             error: function (xhr, status) {
                 window.alert("后台环境异常导致无法获取课程数据，请刷新页面重试");
@@ -439,13 +442,14 @@ $(function() {
             dataType: "json",
             success: function (data) {
                 $("div.listshow div.none").remove();
-                var status = data.status;
-                if (status === "valid") {
+                var stat = data.status;
+                if (stat === "valid") {
                     $("nav.sortshow").css("display","none");
                     $("div.listshow ul.main").empty();
                     $("div.pageshow").css("display", "none");
                     $("div.mainshow ul.main").empty().css("display","none");
-                    $("div.listshow").empty().append("<div class='none'><p>课程制作中，敬请期待！</p></div>");
+                    $("div.listshow div.none").remove();
+                    $("div.listshow").append("<div class='none'><p>课程制作中，敬请期待！</p></div>");
                     return;
                 }
                 $("div.mainshow ul").css("display","block");
@@ -475,12 +479,8 @@ $(function() {
 
                     $(".listshow ul.main").append($li.append($div.append($alink).append($bodydiv.append($ptitle).append($ptype).append($desp).append($ul).append($authordiv).append($footer))));
                 });
-                if (count < 3) {
-                    $(".pageshow").css("display", "none");
-                }
-                else {
-                    $(".pageshow").css("display", "-webkit-box");
-                }
+
+                get_coursecount(stype, ctype, status, keyword);
             },
             error: function (xhr, status) {
                 window.alert("后台环境异常导致无法获取课程数据，请刷新页面重试");
@@ -518,7 +518,6 @@ $(function() {
                     $("header .searchshow ul").append("<li class='none'>抱歉，没有找到相关课程</li>");
                 }
                 else{
-
                     var count = 0;
                     $.each(data, function(index, item){
                         count++;
@@ -682,7 +681,8 @@ $(function() {
                     $("div.listshow ul.main").empty();
                     $("div.pageshow").css("display", "none");
                     $("div.mainshow ul.main").empty().css("display","none");
-                    $("div.listshow").empty().append("<div class='none'><p>课程制作中，敬请期待！</p></div>");
+                    $("div.listshow div.none").remove();
+                    $("div.listshow").append("<div class='none'><p>课程制作中，敬请期待！</p></div>");
                 }
                 else{
                     $(".searchmain ul li.cli").removeClass("cli");
@@ -715,12 +715,11 @@ $(function() {
 
                         $(".listshow ul.main").append($li.append($div.append($alink).append($bodydiv.append($ptitle).append($ptype).append($desp).append($ul).append($authordiv).append($footer))));
                     });
-                    if (count < 3) {
-                        $(".pageshow").css("display", "none");
-                    }
-                    else {
-                        $(".pageshow").css("display", "-webkit-box");
-                    }
+
+                    var stype = "-1";
+                    var ctype = "all";
+                    var status = 1;
+                    get_coursecount(stype, ctype, status, keyword);
                 }
             },
             error: function(xhr, status){
@@ -743,4 +742,266 @@ $(function() {
         $("header .searchbox input.btn").data("status", "0");
     };
     $(document).on("click", ".listshow .main li", course_cli);
+
+    /**
+     * 获取当前选择的数据的总条数
+     */
+    var get_coursecount = function(stype, ctype, status, keyword){
+
+        $.ajax({
+            async: true,
+            type: "post",
+            url: "/coursemain_con/getcoursecount",
+            data: {stype: stype, ctype: ctype, status: status, keyword: keyword},
+            dataType: "json",
+            success: function(data){
+                glo_status = status;
+                glo_ctype = ctype;
+                glo_keyword = keyword;
+                glo_stype = stype;
+                glo_sort = $(".sortshow ul li.cli a").data("sort");
+                var total = data.total;
+                var count = 8;
+                if(total/count <= 1){
+                    $(".pageshow").css("display", "none");
+                    return ;
+                }
+                else{
+                    $(".pageshow").css("display", "-webkit-box");
+                    //进行分页按钮的规整
+                    var page = Math.ceil(total/count);
+                    if(page <= 3){
+                        $(".pgmoren").css("display", "none");
+                        $(".pgend").css("display", "none");
+                        $(".layui-box span:nth-child(1)").text("共"+total+"条");
+                        $(".layui-box.layui-laypage a").data("current", "1");
+                        $(".layui-box.layui-laypage a.layui-laypage-prev").addClass("layui-disabled");
+                        $(".layui-box.layui-laypage a.pgone").addClass("btn-cli");
+                        $(".layui-box.layui-laypage a.layui-laypage-next").data("page", page);
+                        if(page == 2){
+                            $(".pgthree").css("display", "none");
+                        }
+                    }
+                    else{
+                        if(page > 4) {
+                            $(".pgmoren").css("display", "inline-block");
+                        }
+                        else{
+                            $(".pgmoren").css("display", "none");
+                        }
+                        $(".pgend").css("display", "inline-block").text(page).data("page", page);
+                        $(".layui-box span:nth-child(1)").text("共"+total+"条");
+                        $(".layui-box.layui-laypage a").data("current", "1");
+                        $(".layui-box.layui-laypage a.layui-laypage-prev").addClass("layui-disabled");
+                        $(".layui-box.layui-laypage a.pgone").addClass("btn-cli");
+                        $(".layui-box.layui-laypage a.layui-laypage-next").data("page", page);
+                    }
+                }
+            },
+            error: function(xhr, status){
+                window.alert("后台环境异常导致无法进行课程分页，请稍后重试");
+                window.console.log(xhr);
+                $(".pageshow").empty();
+            }
+        })
+    };
+
+    /**
+     * 点击查看上一页事件
+     */
+    var pageshow_prev = function(){
+
+        if($(this).hasClass("layui-disabled")){
+            return ;
+        }
+        else{
+            $(".layui-laypage-next").removeClass("layui-disabled");
+            var current = $(this).data("current");
+            var count = 8;
+            var startpos = count * (current-2);
+            getcourse_byparam(startpos);
+            var page = $(".pgend").data("page");
+            if(page == undefined){
+                page = $(".pgthree").data("page");
+                if(page == undefined){
+                    page = $(".pgtwo").data("page");
+                }
+            }
+            $(this).data("current", --current);
+            $(".layui-laypage-next").data("current", current);
+            if(1 == current){
+                $(this).addClass("layui-disabled");
+            }
+
+            $(".pageshow a.btn-cli").removeClass("btn-cli");
+            if(current+1 == page){
+                if(page > 3) {
+                    $(".pgthree").addClass("btn-cli");
+                }
+                else{
+                    $(".pgtwo").addClass("btn-cli");
+                }
+            }
+            else{
+                $(".pgmoren").css("display", "inline-block");
+                if(current > 3){
+                    $(".pgmorep").css("display", "inline-block");
+                    $(".pgone").text(""+(current-1)).data("page", ""+(current-2));
+                    $(".pgtwo").text(""+(current)).data("page", ""+(current-1)).addClass("btn-cli");
+                    $(".pgthree").text(""+(current+1)).data("page", ""+(current));
+                }
+                else{
+                    $(".pgmorep").css("display", "none");
+                    $(".pgone").text("1").data("page", "1");
+                    $(".pgtwo").text("2").data("page", "2");
+                    $(".pgthree").text("3").data("page", "3");
+                    $(".pageshow a:nth-child("+(current+3)+")").addClass("btn-cli");
+                }
+
+            }
+        }
+    };
+    $(".pageshow .layui-laypage-prev").click(pageshow_prev);
+
+    /**
+     * 点击查看下一页事件
+     */
+    var pageshow_next = function(){
+
+        if($(this).hasClass("layui-disabled")){
+            return ;
+        }
+        else{
+            $(".layui-laypage-prev").removeClass("layui-disabled");
+            var current = $(this).data("current");
+            var count = 8;
+            var startpos = count * current;
+            getcourse_byparam(startpos);
+            var page = $(this).data("page");
+            $(this).data("current", ++current);
+            $(".layui-laypage-prev").data("current", current);
+            if(page == current){
+                $(this).addClass("layui-disabled");
+            }
+
+            $(".pageshow a.btn-cli").removeClass("btn-cli");
+            if(current <= 3 || page == 4){
+                $(".pageshow .pgmorep").css("display", "none");
+                $(".pageshow a:nth-child("+(current+3)+")").addClass("btn-cli");
+            }
+            else{
+                if(page == current){
+                    $(".pgend").addClass("btn-cli");
+                    $(".pgmoren").css("display", "none");
+                }
+                else{
+                    $(".pgmorep").css("display", "inline-block");
+                    $(".pgthree").addClass("btn-cli").text(""+(current)).data("page", ""+(current));
+                    $(".pgtwo").text(""+(current-1)).data("page", ""+(current-1));
+                    $(".pgone").text(""+(current-2)).data("page", ""+(current-2));
+                    if(page == current+1){
+                        $(".pgmoren").css("display", "none");
+                    }
+                    else{
+                        $(".pgmoren").css("display", "inline-block");
+                    }
+                }
+            }
+        }
+    };
+    $(".pageshow .layui-laypage-next").click(pageshow_next);
+
+    /**
+     * 点击进入指定页码
+     */
+    var pageshow_clilink = function(){
+
+        if($(this).hasClass("btn-cli")){
+            return ;
+        }
+
+        $(".pageshow .pglink.btn-cli").removeClass("btn-cli");
+        $(this).addClass("btn-cli");
+
+        var page = $(this).data("page");
+        var count = 8;
+        var startpos = count * (page-1);
+        getcourse_byparam(startpos);
+        $(".layui-laypage-prev").data("current", page);
+        $(".layui-laypage-next").data("current", page);
+        var total = "";
+        if($(".pgend").css("display") == "none"){
+            if($(".pgthree").css("display") == "none"){
+                total = $(".pgtwo").data("page");
+            }
+            else{
+                total = $(".pgthree").data("page");
+            }
+        }
+        else{
+            total = $(".pgend").data("page");
+        }
+        if(page == 1){
+            $(".layui-laypage-prev").addClass("layui-disabled");
+            $(".layui-laypage-next").removeClass("layui-disabled");
+        }
+        else{
+            $(".layui-laypage-prev").removeClass("layui-disabled");
+            if(page == total){
+                $(".layui-laypage-next").addClass("layui-disabled");
+            }
+            else{
+                $(".layui-laypage-next").removeClass("layui-disabled");
+            }
+        }
+    };
+    $(".pageshow .pglink").click(pageshow_clilink);
+
+    /**
+     * 根据指定参数获取课程数据列表
+     */
+    var getcourse_byparam = function(startpos){
+
+        $.ajax({
+            async: true,
+            type: "post",
+            url: "/coursemain_con/getcourselist",
+            data: {stype: glo_stype, ctype: glo_ctype, sort: glo_sort, startpos: startpos, status: glo_status, keyword: glo_keyword},
+            dataType: "json",
+            success: function (data) {
+                $("div.listshow div.none").remove();
+                $("div.listshow ul.main").empty();
+                $("div.mainshow ul").css("display","block");
+                $("nav.sortshow").css("display","block");
+                $.each(data, function (index, item) {
+                    var imgsrc = item.imgsrc;
+                    var id = item.id;
+                    var descript = item.descript;
+                    var jcount = item.jcount;
+                    var name = item.name;
+                    var price = item.price;
+                    var uimgsrc = item.uimgsrc;
+                    var username = item.nickname;
+
+                    var $li = $("<li class='pull-left' data-id='"+id+"'></li>");
+                    var $div = $("<div class='course'></div>");
+                    var $alink = $("<a href='javascript:void(0);'><img src='" + imgsrc + "' /></a>");
+                    var $bodydiv = $("<div class='coursebody'></div>");
+                    var $ptitle = $("<p class='title'>" + name + "</p>");
+                    var $ptype = $("<p class='type'>一对多&nbsp;&nbsp;&nbsp;&nbsp;<i class=\"layui-icon\">&#xe612;" + jcount + "</i></p>");
+                    var $desp = $("<p class='descript'>" + descript + "</p>");
+                    var $ul = $("<ul class='clearfix price'><li class='pull-left'><a href='javascript:void(0);'>￥" + price + "</a></li></ul>");
+                    var $authordiv = $("<div class='author'><span>讲师：</span><a href='javascript:void(0);'><img src='" + uimgsrc + "' /></a><a href='javascript:void(0);'>" + username + "</a></div>");
+                    var $footer = $("<footer class='listmore'><a href='javascript:void(0);'>查看详情<i class='layui-icon'>&#xe65b;</i></a>")
+
+                    $(".listshow ul.main").append($li.append($div.append($alink).append($bodydiv.append($ptitle).append($ptype).append($desp).append($ul).append($authordiv).append($footer))));
+                });
+
+            },
+            error: function (xhr, status) {
+                window.alert("后台环境异常导致无法获取课程数据，请刷新页面重试");
+                window.console.log(xhr);
+            }
+        });
+    };
 });

@@ -234,4 +234,64 @@ public interface CourseMService {
      * @return
      */
     List<CourseMain> getCourseListMoreKW(Integer stype, String ctype, String keyword, Integer startpos);
+
+    /**
+     * 获取所有课程数
+     * @return
+     */
+    Integer getCourseCount();
+
+    /**
+     * 关键字获取课程数
+     * @param keyword
+     * @return
+     */
+    Integer getCourseCountK(String keyword);
+
+    /**
+     * 科目类别获取课程数
+     * @param stype
+     * @return
+     */
+    Integer getCourseCountS(Integer stype);
+
+    /**
+     * 科目类别+关键字获取课程数
+     * @param stype
+     * @param keyword
+     * @return
+     */
+    Integer getCourseCountSK(Integer stype, String keyword);
+
+    /**
+     * 课程主类别获取课程数
+     * @param ctype
+     * @return
+     */
+    Integer getCourseCountC(String ctype);
+
+    /**
+     * 课程主类别+关键字获取课程数
+     * @param ctype
+     * @param keyword
+     * @return
+     */
+    Integer getCourseCountCK(String ctype, String keyword);
+
+    /**
+     * 课程主类别+科目类别获取课程数
+     * @param ctype
+     * @param stype
+     * @return
+     */
+    Integer getCourseCountCS(String ctype, Integer stype);
+
+    /**
+     * 课程主类别+科目类别+关键字获取课程数
+     * @param ctype
+     * @param stype
+     * @param keyword
+     * @return
+     */
+    Integer getCourseCountCSK(String ctype, Integer stype, String keyword);
 }
