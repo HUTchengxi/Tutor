@@ -10,16 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf479440-431d-499c-9612-40c14de1a166" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/classify.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/classify.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/classify.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/classify.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/order/mycart.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/order/mycart.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/order/myorder.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/order/myorder.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/classify.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/classify.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/classify.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/classify.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/order/mycart.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/order/mycart.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/order/myorder.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/order/myorder.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -1067,7 +1058,7 @@
       <workItem from="1520557104245" duration="4307000" />
       <workItem from="1520578891296" duration="11444000" />
       <workItem from="1520645575835" duration="17856000" />
-      <workItem from="1520679761809" duration="7306000" />
+      <workItem from="1520679761809" duration="7969000" />
     </task>
     <task id="LOCAL-00001" summary="将毕设项目提交到gitlab">
       <created>1520393481249</created>
@@ -1139,11 +1130,18 @@
       <option name="project" value="LOCAL" />
       <updated>1520670384644</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="实现了课程的指定页面跳转浏览和一些前端展示bug的解决，具体2.0版本文件中介绍">
+      <created>1520691542304</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1520691542304</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="610982000" />
+    <option name="totallyTimeSpent" value="611645000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1237,7 +1235,8 @@
     <MESSAGE value="解决了主类别选择为空时再次点击搜索时的课程类别的消失" />
     <MESSAGE value="解决了课程搜索为空时的提示内容不断append的bug" />
     <MESSAGE value="实现了课程的分页浏览，并解决了三级搜索的undefined的bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现了课程的分页浏览，并解决了三级搜索的undefined的bug" />
+    <MESSAGE value="实现了课程的指定页面跳转浏览和一些前端展示bug的解决，具体2.0版本文件中介绍" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现了课程的指定页面跳转浏览和一些前端展示bug的解决，具体2.0版本文件中介绍" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
