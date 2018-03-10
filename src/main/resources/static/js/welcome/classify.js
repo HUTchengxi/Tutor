@@ -150,7 +150,7 @@ $(function() {
                 if (status === "valid") {
                     $("nav.sortshow").css("display", "none");
                     $("div.listshow ul.main").css("display", "none");
-                    $("div.listshow").append("<div class='none'><p>课程制作中，敬请期待！</p></div>");
+                    $("div.listshow").empty().append("<div class='none'><p>课程制作中，敬请期待！</p></div>");
                     return;
                 }
                 var count = 0;
@@ -212,7 +212,7 @@ $(function() {
                     $("nav.sortshow").css("display", "none");
                     $("div.listshow ul.main").css("display", "none");
                     $("div.pageshow").css("display", "none");
-                    $("div.listshow").append("<div class='none'><p>课程制作中，敬请期待！</p></div>");
+                    $("div.listshow").empty().append("<div class='none'><p>课程制作中，敬请期待！</p></div>");
                     return;
                 }
                 $(".mainshow header ul").css("display", "block");
@@ -282,7 +282,7 @@ $(function() {
                     $("nav.sortshow").css("display","none");
                     $("div.listshow ul.main").empty().css("display", "none");
                     $("div.pageshow").css("display", "none");
-                    $("div.listshow").append("<div class='none'><p>课程制作中，敬请期待！</p></div>");
+                    $("div.listshow").empty().append("<div class='none'><p>课程制作中，敬请期待！</p></div>");
                     return;
                 }
                 $("div.mainshow ul").css("display","block");
@@ -363,7 +363,7 @@ $(function() {
                     $("div.listshow ul.main").empty();
                     $("div.pageshow").css("display", "none");
                     $("div.mainshow ul").empty().css("display","none");
-                    $("div.listshow").append("<div class='none'><p>课程制作中，敬请期待！</p></div>");
+                    $("div.listshow").empty().append("<div class='none'><p>课程制作中，敬请期待！</p></div>");
                     return;
                 }
                 $("div.mainshow ul").css("display","block");
@@ -445,7 +445,7 @@ $(function() {
                     $("div.listshow ul.main").empty();
                     $("div.pageshow").css("display", "none");
                     $("div.mainshow ul.main").empty().css("display","none");
-                    $("div.listshow").append("<div class='none'><p>课程制作中，敬请期待！</p></div>");
+                    $("div.listshow").empty().append("<div class='none'><p>课程制作中，敬请期待！</p></div>");
                     return;
                 }
                 $("div.mainshow ul").css("display","block");
@@ -682,7 +682,7 @@ $(function() {
                     $("div.listshow ul.main").empty();
                     $("div.pageshow").css("display", "none");
                     $("div.mainshow ul.main").empty().css("display","none");
-                    $("div.listshow").append("<div class='none'><p>课程制作中，敬请期待！</p></div>");
+                    $("div.listshow").empty().append("<div class='none'><p>课程制作中，敬请期待！</p></div>");
                 }
                 else{
                     $(".searchmain ul li.cli").removeClass("cli");
