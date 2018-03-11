@@ -9,34 +9,9 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" line="187" mnemonic="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf479440-431d-499c-9612-40c14de1a166" name="Default" comment="实现了课程的指定页面跳转浏览和一些前端展示bug的解决，具体2.0版本文件中介绍">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_javax_mail_1_5_4.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserVali.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/UserVali.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserVMapper.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserVService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserVServiceImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/util/EmailUtil.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Tutor_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/Tutor_war_exploded.xml" />
+    <list default="true" id="bf479440-431d-499c-9612-40c14de1a166" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/tutor.sql" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Tutor.iml" afterPath="$PROJECT_DIR$/Tutor.iml" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/generatorConfig.xml" afterPath="$PROJECT_DIR$/src/generatorConfig.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/Register.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/Register.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMMapper.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMMapper.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMService.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/register/mine/register.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/register/mine/register.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/ForwardAll.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/ForwardAll.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/Register.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/Register.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/mapper/UserMMapper.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/mapper/UserMMapper.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/UserMService.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/UserMService.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/impl/UserMServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/impl/UserMServiceImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/register/mine/register.js" afterPath="$PROJECT_DIR$/target/classes/static/js/register/mine/register.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -337,9 +312,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
+    <option name="x" value="896" />
+    <option name="y" value="7" />
+    <option name="width" value="1122" />
     <option name="height" value="1048" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -623,19 +598,19 @@
     <property name="jsx.switch.disabled" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\admin\IdeaProjects\Tutor\src\main\resources\static\js\welcome\mycourse" />
-      <recent name="C:\Users\admin\IdeaProjects\Tutor\src\main\resources\static\js\welcome\personal" />
-      <recent name="C:\Users\admin\IdeaProjects\Tutor\src\main\resources\static\page\error" />
-      <recent name="C:\Users\admin\IdeaProjects\Tutor\src\main\resources\static\error" />
-      <recent name="C:\Users\admin\IdeaProjects\Tutor\src\main\resources\static\images\welcome" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\admin\IdeaProjects\Tutor\src" />
       <recent name="C:\Users\admin\IdeaProjects\Tutor\src\main\resources\static\js\welcome" />
       <recent name="C:\Users\admin\IdeaProjects\Tutor\src\main\resources\static\css\welcome\personal" />
       <recent name="C:\Users\admin\IdeaProjects\Tutor\src\main\resources\static\js\welcome\personal" />
       <recent name="C:\Users\admin\IdeaProjects\Tutor\src\main\resources\templates\home\order" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\IdeaProjects\Tutor\src\main\java\org\framework\tutor\log" />
+      <recent name="C:\Users\admin\IdeaProjects\Tutor\src\main\resources\static\js\welcome\mycourse" />
+      <recent name="C:\Users\admin\IdeaProjects\Tutor\src\main\resources\static\js\welcome\personal" />
+      <recent name="C:\Users\admin\IdeaProjects\Tutor\src\main\resources\static\page\error" />
+      <recent name="C:\Users\admin\IdeaProjects\Tutor\src\main\resources\static\error" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -997,7 +972,7 @@
       <workItem from="1520645575835" duration="17856000" />
       <workItem from="1520679761809" duration="9258000" />
       <workItem from="1520761850060" duration="404000" />
-      <workItem from="1520762276241" duration="8939000" />
+      <workItem from="1520762276241" duration="9060000" />
     </task>
     <task id="LOCAL-00001" summary="将毕设项目提交到gitlab">
       <created>1520393481249</created>
@@ -1083,11 +1058,18 @@
       <option name="project" value="LOCAL" />
       <updated>1520695139614</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="邮箱注册以及后续的验证的实现，还未实现邮箱注册后的等待/重发界面">
+      <created>1520780099718</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1520780099718</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="622277000" />
+    <option name="totallyTimeSpent" value="622398000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1182,7 +1164,8 @@
     <MESSAGE value="解决了课程搜索为空时的提示内容不断append的bug" />
     <MESSAGE value="实现了课程的分页浏览，并解决了三级搜索的undefined的bug" />
     <MESSAGE value="实现了课程的指定页面跳转浏览和一些前端展示bug的解决，具体2.0版本文件中介绍" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现了课程的指定页面跳转浏览和一些前端展示bug的解决，具体2.0版本文件中介绍" />
+    <MESSAGE value="邮箱注册以及后续的验证的实现，还未实现邮箱注册后的等待/重发界面" />
+    <option name="LAST_COMMIT_MESSAGE" value="邮箱注册以及后续的验证的实现，还未实现邮箱注册后的等待/重发界面" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
