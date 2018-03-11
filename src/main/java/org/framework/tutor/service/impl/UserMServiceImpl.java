@@ -108,4 +108,33 @@ public class UserMServiceImpl implements UserMService {
 
         return userMMapper.modUserinfo(username, nickname, sex, age, info);
     }
+
+    /**
+     * 判断邮箱是否已经被注册
+     * @param email
+     * @return
+     */
+    @Override
+    public boolean emailExist(String email) {
+
+        if(userMMapper.emailExist(email) != null){
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * 进行邮箱注册
+     * @param identity
+     * @param username
+     * @param password
+     * @param nickname
+     * @param email
+     * @return
+     */
+    @Override
+    public boolean registerByEmail(Integer identity, String username, String password, String nickname, String email) {
+
+        return userMMapper.registerByEmail(identity, username, password, nickname, email);
+    }
 }

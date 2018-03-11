@@ -1,7 +1,13 @@
 package org.framework.tutor.controller;
 
+import org.framework.tutor.service.UserVService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import sun.java2d.pipe.SpanShapeRenderer;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * 处理一切页面跳转请求
@@ -10,6 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/forward_con")
 public class ForwardAll {
+
+    @Autowired
+    private UserVService userVService;
 
     /**
      * 进入登录界面
@@ -166,5 +175,33 @@ public class ForwardAll {
     public String goSetting(){
 
         return "/home/mysetting";
+    }
+
+    /**
+     * 校验邮箱注册码
+     * @param username
+     * @param valicode
+     * @return
+     */
+    @RequestMapping("/register_check")
+    public String register_check(String username, String valicode){
+
+        //清空不是当天发送的验证码(留存23：59-24：00的bug)
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String now = simpleDateFormat.format(new Date());
+        userVService.checkAll(now);
+
+        //获取正确的邮箱验证码
+        String realcode = userVService.getCodeByUsername(username);
+
+        if(realcode != null && realcode.equals(valicode)){
+
+            //清除未验证状态
+            userVService.delStatus(username);
+            return "/login/index";
+        }
+        else{
+            return "/home/welcome";
+        }
     }
 }

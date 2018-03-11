@@ -2,6 +2,7 @@ package org.framework.tutor.mapper;
 
 import org.apache.ibatis.annotations.*;
 import org.framework.tutor.domain.UserMain;
+import org.framework.tutor.domain.UserMessage;
 
 import java.util.List;
 
@@ -69,4 +70,25 @@ public interface UserMMapper {
     @Update("update user_main set nickname = #{nickname}, sex = #{sex}, age = #{age}, info = #{info} where username = #{username}")
     boolean modUserinfo(@Param("username") String username, @Param("nickname") String nickname, @Param("sex") Integer sex,
                         @Param("age") Integer age, @Param("info") String info);
+
+    /**
+     * 判断邮箱是否已经被注册
+     * @param email
+     * @return
+     */
+    @Select("select * from user_main where email=#{email}")
+    UserMain emailExist(@Param("email") String email);
+
+    /**
+     * 邮箱注册用户
+     * @param identity
+     * @param username
+     * @param password
+     * @param nickname
+     * @param email
+     * @return
+     */
+    @Insert("insert into user_main(identity, username, password, nickname, email) values(#{identity}, #{username}, #{password}, #{nickname}, #{email})")
+    boolean registerByEmail(@Param("identity") Integer identity, @Param("username") String username, @Param("password") String password,
+                            @Param("nickname") String nickname, @Param("email") String email);
 }

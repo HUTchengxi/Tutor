@@ -28,12 +28,13 @@ create table user_main(
 #用户注册验证表
 create table user_vali(
   id int auto_increment comment "唯一标识",
-  uid int comment "用户唯一标识",
   username varchar(20) not null comment "用户名",
---   nickname varchar(12) not null comment "昵称",
-  valicode int not null comment "验证码，保留一天有效期，过期注册作废",
+  valicode int comment "邮箱验证码，保留一天有效期，过期注册作废",
   regtime datetime default now() comment "注册的时间",
+  status int not null comment "0邮箱验证，1手机号码验证",
+  resend int default 1 comment "用户是否屏蔽验证弹出消息，1表示不屏蔽，0表示屏蔽",
   key(id),
+  primary key(username),
   foreign key(username) references user_main(username)
 );
 
