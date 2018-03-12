@@ -65,11 +65,11 @@ body {
 		background-size: cover;
 		background-position: -30% center;
 		background-repeat: no-repeat;
-		background-image: url(../images/bg_2.jpg);
+		background-image: url(/images/welcome/personal/bg_2.jpg);
 		height: 100%;
 	}
 	&.style-3 {
-		background: $brand-white url(../images/geometry2.png) repeat;
+		background: $brand-white url(/images/welcome/personal/geometry2.png) repeat;
 	}
 }
 a {

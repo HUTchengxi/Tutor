@@ -1,5 +1,7 @@
 package org.framework.tutor.service;
 
+import org.framework.tutor.domain.UserVali;
+
 /**
  * 注册验证服务层接口
  * @author chengxi
@@ -31,4 +33,18 @@ public interface UserVService {
      * 清空当天失效的验证数据
      */
     void checkAll(String now);
+
+    /**
+     * 判断当前邮箱是否已经被验证
+     * @param email
+     * @return
+     */
+    UserVali checkEmailStatus(String email);
+
+    /**
+     * 更新邮箱注册码
+     * @param email
+     * @param valicode
+     */
+    void updateEmailCode(String email, String valicode);
 }

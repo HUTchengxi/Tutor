@@ -49,15 +49,42 @@ $(function(){
                         hello = "晚上好";
                     }
                     var nickname = data.nick;
+
+                    //获取我的通知数量
+                    var count = 0;
+                    $.ajax({
+                        async: false,
+                        type: "post",
+                        url: "/usermessage_con/getmymessagecount",
+                        dataType: "json",
+                        success: function(data){
+                            var status = data.status;
+                            if(status === "invalid"){
+                                window.location = "/forward_con/welcome";
+                            }
+                            else if(status === "mysqlerr"){
+                                window.alert("后台服务器异常导致无法获取通知数据，请刷新页面重试");
+                            }
+                            else{
+                                count = data.count;
+                            }
+                        },
+                        error: function(xhr, status){
+                            window.alert("后台环境异常导致");
+                            window.console.log(xhr);
+                        }
+                    });
+
                     $("nav ul.navbar-right").append("<li class='nav-time'><a>现在是：<i style='color: #00b6ff;'>"+now+"</i></a></li>" +
                         "                   <li><a style=\"color: black;\"><p>"+hello+"：<span class=\"span-cls-nick\" style=\"color: red;\">"+nickname+"</span></p></a></li>\n" +
                         "                    <li class=\"dropdown\">\n" +
                         "                        <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">个人中心<i class=\"caret\"></i></a>\n" +
                         "                        <ul class=\"dropdown-menu\">\n" +
-                        "                            <li><a>基本信息</a></li>\n" +
-                        "                            <li><a>我的订单</a></li>\n" +
-                        "                            <li><a>私信</a></li>\n" +
-                        "                            <li><a>设置</a></li>\n" +
+                        "                            <li><a href='/forward_con/personal' target='_blank'>基本信息</a></li>\n" +
+                        "                            <li><a href='/forward_con/gomyorder'>我的订单</a></li>\n" +
+                        "                            <li><a href='/forward_con/gomycourse' target='_blank'>我的课程</a></li>\n" +
+                        "                            <li><a href='/forward_con/gomessage' target='_blank'>通知<span class='mcount'>("+count+")</span></a></li>\n" +
+                        "                            <li><a href='/forward_con/gosetting'>设置</a></li>\n" +
                         "                            <li class='nav-logoff'><a href='#' style=\"color: red;\">注销</a></li>\n" +
                         "                        </ul>\n" +
                         "                    </li>");
@@ -100,6 +127,8 @@ $(function(){
     };
     $(document).on("click", ".navbar-right .nav-logoff a", logoff_btn);
 
+
+
     /**
      * 周榜/日榜/总榜的点击事件
      */
@@ -116,15 +145,70 @@ $(function(){
         $(this).closest("li").addClass("cli");
         var $this = $(this);
 
+        //最勤打卡榜
+        if(ranktype == "sign"){
+            if(rankmark == "day") {
+                $(this).closest("div").find("table thead tr td:nth-child(3)").text("时间");
+            }
+            else{
+                console.log(1);
+                $(this).closest("div").find("table thead tr td:nth-child(3)").text("打卡数");
+            }
+        }
+
         //异步加载数据
         $.ajax({
             async: true,
             type: "post",
             url: "/rank_con/rank_select",
-            data: {type: ranktype, mark: rankmark},
+            data: {type: ranktype, mark: rankmark, startpos: 0},
             dataType: "json",
             success: function(data){
-                console.log(data);
+                var count = data.count;
+                if(count == 0){
+                    $this.closest("div").find("table tbody").text("").append("<tr>\n" +
+                        "                                            <td colspan=\"3\" style=\"color: grey;\">暂无排名</td>\n" +
+                        "                                        </tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>");
+                }
+                else{
+                    $this.closest("div").find("table tbody").text("");
+                    var count = 0;
+                    $.each(data, function(index, item){
+                        count++;
+                        var nickname = item.nickname;
+                        var stime = item.stime;
+                        if(index == 1) {
+                            $this.closest("div").find("table tbody").append("<tr>\n" +
+                                "                                        <td style='color: red;'>1</td>\n" +
+                                "                                        <td style=\"\">"+nickname+"</td></td>\n" +
+                                "                                        <td style=\"\">"+stime+"</td>\n" +
+                                "                                    </tr>");
+                       }
+                       else if(index == 2) {
+                            $this.closest("div").find("table tbody").append("<tr>\n" +
+                                "                                        <td style='color: #00bc9b;'>2</td>\n" +
+                                "                                        <td style=\"\">"+nickname+"</td></td>\n" +
+                                "                                        <td style=\"\">"+stime+"</td>\n" +
+                                "                                    </tr>");
+                        }
+                        else if(index == 3) {
+                            $this.closest("div").find("table tbody").append("<tr>\n" +
+                                "                                        <td style='color: #a4b2ba;'>3</td>\n" +
+                                "                                        <td style=\"\">"+nickname+"</td></td>\n" +
+                                "                                        <td style=\"\">"+stime+"</td>\n" +
+                                "                                    </tr>");
+                        }
+                        else{
+                            $this.closest("div").find("table tbody").append("<tr>\n" +
+                                "                                        <td style='color: #d4d4d4;'>4</td>\n" +
+                                "                                        <td style=\"\">"+nickname+"</td></td>\n" +
+                                "                                        <td style=\"\">"+stime+"</td>\n" +
+                                "                                    </tr>");
+                        }
+                    });
+                    console.log(count);
+
+                }
             },
             error: function(xhr, status){
                 $this.closest("div").find("table tbody").text("").append("<tr>\n" +
@@ -142,7 +226,7 @@ $(function(){
     var rank_more = function(){
 
         var ranktype = $(this).closest("div.rank").data("type");
-        window.location.href = "/forward_con/rank_more?type=" + ranktype;
+        window.open("/forward_con/rank_more?type=" + ranktype);
     };
     $("footer a").click(rank_more);
 });

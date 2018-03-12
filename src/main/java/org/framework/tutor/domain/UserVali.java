@@ -15,7 +15,7 @@ public class UserVali implements Serializable {
 
     private Integer id;
 
-    private Integer valicode;
+    private String valicode;
 
     private Date regtime;
 
@@ -39,11 +39,11 @@ public class UserVali implements Serializable {
         this.id = id;
     }
 
-    public Integer getValicode() {
+    public String getValicode() {
         return valicode;
     }
 
-    public void setValicode(Integer valicode) {
+    public void setValicode(String valicode) {
         this.valicode = valicode;
     }
 

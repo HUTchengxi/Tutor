@@ -42,4 +42,20 @@ public interface UserVMapper {
      */
     @Update("update user_vali set vstatus=1 where regtime > #{now}")
     void checkAll(@Param("now") String now);
+
+    /**
+     * 判断当前邮箱是否已经被验证
+     * @param email
+     * @return
+     */
+    @Select("select * from user_vali where username=#{email} ")
+    UserVali checkEmailStatus(@Param("email") String email);
+
+    /**
+     * 更新邮箱注册码
+     * @param email
+     * @param valicode
+     */
+    @Update("update user_vali set valicode=#{valicode} where username=#{email}")
+    void updateEmailCode(@Param("email") String email, @Param("valicode") String valicode);
 }

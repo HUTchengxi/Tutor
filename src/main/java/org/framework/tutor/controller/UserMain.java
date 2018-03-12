@@ -214,4 +214,36 @@ public class UserMain {
         writer.flush();
         writer.close();
     }
+
+    /**
+     * 获取当前用户的绑定数据
+     * @param request
+     * @param response
+     */
+    @RequestMapping("/getbindinfo")
+    public void getBindInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        response.setCharacterEncoding("utf-8");
+        PrintWriter writer = response.getWriter();
+        String res = null;
+        HttpSession session = request.getSession();
+        String username = (String) session.getAttribute("username");
+
+        if(username == null){
+            res = "{\"status\": \"invalid\"}";
+        }
+        else{
+            org.framework.tutor.domain.UserMain userMain = userMService.getByUser(username);
+            if(userMain == null){
+                res = "{\"status\": \"invalid\"}";
+            }
+            else{
+                res = "{\"tel\": \""+userMain.getTelephone()+"\", \"ema\": \""+userMain.getEmail()+"\"}";
+            }
+        }
+
+        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.flush();
+        writer.close();
+    }
 }

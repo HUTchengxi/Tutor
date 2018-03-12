@@ -6,6 +6,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="Access-Control-Allow-Origin" content="*" />
         <title>勤成家教网，学海无涯----用户登录界面</title>
         <link rel="icon" href="/images/logo/web_logo.ico" type="images/x-icon" />
 
@@ -47,7 +48,7 @@
                             <label for="password" class="sr-only">密&nbsp;&nbsp;码</label>
                             <input type="password" class="form-control" name="password" id="password" placeholder="请输入您的密码" autocomplete="off" />
                         </div>
-                        <div class="form-group">
+                        <div class="form-group rem-div">
                             <!--
                             0：不记住
                             1：记住
@@ -85,6 +86,8 @@
         <script src="/js/login/jquery.waypoints.min.js"></script>
         <!-- Main JS -->
         <script src="/js/login/main.js"></script>
+        <!--IP JS-->
+        <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
 
         <!--Login JS-->
         <script src="/js/login/mine/login.js"></script>

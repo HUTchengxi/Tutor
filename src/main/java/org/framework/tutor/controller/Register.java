@@ -9,9 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.mail.MessagingException;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.UUID;
 
 /**
@@ -56,6 +59,7 @@ public class Register {
 
     /**
      * 进行注册
+     * @param request
      * @param response
      * @param username
      * @param password
@@ -64,7 +68,7 @@ public class Register {
      * @param email
      */
     @RequestMapping("/register_main")
-    public void registerNoCheck(HttpServletResponse response, String username, String password, String checktype, String telephone, String email) throws IOException, MessagingException {
+    public void registerNoCheck(HttpServletRequest request, HttpServletResponse response, String username, String password, String checktype, String telephone, String email) throws IOException, MessagingException {
 
         response.setCharacterEncoding("utf-8");
 
@@ -116,7 +120,10 @@ public class Register {
                         Integer status = 0;
                         userVService.addUserVali(username, valicode, status);
 
-                        res = "{\"status\": \"valid\", \"url\": \"/forward_con/regwaiting\"}";
+                        //保存用户邮箱以便后续刷新状态
+                        request.getSession().setAttribute("email", email+" "+username);
+
+                        res = "{\"status\": \"valid\", \"url\": \"/forward_con/register_info\"}";
                     }
                     else{
                         res = "{\"status\": \"mysqlerr\"}";
@@ -134,5 +141,38 @@ public class Register {
         writer.close();
     }
 
-    
+    /**
+     * 重发邮件
+     * @param request
+     * @param response
+     * @throws IOException
+     */
+    @RequestMapping("/register_resendemail")
+    public void emailResend(HttpServletRequest request, HttpServletResponse response) throws IOException, MessagingException {
+
+        request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
+        PrintWriter writer = response.getWriter();
+        HttpSession session = request.getSession();
+        String email = (String) session.getAttribute("email");
+        String res = null;
+
+        if(email == null){
+            res = "{\"status\": \"invalid\"}";
+        }
+        else{
+            String realemail = email.split(" ")[0];
+            String realusername = email.split(" ")[1];
+            //发送邮箱验证码
+            String valicode = EmailUtil.sendValiEmail(realemail, realusername);
+
+            //更新邮箱注册码
+            userVService.updateEmailCode(realusername, valicode);
+            res = "{\"status\": \"sendok\"}";
+        }
+
+        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.flush();
+        writer.close();
+    }
 }

@@ -1,5 +1,6 @@
 package org.framework.tutor.service.impl;
 
+import org.framework.tutor.domain.UserVali;
 import org.framework.tutor.mapper.UserVMapper;
 import org.framework.tutor.service.UserVService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,5 +57,27 @@ public class UserVServiceImpl implements UserVService {
     public void checkAll(String now) {
 
         userVMapper.checkAll(now);
+    }
+
+    /**
+     * 判断当前邮箱是否已经被验证
+     * @param email
+     * @return
+     */
+    @Override
+    public UserVali checkEmailStatus(String email) {
+
+        return userVMapper.checkEmailStatus(email);
+    }
+
+    /**
+     * 更新邮箱注册码
+     * @param email
+     * @param valicode
+     */
+    @Override
+    public void updateEmailCode(String email, String valicode) {
+
+        userVMapper.updateEmailCode(email, valicode);
     }
 }

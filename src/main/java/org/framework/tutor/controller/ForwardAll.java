@@ -1,11 +1,13 @@
 package org.framework.tutor.controller;
 
+import org.framework.tutor.domain.UserVali;
 import org.framework.tutor.service.UserVService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import sun.java2d.pipe.SpanShapeRenderer;
 
+import javax.servlet.http.HttpServletRequest;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -175,6 +177,29 @@ public class ForwardAll {
     public String goSetting(){
 
         return "/home/mysetting";
+    }
+
+    /**
+     * 邮件注册后的提示页面
+     * @param request
+     * @return
+     */
+    @RequestMapping("/register_info")
+    public String goRegisterInfo(HttpServletRequest request){
+
+        String email = (String) request.getSession().getAttribute("email");
+        if(email == null){
+            return "home/welcome";
+        }
+        else{
+            //判断邮箱验证状态
+            UserVali userVali = userVService.checkEmailStatus(email.split(" ")[1]);
+            //验证成功
+            if(userVali == null){
+                return "/home/welcome";
+            }
+        }
+        return "/register/check";
     }
 
     /**

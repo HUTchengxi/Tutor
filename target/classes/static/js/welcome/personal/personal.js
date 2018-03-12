@@ -446,6 +446,63 @@ $(function(){
 
 
 
+
+    //-----------------------------------------------账号绑定的设置-----------------------
+    /**
+     * 异步获取账号绑定的设置
+     */
+    var async_getbind = function(){
+
+        //获取电子邮箱和手机号码的绑定数据
+        $.ajax({
+            async: true,
+            type: "post",
+            url: "/usermain_con/getbindinfo",
+            dataType: "json",
+            success: function(data){
+                var status = data.status;
+                if(status == "invalid"){
+                    window.location = "/forward_con/welcome";
+                }
+                else{
+                    var tel = data.tel;
+                    var ema = data.ema;
+
+                    //手机未绑定
+                    if(tel == ""){
+                        $(".binddiv .mainbind .tel-phone p:nth-child(2)").append("<span class='ok'>(暂未绑定)</span>");
+                        $(".binddiv .mainbind .tel-phone p:nth-child(3)").append("<a href=\"javacript:void(0)\" class=\"pull-right btn-bind\" data-type=\"email\">立刻绑定</a>");
+                    }
+                    else{
+                        $(".binddiv .mainbind .tel-phone p:nth-child(2)").append("<span>(已绑定"+tel+")</span>");
+                        $(".binddiv .mainbind .tel-phone p:nth-child(3)").append("<a href=\"javacript:void(0)\" class=\"pull-right more btn-unbind\" data-type=\"phone\">解绑</a>\n" +
+                            "                                            <a href=\"javacript:void(0)\" class=\"pull-right more btn-modbind\" data-type=\"phone\">更改</a>");
+                    }
+
+                    //电子邮箱未绑定
+                    if(ema == ""){
+                        $(".binddiv .mainbind .email p:nth-child(2)").append("<span class='ok'>(暂未绑定)</span>");
+                        $(".binddiv .mainbind .email p:nth-child(3)").append("<a href=\"javacript:void(0)\" class=\"pull-right btn-bind\" data-type=\"email\">立刻绑定</a>");
+                    }
+                    else{
+                        $(".binddiv .mainbind .email p:nth-child(2)").append("<span>(已绑定"+ema+")</span>");
+                        $(".binddiv .mainbind .email p:nth-child(3)").append("<a href=\"javacript:void(0)\" class=\"pull-right more btn-unbind\" data-type=\"phone\">解绑</a>\n" +
+                            "                                            <a href=\"javacript:void(0)\" class=\"pull-right more btn-modbind\" data-type=\"phone\">更改</a>");
+                    }
+                }
+            },
+            error: function(xhr, status){
+                window.alert("后台环境异常导致无法获取绑定数据，请刷新页面重试");
+                window.console.log(xhr);
+            }
+        })
+    };
+    async_getbind();
+
+
+
+
+
     //-----------------------------------------------登录记录的设置------------------------
     /**
      * 关闭提示按钮的功能实现
