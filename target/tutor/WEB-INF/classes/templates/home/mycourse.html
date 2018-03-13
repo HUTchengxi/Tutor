@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>勤成家教网---我的课程</title>
+    <!-- for-mobile-apps -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="/images/logo/web_logo.ico" />
+    <!-- //for-mobile-apps -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.css" />
+    <link rel="stylesheet" href="/css/welcome/personal/style.css" media="all" />
+    <!--layui-->
+    <link rel="stylesheet" href="/layui/css/layui.css" />
+    <!-- //js -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Comfortaa:400,300,700' rel='stylesheet' type='text/css' />
+</head>
+<body>
+
+    <!--头部-->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid" style="padding-top: 13px;">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/forward_con/welcome">勤成家教网</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#navbar-collapse">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse" style="">
+                <ul class="nav navbar-nav">
+                    <li style="margin:0 10px;" class="active"><a href="/forward_con/welcome">首页</a></li>
+                    <li style="margin:0 10px;"><a href="/forward_con/classify">分类</a></li>
+                    <li style="margin:0 10px;"><a href="/forward_con/gabble" target="_blank">七嘴八舌</a></li>
+                    <li style="margin:0 10px;"><a href="/forward_con/gorank">勤成榜</a></li>
+                    <li style="margin:0 10px;"><a href="/forward_con/contact">联系我们</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- banner-body -->
+    <div class="banner-body custom">
+        <div class="container">
+            <div class="banner-body-content">
+                <div class="col-xs-3 banner-body-left">
+                    <div class="logo" title="点击放大我的头像" data-imgsrc="" data-oldimgsrc="">
+                        <a href="javascript:void(0);">更改头像</a>
+                        <!--<h1><a href="index.html">Great <span>Taste</span></a></h1>-->
+                    </div>
+                    <!--侧边栏导航-->
+                    <div class="top-nav">
+                        <nav class="navbar navbar-default">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+                                <nav class="stroke">
+                                    <ul class="nav navbar-nav">
+                                        <li class="active custom"><a href="javascript:void(0)" data-type="history">课程记录</a></li>
+                                        <li class="custom"><a href="javascript:void(0);" data-type="log" class="hvr-underline-from-left">课堂笔记</a></li>
+                                        <li class="custom"><a href="javascript:void(0);" data-type="log" class="hvr-underline-from-left">我的评论</a></li>
+                                        <li class="custom"><a href="javascript:void(0);" data-type="collect" class="hvr-underline-from-left">我的收藏</a></li>
+                                        <li class="custom"><a href="javascript:void(0);" data-type="publish" class="hvr-underline-from-left">我的发布</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navbar-collapse -->
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-xs-9 banner-body-right infobox">
+                    <!--课程记录-->
+                    <div class="logdiv historydiv box">
+                        <header>
+                            <span>我的课程记录</span>
+                        </header>
+                        <hr />
+                        <p class="msg">我最近浏览的全部课程
+                            <a href="javascript:void(0);" title="点击关闭提示"><i class="layui-icon">&#x1006;</i></a>
+                        </p>
+                        <div class="maininfo">
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <th>浏览时间</th>
+                                    <th>课程类型</th>
+                                    <th>课程名称</th>
+                                    <th>相关操作</th>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--我的收藏-->
+                    <div class="collectdiv box">
+                        <header>
+                            <span>我的课程收藏</span>
+                        </header>
+                        <hr />
+                        <!--<div class="none">-->
+                            <!--<p>暂未收藏课程</p>-->
+                        <!--</div>-->
+                        <style>
+                        </style>
+                        <ul class="layui-timeline">
+
+                            <!--<li class="layui-timeline-item">-->
+                                <!--<i class="layui-icon layui-timeline-axis premore more" title="点击查看上一页">&#xe619;</i>-->
+                            <!--</li>-->
+                            <!--<li class="layui-timeline-item">-->
+                                <!--<i class="layui-icon layui-timeline-axis">&#xe63f;</i>-->
+                                <!--<div class="layui-timeline-content layui-text">-->
+                                    <!--<h3 class="layui-timeline-title">2017年</h3>-->
+                                    <!--<h4 class="layui-timeline-title">8月18日</h4>-->
+                                    <!--<a href="javascript: void(0);">-->
+                                        <!--<img src="/images/user/face/bg.png" />-->
+                                    <!--</a>-->
+                                    <!--<a href="javascript:void(0);">取消收藏</a>-->
+                                    <!--<p>-->
+                                        <!--收藏笔记：-->
+                                        <!--<span>简单的做一次笔记而已，别紧张</span>-->
+                                    <!--</p>-->
+                                <!--</div>-->
+                            <!--</li>-->
+                            <!--<li class="layui-timeline-item">-->
+                                <!--<i class="layui-icon layui-timeline-axis subtitle">&#xe63f;</i>-->
+                                <!--<div class="layui-timeline-content layui-text">-->
+                                    <!--<h3 class="layui-timeline-title">&nbsp;</h3>-->
+                                    <!--<h4 class="layui-timeline-title">8月18日</h4>-->
+                                    <!--<a href="javascript: void(0);">-->
+                                        <!--<img src="/images/user/face/bg.png" />-->
+                                    <!--</a>-->
+                                    <!--<p>-->
+                                        <!--收藏笔记：-->
+                                        <!--<span>简单的做一次笔记而已，别紧张</span>-->
+                                    <!--</p>-->
+                                <!--</div>-->
+                            <!--</li>-->
+                            <!--<li class="layui-timeline-item">-->
+                                <!--<i class="layui-icon layui-timeline-axis getmore more" title="点击查看下一页">&#xe61a;</i>-->
+                            <!--</li>-->
+                        </ul>
+                    </div>
+                    <!--我的评论-->
+                    <div class="binddiv box">
+                        <header>
+                            <span>账号绑定</span>
+                            <a href="javascript:void(0);" class="pull-right">
+                                <i class="layui-icon">&#xe607;</i>常见问题FAQ
+                            </a>
+                        </header>
+                        <hr />
+                        <div class="mainbind">
+                            <ul>
+                                <li>
+                                    <div class="email">
+                                        <a class="imglogo"><i class="layui-icon">&#xe609;</i></a>
+                                        <p>电子邮箱
+                                            <span>(暂未绑定)</span>
+                                        </p>
+                                        <p class="clearfix">可通过电子邮箱找回密码
+                                            <a href="javacript:void(0)" class="pull-right" data-type="email">立刻绑定</a>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="phone">
+                                        <a class="imglogo"><i class="layui-icon">&#xe63b;</i></a>
+                                        <p>手机号码
+                                            <span class="ok">(已绑定15573311691)</span>
+                                        </p>
+                                        <p class="clearfix">可通过手机号码找回密码
+                                            <a href="javacript:void(0)" class="pull-right more" data-type="phone">解绑</a>
+                                            <a href="javacript:void(0)" class="pull-right more" data-type="phone">更改</a>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="phone">
+                                        <a class="imglogo"><i class="layui-icon">&#xe620;</i></a>
+                                        <p>密保问题</p>
+                                        <p class="clearfix">可通过密保问题找回密码
+                                            <a href="javacript:void(0)" class="pull-right" data-type="protect">立即设置</a>
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--我的发布-->
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+
+    <!--页脚-->
+    <footer class="footer">
+        <br />
+        <!--网站地图-->
+        <div class="webmap">
+            <h4>网站地图:</h4>
+            <ul class="clearfix">
+                <li class="pull-left">
+                    <a href="javascript:void(0);">网站首页</a>
+                </li>
+                <li class="pull-left">
+                    <a href="javascript:void(0);">家教分类</a>
+                </li>
+                <li class="pull-left">
+                    <a href="javascript:void(0);">用户经验总结</a>
+                </li>
+                <li class="pull-left">
+                    <a href="javascript:void(0);">勤成家教榜</a>
+                </li>
+                <li class="pull-left">
+                    <a href="javascript:void(0);">联系我们</a>
+                </li>
+                <li class="pull-left">
+                    <a href="javascript:void(0);">个人信息</a>
+                </li>
+            </ul>
+        </div>
+        <!--友情链接-->
+        <div class="link">
+            <h4>友情链接:</h4>
+            <ul class="clearfix">
+                <li class="pull-left">
+                    <a href="">CSDN博客</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">前端网</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">慕课网</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">牛客网</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">模板之家</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">Bootstrap</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">LayUI</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">知乎</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">简书</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">脚本之家</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">码农网</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">博客园</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">CSS探索之旅</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">苏文宅博客</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">爱前端网</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">CSS3按钮特效</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">ProcessOn</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">5iweb</a>
+                </li>
+            </ul>
+        </div>
+        <!--慕课网抄袭而来的copyright-->
+        <div class="copyright">
+            <h5>Copyright © 2018 imooc.com All Rights Reserved | 京ICP备 13046642号-2</h5>
+        </div>
+        <br />
+    </footer>
+
+    <!--遮罩层-->
+    <div class="zhezhao"></div>
+
+    <!--点击头像放大弹出层-->
+    <div class="showbig bigface">
+        <div class="main">
+            <a href="javascript:void(0);" class="close">
+                <i class="layui-icon">&#x1006;</i>
+            </a>
+            <h4>我的头像</h4>
+            <img src="" class="bigimg" />
+        </div>
+    </div>
+
+    <!--更改头像弹出层-->
+    <div class="modface bigface">
+        <div class="main">
+            <a href="javascript:void(0);" class="close">
+                <i class="layui-icon">&#x1006;</i>
+            </a>
+            <h4>更换头像</h4>
+            <div class="show" data-imgsrc="null"></div>
+            <div class="modlink">
+                <ul class="clearfix">
+                    <li class="pull-left">
+                        <a href="javascript:void(0);" class="rand">我帮你换</a>
+                    </li>
+                    <li class="pull-left">
+                        <a href="javascript:void(0);" class="hand">上传头像</a>
+                        <input type="file" accept="image/gif, image/png, image/jpg, image/jpeg" />
+                    </li>
+                </ul>
+            </div>
+            <div class="sublink">
+                <ul class="clearfix">
+                    <li class="pull-left">
+                        <a href="javascript:void(0);" class="submit">确定</a>
+                    </li>
+                    <li class="pull-left">
+                        <a href="javascript:void(0);" class="reset">取消</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--编辑个人信息弹出层-->
+    <div class="modinfo bigface" id="modinfo">
+        <div class="main">
+            <a href="javascript:void(0);" class="close">
+                <i class="layui-icon">&#x1006;</i>
+            </a>
+            <header>
+                <span>基本信息设置</span>
+            </header>
+            <hr />
+            <div class="maininfo">
+                <ul>
+                    <li>
+                        <label for="username">用户名</label>
+                        <input type="text" name="username" class="username" readonly="readonly"/>
+                    </li>
+                    <li>
+                        <label for="username">昵称</label>
+                        <input type="text" name="nickname" class="nickname" />
+                    </li>
+                    <li>
+                        <label for="username">性别</label>
+                        <label class="sexlabel">
+                            <input type="radio" name="sex" class="sex male" value="1" />男
+                        </label>
+                        <label class="sexlabel">
+                            <input type="radio" name="sex" class="sex female" value="0" />女
+                        </label>
+                    </li>
+                    <li>
+                        <label for="username">年龄</label>
+                        <input type="number" name="age" class="age" />
+                    </li>
+                    <li>
+                        <label for="info">个人描述</label>
+                        <p class="info" name="info" contenteditable="true"></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="sublink">
+                <ul class="clearfix">
+                    <li class="pull-left">
+                        <a href="javascript:void(0);" class="submit">提交</a>
+                    </li>
+                    <li class="pull-left">
+                        <a href="javascript:void(0);" class="reset">取消</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <style>
+
+        .collectdiv.box{display: none; opacity: 0;}
+        .collectdiv.box .none{background-image: url("/images/default/none.jpg"); background-size: contain; background-repeat: no-repeat;
+            height: 200px; width: 33%; margin:15% auto;}
+        .collectdiv.box .none p{text-align: center; position: relative; top: 90%;}
+        .collectdiv.box ul{position: relative; left: 27%; top: 20px; width: 83%;}
+        .collectdiv.box i.subtitle{font-size: 1px; color: orange;}
+        .collectdiv.box ul li h3{position: relative; right: 18%;}
+        .collectdiv.box ul li h4{position: relative; right: 17%;}
+        .collectdiv.box ul li img{width: 50%; height: 118px; border: 1px solid #80808029; border-radius: 13px;}
+        .collectdiv.box ul li a:nth-child(5){display:  inline-block; background:  red; color: white; width: 0; position:  relative;
+            left: -4px; text-align:  center; overflow: hidden; height: 20px; line-height: 20px; font-size: 14px;}
+        .collectdiv.box ul li p{position: relative; top: 5px; font-size: 12px;}
+        .collectdiv.box ul li p span{color: red;}
+
+        .collectdiv.box ul li i.more{position: relative; opacity: 0; font-size: 22px;}
+        .collectdiv.box ul li i.getmore{animation: getmorei 1s infinite;}
+        .collectdiv.box ul li i.premore{animation: premorei 1s infinite; top: -18px;}
+        @keyframes getmorei {
+            0%{
+                opacity: 0;
+                top: 0;
+            }
+            25%{
+                opacity: .5;
+                top: 5px;
+            }
+            50%{
+                opacity: 1;
+                top: 10px;
+            }
+            75%{
+                opacity: .5;
+                top: 5px;
+            }
+            100%{
+                opacity: 0;
+                top: 0;
+            }
+        }
+        @keyframes premorei {
+            0%{
+                opacity: 0;
+                top: -18px;
+            }
+            25%{
+                opacity: .5;
+                top: -23px;
+            }
+            50%{
+                opacity: 1;
+                top: -28px;
+            }
+            75%{
+                opacity: .5;
+                top: -23px;
+            }
+            100%{
+                opacity: 0;
+                top: -18px;
+            }
+        }
+
+
+        footer.footer{background-color: #000000; width: 100%;}
+        footer.footer .webmap, footer.footer .link, footer.footer .copyright{margin: 0 auto; width: 80%;margin-bottom: 1%;}
+        footer.footer h4{color: white;}
+        footer.footer ul{margin-left: 1%;}
+        footer.footer ul li{margin: 1%;}
+        footer.footer ul li a{color: #c8cdd2ad; font-size: 14px; text-decoration: none;}
+        footer.footer ul li a:hover{color: #c8cdd2; text-decoration: none;}
+        footer.footer .copyright{margin-top: -1%;}
+        footer.footer .copyright h5{color: #787d82c7;}
+
+        /*.infobox .box .maininfo ul li:last-child label{margin-top: 30px;}*/
+        /*.infobox .box .maininfo ul li:last-child p{position: relative; top: -30px;}*/
+        .infobox .logdiv p.msg{background-color: #fff4e5;color: #f56108;text-align:  center;height: 25px;line-height: 25px;
+            overflow: hidden; position: relative;}
+        .infobox .logdiv p.msg a{position: absolute; right: 0; text-decoration: none;}
+        .infobox .logdiv p.msg a:hover{text-decoration: none;}
+        .infobox .logdiv .maininfo{margin-top: 10px;}
+        .infobox .logdiv table{width: 100%;}
+        .infobox .logdiv table tr{height: 48px; line-height: 48px;border-bottom: 1px solid #d9dde1; overflow: hidden;}
+        .infobox .logdiv table tr:nth-child(1){background-color: #f3f5f7; border-bottom: none;}
+        .infobox .logdiv table tr th, .infobox .logdiv table tr td{text-align: center;}
+        .infobox .logdiv table tr td:nth-child(1){color: #00b6ff;}
+        .infobox .logdiv table tr td:nth-child(2){color: #5bea3a;}
+        .infobox .logdiv table tr td:nth-child(3) a{color: #f56108;}
+        .infobox .logdiv table tr td:nth-child(4) a{color: #1572e8; text-decoration: underline;}
+
+        div.logo{overflow: hidden;}
+        div.logo:hover{cursor: pointer;}
+        div.logo a{width: 100%;display:  block; position: relative;top: 83%; font-size: 12px;
+            color: white; background-color: black; height: 35px;line-height: 30px; text-align: center;
+            margin-top: 35px;transition: all .1s linear;}
+        div.logo:hover a{margin-top: 0;}
+
+        .banner-body-right{padding: 2%;}
+        .banner-body-right header{height: 40px;}
+        .banner-body-right header span{font-size: 16px; font-weight: bold; line-height: 40px;}
+        .banner-body-right header a{display: inline-block; height: 40px; line-height: 40px;
+            color: #777; text-decoration: none;}
+        .banner-body-right header a:hover{color: black; text-decoration: none;}
+
+        .banner-body-right .maininfo ul{padding: 2% 5%;}
+        .banner-body-right .maininfo li{margin: 2% 0;}
+        .banner-body-right .maininfo li label{width: 20%;height: 60px;background-color: #f3f5f7;text-align:  center;
+            line-height:  60px;}
+        .banner-body-right .maininfo li input{width: 78%; height: 60px; border: none; border-bottom: 1px solid #d9dde1;
+            padding: 3%;}
+        .banner-body-right .maininfo li p{display: inline-block; border: 1px solid #d9dde1;height: 120px; width: 78%;
+            padding: 3%;}
+
+        .infobox .binddiv.box {display: none; opacity: 0;}
+        .infobox .binddiv header a i{color: #008cc8;}
+        .infobox .binddiv .mainbind ul li div{height: 90px; position: relative; border-bottom: 1px solid #80808059;}
+        .infobox .binddiv .mainbind ul li div a.imglogo{display:  inline-block;width: 10%;height: 90px;line-height: 90px; position: absolute;}
+        .infobox .binddiv .mainbind ul li div a.imglogo i{font-size: 45px; color: #d9dde1;}
+        .infobox .binddiv .mainbind div p{position:  relative;left: 55px;top: 20px;font-size: 16px;font-weight:  bold;}
+        .infobox .binddiv .mainbind div p span{color: red; font-weight: normal;}
+        .infobox .binddiv .mainbind div p span.ok{color: #ffd331;}
+        .infobox .binddiv .mainbind div p:nth-child(3){margin-top: 5px; font-weight: normal; font-size: 14px;}
+        .infobox .binddiv .mainbind div p:nth-child(3) a{margin-right: 60px;display:  inline-block;color: grey;height: 30px;
+            line-height:  30px;border: 1px solid grey;border-radius: 15px;width: 80px;text-align: center;text-decoration: none;
+            margin-top: -15px;}
+        .infobox .binddiv .mainbind div p a.more:nth-child(1){margin-top: -43px;}
+        .infobox .binddiv .mainbind div p a.more:nth-child(2){margin-top: 10px;}
+
+        .zhezhao{position: fixed; top: 0; left: 0;width: 100%; background-color: #41414173;
+            z-index: 99;}
+
+        .bigface{z-index: 999; background: white; position: fixed; top: 24%; left: 30%;
+            -webkit-box-shadow: 0 8px 16px 0 rgba(7,17,27,0.2);
+            -moz-box-shadow: 0 8px 16px 0 rgba(7,17,27,0.2);
+            box-shadow: 0 8px 16px 0 rgba(7,17,27,0.2); border-radius: 12px; width: 40%; height: 46%;
+            opacity: 0; display: none;}
+        .bigface .main{position: relative;}
+        .bigface .main a.close{display: inline-block; position: absolute; right: -5%; top: -7%;
+            border: 1px solid white; -webkit-border-radius: 10px; -moz-border-radius: 10px;
+            border-radius: 10px; text-decoration: none;}
+        .bigface .main a.close:hover{text-decoration: none;}
+        .bigface .main a.close i{font-size: 18px;}
+        .bigface h4{margin-top: 10px; margin-left: 10px; font-size: 16px; font-weight: bold;}
+        .bigface img.bigimg{width: 100%; margin: 20px 0 10px 0; height: 350px;}
+
+        .modface div.show{width: 53%; height: 191.64px;
+            margin: 10px 23%; border: 4px solid #d9dde1; border-radius: 96px;}
+        .modface .modlink input{display: none;}
+        .modface .modlink ul li{margin: 5px 15%;}
+        .modface .modlink ul li a{color: #008cc8; letter-spacing: 2px; text-decoration: none;}
+        .modface .modlink ul li a:hover{text-decoration: none;}
+        .modface .sublink ul li{width: 23%; height: 36px; line-height: 36px; margin: 10px 0;
+            text-align: center;}
+        .modface .sublink ul li:nth-child(1){margin-left: 16%;}
+        .modface .sublink ul li:nth-child(2){margin-left: 16%; margin-right: 16%;}
+        .modface .sublink ul li a{width: 100%; background-color: #1481b8; color: white;
+            display: inline-block; -webkit-border-radius: 12px; -moz-border-radius: 12px;
+            border-radius: 12px; text-decoration: none;}
+        .modface .sublink ul li a:hover{text-decoration: none;}
+        .modface .sublink ul li:nth-child(2) a{background-color: white; border: 1px solid #545c63;
+            color: #545c63;}
+        .modface .sublink ul li:nth-child(1) a:hover{background-color: #0f618a;}
+        .modface .sublink ul li:nth-child(2) a:hover{color: black; background-color: transparent;
+            border-color: black;}
+
+        div.modinfo{height: 56.2%;}
+
+        div#modinfo{padding: 2%;}
+        #modinfo header{height: 30px;}
+        #modinfo header span{font-size: 16px; font-weight: bold; line-height: 30px;}
+
+        #modinfo .main a.close{top: -10%; right: -10%;}
+
+        #modinfo .maininfo ul{padding: 2% 5%;}
+        #modinfo .maininfo li{margin: 2% 0;}
+        #modinfo .maininfo li label{width: 20%;height: 30px;background-color: #f3f5f7;text-align:  center;
+            line-height:  30px;}
+        #modinfo .maininfo li input{width: 78%; height: 30px; border: none; border-bottom: 1px solid #d9dde1;
+            padding: 3%;}
+        #modinfo .maininfo li p{display: inline-block; border: 1px solid #d9dde1;height: 80px; width: 78%;
+            padding: 3%;}
+
+        .modinfo .sublink ul li{width: 23%; height: 36px; line-height: 36px; margin: 10px 0;
+            text-align: center;}
+        #modinfo .sublink ul li:nth-child(1){margin-left: 16%;}
+        #modinfo .sublink ul li:nth-child(2){margin-left: 16%; margin-right: 16%;}
+        #modinfo .sublink ul li a{width: 100%; background-color: #1481b8; color: white;
+            display: inline-block; -webkit-border-radius: 12px; -moz-border-radius: 12px;
+            border-radius: 12px; text-decoration: none;}
+        #modinfo .sublink ul li a:hover{text-decoration: none;}
+        #modinfo .sublink ul li:nth-child(2) a{background-color: white; border: 1px solid #545c63;
+            color: #545c63;}
+        #modinfo .sublink ul li:nth-child(1) a:hover{background-color: #0f618a;}
+        #modinfo .sublink ul li:nth-child(2) a:hover{color: black; background-color: transparent;
+            border-color: black;}
+
+        #modinfo .maininfo li label.sexlabel{width: 10%; height: 10%; font-size: 12px; margin: 0 7%; background-color: white;}
+        #modinfo .maininfo li label.sexlabel input.sex{width: 50%; height: 15px;}
+    </style>
+    <!-- //banner-body -->
+
+    <!--jquery-->
+    <script src="/js/custom/jquery.min.js"></script>
+    <!--bootstrap-->
+    <script src="/bootstrap/js/bootstrap.js"></script>
+    <!--layui-->
+    <script src="/layui/layui.js"></script>
+
+    <!-- for bootstrap working -->
+    <script src="/js/welcome/personal/bootstrap.js"></script>
+    <!-- //for bootstrap working -->
+
+    <!--my js-->
+    <script src="/js/welcome/mycourse/mycourse.js"></script>
+</body>
+</html>

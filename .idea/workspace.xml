@@ -10,8 +10,153 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf479440-431d-499c-9612-40c14de1a166" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/UserMessage.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/UserVali.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/domain/UserMessage.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/domain/UserVali.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/mapper/UserMSMapper.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/mapper/UserVMapper.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/UserMSService.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/UserVService.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/impl/UserMSServiceImpl.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/impl/UserVServiceImpl.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/util/EmailUtil.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/util/ReverseProject.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/images/welcome/mysetting/timg.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/js/register/mine/check.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/mymessage.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/mysetting.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/templates/home/mymessage.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/templates/home/mysetting.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/templates/register/check.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/Main2$1.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/Main2.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/controller/CourseChapter.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/controller/CourseCollect.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/controller/CourseCommand.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/controller/CourseLog.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/controller/CourseMain.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/controller/CourseOrder.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/controller/CourseTreply.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/controller/Rank.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/controller/UserLog.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/controller/UserMain.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/controller/UserMessage.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/controller/UserSign.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/controller/UserVali.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/domain/CourseChapter.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/domain/CourseCollect.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/domain/CourseCommand.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/domain/CourseLog.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/domain/CourseMain.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/domain/CourseOrder.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/domain/CourseTreply.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/domain/RankTemp.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/domain/UserLog.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/domain/UserMessage.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/domain/UserSign.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/domain/UserVali.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/mapper/CourseCMMapper.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/mapper/CourseCMapper.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/mapper/CourseChMapper.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/mapper/CourseLMapper.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/mapper/CourseMMapper.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/mapper/CourseOMapper.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/mapper/CourseTMapper.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/mapper/UserLMapper.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/mapper/UserMSMapper.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/mapper/UserSMapper.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/mapper/UserVMapper.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/service/CourseCMService.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/service/CourseCService.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/service/CourseChService.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/service/CourseLService.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/service/CourseMService.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/service/CourseOService.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/service/CourseTService.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/service/UserLService.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/service/UserMSService.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/service/UserSService.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/service/UserVService.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/service/impl/CourseCMServiceImpl.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/service/impl/CourseCServiceImpl.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/service/impl/CourseChServiceImpl.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/service/impl/CourseLServiceImpl.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/service/impl/CourseMServiceImpl.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/service/impl/CourseOServiceImpl.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/service/impl/CourseTServiceImpl.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/service/impl/UserLServiceImpl.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/service/impl/UserMSServiceImpl.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/service/impl/UserSServiceImpl.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/service/impl/UserVServiceImpl.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/util/EmailUtil.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/util/ReverseProject.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/css/welcome/gabble/bootstrap5152.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/css/welcome/gabble/custom5152.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/css/welcome/gabble/main5152.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/css/welcome/gabble/prettyPhotoaeb9.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/css/welcome/gabble/responsive5152.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/css/welcome/gabble/style.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/css/welcome/personal/jquery.datetimepicker.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/css/welcome/personal/style.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/images/default/2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/images/default/3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/images/default/4.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/images/default/5.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/images/default/6.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/images/default/7.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/images/default/none.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/images/user/course/chinese.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/images/user/course/math.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/images/user/course/timg.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/images/user/face/bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/images/welcome/classify/courses/bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/images/welcome/classify/hot_com.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/images/welcome/gabble/footer-bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/images/welcome/gabble/image.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/images/welcome/gabble/li-arrow.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/images/welcome/gabble/like.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/images/welcome/gabble/logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/images/welcome/gabble/logo副本.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/images/welcome/gabble/main-bg.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/images/welcome/gabble/scroll-top.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/images/welcome/gabble/standard.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/images/welcome/gabble/support.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/images/welcome/gabble/video.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/images/welcome/mysetting/timg.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/images/welcome/order/cart-header-bg.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/images/welcome/personal/banner.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/gabble/custom.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/gabble/gabble.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/gabble/jflickrfeed.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/gabble/jquery.easing.1.3.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/gabble/jquery.form.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/gabble/jquery.liveSearch.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/gabble/jquery.prettyPhoto.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/gabble/jquery.validate.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/mycourse/mycourse.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/mymessage.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/mysetting.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/order/mycart.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/order/myorder.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/personal/bootstrap.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/personal/jquery.chocolat.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/personal/jquery.datetimepicker.full.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/personal/jquery.wmuSlider.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/personal/personal.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/showcourse.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/templates/home/gabble.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/templates/home/mycourse.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/templates/home/mymessage.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/templates/home/mysetting.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/templates/home/order/mycart.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/templates/home/order/myorder.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/templates/home/personal.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/templates/home/showcourse.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/lib/activation-1.1.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/lib/javax.mail-1.5.4.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/lib/mybatis-generator-core-1.3.5.jar" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -30,11 +175,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="2.0版本" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2.0版本" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="29" column="38" lean-forward="false" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+            <state relative-caret-position="848">
+              <caret line="36" column="23" lean-forward="true" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -43,7 +188,7 @@
       <file leaf-file-name="UserVService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserVService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
+            <state relative-caret-position="1517">
               <caret line="41" column="13" lean-forward="false" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
               <folding />
             </state>
@@ -53,7 +198,7 @@
       <file leaf-file-name="UserVServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserVServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
+            <state relative-caret-position="2405">
               <caret line="69" column="32" lean-forward="false" selection-start-line="69" selection-start-column="32" selection-end-line="69" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -65,7 +210,7 @@
       <file leaf-file-name="UserVMapper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserVMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1013">
+            <state relative-caret-position="1739">
               <caret line="50" column="61" lean-forward="false" selection-start-line="50" selection-start-column="61" selection-end-line="50" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -77,7 +222,7 @@
       <file leaf-file-name="Register.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/Register.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
+            <state relative-caret-position="3700">
               <caret line="115" column="33" lean-forward="false" selection-start-line="115" selection-start-column="33" selection-end-line="115" selection-end-column="33" />
               <folding />
             </state>
@@ -87,7 +232,7 @@
       <file leaf-file-name="UserVali.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/UserVali.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="652">
+            <state relative-caret-position="1110">
               <caret line="39" column="5" lean-forward="false" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
               <folding />
             </state>
@@ -97,21 +242,19 @@
       <file leaf-file-name="ForwardAll.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="190" column="13" lean-forward="false" selection-start-line="190" selection-start-column="12" selection-end-line="190" selection-end-column="13" />
+            <state relative-caret-position="140">
+              <caret line="204" column="7" lean-forward="true" selection-start-line="204" selection-start-column="7" selection-end-line="204" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EmailUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/util/EmailUtil.java">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="710">
-              <caret line="51" column="40" lean-forward="false" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="404">
+              <caret line="60" column="63" lean-forward="false" selection-start-line="60" selection-start-column="63" selection-end-line="60" selection-end-column="63" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -119,7 +262,7 @@
       <file leaf-file-name="check.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/register/check.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="618">
+            <state relative-caret-position="2368">
               <caret line="64" column="21" lean-forward="false" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
               <folding>
                 <element signature="e#1057#2010#2" expanded="true" />
@@ -203,7 +346,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMSMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/mysetting.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/login/index.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/contact.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/mymessage.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/order/myorder.js" />
@@ -252,6 +394,7 @@
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/UserVali.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/login/index.html" />
       </list>
     </option>
   </component>
@@ -388,8 +531,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -413,171 +554,7 @@
               <item name="Tutor" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="framework" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="framework" type="462c0819:PsiDirectoryNode" />
-              <item name="tutor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="framework" type="462c0819:PsiDirectoryNode" />
-              <item name="tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="framework" type="462c0819:PsiDirectoryNode" />
-              <item name="tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="framework" type="462c0819:PsiDirectoryNode" />
-              <item name="tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="log" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="framework" type="462c0819:PsiDirectoryNode" />
-              <item name="tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="framework" type="462c0819:PsiDirectoryNode" />
-              <item name="tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="framework" type="462c0819:PsiDirectoryNode" />
-              <item name="tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="framework" type="462c0819:PsiDirectoryNode" />
-              <item name="tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="mine" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="welcome" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="welcome" type="462c0819:PsiDirectoryNode" />
-              <item name="gabble" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="welcome" type="462c0819:PsiDirectoryNode" />
-              <item name="personal" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
@@ -586,25 +563,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="order" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
@@ -614,21 +572,14 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="register" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1027,7 +978,8 @@
       <workItem from="1520761850060" duration="404000" />
       <workItem from="1520762276241" duration="9161000" />
       <workItem from="1520781686360" duration="992000" />
-      <workItem from="1520863334834" duration="5926000" />
+      <workItem from="1520863334834" duration="6088000" />
+      <workItem from="1520946065655" duration="924000" />
     </task>
     <task id="LOCAL-00001" summary="将毕设项目提交到gitlab">
       <created>1520393481249</created>
@@ -1134,11 +1086,18 @@
       <option name="project" value="LOCAL" />
       <updated>1520869212465</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="注册邮件重发，等待刷新，个人中心的邮箱和手机关联的同步的实现">
+      <created>1520869269971</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1520869269971</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="629417000" />
+    <option name="totallyTimeSpent" value="630503000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1165,7 +1124,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66870093" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25241157" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.255627" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
@@ -1248,11 +1207,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1813">
           <caret line="63" column="80" lean-forward="false" selection-start-line="63" selection-start-column="80" selection-end-line="63" selection-end-column="80" />
-          <folding>
-            <element signature="method#getCourseType#0;class#CourseMain#0" expanded="false" />
-            <element signature="method#courseSearch#0;class#CourseMain#0" expanded="false" />
-            <element signature="method#getCourseById#0;class#CourseMain#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1295,10 +1249,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="108" column="39" lean-forward="false" selection-start-line="108" selection-start-column="39" selection-end-line="108" selection-end-column="39" />
-          <folding>
-            <element signature="method#loginStatusCheck#0;class#Login#0" expanded="false" />
-            <element signature="method#loginOff#0;class#Login#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1306,13 +1256,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="111">
           <caret line="158" column="25" lean-forward="true" selection-start-line="158" selection-start-column="25" selection-end-line="158" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="774">
-          <caret line="76" column="14" lean-forward="false" selection-start-line="76" selection-start-column="14" selection-end-line="76" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -1352,9 +1295,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="451">
           <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1376,7 +1316,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="35" lean-forward="true" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1413,13 +1352,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
           <caret line="233" column="9" lean-forward="true" selection-start-line="233" selection-start-column="9" selection-end-line="233" selection-end-column="9" />
-          <folding>
-            <element signature="method#getImgsrc#0;class#UserMain#0" expanded="false" />
-            <element signature="method#getUserinfo#0;class#UserMain#0" expanded="false" />
-            <element signature="method#modImgsrc#0;class#UserMain#0" expanded="false" />
-            <element signature="method#modImgfile#0;class#UserMain#0" expanded="false" />
-            <element signature="method#modUserinfo#0;class#UserMain#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1427,31 +1359,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="370">
           <caret line="475" column="25" lean-forward="true" selection-start-line="475" selection-start-column="25" selection-end-line="475" selection-end-column="25" />
-          <folding>
-            <element signature="e#90#790#0" expanded="false" />
-            <element signature="e#858#2569#0" expanded="false" />
-            <element signature="e#2657#3182#0" expanded="false" />
-            <element signature="e#3326#4133#0" expanded="false" />
-            <element signature="e#4338#4656#0" expanded="false" />
-            <element signature="e#4760#4951#0" expanded="false" />
-            <element signature="e#5077#5512#0" expanded="false" />
-            <element signature="e#5618#5873#0" expanded="false" />
-            <element signature="e#6058#6422#0" expanded="false" />
-            <element signature="e#6545#9484#0" expanded="false" />
-            <element signature="e#9607#9673#0" expanded="false" />
-            <element signature="e#9796#10534#0" expanded="false" />
-            <element signature="e#10779#12425#0" expanded="false" />
-            <element signature="e#12521#13179#0" expanded="false" />
-            <element signature="e#13370#13587#0" expanded="false" />
-            <element signature="e#13712#15124#0" expanded="false" />
-            <element signature="e#18170#19295#0" expanded="false" />
-            <element signature="e#19510#19537#0" expanded="false" />
-            <element signature="e#19609#20154#0" expanded="false" />
-            <element signature="e#20284#20475#0" expanded="false" />
-            <element signature="e#20605#21819#0" expanded="false" />
-            <element signature="e#21933#22776#0" expanded="false" />
-            <element signature="e#23015#24401#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1459,13 +1366,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="814">
           <caret line="252" column="8" lean-forward="true" selection-start-line="252" selection-start-column="8" selection-end-line="252" selection-end-column="52" />
-          <folding>
-            <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1473,12 +1373,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
           <caret line="338" column="33" lean-forward="true" selection-start-line="338" selection-start-column="33" selection-end-line="338" selection-end-column="33" />
-          <folding>
-            <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#ul#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1486,11 +1380,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="597">
           <caret line="88" column="13" lean-forward="false" selection-start-line="88" selection-start-column="13" selection-end-line="88" selection-end-column="13" />
-          <folding>
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#ul#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1498,16 +1387,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="469">
           <caret line="234" column="14" lean-forward="true" selection-start-line="234" selection-start-column="14" selection-end-line="234" selection-end-column="14" />
-          <folding>
-            <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#ul#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1515,11 +1394,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
           <caret line="236" column="17" lean-forward="false" selection-start-line="236" selection-start-column="17" selection-end-line="236" selection-end-column="17" />
-          <folding>
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#ul#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1527,10 +1401,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding>
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1538,12 +1408,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="382">
           <caret line="151" column="22" lean-forward="false" selection-start-line="151" selection-start-column="22" selection-end-line="151" selection-end-column="22" />
-          <folding>
-            <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#ul#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1551,9 +1415,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="552">
           <caret line="132" column="17" lean-forward="false" selection-start-line="132" selection-start-column="17" selection-end-line="132" selection-end-column="17" />
-          <folding>
-            <element signature="n#ul#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1561,9 +1422,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="636">
           <caret line="150" column="17" lean-forward="false" selection-start-line="150" selection-start-column="17" selection-end-line="150" selection-end-column="17" />
-          <folding>
-            <element signature="n#ul#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1571,9 +1429,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-189">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1581,14 +1436,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-104">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#81#1369#0" expanded="false" />
-            <element signature="e#1457#1943#0" expanded="false" />
-            <element signature="e#2079#2181#0" expanded="false" />
-            <marker date="1517627317534" expanded="true" signature="857:863" ph="&amp;nbsp;" />
-            <marker date="1517627317534" expanded="true" signature="888:899" ph="..." />
-            <marker date="1517627317534" expanded="true" signature="1180:1191" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1596,9 +1443,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-439">
           <caret line="184" column="17" lean-forward="false" selection-start-line="184" selection-start-column="17" selection-end-line="184" selection-end-column="17" />
-          <folding>
-            <element signature="n#ul#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1606,13 +1450,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="43" column="60" lean-forward="true" selection-start-line="43" selection-start-column="60" selection-end-line="43" selection-end-column="60" />
-          <folding>
-            <element signature="n#header#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#nav#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#footer#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#ul#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1620,12 +1457,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1221">
           <caret line="230" column="13" lean-forward="false" selection-start-line="230" selection-start-column="13" selection-end-line="230" selection-end-column="13" />
-          <folding>
-            <element signature="e#90#790#0" expanded="false" />
-            <element signature="e#858#5084#0" expanded="false" />
-            <element signature="e#5172#5697#0" expanded="false" />
-            <element signature="e#5841#10440#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1633,9 +1464,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
           <caret line="256" column="0" lean-forward="true" selection-start-line="256" selection-start-column="0" selection-end-line="256" selection-end-column="0" />
-          <folding>
-            <element signature="n#ul#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1643,18 +1471,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="211">
           <caret line="256" column="37" lean-forward="true" selection-start-line="256" selection-start-column="37" selection-end-line="256" selection-end-column="37" />
-          <folding>
-            <element signature="e#158#2185#0" expanded="false" />
-            <element signature="e#2361#3659#0" expanded="false" />
-            <element signature="e#3851#5501#0" expanded="false" />
-            <element signature="e#5659#7265#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/util/EmailUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="710">
+        <state relative-caret-position="1628">
           <caret line="51" column="40" lean-forward="false" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1664,7 +1486,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/register/check.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
+        <state relative-caret-position="2368">
           <caret line="64" column="21" lean-forward="false" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
           <folding>
             <element signature="e#1057#2010#2" expanded="true" />
@@ -1682,7 +1504,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserVService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
+        <state relative-caret-position="1517">
           <caret line="41" column="13" lean-forward="false" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
           <folding />
         </state>
@@ -1690,7 +1512,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserVServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
+        <state relative-caret-position="2405">
           <caret line="69" column="32" lean-forward="false" selection-start-line="69" selection-start-column="32" selection-end-line="69" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1700,7 +1522,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserVMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1013">
+        <state relative-caret-position="1739">
           <caret line="50" column="61" lean-forward="false" selection-start-line="50" selection-start-column="61" selection-end-line="50" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1710,7 +1532,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/UserVali.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="652">
+        <state relative-caret-position="1110">
           <caret line="39" column="5" lean-forward="false" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
           <folding />
         </state>
@@ -1718,24 +1540,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/Register.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
+        <state relative-caret-position="3700">
           <caret line="115" column="33" lean-forward="false" selection-start-line="115" selection-start-column="33" selection-end-line="115" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="190" column="13" lean-forward="false" selection-start-line="190" selection-start-column="12" selection-end-line="190" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="29" column="38" lean-forward="false" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+        <state relative-caret-position="848">
+          <caret line="36" column="23" lean-forward="true" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="204" column="7" lean-forward="true" selection-start-line="204" selection-start-column="7" selection-end-line="204" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="60" column="63" lean-forward="false" selection-start-line="60" selection-start-column="63" selection-end-line="60" selection-end-column="63" />
           <folding />
         </state>
       </provider>
