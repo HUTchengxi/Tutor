@@ -215,6 +215,12 @@
     $("#checktype").change(register_check_blur);
 
     /**
+     * email的异步校验：
+     *  1.是否为163邮箱
+     *  2.是否已经被注册了
+     */
+
+    /**
      * 简单实现暂不验证的注册
      */
     var register_submit = function () {
@@ -250,12 +256,17 @@
             success: function (data) {
                 var status = data.status;
                 var url = data.url;
+                console.log(status);
                 if (status === "invalid") {
                     alert("后台数据库环境异常，请重新注册");
                     return;
                 }
+                else if(status == "exist"){
+                    alert("该邮箱已经被注册过了");
+                    return false;
+                }
                 window.alert("注册成功");
-                window.location.href = url;
+                // window.location.href = url;
             },
             error: function (xhr, status) {
                 alert("服务器环境异常");
