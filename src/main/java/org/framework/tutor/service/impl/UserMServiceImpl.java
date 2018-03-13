@@ -137,4 +137,16 @@ public class UserMServiceImpl implements UserMService {
 
         return userMMapper.registerByEmail(identity, username, password, nickname, email);
     }
+
+    /**
+     * 通过用户名和邮箱获取对应的用户
+     * @param username
+     * @param email
+     * @return
+     */
+    @Override
+    public UserMain getByUserAndEmail(String username, String email) {
+
+        return userMMapper.getByUserAndEmail(username, email);
+    }
 }

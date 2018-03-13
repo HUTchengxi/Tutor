@@ -228,5 +228,5 @@ $(function(){
         var ranktype = $(this).closest("div.rank").data("type");
         window.open("/forward_con/rank_more?type=" + ranktype);
     };
-    $("footer a").click(rank_more);
+    $(".rank footer a").click(rank_more);
 });

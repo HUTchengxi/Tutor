@@ -82,4 +82,12 @@ public interface UserMService {
      * @param email
      */
     boolean registerByEmail(Integer identity, String username, String password, String nickname, String email);
+
+    /**
+     * 获取用户名和邮箱对应的用户
+     * @param username
+     * @param email
+     * @return
+     */
+    UserMain getByUserAndEmail(String username, String email);
 }

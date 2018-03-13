@@ -43,16 +43,6 @@ public class ForwardAll {
     }
 
     /**
-     * 进入忘记密码界面
-     * @return
-     */
-    @RequestMapping("/goforget")
-    public String goForget(){
-
-        return "/forget/index";
-    }
-
-    /**
      * 进入首页
      * @return
      */
@@ -74,6 +64,7 @@ public class ForwardAll {
 
     /**
      * 进入勤成榜界面
+     * @return
      */
     @RequestMapping("/gorank")
     public String Rank(){
@@ -177,6 +168,16 @@ public class ForwardAll {
     public String goSetting(){
 
         return "/home/mysetting";
+    }
+
+    /**
+     * 进入忘记密码界面
+     * @return
+     */
+    @RequestMapping("/goforget")
+    public String goForget(){
+
+        return "/login/forget";
     }
 
     /**

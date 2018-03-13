@@ -164,6 +164,12 @@ public class Login {
         writer.close();
     }
 
+    /**
+     * 退出登录
+     * @param request
+     * @param response
+     * @throws IOException
+     */
     @RequestMapping("/login_logoff")
     public void loginOff(HttpServletRequest request, HttpServletResponse response) throws IOException {
 

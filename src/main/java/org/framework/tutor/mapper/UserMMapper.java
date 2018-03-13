@@ -91,4 +91,13 @@ public interface UserMMapper {
     @Insert("insert into user_main(identity, username, password, nickname, email) values(#{identity}, #{username}, #{password}, #{nickname}, #{email})")
     boolean registerByEmail(@Param("identity") Integer identity, @Param("username") String username, @Param("password") String password,
                             @Param("nickname") String nickname, @Param("email") String email);
+
+    /**
+     * 通过用户名和邮箱获取对应的用户
+     * @param username
+     * @param email
+     * @return
+     */
+    @Select("select * from user_main where username=#{username} and email=#{email}")
+    UserMain getByUserAndEmail(@Param("username") String username, @Param("email") String email);
 }

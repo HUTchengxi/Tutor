@@ -2,11 +2,13 @@ package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
 import org.framework.tutor.service.UserMService;
+import org.framework.tutor.util.EmailUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -240,6 +242,40 @@ public class UserMain {
             else{
                 res = "{\"tel\": \""+userMain.getTelephone()+"\", \"ema\": \""+userMain.getEmail()+"\"}";
             }
+        }
+
+        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.flush();
+        writer.close();
+    }
+
+    /**
+     * 通过发送邮件找回密码
+     * @param email
+     * @param username
+     * @param response
+     * @throws IOException
+     */
+    @RequestMapping("/forget_sendmail")
+    public void sendMail(String email, String username, HttpServletRequest request, HttpServletResponse response) throws IOException, MessagingException {
+
+        response.setCharacterEncoding("utf-8");
+        PrintWriter writer = response.getWriter();
+        String res = null;
+
+        //判断用户名和邮箱是否对应
+        org.framework.tutor.domain.UserMain userMain = userMService.getByUserAndEmail(username, email);
+        if(userMain == null){
+            res = "{\"status\": \"invalid\"}";
+        }
+        else{
+            //发送校验断码邮件
+            String uuid = EmailUtil.getUUID();
+            EmailUtil.sendCommonEmail(email, uuid);
+
+            //session保存短码
+            request.getSession().setAttribute("valiemail", uuid);
+            res = "{\"status\": \"ok\"}";
         }
 
         writer.print(new JsonParser().parse(res).getAsJsonObject());
