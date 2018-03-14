@@ -8,6 +8,7 @@
         if($(this).closest("li").hasClass("cli")){
             return;
         }
+        $(".err").css("display", "none");
         $("nav ul li.cli").removeClass("cli");
         $(this).closest("li").addClass("cli");
 
@@ -71,6 +72,7 @@
             top: "-700px"
         },500);
         $(".zhezhao").css("display", "none");
+        $(".err").css("display", "none");
     };
     $(".container a.close").click(cli_closecontainer);
 

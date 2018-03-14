@@ -11,18 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bf479440-431d-499c-9612-40c14de1a166" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMMapper.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMMapper.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMService.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMServiceImpl.java" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/login/mine/forget.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/login/mine/forget.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/login/mine/login.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/login/mine/login.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login/forget.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/login/forget.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/UserMain.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/UserMain.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/mapper/UserMMapper.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/mapper/UserMMapper.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/UserMService.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/UserMService.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/impl/UserMServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/impl/UserMServiceImpl.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/js/login/mine/login.js" afterPath="$PROJECT_DIR$/target/classes/static/js/login/mine/login.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -45,7 +35,7 @@
       <file leaf-file-name="2.0版本" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
+            <state relative-caret-position="444">
               <caret line="47" column="22" lean-forward="true" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
               <folding />
             </state>
@@ -69,16 +59,15 @@
       <file leaf-file-name="forget.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/login/mine/forget.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="242" column="5" lean-forward="true" selection-start-line="242" selection-start-column="5" selection-end-line="242" selection-end-column="5" />
+            <state relative-caret-position="1170">
+              <caret line="79" column="22" lean-forward="true" selection-start-line="79" selection-start-column="22" selection-end-line="79" selection-end-column="22" />
               <folding>
-                <element signature="e#85#528#0" expanded="false" />
-                <element signature="e#655#1764#0" expanded="false" />
-                <element signature="e#1892#2022#0" expanded="false" />
-                <element signature="e#2496#4184#0" expanded="false" />
-                <element signature="e#4391#5030#0" expanded="false" />
-                <element signature="e#5238#5862#0" expanded="false" />
-                <element signature="e#6007#7652#0" expanded="false" />
+                <element signature="e#697#1806#0" expanded="false" />
+                <element signature="e#1934#2106#0" expanded="false" />
+                <element signature="e#2580#4268#0" expanded="false" />
+                <element signature="e#4475#5114#0" expanded="false" />
+                <element signature="e#5322#5946#0" expanded="false" />
+                <element signature="e#6091#7736#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -243,8 +232,8 @@
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/login/mine/forget.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/login/mine/login.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/login/mine/forget.js" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本" />
       </list>
     </option>
@@ -939,7 +928,7 @@
       <workItem from="1520863334834" duration="5926000" />
       <workItem from="1520928759617" duration="11986000" />
       <workItem from="1520989874131" duration="9630000" />
-      <workItem from="1521024368564" duration="4827000" />
+      <workItem from="1521024368564" duration="5089000" />
     </task>
     <task id="LOCAL-00001" summary="将毕设项目提交到gitlab">
       <created>1520393481249</created>
@@ -1053,11 +1042,18 @@
       <option name="project" value="LOCAL" />
       <updated>1521003219861</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="完全实现了邮箱找回密码的功能">
+      <created>1521029302800</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1521029302800</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="655860000" />
+    <option name="totallyTimeSpent" value="656122000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1155,7 +1151,8 @@
     <MESSAGE value="邮箱注册以及后续的验证的实现，还未实现邮箱注册后的等待/重发界面" />
     <MESSAGE value="注册邮件重发，等待刷新，个人中心的邮箱和手机关联的同步的实现" />
     <MESSAGE value="实现了邮件验证短码的发送（接入SpringBoot的email）" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现了邮件验证短码的发送（接入SpringBoot的email）" />
+    <MESSAGE value="完全实现了邮箱找回密码的功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="完全实现了邮箱找回密码的功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1560,23 +1557,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/login/mine/forget.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="242" column="5" lean-forward="true" selection-start-line="242" selection-start-column="5" selection-end-line="242" selection-end-column="5" />
+        <state relative-caret-position="1170">
+          <caret line="79" column="22" lean-forward="true" selection-start-line="79" selection-start-column="22" selection-end-line="79" selection-end-column="22" />
           <folding>
-            <element signature="e#85#528#0" expanded="false" />
-            <element signature="e#655#1764#0" expanded="false" />
-            <element signature="e#1892#2022#0" expanded="false" />
-            <element signature="e#2496#4184#0" expanded="false" />
-            <element signature="e#4391#5030#0" expanded="false" />
-            <element signature="e#5238#5862#0" expanded="false" />
-            <element signature="e#6007#7652#0" expanded="false" />
+            <element signature="e#697#1806#0" expanded="false" />
+            <element signature="e#1934#2106#0" expanded="false" />
+            <element signature="e#2580#4268#0" expanded="false" />
+            <element signature="e#4475#5114#0" expanded="false" />
+            <element signature="e#5322#5946#0" expanded="false" />
+            <element signature="e#6091#7736#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
+        <state relative-caret-position="444">
           <caret line="47" column="22" lean-forward="true" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
           <folding />
         </state>
