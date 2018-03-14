@@ -161,4 +161,15 @@ public class UserMServiceImpl implements UserMService {
 
         return userMMapper.modPassword(username, newpass);
     }
+
+    /**
+     * 邮箱解除绑定
+     * @param username
+     * @return
+     */
+    @Override
+    public Integer unbindEmail(String username) {
+
+        return userMMapper.unbindEmail(username);
+    }
 }

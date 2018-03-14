@@ -272,26 +272,35 @@ public class UserMain {
         PrintWriter writer = response.getWriter();
         String res = null;
 
-        //判断用户名和邮箱是否对应
-        org.framework.tutor.domain.UserMain userMain = userMService.getByUserAndEmail(username, email);
-        if(userMain == null){
-            res = "{\"status\": \"invalid\"}";
-        }
-        else{
-            //发送校验断码邮件
-            String uuid = CommonUtil.getUUID().substring(0, 4);
-            SimpleMailMessage message = new SimpleMailMessage();
-            message.setFrom(from);
-            message.setTo(email);
-            message.setSubject("勤成家教网----邮件找回密码验证钥匙");
-            message.setText("您的验证短码是："+uuid);
-            javaMailSender.send(message);
+        if(username == null){
+            username = (String) request.getSession().getAttribute("username");
+            if(username == null){
+                res = "{\"status\": \"invalid\"}";
+            }
+            else {
 
-            //session保存短码
-            request.getSession().setAttribute("valiemail", email);
-            request.getSession().setAttribute("valicode", uuid);
-            res = "{\"status\": \"ok\"}";
+                //判断用户名和邮箱是否对应
+                org.framework.tutor.domain.UserMain userMain = userMService.getByUserAndEmail(username, email);
+                if (userMain == null) {
+                    res = "{\"status\": \"invalid\"}";
+                } else {
+                    //发送校验断码邮件
+                    String uuid = CommonUtil.getUUID().substring(0, 4);
+                    SimpleMailMessage message = new SimpleMailMessage();
+                    message.setFrom(from);
+                    message.setTo(email);
+                    message.setSubject("勤成家教网----邮件找回密码验证钥匙");
+                    message.setText("您的验证短码是：" + uuid);
+                    javaMailSender.send(message);
+
+                    //session保存短码
+                    request.getSession().setAttribute("valiemail", email);
+                    request.getSession().setAttribute("valicode", uuid);
+                    res = "{\"status\": \"ok\"}";
+                }
+            }
         }
+
 
         writer.print(new JsonParser().parse(res).getAsJsonObject());
         writer.flush();
@@ -380,6 +389,47 @@ public class UserMain {
             }
             else{
                     res = "{\"status\": \"invalid\"}";
+            }
+        }
+
+        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.flush();
+        writer.close();
+    }
+
+    /**
+     * 解除绑定
+     * @param type
+     * @param valicode
+     * @param request
+     * @param response
+     */
+    @RequestMapping("/unbind_valicode")
+    public void userUnbind(String type, String valicode, HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        PrintWriter writer = response.getWriter();
+        HttpSession session = request.getSession();
+        String username = (String) session.getAttribute("username");
+        String res = null;
+
+        if(username == null){
+            res = "{\"status\": \"invalid\"}";
+        }
+        else{
+            //验证码进行判断
+            String realvalicode = (String) session.getAttribute("valicode");
+            if(realvalicode != null && realvalicode.equals(valicode)){
+                //进行邮箱解除绑定
+                Integer row = userMService.unbindEmail(username);
+                if(row == 1){
+                    res = "{\"status\": \"valid\"}";
+                }
+                else{
+                    res = "{\"status\": \"mysqlerr\"}";
+                }
+            }
+            else{
+                res = "{\"status\": \"codeerr\"}";
             }
         }
 

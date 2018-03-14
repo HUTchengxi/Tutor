@@ -98,4 +98,11 @@ public interface UserMService {
      * @return
      */
     Integer modPassword(String username, String newpass);
+
+    /**
+     * 邮箱解除绑定
+     * @param username
+     * @return
+     */
+    Integer unbindEmail(String username);
 }

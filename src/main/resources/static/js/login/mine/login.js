@@ -109,8 +109,10 @@
                     if(document.referrer == window.location.href || document.referrer.trim() == ""){
                         window.location.href = "/forward_con/welcome";
                     }
-
                     else if("http://localhost:8080/forward_con/goforget" == document.referrer){
+                        window.location = "/forward_con/welcome";
+                    }
+                    else if("http://localhost:8080/forward_con/goregister" == document.referrer){
                         window.location = "/forward_con/welcome";
                     }
                     else{

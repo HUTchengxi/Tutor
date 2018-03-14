@@ -109,4 +109,12 @@ public interface UserMMapper {
      */
     @Update("update user_main set password=#{newpass} where username=#{username}")
     Integer modPassword(@Param("username") String username, @Param("newpass") String newpass);
+
+    /**
+     * 邮箱解除绑定
+     * @param username
+     * @return
+     */
+    @Update("update user_main set email=null where username=#{username}")
+    Integer unbindEmail(@Param("username") String username);
 }

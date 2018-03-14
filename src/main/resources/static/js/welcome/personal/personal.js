@@ -469,25 +469,29 @@ $(function(){
                     var ema = data.ema;
 
                     //手机未绑定
-                    if(tel == ""){
+                    if(tel == "" || tel == null){
                         $(".binddiv .mainbind .tel-phone p:nth-child(2)").append("<span class='ok'>(暂未绑定)</span>");
                         $(".binddiv .mainbind .tel-phone p:nth-child(3)").append("<a href=\"javacript:void(0)\" class=\"pull-right btn-bind\" data-type=\"email\">立刻绑定</a>");
                     }
                     else{
-                        $(".binddiv .mainbind .tel-phone p:nth-child(2)").append("<span>(已绑定"+tel+")</span>");
-                        $(".binddiv .mainbind .tel-phone p:nth-child(3)").append("<a href=\"javacript:void(0)\" class=\"pull-right more btn-unbind\" data-type=\"phone\">解绑</a>\n" +
-                            "                                            <a href=\"javacript:void(0)\" class=\"pull-right more btn-modbind\" data-type=\"phone\">更改</a>");
+                        $(".binddiv .mainbind .tel-phone p:nth-child(2)").append("<span>(已绑定<i>"+tel+"</i>)</span>");
+                        $(".binddiv .mainbind .tel-phone p:nth-child(3)").append("<a href=\"javacript:void(0)\" class=\"pull-right more btn-unbind\" " +
+                            "data-type=\"phone\">解绑</a>\n" +
+                            "                                            <a href=\"javacript:void(0)\" class=\"pull-right more btn-modbind\" " +
+                            "data-type=\"phone\">更改</a>");
                     }
 
                     //电子邮箱未绑定
-                    if(ema == ""){
+                    if(ema == "" || ema == null){
                         $(".binddiv .mainbind .email p:nth-child(2)").append("<span class='ok'>(暂未绑定)</span>");
                         $(".binddiv .mainbind .email p:nth-child(3)").append("<a href=\"javacript:void(0)\" class=\"pull-right btn-bind\" data-type=\"email\">立刻绑定</a>");
                     }
                     else{
-                        $(".binddiv .mainbind .email p:nth-child(2)").append("<span>(已绑定"+ema+")</span>");
-                        $(".binddiv .mainbind .email p:nth-child(3)").append("<a href=\"javacript:void(0)\" class=\"pull-right more btn-unbind\" data-type=\"phone\">解绑</a>\n" +
-                            "                                            <a href=\"javacript:void(0)\" class=\"pull-right more btn-modbind\" data-type=\"phone\">更改</a>");
+                        $(".binddiv .mainbind .email p:nth-child(2)").append("<span>(已绑定<i>"+ema+"</i>)</span>");
+                        $(".binddiv .mainbind .email p:nth-child(3)").append("<a href=\"javacript:void(0)\" class=\"pull-right more btn-unbind\" " +
+                            "data-type=\"email\">解绑</a>\n" +
+                            "                                            <a href=\"javacript:void(0)\" class=\"pull-right more btn-modbind\" " +
+                            "data-type=\"email\">更改</a>");
                     }
                 }
             },
@@ -498,6 +502,151 @@ $(function(){
         })
     };
     async_getbind();
+
+    /**
+     * 邮箱的解绑的点击事件
+     */
+    var cli_unbind = function(){
+
+        var type = $(this).data("type");
+        var val = $(this).closest("div").find("p:nth-child(2) span i").text();
+
+        var info = "";
+        if(type == "email"){
+            info = "           确定要接触邮箱";
+        }
+        else{
+            info = "           确定要接触手机号码";
+        }
+        info += val+"的绑定吗？";
+        if(window.confirm(info)){
+            $(".zhezhao").css("display", "block").css("height", $(document).height());
+            $(".alert-unbind").data("type", type).animate({
+                top: "25%",
+                opacity: 1
+            },200);
+        }
+    };
+    $(document).on("click", ".binddiv .mainbind p a.btn-unbind", cli_unbind);
+
+    /**
+     * 解绑弹出框的关闭事件：
+     *  close按钮点击/取消绑定按钮得点击/遮罩层的点击
+     */
+    var cli_closeunbind = function(){
+
+        $(".zhezhao").css("display", "none");
+        $(".alert-unbind").animate({
+            top: "-40%",
+            opacity: 0
+        },200).delay(500);
+    };
+    $(".alert-unbind a.alink-unbind").click(cli_closeunbind);
+    $(".alert-unbind .div-unbind .btn-reset").click(cli_closeunbind);
+    $(".zhezhao").click(cli_closeunbind);
+
+    /**
+     * 点击获取解除绑定的验证码
+     */
+    var cli_getvalicode = function(){
+
+        var type = $(this).closest("div.alert-unbind").data("type");
+
+        if(type === "email"){
+            var email = $(".binddiv .mainbind .email p:nth-child(2) span i").text();
+
+            var status = $(this).data("status");
+            if(status == "ing"){
+                return ;
+            }
+
+            $.ajax({
+                async: true,
+                type: "post",
+                url: "/usermain_con/forget_sendmail",
+                data: {email: email},
+                dataType: "json",
+                success: function(data){
+                    var status = data.status;
+                    if(status == "invalid"){
+                        $(".err-email").css("display", "block").text("邮箱不存在");
+                        return ;
+                    }
+                    else{
+                        $(".err-email").css("display", "none");
+                        window.alert("发送成功，请查看您的邮箱");
+                        var interval;
+                        var time = 60;
+                        //邮件验证码发送成功的冷却事件
+                        $(".alert-unbind .div-valicode .resend").data("status", "ing");
+                        var interval = window.setInterval(function(){
+                            if(time == 0){
+                                $(".alert-unbind .div-valicode .resend").data("status", "ed").text("获取验证码");
+                                window.clearInterval(interval);
+                                return;
+                            }
+                            $(".alert-unbind .div-valicode .resend").text(""+time+"s后可重发");
+                            time--;
+                        }, 1000);
+                    }
+                },
+                error: function(xhr, status){
+                    window.alert("后台环境异常导致无法发送邮箱短码，请稍后再试");
+                    window.console.log(xhr);
+                }
+            });
+        }
+    };
+    $(".alert-unbind .div-valicode .resend").click(cli_getvalicode);
+
+    /**
+     * 解除绑定的提交按钮
+     */
+    var cli_subunbind = function(){
+
+        var type = $(".alert-unbind").data("type");
+        var valicode = $(".alert-unbind .div-valicode .valicode").val();
+
+        if(valicode == ""){
+            if(type == "email") {
+                $(".err-email").css("display", "block").text("请填写邮箱");
+            }
+            else{
+                $(".err-email").css("display", "block").text("请填写手机号码");
+            }
+        }
+        else{
+            //解除绑定
+            $.ajax({
+                async: true,
+                type: "post",
+                url: "/usermain_con/unbind_valicode",
+                data: {type: type, valicode: valicode},
+                dataType: "json",
+                success: function(data){
+                    var status = data.status;
+                    if(status == "invalid"){
+                        window.location = "/forward_con/welcome";
+                    }
+                    else if(status == "mysqlerr"){
+                        window.alert("后台数据库异常导致无法进行解除绑定，请稍后重试");
+                    }
+                    else if(status == "codeerr"){
+                        $(".err-email").css("display", "block").text("验证码不正确");
+                    }
+                    else{
+                        window.alert("您已成功解除绑定");
+                        window.history.go(0);
+                    }
+                },
+                error: function(xhr, status){
+                    window.alert("后台环境异常导致无法进行解除绑定，请稍后重试");
+                    window.console.log(xhr);
+                }
+            });
+        }
+    };
+    $(".alert-unbind .div-unbind .btn-unbind").click(cli_subunbind);
 
 
 
