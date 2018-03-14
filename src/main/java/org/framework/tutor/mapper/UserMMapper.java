@@ -100,4 +100,13 @@ public interface UserMMapper {
      */
     @Select("select * from user_main where username=#{username} and email=#{email}")
     UserMain getByUserAndEmail(@Param("username") String username, @Param("email") String email);
+
+    /**
+     * 修改用户的密码
+     * @param username
+     * @param newpass
+     * @return
+     */
+    @Update("update user_main set password=#{newpass} where username=#{username}")
+    Integer modPassword(@Param("username") String username, @Param("newpass") String newpass);
 }

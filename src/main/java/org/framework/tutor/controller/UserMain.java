@@ -288,8 +288,99 @@ public class UserMain {
             javaMailSender.send(message);
 
             //session保存短码
-            request.getSession().setAttribute("valiemail", uuid);
+            request.getSession().setAttribute("valiemail", email);
+            request.getSession().setAttribute("valicode", uuid);
             res = "{\"status\": \"ok\"}";
+        }
+
+        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.flush();
+        writer.close();
+    }
+
+    /**
+     * 根据手机号/邮箱来重设密码
+     * @param username
+     * @param email
+     * @param phone
+     * @param valicode
+     * @param newpass
+     * @param repass
+     * @param request
+     * @param response
+     */
+    @RequestMapping("/forget_modpass")
+    public void modPass(String username, String email, String phone, String valicode, String newpass, String repass,
+                        HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        PrintWriter writer = response.getWriter();
+        HttpSession session = request.getSession();
+        String realvalicode = (String) session.getAttribute("valicode");
+        String res = null;
+
+        //进行密码的验证性
+        if(!(newpass != null && newpass.length() >= 6 && newpass.length() <= 12 && newpass.equals(repass))){
+            res = "{\"status\": \"invalid\"}";
+        }
+        else {
+            //邮箱的方式进行密码找回
+            if (email != null) {
+                //判断验证断码是否正确
+                String realemail = (String) session.getAttribute("valiemail");
+                if (email.equals(realemail) && valicode != null && valicode.equals(realvalicode)) {
+
+                    //判断邮箱和用户名是否对应
+                    org.framework.tutor.domain.UserMain userMain = userMService.getByUserAndEmail(username, email);
+                    if(userMain == null){
+                        res = "{\"status\": \"inerr\"}";
+                    }
+                    else {
+                        //可以修改密码
+                        Integer row = userMService.modPassword(username, newpass);
+                        if (row == 1) {
+                            res = "{\"status\": \"valid\"}";
+                        } else {
+                            res = "{\"status\": \"mysqlerr\"}";
+                        }
+                    }
+                }
+                else{
+                    //判断邮箱是否为空或者长度不满足
+                    if(!email.equals(realemail)){
+                        res = "{\"status\": \"inerr\"}";
+                    }
+                    res = "{\"status\": \"invalid\"}";
+                }
+            }
+            else if(phone != null){
+                //判断验证断码是否正确
+                String realphone = (String) session.getAttribute("valiphone");
+                if (phone.equals(realphone) && valicode != null && valicode.equals(realvalicode)) {
+
+                    //判断手机号码和用户名是否对应
+
+                    //可以修改密码
+                    Integer row = userMService.modPassword(username, newpass);
+                    if(row == 1){
+                        res = "{\"status\": \"valid\"}";
+                    }
+                    else{
+                        res = "{\"status\": \"mysqlerr\"}";
+                    }
+                }
+                else{
+                    //判断邮箱是否为空或者长度不满足
+                    if(!phone.equals(realphone)){
+                        res = "{\"status\": \"inerr\"}";
+                    }
+                    else {
+                        res = "{\"status\": \"invalid\"}";
+                    }
+                }
+            }
+            else{
+                    res = "{\"status\": \"invalid\"}";
+            }
         }
 
         writer.print(new JsonParser().parse(res).getAsJsonObject());

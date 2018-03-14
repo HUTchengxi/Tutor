@@ -195,4 +195,49 @@
     };
     $(".container .main .repass").blur(register_repass_blur);
 
+    /**
+     *  邮箱找回的方式点击提交按钮进行密码更改的提交
+     */
+    var cli_findpass = function(){
+
+        var valicode = $(".container .main-email .valicode").val();
+        var username = $(".usercheck .username").val();
+        var email = $(".container .main-email .email").val();
+        var newpass = $(".container .main-email .newpass").val();
+        var repass = $(".container .main-email .repass").val();
+
+        //进行密码修改
+        $.ajax({
+            async: true,
+            type:　"post",
+            url: "/usermain_con/forget_modpass",
+            data: {username: username, email: email, valicode: valicode, newpass: newpass, repass: repass},
+            dataType: "json",
+            success: function(data){
+                var status = data.status;
+                if(status == "inerr"){
+                    $(".container .main-email .resend").trigger("click");
+                    $(".container .main-email .newpass").trigger("blur");
+                    $(".container .main-email .repass").trigger("blur");
+                    return ;
+                }
+                else if(status == "invalid"){
+                    $(".container .main-email .err-email").css("display", "block").text("邮箱不存在");
+                    $(".container .main-email .newpass").trigger("blur");
+                    $(".container .main-email .repass").trigger("blur");
+                    return ;
+                }
+                else{
+                    window.alert("修改成功");
+                    window.location = "/forward_con/gologin";
+                }
+            },
+            erorr: function(xhr, status){
+                window.alert("后台环境异常导致无法修改用户密码，请稍后再试");
+                window.console.log(xhr);
+            }
+        });
+    };
+    $(".container .main-email form button").click(cli_findpass);
+
 }());

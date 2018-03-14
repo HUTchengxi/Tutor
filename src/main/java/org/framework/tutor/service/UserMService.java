@@ -90,4 +90,12 @@ public interface UserMService {
      * @return
      */
     UserMain getByUserAndEmail(String username, String email);
+
+    /**
+     * 修改用户的密码
+     * @param username
+     * @param newpass
+     * @return
+     */
+    Integer modPassword(String username, String newpass);
 }

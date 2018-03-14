@@ -149,4 +149,16 @@ public class UserMServiceImpl implements UserMService {
 
         return userMMapper.getByUserAndEmail(username, email);
     }
+
+    /**
+     * 修改用户的密码
+     * @param username
+     * @param newpass
+     * @return
+     */
+    @Override
+    public Integer modPassword(String username, String newpass) {
+
+        return userMMapper.modPassword(username, newpass);
+    }
 }
