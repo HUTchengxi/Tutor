@@ -141,4 +141,58 @@
         });
     };
     $(".container .mainshow .main-email a.resend").click(findpass_byemail);
+
+    /**
+     * 第一次密码输入框失去焦点时自动判断：
+     *  1：密码是否为空
+     *  2：密码长度是否大于六位小于等于十二位
+     */
+    var register_pass_blur = function () {
+
+        var password = $(this).val();
+        var len = password.length;
+        //密码为空
+        if (password.trim() == "") {
+            $(this).closest("div").find("p.err-newpass").text("密码不能为空").css("display", "block");
+        }
+        //密码长度
+        else if (len < 6) {
+            $(this).closest("div").find("p.err-newpass").text("密码不能低于6位").css("display", "block");
+        }
+        else if (len > 12) {
+            $(this).closest("div").find("p.err-newpass").text("密码长度不能超过12位").css("display", "block");
+        }
+        else {
+            $(this).closest("div").find("p.err-newpass").css("display", "none");
+        }
+    };
+    $(".container .main .newpass").blur(register_pass_blur);
+
+    /**
+     * 密码二次确认输入框失去焦点时自动判断：
+     *  1：两次密码不相同
+     *  2：密码输入是否为空
+     *  3: 密码长度为6-12
+     */
+    var register_repass_blur = function () {
+
+        var password = $(this).val();
+        var len = password.length;
+        //密码为空
+        if (password.trim() == "") {
+            $(this).closest("div").find("p.err-repass").text("密码不能为空").css("display", "block");
+        }
+        //密码长度
+        else {
+            var newpass = $(this).closest("div").find(".newpass").val();
+            if(newpass === password) {
+                $(this).closest("div").find("p.err-repass").css("display", "none");
+            }
+            else{
+                $(this).closest("div").find("p.err-repass").text("两次输入密码不一致").css("display", "block");
+            }
+        }
+    };
+    $(".container .main .repass").blur(register_repass_blur);
+
 }());

@@ -3,8 +3,11 @@ package org.framework.tutor.controller;
 import com.google.gson.JsonParser;
 import org.framework.tutor.service.UserMService;
 import org.framework.tutor.service.UserVService;
-import org.framework.tutor.util.EmailUtil;
+import org.framework.tutor.util.CommonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,7 +17,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
 import java.util.UUID;
 
 /**
@@ -30,6 +32,12 @@ public class Register {
 
     @Autowired
     private UserVService userVService;
+
+    @Autowired
+    private JavaMailSender javaMailSender;
+
+    @Value("${spring.mail.username}")
+    private String from;
 
     /**
      * 校验注册的用户名是否已经存在
@@ -114,7 +122,13 @@ public class Register {
                     if(userMService.registerByEmail(identity, username, password, nickname, email)){
 
                         //发送邮箱验证码
-                        String valicode = EmailUtil.sendValiEmail(email, username);
+                        String valicode = CommonUtil.getUUID();
+                        SimpleMailMessage message = new SimpleMailMessage();
+                        message.setFrom(from);
+                        message.setTo(email);
+                        message.setSubject("勤成家教网---邮箱验证链接");
+                        message.setText("点击链接<a href='http://localhost:8080/forward_con/register_check?username="+username+"&valicode="+valicode+"'>http://localhost:8080/register_con/register_check</a>进行验证");
+                        javaMailSender.send(message);
 
                         //保存邮箱验证码
                         Integer status = 0;
@@ -164,7 +178,13 @@ public class Register {
             String realemail = email.split(" ")[0];
             String realusername = email.split(" ")[1];
             //发送邮箱验证码
-            String valicode = EmailUtil.sendValiEmail(realemail, realusername);
+            String valicode = CommonUtil.getUUID();
+            SimpleMailMessage message = new SimpleMailMessage();
+            message.setFrom(from);
+            message.setTo(realemail);
+            message.setSubject("勤成家教网---邮箱验证链接");
+            message.setText("点击链接<a href='http://localhost:8080/forward_con/register_check?username="+realusername+"&valicode="+valicode+"'>http://localhost:8080/register_con/register_check</a>进行验证");
+            javaMailSender.send(message);
 
             //更新邮箱注册码
             userVService.updateEmailCode(realusername, valicode);

@@ -2,8 +2,11 @@ package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
 import org.framework.tutor.service.UserMService;
-import org.framework.tutor.util.EmailUtil;
+import org.framework.tutor.util.CommonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -24,6 +27,12 @@ public class UserMain {
 
     @Autowired
     private UserMService userMService;
+
+    @Autowired
+    private JavaMailSender javaMailSender;
+
+    @Value("${spring.mail.username}")
+    private String from;
 
     /**
      * 获取我的个人头像
@@ -270,8 +279,13 @@ public class UserMain {
         }
         else{
             //发送校验断码邮件
-            String uuid = EmailUtil.getUUID();
-            EmailUtil.sendCommonEmail(email, uuid);
+            String uuid = CommonUtil.getUUID().substring(0, 4);
+            SimpleMailMessage message = new SimpleMailMessage();
+            message.setFrom(from);
+            message.setTo(email);
+            message.setSubject("勤成家教网----邮件找回密码验证钥匙");
+            message.setText("您的验证短码是："+uuid);
+            javaMailSender.send(message);
 
             //session保存短码
             request.getSession().setAttribute("valiemail", uuid);
