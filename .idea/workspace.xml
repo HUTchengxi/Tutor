@@ -12,40 +12,8 @@
     <list default="true" id="bf479440-431d-499c-9612-40c14de1a166" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/classify.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/classify.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/mycourse/mycourse.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/mycourse/mycourse.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/mymessage.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/mymessage.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/mysetting.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/mysetting.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/order/mycart.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/order/mycart.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/rank.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/rank.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/classify.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/classify.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/mycourse.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/mycourse.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/mymessage.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/mymessage.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/mysetting.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/mysetting.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/order/mycart.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/order/mycart.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/order/myorder.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/order/myorder.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/personal.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/personal.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/rank.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/rank.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/showcourse.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/showcourse.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/welcome.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/welcome.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/classify.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/classify.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/mycourse/mycourse.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/mycourse/mycourse.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/mymessage.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/mymessage.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/mysetting.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/mysetting.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/order/mycart.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/order/mycart.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/rank.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/rank.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/showcourse.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/showcourse.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/classify.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/classify.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/mycourse.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/mycourse.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/mymessage.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/mymessage.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/mysetting.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/mysetting.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/order/mycart.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/order/mycart.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/order/myorder.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/order/myorder.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/personal.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/personal.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/rank.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/rank.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/showcourse.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/showcourse.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/welcome.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/welcome.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/personal/personal.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/personal/personal.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/personal/personal.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/personal/personal.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -67,8 +35,8 @@
       <file leaf-file-name="2.0版本" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="62" column="13" lean-forward="false" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
+            <state relative-caret-position="275">
+              <caret line="61" column="24" lean-forward="true" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -82,6 +50,23 @@
               <folding>
                 <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="personal.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/personal/personal.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="481">
+              <caret line="13" column="63" lean-forward="false" selection-start-line="13" selection-start-column="63" selection-end-line="13" selection-end-column="63" />
+              <folding>
+                <element signature="e#17743#18337#0" expanded="false" />
+                <element signature="e#23905#24071#0" expanded="false" />
+                <element signature="e#26351#27872#0" expanded="false" />
+                <marker date="1521126238971" expanded="true" signature="1893:1908" ph="..." />
+                <marker date="1521126238971" expanded="true" signature="1997:2010" ph="..." />
+                <marker date="1521126238971" expanded="true" signature="2068:2079" ph="..." />
               </folding>
             </state>
           </provider>
@@ -182,7 +167,6 @@
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/personal/personal.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/welcome.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/classify.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/mycourse.html" />
@@ -200,6 +184,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/personal.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/mysetting.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/rank.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/personal/personal.js" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本" />
       </list>
     </option>
@@ -985,7 +970,7 @@
       <workItem from="1521076142077" duration="2013000" />
       <workItem from="1521087295536" duration="1363000" />
       <workItem from="1521115470479" duration="248000" />
-      <workItem from="1521118601805" duration="6977000" />
+      <workItem from="1521118601805" duration="7558000" />
     </task>
     <task id="LOCAL-00001" summary="将毕设项目提交到gitlab">
       <created>1520393481249</created>
@@ -1120,11 +1105,18 @@
       <option name="project" value="LOCAL" />
       <updated>1521123312342</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="侧边栏的设计与返回顶部的实现">
+      <created>1521125808064</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1521125808064</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="674637000" />
+    <option name="totallyTimeSpent" value="675218000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1152,7 +1144,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="22" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="24" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26795283" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26741692" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1194,7 +1186,8 @@
     <MESSAGE value="完全实现了邮箱找回密码的功能" />
     <MESSAGE value="实现了邮箱的解绑功能" />
     <MESSAGE value="实现个人中心的邮箱绑定，移除绑定更改按钮" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现个人中心的邮箱绑定，移除绑定更改按钮" />
+    <MESSAGE value="侧边栏的设计与返回顶部的实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="侧边栏的设计与返回顶部的实现" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1203,13 +1196,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8024">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1444,21 +1430,6 @@
             <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/personal/personal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17068">
-          <caret line="488" column="127" lean-forward="false" selection-start-line="488" selection-start-column="127" selection-end-line="488" selection-end-column="127" />
-          <folding>
-            <element signature="e#17662#18256#0" expanded="false" />
-            <element signature="e#23824#23990#0" expanded="false" />
-            <element signature="e#26270#27791#0" expanded="false" />
-            <marker date="1521123119308" expanded="true" signature="1893:1908" ph="..." />
-            <marker date="1521123119308" expanded="true" signature="1997:2010" ph="..." />
-            <marker date="1521123119308" expanded="true" signature="2068:2079" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1769,6 +1740,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/welcome.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1521115419583" expanded="true" signature="5110:5121" ph="..." />
+            <marker date="1521115419583" expanded="true" signature="7141:7156" ph="..." />
+            <marker date="1521115419583" expanded="true" signature="7241:7254" ph="..." />
+            <marker date="1521115419583" expanded="true" signature="7308:7319" ph="..." />
+            <marker date="1521115419583" expanded="true" signature="8392:8403" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/personal/personal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="13" column="63" lean-forward="false" selection-start-line="13" selection-start-column="63" selection-end-line="13" selection-end-column="63" />
+          <folding>
+            <element signature="e#17743#18337#0" expanded="false" />
+            <element signature="e#23905#24071#0" expanded="false" />
+            <element signature="e#26351#27872#0" expanded="false" />
+            <marker date="1521126238971" expanded="true" signature="1893:1908" ph="..." />
+            <marker date="1521126238971" expanded="true" signature="1997:2010" ph="..." />
+            <marker date="1521126238971" expanded="true" signature="2068:2079" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home/rank.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="962">
@@ -1782,8 +1782,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="62" column="13" lean-forward="false" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
+        <state relative-caret-position="275">
+          <caret line="61" column="24" lean-forward="true" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
           <folding />
         </state>
       </provider>

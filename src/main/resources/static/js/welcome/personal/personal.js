@@ -179,6 +179,7 @@ $(function(){
     };
     $(".modface .sublink a.reset").click(close_modface);
     $(".modface .main a.close").click(close_modface);
+    $(".zhezhao").click(close_modface);
 
     /**
      * 点击换一换进行本地图片随机换
@@ -379,6 +380,7 @@ $(function(){
     };
     $("#modinfo .main a.close").click(close_userinfo);
     $("#modinfo .main .sublink .reset").click(close_userinfo);
+    $(".zhezhao").click(close_userinfo);
 
     /**
      * 打开个人信息设置的编辑框
@@ -908,6 +910,7 @@ $(function(){
         $(".zhezhao").delay(200).css("display","none");
     };
     $("#usersign .main a.close").click(close_usersign);
+    $(".zhezhao").click(close_usersign);
 
     /**
      * 异步获取当月打卡数据
