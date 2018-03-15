@@ -411,6 +411,7 @@
             <i class="glyphicon glyphicon-remove"></i>
         </a>
         <p class="err-email">aaa</p>
+        <p class="err-vali">bbb</p>
     </div>
 
     <style>
@@ -474,15 +475,19 @@
         }
         .alert-bind .alink-unbind{
             position:  absolute;
-            top: 4%;
+            top: 2%;
             right: 0.5%;
         }
-        .alert-bind .err-email{
+        .alert-bind .err-email, .alert-bind .err-vali{
             position:  absolute;
-            top: 37%;
-            right: 23%;
+            top: 27%;
+            right: 11%;
             color: red;
             display: none;
+            font-size: 14px;
+        }
+        .alert-bind .err-vali{
+            top: 50%;
         }
     </style>
 

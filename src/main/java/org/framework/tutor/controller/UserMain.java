@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -427,6 +428,97 @@ public class UserMain {
                 else{
                     res = "{\"status\": \"mysqlerr\"}";
                 }
+            }
+            else{
+                res = "{\"status\": \"codeerr\"}";
+            }
+        }
+
+        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.flush();
+        writer.close();
+    }
+
+    /**
+     * 发送绑定的验证短码
+     * @param type
+     * @param email
+     * @param phone
+     * @param request
+     * @param response
+     */
+    @RequestMapping("/sendbindcode")
+    public void sendBindCode(@RequestParam("type") String type, String email, String phone, HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        PrintWriter writer = response.getWriter();
+        HttpSession session = request.getSession();
+        String username = (String) session.getAttribute("username");
+        String res = null;
+
+        if(username == null){
+            res = "{\"status\": \"invalid\"}";
+        }
+        else{
+            //发送邮件验证码
+            if(type.equals("email")){
+                //判断邮箱是否存在
+                Boolean isExist = userMService.emailExist(email);
+                if(!isExist){
+                    //发送邮件验证码
+                    String uuid = CommonUtil.getUUID().substring(0, 4);
+                    SimpleMailMessage message = new SimpleMailMessage();
+                    message.setFrom(from);
+                    message.setTo(email);
+                    message.setSubject("勤成家教网----邮件数据绑定验证钥匙");
+                    message.setText("您的验证短码是：" + uuid);
+                    javaMailSender.send(message);
+
+                    session.setAttribute("bindcode", uuid);
+                    session.setAttribute("bindemail", email);
+                    res = "{\"status\": \"sendok\"}";
+                }
+                else{
+                    res = "{\"status\": \"exist\"}";
+                }
+            }
+        }
+
+        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.flush();
+        writer.close();
+    }
+
+    /**
+     * 进行邮箱/手机号码的绑定
+     * @param type
+     * @param email
+     * @param valicode
+     * @param response
+     * @param request
+     */
+    @RequestMapping("/userbind")
+    public void userBind(@RequestParam("type") String type, String email, String valicode, HttpServletResponse response, HttpServletRequest request) throws IOException {
+
+        PrintWriter writer = response.getWriter();
+        HttpSession session = request.getSession();
+        String username = (String) session.getAttribute("username");
+        String res = null;
+
+        if(username == null){
+            res = "{\"status\": \"invalid\"}";
+        }
+        else{
+            //判断验证码和邮箱/手机号码是否都正确
+            String realemail = (String) session.getAttribute("bindemail");
+            String realcode = (String) session.getAttribute("bindcode");
+            if(realcode != null && realcode.equals(valicode) && realemail != null && realemail.equals(email)){
+                if(type.equals("email")){
+                    userMService.bindEmail(username, email);
+                }
+                else{
+                    userMService.bindPhone(username, email);
+                }
+                res = "{\"status\": \"valid\"}";
             }
             else{
                 res = "{\"status\": \"codeerr\"}";

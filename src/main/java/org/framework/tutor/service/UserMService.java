@@ -105,4 +105,18 @@ public interface UserMService {
      * @return
      */
     Integer unbindEmail(String username);
+
+    /**
+     * 绑定手机号码
+     * @param username
+     * @param email
+     */
+    void bindPhone(String username, String email);
+
+    /**
+     * 绑定邮箱
+     * @param username
+     * @param email
+     */
+    void bindEmail(String username, String email);
 }

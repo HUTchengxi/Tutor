@@ -172,4 +172,25 @@ public class UserMServiceImpl implements UserMService {
 
         return userMMapper.unbindEmail(username);
     }
+
+    /**
+     * 绑定手机号码
+     * @param username
+     * @param email
+     */
+    @Override
+    public void bindPhone(String username, String email) {
+
+        userMMapper.bindPhone(username, email);
+    }
+
+    /**
+     * 绑定邮箱
+     * @param username
+     * @param email
+     */
+    @Override
+    public void bindEmail(String username, String email) {
+        userMMapper.bindEmail(username, email);
+    }
 }

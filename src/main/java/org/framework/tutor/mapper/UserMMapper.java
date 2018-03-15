@@ -117,4 +117,20 @@ public interface UserMMapper {
      */
     @Update("update user_main set email=null where username=#{username}")
     Integer unbindEmail(@Param("username") String username);
+
+    /**
+     * 绑定手机号码
+     * @param username
+     * @param email
+     */
+    @Update("update user_main set telephone=#{email} where username=#{username}")
+    void bindPhone(@Param("username") String username, @Param("email") String email);
+
+    /**
+     * 绑定邮箱
+     * @param username
+     * @param email
+     */
+    @Update("update user_main set email=#{email} where username=#{username}")
+    void bindEmail(@Param("username") String username, @Param("email") String email);
 }

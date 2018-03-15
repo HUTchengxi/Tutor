@@ -475,10 +475,8 @@ $(function(){
                     }
                     else{
                         $(".binddiv .mainbind .tel-phone p:nth-child(2)").append("<span>(已绑定<i>"+tel+"</i>)</span>");
-                        $(".binddiv .mainbind .tel-phone p:nth-child(3)").append("<a href=\"javacript:void(0)\" class=\"pull-right more btn-unbind\" " +
-                            "data-type=\"phone\">解绑</a>\n" +
-                            "                                            <a href=\"javacript:void(0)\" class=\"pull-right more btn-modbind\" " +
-                            "data-type=\"phone\">更改</a>");
+                        $(".binddiv .mainbind .tel-phone p:nth-child(3)").append("<a href=\"javacript:void(0)\" class=\"pull-right btn-unbind\" " +
+                            "data-type=\"phone\">解绑</a>");
                     }
 
                     //电子邮箱未绑定
@@ -488,10 +486,8 @@ $(function(){
                     }
                     else{
                         $(".binddiv .mainbind .email p:nth-child(2)").append("<span>(已绑定<i>"+ema+"</i>)</span>");
-                        $(".binddiv .mainbind .email p:nth-child(3)").append("<a href=\"javacript:void(0)\" class=\"pull-right more btn-unbind\" " +
-                            "data-type=\"email\">解绑</a>\n" +
-                            "                                            <a href=\"javacript:void(0)\" class=\"pull-right more btn-modbind\" " +
-                            "data-type=\"email\">更改</a>");
+                        $(".binddiv .mainbind .email p:nth-child(3)").append("<a href=\"javacript:void(0)\" class=\"pull-right btn-unbind\" " +
+                            "data-type=\"email\">解绑</a>");
                     }
                 }
             },
@@ -557,6 +553,48 @@ $(function(){
     $(document).on("click", ".binddiv .mainbind p a.btn-bind", cli_bind);
 
     /**
+     * 点击立即绑定
+     */
+    var cli_subbind = function(){
+
+        var email = $(".alert-bind .valiinfo").val();
+        var valicode = $(".alert-bind .valicode").val();
+
+        if(valicode == null || valicode.trim() == ""){
+            $(".alert-bind .err-vali").css("display", "block").text("验证码不能为空");
+        }
+        else{
+            //进行绑定
+            $.ajax({
+                async: true,
+                type: "post",
+                url: "/usermain_con/userbind",
+                data: {type: showtype, email: email, valicode: valicode},
+                dataType: "json",
+                success: function(data){
+                    var status = data.status;
+                    if(status == "invalid"){
+                        window.location = "/forward_con/welcome";
+                    }
+                    else if(status == "codeerr"){
+                        $(".alert-bind .err-vali").css("display", "block").text("验证码不正确");
+                    }
+                    else{
+                        $(".alert-bind .err-vali").css("display", "none");
+                        window.alert("您已成功绑定");
+                        window.history.go(0);
+                    }
+                },
+                error: function(xhr, status){
+                    window.alert("后台环境异常导致无法进行绑定，请稍后再试");
+                    window.console.log(xhr);
+                }
+            });
+        }
+    };
+    $(".alert-bind .btn-unbind").click(cli_subbind);
+
+    /**
      * 关闭立即绑定悬浮框事件
      */
     var cli_closebind = function(){
@@ -571,6 +609,82 @@ $(function(){
     $(".alert-bind a.alink-unbind").click(cli_closebind);
     $(".zhezhao").click(cli_closebind);
     $(".alert-bind .btn-reset").click(cli_closebind);
+
+    /**
+     * 点击发送绑定验证码
+     */
+    var cli_sendbindcode = function(){
+
+        if($(this).data("status") == "ing"){
+            return ;
+        }
+
+        var email = "";
+        var phone = "";
+        if(showtype == "email"){
+            email = $(".alert-bind .valiinfo").val();
+            if(email == null || email.trim() == ""){
+                $(".alert-bind .err-email").css("display", "block").text("请填写邮箱");
+                return ;
+            }
+        }
+        else if(showtype == "phone"){
+            phone = $(".alert-bind .valiinfo").val();
+            if(phone == null || phone.trim() == ""){
+                $(".alert-bind .err-email").css("display", "block").text("请填写手机号码");
+                return ;
+            }
+        }
+        else{
+            window.location = "/forward_con/welcome";
+            return ;
+        }
+
+        $(".alert-bind .err-email").css("display", "none");
+        //发送验证码
+        $.ajax({
+            async: true,
+            type: "post",
+            url: "/usermain_con/sendbindcode",
+            data: {type: showtype, email: email, phone: phone},
+            dataType: "json",
+            success: function(data){
+                var status = data.status;
+                if(status == "invalid"){
+                    window.location = "/forward_con/welcome";
+                }
+                else if(status == "exist"){
+                    if(showtype == "email") {
+                        $(".alert-bind .err-email").css("display", "block").text("邮箱已被绑定");
+                    }
+                    else{
+                        $(".alert-bind .err-email").css("display", "block").text("手机已被绑定");
+                    }
+                }
+                else{
+                    window.alert("发送成功");
+                    var interval;
+                    var time = 60;
+                    //邮件验证码发送成功的冷却事件
+                    $(".alert-bind .div-valicode .resend").data("status", "ing");
+                    var interval = window.setInterval(function(){
+                        if(time == 0){
+                            $(".alert-bind .div-valicode .resend").data("status", "ed").text("获取验证码");
+                            window.clearInterval(interval);
+                            return;
+                        }
+                        $(".alert-bind .div-valicode .resend").text(""+time+"s后可重发");
+                        time--;
+                    }, 1000);
+                }
+            },
+            error: function(xhr, status) {
+                window.alert("后台环境异常导致无法进行绑定，请稍后再试");
+                window.console.log(xhr);
+            }
+        });
+    };
+    $(".alert-bind .resend").click(cli_sendbindcode);
 
     /**
      * 解绑弹出框的关闭事件：
@@ -690,6 +804,7 @@ $(function(){
         }
     };
     $(".alert-unbind .div-unbind .btn-unbind").click(cli_subunbind);
+
 
 
 
