@@ -469,9 +469,9 @@ $(function(){
                     var ema = data.ema;
 
                     //手机未绑定
-                    if(tel == "" || tel == null){
+                    if(tel == "" || tel == null || tel == "null"){
                         $(".binddiv .mainbind .tel-phone p:nth-child(2)").append("<span class='ok'>(暂未绑定)</span>");
-                        $(".binddiv .mainbind .tel-phone p:nth-child(3)").append("<a href=\"javacript:void(0)\" class=\"pull-right btn-bind\" data-type=\"email\">立刻绑定</a>");
+                        $(".binddiv .mainbind .tel-phone p:nth-child(3)").append("<a href=\"javacript:void(0)\" class=\"pull-right btn-bind\" data-type=\"phone\">立刻绑定</a>");
                     }
                     else{
                         $(".binddiv .mainbind .tel-phone p:nth-child(2)").append("<span>(已绑定<i>"+tel+"</i>)</span>");
@@ -482,7 +482,7 @@ $(function(){
                     }
 
                     //电子邮箱未绑定
-                    if(ema == "" || ema == null){
+                    if(ema == "" || ema == "null" || ema == null){
                         $(".binddiv .mainbind .email p:nth-child(2)").append("<span class='ok'>(暂未绑定)</span>");
                         $(".binddiv .mainbind .email p:nth-child(3)").append("<a href=\"javacript:void(0)\" class=\"pull-right btn-bind\" data-type=\"email\">立刻绑定</a>");
                     }
@@ -504,7 +504,7 @@ $(function(){
     async_getbind();
 
     /**
-     * 邮箱的解绑的点击事件
+     * 解绑的点击事件
      */
     var cli_unbind = function(){
 
@@ -528,6 +528,49 @@ $(function(){
         }
     };
     $(document).on("click", ".binddiv .mainbind p a.btn-unbind", cli_unbind);
+
+    /**
+     * 立即绑定的点击事件
+     */
+    var showtype = "";
+    var cli_bind = function(){
+        var type = $(this).data("type");
+        showtype = type;
+        //绑定邮箱
+        if(type == "email"){
+            $(".alert-bind").animate({
+                top: "25%",
+                opacity: 1
+            },200);
+            $(".alert-bind label span.info").text("电子邮箱");
+            $(".zhezhao").css("display", "block").css("height", $(document).height());
+        }
+        else{
+            $(".alert-bind").animate({
+                top: "25%",
+                opacity: 1
+            },200);
+            $(".alert-bind label span.info").text("手机号码");
+            $(".zhezhao").css("display", "block").css("height", $(document).height());
+        }
+    };
+    $(document).on("click", ".binddiv .mainbind p a.btn-bind", cli_bind);
+
+    /**
+     * 关闭立即绑定悬浮框事件
+     */
+    var cli_closebind = function(){
+
+        showtype = "";
+        $(".alert-bind").animate({
+            top: "-40%",
+            opacity: 0
+        },200);
+        $(".zhezhao").css("display", "none");
+    };
+    $(".alert-bind a.alink-unbind").click(cli_closebind);
+    $(".zhezhao").click(cli_closebind);
+    $(".alert-bind .btn-reset").click(cli_closebind);
 
     /**
      * 解绑弹出框的关闭事件：

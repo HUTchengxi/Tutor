@@ -313,7 +313,7 @@
         </div>
         <div class="div-unbind">
             <button class="btn-unbind">解除绑定</button>
-            <button class="btn-reset">取消绑定</button>
+            <button class="btn-reset">暂不解绑</button>
         </div>
         <a href="javascript:void(0)" class="alink-unbind">
             <i class="glyphicon glyphicon-remove"></i>
@@ -383,6 +383,101 @@
             right: 0.5%;
         }
         .alert-unbind .err-email{
+            position:  absolute;
+            top: 37%;
+            right: 23%;
+            color: red;
+            display: none;
+        }
+    </style>
+
+    <!--进行绑定-->
+    <div class="alert-bind">
+        <p>绑定验证</p>
+        <div class="div-valicode">
+            <label for="valicode">输入<span class="info">电子邮箱</span>：</label>
+            <input type="text" name="valiinfo" class="valiinfo" value="" />
+        </div>
+        <div class="div-valicode">
+            <label for="valicode">输入验证短码：</label>
+            <input type="text" name="valicode" class="valicode" value="" />
+            <a href="javascript: void(0)" class="resend">发送验证码</a>
+        </div>
+        <div class="div-unbind">
+            <button class="btn-unbind">进行绑定</button>
+            <button class="btn-reset">暂不绑定</button>
+        </div>
+        <a href="javascript:void(0)" class="alink-unbind">
+            <i class="glyphicon glyphicon-remove"></i>
+        </a>
+        <p class="err-email">aaa</p>
+    </div>
+
+    <style>
+        .alert-bind{
+            position: absolute;
+            z-index: 199;
+            /*top: 25%;*/
+            left: 30%;
+            width: 50%;
+            background-color: white;
+            height: 35%;
+            padding-top: 1%;
+            border-radius: 1%;
+            top: -40%;
+            opacity: 0;
+        }
+        .alert-bind p{
+            height: 30px;
+            line-height: 30px;
+            font-size: 18px;
+            text-align: center;
+        }
+        .alert-bind .div-valicode{
+            margin: 5% 0;
+            margin-left: 33%;
+        }
+        .alert-bind .div-valicode input{
+            height: 30px;
+            line-height: 30px;
+            width: 15%;
+            padding: 0 1%;
+        }
+        .alert-bind .div-valicode input.valiinfo{
+            width: 35%;
+        }
+        .alert-bind .div-valicode a{
+            display:  inline-block;
+            background-color: #037afc;
+            color: white;
+            width: 18%;
+            text-align:  center;
+            height: 30px;
+            line-height:  30px;
+            margin-left: .5%;
+            text-decoration: none;
+            font-size: 12px;
+        }
+        .alert-bind .div-unbind{
+            margin-left: 37%;
+        }
+        .alert-bind .div-unbind button{
+            width: 18%;
+            height: 30px;
+            background-color: #037afc;
+            color: white;
+            border: none;
+        }
+        .alert-bind .div-unbind button.btn-reset{
+            background-color: rgba(128, 128, 128, 0.68);
+            margin-left: 5%;
+        }
+        .alert-bind .alink-unbind{
+            position:  absolute;
+            top: 4%;
+            right: 0.5%;
+        }
+        .alert-bind .err-email{
             position:  absolute;
             top: 37%;
             right: 23%;
