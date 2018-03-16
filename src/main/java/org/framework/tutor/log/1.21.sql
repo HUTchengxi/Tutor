@@ -181,6 +181,17 @@ create table user_message(
 );
 
 
+#用户密保表
+create table user_secret(
+  id int primary key auto_increment comment "唯一标识",
+  username varchar(20) not null comment "对用用户名",
+  question varchar(20) not null comment "密保问题，不超过20个字",
+  answer varchar(20) not null comment "密保答案，不超过20个字",
+  msg varchar(20) default "无" comment "提示信息",
+  foreign key(username) references user_main(username)
+);
+
+
 #家教老师标签表
 #实名认证表
 #课程表

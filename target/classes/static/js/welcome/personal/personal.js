@@ -502,6 +502,181 @@ $(function(){
     async_getbind();
 
     /**
+     * 异步获取我的密保问题数据
+     */
+    var async_getsecretinfo = function(){
+
+        $.ajax({
+            async: false,
+            type: "post",
+            url: "/usersecret_con/getsecretinfo",
+            dataType: "json",
+            success: function(data){
+                var status = data.status;
+                $(".binddiv .mainbind .mb-phone p:nth-child(3) a").remove();
+                $(".alert-secretinfo .secret-one input").data("orig", "");
+                if(status == "invalid"){
+                    window.location = "/forward_con/welcome";
+                }
+                else if(status == "valid"){
+                    $(".binddiv .mainbind .mb-phone p:nth-child(3)").append("<a href=\"javacript:void(0)\" class=\"pull-right btn-modmb\">立即设置</a>");
+                }
+                else{
+                    $(".binddiv .mainbind .mb-phone p:nth-child(3)").append("<a href=\"javacript:void(0)\" class=\"pull-right btn-modmb\">点击修改</a>");
+                    //弹出框注入数据
+                    var count = 2;
+                    $.each(data, function(index, item){
+                       var question = item.question;
+                       var answer = item.answer;
+                       $(".alert-secretinfo div:nth-child("+(count++)+") input").data("orig", question).val(question);
+                       $(".alert-secretinfo div:nth-child("+(count++)+") input").data("orig", answer).val(answer);
+                    });
+                }
+            },
+            error: function(xhr, status){
+                window.alert("后台环境异常导致无法获取密保数据，请稍后再试");
+                window.console.log(xhr);
+            }
+        });
+    };
+    async_getsecretinfo();
+
+    /**
+     * 点击显示密保设置弹出框
+     */
+    var cli_openmodmb = function(){
+
+        $(".zhezhao").css("display", "block").css("height", $(document).height()+"px");
+        $(".alert-secretinfo").animate({
+            top: "25%",
+            opacity: 1
+        },200);
+    };
+    $(document).on("click", ".binddiv .mainbind .mb-phone p .btn-modmb", cli_openmodmb);
+
+    /**
+     * 点击关闭密保设置弹出框
+     */
+    var cli_closemodmb = function(){
+
+        $(".alert-secretinfo .secret-one").each(function(){
+           var orig = $(this).find("input").data("orig");
+           $(this).find("input").val(orig);
+        });
+
+        $(".zhezhao").css("display", "none");
+        $(".alert-secretinfo").animate({
+            opacity: 0,
+            top: "-40%"
+        }, 200);
+    };
+    $(".alert-secretinfo .close").click(cli_closemodmb);
+    $(".alert-secretinfo .btn-reset").click(cli_closemodmb);
+    $(".zhezhao").click(cli_closemodmb);
+
+    /**
+     * 判空函数
+     */
+    var str_isnull = function(val){
+        if(val == null || val.trim() == ""){
+            return true;
+        }
+        return false;
+    };
+
+    /**
+     * 点击提交密保的修改事件
+     */
+    var cli_submodmb = function(){
+
+        //判断：问题为空，答案不为空; 问题不为空，答案为空
+        var cnt = 0;
+        var question = null;
+        var answer = null;
+        $(".alert-secretinfo .secret-one").each(function(){
+            if(cnt == 0){
+                question = $(this).find("input").val();
+                cnt++;
+            }
+            else{
+                cnt--;
+                answer = $(this).find("input").val();
+                if(str_isnull(answer) && !str_isnull(question)){
+                    $(this).find(".err-info").css("display", "block").text("请填写答案");
+                    return ;
+                }
+                if(!str_isnull(answer) && str_isnull(question)){
+                    $(this).find(".err-info").css("display", "block").text("请填写问题");
+                    return ;
+                }
+            }
+        });
+        //首先删除所有的数据
+        $.ajax({
+            async: false,
+            type: "post",
+            url: "/usersecret_con/delusersecret",
+            dataType: "json",
+            success: function(data){
+                var status = data.status;
+                if(status == "invalid"){
+                    window.location = "/forward_con/welcome";
+                    return ;
+                }
+            },
+            error: function(xhr, status){
+                window.alert("后台环境异常导致无法更新密保数据，请稍后再试");
+                window.console.log(xhr);
+                return ;
+            }
+        });
+
+
+        //然后进行遍历提交密保数据
+        $(".alert-secretinfo .secret-one").each(function(){
+            //直接进行判断是否为空就行了
+            if(cnt == 0){
+                question = $(this).find("input").val();
+                cnt++;
+            }
+            else {
+                cnt--;
+                if(!str_isnull(question)){
+                    answer = $(this).find("input").val();
+                    $.ajax({
+                        async: false,
+                        type: "post",
+                        url: "/usersecret_con/addusersecret",
+                        data: {question: question, answer: answer},
+                        dataType: "json",
+                        success: function (data) {
+                            var status = data.status;
+                            if(status == "invalid"){
+                                window.location = "/forward_con/welcome";
+                            }
+                            else if(status == "mysqlerr"){
+                                windwo.alert("后台数据库异常导致密保数据更新异常");
+                                window.console.log(xhr);
+                                return ;
+                            }
+                        },
+                        error: function (xhr, status) {
+                            window.alert("后台环境异常导致无法修改密保数据，请稍后再试");
+                            window.console.log(xhr);
+                        }
+                    });
+                }
+                question = null;
+                answer = null;
+            }
+        });
+        window.alert("密保设置成功");
+        async_getsecretinfo();
+        $(".zhezhao").trigger("click");
+    };
+    $(".alert-secretinfo .btn-submit").click(cli_submodmb);
+
+    /**
      * 解绑的点击事件
      */
     var cli_unbind = function(){

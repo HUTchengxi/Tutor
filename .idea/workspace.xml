@@ -6,19 +6,24 @@
     </artifacts-to-build>
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" line="187" mnemonic="3" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" line="198" mnemonic="3" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf479440-431d-499c-9612-40c14de1a166" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserSecret.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/UserSecret.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserSCMapper.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserSCService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserSCServiceImpl.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/generatorConfig.xml" afterPath="$PROJECT_DIR$/src/generatorConfig.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/mymessage.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/mymessage.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/classify.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/classify.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/mymessage.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/mymessage.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/mymessage.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/mymessage.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/tutor.sql" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/tutor.sql" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/personal/personal.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/personal/personal.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/personal.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/personal.html" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/personal/personal.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/personal/personal.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/classify.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/classify.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/mymessage.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/mymessage.html" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/personal.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/personal.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -36,93 +41,7 @@
     <favorites_list name="Tutor" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="2.0版本" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="515">
-              <caret line="60" column="37" lean-forward="true" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mymessage.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home/mymessage.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="451" column="18" lean-forward="true" selection-start-line="451" selection-start-column="18" selection-end-line="451" selection-end-column="18" />
-              <folding>
-                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mymessage.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/mymessage.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="530">
-              <caret line="71" column="63" lean-forward="true" selection-start-line="71" selection-start-column="63" selection-end-line="71" selection-end-column="63" />
-              <folding>
-                <marker date="1521193170736" expanded="true" signature="1945:1960" ph="..." />
-                <marker date="1521193170736" expanded="true" signature="2049:2062" ph="..." />
-                <marker date="1521193170736" expanded="true" signature="2120:2131" ph="..." />
-                <marker date="1521193170736" expanded="true" signature="5317:5327" ph="..." />
-                <marker date="1521193170736" expanded="true" signature="9758:9766" ph="&amp;##xe610;" />
-                <marker date="1521193170736" expanded="true" signature="11626:11634" ph="&amp;##xe610;" />
-                <marker date="1521193170736" expanded="true" signature="15633:15641" ph="&amp;##xe610;" />
-                <marker date="1521193170736" expanded="true" signature="17588:17596" ph="&amp;##xe610;" />
-                <marker date="1521193170736" expanded="true" signature="23355:23363" ph="&amp;##xe610;" />
-                <marker date="1521193170736" expanded="true" signature="25311:25319" ph="&amp;##xe610;" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rank.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home/rank.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-              <folding>
-                <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="personal.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/personal/personal.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="35224">
-              <caret line="1022" column="34" lean-forward="false" selection-start-line="1022" selection-start-column="34" selection-end-line="1022" selection-end-column="34" />
-              <folding>
-                <element signature="e#17743#18337#0" expanded="false" />
-                <element signature="e#23905#24071#0" expanded="false" />
-                <element signature="e#26351#27872#0" expanded="false" />
-                <marker date="1521126476383" expanded="true" signature="1893:1908" ph="..." />
-                <marker date="1521126476383" expanded="true" signature="1997:2010" ph="..." />
-                <marker date="1521126476383" expanded="true" signature="2068:2079" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReverseProject.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/util/ReverseProject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -137,7 +56,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.listshow ul</find>
       <find>.pageshow</find>
       <find>center</find>
       <find>uncol</find>
@@ -167,6 +85,7 @@
       <find>zhezhao</find>
       <find>emailExist</find>
       <find>position</find>
+      <find>问题</find>
     </findStrings>
     <replaceStrings>
       <replace>/images/welcome/personal</replace>
@@ -185,15 +104,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseMain.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/CourseMService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/CourseMServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/CourseMMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/UserValiExample.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserVali.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserValiMapper.java" />
-        <option value="$PROJECT_DIR$/src/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/gabble.html" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserVService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserVServiceImpl.java" />
@@ -228,14 +138,23 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/order/mycart.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/order/myorder.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/mysetting.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/home/personal.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/mysetting.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/rank.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/personal/personal.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/classify.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/mymessage.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/mymessage.html" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" />
+        <option value="$PROJECT_DIR$/src/generatorConfig.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserSecretMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/UserSecret.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/home/personal.html" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserSCService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserSCServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserSCMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserSecret.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/personal/personal.js" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/tutor.sql" />
       </list>
     </option>
   </component>
@@ -372,8 +291,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -406,6 +324,86 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="framework" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="tutor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="log" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
@@ -447,6 +445,17 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="welcome" type="462c0819:PsiDirectoryNode" />
+              <item name="personal" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -462,7 +471,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -874,7 +884,8 @@
       <workItem from="1521162915386" duration="1006000" />
       <workItem from="1521183100166" duration="34000" />
       <workItem from="1521186837547" duration="526000" />
-      <workItem from="1521191703787" duration="1622000" />
+      <workItem from="1521191703787" duration="8440000" />
+      <workItem from="1521208242221" duration="3418000" />
     </task>
     <task id="LOCAL-00001" summary="将毕设项目提交到gitlab">
       <created>1520393481249</created>
@@ -1030,11 +1041,18 @@
       <option name="project" value="LOCAL" />
       <updated>1521126497265</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="2.5版本，解决了三个小bug，可以查看版本日志">
+      <created>1521193347290</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1521193347290</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="679157000" />
+    <option name="totallyTimeSpent" value="689393000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1107,7 +1125,8 @@
     <MESSAGE value="侧边栏的设计与返回顶部的实现" />
     <MESSAGE value="个人中心的遮罩层点击事件发生之后的所有图层隐藏的实现" />
     <MESSAGE value="个人中心的侧边栏的js实现" />
-    <option name="LAST_COMMIT_MESSAGE" value="个人中心的侧边栏的js实现" />
+    <MESSAGE value="2.5版本，解决了三个小bug，可以查看版本日志" />
+    <option name="LAST_COMMIT_MESSAGE" value="2.5版本，解决了三个小bug，可以查看版本日志" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1116,77 +1135,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseChapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="3" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/CourseCMMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="16" column="17" lean-forward="false" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/CourseCMServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/register/mine/check.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="10" column="52" lean-forward="false" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/register/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="72" column="83" lean-forward="true" selection-start-line="72" selection-start-column="83" selection-end-line="72" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/UserVali.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="39" column="5" lean-forward="false" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserVMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="50" column="61" lean-forward="false" selection-start-line="50" selection-start-column="61" selection-end-line="50" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1800">
-          <caret line="60" column="78" lean-forward="false" selection-start-line="60" selection-start-column="78" selection-end-line="60" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/Main2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/util/EmailUtil.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="38" lean-forward="false" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
@@ -1275,13 +1223,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="655">
           <caret line="123" column="19" lean-forward="true" selection-start-line="123" selection-start-column="19" selection-end-line="123" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="183" column="47" lean-forward="false" selection-start-line="183" selection-start-column="47" selection-end-line="183" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -1376,13 +1317,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home/personal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="747">
-          <caret line="467" column="12" lean-forward="false" selection-start-line="467" selection-start-column="12" selection-end-line="467" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home/showcourse.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="118">
@@ -1411,37 +1345,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/personal/personal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35224">
-          <caret line="1022" column="34" lean-forward="false" selection-start-line="1022" selection-start-column="34" selection-end-line="1022" selection-end-column="34" />
-          <folding>
-            <element signature="e#17743#18337#0" expanded="false" />
-            <element signature="e#23905#24071#0" expanded="false" />
-            <element signature="e#26351#27872#0" expanded="false" />
-            <marker date="1521126476383" expanded="true" signature="1893:1908" ph="..." />
-            <marker date="1521126476383" expanded="true" signature="1997:2010" ph="..." />
-            <marker date="1521126476383" expanded="true" signature="2068:2079" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/util/ReverseProject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home/rank.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="259">
           <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-          <folding>
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1449,15 +1356,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="299" column="24" lean-forward="false" selection-start-line="299" selection-start-column="24" selection-end-line="299" selection-end-column="24" />
-          <folding>
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1465,12 +1363,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="774">
           <caret line="151" column="32" lean-forward="false" selection-start-line="151" selection-start-column="32" selection-end-line="151" selection-end-column="32" />
-          <folding>
-            <marker date="1521125655826" expanded="true" signature="1238:1249" ph="..." />
-            <marker date="1521125655826" expanded="true" signature="3269:3284" ph="..." />
-            <marker date="1521125655826" expanded="true" signature="3369:3382" ph="..." />
-            <marker date="1521125655826" expanded="true" signature="3436:3447" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1478,18 +1370,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="530">
           <caret line="71" column="63" lean-forward="true" selection-start-line="71" selection-start-column="63" selection-end-line="71" selection-end-column="63" />
-          <folding>
-            <marker date="1521193170736" expanded="true" signature="1945:1960" ph="..." />
-            <marker date="1521193170736" expanded="true" signature="2049:2062" ph="..." />
-            <marker date="1521193170736" expanded="true" signature="2120:2131" ph="..." />
-            <marker date="1521193170736" expanded="true" signature="5317:5327" ph="..." />
-            <marker date="1521193170736" expanded="true" signature="9758:9766" ph="&amp;##xe610;" />
-            <marker date="1521193170736" expanded="true" signature="11626:11634" ph="&amp;##xe610;" />
-            <marker date="1521193170736" expanded="true" signature="15633:15641" ph="&amp;##xe610;" />
-            <marker date="1521193170736" expanded="true" signature="17588:17596" ph="&amp;##xe610;" />
-            <marker date="1521193170736" expanded="true" signature="23355:23363" ph="&amp;##xe610;" />
-            <marker date="1521193170736" expanded="true" signature="25311:25319" ph="&amp;##xe610;" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1497,18 +1377,156 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="451" column="18" lean-forward="true" selection-start-line="451" selection-start-column="18" selection-end-line="451" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/util/ReverseProject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/generatorConfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="51" column="51" lean-forward="false" selection-start-line="51" selection-start-column="51" selection-end-line="51" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserSMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/UserSecret.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="63" column="18" lean-forward="false" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/CourseOService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6549">
+          <caret line="183" column="47" lean-forward="false" selection-start-line="183" selection-start-column="47" selection-end-line="183" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/Rank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="64" column="17" lean-forward="true" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home/personal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-962">
+          <caret line="498" column="63" lean-forward="false" selection-start-line="498" selection-start-column="63" selection-end-line="498" selection-end-column="63" />
           <folding>
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#4;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="37">
+          <caret line="183" column="6" lean-forward="false" selection-start-line="183" selection-start-column="6" selection-end-line="183" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="60" column="37" lean-forward="true" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
+        <state relative-caret-position="367">
+          <caret line="50" column="22" lean-forward="false" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/tutor.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="16" column="10" lean-forward="false" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/personal/personal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="624" column="17" lean-forward="true" selection-start-line="624" selection-start-column="17" selection-end-line="624" selection-end-column="17" />
+          <folding>
+            <element signature="e#23705#24299#0" expanded="false" />
+            <element signature="e#24465#25136#0" expanded="false" />
+            <element signature="e#29867#30033#0" expanded="false" />
+            <element signature="e#32313#33834#0" expanded="false" />
+            <marker date="1521211480706" expanded="true" signature="1893:1908" ph="..." />
+            <marker date="1521211480706" expanded="true" signature="1997:2010" ph="..." />
+            <marker date="1521211480706" expanded="true" signature="2068:2079" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserSecret.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="88" column="50" lean-forward="false" selection-start-line="88" selection-start-column="50" selection-end-line="88" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserSCService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="25" column="18" lean-forward="false" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserSCServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="599">
+          <caret line="52" column="28" lean-forward="false" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserSCMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="562">
+          <caret line="36" column="108" lean-forward="false" selection-start-line="36" selection-start-column="108" selection-end-line="36" selection-end-column="108" />
           <folding />
         </state>
       </provider>
