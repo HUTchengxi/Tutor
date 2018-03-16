@@ -69,7 +69,7 @@ $(function () {
      * 获取发送通知的所有管理员
      */
     var async_getsuser = function () {
-        $(".container .m-main .main-left .left-show").empty();
+        $(".container .m-main .main-left .left-show").remove();
         $(".container .m-main .main-right .right-show").css("display", "none");
         $(".container .m-main .main-right .right-footer").css("display", "none");
         $.ajax({
@@ -471,7 +471,7 @@ $(function () {
     $("div.container .m-main .main-right footer input.info-btn:nth-child(4)").click(cli_delall);
 
     /**
-     * 全部标记未已读按钮事件
+     * 全部标记为已读按钮事件
      */
     var cli_alled = function(){
 
