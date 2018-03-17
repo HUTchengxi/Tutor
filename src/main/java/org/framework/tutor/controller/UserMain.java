@@ -1,8 +1,10 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
+import org.apache.http.HttpResponse;
 import org.framework.tutor.service.UserMService;
 import org.framework.tutor.util.CommonUtil;
+import org.framework.tutor.util.HttpUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
@@ -17,9 +19,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 用户个人信息控制类
+ *
  * @author chengxi
  */
 @RestController
@@ -37,6 +42,7 @@ public class UserMain {
 
     /**
      * 获取我的个人头像
+     *
      * @param request
      * @param response
      * @throws IOException
@@ -50,13 +56,12 @@ public class UserMain {
         String res = null;
 
         String username = (String) session.getAttribute("username");
-        if(username == null){
+        if (username == null) {
             res = "{\"status\": \"invalid\", \"url\": \"/forward_con/welcome\"}";
-        }
-        else{
+        } else {
             //服务层获取数据
             org.framework.tutor.domain.UserMain userMain = userMService.getByUser(username);
-            res = "{\"status\": \"valid\", \"imgsrc\": \""+userMain.getImgsrc()+"\"}";
+            res = "{\"status\": \"valid\", \"imgsrc\": \"" + userMain.getImgsrc() + "\"}";
         }
 
         writer.print(new JsonParser().parse(res).getAsJsonObject());
@@ -66,6 +71,7 @@ public class UserMain {
 
     /**
      * 获取我的个人信息
+     *
      * @param request
      * @param response
      * @throws IOException
@@ -79,17 +85,16 @@ public class UserMain {
         String res = null;
 
         String username = (String) session.getAttribute("username");
-        if(username == null){
+        if (username == null) {
             res = "{\"status\": \"invalid\", \"url\": \"/forward_con/welcome\"}";
-        }
-        else{
+        } else {
             //服务层获取数据
             org.framework.tutor.domain.UserMain userMain = userMService.getByUser(username);
-            res = "{\"status\": \"valid\", \"username\": \""+userMain.getUsername()+"\"" +
-                    ", \"nickname\": \""+userMain.getNickname()+"\"" +
-                    ", \"sex\": \""+(userMain.getSex()==1?"男":"女")+"\"" +
-                    ", \"age\": \""+userMain.getAge()+"\"" +
-                    ", \"info\": \""+userMain.getInfo()+"\" }";
+            res = "{\"status\": \"valid\", \"username\": \"" + userMain.getUsername() + "\"" +
+                    ", \"nickname\": \"" + userMain.getNickname() + "\"" +
+                    ", \"sex\": \"" + (userMain.getSex() == 1 ? "男" : "女") + "\"" +
+                    ", \"age\": \"" + userMain.getAge() + "\"" +
+                    ", \"info\": \"" + userMain.getInfo() + "\" }";
         }
 
         writer.print(new JsonParser().parse(res).getAsJsonObject());
@@ -99,6 +104,7 @@ public class UserMain {
 
     /**
      * 我帮你换修改我的头像
+     *
      * @param request
      * @param response
      * @param imgsrc
@@ -114,15 +120,13 @@ public class UserMain {
         PrintWriter writer = response.getWriter();
 
         String username = (String) session.getAttribute("username");
-        if(username == null){
+        if (username == null) {
             res = "{\"status\": \"invalid\", \"url\": \"/forward_con/welcome\"}";
-        }
-        else{
+        } else {
             //服务层实现我的头像的修改
-            if(userMService.modImgsrcByUser(username, imgsrc)){
-                res = "{\"status\": \"modok\", \"imgsrc\": \""+imgsrc+"\"}";
-            }
-            else{
+            if (userMService.modImgsrcByUser(username, imgsrc)) {
+                res = "{\"status\": \"modok\", \"imgsrc\": \"" + imgsrc + "\"}";
+            } else {
                 res = "{\"status\": \"mysqlerr\"}";
             }
         }
@@ -134,6 +138,7 @@ public class UserMain {
 
     /**
      * 手动上传修改我的头像
+     *
      * @param request
      * @param response
      * @param imgfile
@@ -151,10 +156,9 @@ public class UserMain {
         PrintWriter writer = response.getWriter();
 
         String username = (String) session.getAttribute("username");
-        if(username == null){
+        if (username == null) {
             res = "{\"status\": \"invalid\", \"url\": \"/forward_con/welcome\"}";
-        }
-        else{
+        } else {
             String imgsrc = "/images/user/face/" + imgfile.getOriginalFilename();
             //上传头像到/images/user/face里
             BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(
@@ -165,19 +169,17 @@ public class UserMain {
             bos.close();
 
             //服务层实现我的头像的修改
-            if(userMService.modImgsrcByUser(username, imgsrc)){
+            if (userMService.modImgsrcByUser(username, imgsrc)) {
 
                 //然后删除原来的那张图片
                 String oldimgsrc = "src/main/resources/static" + oimgsrc;
                 File oldFile = new File(oldimgsrc);
-                if(!oldFile.delete()){
-                    res = "{\"status\": \"modok\", \"imgsrc\": \""+imgsrc+"\", \"others\": \"bad\"}";
-                }
-                else {
+                if (!oldFile.delete()) {
+                    res = "{\"status\": \"modok\", \"imgsrc\": \"" + imgsrc + "\", \"others\": \"bad\"}";
+                } else {
                     res = "{\"status\": \"modok\", \"imgsrc\": \"" + imgsrc + "\", \"others\": \"good\"}";
                 }
-            }
-            else{
+            } else {
                 res = "{\"status\": \"mysqlerr\"}";
             }
         }
@@ -189,6 +191,7 @@ public class UserMain {
 
     /**
      * 修改我的个人信息
+     *
      * @param username
      * @param nickname
      * @param sex
@@ -209,14 +212,12 @@ public class UserMain {
         String rusername = (String) session.getAttribute("username");
         String res = null;
 
-        if(rusername == null || !(rusername.equals(username))){
+        if (rusername == null || !(rusername.equals(username))) {
             res = "{\"status\": \"invalid\", \"url\": \"/forward_con/welcome\"}";
-        }
-        else{
-            if(!userMService.modUserinfo(username, nickname, sex, age, info)){
+        } else {
+            if (!userMService.modUserinfo(username, nickname, sex, age, info)) {
                 res = "{\"status\": \"mysqlerr\", \"msg\": \"I'm sorry\"}";
-            }
-            else{
+            } else {
                 res = "{\"status\": \"valid\"}";
                 session.setAttribute("nickname", nickname);
             }
@@ -229,6 +230,7 @@ public class UserMain {
 
     /**
      * 获取当前用户的绑定数据
+     *
      * @param request
      * @param response
      */
@@ -241,16 +243,14 @@ public class UserMain {
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
 
-        if(username == null){
+        if (username == null) {
             res = "{\"status\": \"invalid\"}";
-        }
-        else{
+        } else {
             org.framework.tutor.domain.UserMain userMain = userMService.getByUser(username);
-            if(userMain == null){
+            if (userMain == null) {
                 res = "{\"status\": \"invalid\"}";
-            }
-            else{
-                res = "{\"tel\": \""+userMain.getTelephone()+"\", \"ema\": \""+userMain.getEmail()+"\"}";
+            } else {
+                res = "{\"tel\": \"" + userMain.getTelephone() + "\", \"ema\": \"" + userMain.getEmail() + "\"}";
             }
         }
 
@@ -261,6 +261,7 @@ public class UserMain {
 
     /**
      * 通过发送邮件找回密码
+     *
      * @param email
      * @param username
      * @param response
@@ -273,12 +274,11 @@ public class UserMain {
         PrintWriter writer = response.getWriter();
         String res = null;
 
-        if(username == null){
+        if (username == null) {
             username = (String) request.getSession().getAttribute("username");
-            if(username == null){
+            if (username == null) {
                 res = "{\"status\": \"invalid\"}";
-            }
-            else {
+            } else {
 
                 //判断用户名和邮箱是否对应
                 org.framework.tutor.domain.UserMain userMain = userMService.getByUserAndEmail(username, email);
@@ -310,6 +310,7 @@ public class UserMain {
 
     /**
      * 根据手机号/邮箱来重设密码
+     *
      * @param username
      * @param email
      * @param phone
@@ -329,10 +330,9 @@ public class UserMain {
         String res = null;
 
         //进行密码的验证性
-        if(!(newpass != null && newpass.length() >= 6 && newpass.length() <= 12 && newpass.equals(repass))){
+        if (!(newpass != null && newpass.length() >= 6 && newpass.length() <= 12 && newpass.equals(repass))) {
             res = "{\"status\": \"invalid\"}";
-        }
-        else {
+        } else {
             //邮箱的方式进行密码找回
             if (email != null) {
                 //判断验证断码是否正确
@@ -341,10 +341,9 @@ public class UserMain {
 
                     //判断邮箱和用户名是否对应
                     org.framework.tutor.domain.UserMain userMain = userMService.getByUserAndEmail(username, email);
-                    if(userMain == null){
+                    if (userMain == null) {
                         res = "{\"status\": \"inerr\"}";
-                    }
-                    else {
+                    } else {
                         //可以修改密码
                         Integer row = userMService.modPassword(username, newpass);
                         if (row == 1) {
@@ -353,16 +352,14 @@ public class UserMain {
                             res = "{\"status\": \"mysqlerr\"}";
                         }
                     }
-                }
-                else{
+                } else {
                     //判断邮箱是否为空或者长度不满足
-                    if(!email.equals(realemail)){
+                    if (!email.equals(realemail)) {
                         res = "{\"status\": \"inerr\"}";
                     }
                     res = "{\"status\": \"invalid\"}";
                 }
-            }
-            else if(phone != null){
+            } else if (phone != null) {
                 //判断验证断码是否正确
                 String realphone = (String) session.getAttribute("valiphone");
                 if (phone.equals(realphone) && valicode != null && valicode.equals(realvalicode)) {
@@ -371,25 +368,21 @@ public class UserMain {
 
                     //可以修改密码
                     Integer row = userMService.modPassword(username, newpass);
-                    if(row == 1){
+                    if (row == 1) {
                         res = "{\"status\": \"valid\"}";
-                    }
-                    else{
+                    } else {
                         res = "{\"status\": \"mysqlerr\"}";
                     }
-                }
-                else{
+                } else {
                     //判断邮箱是否为空或者长度不满足
-                    if(!phone.equals(realphone)){
+                    if (!phone.equals(realphone)) {
                         res = "{\"status\": \"inerr\"}";
-                    }
-                    else {
+                    } else {
                         res = "{\"status\": \"invalid\"}";
                     }
                 }
-            }
-            else{
-                    res = "{\"status\": \"invalid\"}";
+            } else {
+                res = "{\"status\": \"invalid\"}";
             }
         }
 
@@ -400,6 +393,7 @@ public class UserMain {
 
     /**
      * 解除绑定
+     *
      * @param type
      * @param valicode
      * @param request
@@ -413,23 +407,27 @@ public class UserMain {
         String username = (String) session.getAttribute("username");
         String res = null;
 
-        if(username == null){
+        if (username == null) {
             res = "{\"status\": \"invalid\"}";
-        }
-        else{
+        } else {
             //验证码进行判断
             String realvalicode = (String) session.getAttribute("valicode");
-            if(realvalicode != null && realvalicode.equals(valicode)){
+            if (realvalicode != null && realvalicode.equals(valicode)) {
                 //进行邮箱解除绑定
-                Integer row = userMService.unbindEmail(username);
-                if(row == 1){
-                    res = "{\"status\": \"valid\"}";
+                Integer row = null;
+                if (type != null && type.equals("email")) {
+                    row = userMService.unbindEmail(username);
+                } else if (type != null && type.equals("phone")) {
+                    row = userMService.unbindPhone(username);
+                } else {
+                    res = "{\"status\": \"invalid\"}";
                 }
-                else{
+                if (row == 1) {
+                    res = "{\"status\": \"valid\"}";
+                } else {
                     res = "{\"status\": \"mysqlerr\"}";
                 }
-            }
-            else{
+            } else {
                 res = "{\"status\": \"codeerr\"}";
             }
         }
@@ -441,6 +439,7 @@ public class UserMain {
 
     /**
      * 发送绑定的验证短码
+     *
      * @param type
      * @param email
      * @param phone
@@ -455,15 +454,14 @@ public class UserMain {
         String username = (String) session.getAttribute("username");
         String res = null;
 
-        if(username == null){
+        if (username == null) {
             res = "{\"status\": \"invalid\"}";
-        }
-        else{
+        } else {
             //发送邮件验证码
-            if(type.equals("email")){
+            if (type.equals("email")) {
                 //判断邮箱是否存在
                 Boolean isExist = userMService.emailExist(email);
-                if(!isExist){
+                if (!isExist) {
                     //发送邮件验证码
                     String uuid = CommonUtil.getUUID().substring(0, 4);
                     SimpleMailMessage message = new SimpleMailMessage();
@@ -476,10 +474,44 @@ public class UserMain {
                     session.setAttribute("bindcode", uuid);
                     session.setAttribute("bindemail", email);
                     res = "{\"status\": \"sendok\"}";
-                }
-                else{
+                } else {
                     res = "{\"status\": \"exist\"}";
                 }
+            } else if (type.equals("phone")) {
+                //判断手机号码是否已经被注册
+                Boolean isexist = userMService.phoneExist(phone);
+                if (isexist) {
+                    res = "{\"status\": \"exist\"}";
+                } else {
+                    //发送手机语音验证短码
+                    String host = "http://yuyin.market.alicloudapi.com";
+                    String path = "/yzx/voiceSend";
+                    String method = "POST";
+                    String appcode = "4a97cdc9fdf94a0898a8a265fbc9ab20";
+                    //随机生成四位数code
+                    String uuid = CommonUtil.getUUIDInt().substring(0, 4);
+                    Map<String, String> headers = new HashMap<String, String>();
+                    //最后在header中的格式(中间是英文空格)为Authorization:APPCODE 83359fd73fe94948385f570e3c139105
+                    headers.put("Authorization", "APPCODE " + appcode);
+                    Map<String, String> querys = new HashMap<String, String>();
+                    querys.put("mobile", phone);
+                    querys.put("param", "code:" + uuid);
+                    Map<String, String> bodys = new HashMap<String, String>();
+                    try {
+                        HttpResponse Response = HttpUtils.doPost(host, path, method, headers, querys, bodys);
+                        System.out.println("test:" + Response.getEntity().getContent());
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                    //session保存语音验证短码
+                    session.setAttribute("bindcode", uuid);
+                    session.setAttribute("bindemail", phone);
+                    res = "{\"status\": \"sendok\"}";
+                }
+            } else {
+                res = "{\"status\": \"invalid\"}";
             }
         }
 
@@ -490,6 +522,7 @@ public class UserMain {
 
     /**
      * 进行邮箱/手机号码的绑定
+     *
      * @param type
      * @param email
      * @param valicode
@@ -504,24 +537,80 @@ public class UserMain {
         String username = (String) session.getAttribute("username");
         String res = null;
 
-        if(username == null){
+        if (username == null) {
             res = "{\"status\": \"invalid\"}";
-        }
-        else{
+        } else {
             //判断验证码和邮箱/手机号码是否都正确
             String realemail = (String) session.getAttribute("bindemail");
             String realcode = (String) session.getAttribute("bindcode");
-            if(realcode != null && realcode.equals(valicode) && realemail != null && realemail.equals(email)){
-                if(type.equals("email")){
+            if (realcode != null && realcode.equals(valicode) && realemail != null && realemail.equals(email)) {
+                if (type.equals("email")) {
                     userMService.bindEmail(username, email);
-                }
-                else{
+                } else {
                     userMService.bindPhone(username, email);
                 }
                 res = "{\"status\": \"valid\"}";
-            }
-            else{
+            } else {
                 res = "{\"status\": \"codeerr\"}";
+            }
+        }
+
+        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.flush();
+        writer.close();
+    }
+
+    /**
+     * 发送解除手机绑定的验证码
+     * @param phone
+     * @param request
+     * @param response
+     * @throws IOException
+     */
+    @RequestMapping("/sendunbindphone")
+    public void sendUnbindPhone(String phone, HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        PrintWriter writer = response.getWriter();
+        HttpSession session = request.getSession();
+        String username = (String) session.getAttribute("username");
+        String res = null;
+
+        if (username == null) {
+            res = "{\"status\": \"invalid\"}";
+        }
+        else {
+            //判断用户名和手机号码是否对应
+            org.framework.tutor.domain.UserMain userMain = userMService.getByUserAndPhone(username, phone);
+            if (userMain == null) {
+                res = "{\"status\": \"invalid\"}";
+            } else {
+                //发送手机验证码并保存到session中
+                //发送手机语音验证短码
+                String host = "http://yuyin.market.alicloudapi.com";
+                String path = "/yzx/voiceSend";
+                String method = "POST";
+                String appcode = "4a97cdc9fdf94a0898a8a265fbc9ab20";
+                //随机生成四位数code
+                String uuid = CommonUtil.getUUIDInt().substring(0, 4);
+                Map<String, String> headers = new HashMap<String, String>();
+                //最后在header中的格式(中间是英文空格)为Authorization:APPCODE 83359fd73fe94948385f570e3c139105
+                headers.put("Authorization", "APPCODE " + appcode);
+                Map<String, String> querys = new HashMap<String, String>();
+                querys.put("mobile", phone);
+                querys.put("param", "code:" + uuid);
+                Map<String, String> bodys = new HashMap<String, String>();
+                try {
+                    HttpResponse Response = HttpUtils.doPost(host, path, method, headers, querys, bodys);
+                    System.out.println("test:" + Response.getEntity().getContent());
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                //session保存语音验证短码
+                session.setAttribute("valicode", uuid);
+                session.setAttribute("valiemail", phone);
+                res = "{\"status\": \"ok\"}";
             }
         }
 

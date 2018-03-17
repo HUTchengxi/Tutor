@@ -1,6 +1,7 @@
 package org.framework.tutor.controller;
 
 import org.framework.tutor.domain.UserVali;
+import org.framework.tutor.service.UserMService;
 import org.framework.tutor.service.UserVService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import sun.java2d.pipe.SpanShapeRenderer;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -21,6 +23,9 @@ public class ForwardAll {
 
     @Autowired
     private UserVService userVService;
+
+    @Autowired
+    private UserMService userMService;
 
     /**
      * 进入登录界面
@@ -221,13 +226,42 @@ public class ForwardAll {
         String realcode = userVService.getCodeByUsername(username);
 
         if(realcode != null && realcode.equals(valicode)){
-
+            Integer identity = 0;
+            //设置当前用户的id为以验证普通用户
+            userMService.setIdentity(username, identity);
             //清除未验证状态
             userVService.delStatus(username);
             return "/login/index";
         }
         else{
             return "/home/welcome";
+        }
+    }
+
+
+    /**
+     * 进入管理后台
+     * @param request
+     * @return
+     */
+    @RequestMapping("/gosysconfig")
+    public String goSysconfig(HttpServletRequest request){
+
+        HttpSession session = request.getSession();
+        Integer ident = (Integer) session.getAttribute("identity");
+
+        if(ident != null){
+            //家教老师管理后台
+            if(ident == 1){
+                return "/sysconfig/tutor/index";
+            }
+            //管理员管理后台
+            else{
+                return "/sysconfig/admin/index";
+            }
+        }
+        else{
+            return "/login/index";
         }
     }
 }

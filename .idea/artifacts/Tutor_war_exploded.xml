@@ -62,6 +62,12 @@
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-mail:1.5.9.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context:4.3.13.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context-support:4.3.13.RELEASE" />
+          <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.15" />
+          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient:4.5.2" />
+          <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.10" />
+          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpcore:4.4.4" />
+          <element id="library" level="project" name="Maven: commons-lang:commons-lang:2.6" />
+          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-util:9.3.7.v20160115" />
         </element>
       </element>
       <element id="directory" name="META-INF">

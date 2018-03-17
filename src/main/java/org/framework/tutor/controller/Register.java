@@ -117,7 +117,7 @@ public class Register {
                     res = "{\"status\": \"exist\"}";
                 }
                 else{
-                    Integer identity = -1;
+                    Integer identity = -2;
 
                     if(userMService.registerByEmail(identity, username, password, nickname, email)){
 

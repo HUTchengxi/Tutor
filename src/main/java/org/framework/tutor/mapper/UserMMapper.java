@@ -133,4 +133,37 @@ public interface UserMMapper {
      */
     @Update("update user_main set email=#{email} where username=#{username}")
     void bindEmail(@Param("username") String username, @Param("email") String email);
+
+    /**
+     * 判断手机号码是否已经被注册
+     * @param phone
+     * @return
+     */
+    @Select("select * from user_main where telephone=#{phone}")
+    UserMain phoneExist(@Param("phone") String phone);
+
+    /**
+     * 修改指定用户的id状态
+     * @param username
+     * @param identity
+     */
+    @Update("update user_main set identity=#{identity} where username=#{username}")
+    void setIdentity(@Param("username") String username, @Param("identity") Integer identity);
+
+    /**
+     * 手机号码解除绑定
+     * @param username
+     * @return
+     */
+    @Update("update user_main set telephone=null where username=#{username}")
+    Integer unbindPhone(@Param("username") String username);
+
+    /**
+     * 获取用户名和手机号码对应的用户
+     * @param username
+     * @param phone
+     * @return
+     */
+    @Select("select * from user_main where username=#{username} and telephone=#{phone}")
+    UserMain getByUserAndPhone(@Param("username") String username, @Param("phone") String phone);
 }

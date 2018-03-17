@@ -193,4 +193,52 @@ public class UserMServiceImpl implements UserMService {
     public void bindEmail(String username, String email) {
         userMMapper.bindEmail(username, email);
     }
+
+    /**
+     * 判断手机号码是否已经被注册
+     * @param phone
+     * @return
+     */
+    @Override
+    public Boolean phoneExist(String phone) {
+
+        if(userMMapper.phoneExist(phone) != null){
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * 修改指定用户的id状态
+     * @param username
+     * @param identity
+     */
+    @Override
+    public void setIdentity(String username, Integer identity) {
+
+        userMMapper.setIdentity(username, identity);
+    }
+
+    /**
+     * 手机号码解除绑定
+     * @param username
+     * @return
+     */
+    @Override
+    public Integer unbindPhone(String username) {
+
+        return userMMapper.unbindPhone(username);
+    }
+
+    /**
+     * 获取用户名和手机号码对应的用户
+     * @param username
+     * @param phone
+     * @return
+     */
+    @Override
+    public UserMain getByUserAndPhone(String username, String phone) {
+
+        return userMMapper.getByUserAndPhone(username, phone);
+    }
 }

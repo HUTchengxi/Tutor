@@ -709,22 +709,17 @@ $(function(){
     var cli_bind = function(){
         var type = $(this).data("type");
         showtype = type;
+        $(".alert-bind").animate({
+            top: "25%",
+            opacity: 1
+        },200);
+        $(".zhezhao").css("display", "block").css("height", $(document).height());
         //绑定邮箱
         if(type == "email"){
-            $(".alert-bind").animate({
-                top: "25%",
-                opacity: 1
-            },200);
             $(".alert-bind label span.info").text("电子邮箱");
-            $(".zhezhao").css("display", "block").css("height", $(document).height());
         }
         else{
-            $(".alert-bind").animate({
-                top: "25%",
-                opacity: 1
-            },200);
             $(".alert-bind label span.info").text("手机号码");
-            $(".zhezhao").css("display", "block").css("height", $(document).height());
         }
     };
     $(document).on("click", ".binddiv .mainbind p a.btn-bind", cli_bind);
@@ -809,6 +804,10 @@ $(function(){
             phone = $(".alert-bind .valiinfo").val();
             if(phone == null || phone.trim() == ""){
                 $(".alert-bind .err-email").css("display", "block").text("请填写手机号码");
+                return ;
+            }
+            else if(phone.length < 11){
+                $(".alert-bind .err-email").css("display", "block").text("手机号码格式不正确");
                 return ;
             }
         }
@@ -909,6 +908,50 @@ $(function(){
                     else{
                         $(".err-email").css("display", "none");
                         window.alert("发送成功，请查看您的邮箱");
+                        var interval;
+                        var time = 60;
+                        //邮件验证码发送成功的冷却事件
+                        $(".alert-unbind .div-valicode .resend").data("status", "ing");
+                        var interval = window.setInterval(function(){
+                            if(time == 0){
+                                $(".alert-unbind .div-valicode .resend").data("status", "ed").text("获取验证码");
+                                window.clearInterval(interval);
+                                return;
+                            }
+                            $(".alert-unbind .div-valicode .resend").text(""+time+"s后可重发");
+                            time--;
+                        }, 1000);
+                    }
+                },
+                error: function(xhr, status){
+                    window.alert("后台环境异常导致无法发送邮箱短码，请稍后再试");
+                    window.console.log(xhr);
+                }
+            });
+        }
+        else{
+            var phone = $(".binddiv .mainbind .phone p:nth-child(2) span i").text();
+
+            var status = $(this).data("status");
+            if(status == "ing"){
+                return ;
+            }
+
+            $.ajax({
+                async: true,
+                type: "post",
+                url: "/usermain_con/sendunbindphone",
+                data: {phone: phone},
+                dataType: "json",
+                success: function(data){
+                    var status = data.status;
+                    if(status == "invalid"){
+                        $(".err-email").css("display", "block").text("手机不存在");
+                        return ;
+                    }
+                    else{
+                        $(".err-email").css("display", "none");
+                        window.alert("发送成功");
                         var interval;
                         var time = 60;
                         //邮件验证码发送成功的冷却事件

@@ -615,20 +615,6 @@ $(function(){
                 top: 0
             },50);
         }
-        //我的发布
-        else if(clitype === "publish"){
-            if(ident == 0){
-                window.alert("抱歉，普通用户无法发布课程！");
-                $(this).closest("li").remove();
-            }
-            else {
-                $(".infobox .publishdiv").css("display", "block").animate({
-                    opacity: 1,
-                    position: "absolute",
-                    top: 0
-                }, 50);
-            }
-        }
     };
     $(".top-nav nav.stroke a").click(clibtn_bind);
 

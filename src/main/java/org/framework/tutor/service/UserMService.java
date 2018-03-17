@@ -119,4 +119,33 @@ public interface UserMService {
      * @param email
      */
     void bindEmail(String username, String email);
+
+    /**
+     * 判断手机号码是否已经被注册
+     * @param phone
+     * @return
+     */
+    Boolean phoneExist(String phone);
+
+    /**
+     * 修改指定用户的id状态
+     * @param username
+     * @param identity
+     */
+    void setIdentity(String username, Integer identity);
+
+    /**
+     * 手机号码解除绑定
+     * @param username
+     * @return
+     */
+    Integer unbindPhone(String username);
+
+    /**
+     * 获取用户名和手机号码对应的用户
+     * @param username
+     * @param phone
+     * @return
+     */
+    UserMain getByUserAndPhone(String username, String phone);
 }
