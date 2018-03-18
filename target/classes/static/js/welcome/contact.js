@@ -123,11 +123,17 @@ $(function(){
                         "                            <li><a href='/forward_con/personal' target='_blank'>基本信息</a></li>\n" +
                         "                            <li><a href='/forward_con/gomyorder'>我的订单</a></li>\n" +
                         "                            <li><a href='/forward_con/gomycourse' target='_blank'>我的课程</a></li>\n" +
+                        "                            <li class='sysconfig'><a href='/forward_con/gosysconfig' target='_blank'><span class='mcount'>后台管理</span></a></li>\n" +
                         "                            <li><a href='/forward_con/gomessage' target='_blank'>通知<span class='mcount'>("+count+")</span></a></li>\n" +
                         "                            <li><a href='/forward_con/gosetting'>设置</a></li>\n" +
                         "                            <li class='nav-logoff'><a href='#' style=\"color: red;\">注销</a></li>\n" +
                         "                        </ul>\n" +
                         "                    </li>");
+
+                    var ident = data.ident;
+                    if(ident == 0 || ident == -2){
+                        $("nav ul.navbar-right li.sysconfig").remove();
+                    }
                 }
 
                 //让时间一直轮播

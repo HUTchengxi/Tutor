@@ -11,15 +11,19 @@
   <component name="ChangeListManager">
     <list default="true" id="bf479440-431d-499c-9612-40c14de1a166" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserSecret.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserSecret.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserSCMapper.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserSCMapper.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserSCService.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserSCService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserSCServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserSCServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/login/mine/forget.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/login/mine/forget.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login/forget.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/login/forget.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/UserMain.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/UserMain.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/classify.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/classify.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/contact.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/contact.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/order/mycart.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/order/mycart.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/order/myorder.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/order/myorder.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/rank.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/rank.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/classify.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/classify.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/contact.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/contact.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/mycourse/mycourse.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/mycourse/mycourse.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/order/mycart.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/order/mycart.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/order/myorder.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/order/myorder.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/rank.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/rank.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/showcourse.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/showcourse.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -38,84 +42,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="2.0版本" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2.0版本" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="63" column="18" lean-forward="true" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
+            <state relative-caret-position="1514">
+              <caret line="71" column="21" lean-forward="false" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ForwardAll.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java">
+      <file leaf-file-name="respond.min.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/login/respond.min.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="858">
-              <caret line="266" column="0" lean-forward="false" selection-start-line="266" selection-start-column="0" selection-end-line="266" selection-end-column="0" />
-              <folding>
-                <element signature="method#goRegisterInfo#0;class#ForwardAll#0" expanded="false" />
-                <element signature="method#register_check#0;class#ForwardAll#0" expanded="false" />
-                <element signature="method#goSysconfig#0;class#ForwardAll#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forget.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login/forget.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4003">
-              <caret line="171" column="5" lean-forward="true" selection-start-line="171" selection-start-column="5" selection-end-line="171" selection-end-column="5" />
-              <folding>
-                <element signature="n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="e#5196#5382#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserMain.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="828">
-              <caret line="454" column="40" lean-forward="false" selection-start-line="454" selection-start-column="40" selection-end-line="454" selection-end-column="40" />
-              <folding>
-                <element signature="method#getImgsrc#0;class#UserMain#0" expanded="false" />
-                <element signature="method#getUserinfo#0;class#UserMain#0" expanded="false" />
-                <element signature="method#modImgsrc#0;class#UserMain#0" expanded="false" />
-                <element signature="method#modImgfile#0;class#UserMain#0" expanded="false" />
-                <element signature="method#modUserinfo#0;class#UserMain#0" expanded="false" />
-                <element signature="method#getBindInfo#0;class#UserMain#0" expanded="false" />
-                <element signature="method#sendMail#0;class#UserMain#0" expanded="false" />
-                <element signature="method#modPass#0;class#UserMain#0" expanded="false" />
-                <element signature="method#userUnbind#0;class#UserMain#0" expanded="false" />
-                <element signature="method#sendBindCode#0;class#UserMain#0" expanded="false" />
-                <element signature="method#userBind#0;class#UserMain#0" expanded="false" />
-                <element signature="method#sendUnbindPhone#0;class#UserMain#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forget.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/login/mine/forget.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="636">
-              <caret line="101" column="76" lean-forward="false" selection-start-line="101" selection-start-column="76" selection-end-line="101" selection-end-column="76" />
-              <folding>
-                <element signature="e#85#570#0" expanded="false" />
-                <element signature="e#5785#5957#0" expanded="false" />
-                <element signature="e#6178#6308#0" expanded="false" />
-                <element signature="e#6431#8268#0" expanded="false" />
-                <element signature="e#8420#10252#0" expanded="false" />
-                <element signature="e#10460#11099#0" expanded="false" />
-                <element signature="e#11307#11931#0" expanded="false" />
-                <element signature="e#12082#13727#0" expanded="false" />
-                <element signature="e#13889#15534#0" expanded="false" />
-                <element signature="e#15696#18621#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="185">
+              <caret line="5" column="4165" lean-forward="true" selection-start-line="5" selection-start-column="4165" selection-end-line="5" selection-end-column="4165" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -183,12 +125,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/login/mine/login.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/showcourse.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/classify.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/rank.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/order/mycart.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/order/mycart.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/mysetting.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/mysetting.js" />
@@ -202,7 +139,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/personal.html" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/tutor.sql" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/welcome.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/mycourse/mycourse.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/mycourse.html" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/Register.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/welcome.js" />
@@ -223,7 +159,6 @@
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/CourseOMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseOrder.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/order/myorder.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/order/myorder.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/personal/personal.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/login/forget.html" />
@@ -234,6 +169,13 @@
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/login/mine/forget.js" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/rank.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/contact.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/classify.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/order/myorder.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/order/mycart.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/mycourse/mycourse.js" />
       </list>
     </option>
   </component>
@@ -569,18 +511,7 @@
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="welcome" type="462c0819:PsiDirectoryNode" />
-              <item name="order" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="welcome" type="462c0819:PsiDirectoryNode" />
-              <item name="personal" type="462c0819:PsiDirectoryNode" />
+              <item name="mycourse" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
@@ -1066,7 +997,7 @@
       <workItem from="1521191703787" duration="8440000" />
       <workItem from="1521208242221" duration="4723000" />
       <workItem from="1521290445005" duration="13859000" />
-      <workItem from="1521352299332" duration="18253000" />
+      <workItem from="1521352299332" duration="18715000" />
     </task>
     <task id="LOCAL-00001" summary="将毕设项目提交到gitlab">
       <created>1520393481249</created>
@@ -1257,11 +1188,18 @@
       <option name="project" value="LOCAL" />
       <updated>1521367260489</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="密保问题找回密码的实现">
+      <created>1521382435265</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1521382435265</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="722810000" />
+    <option name="totallyTimeSpent" value="723272000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1289,7 +1227,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="22" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="24" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2824223" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2824223" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1314,7 +1252,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="将毕设项目提交到gitlab" />
     <MESSAGE value="用户通知的设计与实现" />
     <MESSAGE value="cookie实现记住密码，明文密码，以后改进" />
     <MESSAGE value="修复了通知的bug和个人中心的同步" />
@@ -1339,82 +1276,16 @@
     <MESSAGE value="个人中心的手机号码的绑定与解绑功能的实现（接入了阿里云第三方语音验证码）" />
     <MESSAGE value="已支付/未支付/已失效订单的设计与实现（回收站搁浅，因为数据库设计不周到，没考虑还原的问题）" />
     <MESSAGE value="手机号码找回密码的实现" />
-    <option name="LAST_COMMIT_MESSAGE" value="手机号码找回密码的实现" />
+    <MESSAGE value="密保问题找回密码的实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="密保问题找回密码的实现" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="12" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/mymessage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="71" column="63" lean-forward="true" selection-start-line="71" selection-start-column="63" selection-end-line="71" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home/mymessage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="451" column="18" lean-forward="true" selection-start-line="451" selection-start-column="18" selection-end-line="451" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserSMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/UserSecret.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="63" column="18" lean-forward="false" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
-          <folding>
-            <element signature="e#385#386#0" expanded="false" />
-            <element signature="e#410#411#0" expanded="false" />
-            <element signature="e#447#448#0" expanded="false" />
-            <element signature="e#475#476#0" expanded="false" />
-            <element signature="e#510#511#0" expanded="false" />
-            <element signature="e#541#542#0" expanded="false" />
-            <element signature="e#589#590#0" expanded="false" />
-            <element signature="e#662#663#0" expanded="false" />
-            <element signature="e#697#698#0" expanded="false" />
-            <element signature="e#728#729#0" expanded="false" />
-            <element signature="e#776#777#0" expanded="false" />
-            <element signature="e#849#850#0" expanded="false" />
-            <element signature="e#882#883#0" expanded="false" />
-            <element signature="e#911#912#0" expanded="false" />
-            <element signature="e#955#956#0" expanded="false" />
-            <element signature="e#1022#1023#0" expanded="false" />
-            <element signature="e#1052#1053#0" expanded="false" />
-            <element signature="e#1078#1079#0" expanded="false" />
-            <element signature="e#1116#1117#0" expanded="false" />
-            <element signature="e#1174#1175#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/Rank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="64" column="17" lean-forward="true" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="183" column="6" lean-forward="false" selection-start-line="183" selection-start-column="6" selection-end-line="183" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/tutor.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="481">
@@ -1433,20 +1304,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
           <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="636">
-          <caret line="836" column="32" lean-forward="false" selection-start-line="836" selection-start-column="32" selection-end-line="836" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/mycourse/mycourse.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6792">
-          <caret line="214" column="51" lean-forward="false" selection-start-line="214" selection-start-column="51" selection-end-line="214" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -1510,13 +1367,6 @@
             <element signature="e#9490#9491#0" expanded="false" />
             <element signature="e#9541#9542#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/welcome.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="133" column="32" lean-forward="false" selection-start-line="133" selection-start-column="32" selection-end-line="133" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -1738,20 +1588,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/order/myorder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1247">
-          <caret line="150" column="81" lean-forward="true" selection-start-line="150" selection-start-column="81" selection-end-line="150" selection-end-column="81" />
-          <folding>
-            <element signature="e#91#834#0" expanded="false" />
-            <element signature="e#904#2927#0" expanded="false" />
-            <element signature="e#3017#3509#0" expanded="false" />
-            <element signature="e#3656#4667#0" expanded="false" />
-            <marker date="1521360521518" expanded="true" signature="6449:6464" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home/order/myorder.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26">
@@ -1807,18 +1643,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="858">
-          <caret line="266" column="0" lean-forward="false" selection-start-line="266" selection-start-column="0" selection-end-line="266" selection-end-column="0" />
-          <folding>
-            <element signature="method#goRegisterInfo#0;class#ForwardAll#0" expanded="false" />
-            <element signature="method#register_check#0;class#ForwardAll#0" expanded="false" />
-            <element signature="method#goSysconfig#0;class#ForwardAll#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserSecret.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="618">
@@ -1851,6 +1675,25 @@
         <state relative-caret-position="303">
           <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/login/mine/forget.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="636">
+          <caret line="101" column="76" lean-forward="false" selection-start-line="101" selection-start-column="76" selection-end-line="101" selection-end-column="76" />
+          <folding>
+            <element signature="e#85#570#0" expanded="false" />
+            <element signature="e#5785#5957#0" expanded="false" />
+            <element signature="e#6178#6308#0" expanded="false" />
+            <element signature="e#6431#8268#0" expanded="false" />
+            <element signature="e#8420#10252#0" expanded="false" />
+            <element signature="e#10460#11099#0" expanded="false" />
+            <element signature="e#11307#11931#0" expanded="false" />
+            <element signature="e#12082#13727#0" expanded="false" />
+            <element signature="e#13889#15534#0" expanded="false" />
+            <element signature="e#15696#18621#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1887,29 +1730,211 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/login/mine/forget.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="858">
+          <caret line="266" column="0" lean-forward="false" selection-start-line="266" selection-start-column="0" selection-end-line="266" selection-end-column="0" />
+          <folding>
+            <element signature="method#goRegisterInfo#0;class#ForwardAll#0" expanded="false" />
+            <element signature="method#register_check#0;class#ForwardAll#0" expanded="false" />
+            <element signature="method#goSysconfig#0;class#ForwardAll#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/welcome.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="114" column="37" lean-forward="false" selection-start-line="114" selection-start-column="37" selection-end-line="114" selection-end-column="37" />
+          <folding>
+            <element signature="e#81#3492#0" expanded="false" />
+            <element signature="e#3567#3863#0" expanded="false" />
+            <element signature="e#3961#4661#0" expanded="false" />
+            <element signature="e#4729#9318#0" expanded="false" />
+            <element signature="e#9406#9931#0" expanded="false" />
+            <marker date="1521297125698" expanded="true" signature="5110:5121" ph="..." />
+            <marker date="1521297125698" expanded="true" signature="7142:7157" ph="..." />
+            <marker date="1521297125698" expanded="true" signature="7242:7255" ph="..." />
+            <marker date="1521297125698" expanded="true" signature="7309:7320" ph="..." />
+            <marker date="1521297125698" expanded="true" signature="8566:8577" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="636">
-          <caret line="101" column="76" lean-forward="false" selection-start-line="101" selection-start-column="76" selection-end-line="101" selection-end-column="76" />
+          <caret line="109" column="6" lean-forward="false" selection-start-line="109" selection-start-column="6" selection-end-line="109" selection-end-column="6" />
           <folding>
-            <element signature="e#85#570#0" expanded="false" />
-            <element signature="e#5785#5957#0" expanded="false" />
-            <element signature="e#6178#6308#0" expanded="false" />
-            <element signature="e#6431#8268#0" expanded="false" />
-            <element signature="e#8420#10252#0" expanded="false" />
-            <element signature="e#10460#11099#0" expanded="false" />
-            <element signature="e#11307#11931#0" expanded="false" />
-            <element signature="e#12082#13727#0" expanded="false" />
-            <element signature="e#13889#15534#0" expanded="false" />
-            <element signature="e#15696#18621#0" expanded="false" />
+            <element signature="e#902#5491#0" expanded="false" />
+            <marker date="1521382719384" expanded="true" signature="11671:11677" ph="&amp;nbsp;" />
+            <marker date="1521382719384" expanded="true" signature="11677:11683" ph="&amp;nbsp;" />
+            <marker date="1521382719384" expanded="true" signature="11705:11713" ph="&amp;##xe605;" />
+            <marker date="1521382719384" expanded="true" signature="11981:11987" ph="&amp;nbsp;" />
+            <marker date="1521382719384" expanded="true" signature="11987:11993" ph="&amp;nbsp;" />
+            <marker date="1521382719384" expanded="true" signature="12015:12023" ph="&amp;##xe605;" />
+            <marker date="1521382719384" expanded="true" signature="13925:13931" ph="&amp;nbsp;" />
+            <marker date="1521382719384" expanded="true" signature="13931:13937" ph="&amp;nbsp;" />
+            <marker date="1521382719384" expanded="true" signature="13959:13967" ph="&amp;##xe605;" />
+            <marker date="1521382719384" expanded="true" signature="17328:17334" ph="&amp;nbsp;" />
+            <marker date="1521382719384" expanded="true" signature="17334:17340" ph="&amp;nbsp;" />
+            <marker date="1521382719384" expanded="true" signature="17340:17346" ph="&amp;nbsp;" />
+            <marker date="1521382719384" expanded="true" signature="17346:17352" ph="&amp;nbsp;" />
+            <marker date="1521382719384" expanded="true" signature="25434:25440" ph="&amp;nbsp;" />
+            <marker date="1521382719384" expanded="true" signature="26788:26794" ph="&amp;nbsp;" />
+            <marker date="1521382719384" expanded="true" signature="26794:26800" ph="&amp;nbsp;" />
+            <marker date="1521382719384" expanded="true" signature="26800:26806" ph="&amp;nbsp;" />
+            <marker date="1521382719384" expanded="true" signature="26806:26812" ph="&amp;nbsp;" />
+            <marker date="1521382719384" expanded="true" signature="33112:33120" ph="&amp;##xe651;" />
+            <marker date="1521382719384" expanded="true" signature="33191:33197" ph="&amp;nbsp;" />
+            <marker date="1521382719384" expanded="true" signature="33197:33203" ph="&amp;nbsp;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/rank.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="108" column="6" lean-forward="false" selection-start-line="108" selection-start-column="6" selection-end-line="108" selection-end-column="6" />
+          <folding>
+            <element signature="e#858#5447#0" expanded="false" />
+            <marker date="1521382731590" expanded="true" signature="1239:1250" ph="..." />
+            <marker date="1521382731590" expanded="true" signature="3271:3286" ph="..." />
+            <marker date="1521382731590" expanded="true" signature="3371:3384" ph="..." />
+            <marker date="1521382731590" expanded="true" signature="3438:3449" ph="..." />
+            <marker date="1521382731590" expanded="true" signature="4695:4706" ph="..." />
+            <marker date="1521382731590" expanded="true" signature="7452:7464" ph="..." />
+            <marker date="1521382731590" expanded="true" signature="7560:7566" ph="&amp;nbsp;" />
+            <marker date="1521382731590" expanded="true" signature="7584:7590" ph="&amp;nbsp;" />
+            <marker date="1521382731590" expanded="true" signature="7608:7614" ph="&amp;nbsp;" />
+            <marker date="1521382731590" expanded="true" signature="8177:8188" ph="..." />
+            <marker date="1521382731590" expanded="true" signature="8285:8289" ph="..." />
+            <marker date="1521382731590" expanded="true" signature="8401:8405" ph="..." />
+            <marker date="1521382731590" expanded="true" signature="8745:8760" ph="..." />
+            <marker date="1521382731590" expanded="true" signature="8857:8861" ph="..." />
+            <marker date="1521382731590" expanded="true" signature="8973:8977" ph="..." />
+            <marker date="1521382731590" expanded="true" signature="9319:9334" ph="..." />
+            <marker date="1521382731590" expanded="true" signature="9431:9435" ph="..." />
+            <marker date="1521382731590" expanded="true" signature="9547:9551" ph="..." />
+            <marker date="1521382731590" expanded="true" signature="9877:9892" ph="..." />
+            <marker date="1521382731590" expanded="true" signature="9989:9993" ph="..." />
+            <marker date="1521382731590" expanded="true" signature="10105:10109" ph="..." />
+            <marker date="1521382731590" expanded="true" signature="10549:10560" ph="..." />
+            <marker date="1521382731590" expanded="true" signature="10654:10660" ph="&amp;nbsp;" />
+            <marker date="1521382731590" expanded="true" signature="10678:10684" ph="&amp;nbsp;" />
+            <marker date="1521382731590" expanded="true" signature="10702:10708" ph="&amp;nbsp;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/mymessage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1521193170736" expanded="true" signature="1945:1960" ph="..." />
+            <marker date="1521193170736" expanded="true" signature="2049:2062" ph="..." />
+            <marker date="1521193170736" expanded="true" signature="2120:2131" ph="..." />
+            <marker date="1521193170736" expanded="true" signature="5317:5327" ph="..." />
+            <marker date="1521193170736" expanded="true" signature="9758:9766" ph="&amp;##xe610;" />
+            <marker date="1521193170736" expanded="true" signature="11626:11634" ph="&amp;##xe610;" />
+            <marker date="1521193170736" expanded="true" signature="15633:15641" ph="&amp;##xe610;" />
+            <marker date="1521193170736" expanded="true" signature="17588:17596" ph="&amp;##xe610;" />
+            <marker date="1521193170736" expanded="true" signature="23355:23363" ph="&amp;##xe610;" />
+            <marker date="1521193170736" expanded="true" signature="25311:25319" ph="&amp;##xe610;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/contact.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="148" column="6" lean-forward="false" selection-start-line="148" selection-start-column="6" selection-end-line="148" selection-end-column="6" />
+          <folding>
+            <element signature="e#1892#6481#0" expanded="false" />
+            <marker date="1521382758603" expanded="true" signature="2273:2284" ph="..." />
+            <marker date="1521382758603" expanded="true" signature="4305:4320" ph="..." />
+            <marker date="1521382758603" expanded="true" signature="4405:4418" ph="..." />
+            <marker date="1521382758603" expanded="true" signature="4472:4483" ph="..." />
+            <marker date="1521382758603" expanded="true" signature="5729:5740" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/classify.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="747">
+          <caret line="109" column="6" lean-forward="false" selection-start-line="109" selection-start-column="6" selection-end-line="109" selection-end-column="6" />
+          <folding>
+            <element signature="e#902#5491#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/order/myorder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="109" column="6" lean-forward="false" selection-start-line="109" selection-start-column="6" selection-end-line="109" selection-end-column="6" />
+          <folding>
+            <element signature="e#91#834#0" expanded="false" />
+            <element signature="e#902#5491#0" expanded="false" />
+            <element signature="e#5581#6073#0" expanded="false" />
+            <element signature="e#6220#7231#0" expanded="false" />
+            <element signature="e#7411#9562#0" expanded="false" />
+            <marker date="1521382781582" expanded="true" signature="1283:1294" ph="..." />
+            <marker date="1521382781582" expanded="true" signature="3315:3330" ph="..." />
+            <marker date="1521382781582" expanded="true" signature="3415:3428" ph="..." />
+            <marker date="1521382781582" expanded="true" signature="3482:3493" ph="..." />
+            <marker date="1521382781582" expanded="true" signature="4739:4750" ph="..." />
+            <marker date="1521382781582" expanded="true" signature="9013:9028" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/order/mycart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="747">
+          <caret line="109" column="6" lean-forward="false" selection-start-line="109" selection-start-column="6" selection-end-line="109" selection-end-column="6" />
+          <folding>
+            <element signature="e#902#5491#0" expanded="false" />
+            <marker date="1521382788782" expanded="true" signature="1283:1294" ph="..." />
+            <marker date="1521382788782" expanded="true" signature="3315:3330" ph="..." />
+            <marker date="1521382788782" expanded="true" signature="3415:3428" ph="..." />
+            <marker date="1521382788782" expanded="true" signature="3482:3493" ph="..." />
+            <marker date="1521382788782" expanded="true" signature="4739:4750" ph="..." />
+            <marker date="1521382788782" expanded="true" signature="6841:6849" ph="&amp;##xe69c;" />
+            <marker date="1521382788782" expanded="true" signature="7708:7716" ph="&amp;##xe618;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/mycourse/mycourse.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="23" column="32" lean-forward="false" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+          <folding>
+            <element signature="e#878#2629#0" expanded="false" />
+            <marker date="1521382847117" expanded="true" signature="15266:15272" ph="&amp;nbsp;" />
+            <marker date="1521382847117" expanded="true" signature="15372:15380" ph="&amp;##xe63f;" />
+            <marker date="1521382847117" expanded="true" signature="15979:15987" ph="&amp;##xe63f;" />
+            <marker date="1521382847117" expanded="true" signature="16759:16767" ph="&amp;##xe61a;" />
+            <marker date="1521382847117" expanded="true" signature="16958:16966" ph="&amp;##xe63f;" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="63" column="18" lean-forward="true" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
+        <state relative-caret-position="1514">
+          <caret line="71" column="21" lean-forward="false" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/login/respond.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="5" column="4165" lean-forward="true" selection-start-line="5" selection-start-column="4165" selection-end-line="5" selection-end-column="4165" />
           <folding />
         </state>
       </provider>
