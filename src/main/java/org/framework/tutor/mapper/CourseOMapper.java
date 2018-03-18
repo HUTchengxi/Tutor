@@ -75,4 +75,18 @@ public interface CourseOMapper {
      */
     @Select("select count(*) from course_order where username=#{username}")
     Integer getMyCartCount(@Param("username") String username);
+
+    /**
+     * 将指定订单放入回收站
+     * @param oid
+     * @return
+     */
+    @Update("update course_order set state=4 where id=#{oid}")
+    Integer setInCycle(@Param("oid") Integer oid);
+
+    /**
+     * 根据订单号和用户名获取订单数据
+     */
+    @Select("select * from course_order where username=#{username} and id=#{oid}")
+    CourseOrder getByIdAndUser(@Param("username") String username, @Param("oid") Integer oid);
 }

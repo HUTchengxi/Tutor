@@ -65,4 +65,19 @@ public interface CourseOService {
      * @return
      */
     Integer getMyCartCount(String username);
+
+    /**
+     * 将指定订单放入回收站
+     * @param oid
+     * @return
+     */
+    Integer setInCycle(Integer oid);
+
+    /**
+     * 根据订单号和用户名获取订单数据
+     * @param username
+     * @param oid
+     * @return
+     */
+    CourseOrder getByIdAndUser(String username, Integer oid);
 }

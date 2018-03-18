@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>勤成家教网---我的购物车</title>
+        <link rel="icon" href="/images/logo/web_logo.ico" type="images/x-icon" />
+
+        <!--bootstrap css-->
+        <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" />
+        <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.css" />
+
+        <!--layui css-->
+        <link rel="stylesheet" href="/layui/css/layui.css" />
+    </head>
+    <body>
+        <!--头部-->
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container-fluid" style="padding-top: 13px;">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/forward_con/welcome">勤成家教网</a>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#navbar-collapse">
+                        <span class="sr-only">切换导航</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-collapse" style="">
+                    <ul class="nav navbar-nav">
+                        <li style="margin:0 10px;" class="active"><a href="/forward_con/welcome">首页</a></li>
+                        <li style="margin:0 10px;"><a href="/forward_con/classify">分类</a></li>
+                        <li style="margin:0 10px;"><a href="/forward_con/gabble" target="_blank">七嘴八舌</a></li>
+                        <li style="margin:0 10px;"><a href="/forward_con/gorank">勤成榜</a></li>
+                        <li style="margin:0 10px;"><a href="/forward_con/contact">联系我们</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!--侧边栏-->
+        <div class="sliderbar">
+            <ul>
+                <li>
+                    <a href="javascript:void(0)" title="返回顶部" class="gotop">
+                        <i class="layui-icon">&#xe619;</i>
+                    </a>
+                </li>
+                <li>
+                    <a href="/forward_con/contact" target="_blank" title="联系我们">
+                        <i class="layui-icon">&#xe606;</i>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" title="手机访问">
+                        <i class="layui-icon">&#xe63b;</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <style>
+            .sliderbar{
+                position: fixed;
+                right: 2%;
+                bottom: 25%;
+            }
+            .sliderbar ul li{
+                list-style-type: none;
+                margin-bottom: 30%;
+            }
+            .sliderbar ul li a{
+                display: inline-block;
+                /*width: 200%;*/
+                /*height: 35px;*/
+                border: 1px solid black;
+                text-decoration: none;
+                background-color: #80808030;
+                border-color: #0000004d;
+            }
+            .sliderbar ul li a.gotop{
+                display: none;
+            }
+            .sliderbar ul li a:hover{
+                text-decoration: none;
+            }
+            .sliderbar ul li a i{
+                font-size: 35px;
+                color: #808080a3;
+                font-weight: bold;
+            }
+        </style>
+
+        <!--body-->
+        <div class="cartmain clearfix">
+            <header class="clearfix">
+                <h1 class="pull-left">我的购物车<span>共<i class="total">0</i>门，已选择<i class="cur">0</i>门</span></h1>
+                <p class="pull-right"><a href="/forward_con/gomyorder">我的订单</a></p>
+            </header>
+            <div class="main">
+                <ul class="main-ul">
+                    <li>
+                        <div class="main-top">
+                            <ul class="clearfix top">
+                                <li class="pull-left"><span class="layui-icon">&#xe618;</span>&nbsp;&nbsp;<span class="word">全选</span></li>
+                                <li class="pull-left">课程</li>
+                                <li class="pull-left">价格</li>
+                                <li class="pull-left">操作</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <!--<li class="main-info">-->
+                        <!--<div class="main-top show first">-->
+                            <!--<ul class="clearfix">-->
+                                <!--<li class="pull-left"><span class="layui-icon">&#xe618;</span></li>-->
+                                <!--<li class="pull-left">-->
+                                    <!--<div class="cart-course">-->
+                                        <!--<a href=""><img src="/images/user/course/timg.jpg" /></a>-->
+                                        <!--<a href=""><span>小学英语入门</span></a>-->
+                                    <!--</div>-->
+                                <!--</li>-->
+                                <!--<li class="pull-left">￥99.9</li>-->
+                                <!--<li class="pull-left">-->
+                                    <!--<a href=""><i class="layui-icon">&#x1006;</i></a>-->
+                                <!--</li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="main-info">-->
+                        <!--<div class="main-top show">-->
+                            <!--<ul class="clearfix">-->
+                                <!--<li class="pull-left"><span class="layui-icon">&#xe618;</span></li>-->
+                                <!--<li class="pull-left">-->
+                                    <!--<div class="cart-course">-->
+                                        <!--<a href=""><img src="/images/user/face/bg.png" /></a>-->
+                                        <!--<a href=""><span>小学数学从入门到精通</span></a>-->
+                                    <!--</div>-->
+                                <!--</li>-->
+                                <!--<li class="pull-left">￥199</li>-->
+                                <!--<li class="pull-left">-->
+                                    <!--<a href=""><i class="layui-icon">&#x1006;</i></a>-->
+                                <!--</li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                </ul>
+                    <!--<li>-->
+                        <!--<div class="main-top show">-->
+                            <!--<ul class="clearfix">-->
+                                <!--<li class="pull-left"><span class="layui-icon">&#xe618;</span></li>-->
+                                <!--<li class="pull-left">-->
+                                    <!--<div class="cart-course">-->
+                                        <!--<a href=""><img src="/images/user/face/bg.png" /></a>-->
+                                        <!--<a href=""><p>小学数学从入门到精通</p></a>-->
+                                    <!--</div>-->
+                                <!--</li>-->
+                                <!--<li class="pull-left">￥199</li>-->
+                                <!--<li class="pull-left">-->
+                                    <!--<a href=""><i class="layui-icon">&#x1006;</i></a>-->
+                                <!--</li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<div class="main-top footer clearfix">-->
+                            <!--<a class="pull-right" href="">去结算</a>-->
+                            <!--<div class="price pull-right">-->
+                                <!--<p>总计金额: </p>-->
+                                <!--<p class="money">￥0.00</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                <!--<p class="none"><i class="layui-icon">&#xe69c;</i>空空如也</p>-->
+            </div>
+        </div>
+
+        <!--尾部-->
+        <footer class="footer">
+        <br />
+        <!--网站地图-->
+        <div class="webmap">
+            <h4>网站地图:</h4>
+            <ul class="clearfix">
+                <li class="pull-left">
+                    <a href="/forward_con/welcome">网站首页</a>
+                </li>
+                <li class="pull-left">
+                    <a href="/forward_con/classify">家教分类</a>
+                </li>
+                <li class="pull-left">
+                    <a href="/forward_con/gabble">用户经验总结</a>
+                </li>
+                <li class="pull-left">
+                    <a href="/forward_con/gorank">勤成家教榜</a>
+                </li>
+                <li class="pull-left">
+                    <a href="/forward_con/contact">联系我们</a>
+                </li>
+                <li class="pull-left">
+                    <a href="/forward_con/personal">个人信息</a>
+                </li>
+            </ul>
+        </div>
+        <!--友情链接-->
+        <div class="link">
+            <h4>友情链接:</h4>
+            <ul class="clearfix">
+                <li class="pull-left">
+                    <a href="">CSDN博客</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">前端网</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">慕课网</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">牛客网</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">模板之家</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">Bootstrap</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">LayUI</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">知乎</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">简书</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">脚本之家</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">码农网</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">博客园</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">CSS探索之旅</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">苏文宅博客</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">爱前端网</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">CSS3按钮特效</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">ProcessOn</a>
+                </li>
+                <li class="pull-left">
+                    <a href="">5iweb</a>
+                </li>
+            </ul>
+        </div>
+        <!--慕课网抄袭而来的copyright-->
+        <div class="copyright">
+            <h5>Copyright © 2018 imooc.com All Rights Reserved | 京ICP备 13046642号-2</h5>
+        </div>
+        <br />
+    </footer>
+
+    <style>
+        body{background-color: #f8fafc;}
+        .cartmain{margin: 40px 0;}
+        .cartmain .cart-course{width: 100%;}
+        .cartmain .main .footer.main-top{margin: 3% auto; border-bottom: none;}
+        .cartmain .footer div{margin-right: 5%; width: 13%;}
+        .cartmain .footer div .money{color: red; margin-left: 10%; font-weight: bold;}
+        .cartmain .footer a{display:  inline-block;width: 15%;height: 54px; background-color: #F01414;color: white;
+            line-height:  54px;text-align:  center;font-size: 16px; text-decoration: none;}
+        .cartmain .footer a:hover{text-decoration: none;}
+
+        .cartmain .main p.none{width: 100%;text-align: center; margin-top: 13%;font-size: 17px;color: grey;}
+
+        .cartmain .main .show.main-top{height: 120px;}
+        .cartmain .main .show img{width: 30%; height: 90px;}
+        .cartmain .cart-course a{text-decoration: none;}
+        .cartmain .cart-course a:hover{text-decoration: none;}
+        .cartmain .cart-course p{width: 56%;position: relative; top: -80px; left: 31%;}
+        .cartmain .main .main-top.show li:nth-child(3){margin-left: -25%;margin-top:  1%;color: red;}
+        .cartmain .main .main-top.show.first li:nth-child(3){margin-top:  3%;}
+        .cartmain .main .main-top.show li:nth-child(4){margin-left: -2%; margin-top:  1%;color: grey; }
+        .cartmain .main .main-top.show.first li:nth-child(4){margin-top: 3%;}
+        .cartmain .main .main-top.show li:nth-child(4) a{text-decoration: none; color: grey;}
+        .cartmain .main .main-top.show li:nth-child(4):hover a{text-decoration: none; color: black;}
+
+        .cartmain .main{width: 80%;margin:  auto;min-height: 300px;background-color: white; border: 1px solid white;border-radius:  8px;margin-top: -2%;}
+        .cartmain .main .main-ul li.main-info{height: 150px;}
+        .cartmain .main div.main-top{width: 90%; margin: 0 auto;}
+        .cartmain .main .main-top{border-bottom: 1px solid #80808030;}
+        .cartmain .main .main-top li{padding: 4% 1%;}
+        .cartmain .main .main-top .top li:nth-child(1){position: relative; top : -2px; width: 15%;}
+        .cartmain .main .main-top li:nth-child(1) span.layui-icon{border: 2px solid #b7bbbf;display:  inline-block;width:  24px;height: 24px;text-align:  center;
+            line-height:  24px;font-size:  14px; color: white;}
+        .cartmain .main-top li:nth-child(1) span.cli{background-color: red; border-color: red!important;}
+        .cartmain .main .main-top li:nth-child(1) span:hover{cursor: pointer;}
+        .cartmain .main .main-top li:nth-child(3){margin-left: 48%;}
+        .cartmain .main .main-top li:nth-child(4){margin-left: 15%;}
+
+        .cartmain header{padding: 6%; background: url(/images/welcome/order/cart-header-bg.jpg) repeat-x left bottom; height: 150px;}
+        .cartmain header h1{width: 40%;}
+        .cartmain header span{font-size: 16px; margin-left: 1%;}
+        .cartmain header p{margin-top: 2%; text-decoration: none;}
+        .cartmain header p:hover a{text-decoration: none; color: rgba(255, 0, 0, 0.89);}
+
+        .cartmain .show ul li:nth-child(2){width: 81%; margin-top: -4%; margin-left: 6%;}
+        .cartmain .first ul li:nth-child(2){margin-top: -2%;}
+
+        footer.footer{background-color: #000000; width: 100%;}
+        footer.footer .webmap, footer.footer .link, footer.footer .copyright{margin: 0 auto; width: 80%;margin-bottom: 1%;}
+        footer.footer h4{color: white;}
+        footer.footer ul{margin-left: 1%;}
+        footer.footer ul li{margin: 1%;}
+        footer.footer ul li a{color: #c8cdd2ad; font-size: 14px; text-decoration: none;}
+        footer.footer ul li a:hover{color: #c8cdd2; text-decoration: none;}
+        footer.footer .copyright{margin-top: -1%;}
+        footer.footer .copyright h5{color: #787d82c7;}
+    </style>
+
+    <!--jquery-->
+    <script src="/js/custom/jquery.min.js"></script>
+    <!--bootstrap-->
+    <script src="/bootstrap/js/bootstrap.js"></script>
+    <!--layui-->
+    <script src="/layui/layui.js"></script>
+
+    <!--My JS-->
+    <script src="/js/welcome/order/mycart.js"></script>
+    </body>
+</html>

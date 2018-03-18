@@ -90,6 +90,110 @@ $(function() {
     };
     $(document).on("click", ".navbar-right .nav-logoff a", logoff_btn);
 
+    /**
+     * 点击将指定订单加入回收站
+     */
+    var cli_removeorder = function(){
 
-    
+        if(window.confirm("确定要删除该订单数据吗? ")){
+
+            var oid = $(this).data("oid");
+            $.ajax({
+                async: true,
+                type: "post",
+                url: "/courseorder_con/setinrecycle",
+                data: {oid: oid},
+                dataType: "json",
+                success: function(data){
+                    var stauts = data.status;
+                    if(status == "invalid"){
+                        window.location = "/forward_con/welcome";
+                    }
+                    else if(status == "mysqlerr"){
+                        window.alert("后台数据库异常导致无法进行回收站操作，请稍后再试");
+                    }
+                    else{
+                        window.alert("操作成功");
+                        async_getmyorder();
+                    }
+                },
+                error: function(xhr, status){
+                    window.alert("后台环境异常导致无法进行回收站操作，请稍后再试");
+                    window.console.log(xhr);
+                }
+            });
+        }
+    };
+    $(document).on("click", "#mytable tbody tr td button", cli_removeorder);
+
+
+    /**
+     * 异步获取用户的订单数据
+     */
+    var state = "ed";
+    var async_getmyorder = function(state){
+
+
+        $.ajax({
+            async: true,
+            type: "post",
+            url: "/courseorder_con/getmyorder",
+            data: {status: state, startpos: 0},
+            dataType: "json",
+            success: function(data){
+                var status = data.status;
+                $("#mytable tbody").empty();
+                if(status == "invalid"){
+                    window.location = "/forward_con/welcome";
+                }
+                else if(status == "valid"){
+                    $("#mytable tbody").append("<tr class=\"none\">\n" +
+                        "                        <td colspan=\"4\">空空如也</td>\n" +
+                        "                    </tr>");
+                    return ;
+                }
+                else{
+                    $.each(data, function(index, item){
+                        var cid = item.cid;
+                        var id = item.id;
+                        var name = item.name;
+                        var otime = item.otime;
+                        var price = item.price;
+                        $("#mytable tbody").append("<tr>\n" +
+                            "                    <td><a href='/forward_con/showcourse?id="+cid+"' target='_blank'>"+name+"</a></td>\n" +
+                            "                    <td>"+price+"</td>\n" +
+                            "                    <td>"+otime+"</td>\n" +
+                            "                    <td>\n" +
+                            "                        <button id=\"bElim\" type=\"button\" class=\"btn btn-sm btn-default\" data-oid='"+id+"' style=\"display: block;\">\n" +
+                            "                            <span class=\"glyphicon glyphicon-trash\"> </span>\n" +
+                            "                        </button>\n" +
+                            "                    </td>\n" +
+                            "                </tr>");
+                    });
+                }
+            },
+            error: function(xhr, status) {
+                window.alert("后台环境异常导致无法获取用户订单数据，请稍后再试");
+                window.console.log(xhr);
+            }
+        });
+    };
+    async_getmyorder(state);
+
+    /**
+     * 左侧已支付/未支付/已失效的点击事件
+     */
+    var cli_modordertype = function(){
+
+        if($(this).closest("li").hasClass("cli")){
+            return;
+        }
+
+        $(".ordermain .bar ul li").removeClass("cli");
+        $(this).closest("li").addClass("cli");
+
+        state = $(this).data("status");
+        async_getmyorder(state);
+    };
+    $(".ordermain .bar ul li a").click(cli_modordertype);
 });

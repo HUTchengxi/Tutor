@@ -102,4 +102,27 @@ public class CourseOServiceImpl implements CourseOService {
 
         return courseOMapper.getMyCartCount(username);
     }
+
+    /**
+     * 将指定订单放入回收站
+     * @param oid
+     * @return
+     */
+    @Override
+    public Integer setInCycle(Integer oid) {
+
+        return courseOMapper.setInCycle(oid);
+    }
+
+    /**
+     * 根据订单号和用户名获取订单数据
+     * @param username
+     * @param oid
+     * @return
+     */
+    @Override
+    public CourseOrder getByIdAndUser(String username, Integer oid) {
+
+        return courseOMapper.getByIdAndUser(username, oid);
+    }
 }

@@ -264,4 +264,5 @@ public class ForwardAll {
             return "/login/index";
         }
     }
+
 }
