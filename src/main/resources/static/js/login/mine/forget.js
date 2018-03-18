@@ -101,6 +101,11 @@
         var email = $(".container .mainshow .main-email input.email").val();
         var username = $(".usercheck input").val();
 
+        if(email == null || email.trim() == ""){
+            $(".err-email").css("display", "block").text("邮箱不能为空");
+            return ;
+        }
+
         var status = $(this).data("status");
         if(status == "ing"){
             return ;
@@ -115,7 +120,7 @@
             success: function(data){
                 var status = data.status;
                 if(status == "invalid"){
-                    $(".err-email").css("display", "block").text("邮箱不存在");
+                    $(".err-email").css("display", "block").text("邮箱不对应");
                     return ;
                 }
                 else{
@@ -143,6 +148,63 @@
         });
     };
     $(".container .mainshow .main-email a.resend").click(findpass_byemail);
+
+    /**
+     * 手机验证码发送的点击事件
+     */
+    var findpass_byphone = function(){
+
+        var phone = $(".container .mainshow .main-phone input.phone").val();
+        var username = $(".usercheck input").val();
+
+        if(phone == null || phone.trim() == ""){
+            $(".err-phone").css("display", "block").text("手机不能为空");
+            return ;
+        }
+
+        var status = $(this).data("status");
+        if(status == "ing"){
+            return ;
+        }
+
+        $.ajax({
+            async: true,
+            type: "post",
+            url: "/usermain_con/sendunbindphone",
+            data: {phone: phone, username: username},
+            dataType: "json",
+            success: function(data){
+                var status = data.status;
+                if(status == "invalid"){
+                    $(".err-phone").css("display", "block").text("手机不对应");
+                    return ;
+                }
+                else{
+                    $(".err-phone").css("display", "none");
+                    window.alert("验证码发送成功");
+                    var interval;
+                    var time = 60;
+                    //邮件验证码发送成功的冷却事件
+                    $(".container .mainshow .main-phone a").data("status", "ing");
+                    var interval = window.setInterval(function(){
+                        if(time == 0){
+                            $(".container .mainshow .main-phone a").data("status", "ed").text("获取验证码");
+                            window.clearInterval(interval);
+                            return;
+                        }
+                        $(".container .mainshow .main-phone a").text("还有"+time+"s可重发");
+                        time--;
+                    }, 1000);
+                }
+            },
+            error: function(xhr, status){
+                window.alert("后台环境异常导致无法发送邮箱短码，请稍后再试");
+                window.console.log(xhr);
+            }
+        });
+    };
+    $(".container .mainshow .main-phone a.resend").click(findpass_byphone);
+
 
     /**
      * 第一次密码输入框失去焦点时自动判断：
@@ -198,9 +260,54 @@
     $(".container .main .repass").blur(register_repass_blur);
 
     /**
+     * 手机验证的方式点击提交按钮进行密码更改的提交
+     */
+    var cli_findpassbyphone = function(){
+
+        var valicode = $(".container .main-phone .valicode").val();
+        var username = $(".usercheck .username").val();
+        var email = $(".container .main-phone .phone").val();
+        var newpass = $(".container .main-phone .newpass").val();
+        var repass = $(".container .main-phone .repass").val();
+
+        //进行密码修改
+        $.ajax({
+            async: true,
+            type:　"post",
+            url: "/usermain_con/forget_modpass",
+            data: {username: username, phone: email, valicode: valicode, newpass: newpass, repass: repass},
+            dataType: "json",
+            success: function(data){
+                var status = data.status;
+                if(status == "inerr"){
+                    $(".container .main-phone .resend").trigger("click");
+                    $(".container .main-phone .newpass").trigger("blur");
+                    $(".container .main-phone .repass").trigger("blur");
+                    return ;
+                }
+                else if(status == "invalid"){
+                    $(".container .main-phone .err-phone").css("display", "block").text("手机不对应");
+                    $(".container .main-phone .newpass").trigger("blur");
+                    $(".container .main-phone .repass").trigger("blur");
+                    return ;
+                }
+                else{
+                    window.alert("修改成功");
+                    window.location = "/forward_con/gologin";
+                }
+            },
+            erorr: function(xhr, status){
+                window.alert("后台环境异常导致无法修改用户密码，请稍后再试");
+                window.console.log(xhr);
+            }
+        });
+    };
+    $(".container .main-phone form button").click(cli_findpassbyphone);
+
+    /**
      *  邮箱找回的方式点击提交按钮进行密码更改的提交
      */
-    var cli_findpass = function(){
+    var cli_findpassbyemail = function(){
 
         var valicode = $(".container .main-email .valicode").val();
         var username = $(".usercheck .username").val();
@@ -240,6 +347,6 @@
             }
         });
     };
-    $(".container .main-email form button").click(cli_findpass);
+    $(".container .main-email form button").click(cli_findpassbyemail);
 
 }());

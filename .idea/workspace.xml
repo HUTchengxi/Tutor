@@ -10,34 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf479440-431d-499c-9612-40c14de1a166" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/UserOrder.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/jbtable/css/htmleaf-demo.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/jbtable/css/normalize.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/jbtable/fonts/icomoon.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/jbtable/fonts/icomoon.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/jbtable/fonts/icomoon.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/jbtable/fonts/icomoon.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/jbtable/js/bootstable.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/jbtable/js/jquery-1.11.0.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/order/mycycle.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/generatorConfig.xml" afterPath="$PROJECT_DIR$/src/generatorConfig.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseOrder.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseOrder.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/CourseOrder.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/CourseOrder.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/CourseOMapper.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/CourseOMapper.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/CourseOService.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/CourseOService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/CourseOServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/CourseOServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/order/myorder.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/order/myorder.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/order/myorder.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/order/myorder.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/CourseOrder.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/domain/CourseOrder.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/domain/CourseOrder.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/mapper/CourseOMapper.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/mapper/CourseOMapper.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/CourseOService.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/CourseOService.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/impl/CourseOServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/impl/CourseOServiceImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/order/myorder.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/order/myorder.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/order/myorder.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/order/myorder.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/login/mine/forget.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/login/mine/forget.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/UserMain.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/UserMain.class" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -56,11 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="2.0版本" pinned="false" current-in-tab="false">
+      <file leaf-file-name="2.0版本" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="626">
-              <caret line="61" column="20" lean-forward="false" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="20" />
+            <state relative-caret-position="145">
+              <caret line="60" column="15" lean-forward="true" selection-start-line="60" selection-start-column="15" selection-end-line="60" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -80,33 +57,52 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="myorder.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/order/myorder.js">
+      <file leaf-file-name="forget.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login/forget.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="507">
-              <caret line="151" column="53" lean-forward="true" selection-start-line="151" selection-start-column="53" selection-end-line="151" selection-end-column="53" />
+            <state relative-caret-position="666">
+              <caret line="48" column="42" lean-forward="true" selection-start-line="48" selection-start-column="42" selection-end-line="48" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserMain.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="248">
+              <caret line="335" column="32" lean-forward="true" selection-start-line="335" selection-start-column="32" selection-end-line="335" selection-end-column="32" />
               <folding>
-                <element signature="e#91#834#0" expanded="false" />
-                <element signature="e#904#2927#0" expanded="false" />
-                <element signature="e#3017#3509#0" expanded="false" />
-                <element signature="e#3656#4667#0" expanded="false" />
-                <marker date="1521360521518" expanded="true" signature="6449:6464" ph="..." />
+                <element signature="method#getImgsrc#0;class#UserMain#0" expanded="false" />
+                <element signature="method#getUserinfo#0;class#UserMain#0" expanded="false" />
+                <element signature="method#modImgsrc#0;class#UserMain#0" expanded="false" />
+                <element signature="method#modImgfile#0;class#UserMain#0" expanded="false" />
+                <element signature="method#modUserinfo#0;class#UserMain#0" expanded="false" />
+                <element signature="method#getBindInfo#0;class#UserMain#0" expanded="false" />
+                <element signature="method#sendMail#0;class#UserMain#0" expanded="false" />
+                <element signature="method#userUnbind#0;class#UserMain#0" expanded="false" />
+                <element signature="method#sendBindCode#0;class#UserMain#0" expanded="false" />
+                <element signature="method#userBind#0;class#UserMain#0" expanded="false" />
+                <element signature="method#sendUnbindPhone#0;class#UserMain#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="myorder.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home/order/myorder.html">
+      <file leaf-file-name="forget.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/login/mine/forget.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="932">
-              <caret line="155" column="5" lean-forward="true" selection-start-line="155" selection-start-column="5" selection-end-line="155" selection-end-column="5" />
+            <state relative-caret-position="747">
+              <caret line="283" column="73" lean-forward="true" selection-start-line="283" selection-start-column="73" selection-end-line="283" selection-end-column="73" />
               <folding>
-                <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="e#85#570#0" expanded="false" />
+                <element signature="e#697#1806#0" expanded="false" />
+                <element signature="e#1934#2106#0" expanded="false" />
+                <element signature="e#2327#2457#0" expanded="false" />
+                <element signature="e#2580#4417#0" expanded="false" />
+                <element signature="e#4569#6401#0" expanded="false" />
+                <element signature="e#6609#7248#0" expanded="false" />
+                <element signature="e#7456#8080#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -224,7 +220,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/resources/templates/login/forget.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/login/mine/forget.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/login/mine/login.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/showcourse.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js" />
@@ -259,9 +254,7 @@
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/util/CommonUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/personal/personal.js" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java" />
         <option value="$USER_HOME$/Downloads/201801271505/index.html" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/UserOrder.java" />
         <option value="$PROJECT_DIR$/src/generatorConfig.xml" />
@@ -271,9 +264,12 @@
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/CourseOMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseOrder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/order/myorder.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/order/myorder.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/personal/personal.js" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/login/mine/forget.js" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本" />
       </list>
     </option>
   </component>
@@ -577,6 +573,27 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
+              <item name="mine" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="welcome" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -625,17 +642,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="order" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
@@ -1095,7 +1102,7 @@
       <workItem from="1521191703787" duration="8440000" />
       <workItem from="1521208242221" duration="4723000" />
       <workItem from="1521290445005" duration="13859000" />
-      <workItem from="1521352299332" duration="6880000" />
+      <workItem from="1521352299332" duration="10230000" />
     </task>
     <task id="LOCAL-00001" summary="将毕设项目提交到gitlab">
       <created>1520393481249</created>
@@ -1272,11 +1279,18 @@
       <option name="project" value="LOCAL" />
       <updated>1521304615533</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="已支付/未支付/已失效订单的设计与实现（回收站搁浅，因为数据库设计不周到，没考虑还原的问题）">
+      <created>1521360723002</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1521360723002</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="711437000" />
+    <option name="totallyTimeSpent" value="714787000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1352,7 +1366,8 @@
     <MESSAGE value="2.5版本，解决了三个小bug，可以查看版本日志" />
     <MESSAGE value="个人中心的密保设置与修改的实现" />
     <MESSAGE value="个人中心的手机号码的绑定与解绑功能的实现（接入了阿里云第三方语音验证码）" />
-    <option name="LAST_COMMIT_MESSAGE" value="个人中心的手机号码的绑定与解绑功能的实现（接入了阿里云第三方语音验证码）" />
+    <MESSAGE value="已支付/未支付/已失效订单的设计与实现（回收站搁浅，因为数据库设计不周到，没考虑还原的问题）" />
+    <option name="LAST_COMMIT_MESSAGE" value="已支付/未支付/已失效订单的设计与实现（回收站搁浅，因为数据库设计不周到，没考虑还原的问题）" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1361,20 +1376,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home/classify.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="299" column="24" lean-forward="false" selection-start-line="299" selection-start-column="24" selection-end-line="299" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/mysetting.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="774">
-          <caret line="151" column="32" lean-forward="false" selection-start-line="151" selection-start-column="32" selection-end-line="151" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/mymessage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="530">
@@ -1597,57 +1598,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="996">
-          <caret line="149" column="30" lean-forward="true" selection-start-line="149" selection-start-column="30" selection-end-line="149" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5994">
           <caret line="166" column="72" lean-forward="false" selection-start-line="166" selection-start-column="72" selection-end-line="166" selection-end-column="72" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5920">
-          <caret line="621" column="0" lean-forward="false" selection-start-line="621" selection-start-column="0" selection-end-line="621" selection-end-column="0" />
-          <folding>
-            <element signature="method#getImgsrc#0;class#UserMain#0" expanded="false" />
-            <element signature="method#getUserinfo#0;class#UserMain#0" expanded="false" />
-            <element signature="method#modImgsrc#0;class#UserMain#0" expanded="false" />
-            <element signature="method#modImgfile#0;class#UserMain#0" expanded="false" />
-            <element signature="method#modUserinfo#0;class#UserMain#0" expanded="false" />
-            <element signature="method#getBindInfo#0;class#UserMain#0" expanded="false" />
-            <element signature="method#sendMail#0;class#UserMain#0" expanded="false" />
-            <element signature="method#modPass#0;class#UserMain#0" expanded="false" />
-            <element signature="method#userUnbind#0;class#UserMain#0" expanded="false" />
-            <element signature="method#sendBindCode#0;class#UserMain#0" expanded="false" />
-            <element signature="method#userBind#0;class#UserMain#0" expanded="false" />
-            <element signature="method#sendUnbindPhone#0;class#UserMain#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/personal/personal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="970" column="48" lean-forward="false" selection-start-line="970" selection-start-column="48" selection-end-line="970" selection-end-column="48" />
-          <folding>
-            <element signature="e#23705#24299#0" expanded="false" />
-            <element signature="e#24465#24915#0" expanded="false" />
-            <element signature="e#26925#29649#0" expanded="false" />
-            <element signature="e#29812#29978#0" expanded="false" />
-            <element signature="e#34048#35569#0" expanded="false" />
-            <marker date="1521303986040" expanded="true" signature="1893:1908" ph="..." />
-            <marker date="1521303986040" expanded="true" signature="1997:2010" ph="..." />
-            <marker date="1521303986040" expanded="true" signature="2068:2079" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1860,11 +1815,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/order/myorder.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="626">
-          <caret line="61" column="20" lean-forward="false" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="20" />
-          <folding />
+        <state relative-caret-position="1247">
+          <caret line="150" column="81" lean-forward="true" selection-start-line="150" selection-start-column="81" selection-end-line="150" selection-end-column="81" />
+          <folding>
+            <element signature="e#91#834#0" expanded="false" />
+            <element signature="e#904#2927#0" expanded="false" />
+            <element signature="e#3017#3509#0" expanded="false" />
+            <element signature="e#3656#4667#0" expanded="false" />
+            <marker date="1521360521518" expanded="true" signature="6449:6464" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home/order/myorder.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="155" column="5" lean-forward="true" selection-start-line="155" selection-start-column="5" selection-end-line="155" selection-end-column="5" />
+          <folding>
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/personal/personal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="947" column="42" lean-forward="false" selection-start-line="947" selection-start-column="42" selection-end-line="947" selection-end-column="42" />
+          <folding>
+            <element signature="e#23705#24299#0" expanded="false" />
+            <element signature="e#24465#24915#0" expanded="false" />
+            <element signature="e#26925#29649#0" expanded="false" />
+            <element signature="e#29812#29978#0" expanded="false" />
+            <element signature="e#34048#35569#0" expanded="false" />
+            <marker date="1521365287306" expanded="true" signature="1893:1908" ph="..." />
+            <marker date="1521365287306" expanded="true" signature="1997:2010" ph="..." />
+            <marker date="1521365287306" expanded="true" signature="2068:2079" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1880,31 +1872,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/order/myorder.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="151" column="53" lean-forward="true" selection-start-line="151" selection-start-column="53" selection-end-line="151" selection-end-column="53" />
+        <state relative-caret-position="552">
+          <caret line="149" column="13" lean-forward="false" selection-start-line="149" selection-start-column="13" selection-end-line="149" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login/forget.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="48" column="42" lean-forward="true" selection-start-line="48" selection-start-column="42" selection-end-line="48" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="335" column="32" lean-forward="true" selection-start-line="335" selection-start-column="32" selection-end-line="335" selection-end-column="32" />
           <folding>
-            <element signature="e#91#834#0" expanded="false" />
-            <element signature="e#904#2927#0" expanded="false" />
-            <element signature="e#3017#3509#0" expanded="false" />
-            <element signature="e#3656#4667#0" expanded="false" />
-            <marker date="1521360521518" expanded="true" signature="6449:6464" ph="..." />
+            <element signature="method#getImgsrc#0;class#UserMain#0" expanded="false" />
+            <element signature="method#getUserinfo#0;class#UserMain#0" expanded="false" />
+            <element signature="method#modImgsrc#0;class#UserMain#0" expanded="false" />
+            <element signature="method#modImgfile#0;class#UserMain#0" expanded="false" />
+            <element signature="method#modUserinfo#0;class#UserMain#0" expanded="false" />
+            <element signature="method#getBindInfo#0;class#UserMain#0" expanded="false" />
+            <element signature="method#sendMail#0;class#UserMain#0" expanded="false" />
+            <element signature="method#userUnbind#0;class#UserMain#0" expanded="false" />
+            <element signature="method#sendBindCode#0;class#UserMain#0" expanded="false" />
+            <element signature="method#userBind#0;class#UserMain#0" expanded="false" />
+            <element signature="method#sendUnbindPhone#0;class#UserMain#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home/order/myorder.html">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/login/mine/forget.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="932">
-          <caret line="155" column="5" lean-forward="true" selection-start-line="155" selection-start-column="5" selection-end-line="155" selection-end-column="5" />
+        <state relative-caret-position="747">
+          <caret line="283" column="73" lean-forward="true" selection-start-line="283" selection-start-column="73" selection-end-line="283" selection-end-column="73" />
           <folding>
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#85#570#0" expanded="false" />
+            <element signature="e#697#1806#0" expanded="false" />
+            <element signature="e#1934#2106#0" expanded="false" />
+            <element signature="e#2327#2457#0" expanded="false" />
+            <element signature="e#2580#4417#0" expanded="false" />
+            <element signature="e#4569#6401#0" expanded="false" />
+            <element signature="e#6609#7248#0" expanded="false" />
+            <element signature="e#7456#8080#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="60" column="15" lean-forward="true" selection-start-line="60" selection-start-column="15" selection-end-line="60" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>

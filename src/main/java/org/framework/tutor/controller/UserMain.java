@@ -261,7 +261,6 @@ public class UserMain {
 
     /**
      * 通过发送邮件找回密码
-     *
      * @param email
      * @param username
      * @param response
@@ -361,17 +360,22 @@ public class UserMain {
                 }
             } else if (phone != null) {
                 //判断验证断码是否正确
-                String realphone = (String) session.getAttribute("valiphone");
+                String realphone = (String) session.getAttribute("valiemail");
                 if (phone.equals(realphone) && valicode != null && valicode.equals(realvalicode)) {
 
                     //判断手机号码和用户名是否对应
-
-                    //可以修改密码
-                    Integer row = userMService.modPassword(username, newpass);
-                    if (row == 1) {
-                        res = "{\"status\": \"valid\"}";
-                    } else {
-                        res = "{\"status\": \"mysqlerr\"}";
+                    org.framework.tutor.domain.UserMain userMain = userMService.getByUserAndPhone(username, phone);
+                    if(userMain == null){
+                        res = "{\"status\": \"inerr\"}";
+                    }
+                    else {
+                        //可以修改密码
+                        Integer row = userMService.modPassword(username, newpass);
+                        if (row == 1) {
+                            res = "{\"status\": \"valid\"}";
+                        } else {
+                            res = "{\"status\": \"mysqlerr\"}";
+                        }
                     }
                 } else {
                     //判断邮箱是否为空或者长度不满足
@@ -562,56 +566,62 @@ public class UserMain {
 
     /**
      * 发送解除手机绑定的验证码
+     *
      * @param phone
      * @param request
      * @param response
      * @throws IOException
      */
     @RequestMapping("/sendunbindphone")
-    public void sendUnbindPhone(String phone, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void sendUnbindPhone(@RequestParam("phone") String phone, String username, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
-        String username = (String) session.getAttribute("username");
         String res = null;
 
         if (username == null) {
-            res = "{\"status\": \"invalid\"}";
-        }
-        else {
-            //判断用户名和手机号码是否对应
-            org.framework.tutor.domain.UserMain userMain = userMService.getByUserAndPhone(username, phone);
-            if (userMain == null) {
+            username = (String) session.getAttribute("username");
+            if (username == null) {
                 res = "{\"status\": \"invalid\"}";
-            } else {
-                //发送手机验证码并保存到session中
-                //发送手机语音验证短码
-                String host = "http://yuyin.market.alicloudapi.com";
-                String path = "/yzx/voiceSend";
-                String method = "POST";
-                String appcode = "4a97cdc9fdf94a0898a8a265fbc9ab20";
-                //随机生成四位数code
-                String uuid = CommonUtil.getUUIDInt().substring(0, 4);
-                Map<String, String> headers = new HashMap<String, String>();
-                //最后在header中的格式(中间是英文空格)为Authorization:APPCODE 83359fd73fe94948385f570e3c139105
-                headers.put("Authorization", "APPCODE " + appcode);
-                Map<String, String> querys = new HashMap<String, String>();
-                querys.put("mobile", phone);
-                querys.put("param", "code:" + uuid);
-                Map<String, String> bodys = new HashMap<String, String>();
-                try {
-                    HttpResponse Response = HttpUtils.doPost(host, path, method, headers, querys, bodys);
-                    System.out.println("test:" + Response.getEntity().getContent());
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-                //session保存语音验证短码
-                session.setAttribute("valicode", uuid);
-                session.setAttribute("valiemail", phone);
-                res = "{\"status\": \"ok\"}";
+                writer.print(new JsonParser().parse(res).getAsJsonObject());
+                writer.flush();
+                writer.close();
+                return;
             }
+        }
+        //判断用户名和手机号码是否对应
+        org.framework.tutor.domain.UserMain userMain = userMService.getByUserAndPhone(username, phone);
+        if (userMain == null) {
+            res = "{\"status\": \"invalid\"}";
+        } else {
+            //发送手机验证码并保存到session中
+            //发送手机语音验证短码
+            String host = "http://yuyin.market.alicloudapi.com";
+            String path = "/yzx/voiceSend";
+            String method = "POST";
+            String appcode = "4a97cdc9fdf94a0898a8a265fbc9ab20";
+            //随机生成四位数code
+            String uuid = CommonUtil.getUUIDInt().substring(0, 4);
+            Map<String, String> headers = new HashMap<String, String>();
+            //最后在header中的格式(中间是英文空格)为Authorization:APPCODE 83359fd73fe94948385f570e3c139105
+            headers.put("Authorization", "APPCODE " + appcode);
+            Map<String, String> querys = new HashMap<String, String>();
+            querys.put("mobile", phone);
+            querys.put("param", "code:" + uuid);
+            Map<String, String> bodys = new HashMap<String, String>();
+            try {
+                System.out.println(phone+"  "+uuid);
+                HttpResponse Response = HttpUtils.doPost(host, path, method, headers, querys, bodys);
+                System.out.println("test:" + Response.getEntity().getContent());
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            //session保存语音验证短码
+            session.setAttribute("valicode", uuid);
+            session.setAttribute("valiemail", phone);
+            res = "{\"status\": \"ok\"}";
         }
 
         writer.print(new JsonParser().parse(res).getAsJsonObject());
