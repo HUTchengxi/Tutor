@@ -36,4 +36,14 @@ public interface UserSCMapper {
      */
     @Insert("insert into user_secret(username, question, answer) values(#{username}, #{question}, #{answer})")
     Integer addUserSecret(@Param("question") String question, @Param("answer") String answer, @Param("username") String username);
+
+    /**
+     * 校验用户的密保问题是否正确
+     * @param username
+     * @param queone
+     * @param ansone
+     * @return
+     */
+    @Select("select * from user_secret where username=#{username} and question=#{queone} and answer=#{ansone}")
+    UserSecret checkSecret(@Param("username") String username, @Param("queone") String queone, @Param("ansone") String ansone);
 }

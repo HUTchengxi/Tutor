@@ -52,4 +52,20 @@ public class UserSCServiceImpl implements UserSCService {
 
         return userSCMapper.addUserSecret(question, answer, username);
     }
+
+    /**
+     * 校验用户名的密保答案是否正确
+     * @param username
+     * @param queone
+     * @param ansone
+     * @return
+     */
+    @Override
+    public boolean checkSecret(String username, String queone, String ansone) {
+
+        if (userSCMapper.checkSecret(username, queone, ansone) != null) {
+            return true;
+        }
+        return false;
+    }
 }

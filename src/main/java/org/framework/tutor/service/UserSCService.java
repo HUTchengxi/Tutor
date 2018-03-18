@@ -30,4 +30,13 @@ public interface UserSCService {
      * @return
      */
     Integer addUserSecret(String question, String answer, String username);
+
+    /**
+     * 校验密保答案是否正确
+     * @param username
+     * @param queone
+     * @param ansone
+     * @return
+     */
+    boolean checkSecret(String username, String queone, String ansone);
 }

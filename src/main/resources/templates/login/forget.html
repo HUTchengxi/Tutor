@@ -90,8 +90,8 @@
                 <label for="mb3">密保问题：</label>
                 <input type="text" name="mb3" class="mb3" />
                 <br />
-                <label for="mb2-answer" class="answer">密保答案：</label>
-                <input type="text" name="mb2-answer" class="mb2-answer" />
+                <label for="mb3-answer" class="answer">密保答案：</label>
+                <input type="text" name="mb3-answer" class="mb3-answer" />
                 <br />
                 <label for="newpass">新的密码：</label>
                 <input type="password" name="newpass" class="newpass password" placeholder="请设置新的密码" />
@@ -165,30 +165,35 @@
         text-decoration: none;
     }
 
+    .container .mainshow .main-secret p.none{
+        font-size: 16px;
+        color: gray;
+        text-align:  center;
+    }
     .container .mainshow .main-secret .answer{
         color: red;
     }
     .container .mainshow .main.main-secret .err.err-mb1{
-        top: 12%;
+        top: 16%;
     }
     .container .mainshow .main.main-secret .err.err-mb2{
-        top: 34%;
+        top: 42%;
 
     }
     .container .mainshow .main.main-secret .err.err-mb3{
         top: 58%;
     }
     .container .mainshow .main.main-secret .err.err-newpass{
-        top: 82%;
+        top: 56%;
     }
     .container .mainshow .main.main-secret .err.err-repass{
-        top: 106%;
+        top: 70%;
     }
 
     .container .mainshow .main p.err{
         position: absolute;
         top: 2%;
-        right: 16%;
+        right: 14%;
         color: red;
         display: none;
     }

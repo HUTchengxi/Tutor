@@ -3,6 +3,7 @@ package org.framework.tutor.controller;
 import com.google.gson.JsonParser;
 import org.apache.http.HttpResponse;
 import org.framework.tutor.service.UserMService;
+import org.framework.tutor.service.UserSCService;
 import org.framework.tutor.util.CommonUtil;
 import org.framework.tutor.util.HttpUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,9 @@ public class UserMain {
 
     @Autowired
     private UserMService userMService;
+
+    @Autowired
+    private UserSCService userSCService;
 
     @Autowired
     private JavaMailSender javaMailSender;
@@ -388,6 +392,67 @@ public class UserMain {
             } else {
                 res = "{\"status\": \"invalid\"}";
             }
+        }
+
+        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.flush();
+        writer.close();
+    }
+
+    /**
+     * 通过密保的方式进行找回密码
+     * @param queone
+     * @param ansone
+     * @param quetwo
+     * @param anstwo
+     * @param quethree
+     * @param ansthree
+     * @param password
+     * @param username
+     * @param request
+     * @param response
+     * @throws IOException
+     */
+    @RequestMapping("/forget_modpassbysecret")
+    public void modPassBySecret(@RequestParam("queone") String queone, @RequestParam("ansone") String ansone,
+                                String quetwo, String anstwo, String quethree, String ansthree, String password,
+                                String username, HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        PrintWriter writer = response.getWriter();
+        String res = null;
+
+        //校验密保答案
+        if(userSCService.checkSecret(username, queone, ansone)){
+            if(quetwo != null){
+                if(userSCService.checkSecret(username, quetwo, anstwo)){
+                    if(quethree != null){
+                        if(userSCService.checkSecret(username, quethree, ansthree)){
+                            //修改密码
+                            userMService.modPassword(username, password);
+                            res = "{\"status\": \"ok\"}";
+                        }
+                        else{
+                            res = "{\"status\": \"err-mb3\"}";
+                        }
+                    }
+                    else{
+                        //修改密码
+                        userMService.modPassword(username, password);
+                        res = "{\"status\": \"ok\"}";
+                    }
+                }
+                else{
+                    res = "{\"status\": \"err-mb2\"}";
+                }
+            }
+            else{
+                //修改密码
+                userMService.modPassword(username, password);
+                res = "{\"status\": \"ok\"}";
+            }
+        }
+        else{
+            res = "{\"status\": \"err-mb1\"}";
         }
 
         writer.print(new JsonParser().parse(res).getAsJsonObject());

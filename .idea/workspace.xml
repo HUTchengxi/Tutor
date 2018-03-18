@@ -12,8 +12,13 @@
     <list default="true" id="bf479440-431d-499c-9612-40c14de1a166" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserSecret.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserSecret.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserSCMapper.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserSCMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserSCService.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserSCService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserSCServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserSCServiceImpl.java" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/login/mine/forget.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/login/mine/forget.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login/forget.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/login/forget.html" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/UserMain.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/UserMain.class" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -36,8 +41,8 @@
       <file leaf-file-name="2.0版本" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="60" column="15" lean-forward="true" selection-start-line="60" selection-start-column="15" selection-end-line="60" selection-end-column="15" />
+            <state relative-caret-position="330">
+              <caret line="63" column="18" lean-forward="true" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -60,9 +65,13 @@
       <file leaf-file-name="forget.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login/forget.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="666">
-              <caret line="48" column="42" lean-forward="true" selection-start-line="48" selection-start-column="42" selection-end-line="48" selection-end-column="42" />
-              <folding />
+            <state relative-caret-position="4003">
+              <caret line="171" column="5" lean-forward="true" selection-start-line="171" selection-start-column="5" selection-end-line="171" selection-end-column="5" />
+              <folding>
+                <element signature="n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="e#5196#5382#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -70,8 +79,8 @@
       <file leaf-file-name="UserMain.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="335" column="32" lean-forward="true" selection-start-line="335" selection-start-column="32" selection-end-line="335" selection-end-column="32" />
+            <state relative-caret-position="828">
+              <caret line="454" column="40" lean-forward="false" selection-start-line="454" selection-start-column="40" selection-end-line="454" selection-end-column="40" />
               <folding>
                 <element signature="method#getImgsrc#0;class#UserMain#0" expanded="false" />
                 <element signature="method#getUserinfo#0;class#UserMain#0" expanded="false" />
@@ -80,6 +89,7 @@
                 <element signature="method#modUserinfo#0;class#UserMain#0" expanded="false" />
                 <element signature="method#getBindInfo#0;class#UserMain#0" expanded="false" />
                 <element signature="method#sendMail#0;class#UserMain#0" expanded="false" />
+                <element signature="method#modPass#0;class#UserMain#0" expanded="false" />
                 <element signature="method#userUnbind#0;class#UserMain#0" expanded="false" />
                 <element signature="method#sendBindCode#0;class#UserMain#0" expanded="false" />
                 <element signature="method#userBind#0;class#UserMain#0" expanded="false" />
@@ -92,66 +102,20 @@
       <file leaf-file-name="forget.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/login/mine/forget.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="747">
-              <caret line="283" column="73" lean-forward="true" selection-start-line="283" selection-start-column="73" selection-end-line="283" selection-end-column="73" />
+            <state relative-caret-position="636">
+              <caret line="101" column="76" lean-forward="false" selection-start-line="101" selection-start-column="76" selection-end-line="101" selection-end-column="76" />
               <folding>
                 <element signature="e#85#570#0" expanded="false" />
-                <element signature="e#697#1806#0" expanded="false" />
-                <element signature="e#1934#2106#0" expanded="false" />
-                <element signature="e#2327#2457#0" expanded="false" />
-                <element signature="e#2580#4417#0" expanded="false" />
-                <element signature="e#4569#6401#0" expanded="false" />
-                <element signature="e#6609#7248#0" expanded="false" />
-                <element signature="e#7456#8080#0" expanded="false" />
+                <element signature="e#5785#5957#0" expanded="false" />
+                <element signature="e#6178#6308#0" expanded="false" />
+                <element signature="e#6431#8268#0" expanded="false" />
+                <element signature="e#8420#10252#0" expanded="false" />
+                <element signature="e#10460#11099#0" expanded="false" />
+                <element signature="e#11307#11931#0" expanded="false" />
+                <element signature="e#12082#13727#0" expanded="false" />
+                <element signature="e#13889#15534#0" expanded="false" />
+                <element signature="e#15696#18621#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CourseOrder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseOrder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="218" column="22" lean-forward="false" selection-start-line="218" selection-start-column="22" selection-end-line="218" selection-end-column="22" />
-              <folding>
-                <element signature="method#getOrderInfo#0;class#CourseOrder#0" expanded="false" />
-                <element signature="method#addCart#0;class#CourseOrder#0" expanded="false" />
-                <element signature="method#getMyCart#0;class#CourseOrder#0" expanded="false" />
-                <element signature="method#delMyCart#0;class#CourseOrder#0" expanded="false" />
-                <element signature="method#getMyCartCount#0;class#CourseOrder#0" expanded="false" />
-                <element signature="method#getMyOrder#0;class#CourseOrder#0" expanded="false" />
-                <element signature="method#setInCycle#0;class#CourseOrder#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CourseOService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/CourseOService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
-              <caret line="76" column="22" lean-forward="false" selection-start-line="76" selection-start-column="22" selection-end-line="76" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CourseOServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/CourseOServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="562">
-              <caret line="125" column="29" lean-forward="false" selection-start-line="125" selection-start-column="29" selection-end-line="125" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CourseOMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/CourseOMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="83" column="42" lean-forward="false" selection-start-line="83" selection-start-column="42" selection-end-line="83" selection-end-column="42" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -219,7 +183,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/templates/login/forget.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/login/mine/login.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/showcourse.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js" />
@@ -237,10 +200,6 @@
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserSecretMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/UserSecret.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/personal.html" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserSCService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserSCServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserSCMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserSecret.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/tutor.sql" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/welcome.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/mycourse/mycourse.js" />
@@ -267,6 +226,11 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/order/myorder.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/order/myorder.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/personal/personal.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/login/forget.html" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserSecret.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserSCService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserSCServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserSCMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/login/mine/forget.js" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本" />
@@ -1102,7 +1066,7 @@
       <workItem from="1521191703787" duration="8440000" />
       <workItem from="1521208242221" duration="4723000" />
       <workItem from="1521290445005" duration="13859000" />
-      <workItem from="1521352299332" duration="10230000" />
+      <workItem from="1521352299332" duration="18253000" />
     </task>
     <task id="LOCAL-00001" summary="将毕设项目提交到gitlab">
       <created>1520393481249</created>
@@ -1286,11 +1250,18 @@
       <option name="project" value="LOCAL" />
       <updated>1521360723002</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="手机号码找回密码的实现">
+      <created>1521367260489</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1521367260489</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="714787000" />
+    <option name="totallyTimeSpent" value="722810000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1318,7 +1289,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="22" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="24" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2824223" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2824223" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1367,7 +1338,8 @@
     <MESSAGE value="个人中心的密保设置与修改的实现" />
     <MESSAGE value="个人中心的手机号码的绑定与解绑功能的实现（接入了阿里云第三方语音验证码）" />
     <MESSAGE value="已支付/未支付/已失效订单的设计与实现（回收站搁浅，因为数据库设计不周到，没考虑还原的问题）" />
-    <option name="LAST_COMMIT_MESSAGE" value="已支付/未支付/已失效订单的设计与实现（回收站搁浅，因为数据库设计不周到，没考虑还原的问题）" />
+    <MESSAGE value="手机号码找回密码的实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="手机号码找回密码的实现" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1447,39 +1419,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="481">
           <caret line="16" column="10" lean-forward="false" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserSecret.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="88" column="50" lean-forward="false" selection-start-line="88" selection-start-column="50" selection-end-line="88" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserSCService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="25" column="18" lean-forward="false" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserSCServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="599">
-          <caret line="52" column="28" lean-forward="false" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserSCMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="36" column="108" lean-forward="false" selection-start-line="36" selection-start-column="108" selection-end-line="36" selection-end-column="108" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1799,22 +1738,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseOrder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="218" column="22" lean-forward="false" selection-start-line="218" selection-start-column="22" selection-end-line="218" selection-end-column="22" />
-          <folding>
-            <element signature="method#getOrderInfo#0;class#CourseOrder#0" expanded="false" />
-            <element signature="method#addCart#0;class#CourseOrder#0" expanded="false" />
-            <element signature="method#getMyCart#0;class#CourseOrder#0" expanded="false" />
-            <element signature="method#delMyCart#0;class#CourseOrder#0" expanded="false" />
-            <element signature="method#getMyCartCount#0;class#CourseOrder#0" expanded="false" />
-            <element signature="method#getMyOrder#0;class#CourseOrder#0" expanded="false" />
-            <element signature="method#setInCycle#0;class#CourseOrder#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/order/myorder.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1247">
@@ -1860,6 +1783,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="149" column="13" lean-forward="false" selection-start-line="149" selection-start-column="13" selection-end-line="149" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="218" column="22" lean-forward="false" selection-start-line="218" selection-start-column="22" selection-end-line="218" selection-end-column="22" />
+          <folding>
+            <element signature="method#getOrderInfo#0;class#CourseOrder#0" expanded="false" />
+            <element signature="method#addCart#0;class#CourseOrder#0" expanded="false" />
+            <element signature="method#getMyCart#0;class#CourseOrder#0" expanded="false" />
+            <element signature="method#delMyCart#0;class#CourseOrder#0" expanded="false" />
+            <element signature="method#getMyCartCount#0;class#CourseOrder#0" expanded="false" />
+            <element signature="method#getMyOrder#0;class#CourseOrder#0" expanded="false" />
+            <element signature="method#setInCycle#0;class#CourseOrder#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="858">
@@ -1872,26 +1819,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserSecret.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="149" column="13" lean-forward="false" selection-start-line="149" selection-start-column="13" selection-end-line="149" selection-end-column="13" />
+        <state relative-caret-position="618">
+          <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+          <folding>
+            <element signature="method#delUserSecret#0;class#UserSecret#0" expanded="false" />
+            <element signature="method#addUserSecret#0;class#UserSecret#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserSCMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="40" column="20" lean-forward="false" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login/forget.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserSCServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="48" column="42" lean-forward="true" selection-start-line="48" selection-start-column="42" selection-end-line="48" selection-end-column="42" />
+        <state relative-caret-position="525">
+          <caret line="65" column="25" lean-forward="false" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserSCService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="335" column="32" lean-forward="true" selection-start-line="335" selection-start-column="32" selection-end-line="335" selection-end-column="32" />
+        <state relative-caret-position="828">
+          <caret line="454" column="40" lean-forward="false" selection-start-line="454" selection-start-column="40" selection-end-line="454" selection-end-column="40" />
           <folding>
             <element signature="method#getImgsrc#0;class#UserMain#0" expanded="false" />
             <element signature="method#getUserinfo#0;class#UserMain#0" expanded="false" />
@@ -1900,6 +1866,7 @@
             <element signature="method#modUserinfo#0;class#UserMain#0" expanded="false" />
             <element signature="method#getBindInfo#0;class#UserMain#0" expanded="false" />
             <element signature="method#sendMail#0;class#UserMain#0" expanded="false" />
+            <element signature="method#modPass#0;class#UserMain#0" expanded="false" />
             <element signature="method#userUnbind#0;class#UserMain#0" expanded="false" />
             <element signature="method#sendBindCode#0;class#UserMain#0" expanded="false" />
             <element signature="method#userBind#0;class#UserMain#0" expanded="false" />
@@ -1908,27 +1875,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login/forget.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4003">
+          <caret line="171" column="5" lean-forward="true" selection-start-line="171" selection-start-column="5" selection-end-line="171" selection-end-column="5" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#5196#5382#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/login/mine/forget.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="747">
-          <caret line="283" column="73" lean-forward="true" selection-start-line="283" selection-start-column="73" selection-end-line="283" selection-end-column="73" />
+        <state relative-caret-position="636">
+          <caret line="101" column="76" lean-forward="false" selection-start-line="101" selection-start-column="76" selection-end-line="101" selection-end-column="76" />
           <folding>
             <element signature="e#85#570#0" expanded="false" />
-            <element signature="e#697#1806#0" expanded="false" />
-            <element signature="e#1934#2106#0" expanded="false" />
-            <element signature="e#2327#2457#0" expanded="false" />
-            <element signature="e#2580#4417#0" expanded="false" />
-            <element signature="e#4569#6401#0" expanded="false" />
-            <element signature="e#6609#7248#0" expanded="false" />
-            <element signature="e#7456#8080#0" expanded="false" />
+            <element signature="e#5785#5957#0" expanded="false" />
+            <element signature="e#6178#6308#0" expanded="false" />
+            <element signature="e#6431#8268#0" expanded="false" />
+            <element signature="e#8420#10252#0" expanded="false" />
+            <element signature="e#10460#11099#0" expanded="false" />
+            <element signature="e#11307#11931#0" expanded="false" />
+            <element signature="e#12082#13727#0" expanded="false" />
+            <element signature="e#13889#15534#0" expanded="false" />
+            <element signature="e#15696#18621#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="60" column="15" lean-forward="true" selection-start-line="60" selection-start-column="15" selection-end-line="60" selection-end-column="15" />
+        <state relative-caret-position="330">
+          <caret line="63" column="18" lean-forward="true" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
           <folding />
         </state>
       </provider>
