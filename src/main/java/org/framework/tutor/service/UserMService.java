@@ -148,4 +148,15 @@ public interface UserMService {
      * @return
      */
     UserMain getByUserAndPhone(String username, String phone);
+
+    /**
+     * 手机号码注册用户
+     * @param identity
+     * @param username
+     * @param password
+     * @param nickname
+     * @param telephone
+     * @return
+     */
+    Boolean registerByPhone(Integer identity, String username, String password, String nickname, String telephone);
 }

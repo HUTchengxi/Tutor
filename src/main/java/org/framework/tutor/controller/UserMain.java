@@ -265,6 +265,7 @@ public class UserMain {
 
     /**
      * 通过发送邮件找回密码
+     *
      * @param email
      * @param username
      * @param response
@@ -369,10 +370,9 @@ public class UserMain {
 
                     //判断手机号码和用户名是否对应
                     org.framework.tutor.domain.UserMain userMain = userMService.getByUserAndPhone(username, phone);
-                    if(userMain == null){
+                    if (userMain == null) {
                         res = "{\"status\": \"inerr\"}";
-                    }
-                    else {
+                    } else {
                         //可以修改密码
                         Integer row = userMService.modPassword(username, newpass);
                         if (row == 1) {
@@ -401,6 +401,7 @@ public class UserMain {
 
     /**
      * 通过密保的方式进行找回密码
+     *
      * @param queone
      * @param ansone
      * @param quetwo
@@ -422,36 +423,31 @@ public class UserMain {
         String res = null;
 
         //校验密保答案
-        if(userSCService.checkSecret(username, queone, ansone)){
-            if(quetwo != null){
-                if(userSCService.checkSecret(username, quetwo, anstwo)){
-                    if(quethree != null){
-                        if(userSCService.checkSecret(username, quethree, ansthree)){
+        if (userSCService.checkSecret(username, queone, ansone)) {
+            if (quetwo != null) {
+                if (userSCService.checkSecret(username, quetwo, anstwo)) {
+                    if (quethree != null) {
+                        if (userSCService.checkSecret(username, quethree, ansthree)) {
                             //修改密码
                             userMService.modPassword(username, password);
                             res = "{\"status\": \"ok\"}";
-                        }
-                        else{
+                        } else {
                             res = "{\"status\": \"err-mb3\"}";
                         }
-                    }
-                    else{
+                    } else {
                         //修改密码
                         userMService.modPassword(username, password);
                         res = "{\"status\": \"ok\"}";
                     }
-                }
-                else{
+                } else {
                     res = "{\"status\": \"err-mb2\"}";
                 }
-            }
-            else{
+            } else {
                 //修改密码
                 userMService.modPassword(username, password);
                 res = "{\"status\": \"ok\"}";
             }
-        }
-        else{
+        } else {
             res = "{\"status\": \"err-mb1\"}";
         }
 
@@ -675,7 +671,7 @@ public class UserMain {
             querys.put("param", "code:" + uuid);
             Map<String, String> bodys = new HashMap<String, String>();
             try {
-                System.out.println(phone+"  "+uuid);
+                System.out.println(phone + "  " + uuid);
                 HttpResponse Response = HttpUtils.doPost(host, path, method, headers, querys, bodys);
                 System.out.println("test:" + Response.getEntity().getContent());
 
@@ -687,6 +683,57 @@ public class UserMain {
             session.setAttribute("valicode", uuid);
             session.setAttribute("valiemail", phone);
             res = "{\"status\": \"ok\"}";
+        }
+
+        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.flush();
+        writer.close();
+    }
+
+    /**
+     * 发送手机注册验证码
+     *
+     * @param phone
+     * @param request
+     * @param response
+     */
+    @RequestMapping("/register_sendbindcode")
+    public void sendRegisterBindCode(@RequestParam("phone") String phone, HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        PrintWriter writer = response.getWriter();
+        HttpSession session = request.getSession();
+        String res = null;
+
+        //判断手机号码是否已经被注册
+        Boolean isexist = userMService.phoneExist(phone);
+        if (isexist) {
+            res = "{\"status\": \"exist\"}";
+        } else {
+            //发送手机语音验证短码
+            String host = "http://yuyin.market.alicloudapi.com";
+            String path = "/yzx/voiceSend";
+            String method = "POST";
+            String appcode = "4a97cdc9fdf94a0898a8a265fbc9ab20";
+            //随机生成四位数code
+            String uuid = CommonUtil.getUUIDInt().substring(0, 4);
+            Map<String, String> headers = new HashMap<String, String>();
+            //最后在header中的格式(中间是英文空格)为Authorization:APPCODE 83359fd73fe94948385f570e3c139105
+            headers.put("Authorization", "APPCODE " + appcode);
+            Map<String, String> querys = new HashMap<String, String>();
+            querys.put("mobile", phone);
+            querys.put("param", "code:" + uuid);
+            Map<String, String> bodys = new HashMap<String, String>();
+            try {
+                HttpResponse Response = HttpUtils.doPost(host, path, method, headers, querys, bodys);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            //session保存语音验证短码
+            session.setAttribute("bindcode", uuid);
+            session.setAttribute("bindphone", phone);
+            res = "{\"status\": \"sendok\"}";
         }
 
         writer.print(new JsonParser().parse(res).getAsJsonObject());

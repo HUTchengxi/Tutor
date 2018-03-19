@@ -163,6 +163,7 @@
     var register_check_blur = function () {
 
         var checktype = $("#checktype").val();
+        $("#p-id-err").css("display", "none").text("");
         //没有选择
         if (checktype === "null") {
             $(".div-cls-checkinfo").data("status", 1).addClass("alert-danger")
@@ -215,16 +216,71 @@
     $("#checktype").change(register_check_blur);
 
     /**
-     * email的异步校验：
-     *  1.是否为163邮箱
-     *  2.是否已经被注册了
+     * 验证码失去焦点的校验
      */
+    // var register_valicode_blur = function(){
+    //
+    //     var valicode = $(this).val();
+    //     if(valicode.length != 4){
+    //         $("#p-id-err").css("display", "block").text("请认真填写");
+    //         return ;
+    //     }
+    // };
+    // $("#valicode").blur(register_valicode_blur);
+
+    /**
+     * 点击发送手机验证短码
+     */
+    var cli_sendphonecode = function(){
+
+        if($(this).data("status") == "ing"){
+            return ;
+        }
+
+        var phone = $("#telephone").val();
+        $.ajax({
+            async: true,
+            type: "post",
+            url: "/usermain_con/register_sendbindcode",
+            data: {phone: phone},
+            dataType: "json",
+            success: function(data){
+                var status = data.status;
+                if(status == "exist"){
+                    $("#p-id-err").css("display", "block").text("号码已被注册");
+                    return ;
+                }
+                else{
+                    window.alert("发送成功");
+                    var interval;
+                    var time = 60;
+                    //邮件验证码发送成功的冷却事件
+                    $(".btn-cls-sendcode").data("status", "ing");
+                    var interval = window.setInterval(function(){
+                        if(time == 0){
+                            $(".btn-cls-sendcode").data("status", "ed").text("获取验证码");
+                            window.clearInterval(interval);
+                            return;
+                        }
+                        $(".btn-cls-sendcode").text("还有"+time+"s可重发");
+                        time--;
+                    }, 1000);
+                }
+            },
+            error: function(xhr, status){
+                window.alert("后台环境异常导致无法发送手机验证短码，请稍后再试");
+                window.console.log(xhr);
+            }
+        });
+    };
+    $(".btn-cls-sendcode").click(cli_sendphonecode);
 
     /**
      * 简单实现暂不验证的注册
      */
     var register_submit = function () {
 
+        var checktype = $("#checktype").val();
         $("#username").trigger("blur");
         $("#password").trigger("blur");
         $("#re-password").trigger("blur");
@@ -235,6 +291,7 @@
         var repassid = $(".div-cls-repassinfo").data("status");
         var checkid = $(".div-cls-checkinfo").data("status");
 
+
         if (userid != 10 || passid != 10 || repassid != 10 || checkid != 10) {
             $("#p-id-err").css("display", "block");
             return;
@@ -243,15 +300,19 @@
 
         var username = $("#username").val();
         var password = $("#password").val();
-        var checktype = $("#checktype").val();
         var email = $("#email").val();
         var telephone = $("#telephone").val();
+        var phonecode = $("#valicode").val();
+
+        if(checktype == "telephone") {
+            $("#valicode").trigger("blur");
+        }
 
         $.ajax({
             async: true,
             type: "post",
             url: "/register_con/register_main",
-            data: {username: username, password: password, checktype: checktype, email: email, telephone: telephone},
+            data: {username: username, password: password, checktype: checktype, email: email, telephone: telephone, phonecode: phonecode},
             dataType: "json",
             success: function (data) {
                 var status = data.status;
@@ -265,8 +326,12 @@
                     alert("该邮箱已经被注册过了");
                     return false;
                 }
+                else if(status == "codeerr"){
+                    $("#p-id-err").css("display", "block").text("验证码不正确");
+                    return ;
+                }
                 window.alert("注册成功");
-                // window.location.href = url;
+                window.location.href = url;
             },
             error: function (xhr, status) {
                 alert("服务器环境异常");

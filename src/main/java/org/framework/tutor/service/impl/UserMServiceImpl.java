@@ -77,8 +77,9 @@ public class UserMServiceImpl implements UserMService {
     @Override
     public boolean registerNoCheck(Integer identity, String username, String password, String nickname) {
 
-        if(userMMapper.addUser(identity, username, password, nickname) == 1)
+        if(userMMapper.addUser(identity, username, password, nickname) == 1) {
             return true;
+        }
         return false;
     }
 
@@ -240,5 +241,20 @@ public class UserMServiceImpl implements UserMService {
     public UserMain getByUserAndPhone(String username, String phone) {
 
         return userMMapper.getByUserAndPhone(username, phone);
+    }
+
+    /**
+     * 手机号码注册用户
+     * @param identity
+     * @param username
+     * @param password
+     * @param nickname
+     * @param telephone
+     * @return
+     */
+    @Override
+    public Boolean registerByPhone(Integer identity, String username, String password, String nickname, String telephone) {
+
+        return userMMapper.registerByPhone(identity, username, password, nickname, telephone);
     }
 }

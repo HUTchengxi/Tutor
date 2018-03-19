@@ -45,7 +45,7 @@ public interface UserMMapper {
      * @param password
      * @param nickname
      */
-    @Insert("insert into user_main(identity,username, password, nickname) values(#{username},#{password},#{nickname})")
+    @Insert("insert into user_main(identity,username, password, nickname) values(#{identity}, #{username},#{password},#{nickname})")
     Integer addUser(@Param("identity") Integer identity,@Param("username") String username,
                     @Param("password") String password, @Param("nickname") String nickname);
 
@@ -166,4 +166,16 @@ public interface UserMMapper {
      */
     @Select("select * from user_main where username=#{username} and telephone=#{phone}")
     UserMain getByUserAndPhone(@Param("username") String username, @Param("phone") String phone);
+
+    /**
+     * 手机号码注册用户
+     * @param identity
+     * @param username
+     * @param password
+     * @param nickname
+     * @param telephone
+     * @return
+     */
+    @Insert("insert into user_main(identity, username, password, nickname, telephone) values(#{identity}, #{username}, #{password}, #{nickname}, #{telephone})")
+    Boolean registerByPhone(@Param("identity") Integer identity, @Param("username") String username, @Param("password") String password, @Param("nickname") String nickname, @Param("telephone") String telephone);
 }
