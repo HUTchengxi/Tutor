@@ -10,33 +10,33 @@
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
     <div class="layui-header">
-        <div class="layui-logo">layui 后台布局</div>
+        <div class="layui-logo">家教管理后台</div>
         <!-- 头部区域（可配合layui已有的水平导航） -->
-        <ul class="layui-nav layui-layout-left">
-            <li class="layui-nav-item"><a href="">控制台</a></li>
-            <li class="layui-nav-item"><a href="">商品管理</a></li>
-            <li class="layui-nav-item"><a href="">用户</a></li>
-            <li class="layui-nav-item">
-                <a href="javascript:;">其它系统</a>
-                <dl class="layui-nav-child">
-                    <dd><a href="">邮件管理</a></dd>
-                    <dd><a href="">消息管理</a></dd>
-                    <dd><a href="">授权管理</a></dd>
-                </dl>
-            </li>
-        </ul>
+        <!--<ul class="layui-nav layui-layout-left">-->
+            <!--<li class="layui-nav-item"><a href="/forward_con/gosysconfig">后台首页</a></li>-->
+            <!--<li class="layui-nav-item"><a href="">个人中心</a></li>-->
+        <!--</ul>-->
+        <div class="layui-form-select" style="left: 200px; top: 10px;">
+            <div class="layui-select-title">
+                <input type="text" placeholder="搜索组件或模块" value="" class="layui-input" style="width:  200px;background-color: rgba(255,255,255,.05);color: white; border: none;" />
+                <i class="layui-edge"></i>
+            </div>
+            <dl class="layui-anim layui-anim-upbit" style="">
+                <dd lay-value="" class="layui-select-tips">进行全局搜索</dd>
+            </dl>
+        </div>
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
-                <a href="javascript:;">
+                <a href="javascript:void(0);">
                     <img src="http://t.cn/RCzsdCq" class="layui-nav-img" />
                     贤心
                 </a>
                 <dl class="layui-nav-child">
-                    <dd><a href="">基本资料</a></dd>
-                    <dd><a href="">安全设置</a></dd>
+                    <dd><a href="javascript:void(0)" class="logoff">我的钱包</a></dd>
+                    <dd><a href="javascript:void(0)" class="logoff">个人中心</a></dd>
+                    <dd><a href="javascript:void(0)" class="logoff">注销登录</a></dd>
                 </dl>
             </li>
-            <li class="layui-nav-item"><a href="">退了</a></li>
         </ul>
     </div>
 
@@ -45,45 +45,59 @@
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
             <ul class="layui-nav layui-nav-tree"  lay-filter="test">
                 <li class="layui-nav-item layui-nav-itemed">
-                    <a class="" href="javascript:;">所有商品</a>
+                    <a class="" href="javascript:;">课程管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">列表一</a></dd>
-                        <dd><a href="javascript:;">列表二</a></dd>
-                        <dd><a href="javascript:;">列表三</a></dd>
-                        <dd><a href="">超链接</a></dd>
+                        <dd><a href="javascript:;">发布课程</a></dd>
+                        <dd><a href="javascript:;">历史发布</a></dd>
+                        <dd><a href="javascript:;">课程评论</a></dd>
+                        <dd><a href="javascript:;">访问统计</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="javascript:;">解决方案</a>
+                    <a class="" href="javascript:;">订单管理</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">消息推送</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">列表一</a></dd>
-                        <dd><a href="javascript:;">列表二</a></dd>
-                        <dd><a href="">超链接</a></dd>
+                        <dd><a href="javascript:;">课程订单通知</a></dd>
+                        <dd><a href="javascript:;">课程评价通知</a></dd>
+                        <dd><a href="javasript:;">课程举报通知</a></dd>
+                        <dd><a href="javasript:;">课程审核通知</a></dd>
+                        <dd><a href="javasript:;">用户私信通知</a></dd>
+                        <dd><a href="javasript:;">管理员推送通知</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item"><a href="">云市场</a></li>
-                <li class="layui-nav-item"><a href="">发布商品</a></li>
             </ul>
         </div>
     </div>
 
     <div class="layui-body">
         <!-- 内容主体区域 -->
-        <div style="padding: 15px;">内容主体区域</div>
+        <div style="padding: 15px;"></div>
     </div>
 
-    <div class="layui-footer">
+    <!--<div class="layui-footer">-->
         <!-- 底部固定区域 -->
-        © layui.com - 底部固定区域
-    </div>
+        <!--© layui.com - 底部固定区域-->
+    <!--</div>-->
 </div>
 <script src="/layui/layui.js"></script>
+<script src="/js/custom/jquery.min.js"></script>
 <script>
     //JavaScript代码区域
     layui.use('element', function(){
         var element = layui.element;
 
     });
+
+    //管理员发送消息的时候可以弹出一个框框，然后进行异步表示该家教已经弹出过了
+    // layui.use('layer', function(){
+    //     var layer = layui.layer;
+    //     layer.open({
+    //         title: '在线调试',
+    //         content: '可以填写任意的layer代码'
+    //     });
+    // });
 </script>
 </body>
 </html>

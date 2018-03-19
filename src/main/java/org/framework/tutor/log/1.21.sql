@@ -192,6 +192,21 @@ create table user_secret(
 );
 
 
+//家教_管理员通知表
+create table tutor_message(
+  id int auto_increment comment "唯一标识",
+  identity int default 0 comment "0表示所有，1表示指定接收信息的家教",
+  admin varchar(20) not null comment "管理员用户名",
+  tuser varchar(20) comment "接收的家教用户名",
+  title varchar(50) not null comment "消息的标题",
+  message text not null comment "通知数据",
+  status int defualt 0 comment "是否已读",
+  alert int default 0 comment "是否以弹出提示",
+  primary key(id),
+  foreign key(tuser) REFERENCES user_main(username)
+);
+
+
 #家教老师标签表
 #实名认证表
 #课程表
