@@ -40,6 +40,59 @@
             </div>
         </nav>
 
+        <!--侧边栏-->
+        <div class="sliderbar">
+            <ul>
+                <li>
+                    <a href="javascript:void(0)" title="返回顶部" class="gotop">
+                        <i class="layui-icon">&#xe619;</i>
+                    </a>
+                </li>
+                <li>
+                    <a href="/forward_con/contact" target="_blank" title="联系我们">
+                        <i class="layui-icon">&#xe606;</i>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" title="手机访问">
+                        <i class="layui-icon">&#xe63b;</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <style>
+            .sliderbar{
+                position: fixed;
+                right: 2%;
+                bottom: 25%;
+            }
+            .sliderbar ul li{
+                list-style-type: none;
+                margin-bottom: 30%;
+            }
+            .sliderbar ul li a{
+                display: inline-block;
+                /*width: 200%;*/
+                /*height: 35px;*/
+                border: 1px solid black;
+                text-decoration: none;
+                background-color: #80808030;
+                border-color: #0000004d;
+            }
+            .sliderbar ul li a.gotop{
+                display: none;
+            }
+            .sliderbar ul li a:hover{
+                text-decoration: none;
+            }
+            .sliderbar ul li a i{
+                font-size: 35px;
+                color: #808080a3;
+                font-weight: bold;
+            }
+        </style>
+
         <!--body-->
         <div class="cartmain clearfix">
             <header class="clearfix">

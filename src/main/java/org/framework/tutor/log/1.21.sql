@@ -206,6 +206,15 @@ create table tutor_message(
   foreign key(tuser) REFERENCES user_main(username)
 );
 
+//家教后台管理的链接汇总表
+create table tutorsys_btns(
+  id int auto_increment comment "唯一标识",
+  name varchar(20) not null comment "链接名称",
+  url varchar(200) not null comment "链接url",
+  ord int not null comment "链接优先级",
+  primary key(id)
+);
+
 
 #家教老师标签表
 #实名认证表

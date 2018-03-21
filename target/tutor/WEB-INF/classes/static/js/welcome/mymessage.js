@@ -69,7 +69,7 @@ $(function () {
      * 获取发送通知的所有管理员
      */
     var async_getsuser = function () {
-        $(".container .m-main .main-left .left-show").empty();
+        $(".container .m-main .main-left .left-show").remove();
         $(".container .m-main .main-right .right-show").css("display", "none");
         $(".container .m-main .main-right .right-footer").css("display", "none");
         $.ajax({
@@ -471,7 +471,7 @@ $(function () {
     $("div.container .m-main .main-right footer input.info-btn:nth-child(4)").click(cli_delall);
 
     /**
-     * 全部标记未已读按钮事件
+     * 全部标记为已读按钮事件
      */
     var cli_alled = function(){
 
@@ -522,4 +522,35 @@ $(function () {
             });
         }
     });
+
+
+    //-----------------侧边栏的点击事件------------------------
+    /**
+     * 点击回到顶部
+     */
+    var cli_gotop = function(){
+        $(window).scrollTop(0);
+        $(this).css("display", "none");
+    };
+    $(".sliderbar .gotop").click(cli_gotop);
+
+    /**
+     * 页面加载时判断是否需要显示回到顶部
+     */
+    var async_showgotop = function(){
+
+        if($(window).scrollTop() >= 100){
+            $(".sliderbar .gotop").css("display", "block");
+        }
+        else{
+            $(".sliderbar .gotop").css("display", "none");
+        }
+    };
+    async_showgotop();
+
+    /**
+     * 页面滚动时进行判断是否需要显示/隐藏gotop
+     */
+    $(window).scroll(async_showgotop);
+    $(window).trigger("scroll");
 });

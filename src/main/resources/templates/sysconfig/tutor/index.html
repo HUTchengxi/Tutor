@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <title>勤成家教网-------家教管理后台------一切尽在掌控之中</title>
-    <link rel="stylesheet" href="/layui/css/layui.css" />
-    <link rel="icon" href="/images/logo/web_logo.ico" type="images/x-icon" />
+    <link rel="stylesheet" href="/layui/css/layui.css"/>
+    <link rel="icon" href="/images/logo/web_logo.ico" type="images/x-icon"/>
+    <link rel="stylesheet" href="/layui-admin/css/main.css"/>
+    <link rel="stylesheet" href="/layui-admin/css/font_eolqem241z66flxr.css"/>
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
     <div class="layui-header">
-        <div class="layui-logo">家教管理后台</div>
+        <div class="layui-logo">
+            <a href="/forward_con/gosysconfig" style="color: #dd08088c;">家教管理后台</a>
+        </div>
         <!-- 头部区域（可配合layui已有的水平导航） -->
         <!--<ul class="layui-nav layui-layout-left">-->
-            <!--<li class="layui-nav-item"><a href="/forward_con/gosysconfig">后台首页</a></li>-->
-            <!--<li class="layui-nav-item"><a href="">个人中心</a></li>-->
+        <!--<li class="layui-nav-item"><a href="/forward_con/gosysconfig">后台首页</a></li>-->
+        <!--<li class="layui-nav-item"><a href="">个人中心</a></li>-->
         <!--</ul>-->
-        <div class="layui-form-select" style="left: 200px; top: 10px;">
+        <div class="layui-form-select" style="left: 300px; top: 10px;">
             <div class="layui-select-title">
-                <input type="text" placeholder="搜索组件或模块" value="" class="layui-input" style="width:  200px;background-color: rgba(255,255,255,.05);color: white; border: none;" />
+                <input type="text" placeholder="搜索组件或模块" value="" class="layui-input"
+                       style="width:  200px;background-color: rgba(255,255,255,.05);color: white; border: none;"/>
                 <i class="layui-edge"></i>
             </div>
             <dl class="layui-anim layui-anim-upbit" style="">
@@ -28,8 +33,8 @@
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
                 <a href="javascript:void(0);">
-                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img" />
-                    贤心
+                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img"/>
+                    <span class="author">成兮</span>
                 </a>
                 <dl class="layui-nav-child">
                     <dd><a href="javascript:void(0)" class="logoff">我的钱包</a></dd>
@@ -43,7 +48,7 @@
     <div class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+            <ul class="layui-nav layui-nav-tree" lay-filter="test">
                 <li class="layui-nav-item layui-nav-itemed">
                     <a class="" href="javascript:;">课程管理</a>
                     <dl class="layui-nav-child">
@@ -73,19 +78,236 @@
 
     <div class="layui-body">
         <!-- 内容主体区域 -->
-        <div style="padding: 15px;"></div>
+        <div style="padding: 15px;">
+            <!--今日数据统计-->
+            <h4 style="margin: 15px 0; padding: 3px; border-left: 2px solid #009688;">今日数据统计</h4>
+            <div class="panel_box row">
+                <div class="panel col">
+                    <a href="javascript:;" data-url="page/message/message.html">
+                        <div class="panel_icon" style="background-color:#009688;">
+                            <i class="layui-icon" data-icon=""></i>
+                        </div>
+                        <div class="panel_word newMessage">
+                            <h5>今日课程访问</h5>
+                            <cite>100+</cite>
+                        </div>
+                    </a>
+                </div>
+                <div class="panel col">
+                    <a href="javascript:;" data-url="page/user/allUsers.html">
+                        <div class="panel_icon" style="background-color:#009688;">
+                            <i class="layui-icon" data-icon="">&#xe600;</i>
+                        </div>
+                        <div class="panel_word userAll">
+                            <h5>今日课程收藏</h5>
+                            <cite>100+</cite>
+                        </div>
+                    </a>
+                </div>
+                <div class="panel col">
+                    <a href="javascript:;" data-url="page/img/images.html">
+                        <div class="panel_icon" style="background-color:#5FB878;">
+                            <i class="layui-icon" data-icon="">&#xe657;</i>
+                        </div>
+                        <div class="panel_word imgAll">
+                            <h5>今日课程下单</h5>
+                            <cite>100+</cite>
+                        </div>
+                    </a>
+                </div>
+                <div class="panel col">
+                    <a href="javascript:;" data-url="page/news/newsList.html">
+                        <div class="panel_icon" style="background-color:#F7B824;">
+                            <i class="layui-icon" data-icon="">&#xe63a;</i>
+                        </div>
+                        <div class="panel_word waitNews">
+                            <h5>今日课程评价</h5>
+                            <cite>100+</cite>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!--常用链接设置-->
+            <h4 style="color: #009fff;margin: 15px 0; padding: 3px; border-left: 2px solid #23c8e3;">常用链接</h4>
+            <blockquote class="layui-elem-quote news_search">
+                <div class="layui-inline">
+                    <a class="layui-btn audit_btn layui-btn-normal">我的课程</a>
+                    <i class="layui-icon remove">&#x1006;</i>
+                </div>
+                <div class="layui-inline">
+                    <a class="layui-btn audit_btn layui-btn-normal">发布课程</a>
+                    <i class="layui-icon remove">&#x1006;</i>
+                </div>
+                <div class="layui-inline">
+                    <a class="layui-btn audit_btn layui-btn-normal">课程评价</a>
+                    <i class="layui-icon remove">&#x1006;</i>
+                </div>
+                <div class="layui-inline">
+                    <a class="layui-btn audit_btn layui-btn-normal">历史访问</a>
+                    <i class="layui-icon remove">&#x1006;</i>
+                </div>
+                <div class="layui-inline">
+                    <a class="layui-btn audit_btn layui-btn-normal">个人中心</a>
+                    <i class="layui-icon remove">&#x1006;</i>
+                </div>
+                <div class="layui-inline">
+                    <a class="layui-btn audit_btn layui-btn-normal">订单管理</a>
+                    <i class="layui-icon remove">&#x1006;</i>
+                </div>
+                <div class="layui-inline">
+                    <a class="layui-btn audit_btn layui-btn-normal">审核记录</a>
+                    <i class="layui-icon remove">&#x1006;</i>
+                </div>
+                <div class="layui-inline">
+                    <a class="layui-btn audit_btn layui-btn-normal">账号异常</a>
+                    <i class="layui-icon remove">&#x1006;</i>
+                </div>
+                <div class="layui-inline">
+                    <a class="layui-btn audit_btn layui-btn-normal">系统通知</a>
+                    <i class="layui-icon remove">&#x1006;</i>
+                </div>
+                <div class="layui-inline">
+                    <a class="layui-btn audit_btn layui-btn-normal">我的私信</a>
+                    <i class="layui-icon remove">&#x1006;</i>
+                </div>
+                <div class="layui-inline">
+                    <a class="layui-btn audit_btn layui-btn-normal">我的钱包</a>
+                    <i class="layui-icon remove">&#x1006;</i>
+                </div>
+                <div class="layui-inline">
+                    <a class="layui-btn layui-btn-danger batchDel" title="点击新增链接">
+                        <i class="layui-icon">&#xe61f;</i>
+                    </a>
+                </div>
+                <div class="layui-inline">
+                    <a class="layui-btn layui-btn-danger batchDel" title="点击删除链接">
+                        <i class="layui-icon">&#x1006;</i>
+                    </a>
+                </div>
+            </blockquote>
+
+            <!--下路div-->
+            <div class="row">
+                <div class="sysNotice col" style="padding-left: 15px;">
+                    <blockquote class="layui-elem-quote title">
+                        最新资讯<i class="iconfont icon-new1"></i>
+                        <a href="javascript:;" class="pull-right" title="点击加载更多">更多</a>
+                    </blockquote>
+                    <table class="layui-table" lay-skin="line">
+                        <colgroup>
+                            <col/>
+                            <col width="110"/>
+                        </colgroup>
+                        <tbody class="hot_news">
+                        <tr>
+                            <td align="left">
+                                <p>
+                                    <a href="javascript:;">css3用transition实现边框动画效果</a>
+                                </p>
+                            </td>
+                            <td class="news-time">2017-04-14</td>
+                        </tr>
+                        <tr>
+                            <td align="left">
+                                <p>
+                                    <a href="javascript:;">css3用transition实现边框动画效果</a>
+                                </p>
+                            </td>
+                            <td class="news-time">2017-04-14</td>
+                        </tr>
+                        <tr>
+                            <td align="left">
+                                <p>
+                                    <a href="javascript:;">css3用transition实现边框动画效果</a>
+                                </p>
+                            </td>
+                            <td class="news-time">2017-04-14</td>
+                        </tr>
+                        <tr>
+                            <td align="left">
+                                <p>
+                                    <a href="javascript:;">css3用transition实现边框动画效果</a>
+                                </p>
+                            </td>
+                            <td class="news-time">2017-04-14</td>
+                        </tr>
+                        <tr>
+                            <td align="left">
+                                <p>
+                                    <a href="javascript:;">css3用transition实现边框动画效果</a>
+                                </p>
+                            </td>
+                            <td class="news-time">2017-04-14</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="sysNotice col" style="width: 48.8%;">
+                    <blockquote class="layui-elem-quote title">
+                        系统更新日志<i class="layui-icon comment-icon">&#xe638;</i>
+                        <a href="javascript:;" class="pull-right" title="点击加载更多">历史更新</a>
+                    </blockquote>
+                    <table class="layui-table" lay-skin="line">
+                        <colgroup>
+                            <col />
+                            <col width="100"/>
+                        </colgroup>
+                        <thead>
+                        <tr style="background-color: white;">
+                            <td>
+                                <h4>#
+                                    <span class="pub-version">1.0.9_rls</span>
+                                    <span class="pub-type">（发行版）</span> -
+                                    <span class="pub-time">2017-03-01</span>
+                                </h4>
+                            </td>
+                        </tr>
+                        </thead>
+                        <tbody class="hot_news">
+                        <tr>
+                            <td align="left">
+                                <p>* checkbox复选框原始风格支持不显示文字（之前会默认显示：勾选）</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left">
+                                <p>* 进度条超出100%情况下的自动处理</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left">
+                                <p>* 修复Tab选项卡在出现下拉按钮时，点击最后的几个选项卡未能正常切换的bug</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left">
+                                <p>* 修复select组件搜索选择时会先显示之前的值再替换新的值的不良体验</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left">
+                                <p>* 修复默认进度条0%时，文本出现太过于左侧的问题</p>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!--<div class="layui-footer">-->
-        <!-- 底部固定区域 -->
-        <!--© layui.com - 底部固定区域-->
+    <!-- 底部固定区域 -->
+    <!--© layui.com - 底部固定区域-->
     <!--</div>-->
 </div>
 <script src="/layui/layui.js"></script>
 <script src="/js/custom/jquery.min.js"></script>
+<script src="/js/sysconfig/tutor/index.js"></script>
 <script>
     //JavaScript代码区域
-    layui.use('element', function(){
+    layui.use('element', function () {
         var element = layui.element;
 
     });

@@ -83,11 +83,17 @@ $(function(){
                         "                            <li><a href='/forward_con/personal' target='_blank'>基本信息</a></li>\n" +
                         "                            <li><a href='/forward_con/gomyorder'>我的订单</a></li>\n" +
                         "                            <li><a href='/forward_con/gomycourse' target='_blank'>我的课程</a></li>\n" +
+                        "                            <li class='sysconfig'><a href='/forward_con/gosysconfig' target='_blank'><span class='mcount'>后台管理</span></a></li>\n" +
                         "                            <li><a href='/forward_con/gomessage' target='_blank'>通知<span class='mcount'>("+count+")</span></a></li>\n" +
                         "                            <li><a href='/forward_con/gosetting'>设置</a></li>\n" +
                         "                            <li class='nav-logoff'><a href='#' style=\"color: red;\">注销</a></li>\n" +
                         "                        </ul>\n" +
                         "                    </li>");
+
+                    var ident = data.ident;
+                    if(ident == 0 || ident == -2){
+                        $("nav ul.navbar-right li.sysconfig").remove();
+                    }
                 }
 
                 //让时间一直轮播
@@ -229,4 +235,43 @@ $(function(){
         window.open("/forward_con/rank_more?type=" + ranktype);
     };
     $(".rank footer a").click(rank_more);
+
+
+
+
+
+
+
+
+
+
+    //-----------------侧边栏的点击事件------------------------
+    /**
+     * 点击回到顶部
+     */
+    var cli_gotop = function(){
+        $(window).scrollTop(0);
+        $(this).css("display", "none");
+    };
+    $(".sliderbar .gotop").click(cli_gotop);
+
+    /**
+     * 页面加载时判断是否需要显示回到顶部
+     */
+    var async_showgotop = function(){
+
+        if($(window).scrollTop() >= 100){
+            $(".sliderbar .gotop").css("display", "block");
+        }
+        else{
+            $(".sliderbar .gotop").css("display", "none");
+        }
+    };
+    async_showgotop();
+
+    /**
+     * 页面滚动时进行判断是否需要显示/隐藏gotop
+     */
+    $(window).scroll(async_showgotop);
+    $(window).trigger("scroll");
 });

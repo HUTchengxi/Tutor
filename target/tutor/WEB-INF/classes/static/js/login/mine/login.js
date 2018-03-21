@@ -43,9 +43,9 @@
         $("#username").trigger("blur");
         $("#password").trigger("blur");
         var pid = $("#p_id_err").data("status");
-        if(pid != 0)
+        if(pid != 0) {
             return;
-        //进行异步登陆校验
+        }
         var username = $("#username").val();
         var password = $("#password").val();
         var remember = $("#remember").data("status");
@@ -108,6 +108,12 @@
                     })
                     if(document.referrer == window.location.href || document.referrer.trim() == ""){
                         window.location.href = "/forward_con/welcome";
+                    }
+                    else if("http://localhost:8080/forward_con/goforget" == document.referrer){
+                        window.location = "/forward_con/welcome";
+                    }
+                    else if("http://localhost:8080/forward_con/goregister" == document.referrer){
+                        window.location = "/forward_con/welcome";
                     }
                     else{
                         window.location.href = document.referrer;

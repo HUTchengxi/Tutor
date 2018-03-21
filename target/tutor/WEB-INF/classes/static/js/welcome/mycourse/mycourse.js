@@ -615,20 +615,41 @@ $(function(){
                 top: 0
             },50);
         }
-        //我的发布
-        else if(clitype === "publish"){
-            if(ident == 0){
-                window.alert("抱歉，普通用户无法发布课程！");
-                $(this).closest("li").remove();
-            }
-            else {
-                $(".infobox .publishdiv").css("display", "block").animate({
-                    opacity: 1,
-                    position: "absolute",
-                    top: 0
-                }, 50);
-            }
-        }
     };
     $(".top-nav nav.stroke a").click(clibtn_bind);
+
+
+
+
+
+
+    //-----------------侧边栏的点击事件------------------------
+    /**
+     * 点击回到顶部
+     */
+    var cli_gotop = function(){
+        $(window).scrollTop(0);
+        $(this).css("display", "none");
+    };
+    $(".sliderbar .gotop").click(cli_gotop);
+
+    /**
+     * 页面加载时判断是否需要显示回到顶部
+     */
+    var async_showgotop = function(){
+
+        if($(window).scrollTop() >= 100){
+            $(".sliderbar .gotop").css("display", "block");
+        }
+        else{
+            $(".sliderbar .gotop").css("display", "none");
+        }
+    };
+    async_showgotop();
+
+    /**
+     * 页面滚动时进行判断是否需要显示/隐藏gotop
+     */
+    $(window).scroll(async_showgotop);
+    $(window).trigger("scroll");
 });

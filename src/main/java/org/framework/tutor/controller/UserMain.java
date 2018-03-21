@@ -98,6 +98,7 @@ public class UserMain {
                     ", \"nickname\": \"" + userMain.getNickname() + "\"" +
                     ", \"sex\": \"" + (userMain.getSex() == 1 ? "男" : "女") + "\"" +
                     ", \"age\": \"" + userMain.getAge() + "\"" +
+                    ", \"imgsrc\": \"" + userMain.getImgsrc() + "\"" +
                     ", \"info\": \"" + userMain.getInfo() + "\" }";
         }
 

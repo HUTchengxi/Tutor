@@ -265,4 +265,10 @@ public class ForwardAll {
         }
     }
 
+    @RequestMapping("/gotest")
+    public String gotest(){
+
+        return "/sysconfig/tutor/index2";
+    }
+
 }

@@ -6,16 +6,75 @@
     </artifacts-to-build>
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" line="213" mnemonic="3" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" line="222" mnemonic="3" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf479440-431d-499c-9612-40c14de1a166" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/tutor/index.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/layui-admin/css/font_eolqem241z66flxr.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/layui-admin/css/images.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/layui-admin/css/main.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/layui-admin/css/message.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/layui-admin/css/news.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/layui-admin/css/user.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/layui-admin/images/alipay.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/layui-admin/images/face.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/layui-admin/images/userface1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/layui-admin/images/userface2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/layui-admin/images/userface3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/layui-admin/images/userface4.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/layui-admin/images/userface5.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/layui-admin/images/wechat.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/layui-admin/js/bodyTab.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/layui-admin/js/index.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/layui-admin/js/leftNav.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/layui-admin/js/main.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/layui-admin/js/nav.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/sysconfig/tutor/index2.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sysconfig/tutor/index.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/sysconfig/tutor/index.html" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/ForwardAll.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/ForwardAll.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/UserMain.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/UserMain.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/UserMService.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/UserMService.class" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/application.properties" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/application.properties" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/controller/CourseOrder.class" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/controller/CourseOrder.class" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/controller/ForwardAll.class" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/controller/ForwardAll.class" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/controller/Login.class" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/controller/Login.class" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/controller/Register.class" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/controller/Register.class" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/controller/UserMain.class" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/controller/UserMain.class" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/domain/CourseOrder.class" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/domain/CourseOrder.class" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/mapper/CourseOMapper.class" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/mapper/CourseOMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/mapper/UserMMapper.class" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/mapper/UserMMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/service/CourseOService.class" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/service/CourseOService.class" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/service/UserMService.class" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/service/UserMService.class" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/service/impl/CourseOServiceImpl.class" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/service/impl/CourseOServiceImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/service/impl/UserMServiceImpl.class" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/org/framework/tutor/service/impl/UserMServiceImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/login/mine/login.js" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/login/mine/login.js" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/register/mine/register.js" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/register/mine/register.js" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/classify.js" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/classify.js" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/contact.js" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/contact.js" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/mycourse/mycourse.js" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/mycourse/mycourse.js" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/mymessage.js" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/mymessage.js" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/mysetting.js" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/mysetting.js" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/order/mycart.js" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/order/mycart.js" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/order/myorder.js" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/order/myorder.js" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/personal/personal.js" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/personal/personal.js" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/rank.js" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/rank.js" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/showcourse.js" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/showcourse.js" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/welcome.js" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/static/js/welcome/welcome.js" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/templates/home/classify.html" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/templates/home/classify.html" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/templates/home/mycourse.html" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/templates/home/mycourse.html" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/templates/home/mymessage.html" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/templates/home/mymessage.html" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/templates/home/mysetting.html" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/templates/home/mysetting.html" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/templates/home/order/mycart.html" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/templates/home/order/mycart.html" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/templates/home/order/myorder.html" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/templates/home/order/myorder.html" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/templates/home/personal.html" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/templates/home/personal.html" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/templates/home/rank.html" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/templates/home/rank.html" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/templates/home/showcourse.html" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/templates/home/showcourse.html" />
+      <change beforePath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/templates/home/welcome.html" afterPath="$PROJECT_DIR$/target/tutor/WEB-INF/classes/templates/home/welcome.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -33,31 +92,115 @@
     <favorites_list name="Tutor" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="1.21.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="225" column="0" lean-forward="false" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserMain.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1517">
+              <caret line="81" column="7" lean-forward="false" selection-start-line="81" selection-start-column="7" selection-end-line="81" selection-end-column="7" />
+              <folding>
+                <element signature="method#getImgsrc#0;class#UserMain#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ForwardAll.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2509">
+              <caret line="268" column="27" lean-forward="false" selection-start-line="268" selection-start-column="27" selection-end-line="268" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/sysconfig/tutor/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="370">
+              <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h4#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#a#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#a#0;n#div#2;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#a#0;n#div#3;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h4#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#blockquote#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#tr#1;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#tr#2;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#tr#3;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#tr#4;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2.0版本" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="94" column="27" lean-forward="false" selection-start-line="94" selection-start-column="27" selection-end-line="94" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/layui-admin/css/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="749">
+              <caret line="154" column="1" lean-forward="false" selection-start-line="154" selection-start-column="1" selection-end-line="154" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/sysconfig/tutor/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1702">
+              <caret line="46" column="78" lean-forward="false" selection-start-line="46" selection-start-column="78" selection-end-line="46" selection-end-column="78" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
         <option value="Interface" />
+        <option value="Class" />
         <option value="JavaScript File" />
         <option value="HTML File" />
-        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>uncoll</find>
-      <find>后台环境</find>
-      <find>无法加入购物车</find>
-      <find>200px</find>
-      <find>scroll</find>
-      <find>xdsoft_next</find>
-      <find>xdsoft_mounthpicker</find>
-      <find>xdsoft_label xdsoft_month</find>
-      <find>xdsoft_month</find>
-      <find>monthselect</find>
       <find>hide</find>
       <find>click</find>
       <find>省</find>
@@ -78,6 +221,16 @@
       <find>我的</find>
       <find>publish</find>
       <find>register_main</find>
+      <find>sendbindmail</find>
+      <find>img</find>
+      <find>hover</find>
+      <find>16.</find>
+      <find>layui</find>
+      <find>quo</find>
+      <find>overflow</find>
+      <find>opacity</find>
+      <find>clearfix</find>
+      <find>pull-</find>
     </findStrings>
     <replaceStrings>
       <replace>/images/welcome/personal</replace>
@@ -96,9 +249,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/templates/home/mysetting.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/mysetting.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/home/rank.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/classify.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/mymessage.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/mymessage.html" />
@@ -120,7 +270,6 @@
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/CourseOService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/CourseOServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/CourseOMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseOrder.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/order/myorder.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/personal/personal.js" />
@@ -138,15 +287,19 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/order/mycart.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/mycourse/mycourse.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/login/respond.min.js" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/register/mine/register.js" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/Register.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/tutor/index.js" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/sysconfig/tutor/index2.html" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/layui-admin/css/main.css" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/sysconfig/tutor/index.html" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本" />
       </list>
     </option>
   </component>
@@ -204,10 +357,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="896" />
-    <option name="y" value="7" />
-    <option name="width" value="1122" />
-    <option name="height" value="1048" />
+    <option name="x" value="952" />
+    <option name="width" value="976" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -283,8 +435,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -335,26 +485,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="framework" type="462c0819:PsiDirectoryNode" />
               <item name="tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="framework" type="462c0819:PsiDirectoryNode" />
-              <item name="tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="framework" type="462c0819:PsiDirectoryNode" />
-              <item name="tutor" type="462c0819:PsiDirectoryNode" />
               <item name="log" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -362,47 +492,6 @@
               <item name="Tutor" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="framework" type="462c0819:PsiDirectoryNode" />
-              <item name="tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="framework" type="462c0819:PsiDirectoryNode" />
-              <item name="tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="framework" type="462c0819:PsiDirectoryNode" />
-              <item name="tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="framework" type="462c0819:PsiDirectoryNode" />
-              <item name="tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -420,7 +509,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="jbtable" type="462c0819:PsiDirectoryNode" />
+              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
@@ -429,7 +518,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="jbtable" type="462c0819:PsiDirectoryNode" />
+              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -451,125 +540,12 @@
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="custom" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-              <item name="mine" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="mine" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="welcome" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="welcome" type="462c0819:PsiDirectoryNode" />
-              <item name="mycourse" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="layui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="register" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="sysconfig" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="sysconfig" type="462c0819:PsiDirectoryNode" />
-              <item name="tutor" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -593,19 +569,19 @@
     <property name="jsx.switch.disabled" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\gitrepo\Tutor\src\main\resources\templates\home\order" />
-      <recent name="D:\gitrepo\Tutor\src\main\resources\static\jbtable" />
-      <recent name="C:\Users\admin\IdeaProjects\Tutor\src" />
-      <recent name="C:\Users\admin\IdeaProjects\Tutor\src\main\resources\static\js\welcome" />
-      <recent name="C:\Users\admin\IdeaProjects\Tutor\src\main\resources\static\css\welcome\personal" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\admin\IdeaProjects\Tutor\src\main\java\org\framework\tutor\log" />
       <recent name="C:\Users\admin\IdeaProjects\Tutor\src\main\resources\static\js\welcome\mycourse" />
       <recent name="C:\Users\admin\IdeaProjects\Tutor\src\main\resources\static\js\welcome\personal" />
       <recent name="C:\Users\admin\IdeaProjects\Tutor\src\main\resources\static\page\error" />
       <recent name="C:\Users\admin\IdeaProjects\Tutor\src\main\resources\static\error" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\gitrepo\Tutor\src\main\resources\static\layui-admin" />
+      <recent name="D:\gitrepo\Tutor\src\main\resources\templates\home\order" />
+      <recent name="D:\gitrepo\Tutor\src\main\resources\static\jbtable" />
+      <recent name="C:\Users\admin\IdeaProjects\Tutor\src" />
+      <recent name="C:\Users\admin\IdeaProjects\Tutor\src\main\resources\static\js\welcome" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1010,7 +986,15 @@
       <workItem from="1521420642689" duration="2318000" />
       <workItem from="1521431985664" duration="4728000" />
       <workItem from="1521452801701" duration="666000" />
-      <workItem from="1521466343178" duration="5159000" />
+      <workItem from="1521466343178" duration="5371000" />
+      <workItem from="1521507766461" duration="51000" />
+      <workItem from="1521515567054" duration="2377000" />
+      <workItem from="1521531497250" duration="1697000" />
+      <workItem from="1521553461310" duration="7822000" />
+      <workItem from="1521593361212" duration="681000" />
+      <workItem from="1521597007942" duration="764000" />
+      <workItem from="1521600726357" duration="886000" />
+      <workItem from="1521643311556" duration="5216000" />
     </task>
     <task id="LOCAL-00001" summary="将毕设项目提交到gitlab">
       <created>1520393481249</created>
@@ -1222,11 +1206,18 @@
       <option name="project" value="LOCAL" />
       <updated>1521439396539</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="家教后台管理界面的初步设置">
+      <created>1521473828521</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1521473828521</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="737413000" />
+    <option name="totallyTimeSpent" value="757119000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1241,27 +1232,30 @@
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.327252" sideWeight="0.5" order="23" side_tool="false" content_ui="tabs" />
+      <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="24" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17631297" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="24" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839224" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.327252" sideWeight="0.5" order="23" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17631297" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="20" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33751425" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3367463" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66870093" sideWeight="0.5" order="21" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="22" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2449089" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2545552" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="24" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1279,7 +1273,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="修复了通知的bug和个人中心的同步" />
     <MESSAGE value="登录之后跳转到上一个页面（如果有）的实现，打开新的链接登录只能跳转到首页" />
     <MESSAGE value="课程的详细页面的个人中心的bug修复" />
     <MESSAGE value="解决关键字课程选择显示全部的bug" />
@@ -1304,7 +1297,8 @@
     <MESSAGE value="密保问题找回密码的实现" />
     <MESSAGE value="管理员/家教的后台管理url的统一入口" />
     <MESSAGE value="用户注册三种方式的全部实现(咱不验证，手机注册，邮箱注册)" />
-    <option name="LAST_COMMIT_MESSAGE" value="用户注册三种方式的全部实现(咱不验证，手机注册，邮箱注册)" />
+    <MESSAGE value="家教后台管理界面的初步设置" />
+    <option name="LAST_COMMIT_MESSAGE" value="家教后台管理界面的初步设置" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1313,63 +1307,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-111">
-          <caret line="101" column="21" lean-forward="true" selection-start-line="101" selection-start-column="21" selection-end-line="101" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/util/HttpUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="44" column="18" lean-forward="false" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/util/CommonUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1332">
-          <caret line="37" column="5" lean-forward="false" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/jbtable/css/normalize.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home/personal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-407">
-          <caret line="498" column="63" lean-forward="false" selection-start-line="498" selection-start-column="63" selection-end-line="498" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/201801271505/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="60" column="26" lean-forward="true" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/jbtable/css/htmleaf-demo.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5968">
-          <caret line="73" column="23" lean-forward="true" selection-start-line="73" selection-start-column="23" selection-end-line="73" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home/welcome.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7345">
-          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home/mysetting.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4505">
@@ -1497,20 +1434,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="858">
-          <caret line="266" column="0" lean-forward="false" selection-start-line="266" selection-start-column="0" selection-end-line="266" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/welcome.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="114" column="37" lean-forward="false" selection-start-line="114" selection-start-column="37" selection-end-line="114" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="636">
@@ -1536,13 +1459,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
           <caret line="148" column="6" lean-forward="false" selection-start-line="148" selection-start-column="6" selection-end-line="148" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/classify.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="747">
-          <caret line="109" column="6" lean-forward="false" selection-start-line="109" selection-start-column="6" selection-end-line="109" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -1602,36 +1518,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11433">
-          <caret line="709" column="44" lean-forward="false" selection-start-line="709" selection-start-column="44" selection-end-line="709" selection-end-column="44" />
-          <folding>
-            <element signature="method#getImgsrc#0;class#UserMain#0" expanded="false" />
-            <element signature="method#getUserinfo#0;class#UserMain#0" expanded="false" />
-            <element signature="method#modImgsrc#0;class#UserMain#0" expanded="false" />
-            <element signature="method#modImgfile#0;class#UserMain#0" expanded="false" />
-            <element signature="method#modUserinfo#0;class#UserMain#0" expanded="false" />
-            <element signature="method#getBindInfo#0;class#UserMain#0" expanded="false" />
-            <element signature="method#sendMail#0;class#UserMain#0" expanded="false" />
-            <element signature="method#modPass#0;class#UserMain#0" expanded="false" />
-            <element signature="method#userUnbind#0;class#UserMain#0" expanded="false" />
-            <element signature="method#userBind#0;class#UserMain#0" expanded="false" />
-            <element signature="method#sendUnbindPhone#0;class#UserMain#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/register/mine/register.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5624">
           <caret line="333" column="43" lean-forward="false" selection-start-line="333" selection-start-column="43" selection-end-line="333" selection-end-column="43" />
-          <folding>
-            <element signature="e#158#2185#0" expanded="false" />
-            <element signature="e#2361#3659#0" expanded="false" />
-            <element signature="e#3851#5501#0" expanded="false" />
-            <element signature="e#5659#7321#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1639,9 +1529,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3626">
           <caret line="117" column="41" lean-forward="false" selection-start-line="117" selection-start-column="41" selection-end-line="117" selection-end-column="41" />
-          <folding>
-            <element signature="method#emailResend#0;class#Register#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1649,7 +1536,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="747">
           <caret line="160" column="11" lean-forward="false" selection-start-line="160" selection-start-column="11" selection-end-line="160" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1657,7 +1543,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="747">
           <caret line="178" column="131" lean-forward="false" selection-start-line="178" selection-start-column="131" selection-end-line="178" selection-end-column="131" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1665,10 +1550,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="747">
           <caret line="255" column="18" lean-forward="false" selection-start-line="255" selection-start-column="18" selection-end-line="255" selection-end-column="18" />
-          <folding>
-            <element signature="e#4097#4098#0" expanded="true" />
-            <element signature="e#4151#4152#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1676,36 +1557,141 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1628">
           <caret line="44" column="55" lean-forward="false" selection-start-line="44" selection-start-column="55" selection-end-line="44" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="9" column="10" lean-forward="true" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/classify.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1517">
+          <caret line="81" column="7" lean-forward="false" selection-start-line="81" selection-start-column="7" selection-end-line="81" selection-end-column="7" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="method#getImgsrc#0;class#UserMain#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/welcome.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1221">
-          <caret line="87" column="18" lean-forward="true" selection-start-line="87" selection-start-column="18" selection-end-line="87" selection-end-column="18" />
+        <state relative-caret-position="111">
+          <caret line="218" column="10" lean-forward="true" selection-start-line="218" selection-start-column="10" selection-end-line="218" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/sysconfig/tutor/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1702">
+          <caret line="46" column="78" lean-forward="false" selection-start-line="46" selection-start-column="78" selection-end-line="46" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/layui-admin/layui-admin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/sysconfig/tutor/index2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1598">
+          <caret line="98" column="54" lean-forward="true" selection-start-line="98" selection-start-column="54" selection-end-line="98" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/layui-admin/css/font_eolqem241z66flxr.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="23" column="11" lean-forward="false" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="225" column="0" lean-forward="false" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2509">
+          <caret line="268" column="27" lean-forward="false" selection-start-line="268" selection-start-column="27" selection-end-line="268" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/bootstrap/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="6518" column="13" lean-forward="true" selection-start-line="6518" selection-start-column="13" selection-end-line="6518" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/layui-admin/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="749">
+          <caret line="154" column="1" lean-forward="false" selection-start-line="154" selection-start-column="1" selection-end-line="154" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/sysconfig/tutor/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="925">
-          <caret line="25" column="17" lean-forward="true" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+        <state relative-caret-position="370">
+          <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
           <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#a#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#a#0;n#div#2;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#a#0;n#div#3;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#blockquote#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#tr#1;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#tr#2;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#tr#3;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#tr#4;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1107">
-          <caret line="206" column="2" lean-forward="true" selection-start-line="206" selection-start-column="2" selection-end-line="206" selection-end-column="2" />
+        <state relative-caret-position="480">
+          <caret line="94" column="27" lean-forward="false" selection-start-line="94" selection-start-column="27" selection-end-line="94" selection-end-column="27" />
           <folding />
         </state>
       </provider>
