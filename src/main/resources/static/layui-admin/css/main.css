@@ -107,6 +107,10 @@
 	position: relative;
 	top: 0;
 	left: 0;
+	font-size: 30px;
+}
+.layui-elem-quote div.layui-inline a i.btn-rmv{
+	font-size: 55px;
 }
 .layui-elem-quote div.layui-inline i.layui-icon:hover{
 	cursor: pointer;

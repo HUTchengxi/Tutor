@@ -192,7 +192,7 @@ create table user_secret(
 );
 
 
-//家教_管理员通知表
+#家教_管理员通知表
 create table tutor_message(
   id int auto_increment comment "唯一标识",
   identity int default 0 comment "0表示所有，1表示指定接收信息的家教",
@@ -206,13 +206,44 @@ create table tutor_message(
   foreign key(tuser) REFERENCES user_main(username)
 );
 
-//家教后台管理的链接汇总表
+#家教后台管理的链接汇总表
 create table tutorsys_btns(
   id int auto_increment comment "唯一标识",
   name varchar(20) not null comment "链接名称",
   url varchar(200) not null comment "链接url",
   ord int not null comment "链接优先级",
   primary key(id)
+);
+
+#家教_链接中间表
+create table tutor_btns(
+  id int auto_increment comment "唯一标识",
+  tname varchar(20) not null comment "家教用户名",
+  bid int not null comment "链接id",
+  primary key(id),
+  foreign key(tname) references user_main(username),
+  foreign key(bid) references tutorsys_btns(id)
+)
+
+
+#更新版本类型表
+create table publish_type(
+  id int auto_increment comment "唯一标识",
+  name varchar(10) not null comment "版本类型名称",
+  ord int default 100 comment "越低的越靠前",
+  primary key(id)
+);
+
+
+#网站历史更新记录表
+create table publish_log(
+  id int auto_increment comment "唯一标识",
+  pversion varchar(15) not null comment "版本号",
+  typeid int default 0 comment "版本类型",
+  ptime datetime default now() comment "版本发布时间",
+  descript varchar(100) not null comment "更新内容描述",
+  primary key(id, pversion),
+  foreign key(typeid) references publish_type(id)
 );
 
 
@@ -223,7 +254,11 @@ create table tutorsys_btns(
 #课程报名表
 #科目类别表
 
+#今日我的课程收藏多少次
+select count(*) from course_collect where cid in (select id from course_main where username="chengxi") and coltime like '2018-03-22%';
 
+#今日我的课程评论了多少次
+select count(*) from coutse_command where cid in(select id from course_main where username=#{username} and ctim like CONCAT('%', #{now}, '%'))
 
 #修改了user表的主键为username
 

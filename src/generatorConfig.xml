@@ -48,7 +48,10 @@
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
         <!-- 指定数据库表 -->
-        <table schema="" tableName="course_order"></table>
+        <table schema="" tableName="tutorsys_btns"></table>
+        <table schema="" tableName="publish_type"></table>
+        <table schema="" tableName="publish_log"></table>
+        <table schema="" tableName="tutor_btns"></table>
         <!--<table schema="" tableName="course_main"></table>-->
 
         <!-- 有些表的字段需要指定java类型

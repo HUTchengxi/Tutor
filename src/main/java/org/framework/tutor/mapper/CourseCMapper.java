@@ -47,4 +47,13 @@ public interface CourseCMapper {
      */
     @Insert("insert into course_collect(cid, username, descript) values(#{cid}, #{username}, #{descript})")
     boolean Collect(@Param("cid") Integer cid, @Param("username") String username, @Param("descript") String descript);
+
+    /**
+     * 获取今日指定家教的课程收藏总数
+     * @param username
+     * @param now
+     * @return
+     */
+    @Select("select count(*) from course_collect where cid in (select id from course_main where username=#{username}) and coltime like CONCAT('%', #{now}, '%')")
+    Integer getCollectCountNow(@Param("username") String username, @Param("now") String now);
 }

@@ -41,4 +41,12 @@ public interface CourseCService {
      * @return
      */
     boolean Collect(Integer cid, String username, String descipt);
+
+    /**
+     * 获取今日指定家教的课程收藏总数量
+     * @param username
+     * @param now
+     * @return
+     */
+    Integer getCollectCountNow(String username, String now);
 }

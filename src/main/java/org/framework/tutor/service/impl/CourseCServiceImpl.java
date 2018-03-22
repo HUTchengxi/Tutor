@@ -64,4 +64,16 @@ public class CourseCServiceImpl implements CourseCService {
 
         return courseCMapper.Collect(cid, username, descript);
     }
+
+    /**
+     * 获取今日指定家教的课程收藏总数量
+     * @param username
+     * @param now
+     * @return
+     */
+    @Override
+    public Integer getCollectCountNow(String username, String now) {
+
+        return courseCMapper.getCollectCountNow(username, now);
+    }
 }

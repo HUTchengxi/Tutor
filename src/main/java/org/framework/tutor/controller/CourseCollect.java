@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -145,6 +146,29 @@ public class CourseCollect {
                 res = "{\"status\": \"mysqlerr\"}";
             }
         }
+
+        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.flush();
+        writer.close();
+    }
+
+    /**
+     * 获取家教的今日课程收藏数量
+     * @param request
+     * @param response
+     */
+    @RequestMapping("/getcollectcount")
+    public void getCollectCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        PrintWriter writer = response.getWriter();
+        HttpSession session = request.getSession();
+        String username = (String) session.getAttribute("username");
+        String res = null;
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String now = simpleDateFormat.format(new Date());
+
+        res = "{\"count\": \""+courseCService.getCollectCountNow(username, now)+"\"}";
 
         writer.print(new JsonParser().parse(res).getAsJsonObject());
         writer.flush();
