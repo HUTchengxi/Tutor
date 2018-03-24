@@ -1,7 +1,9 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
+import org.framework.tutor.domain.CourseMain;
 import org.framework.tutor.service.CourseLService;
+import org.framework.tutor.service.CourseMService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,6 +26,9 @@ public class CourseLog {
 
     @Autowired
     private CourseLService courseLService;
+
+    @Autowired
+    private CourseMService courseMService;
 
     /**
      * 获取我的课程记录
@@ -54,11 +59,13 @@ public class CourseLog {
                 int i = 1;
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
                 for (org.framework.tutor.domain.CourseLog courseLog : courseLogs) {
+                    CourseMain courseMain = courseMService.getCourseById(courseLog.getCid());
                     res += "\""+i+"\": ";
                     String temp = "{\"logtime\": \""+simpleDateFormat.format(courseLog.getLogtime())+"\", " +
-                            "\"ctype\": \""+courseLog.getCtype()+"\", " +
+                            "\"imgsrc\": \""+courseMain.getImgsrc()+"\", " +
                             "\"id\": \""+courseLog.getId()+"\", " +
-                            "\"cname\": \""+courseLog.getCname()+"\"}, ";
+                            "\"cid\": \""+courseLog.getCid()+"\", " +
+                            "\"cname\": \""+courseMain.getName()+"\"}, ";
                     res += temp;
                     i++;
                 }

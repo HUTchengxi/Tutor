@@ -13,8 +13,6 @@ public class CourseLog implements Serializable {
 
     private Integer id;
     private Integer cid;
-    private String cname;
-    private String ctype;
     private Date logtime;
 
     public CourseLog(){
@@ -37,21 +35,6 @@ public class CourseLog implements Serializable {
         this.cid = cid;
     }
 
-    public String getCname() {
-        return cname;
-    }
-
-    public void setCname(String cname) {
-        this.cname = cname;
-    }
-
-    public String getCtype() {
-        return ctype;
-    }
-
-    public void setCtype(String ctype) {
-        this.ctype = ctype;
-    }
 
     public Date getLogtime() {
         return logtime;
@@ -66,8 +49,6 @@ public class CourseLog implements Serializable {
         return "CourseLog{" +
                 "id=" + id +
                 ", cid=" + cid +
-                ", cname='" + cname + '\'' +
-                ", ctype='" + ctype + '\'' +
                 ", logtime='" + logtime + '\'' +
                 '}';
     }

@@ -137,6 +137,9 @@ $(function() {
                 if(count >= 999) {
                     $(".userAll cite").text("999+");
                 }
+                else if(count == 0){
+                    $(".userAll cite").text("--");
+                }
                 else{
                     $(".userAll cite").text(data.count);
                 }
@@ -148,4 +151,91 @@ $(function() {
         });
     };
     async_getcollectcount();
+
+    /**
+     * 异步获取今日我的课程评论总次数
+     */
+    var async_getcommandcount = function(){
+
+        $.ajax({
+            async: true,
+            type: "post",
+            url: "/coursecommand_con/getcommandcount",
+            dataType: "json",
+            success: function(data){
+                var count = data.count;
+                if(count >= 999) {
+                    $(".waitNews cite").text("999+");
+                }
+                else if(count == 0){
+                    $(".waitNews cite").text("--");
+                }
+                else{
+                    $(".waitNews cite").text(data.count);
+                }
+            },
+            error: function(xhr, status){
+                window.alert("后台环境异常导致无法获取今日课程评价数量，请稍后再试");
+                window.console.log(xhr);
+            }
+        });
+    };
+    async_getcommandcount();
+
+    /**
+     * 异步获取今日我的课程下单总次数
+     */
+    var async_getordercount = function(){
+
+        $.ajax({
+            async: true,
+            type: "post",
+            url: "/courseorder_con/getordercount",
+            dataType: "json",
+            success: function(data){
+                var count = data.count;
+                if(count >= 999) {
+                    $(".imgAll cite").text("999+");
+                }
+                else if(count == 0){
+                    $(".imgAll cite").text("--");
+                }
+                else{
+                    $(".imgAll cite").text(data.count);
+                }
+            },
+            error: function(xhr, status){
+                window.alert("后台环境异常导致无法获取今日课程下单数量，请稍后再试");
+                window.console.log(xhr);
+            }
+        });
+    };
+    async_getordercount();
+
+    /**
+     * 异步获取今日我的课程评分
+     */
+    var async_getvisitcount = function(){
+
+        $.ajax({
+            async: true,
+            type: "post",
+            url: "/coursecommand_con/getscoreavg",
+            dataType: "json",
+            success: function(data){
+                var count = data.count;
+                if(count == "null"){
+                    $(".newMessage cite").text("--");
+                }
+                else{
+                    $(".newMessage cite").text(data.count);
+                }
+            },
+            error: function(xhr, status){
+                window.alert("后台环境异常导致无法获取今日课程访问数量，请稍后再试");
+                window.console.log(xhr);
+            }
+        });
+    };
+    async_getvisitcount();
 });

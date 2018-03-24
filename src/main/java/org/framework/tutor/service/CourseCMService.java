@@ -40,5 +40,28 @@ public interface CourseCMService {
      * @param username
      * @return
      */
-    Integer subMyCommand(Integer cid, String command, String username);
+    Integer subMyCommand(Integer cid, String command, Integer score, String username);
+
+    /**
+     * 获取指定用户的课程评论总数
+     * @param username
+     * @param now
+     * @return
+     */
+    Integer getCommandCountNow(String username, String now);
+
+    /**
+     * 获取家教的课程今日评分平均值
+     * @param username
+     * @param now
+     * @return
+     */
+    Double getScoreAvgNow(String username, String now);
+
+    /**
+     * 获取当前用户的课程评论数据
+     * @param username
+     * @return
+     */
+    List<CourseCommand> loadMyCommandInfo(String username);
 }

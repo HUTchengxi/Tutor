@@ -573,9 +573,17 @@ $(function() {
             dataType: "json",
             success: function(data){
                 var count = parseInt(data.count);
+                var status = data.status;
                 if(count == 0){
                     $("#usercommand p.msg a.sub").text("发表评价").data("status","none");
                     $("#usercommand #mycommand .com-main").append("<p class=\"command\" contenteditable=\"true\">说点什么...</p>\n" +
+                        "<p class=\"score\" data-score=\"0\">课程评分：\n" +
+                        "                                    <span class=\"glyphicon glyphicon-star-empty s1\" data-score=\"1\"></span>\n" +
+                        "                                    <span class=\"glyphicon glyphicon-star-empty s2\" data-score=\"2\"></span>\n" +
+                        "                                    <span class=\"glyphicon glyphicon-star-empty s3\" data-score=\"3\"></span>\n" +
+                        "                                    <span class=\"glyphicon glyphicon-star-empty s4\" data-score=\"4\"></span>\n" +
+                        "                                    <span class=\"glyphicon glyphicon-star-empty s5\" data-score=\"5\"></span>\n" +
+                        "                                </p>" +
                         "                                <p class=\"info\">&nbsp;</p>\n" +
                         "                                <button type=\"button\" class=\"subcommand btn btn-danger\">发表</button>");
                 }
@@ -632,9 +640,13 @@ $(function() {
                        }
                     });
                 }
+                else if(status == "nobuy"){
+                    $("#usercommand p.msg a.sub").text("发表评价").data("status","invalid");
+                    $("#usercommand #mycommand .com-main").append("<p class='none'>只有购买的用户才能进行评价哦！</p>");
+                }
                 else{
                     $("#usercommand p.msg a.sub").text("发表评价").data("status","invalid");
-                    $("#usercommand #mycommand").append("<p class='none'>您好，发表评价前请先<a href=\"/forward_con/gologin\" target=\"_blank\">登录</a>！</p>");
+                    $("#usercommand #mycommand .com-main").append("<p class='none'>您好，发表评价前请先<a href=\"/forward_con/gologin\" target=\"_blank\">登录</a>！</p>");
                 }
             },
             error: function(xhr, status){
@@ -687,6 +699,50 @@ $(function() {
     $(document).on("blur", "#usercommand #mycommand p.command", blur_editmycommand);
 
     /**
+     * 进行课程评论星级
+     */
+    var mouseenter_coursescore = function(){
+
+        var score = $(this).data("score");
+        var temp = score;
+        while(score != 0){
+            $("#mycommand .com-main .s"+(score--)).removeClass("glyphicon-star-empty").addClass("glyphicon-star");
+        }
+        while(temp != 5){
+            $("#mycommand .com-main .s"+(++temp)).addClass("glyphicon-star-empty").removeClass("glyphicon-star");
+        }
+    };
+    $(document).on("mouseenter", "#mycommand .com-main .score span", mouseenter_coursescore);
+
+
+    /**
+     * 评价星级点击确定评分
+     **/
+    var cli_confirmscore = function(){
+
+        var score = $(this).data("score");
+        $(this).closest("p").data("score", score);
+    };
+    $(document).on("click", "#mycommand .com-main .score span", cli_confirmscore);
+
+    /**
+     * 鼠标离开评分span
+     */
+    var mouseleave_commandscore = function(){
+
+        var score = $(this).closest("p").data("score");
+        var temp = score;
+        while(score != 0){
+            $("#mycommand .com-main .s"+(score--)).removeClass("glyphicon-star-empty").addClass("glyphicon-star");
+        }
+        while(temp != 5){
+            $("#mycommand .com-main .s"+(++temp)).addClass("glyphicon-star-empty").removeClass("glyphicon-star");
+        }
+    };
+    $(document).on("mouseleave", "#mycommand .com-main .score span", mouseleave_commandscore);
+
+
+    /**
      * 点击发表我的评价
      */
     var sub_editmycommand = function(){
@@ -697,10 +753,13 @@ $(function() {
         if (r != null) cid = unescape(r[2]);
 
         var command = $(this).closest("div").find("p.command").text().trim();
-        console.log(command === "" || command === "说点什么...");
-        console.log(command);
+        var score = $("#mycommand .com-main p.score").data("score");
         if(command === "" || command === "说点什么..."){
             $(this).closest("div").find("p.info").text("先说点什么吧");
+            return ;
+        }
+        else if(score == 0){
+            $(this).closest("div").find("p.info").text("多少给点分数呗");
             return ;
         }
         else{
@@ -709,7 +768,7 @@ $(function() {
                 async: true,
                 type: "post",
                 url: "/coursecommand_con/submycommand",
-                data: {cid: cid, command: command},
+                data: {cid: cid, command: command, score: score},
                 success: function(data){
                     var status = data.status;
                     if(status === "mysqlerr"){

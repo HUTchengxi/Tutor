@@ -77,19 +77,7 @@ $(function() {
                     });
 
                     $("nav ul.navbar-right").append("<li class='nav-time'><a>现在是：<i style='color: #00b6ff;'>"+now+"</i></a></li>" +
-                        "                   <li><a style=\"color: black;\"><p>"+hello+"：<span class=\"span-cls-nick\" style=\"color: red;\">"+nickname+"</span></p></a></li>\n" +
-                        "                    <li class=\"dropdown\">\n" +
-                        "                        <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">个人中心<i class=\"caret\"></i></a>\n" +
-                        "                        <ul class=\"dropdown-menu\">\n" +
-                        "                            <li><a href='/forward_con/personal' target='_blank'>基本信息</a></li>\n" +
-                        "                            <li><a href='/forward_con/gomyorder'>我的订单</a></li>\n" +
-                        "                            <li><a href='/forward_con/gomycourse' target='_blank'>我的课程</a></li>\n" +
-                        "                            <li class='sysconfig'><a href='/forward_con/gosysconfig' target='_blank'><span class='mcount'>后台管理</span></a></li>\n" +
-                        "                            <li><a href='/forward_con/gomessage' target='_blank'>通知<span class='mcount'>("+count+")</span></a></li>\n" +
-                        "                            <li><a href='/forward_con/gosetting'>设置</a></li>\n" +
-                        "                            <li class='nav-logoff'><a href='#' style=\"color: red;\">注销</a></li>\n" +
-                        "                        </ul>\n" +
-                        "                    </li>");
+                        "                   <li><a style=\"color: black;\"><p>"+hello+"：<span class=\"span-cls-nick\" style=\"color: red;\">"+nickname+"</span></p></a></li>\n");
 
                     var ident = data.ident;
                     if(ident == 0 || ident == -2){

@@ -46,9 +46,36 @@ public interface CourseCMMapper {
      * 发表用户评价
      * @param cid
      * @param command
+     * @param score
      * @param username
      * @return
      */
-    @Insert("insert into course_command(cid,info,username) values(#{cid},#{command},#{username})")
-    Integer subMyCommand(@Param("cid") Integer cid, @Param("command") String command, @Param("username") String username);
+    @Insert("insert into course_command(cid,info,score,username) values(#{cid},#{command},#{score},#{username})")
+    Integer subMyCommand(@Param("cid") Integer cid, @Param("command") String command, @Param("score") Integer score, @Param("username") String username);
+
+    /**
+     * 获取指定用户的今日课程评论总数
+     * @param username
+     * @param now
+     * @return
+     */
+    @Select("select count(*) from course_command where cid in (select id from course_main where username=#{username} and ctime like CONCAT('%', #{now}, '%'))")
+    Integer getCommandCountNow(@Param("username") String username, @Param("now") String now);
+
+    /**
+     * 获取家教的课程今日评分平均值
+     * @param username
+     * @param now
+     * @return
+     */
+    @Select("select avg(score) from course_command where cid in (select id from course_main where username=#{username} and ctime like CONCAT('%', #{now}, '%'))")
+    Double getScoreAvgNow(@Param("username") String username, @Param("now") String now);
+
+    /**
+     * 获取当前用户的课程评论数据
+     * @param username
+     * @return
+     */
+    @Select("select * from course_command where username=#{username}")
+    List<CourseCommand> loadMyCommandInfo(@Param("username") String username);
 }

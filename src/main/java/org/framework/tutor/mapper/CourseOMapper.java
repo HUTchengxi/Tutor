@@ -89,4 +89,23 @@ public interface CourseOMapper {
      */
     @Select("select * from course_order where username=#{username} and id=#{oid}")
     CourseOrder getByIdAndUser(@Param("username") String username, @Param("oid") Integer oid);
+
+    /**
+     * 获取家教的课程订单总数
+     * @param username
+     * @param now
+     * @return
+     */
+    @Select("select count(*) from course_order where cid in (select id from course_main where username=#{username}) and otime like CONCAT('%', #{now}, '%')")
+    Integer getOrderCountNow(@Param("username") String username, @Param("now") String now);
+
+    /**
+     * 根据订单状态获取指定用户的订单数据
+     * @param cid
+     * @param username
+     * @param state
+     * @return
+     */
+    @Select("select * from course_order where cid=#{cid} and username=#{username} and state=#{state}")
+    CourseOrder getByUserAndState(@Param("cid") Integer cid, @Param("username") String username, @Param("state") Integer state);
 }

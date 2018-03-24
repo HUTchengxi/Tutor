@@ -61,8 +61,43 @@ public class CourseCMServiceImpl implements CourseCMService {
      * @return
      */
     @Override
-    public Integer subMyCommand(Integer cid, String command, String username) {
+    public Integer subMyCommand(Integer cid, String command, Integer score, String username) {
 
-        return courseCMMapper.subMyCommand(cid, command, username);
+        return courseCMMapper.subMyCommand(cid, command, score, username);
+    }
+
+    /**
+     * 获取指定用户的课程今日评论总数
+     * @param username
+     * @param now
+     * @return
+     */
+    @Override
+    public Integer getCommandCountNow(String username, String now) {
+
+        return courseCMMapper.getCommandCountNow(username, now);
+    }
+
+    /**
+     * 获取家教的课程今日评分平均值
+     * @param username
+     * @param now
+     * @return
+     */
+    @Override
+    public Double getScoreAvgNow(String username, String now) {
+
+        return courseCMMapper.getScoreAvgNow(username, now);
+    }
+
+    /**
+     * 获取当前用户的课程评论数据
+     * @param username
+     * @return
+     */
+    @Override
+    public List<CourseCommand> loadMyCommandInfo(String username) {
+
+        return courseCMMapper.loadMyCommandInfo(username);
     }
 }

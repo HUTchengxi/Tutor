@@ -206,8 +206,16 @@
                                 <!--</div>-->
                                 <!--</li>-->
                                 <!--</ul>-->
+                                <!--<p class='none'>只有购买的用户才能进行评价哦！</p>-->
                                 <!--<p class='none'>您好，发表评价前请先<a href="/forward_con/gologin" target="_blank">登录</a>！</p>-->
                                 <!--<p class="command" contenteditable="true">说点什么...</p>-->
+                                <!--<p class="score" data-score="0">课程评分：-->
+                                    <!--<span class="glyphicon glyphicon-star-empty s1" data-score="1"></span>-->
+                                    <!--<span class="glyphicon glyphicon-star-empty s2" data-score="2"></span>-->
+                                    <!--<span class="glyphicon glyphicon-star-empty s3" data-score="3"></span>-->
+                                    <!--<span class="glyphicon glyphicon-star-empty s4" data-score="4"></span>-->
+                                    <!--<span class="glyphicon glyphicon-star-empty s5" data-score="5"></span>-->
+                                <!--</p>-->
                                 <!--<p class="info">&nbsp;</p>-->
                                 <!--<button type="button" class="subcommand btn btn-danger">发表</button>-->
                             </div>
@@ -216,6 +224,19 @@
                 </div>
             </div>
             <style>
+                .com-main .score{
+                    margin-top: 10px;
+                    text-align: center;
+                }
+                .com-main .score span.glyphicon-star-empty{
+                    color: #808080ad;
+                }
+                .com-main .score span.glyphicon-star{
+                    color: #ff9900;
+                }
+                .com-main .score span:hover{
+                    cursor: pointer;
+                }
                 #tutorinfo .info-main{width: 80%; margin: auto; background: #f3f5f7;}
                 #tutorinfo .info-main ul{width:  86%;margin: 5% auto;padding: 3% 0px;}
                 #tutorinfo .info-main ul li:nth-child(1){background: url("/images/user/face/bg.png") no-repeat center center; background-size: 100% 100%; width: 20%;
@@ -260,7 +281,7 @@
                 #usercommand #mycommand p.none a{color: red; text-decoration: none;}
                 #usercommand #mycommand p.command{width: 50%;margin:  auto;border: 1px solid red;text-align:  left;padding: 3px 5px;
                     height: 127px;color: grey;border-radius:  5%;}
-                #usercommand #mycommand p.info{width: 23%;margin-left: 49%;position:  relative;top: 24px; color: red; }
+                #usercommand #mycommand p.info{width: 23%;margin-left: 49%;position:  relative;top: 6px; color: red; }
                 #usercommand #mycommand button{width: 8%;margin-left:  67%;}
 
                 #usercommand p.msg{width: 90%; margin: auto; height: 30px; line-height: 30px; border-bottom: 1px solid #80808054;}

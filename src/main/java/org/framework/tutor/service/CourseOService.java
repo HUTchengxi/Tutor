@@ -80,4 +80,21 @@ public interface CourseOService {
      * @return
      */
     CourseOrder getByIdAndUser(String username, Integer oid);
+
+    /**
+     * 获取家教的课程订单总数
+     * @param username
+     * @param now
+     * @return
+     */
+    Integer getOrderCountNow(String username, String now);
+
+    /**
+     * 根据状态获取指定用户的订单相关数据
+     * @param cid
+     * @param username
+     * @param state
+     * @return
+     */
+    CourseOrder getByUserAndState(Integer cid, String username, Integer state);
 }

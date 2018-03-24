@@ -125,4 +125,29 @@ public class CourseOServiceImpl implements CourseOService {
 
         return courseOMapper.getByIdAndUser(username, oid);
     }
+
+    /**
+     * 获取家教的课程订单总数
+     * @param username
+     * @param now
+     * @return
+     */
+    @Override
+    public Integer getOrderCountNow(String username, String now) {
+
+        return courseOMapper.getOrderCountNow(username, now);
+    }
+
+    /**
+     * 根据状态获取指定用户的订单数据
+     * @param cid
+     * @param username
+     * @param state
+     * @return
+     */
+    @Override
+    public CourseOrder getByUserAndState(Integer cid, String username, Integer state) {
+
+        return courseOMapper.getByUserAndState(cid, username, state);
+    }
 }

@@ -258,7 +258,10 @@ create table publish_log(
 select count(*) from course_collect where cid in (select id from course_main where username="chengxi") and coltime like '2018-03-22%';
 
 #今日我的课程评论了多少次
-select count(*) from coutse_command where cid in(select id from course_main where username=#{username} and ctim like CONCAT('%', #{now}, '%'))
+select count(*) from course_command where cid in (select id from course_main where username=#{username}) and ctime like CONCAT('%', #{now}, '%')
+
+#今日我的课程下单了多少次
+select count(*) from course_order where cid in (select id from course_main where username=#{username}) and otime like CONCAT('%', #{NOW}, '%')
 
 #修改了user表的主键为username
 

@@ -17,6 +17,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -306,6 +307,30 @@ public class CourseOrder {
                 }
             }
         }
+
+        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.flush();
+        writer.close();
+    }
+
+    /**
+     * 获取家教的课程订单总数
+     * @param request
+     * @param response
+     * @throws IOException
+     */
+    @RequestMapping("/getordercount")
+    public void getOrderCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        PrintWriter writer = response.getWriter();
+        HttpSession session = request.getSession();
+        String username = (String) session.getAttribute("username");
+        String res = null;
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String now = simpleDateFormat.format(new Date());
+
+        res = "{\"count\": \""+courseOService.getOrderCountNow(username, now)+"\"}";
 
         writer.print(new JsonParser().parse(res).getAsJsonObject());
         writer.flush();
