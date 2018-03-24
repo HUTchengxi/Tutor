@@ -6,50 +6,24 @@
     </artifacts-to-build>
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" line="253" mnemonic="3" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" line="265" mnemonic="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf479440-431d-499c-9612-40c14de1a166" name="Default" comment="更新到2.7版本，可查看2.x版本日志文件">
+    <list default="true" id="bf479440-431d-499c-9612-40c14de1a166" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CommandStarController.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/CommandStarService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/CommandStarServiceImpl.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseCommand.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseCommand.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseLog.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseLog.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseOrder.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseOrder.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/CourseLog.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/CourseLog.java" />
+      <change beforePath="$PROJECT_DIR$/src/generatorConfig.xml" afterPath="$PROJECT_DIR$/src/generatorConfig.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.x版本" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/CourseCMMapper.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/CourseCMMapper.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/CourseOMapper.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/CourseOMapper.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/CourseCMService.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/CourseCMService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/CourseOService.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/CourseOService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/CourseCMServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/CourseCMServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/CourseOServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/CourseOServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/tutor/index.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/tutor/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/mycourse/mycourse.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/mycourse/mycourse.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/order/mycart.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/order/mycart.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/order/myorder.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/order/myorder.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.x版本" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.x版本" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/rank.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/rank.js" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/mycourse.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/mycourse.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/order/mycart.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/order/mycart.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/order/myorder.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/order/myorder.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/rank.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/rank.html" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/showcourse.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/showcourse.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sysconfig/tutor/index.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/sysconfig/tutor/index.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/CourseCommand.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/CourseCommand.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/CourseLog.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/CourseLog.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/CourseOrder.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/CourseOrder.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/domain/CourseLog.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/domain/CourseLog.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/mapper/CourseCMMapper.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/mapper/CourseCMMapper.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/mapper/CourseOMapper.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/mapper/CourseOMapper.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/CourseCMService.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/CourseCMService.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/CourseOService.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/CourseOService.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/impl/CourseCMServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/impl/CourseCMServiceImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/impl/CourseOServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/impl/CourseOServiceImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/mycourse/mycourse.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/mycourse/mycourse.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/order/mycart.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/order/mycart.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/order/myorder.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/order/myorder.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/rank.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/rank.js" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/showcourse.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/showcourse.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/mycourse.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/mycourse.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/order/mycart.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/order/mycart.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/order/myorder.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/order/myorder.html" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/rank.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/rank.html" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/home/showcourse.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/showcourse.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -72,124 +46,9 @@
       <file leaf-file-name="2.x版本" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.x版本">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-593">
-              <caret line="42" column="13" lean-forward="false" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+            <state relative-caret-position="184">
+              <caret line="60" column="20" lean-forward="true" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="20" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mycourse.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home/mycourse.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="77" column="100" lean-forward="false" selection-start-line="77" selection-start-column="100" selection-end-line="77" selection-end-column="100" />
-              <folding>
-                <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mycourse.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/mycourse/mycourse.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="763">
-              <caret line="598" column="58" lean-forward="true" selection-start-line="598" selection-start-column="58" selection-end-line="598" selection-end-column="58" />
-              <folding>
-                <element signature="e#93#836#0" expanded="false" />
-                <element signature="e#926#2683#0" expanded="false" />
-                <element signature="e#2773#3304#0" expanded="false" />
-                <element signature="e#3450#4272#0" expanded="false" />
-                <element signature="e#4477#4801#0" expanded="false" />
-                <element signature="e#4907#5101#0" expanded="false" />
-                <element signature="e#5229#5676#0" expanded="false" />
-                <element signature="e#5784#6043#0" expanded="false" />
-                <element signature="e#6230#6604#0" expanded="false" />
-                <element signature="e#6729#9706#0" expanded="false" />
-                <element signature="e#9831#9897#0" expanded="false" />
-                <element signature="e#10022#10778#0" expanded="false" />
-                <element signature="e#11009#11094#0" expanded="false" />
-                <marker date="1521889996874" expanded="true" signature="15670:15676" ph="&amp;nbsp;" />
-                <marker date="1521889996874" expanded="true" signature="15676:15682" ph="&amp;nbsp;" />
-                <marker date="1521889996874" expanded="true" signature="15682:15688" ph="&amp;nbsp;" />
-                <marker date="1521889996874" expanded="true" signature="15688:15694" ph="&amp;nbsp;" />
-                <marker date="1521889996874" expanded="true" signature="19027:19033" ph="&amp;nbsp;" />
-                <marker date="1521889996874" expanded="true" signature="19133:19141" ph="&amp;##xe63f;" />
-                <marker date="1521889996874" expanded="true" signature="19750:19758" ph="&amp;##xe63f;" />
-                <marker date="1521889996874" expanded="true" signature="20552:20560" ph="&amp;##xe61a;" />
-                <marker date="1521889996874" expanded="true" signature="20752:20760" ph="&amp;##xe63f;" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CourseCommand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="704">
-              <caret line="298" column="62" lean-forward="false" selection-start-line="298" selection-start-column="62" selection-end-line="298" selection-end-column="62" />
-              <folding>
-                <element signature="method#getCourseCommand#0;class#CourseCommand#0" expanded="false" />
-                <element signature="method#getCourseCommandGod#0;class#CourseCommand#0" expanded="false" />
-                <element signature="method#subMyCommand#0;class#CourseCommand#0" expanded="false" />
-                <element signature="method#getCommandCount#0;class#CourseCommand#0" expanded="false" />
-                <element signature="method#getScoreAvg#0;class#CourseCommand#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mycart.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/order/mycart.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="87" column="25" lean-forward="true" selection-start-line="87" selection-start-column="25" selection-end-line="87" selection-end-column="25" />
-              <folding>
-                <marker date="1521891244465" expanded="true" signature="1283:1294" ph="..." />
-                <marker date="1521891244465" expanded="true" signature="3315:3330" ph="..." />
-                <marker date="1521891244465" expanded="true" signature="3415:3428" ph="..." />
-                <marker date="1521891244465" expanded="true" signature="3482:3493" ph="..." />
-                <marker date="1521891244465" expanded="true" signature="5491:5499" ph="&amp;##xe69c;" />
-                <marker date="1521891244465" expanded="true" signature="6358:6366" ph="&amp;##xe618;" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="myorder.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home/order/myorder.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="284" column="5" lean-forward="true" selection-start-line="284" selection-start-column="5" selection-end-line="284" selection-end-column="5" />
-              <folding>
-                <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mycart.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home/order/mycart.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="287" column="56" lean-forward="true" selection-start-line="287" selection-start-column="56" selection-end-line="287" selection-end-column="56" />
-              <folding>
-                <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -197,9 +56,98 @@
       <file leaf-file-name="1.21.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="262" column="13" lean-forward="true" selection-start-line="262" selection-start-column="13" selection-end-line="262" selection-end-column="13" />
+            <state relative-caret-position="517">
+              <caret line="253" column="17" lean-forward="true" selection-start-line="253" selection-start-column="17" selection-end-line="253" selection-end-column="17" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommandStarController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CommandStarController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="57" column="51" lean-forward="true" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommandStarService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/CommandStarService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="283">
+              <caret line="19" column="49" lean-forward="false" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommandStarServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/CommandStarServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-28">
+              <caret line="24" column="14" lean-forward="true" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommandStarMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/CommandStarMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="274">
+              <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="showcourse.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home/showcourse.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="740">
+              <caret line="154" column="65" lean-forward="false" selection-start-line="154" selection-start-column="65" selection-end-line="154" selection-end-column="65" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="showcourse.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="416">
+              <caret line="449" column="70" lean-forward="false" selection-start-line="449" selection-start-column="70" selection-end-line="449" selection-end-column="70" />
+              <folding>
+                <element signature="e#91#834#0" expanded="false" />
+                <element signature="e#902#5491#0" expanded="false" />
+                <element signature="e#5581#6073#0" expanded="false" />
+                <element signature="e#6246#7606#0" expanded="false" />
+                <element signature="e#7747#8805#0" expanded="false" />
+                <element signature="e#9006#10714#0" expanded="false" />
+                <element signature="e#10827#12392#0" expanded="false" />
+                <element signature="e#12483#12880#0" expanded="false" />
+                <element signature="e#13024#14199#0" expanded="false" />
+                <element signature="e#21820#26893#0" expanded="false" />
+                <marker date="1521901119100" expanded="true" signature="17328:17334" ph="&amp;nbsp;" />
+                <marker date="1521901119100" expanded="true" signature="17334:17340" ph="&amp;nbsp;" />
+                <marker date="1521901119100" expanded="true" signature="17340:17346" ph="&amp;nbsp;" />
+                <marker date="1521901119100" expanded="true" signature="17346:17352" ph="&amp;nbsp;" />
+                <marker date="1521901119100" expanded="true" signature="28695:28701" ph="&amp;nbsp;" />
+                <marker date="1521901119100" expanded="true" signature="30049:30055" ph="&amp;nbsp;" />
+                <marker date="1521901119100" expanded="true" signature="30055:30061" ph="&amp;nbsp;" />
+                <marker date="1521901119100" expanded="true" signature="30061:30067" ph="&amp;nbsp;" />
+                <marker date="1521901119100" expanded="true" signature="30067:30073" ph="&amp;nbsp;" />
+                <marker date="1521901119100" expanded="true" signature="38139:38147" ph="&amp;##xe651;" />
+                <marker date="1521901119100" expanded="true" signature="38218:38224" ph="&amp;nbsp;" />
+                <marker date="1521901119100" expanded="true" signature="38224:38230" ph="&amp;nbsp;" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -243,12 +191,12 @@
       <find>binddiv</find>
       <find>box</find>
       <find>glyphicon-star</find>
-      <find>none</find>
       <find>header</find>
       <find>absolute</find>
       <find>ordermain</find>
       <find>.ordermain</find>
       <find>.cart</find>
+      <find>none</find>
     </findStrings>
     <replaceStrings>
       <replace>/images/welcome/personal</replace>
@@ -267,15 +215,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/sysconfig/tutor/index2.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/layui-admin/css/main.css" />
-        <option value="$PROJECT_DIR$/src/generatorConfig.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/PublishLogKey.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/TutorsysBtns.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/TutorBtns.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/PublishType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/PublishLog.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/PublishTypeService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/PublishTypeServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/PublishTypeMapper.java" />
@@ -297,14 +236,11 @@
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/CourseCServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/CourseCMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseOrder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/sysconfig/tutor/index.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/tutor/index.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/home/showcourse.html" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/CourseOService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/CourseOServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/CourseOMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/CourseLog.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseLog.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/CourseCMService.java" />
@@ -318,6 +254,18 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/order/myorder.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/order/mycart.html" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.0版本" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/home/rank.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/rank.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/home/showcourse.html" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" />
+        <option value="$PROJECT_DIR$/src/generatorConfig.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/CommandStar.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/CommandStarService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/CommandStarMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/CommandStarServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CommandStarController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.x版本" />
       </list>
     </option>
   </component>
@@ -711,16 +659,6 @@
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="home" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="order" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -743,7 +681,7 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="RequestMappingsPanelOrder2" value="2" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/gitrepo/Tutor/src/main/java/org/framework/tutor/controller/Register.java" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/gitrepo/Tutor/src/main/resources/static/js/welcome/rank.js" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../cashbox-console" />
     <property name="jsx.switch.disabled" value="true" />
   </component>
@@ -775,7 +713,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main2">
+  <component name="RunManager" selected="Application.ReverseProject">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -1061,8 +999,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Main2" />
-        <item index="1" class="java.lang.String" itemvalue="Application.ReverseProject" />
+        <item index="0" class="java.lang.String" itemvalue="Application.ReverseProject" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Main2" />
         <item index="2" class="java.lang.String" itemvalue="Application.CommonUtil" />
         <item index="3" class="java.lang.String" itemvalue="Application.test" />
         <item index="4" class="java.lang.String" itemvalue="Maven.tutor [package]" />
@@ -1178,7 +1116,7 @@
       <workItem from="1521689653998" duration="1138000" />
       <workItem from="1521724659087" duration="6704000" />
       <workItem from="1521767486355" duration="33000" />
-      <workItem from="1521869871306" duration="19992000" />
+      <workItem from="1521869871306" duration="24229000" />
     </task>
     <task id="LOCAL-00001" summary="将毕设项目提交到gitlab">
       <created>1520393481249</created>
@@ -1411,11 +1349,18 @@
       <option name="project" value="LOCAL" />
       <updated>1521731257327</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="更新到2.7版本，可查看2.x版本日志文件">
+      <created>1521892309802</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1521892309802</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="786507000" />
+    <option name="totallyTimeSpent" value="790744000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1471,7 +1416,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="解决关键字课程选择显示全部的bug" />
     <MESSAGE value="解决了主类别选择为空时再次点击搜索时的课程类别的消失" />
     <MESSAGE value="解决了课程搜索为空时的提示内容不断append的bug" />
     <MESSAGE value="实现了课程的分页浏览，并解决了三级搜索的undefined的bug" />
@@ -1496,7 +1440,8 @@
     <MESSAGE value="家教后台管理界面的初步设置" />
     <MESSAGE value="通过layui简单设计了家教后台管理系统的首页" />
     <MESSAGE value="实现了历史版本记录/常用链接动态实现" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现了历史版本记录/常用链接动态实现" />
+    <MESSAGE value="更新到2.7版本，可查看2.x版本日志文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新到2.7版本，可查看2.x版本日志文件" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1505,72 +1450,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/util/ReverseProject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-361">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="33" column="24" lean-forward="true" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/layui-admin/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="112" column="20" lean-forward="false" selection-start-line="112" selection-start-column="20" selection-end-line="112" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="749">
-          <caret line="247" column="48" lean-forward="false" selection-start-line="247" selection-start-column="48" selection-end-line="247" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/TutorsysBtns.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/TutorBtns.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/PublishType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/PublishLMapper.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/Rank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="59" column="48" lean-forward="true" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/PublishLogService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="13" column="18" lean-forward="false" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/PublishLogServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="638">
@@ -1792,22 +1671,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="262" column="13" lean-forward="true" selection-start-line="262" selection-start-column="13" selection-end-line="262" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home/showcourse.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1961">
-          <caret line="277" column="85" lean-forward="true" selection-start-line="277" selection-start-column="85" selection-end-line="277" selection-end-column="85" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseLog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="801">
@@ -1837,51 +1700,6 @@
         <state relative-caret-position="591">
           <caret line="61" column="20" lean-forward="false" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="20" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home/mycourse.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="77" column="100" lean-forward="false" selection-start-line="77" selection-start-column="100" selection-end-line="77" selection-end-column="100" />
-          <folding>
-            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="412" column="43" lean-forward="true" selection-start-line="412" selection-start-column="43" selection-end-line="412" selection-end-column="43" />
-          <folding>
-            <element signature="e#91#834#0" expanded="false" />
-            <element signature="e#902#5491#0" expanded="false" />
-            <element signature="e#5581#6073#0" expanded="false" />
-            <element signature="e#6246#7606#0" expanded="false" />
-            <element signature="e#7747#8805#0" expanded="false" />
-            <element signature="e#9006#10714#0" expanded="false" />
-            <element signature="e#10827#12392#0" expanded="false" />
-            <element signature="e#12483#12880#0" expanded="false" />
-            <element signature="e#13024#14199#0" expanded="false" />
-            <element signature="e#19443#24516#0" expanded="false" />
-            <marker date="1521879878811" expanded="true" signature="26318:26324" ph="&amp;nbsp;" />
-            <marker date="1521879878811" expanded="true" signature="27672:27678" ph="&amp;nbsp;" />
-            <marker date="1521879878811" expanded="true" signature="27678:27684" ph="&amp;nbsp;" />
-            <marker date="1521879878811" expanded="true" signature="27684:27690" ph="&amp;nbsp;" />
-            <marker date="1521879878811" expanded="true" signature="27690:27696" ph="&amp;nbsp;" />
-            <marker date="1521879878811" expanded="true" signature="35762:35770" ph="&amp;##xe651;" />
-            <marker date="1521879878811" expanded="true" signature="35841:35847" ph="&amp;nbsp;" />
-            <marker date="1521879878811" expanded="true" signature="35847:35853" ph="&amp;nbsp;" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1930,20 +1748,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="298" column="62" lean-forward="false" selection-start-line="298" selection-start-column="62" selection-end-line="298" selection-end-column="62" />
-          <folding>
-            <element signature="method#getCourseCommand#0;class#CourseCommand#0" expanded="false" />
-            <element signature="method#getCourseCommandGod#0;class#CourseCommand#0" expanded="false" />
-            <element signature="method#subMyCommand#0;class#CourseCommand#0" expanded="false" />
-            <element signature="method#getCommandCount#0;class#CourseCommand#0" expanded="false" />
-            <element signature="method#getScoreAvg#0;class#CourseCommand#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/order/mycart.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="444">
@@ -1977,17 +1781,210 @@
           <caret line="287" column="56" lean-forward="true" selection-start-line="287" selection-start-column="56" selection-end-line="287" selection-end-column="56" />
           <folding>
             <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home/mycourse.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="77" column="100" lean-forward="false" selection-start-line="77" selection-start-column="100" selection-end-line="77" selection-end-column="100" />
+          <folding>
+            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/rank.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="227" column="33" lean-forward="false" selection-start-line="227" selection-start-column="33" selection-end-line="227" selection-end-column="33" />
+          <folding>
+            <element signature="e#90#790#0" expanded="false" />
+            <element signature="e#859#5448#0" expanded="false" />
+            <element signature="e#5536#6061#0" expanded="false" />
+            <element signature="e#6205#10804#0" expanded="false" />
+            <element signature="e#10964#11101#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home/rank.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5712">
+          <caret line="315" column="60" lean-forward="true" selection-start-line="315" selection-start-column="60" selection-end-line="315" selection-end-column="60" />
+          <folding>
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#header#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h1#0;n#header#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#nav#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#nav#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#nav#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#nav#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#li#1;n#ul#0;n#nav#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#nav#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#nav#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#li#1;n#ul#0;n#nav#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#nav#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#li#1;n#ul#0;n#nav#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#nav#0;n#div#0;n#li#3;n#ul#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#li#1;n#ul#0;n#nav#0;n#div#0;n#li#3;n#ul#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#li#3;n#ul#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#nav#0;n#div#0;n#li#4;n#ul#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#li#1;n#ul#0;n#nav#0;n#div#0;n#li#4;n#ul#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-445">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/generatorConfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="51" column="62" lean-forward="true" selection-start-line="51" selection-start-column="62" selection-end-line="51" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/util/ReverseProject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-50">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="68" column="77" lean-forward="true" selection-start-line="68" selection-start-column="77" selection-end-line="68" selection-end-column="77" />
+          <folding>
+            <element signature="method#getCourseCommandGod#0;class#CourseCommand#0" expanded="false" />
+            <element signature="method#selMyCommand#0;class#CourseCommand#0" expanded="false" />
+            <element signature="method#subMyCommand#0;class#CourseCommand#0" expanded="false" />
+            <element signature="method#getCommandCount#0;class#CourseCommand#0" expanded="false" />
+            <element signature="method#getScoreAvg#0;class#CourseCommand#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/CommandStar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="517">
+          <caret line="253" column="17" lean-forward="true" selection-start-line="253" selection-start-column="17" selection-end-line="253" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="449" column="70" lean-forward="false" selection-start-line="449" selection-start-column="70" selection-end-line="449" selection-end-column="70" />
+          <folding>
+            <element signature="e#91#834#0" expanded="false" />
+            <element signature="e#902#5491#0" expanded="false" />
+            <element signature="e#5581#6073#0" expanded="false" />
+            <element signature="e#6246#7606#0" expanded="false" />
+            <element signature="e#7747#8805#0" expanded="false" />
+            <element signature="e#9006#10714#0" expanded="false" />
+            <element signature="e#10827#12392#0" expanded="false" />
+            <element signature="e#12483#12880#0" expanded="false" />
+            <element signature="e#13024#14199#0" expanded="false" />
+            <element signature="e#21820#26893#0" expanded="false" />
+            <marker date="1521901119100" expanded="true" signature="17328:17334" ph="&amp;nbsp;" />
+            <marker date="1521901119100" expanded="true" signature="17334:17340" ph="&amp;nbsp;" />
+            <marker date="1521901119100" expanded="true" signature="17340:17346" ph="&amp;nbsp;" />
+            <marker date="1521901119100" expanded="true" signature="17346:17352" ph="&amp;nbsp;" />
+            <marker date="1521901119100" expanded="true" signature="28695:28701" ph="&amp;nbsp;" />
+            <marker date="1521901119100" expanded="true" signature="30049:30055" ph="&amp;nbsp;" />
+            <marker date="1521901119100" expanded="true" signature="30055:30061" ph="&amp;nbsp;" />
+            <marker date="1521901119100" expanded="true" signature="30061:30067" ph="&amp;nbsp;" />
+            <marker date="1521901119100" expanded="true" signature="30067:30073" ph="&amp;nbsp;" />
+            <marker date="1521901119100" expanded="true" signature="38139:38147" ph="&amp;##xe651;" />
+            <marker date="1521901119100" expanded="true" signature="38218:38224" ph="&amp;nbsp;" />
+            <marker date="1521901119100" expanded="true" signature="38224:38230" ph="&amp;nbsp;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home/showcourse.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="740">
+          <caret line="154" column="65" lean-forward="false" selection-start-line="154" selection-start-column="65" selection-end-line="154" selection-end-column="65" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/CommandStarService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="19" column="49" lean-forward="false" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/CommandStarMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/CommandStarServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-28">
+          <caret line="24" column="14" lean-forward="true" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CommandStarController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="57" column="51" lean-forward="true" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.x版本">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-593">
-          <caret line="42" column="13" lean-forward="false" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+        <state relative-caret-position="184">
+          <caret line="60" column="20" lean-forward="true" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="20" />
           <folding />
         </state>
       </provider>

@@ -1,529 +1,964 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>勤成家教网---课程分类--让你更好的选择</title>
-        <link rel="icon" href="/images/logo/web_logo.ico" type="images/x-icon" />
+<head>
+    <meta charset="UTF-8"/>
+    <title>勤成家教网---课程分类--让你更好的选择</title>
+    <link rel="icon" href="/images/logo/web_logo.ico" type="images/x-icon"/>
 
-        <!--bootstrap css-->
-        <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" />
-        <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.css" />
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.css"/>
 
-        <!--layui css-->
-        <link rel="stylesheet" href="/layui/css/layui.css" />
-    </head>
-    <body style="font-size: 16px;">
-        <!--头部-->
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <div class="container-fluid" style="padding-top: 13px;">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="/forward_con/welcome">勤成家教网</a>
-                    <button type="button" class="navbar-toggle" data-toggle="collapse"
-                            data-target="#navbar-collapse">
-                        <span class="sr-only">切换导航</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse" id="navbar-collapse" style="">
-                    <ul class="nav navbar-nav">
-                        <li style="margin:0 10px;"><a href="/forward_con/welcome">首页</a></li>
-                        <li style="margin:0 10px;" class="active"><a href="/forward_con/classify">分类</a></li>
-                        <li style="margin:0 10px;"><a href="/forward_con/gabble" target="_blank">七嘴八舌</a></li>
-                        <li style="margin:0 10px;"><a href="/forward_con/gorank">勤成榜</a></li>
-                        <li style="margin:0 10px;"><a href="/forward_con/contact">联系我们</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <!--主要内容-->
-        <div class="coursecontainer">
-            <div class="container-top">
-                <p class="collect pull-right">
-                    <a href="javascript:void(0);">
-                        <i class="layui-icon">&#xe600;</i><span data-status="1"></span>
-                    </a>
-                </p>
-                <p class="title"></p>
-                <div class="info">
-                    <ul class="clearfix">
-                        <li class="pull-left"><p>时长&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span></span></p></li>
-                        <li class="pull-left">开课人数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span></span></li>
-                        <li class="pull-left">已订人数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span></span></li>
-                    </ul>
-                </div>
-                <div class="sale">
-                    <p class="price"></p>
-                    <div>
-                        <a href="javascript:void(0);" class="buynow">立即订购</a>
-                        <a href="javascript:void(0);" class="addcart"><i class="layui-icon">&#xe657;</i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="bar">
-                <ul class="clearfix nav nav-tabs">
-                    <li class="pull-left active">
-                        <a href="#coursedesc" data-toggle="tab">
-                            课程概述
-                        </a>
-                    </li>
-                    <li class="pull-left">
-                        <a href="#tutorinfo" data-toggle="tab">
-                            讲师介绍
-                        </a>
-                    </li>
-                    <li class="pull-left">
-                        <a href="#coursechapter" data-toggle="tab">
-                            章节目录
-                        </a>
-                    </li>
-                    <li class="pull-left">
-                        <a href="#usercommand" data-toggle="tab">
-                            用户评价
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="info-main tab-content" style="margin-bottom: 8%;">
-                <div id="coursedesc" class="tab-pane fade in active">dddd</div>
-                <div id="tutorinfo" class="tab-pane fade">
-                    <div class="info-main">
-                        <ul class="clearfix">
-                            <li class="pull-left"></li>
-                            <li class="pull-left">
-                                <div class="main">
-                                    <h3>勤成网认证家教</h3>
-                                    <h5></h5>
-                                    <p></p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div id="coursechapter" class="tab-pane fade">
-                    <!--<div class="chapter">-->
-                        <!--<span class="layui-icon">&#xe651;</span>-->
-                        <!--<h4>第一章&nbsp;&nbsp;<span>课程介绍</span></h4>-->
-                        <!--<p>jpoasdasdasdasdasdasdasdasdasdasd</p>-->
-                    <!--</div>-->
-                </div>
-                <div id="usercommand" class="tab-pane fade">
-                    <div class="header">
-                        <ul class="clearfix">
-                            <!--<li class="pull-left">-->
-                                <!--<div class="hot-bg">-->
-                                    <!--<p>热评推荐</p>-->
-                                <!--</div>-->
-                                <!--<div class="hot-show">-->
-                                    <!--<div class="face">-->
-                                    <!--</div>-->
-                                    <!--<h5>小白小白你好啦</h5>-->
-                                    <!--<p class="star">-->
-                                        <!--<span class="glyphicon glyphicon-star"></span>-->
-                                        <!--<span class="glyphicon glyphicon-star"></span>-->
-                                        <!--<span class="glyphicon glyphicon-star"></span>-->
-                                        <!--<span class="glyphicon glyphicon-star"></span>-->
-                                        <!--<span class="glyphicon glyphicon-star"></span>-->
-                                    <!--</p>-->
-                                    <!--<div class="info">-->
-                                        <!--<p>-->
-                                            <!--学到很多，现在导师接了一个项目，就是要用java开发，看完师兄视频感觉可以开发出来。尤其是数据库那一块视频讲解jpa和mybatis解我疑惑了，视图准备看看慕课的freemarker，期待师兄的spring cloud视频，很好奇这一块，期待docker神器，期待微服-->
-                                        <!--</p>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                            <!--</li>-->
-                        </ul>
-                    </div>
-                    <p class="msg clearfix"><a>全部评价&nbsp;&nbsp;<span></span></a>
-                        <a class="pull-right sub" href="#mycommand" data-toggle="tab">发表评价</a>
-                        <a class="pull-right ret" href="#allcommand" data-toggle="tab" title="返回全部评价"><i class="layui-icon">&#xe65c;</i></a>
-                    </p>
-                    <div class="info-main tab-content">
-                        <div id="allcommand"  class=" tab-pane fade in active">
-                            <div class="com-main">
-                                <!--<ul class="clearfix">-->
-                                    <!--<li class="pull-left"></li>-->
-                                    <!--<li class="pull-left">-->
-                                        <!--<div class="main-show">-->
-                                            <!--<p class="main-top">-->
-                                                <!--小白小白你好呀&nbsp;&nbsp;&nbsp;&nbsp;-->
-                                                <!--<span class="glyphicon glyphicon-star"></span>-->
-                                                <!--<span class="glyphicon glyphicon-star"></span>-->
-                                                <!--<span class="glyphicon glyphicon-star"></span>-->
-                                                <!--<span class="glyphicon glyphicon-star"></span>-->
-                                                <!--<span class="glyphicon glyphicon-star"></span>-->
-                                            <!--</p>-->
-                                            <!--<p class="main-info">前边看的挺抓狂的，到了后边越来越精彩。下一趟车票我先预定了。很实用的课程，老哥幸苦了。。。。下期再见。</p>-->
-                                            <!--<p class="ctime">时间 : 2018-02-18 08:30:00</p>-->
-                                            <!--<div class="main-reply">-->
-                                                <!--<p class="reply">-->
-                                                    <!--[回复<a href="javascript:void(0);" title="用户名为1212121212">李晨</a>]-->
-                                                    <!--<span> : 打大苏打啊实打实大苏打撒撒大大大大大大大大大大水水水水水水水水水水旦的大苏打的</span>-->
-                                                <!--</p>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                    <!--</li>-->
-                                <!--</ul>-->
-                            </div>
-                            <div class="pageshow">
-                                <ul class="pagination">
-                                    <!--<li class="disabled first"><a href="javascript:void(0);">首页</a></li>-->
-                                    <!--<li class="disabled prev"><a href="#">上一页</a></li>-->
-                                    <!--<li class="active"><a href="#">1</a></li>-->
-                                    <!--<li><a href="#">2</a></li>-->
-                                    <!--<li><a href="#">3</a></li>-->
-                                    <!--<li><a href="# next">下一页</a></li>-->
-                                    <!--<li><a href="# last">尾页</a></li>-->
-                                </ul>
-                            </div>
-                        </div>
-                        <div id="mycommand" class="tab-pane fade">
-                            <div class="com-main">
-                                <!--<ul class="clearfix">-->
-                                <!--<li class="pull-left"></li>-->
-                                <!--<li class="pull-left">-->
-                                <!--<div class="main-show">-->
-                                <!--<p class="main-top">-->
-                                <!--小白小白你好呀&nbsp;&nbsp;&nbsp;&nbsp;-->
-                                <!--<span class="glyphicon glyphicon-star"></span>-->
-                                <!--<span class="glyphicon glyphicon-star"></span>-->
-                                <!--<span class="glyphicon glyphicon-star"></span>-->
-                                <!--<span class="glyphicon glyphicon-star"></span>-->
-                                <!--<span class="glyphicon glyphicon-star"></span>-->
-                                <!--</p>-->
-                                <!--<p class="main-info">前边看的挺抓狂的，到了后边越来越精彩。下一趟车票我先预定了。很实用的课程，老哥幸苦了。。。。下期再见。</p>-->
-                                <!--<p class="ctime">时间 : 2018-02-18 08:30:00</p>-->
-                                <!--<div class="main-reply">-->
-                                <!--<p class="reply">-->
-                                <!--[回复<a href="javascript:void(0);" title="用户名为1212121212">李晨</a>]-->
-                                <!--<span> : 打大苏打啊实打实大苏打撒撒大大大大大大大大大大水水水水水水水水水水旦的大苏打的</span>-->
-                                <!--</p>-->
-                                <!--</div>-->
-                                <!--</div>-->
-                                <!--</li>-->
-                                <!--</ul>-->
-                                <!--<p class='none'>只有购买的用户才能进行评价哦！</p>-->
-                                <!--<p class='none'>您好，发表评价前请先<a href="/forward_con/gologin" target="_blank">登录</a>！</p>-->
-                                <!--<p class="command" contenteditable="true">说点什么...</p>-->
-                                <!--<p class="score" data-score="0">课程评分：-->
-                                    <!--<span class="glyphicon glyphicon-star-empty s1" data-score="1"></span>-->
-                                    <!--<span class="glyphicon glyphicon-star-empty s2" data-score="2"></span>-->
-                                    <!--<span class="glyphicon glyphicon-star-empty s3" data-score="3"></span>-->
-                                    <!--<span class="glyphicon glyphicon-star-empty s4" data-score="4"></span>-->
-                                    <!--<span class="glyphicon glyphicon-star-empty s5" data-score="5"></span>-->
-                                <!--</p>-->
-                                <!--<p class="info">&nbsp;</p>-->
-                                <!--<button type="button" class="subcommand btn btn-danger">发表</button>-->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <style>
-                .com-main .score{
-                    margin-top: 10px;
-                    text-align: center;
-                }
-                .com-main .score span.glyphicon-star-empty{
-                    color: #808080ad;
-                }
-                .com-main .score span.glyphicon-star{
-                    color: #ff9900;
-                }
-                .com-main .score span:hover{
-                    cursor: pointer;
-                }
-                #tutorinfo .info-main{width: 80%; margin: auto; background: #f3f5f7;}
-                #tutorinfo .info-main ul{width:  86%;margin: 5% auto;padding: 3% 0px;}
-                #tutorinfo .info-main ul li:nth-child(1){background: url("/images/user/face/bg.png") no-repeat center center; background-size: 100% 100%; width: 20%;
-                    height: 200px; border: 1px solid white; border-radius: 50%; margin-left: 3%;}
-                #tutorinfo .info-main ul li:nth-child(2){width: 70%;}
-                #tutorinfo .info-main ul li .main{margin-left: 3%;}
-                #tutorinfo .info-main ul li .main h3{color: #f01a1a;margin: 15px 0;}
-                #tutorinfo .info-main ul li .main h5{margin-bottom: 10px; font-weight: bold;}
-                #tutorinfo .info-main ul li .main p{line-height: 28px; font-size: 14px;margin-bottom: 20px;}
-
-
-                #coursechapter .chapter{width: 80%; margin: auto;border-bottom: 1px solid #80808078;}
-                #coursechapter .chapter span.layui-icon{font-size: 2em;transform: rotate(90deg);display:  inline-block;color: black; position: relative; top: 20px;}
-                #coursechapter .chapter h4{position:  relative;left: 7%;top: -18px;font-weight:  700; width: 90%;}
-                #coursechapter .chapter p{position:  relative;left:  7%;top: -14px;width: 90%;}
-
-                #usercommand .pageshow{text-align: center;}
-
-                #usercommand .msg{position: relative;}
-                #usercommand .msg a:nth-child(1){position: relative;}
-                #usercommand .msg a.sub{display:  inline-block;background: #f83636d6;width:  8%;height: 27px;line-height:  27px;
-                    text-align:  center;color: #ffffffb5;text-decoration: none;border: 1px solid red;border-radius:  15%;}
-                #usercommand .msg a.sub:hover{color: white; background: red; text-decoration: none;}
-                #usercommand .msg a.ret{width: 4%;height: 27px;line-height:  27px;color: black; text-align:  center; font-size: 17px;
-                    font-weight: bold; border: 1px solid black; border-radius: 30%; text-decoration: none; position: absolute;
-                    right: 0; opacity: 0; display: none;}
-                #usercommand .msg a:hover{text-decoration: none;}
-                #usercommand .com-main{width: 90%; margin: 3% auto;}
-                #usercommand .com-main .none{text-align: center;color: #808080ba;}
-                #usercommand .com-main ul{margin-bottom: 3%;}
-                #usercommand .com-main ul li:nth-child(1){background: url(/images/user/face/bg.png) no-repeat center center; background-size: 100% 100%; width: 48px;
-                    height: 48px; margin: 0 2%;}
-                #usercommand .com-main ul li:nth-child(2){width: 88%;}
-                #usercommand .com-main .main-top{color: #93999f;}
-                #usercommand .com-main .main-top span{color: #ff9900;}
-                #usercommand .com-main .main-show .main-info{margin: 1% 0 2% 0;}
-                #usercommand .com-main .main-show .ctime{margin-bottom: 2%; color: #93999f; font-size: 12px;}
-                #usercommand .com-main .main-show .main-reply{background-color: #f6f6f6; padding: 20px; font-size: 12px; line-height: 24px;}
-                #usercommand .com-main .main-show .main-reply .reply{color: #f01414;}
-                #usercommand .com-main .main-show .main-reply .reply span{color: #787d82;}
-                #usercommand #mycommand p.none{clor: grey; text-align: center;}
-                #usercommand #mycommand p.none a{color: red; text-decoration: none;}
-                #usercommand #mycommand p.command{width: 50%;margin:  auto;border: 1px solid red;text-align:  left;padding: 3px 5px;
-                    height: 127px;color: grey;border-radius:  5%;}
-                #usercommand #mycommand p.info{width: 23%;margin-left: 49%;position:  relative;top: 6px; color: red; }
-                #usercommand #mycommand button{width: 8%;margin-left:  67%;}
-
-                #usercommand p.msg{width: 90%; margin: auto; height: 30px; line-height: 30px; border-bottom: 1px solid #80808054;}
-                #usercommand p.msg span{color: red;}
-
-                .coursecontainer .nav-tabs{border-bottom: none; }
-                #usercommand .header ul{position: relative; width: 90%; margin: 4% auto; margin-bottom: 3%;}
-                #usercommand .header ul li{width: 33%; background-color: #f3f5f7; border-right: 1px dashed black;}
-                #usercommand .header ul li:nth-child(3){border-right: none;}
-                #usercommand .header ul li .hot-bg{background: url("/images/welcome/classify/hot_com.png") no-repeat center center;-webkit-background-size: cover;
-                    background-size: cover; position: absolute; width: 72px; height: 72px;font-size: 1em; color: #fff; padding: 18px; font-weight: 200; text-align: center;
-                    box-sizing: border-box; line-height: 18px;}
-                #usercommand .header ul li div.face{width: 40px; height: 40px; border-radius: 50%; border: 1px solid black; background: url(/images/user/face/bg.png) no-repeat center center;
-                    background-size: 100% 100%; margin: auto; margin-top: 3%;}
-                #usercommand .header ul li h5{font-weight: 700; text-align: center; font-size: 14px;}
-                #usercommand .header ul li p.star{text-align: center; position: relative; top: 4px;}
-                #usercommand .header ul li p.star span{color: #ff9900; font-size: 12px;}
-                #usercommand .header ul li .info p{margin: 8px auto; width: 210px; height: 196px; font-size: 14px; line-height: 28px; color: #4d555d;
-                    text-overflow: ellipsis; word-break: break-all; word-wrap: break-word; overflow: hidden; display: -webkit-box;
-                    -webkit-line-clamp: 7; -webkit-box-orient: vertical;}
-            </style>
-
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel">收藏标签</h4>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <input type="text" name="txt_departmentname" class="form-control" id="txt_departmentname" placeholder="填入收藏描述" />
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>关闭</button>
-                            <button type="button" id="btn_submit" class="btn btn-primary" data-dismiss="modal"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>收藏</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!--layui css-->
+    <link rel="stylesheet" href="/layui/css/layui.css"/>
+</head>
+<body style="font-size: 16px;">
+<!--头部-->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid" style="padding-top: 13px;">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/forward_con/welcome">勤成家教网</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#navbar-collapse">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
         </div>
-
-        <!--页脚-->
-        <footer class="footer">
-            <br />
-            <!--网站地图-->
-            <div class="webmap">
-                <h4>网站地图:</h4>
-                <ul class="clearfix">
-                    <li class="pull-left">
-                        <a href="/forward_con/welcome">网站首页</a>
-                    </li>
-                    <li class="pull-left">
-                        <a href="/forward_con/classify">家教分类</a>
-                    </li>
-                    <li class="pull-left">
-                        <a href="/forward_con/gabble">用户经验总结</a>
-                    </li>
-                    <li class="pull-left">
-                        <a href="/forward_con/gorank">勤成家教榜</a>
-                    </li>
-                    <li class="pull-left">
-                        <a href="/forward_con/contact">联系我们</a>
-                    </li>
-                    <li class="pull-left">
-                        <a href="/forward_con/personal">个人信息</a>
-                    </li>
-                </ul>
-            </div>
-            <!--友情链接-->
-            <div class="link">
-                <h4>友情链接:</h4>
-                <ul class="clearfix">
-                    <li class="pull-left">
-                        <a href="">CSDN博客</a>
-                    </li>
-                    <li class="pull-left">
-                        <a href="">前端网</a>
-                    </li>
-                    <li class="pull-left">
-                        <a href="">慕课网</a>
-                    </li>
-                    <li class="pull-left">
-                        <a href="">牛客网</a>
-                    </li>
-                    <li class="pull-left">
-                        <a href="">模板之家</a>
-                    </li>
-                    <li class="pull-left">
-                        <a href="">Bootstrap</a>
-                    </li>
-                    <li class="pull-left">
-                        <a href="">LayUI</a>
-                    </li>
-                    <li class="pull-left">
-                        <a href="">知乎</a>
-                    </li>
-                    <li class="pull-left">
-                        <a href="">简书</a>
-                    </li>
-                    <li class="pull-left">
-                        <a href="">脚本之家</a>
-                    </li>
-                    <li class="pull-left">
-                        <a href="">码农网</a>
-                    </li>
-                    <li class="pull-left">
-                        <a href="">博客园</a>
-                    </li>
-                    <li class="pull-left">
-                        <a href="">CSS探索之旅</a>
-                    </li>
-                    <li class="pull-left">
-                        <a href="">苏文宅博客</a>
-                    </li>
-                    <li class="pull-left">
-                        <a href="">爱前端网</a>
-                    </li>
-                    <li class="pull-left">
-                        <a href="">CSS3按钮特效</a>
-                    </li>
-                    <li class="pull-left">
-                        <a href="">ProcessOn</a>
-                    </li>
-                    <li class="pull-left">
-                        <a href="">5iweb</a>
-                    </li>
-                </ul>
-            </div>
-            <!--慕课网抄袭而来的copyright-->
-            <div class="copyright">
-                <h5>Copyright © 2018 imooc.com All Rights Reserved | 京ICP备 13046642号-2</h5>
-            </div>
-            <br />
-        </footer>
-
-        <!--侧边栏-->
-        <div class="sliderbar">
-            <ul>
-                <li>
-                    <a href="javascript:void(0)" title="返回顶部" class="gotop">
-                        <i class="layui-icon">&#xe619;</i>
-                    </a>
-                </li>
-                <li>
-                    <a href="/forward_con/contact" target="_blank" title="联系我们">
-                        <i class="layui-icon">&#xe606;</i>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)" title="手机访问">
-                        <i class="layui-icon">&#xe63b;</i>
-                    </a>
-                </li>
+        <div class="collapse navbar-collapse" id="navbar-collapse" style="">
+            <ul class="nav navbar-nav">
+                <li style="margin:0 10px;"><a href="/forward_con/welcome">首页</a></li>
+                <li style="margin:0 10px;" class="active"><a href="/forward_con/classify">分类</a></li>
+                <li style="margin:0 10px;"><a href="/forward_con/gabble" target="_blank">七嘴八舌</a></li>
+                <li style="margin:0 10px;"><a href="/forward_con/gorank">勤成榜</a></li>
+                <li style="margin:0 10px;"><a href="/forward_con/contact">联系我们</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
             </ul>
         </div>
+    </div>
+</nav>
 
-        <style>
-            .sliderbar{
-                position: fixed;
-                right: 2%;
-                bottom: 25%;
-            }
-            .sliderbar ul li{
-                list-style-type: none;
-                margin-bottom: 30%;
-            }
-            .sliderbar ul li a{
-                display: inline-block;
-                /*width: 200%;*/
-                /*height: 35px;*/
-                border: 1px solid black;
-                text-decoration: none;
-                background-color: #80808030;
-                border-color: #0000004d;
-            }
-            .sliderbar ul li a.gotop{
-                display: none;
-            }
-            .sliderbar ul li a:hover{
-                text-decoration: none;
-            }
-            .sliderbar ul li a i{
-                font-size: 35px;
-                color: #808080a3;
-                font-weight: bold;
-            }
-        </style>
+<!--主要内容-->
+<div class="coursecontainer">
+    <div class="container-top">
+        <p class="collect pull-right">
+            <a href="javascript:void(0);">
+                <i class="layui-icon">&#xe600;</i><span data-status="1"></span>
+            </a>
+        </p>
+        <p class="title"></p>
+        <div class="info">
+            <ul class="clearfix">
+                <li class="pull-left"><p>时长&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span></span></p></li>
+                <li class="pull-left">开课人数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span></span></li>
+                <li class="pull-left">已订人数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span></span></li>
+            </ul>
+        </div>
+        <div class="sale">
+            <p class="price"></p>
+            <div>
+                <a href="javascript:void(0);" class="buynow">立即订购</a>
+                <a href="javascript:void(0);" class="addcart"><i class="layui-icon">&#xe657;</i></a>
+            </div>
+        </div>
+    </div>
+    <div class="bar">
+        <ul class="clearfix nav nav-tabs">
+            <li class="pull-left active">
+                <a href="#coursedesc" data-toggle="tab">
+                    课程概述
+                </a>
+            </li>
+            <li class="pull-left">
+                <a href="#tutorinfo" data-toggle="tab">
+                    讲师介绍
+                </a>
+            </li>
+            <li class="pull-left">
+                <a href="#coursechapter" data-toggle="tab">
+                    章节目录
+                </a>
+            </li>
+            <li class="pull-left">
+                <a href="#usercommand" data-toggle="tab">
+                    用户评价
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="info-main tab-content" style="margin-bottom: 8%;">
+        <div id="coursedesc" class="tab-pane fade in active">dddd</div>
+        <div id="tutorinfo" class="tab-pane fade">
+            <div class="info-main">
+                <ul class="clearfix">
+                    <li class="pull-left"></li>
+                    <li class="pull-left">
+                        <div class="main">
+                            <h3>勤成网认证家教</h3>
+                            <h5></h5>
+                            <p></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="coursechapter" class="tab-pane fade">
+            <!--<div class="chapter">-->
+            <!--<span class="layui-icon">&#xe651;</span>-->
+            <!--<h4>第一章&nbsp;&nbsp;<span>课程介绍</span></h4>-->
+            <!--<p>jpoasdasdasdasdasdasdasdasdasdasd</p>-->
+            <!--</div>-->
+        </div>
+        <div id="usercommand" class="tab-pane fade">
+            <div class="header">
+                <ul class="clearfix">
+                    <!--<li class="pull-left">-->
+                    <!--<div class="hot-bg">-->
+                    <!--<p>热评推荐</p>-->
+                    <!--</div>-->
+                    <!--<div class="hot-show">-->
+                    <!--<div class="face">-->
+                    <!--</div>-->
+                    <!--<h5>小白小白你好啦</h5>-->
+                    <!--<p class="star">-->
+                    <!--<span class="glyphicon glyphicon-star"></span>-->
+                    <!--<span class="glyphicon glyphicon-star"></span>-->
+                    <!--<span class="glyphicon glyphicon-star"></span>-->
+                    <!--<span class="glyphicon glyphicon-star"></span>-->
+                    <!--<span class="glyphicon glyphicon-star"></span>-->
+                    <!--</p>-->
+                    <!--<div class="info">-->
+                    <!--<p>-->
+                    <!--学到很多，现在导师接了一个项目，就是要用java开发，看完师兄视频感觉可以开发出来。尤其是数据库那一块视频讲解jpa和mybatis解我疑惑了，视图准备看看慕课的freemarker，期待师兄的spring cloud视频，很好奇这一块，期待docker神器，期待微服-->
+                    <!--</p>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+            <p class="msg clearfix"><a>全部评价&nbsp;&nbsp;<span></span></a>
+                <a class="pull-right sub" href="#mycommand" data-toggle="tab">发表评价</a>
+                <a class="pull-right ret" href="#allcommand" data-toggle="tab" title="返回全部评价"><i class="layui-icon">&#xe65c;</i></a>
+            </p>
+            <div class="info-main tab-content">
+                <div id="allcommand" class=" tab-pane fade in active">
+                    <div class="com-main">
+                        <!--<ul class="clearfix">-->
+                        <!--<li class="pull-left"></li>-->
+                        <!--<li class="pull-left">-->
+                        <!--<div class="main-show">-->
+                        <!--<p class="main-top">-->
+                        <!--小白小白你好呀&nbsp;&nbsp;&nbsp;&nbsp;-->
+                        <!--<span class="glyphicon glyphicon-star"></span>-->
+                        <!--<span class="glyphicon glyphicon-star"></span>-->
+                        <!--<span class="glyphicon glyphicon-star"></span>-->
+                        <!--<span class="glyphicon glyphicon-star"></span>-->
+                        <!--<span class="glyphicon glyphicon-star"></span>-->
+                        <!--</p>-->
+                        <!--<p class="main-info">前边看的挺抓狂的，到了后边越来越精彩。下一趟车票我先预定了。很实用的课程，老哥幸苦了。。。。下期再见。</p>-->
+                        <!--<p class="ctime">时间 : 2018-02-18 08:30:00</p>-->
+                        <!--<p class="ctime cscore">-->
+                        <!--<span class="do-good">-->
+                        <!--赞他-->
+                        <!--<a href="javascript:;" data-status="1" class="se">-->
+                        <!--<span class="glyphicon glyphicon glyphicon-thumbs-up"></span>-->
+                        <!--</a>-->
+                        <!--</span>-->
+                        <!--<span class="do-bad">-->
+                        <!--踩他-->
+                        <!--<a href="javascript:;" data-status="0" class="">-->
+                        <!--<span class="glyphicon glyphicon-thumbs-down"></span>-->
+                        <!--</a>-->
+                        <!--</span>-->
+                        <!--</p>-->
+                        <!--<div class="main-reply">-->
+                        <!--<p class="reply">-->
+                        <!--[回复<a href="javascript:void(0);" title="用户名为1212121212">李晨</a>]-->
+                        <!--<span> : 打大苏打啊实打实大苏打撒撒大大大大大大大大大大水水水水水水水水水水旦的大苏打的</span>-->
+                        <!--</p>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</li>-->
+                        <!--</ul>-->
+                        <style>
+                            .cscore a {
+                                text-decoration: none;
+                            }
 
-        <style>
-            .coursecontainer .bar{width: 44%; margin: auto;}
-            .coursecontainer .bar ul li{display: inline-block; height: 35px; line-height: 35px; text-align: center;
-                width: 25%; margin: 3% 0;}
-            .coursecontainer .bar ul li a{display: inline-block; height: 35px; text-decoration: none;}
-            .coursecontainer .bar ul li a:hover{text-decoration: none;}
-            .coursecontainer .bar ul li span{position:  relative;top: -17%;left: -4%; color: #80808094;}
+                            .cscore a:hover {
+                                text-decoration: none;
+                                color: #333;
+                            }
 
-            .coursecontainer{margin-top: 70px;}
-            .coursecontainer .container-top{height: 400px; background-color: #0f37ecb0; padding: 2% 0; position: relative;
-                /*background: url("/images/user/course/math.png") no-repeat center center; background-size: contain;*/
-            }
-            .coursecontainer .container-top .collect{margin-right: 3%; margin-top: 30px;}
-            .coursecontainer .container-top .collect a{color: #ffffff8a; font-size: 14px;}
-            .coursecontainer .container-top .collect a:hover{color: white; text-decoration: none;}
-            .coursecontainer .container-top .collect.col a{color: white; font-size: 14px;}
-            .coursecontainer .container-top .title{width: 21%;text-align:  center;margin:  auto;font-size: 1.5em;
-                font-weight:  bold;color: #ffffffeb; margin-top: 5%;}
-            .coursecontainer .container-top .info{width: 50%; margin: 1.5% auto;}
-            .coursecontainer .container-top .info ul li{border-right: 1px solid #ffffff82; color: #ffffffeb; width: 25%;
-                margin-left: 4%;}
-            .coursecontainer .container-top .info ul li:nth-child(1) p{position: relative; left: 15%;}
-            .coursecontainer .container-top .sale p{height: 30px;line-height:  30px;font-size: 1.5em;color: red;font-weight: 600;
-                text-align: center; margin-top: 2%;}
-            .coursecontainer .container-top .sale div{text-align: center; margin-top: 3%;}
-            .coursecontainer .container-top .sale div a{display:  inline-block; height: 45px; line-height: 45px; text-decoration: none;}
-            .coursecontainer .container-top .sale div .buynow{width: 10%; background-color: #d31616;border: 1px solid #d31616;
-                color: #ffffffc9;text-align:  center;}
-            .coursecontainer .container-top .sale div .addcart{width:  4%; background-color: #dd2020;border: 1px solid #dd2020;
-                text-align:  center;position:  relative;left: -1%;color: #ffffffc7;}
-            .coursecontainer .container-top .sale div a:hover{text-decoration: none; color: white;}
+                            .cscore a.uns:hover {
+                                color: red;
+                            }
 
-            footer.footer{background-color: #000000; width: 100%;}
-            footer.footer .webmap, footer.footer .link, footer.footer .copyright{margin: 0 auto; width: 80%;margin-bottom: 1%;}
-            footer.footer h4{color: white;}
-            footer.footer ul{margin-left: 1%;}
-            footer.footer ul li{margin: 1%;}
-            footer.footer ul li a{color: #c8cdd2ad; font-size: 14px; text-decoration: none;}
-            footer.footer ul li a:hover{color: #c8cdd2; text-decoration: none;}
-            footer.footer .copyright{margin-top: -1%;}
-            footer.footer .copyright h5{color: #787d82c7;}
-        </style>
+                            .cscore a.se {
+                                color: red;
+                            }
+
+                            .cscore span.do-good {
+                                margin: 0 1%;
+                            }
+                        </style>
+                    </div>
+                    <div class="pageshow">
+                        <ul class="pagination">
+                            <!--<li class="disabled first"><a href="javascript:void(0);">首页</a></li>-->
+                            <!--<li class="disabled prev"><a href="#">上一页</a></li>-->
+                            <!--<li class="active"><a href="#">1</a></li>-->
+                            <!--<li><a href="#">2</a></li>-->
+                            <!--<li><a href="#">3</a></li>-->
+                            <!--<li><a href="# next">下一页</a></li>-->
+                            <!--<li><a href="# last">尾页</a></li>-->
+                        </ul>
+                    </div>
+                </div>
+                <div id="mycommand" class="tab-pane fade">
+                    <div class="com-main">
+                        <!--<ul class="clearfix">-->
+                        <!--<li class="pull-left"></li>-->
+                        <!--<li class="pull-left">-->
+                        <!--<div class="main-show">-->
+                        <!--<p class="main-top">-->
+                        <!--小白小白你好呀&nbsp;&nbsp;&nbsp;&nbsp;-->
+                        <!--<span class="glyphicon glyphicon-star"></span>-->
+                        <!--<span class="glyphicon glyphicon-star"></span>-->
+                        <!--<span class="glyphicon glyphicon-star"></span>-->
+                        <!--<span class="glyphicon glyphicon-star"></span>-->
+                        <!--<span class="glyphicon glyphicon-star"></span>-->
+                        <!--</p>-->
+                        <!--<p class="main-info">前边看的挺抓狂的，到了后边越来越精彩。下一趟车票我先预定了。很实用的课程，老哥幸苦了。。。。下期再见。</p>-->
+                        <!--<p class="ctime">时间 : 2018-02-18 08:30:00</p>-->
+                        <!--<div class="main-reply">-->
+                        <!--<p class="reply">-->
+                        <!--[回复<a href="javascript:void(0);" title="用户名为1212121212">李晨</a>]-->
+                        <!--<span> : 打大苏打啊实打实大苏打撒撒大大大大大大大大大大水水水水水水水水水水旦的大苏打的</span>-->
+                        <!--</p>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</li>-->
+                        <!--</ul>-->
+                        <!--<p class='none'>只有购买的用户才能进行评价哦！</p>-->
+                        <!--<p class='none'>您好，发表评价前请先<a href="/forward_con/gologin" target="_blank">登录</a>！</p>-->
+                        <!--<p class="command" contenteditable="true">说点什么...</p>-->
+                        <!--<p class="score" data-score="0">课程评分：-->
+                        <!--<span class="glyphicon glyphicon-star-empty s1" data-score="1"></span>-->
+                        <!--<span class="glyphicon glyphicon-star-empty s2" data-score="2"></span>-->
+                        <!--<span class="glyphicon glyphicon-star-empty s3" data-score="3"></span>-->
+                        <!--<span class="glyphicon glyphicon-star-empty s4" data-score="4"></span>-->
+                        <!--<span class="glyphicon glyphicon-star-empty s5" data-score="5"></span>-->
+                        <!--</p>-->
+                        <!--<p class="info">&nbsp;</p>-->
+                        <!--<button type="button" class="subcommand btn btn-danger">发表</button>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .com-main .score {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .com-main .score span.glyphicon-star-empty {
+            color: #808080ad;
+        }
+
+        .com-main .score span.glyphicon-star {
+            color: #ff9900;
+        }
+
+        .com-main .score span:hover {
+            cursor: pointer;
+        }
+
+        #tutorinfo .info-main {
+            width: 80%;
+            margin: auto;
+            background: #f3f5f7;
+        }
+
+        #tutorinfo .info-main ul {
+            width: 86%;
+            margin: 5% auto;
+            padding: 3% 0px;
+        }
+
+        #tutorinfo .info-main ul li:nth-child(1) {
+            background: url("/images/user/face/bg.png") no-repeat center center;
+            background-size: 100% 100%;
+            width: 20%;
+            height: 200px;
+            border: 1px solid white;
+            border-radius: 50%;
+            margin-left: 3%;
+        }
+
+        #tutorinfo .info-main ul li:nth-child(2) {
+            width: 70%;
+        }
+
+        #tutorinfo .info-main ul li .main {
+            margin-left: 3%;
+        }
+
+        #tutorinfo .info-main ul li .main h3 {
+            color: #f01a1a;
+            margin: 15px 0;
+        }
+
+        #tutorinfo .info-main ul li .main h5 {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        #tutorinfo .info-main ul li .main p {
+            line-height: 28px;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        #coursechapter .chapter {
+            width: 80%;
+            margin: auto;
+            border-bottom: 1px solid #80808078;
+        }
+
+        #coursechapter .chapter span.layui-icon {
+            font-size: 2em;
+            transform: rotate(90deg);
+            display: inline-block;
+            color: black;
+            position: relative;
+            top: 20px;
+        }
+
+        #coursechapter .chapter h4 {
+            position: relative;
+            left: 7%;
+            top: -18px;
+            font-weight: 700;
+            width: 90%;
+        }
+
+        #coursechapter .chapter p {
+            position: relative;
+            left: 7%;
+            top: -14px;
+            width: 90%;
+        }
+
+        #usercommand .pageshow {
+            text-align: center;
+        }
+
+        #usercommand .msg {
+            position: relative;
+        }
+
+        #usercommand .msg a:nth-child(1) {
+            position: relative;
+        }
+
+        #usercommand .msg a.sub {
+            display: inline-block;
+            background: #f83636d6;
+            width: 8%;
+            height: 27px;
+            line-height: 27px;
+            text-align: center;
+            color: #ffffffb5;
+            text-decoration: none;
+            border: 1px solid red;
+            border-radius: 15%;
+        }
+
+        #usercommand .msg a.sub:hover {
+            color: white;
+            background: red;
+            text-decoration: none;
+        }
+
+        #usercommand .msg a.ret {
+            width: 4%;
+            height: 27px;
+            line-height: 27px;
+            color: black;
+            text-align: center;
+            font-size: 17px;
+            font-weight: bold;
+            border: 1px solid black;
+            border-radius: 30%;
+            text-decoration: none;
+            position: absolute;
+            right: 0;
+            opacity: 0;
+            display: none;
+        }
+
+        #usercommand .msg a:hover {
+            text-decoration: none;
+        }
+
+        #usercommand .com-main {
+            width: 90%;
+            margin: 3% auto;
+        }
+
+        #usercommand .com-main .none {
+            text-align: center;
+            color: #808080ba;
+        }
+
+        #usercommand .com-main ul {
+            margin-bottom: 3%;
+        }
+
+        #usercommand .com-main ul li:nth-child(1) {
+            background: url(/images/user/face/bg.png) no-repeat center center;
+            background-size: 100% 100%;
+            width: 48px;
+            height: 48px;
+            margin: 0 2%;
+        }
+
+        #usercommand .com-main ul li:nth-child(2) {
+            width: 88%;
+        }
+
+        #usercommand .com-main .main-top {
+            color: #93999f;
+        }
+
+        #usercommand .com-main .main-top span {
+            color: #ff9900;
+        }
+
+        #usercommand .com-main .main-show .main-info {
+            margin: 1% 0 2% 0;
+        }
+
+        #usercommand .com-main .main-show .ctime {
+            margin-bottom: 2%;
+            color: #93999f;
+            font-size: 12px;
+        }
+
+        #usercommand .com-main .main-show .main-reply {
+            background-color: #f6f6f6;
+            padding: 20px;
+            font-size: 12px;
+            line-height: 24px;
+        }
+
+        #usercommand .com-main .main-show .main-reply .reply {
+            color: #f01414;
+        }
+
+        #usercommand .com-main .main-show .main-reply .reply span {
+            color: #787d82;
+        }
+
+        #usercommand #mycommand p.none {
+            clor: grey;
+            text-align: center;
+        }
+
+        #usercommand #mycommand p.none a {
+            color: red;
+            text-decoration: none;
+        }
+
+        #usercommand #mycommand p.command {
+            width: 50%;
+            margin: auto;
+            border: 1px solid red;
+            text-align: left;
+            padding: 3px 5px;
+            height: 127px;
+            color: grey;
+            border-radius: 5%;
+        }
+
+        #usercommand #mycommand p.info {
+            width: 23%;
+            margin-left: 49%;
+            position: relative;
+            top: 6px;
+            color: red;
+        }
+
+        #usercommand #mycommand button {
+            width: 8%;
+            margin-left: 67%;
+        }
+
+        #usercommand p.msg {
+            width: 90%;
+            margin: auto;
+            height: 30px;
+            line-height: 30px;
+            border-bottom: 1px solid #80808054;
+        }
+
+        #usercommand p.msg span {
+            color: red;
+        }
+
+        .coursecontainer .nav-tabs {
+            border-bottom: none;
+        }
+
+        #usercommand .header ul {
+            position: relative;
+            width: 90%;
+            margin: 4% auto;
+            margin-bottom: 3%;
+        }
+
+        #usercommand .header ul li {
+            width: 33%;
+            background-color: #f3f5f7;
+            border-right: 1px dashed black;
+        }
+
+        #usercommand .header ul li:nth-child(3) {
+            border-right: none;
+        }
+
+        #usercommand .header ul li .hot-bg {
+            background: url("/images/welcome/classify/hot_com.png") no-repeat center center;
+            -webkit-background-size: cover;
+            background-size: cover;
+            position: absolute;
+            width: 72px;
+            height: 72px;
+            font-size: 1em;
+            color: #fff;
+            padding: 18px;
+            font-weight: 200;
+            text-align: center;
+            box-sizing: border-box;
+            line-height: 18px;
+        }
+
+        #usercommand .header ul li div.face {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid black;
+            background: url(/images/user/face/bg.png) no-repeat center center;
+            background-size: 100% 100%;
+            margin: auto;
+            margin-top: 3%;
+        }
+
+        #usercommand .header ul li h5 {
+            font-weight: 700;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        #usercommand .header ul li p.star {
+            text-align: center;
+            position: relative;
+            top: 4px;
+        }
+
+        #usercommand .header ul li p.star span {
+            color: #ff9900;
+            font-size: 12px;
+        }
+
+        #usercommand .header ul li .info p {
+            margin: 8px auto;
+            width: 210px;
+            height: 196px;
+            font-size: 14px;
+            line-height: 28px;
+            color: #4d555d;
+            text-overflow: ellipsis;
+            word-break: break-all;
+            word-wrap: break-word;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 7;
+            -webkit-box-orient: vertical;
+        }
+    </style>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">收藏标签</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="text" name="txt_departmentname" class="form-control" id="txt_departmentname"
+                               placeholder="填入收藏描述"/>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><span
+                            class="glyphicon glyphicon-remove" aria-hidden="true"></span>关闭
+                    </button>
+                    <button type="button" id="btn_submit" class="btn btn-primary" data-dismiss="modal"><span
+                            class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>收藏
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--页脚-->
+<footer class="footer">
+    <br/>
+    <!--网站地图-->
+    <div class="webmap">
+        <h4>网站地图:</h4>
+        <ul class="clearfix">
+            <li class="pull-left">
+                <a href="/forward_con/welcome">网站首页</a>
+            </li>
+            <li class="pull-left">
+                <a href="/forward_con/classify">家教分类</a>
+            </li>
+            <li class="pull-left">
+                <a href="/forward_con/gabble">用户经验总结</a>
+            </li>
+            <li class="pull-left">
+                <a href="/forward_con/gorank">勤成家教榜</a>
+            </li>
+            <li class="pull-left">
+                <a href="/forward_con/contact">联系我们</a>
+            </li>
+            <li class="pull-left">
+                <a href="/forward_con/personal">个人信息</a>
+            </li>
+        </ul>
+    </div>
+    <!--友情链接-->
+    <div class="link">
+        <h4>友情链接:</h4>
+        <ul class="clearfix">
+            <li class="pull-left">
+                <a href="">CSDN博客</a>
+            </li>
+            <li class="pull-left">
+                <a href="">前端网</a>
+            </li>
+            <li class="pull-left">
+                <a href="">慕课网</a>
+            </li>
+            <li class="pull-left">
+                <a href="">牛客网</a>
+            </li>
+            <li class="pull-left">
+                <a href="">模板之家</a>
+            </li>
+            <li class="pull-left">
+                <a href="">Bootstrap</a>
+            </li>
+            <li class="pull-left">
+                <a href="">LayUI</a>
+            </li>
+            <li class="pull-left">
+                <a href="">知乎</a>
+            </li>
+            <li class="pull-left">
+                <a href="">简书</a>
+            </li>
+            <li class="pull-left">
+                <a href="">脚本之家</a>
+            </li>
+            <li class="pull-left">
+                <a href="">码农网</a>
+            </li>
+            <li class="pull-left">
+                <a href="">博客园</a>
+            </li>
+            <li class="pull-left">
+                <a href="">CSS探索之旅</a>
+            </li>
+            <li class="pull-left">
+                <a href="">苏文宅博客</a>
+            </li>
+            <li class="pull-left">
+                <a href="">爱前端网</a>
+            </li>
+            <li class="pull-left">
+                <a href="">CSS3按钮特效</a>
+            </li>
+            <li class="pull-left">
+                <a href="">ProcessOn</a>
+            </li>
+            <li class="pull-left">
+                <a href="">5iweb</a>
+            </li>
+        </ul>
+    </div>
+    <!--慕课网抄袭而来的copyright-->
+    <div class="copyright">
+        <h5>Copyright © 2018 imooc.com All Rights Reserved | 京ICP备 13046642号-2</h5>
+    </div>
+    <br/>
+</footer>
+
+<!--侧边栏-->
+<div class="sliderbar">
+    <ul>
+        <li>
+            <a href="javascript:void(0)" title="返回顶部" class="gotop">
+                <i class="layui-icon">&#xe619;</i>
+            </a>
+        </li>
+        <li>
+            <a href="/forward_con/contact" target="_blank" title="联系我们">
+                <i class="layui-icon">&#xe606;</i>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:void(0)" title="手机访问">
+                <i class="layui-icon">&#xe63b;</i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<style>
+    .sliderbar {
+        position: fixed;
+        right: 2%;
+        bottom: 25%;
+    }
+
+    .sliderbar ul li {
+        list-style-type: none;
+        margin-bottom: 30%;
+    }
+
+    .sliderbar ul li a {
+        display: inline-block;
+        /*width: 200%;*/
+        /*height: 35px;*/
+        border: 1px solid black;
+        text-decoration: none;
+        background-color: #80808030;
+        border-color: #0000004d;
+    }
+
+    .sliderbar ul li a.gotop {
+        display: none;
+    }
+
+    .sliderbar ul li a:hover {
+        text-decoration: none;
+    }
+
+    .sliderbar ul li a i {
+        font-size: 35px;
+        color: #808080a3;
+        font-weight: bold;
+    }
+</style>
+
+<style>
+    .coursecontainer .bar {
+        width: 44%;
+        margin: auto;
+    }
+
+    .coursecontainer .bar ul li {
+        display: inline-block;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        width: 25%;
+        margin: 3% 0;
+    }
+
+    .coursecontainer .bar ul li a {
+        display: inline-block;
+        height: 35px;
+        text-decoration: none;
+    }
+
+    .coursecontainer .bar ul li a:hover {
+        text-decoration: none;
+    }
+
+    .coursecontainer .bar ul li span {
+        position: relative;
+        top: -17%;
+        left: -4%;
+        color: #80808094;
+    }
+
+    .coursecontainer {
+        margin-top: 70px;
+    }
+
+    .coursecontainer .container-top {
+        height: 400px;
+        background-color: #0f37ecb0;
+        padding: 2% 0;
+        position: relative;
+        /*background: url("/images/user/course/math.png") no-repeat center center; background-size: contain;*/
+    }
+
+    .coursecontainer .container-top .collect {
+        margin-right: 3%;
+        margin-top: 30px;
+    }
+
+    .coursecontainer .container-top .collect a {
+        color: #ffffff8a;
+        font-size: 14px;
+    }
+
+    .coursecontainer .container-top .collect a:hover {
+        color: white;
+        text-decoration: none;
+    }
+
+    .coursecontainer .container-top .collect.col a {
+        color: white;
+        font-size: 14px;
+    }
+
+    .coursecontainer .container-top .title {
+        width: 21%;
+        text-align: center;
+        margin: auto;
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #ffffffeb;
+        margin-top: 5%;
+    }
+
+    .coursecontainer .container-top .info {
+        width: 50%;
+        margin: 1.5% auto;
+    }
+
+    .coursecontainer .container-top .info ul li {
+        border-right: 1px solid #ffffff82;
+        color: #ffffffeb;
+        width: 25%;
+        margin-left: 4%;
+    }
+
+    .coursecontainer .container-top .info ul li:nth-child(1) p {
+        position: relative;
+        left: 15%;
+    }
+
+    .coursecontainer .container-top .sale p {
+        height: 30px;
+        line-height: 30px;
+        font-size: 1.5em;
+        color: red;
+        font-weight: 600;
+        text-align: center;
+        margin-top: 2%;
+    }
+
+    .coursecontainer .container-top .sale div {
+        text-align: center;
+        margin-top: 3%;
+    }
+
+    .coursecontainer .container-top .sale div a {
+        display: inline-block;
+        height: 45px;
+        line-height: 45px;
+        text-decoration: none;
+    }
+
+    .coursecontainer .container-top .sale div .buynow {
+        width: 10%;
+        background-color: #d31616;
+        border: 1px solid #d31616;
+        color: #ffffffc9;
+        text-align: center;
+    }
+
+    .coursecontainer .container-top .sale div .addcart {
+        width: 4%;
+        background-color: #dd2020;
+        border: 1px solid #dd2020;
+        text-align: center;
+        position: relative;
+        left: -1%;
+        color: #ffffffc7;
+    }
+
+    .coursecontainer .container-top .sale div a:hover {
+        text-decoration: none;
+        color: white;
+    }
+
+    footer.footer {
+        background-color: #000000;
+        width: 100%;
+    }
+
+    footer.footer .webmap, footer.footer .link, footer.footer .copyright {
+        margin: 0 auto;
+        width: 80%;
+        margin-bottom: 1%;
+    }
+
+    footer.footer h4 {
+        color: white;
+    }
+
+    footer.footer ul {
+        margin-left: 1%;
+    }
+
+    footer.footer ul li {
+        margin: 1%;
+    }
+
+    footer.footer ul li a {
+        color: #c8cdd2ad;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    footer.footer ul li a:hover {
+        color: #c8cdd2;
+        text-decoration: none;
+    }
+
+    footer.footer .copyright {
+        margin-top: -1%;
+    }
+
+    footer.footer .copyright h5 {
+        color: #787d82c7;
+    }
+</style>
 
 
-        <!--jquery-->
-        <script src="/js/custom/jquery.min.js"></script>
-        <!--bootstrap-->
-        <script src="/bootstrap/js/bootstrap.js"></script>
-        <!--layui-->
-        <script src="/layui/layui.js"></script>
+<!--jquery-->
+<script src="/js/custom/jquery.min.js"></script>
+<!--bootstrap-->
+<script src="/bootstrap/js/bootstrap.js"></script>
+<!--layui-->
+<script src="/layui/layui.js"></script>
 
-        <!--My JS-->
-        <script src="/js/welcome/showcourse.js"></script>
-    </body>
+<!--My JS-->
+<script src="/js/welcome/showcourse.js"></script>
+</body>
 </html>

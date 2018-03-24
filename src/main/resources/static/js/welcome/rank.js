@@ -15,7 +15,7 @@ $(function(){
         for(var k in o){if(new RegExp("("+ k +")").test(format))
             format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));}
         return format;
-    }
+    };
 
     /**
      * 判断当前用户是否登录
@@ -225,6 +225,7 @@ $(function(){
         })
     };
     $(".rank ul li a").click(rank_time);
+    $(".rank ul li:nth-child(1) a").trigger("click");
 
     /**
      * 查看全部排行链接

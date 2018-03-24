@@ -425,6 +425,40 @@ $(function() {
                            $("#allcommand .com-main").append($ul.append($imgli).append($mainli.append($showdiv.append($topp).append($infop)
                                .append($ctimep))));
 
+                           //se已选定，uns未评分
+                           var $cscore = $("<p class=\"ctime cscore\">\n" +
+                               "                                                <span class=\"do-good\">\n" +
+                               "                                                    赞他\n" +
+                               "                                                    <a href=\"javascript:;\" data-status=\"1\" class=\"\">\n" +
+                               "                                                        <span class=\"glyphicon glyphicon glyphicon-thumbs-up\"></span>\n" +
+                               "                                                    </a>\n" +
+                               "                                                </span>\n" +
+                               "                                                <span class=\"do-bad\">\n" +
+                               "                                                    踩他\n" +
+                               "                                                    <a href=\"javascript:;\" data-status=\"0\" class=\"\">\n" +
+                               "                                                        <span class=\"glyphicon glyphicon-thumbs-down\"></span>\n" +
+                               "                                                    </a>\n" +
+                               "                                                </span>\n" +
+                               "                                            </p>");
+
+                           /**
+                            * 异步获取点赞数据
+                            */
+                           $.ajax({
+                               async: false,
+                               type: "post",
+                               url: "/commandstar_con/getmycommandstar",
+                               data: {cmid: id},
+                               dataType: "json",
+                               success: function(data){
+                                   console.log(data);
+                               },
+                               error: function(xhr, status){
+                                   window.alert("后台环境异常导致无法获取点赞数据，请稍后再试");
+                                   window.console.log(xhr);
+                               }
+                           });
+
                            /**
                             * 异步获取用户评价对应的家教老师回复
                             */

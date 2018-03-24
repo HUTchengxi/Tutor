@@ -247,6 +247,18 @@ create table publish_log(
 );
 
 
+#用户评论点赞表
+create table command_star(
+  id int auto_increment comment "唯一标识",
+  username varchar(20) not null comment "点赞/踩的用户名",
+  cmid int not null comment "评论对应的id",
+  score int not null comment "点赞为1，踩为-1",
+  primary key(id),
+  foreign key(username) references user_main(username),
+  foreign key(cmid) references course_command(id)
+);
+
+
 #家教老师标签表
 #实名认证表
 #课程表
@@ -262,6 +274,9 @@ select count(*) from course_command where cid in (select id from course_main whe
 
 #今日我的课程下单了多少次
 select count(*) from course_order where cid in (select id from course_main where username=#{username}) and otime like CONCAT('%', #{NOW}, '%')
+
+
+
 
 #修改了user表的主键为username
 
