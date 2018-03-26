@@ -41,4 +41,17 @@ public class CommandStarServiceImpl implements CommandStarService {
 
         return commandStarMapper.getByUserAndCmid(username, cmid);
     }
+
+    /**
+     * 进行评论的点赞与踩
+     * @param username
+     * @param cmid
+     * @param score
+     * @return
+     */
+    @Override
+    public Integer addMyStar(String username, Integer cmid, Integer score) {
+
+        return commandStarMapper.addMyStar(username, cmid, score);
+    }
 }

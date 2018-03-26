@@ -64,6 +64,8 @@
        9.密保找回密码的实现
 
        List.size()为空的时候的值为1吗？
+       Mapper写的试select count(*)，我返回的试List<xxx>，所以导致了size的值为1
+
 
 
      2.7版本：

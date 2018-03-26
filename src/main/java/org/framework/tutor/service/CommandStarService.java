@@ -26,4 +26,13 @@ public interface CommandStarService {
      * @return
      */
     CommandStar getByUserAndCmid(String username, Integer cmid);
+
+    /**
+     * 进行评论的点赞与踩
+     * @param username
+     * @param cmid
+     * @param score
+     * @return
+     */
+    Integer addMyStar(String username, Integer cmid, Integer score);
 }

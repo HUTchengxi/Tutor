@@ -425,22 +425,6 @@ $(function() {
                            $("#allcommand .com-main").append($ul.append($imgli).append($mainli.append($showdiv.append($topp).append($infop)
                                .append($ctimep))));
 
-                           //se已选定，uns未评分
-                           var $cscore = $("<p class=\"ctime cscore\">\n" +
-                               "                                                <span class=\"do-good\">\n" +
-                               "                                                    赞他\n" +
-                               "                                                    <a href=\"javascript:;\" data-status=\"1\" class=\"\">\n" +
-                               "                                                        <span class=\"glyphicon glyphicon glyphicon-thumbs-up\"></span>\n" +
-                               "                                                    </a>\n" +
-                               "                                                </span>\n" +
-                               "                                                <span class=\"do-bad\">\n" +
-                               "                                                    踩他\n" +
-                               "                                                    <a href=\"javascript:;\" data-status=\"0\" class=\"\">\n" +
-                               "                                                        <span class=\"glyphicon glyphicon-thumbs-down\"></span>\n" +
-                               "                                                    </a>\n" +
-                               "                                                </span>\n" +
-                               "                                            </p>");
-
                            /**
                             * 异步获取点赞数据
                             */
@@ -451,7 +435,37 @@ $(function() {
                                data: {cmid: id},
                                dataType: "json",
                                success: function(data){
-                                   console.log(data);
+                                   var status = data.status;
+                                   var gcount = data.gcount;
+                                   var bcount = data.bcount;
+                                   //se已选定，uns未评分
+                                   var $cscore = $("<p class=\"ctime cscore\">\n" +
+                                       "                                                <span class=\"do-good\">\n" +
+                                       "                                                    赞他\n" +
+                                       "                                                    <a href=\"javascript:;\" data-status=\"1\" data-cmid='"+id+"' class=\"\">\n" +
+                                       "                                                        <span class=\"glyphicon glyphicon glyphicon-thumbs-up\"></span><i>"+gcount+"</i>\n" +
+                                       "                                                    </a>\n" +
+                                       "                                                </span>\n" +
+                                       "                                                <span class=\"do-bad\">\n" +
+                                       "                                                    踩他\n" +
+                                       "                                                    <a href=\"javascript:;\" data-status=\"0\" data-cmid='\"+id+\"' class=\"\">\n" +
+                                       "                                                        <span class=\"glyphicon glyphicon-thumbs-down\"></span><i>"+bcount+"</i>\n" +
+                                       "                                                    </a>\n" +
+                                       "                                                </span>\n" +
+                                       "                                            </p>");
+                                   $(".com-main li .main-show."+id).append($cscore);
+                                   if(status == "uns"){
+                                       $(".do-good a").addClass("uns");
+                                       $(".do-bad a").addClass("uns");
+                                   }
+                                   else{
+                                       if(status == "1"){
+                                           $(".do-good a").addClass("se");
+                                       }
+                                       else{
+                                           $(".do-bad a").addClass("se");
+                                       }
+                                   }
                                },
                                error: function(xhr, status){
                                    window.alert("后台环境异常导致无法获取点赞数据，请稍后再试");
@@ -492,6 +506,56 @@ $(function() {
         });
     };
     async_coursecommand();
+
+    /**
+     * 实现点赞与踩的功能
+     // * 在页面刷新之后才生效
+     */
+    var cli_subcommandstar = function(){
+
+        if(!$(this).hasClass("uns")){
+            window.alert("您已打过分了哦");
+            return ;
+        }
+
+        var score = $(this).data("status");
+        var cmid = $(this).data("cmid");
+            var $this = $(this);
+        $.ajax({
+            async: true,
+            type: "post",
+            url: "/commandstar_con/addmystar",
+            data: {cmid: cmid, score: score},
+            dataType: "json",
+            success: function(data) {
+                var status = data.status;
+                if(status == "success"){
+                    var count = parseInt($this.find("i").text());
+                    $this.find("i").text(count+1);
+                    $this.addClass("se");
+                    $(".main-show .cscore span a.uns").removeClass("uns");
+                }
+                else if(status == "invalid"){
+                    window.alert("您已打过分了哦");
+                    return ;
+                }
+                else if(status == "nologin"){
+                    window.alert("请先登录");
+                    return ;
+                }
+                else{
+                    window.alert("后台数据库异常导致无法进行点赞功能，请稍后再试");
+                    return ;
+                }
+            },
+            error: function(xhr, status){
+                window.alert("后台环境异常导致无法进行点赞功能，请稍后再试");
+                window.console.log(xhr);
+            }
+        });
+    };
+    $(document).on("click", ".main-show .cscore span a", cli_subcommandstar);
+
 
     /**
      * 获取导师指定的神评
