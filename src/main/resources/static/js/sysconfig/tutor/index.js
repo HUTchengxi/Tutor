@@ -59,6 +59,7 @@ $(function() {
             dataType: "json",
             success: function(data){
                 var count = data.count;
+                console.log(data);
                 if(count == 0){
                     return ;
                 }
@@ -76,9 +77,9 @@ $(function() {
                        "                            </td>\n" +
                        "                        </tr>");
                 });
-                $(".syslog table thread tr td h4 span.pub-version").text(pversion);
-                $(".syslog table thread tr td h4 span.pub-type").text(ptype);
-                $(".syslog table thread tr td h4 span.pub-time").text(ptime);
+                $(".syslog table thead tr td h4 span.pub-version").text(pversion);
+                $(".syslog table thead tr td h4 span.pub-type").text(ptype);
+                $(".syslog table thead tr td h4 span.pub-time").text(ptime);
             },
             error: function(xhr, status){
                 window.alert("后台环境异常导致无法获取版本更新数据，请稍后再试");

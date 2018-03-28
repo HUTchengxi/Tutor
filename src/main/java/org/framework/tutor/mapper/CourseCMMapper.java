@@ -22,7 +22,7 @@ public interface CourseCMMapper {
      * @param startpos
      * @return
      */
-    @Select("select * from course_command where cid=#{cid} order by ctime desc limit #{startpos}, 10")
+    @Select("select * from course_command where cid=#{cid} order by ctime desc limit #{startpos}, 5")
     List<CourseCommand> getCourseCommand(@Param("cid") Integer cid, @Param("startpos") Integer startpos);
 
     /**

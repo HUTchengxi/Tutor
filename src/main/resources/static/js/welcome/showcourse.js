@@ -31,6 +31,7 @@ $(function() {
             dataType: "json",
             success: function(data){
                 var status = data.status;
+                $(".coursecontainer .container-top .collect a").data("status", status);
                 if(status === "nologin"){
                     $("nav ul.navbar-right").append("<li><a style='color: red;'>您好，请先登录</a></li>\n" +
                         "                    <li><a href='/forward_con/gologin'><span class='glyphicon glyphicon-log-in'></span> 登录</a></li>"+
@@ -138,14 +139,13 @@ $(function() {
 
     //----------收藏与取消收藏----------
     /**
-     * 收藏
+     * 取消收藏
      */
     var course_collect = function(){
 
-        var status = $(this).closest("p").data("status");
+        var status = $(this).data("status");
         if(status === "nologin"){
             window.alert("请您先登录");
-            window.location = "/forward_con/gologin";
             return;
         }
         //取消收藏
@@ -180,6 +180,7 @@ $(function() {
         }
     };
     $(".coursecontainer .container-top .collect a").click(course_collect);
+
     /**
      * 收藏
      */
@@ -364,7 +365,8 @@ $(function() {
     /**
      * 获取课程用户评论数据
      */
-    var async_coursecommand = function(){
+    var firasynccmdflag = true;
+    var async_coursecommand = function(startpos){
 
         var cid = -1;
         var reg = new RegExp("(^|&)id=([^&]*)(&|$)", "i");
@@ -375,17 +377,31 @@ $(function() {
             async: true,
             type: "post",
             url: "/coursecommand_con/getcoursecommand",
-            data: {cid: cid, startpos: 0},
+            data: {cid: cid, startpos: startpos},
             dataType: "json",
             success: function(data){
                 var count = parseInt(data.count);
                 if(count == 0){
-                    $("#usercommand #allcommand .com-main").append("<p class=\"none\">空空如也</p>");
-                    $("#usercommand .pageshow").remove();
+                    if(firasynccmdflag == true) {
+                        $("#usercommand #allcommand .com-main").append("<p class=\"none\">空空如也</p>");
+                        $("#usercommand .pageshow").remove();
+                    }
+                    else{
+                        $("#usercommand #allcommand .com-main").append("<p class=\"none\">我是有底线的~~</p>");
+                    }
+                    $("#allcommand p.getmore a").remove();
                     return ;
                 }
                 else{
+                    firasynccmdflag = false;
                     $("#usercommand .msg span").text(count);
+                    if(count < 5){
+                        $("#allcommand p.getmore a").remove();
+                    }
+                    else {
+                        var ori = parseInt($("#allcommand p.getmore a").data("offset"));
+                        $("#allcommand p.getmore a").data("offset", (count+ori));
+                    }
 
                     //设置分页的点击，每页显示十条数据
                     var page = Math.floor(count/10) + (count-10*(Math.floor(count/10))>0?1:0);
@@ -484,7 +500,6 @@ $(function() {
                                dataType: "json",
                                success: function(data){
                                    var info = data.info;
-                                   console.log(info);
                                    if(info != "null"){
                                         var $div = $("<div class='main-reply '><p class='reply'>[讲师回复]<span> : "+info+"</span></p></div>");
                                         $(".com-main li .main-show."+id).append($div);
@@ -505,11 +520,22 @@ $(function() {
             }
         });
     };
-    async_coursecommand();
+    async_coursecommand(0);
+
+
+    /**
+     * 点击加载更多
+     */
+    var cli_getmorecommand = function(){
+
+        var offset = $(this).data("offset");
+        async_coursecommand(offset);
+    };
+    $("#allcommand .getmore a").click(cli_getmorecommand);
+
 
     /**
      * 实现点赞与踩的功能
-     // * 在页面刷新之后才生效
      */
     var cli_subcommandstar = function(){
 

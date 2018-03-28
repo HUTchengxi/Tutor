@@ -449,12 +449,12 @@ $(function () {
                            "                                </a>\n" +
                            "                            </div>\n" +
                            "                            <div class=\"pull-left\">\n" +
-                           "                                <div class=\"main-show\">" +
+                           "                                <div class=\"main-show "+cid+"\">" +
                            "                                    <p class=\"main-info\">"+info+"</p>\n" +
                            "                                    <p class=\"ctime\">时间 : "+ctime+"</p></div>\n" +
                            "                            </div>\n" +
                            "                        </div>");
-                        $(".commanddiv .maininfo .main-show").prepend($topp);
+                        $(".commanddiv .maininfo .main-show."+cid).prepend($topp);
                     });
                 }
             },
