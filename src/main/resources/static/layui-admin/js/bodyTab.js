@@ -6,7 +6,7 @@
 */
 var tabFilter,menu=[],liIndex,curNav,delMenu;
 layui.define(["element","jquery"],function(exports){
-	var element = layui.element(),
+	var element = layui.element,
 		$ = layui.jquery,
 		layId,
 		Tab = function(){
