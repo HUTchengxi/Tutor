@@ -68,9 +68,8 @@
                         <cite>请叫我马哥</cite>
                     </a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;" data-url="page/user/userInfo.html"><i class="iconfont icon-zhanghu" data-icon="icon-zhanghu"></i><cite>个人资料</cite></a></dd>
-                        <dd><a href="javascript:;" data-url="page/user/changePwd.html"><i class="iconfont icon-shezhi1" data-icon="icon-shezhi1"></i><cite>修改密码</cite></a></dd>
-                        <dd><a href="javascript:;"><i class="iconfont icon-loginout"></i><cite>退出</cite></a></dd>
+                        <dd><a href="javascript:;" data-url="/forward_con/gosystutorpersonal"><i class="iconfont icon-zhanghu" data-icon="icon-zhanghu"></i><cite>个人资料</cite></a></dd>
+                        <dd><a href="javascript:;" class="logoff"><i class="iconfont icon-loginout"></i><cite>退出</cite></a></dd>
                     </dl>
                 </li>
             </ul>
@@ -92,7 +91,7 @@
             </ul>
             <div class="layui-tab-content clildFrame">
                 <div class="layui-tab-item layui-show">
-                    <iframe src="gosystutormain"></iframe>
+                    <iframe src="gosystutormain" scrolling="no"></iframe>
                 </div>
             </div>
         </div>
@@ -107,15 +106,16 @@
         <input type="password" class="admin-header-lock-input layui-input" placeholder="请输入密码解锁.." name="lockPwd" id="lockPwd" />
         <button class="layui-btn" id="unlock">解锁</button>
     </div>
-    <p>请输入“123456”，否则不会解锁成功哦！！！</p>
 </div>
 <!-- 移动导航 -->
 <div class="site-tree-mobile layui-hide"><i class="layui-icon">&#xe602;</i></div>
 <div class="site-mobile-shade"></div>
 
+<script src="/js/custom/jquery.min.js"></script>
 <script type="text/javascript" src="/layui/layui.js"></script>
 <script type="text/javascript" src="/layui-admin/js/nav.js"></script>
 <script type="text/javascript" src="/layui-admin/js/leftNav.js"></script>
 <script type="text/javascript" src="/layui-admin/js/index.js"></script>
+<script type="text/javascript" src="/js/sysconfig/tutor/index.js"></script>
 </body>
 </html>

@@ -147,6 +147,7 @@ $(function(){
         $(".zhezhao").delay(200).css("display","none");
     };
     $(".showbig .main a").click(close_bigface);
+    $(".zhezhao").click(close_bigface);
 
     /**
      * 点击更换头像显示更换头像框

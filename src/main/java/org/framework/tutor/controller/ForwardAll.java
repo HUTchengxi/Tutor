@@ -5,6 +5,7 @@ import org.framework.tutor.service.UserMService;
 import org.framework.tutor.service.UserVService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import sun.java2d.pipe.SpanShapeRenderer;
@@ -283,7 +284,21 @@ public class ForwardAll {
     @RequestMapping("/gosystutormain")
     public String goSysTutorMain(){
 
-        return "/sysconfig/tutor/main";
+        return "/sysconfig/tutor/sysmain";
     }
 
+
+    /**
+     *
+     * @Description 进入家教的个人中心
+     * @param
+     * @return java.lang.String
+     * @author yinjimin
+     * @date 2018/3/30
+     */
+    @RequestMapping("/gosystutorpersonal")
+    public String goSysTutorPersonal(){
+
+        return "/sysconfig/tutor/personal";
+    }
 }

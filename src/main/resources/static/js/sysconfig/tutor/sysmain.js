@@ -44,7 +44,7 @@ $(function() {
         }
         $(this).closest("dd").removeClass("layui-this");
     };
-    $(document).on("click", ".top_menu .layui-nav-item dl dd a.logoff", logoff_btn);
+    $(document).on("click", ".layui-layout-right dl dd a.logoff", logoff_btn);
 
     /**
      * 异步获取历史版本更新数据
