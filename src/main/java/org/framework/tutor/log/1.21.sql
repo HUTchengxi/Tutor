@@ -259,6 +259,23 @@ create table command_star(
 );
 
 
+
+#论坛帖子表
+create table bbs_card(
+  id int auto_increment comment "唯一标识",
+  username varchar(20) not null comment "发帖人用户名",
+  title varchar(20) not null comment "帖子标题",
+  descript varchar(200) not null comment "帖子内容",
+  imgsrc varchar(50) default "/images/default/discuss.jpg",
+  crttime datetime default now() comment "发帖时间",
+  viscount int default 0 comment "访问人数",
+  comcount int default 0 comment "评论数",
+  colcount int default 0 comment "收藏人数",
+  primary key(id),
+  foreign key(username) references user_main(username)
+);
+
+
 #家教老师标签表
 #实名认证表
 #课程表

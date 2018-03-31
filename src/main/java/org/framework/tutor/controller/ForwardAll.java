@@ -90,7 +90,7 @@ public class ForwardAll {
     }
 
     /**
-     * 进入七嘴八舌界面
+     * 进入论坛中心界面
      * @return
      */
     @RequestMapping("/gabble")
