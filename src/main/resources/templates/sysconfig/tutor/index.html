@@ -62,10 +62,10 @@
                 <li class="layui-nav-item lockcms" pc="true">
                     <a href="javascript:;"><i class="iconfont icon-lock1"></i><cite>锁屏</cite></a>
                 </li>
-                <li class="layui-nav-item" pc="true">
+                <li class="layui-nav-item userinfo" pc="true">
                     <a href="javascript:;">
-                        <img src="/layui-admin/images/face.jpg" class="layui-circle" width="35" height="35" />
-                        <cite>请叫我马哥</cite>
+                        <img src="/images/default/user_face.jpg" class="layui-circle" width="35" height="35" />
+                        <cite>黑客</cite>
                     </a>
                     <dl class="layui-nav-child">
                         <dd><a href="javascript:;" data-url="/forward_con/gosystutorpersonal"><i class="iconfont icon-zhanghu" data-icon="icon-zhanghu"></i><cite>个人资料</cite></a></dd>
@@ -78,8 +78,8 @@
     <!-- 左侧导航 -->
     <div class="layui-side layui-bg-black">
         <div class="user-photo">
-            <a class="img" title="我的头像" ><img src="/layui-admin/images/face.jpg" /></a>
-            <p>你好！<span class="userName">请叫我马哥</span>, 欢迎登录</p>
+            <a class="img" title="我的头像" ><img src="/images/default/user_face.jpg" /></a>
+            <p><span class="userName">黑客</span>&nbsp;&nbsp;你好！欢迎登录</p>
         </div>
         <div class="navBar layui-side-scroll"></div>
     </div>
@@ -91,7 +91,7 @@
             </ul>
             <div class="layui-tab-content clildFrame">
                 <div class="layui-tab-item layui-show">
-                    <iframe src="gosystutormain" scrolling="no"></iframe>
+                    <iframe src="gosystutormain" scrolling="yes"></iframe>
                 </div>
             </div>
         </div>
@@ -101,7 +101,7 @@
 <!-- 锁屏 -->
 <div class="admin-header-lock" id="lock-box" style="display: none;">
     <div class="admin-header-lock-img"><img src="/layui-admin/images/face.jpg"/></div>
-    <div class="admin-header-lock-name" id="lockUserName">请叫我马哥</div>
+    <div class="admin-header-lock-name" id="lockUserName"></div>
     <div class="input_btn">
         <input type="password" class="admin-header-lock-input layui-input" placeholder="请输入密码解锁.." name="lockPwd" id="lockPwd" />
         <button class="layui-btn" id="unlock">解锁</button>
