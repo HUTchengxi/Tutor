@@ -18,13 +18,15 @@ public class PublishLogServiceImpl implements PublishLogService {
     @Autowired
     private PublishLogMapper publishLogMapper;
 
-    /**
-     * 获取最新版本的更新记录
-     * @return
-     */
     @Override
     public List<PublishLog> getLogNew() {
 
         return publishLogMapper.getLogNew();
+    }
+
+    @Override
+    public List<PublishLog> getLogAll() {
+
+        return publishLogMapper.getLogAll();
     }
 }

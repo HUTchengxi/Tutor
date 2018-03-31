@@ -11,8 +11,19 @@ import java.util.List;
 public interface PublishLogService {
 
     /**
-     * 获取罪行的版本更新记录
+     * 获取最新的版本更新记录
      * @return
      */
     List<PublishLog> getLogNew();
+
+    
+    /**  
+     *    
+     * @Description 获取所有的版本更新记录
+     * @param []    
+     * @return java.util.List<org.framework.tutor.domain.PublishLog>
+     * @author yinjimin  
+     * @date 2018/3/31
+     */  
+    List<PublishLog> getLogAll();
 }

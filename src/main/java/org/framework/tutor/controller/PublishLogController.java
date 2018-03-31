@@ -70,4 +70,49 @@ public class PublishLogController {
         writer.flush();
         writer.close();
     }
+
+
+    /**  
+     *    
+     * @Description 获取所有的版本更新记录
+     * @param [response]    
+     * @return void
+     * @author yinjimin  
+     * @date 2018/3/31
+     */  
+    @RequestMapping("/getlogall")
+    public void getLogAll(HttpServletResponse response) throws IOException {
+
+        response.setCharacterEncoding("utf-8");
+        PrintWriter writer = response.getWriter();
+        String res = null;
+
+        List<PublishLog> publishLogs = publishLogService.getLogAll();
+
+        if(publishLogs.size() == 0){
+            res = "{\"count\": \"0\"}";
+        }
+        else{
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            res = "{";
+            int i = 1;
+            for (PublishLog publishLog: publishLogs) {
+                //获取版本类型
+                PublishType publishType = publishTypeService.getById(publishLog.getTypeid());
+                res += "\""+i+"\": ";
+                String temp = "{\"ptype\": \""+publishType.getName()+"\", " +
+                        "\"pversion\": \""+publishLog.getPversion()+"\", "+
+                        "\"ptime\": \""+simpleDateFormat.format(publishLog.getPtime())+"\", "+
+                        "\"descript\": \""+publishLog.getDescript()+"\"}, ";
+                res += temp;
+                i++;
+            }
+            res = res.substring(0, res.length()-2);
+            res += "}";
+        }
+
+        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.flush();
+        writer.close();
+    }
 }

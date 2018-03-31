@@ -59,7 +59,6 @@ $(function() {
             dataType: "json",
             success: function(data){
                 var count = data.count;
-                console.log(data);
                 if(count == 0){
                     return ;
                 }
@@ -88,6 +87,92 @@ $(function() {
         });
     };
     async_getlognew();
+
+
+    /**
+     * 异步获取所有的历史版本更新数据
+     */
+    var async_getlogAll = function(){
+
+        $.ajax({
+            async: true,
+            type: "post",
+            url: "/publishlog_con/getlogall",
+            dataType: "json",
+            success: function(data){
+                var currentVersion = "";
+                var tempvercls = "";
+                $.each(data, function(index, item){
+                    var ptype = item.ptype;
+                    var pversion = item.pversion;
+                    var ptime = item.ptime;
+                    var descript = item.descript;
+                    if(currentVersion == ""){
+                        currentVersion = pversion;
+                        tempvercls = currentVersion.replace(".","-").replace(".","-").replace(".","-");
+                        $("#syslogmore").append("<div class=\"ver"+currentVersion.substring(0,1)+"\">\n" +
+                            "            <fieldset class=\"layui-elem-field layui-field-title first\">\n" +
+                            "                <legend>"+currentVersion.substring(0,1)+".x.x系列更新</legend>\n" +
+                            "            </fieldset>\n" +
+                            "            <ul class=\"layui-timeline\">\n" +
+                            "            <li class=\"layui-timeline-item\">\n" +
+                            "                <i class=\"layui-icon layui-timeline-axis\"></i>\n" +
+                            "                <div class=\"layui-timeline-content layui-text "+tempvercls+"\">\n" +
+                            "                    <h3 class=\"layui-timeline-title\">"+ptime+"<span class=\"ptype\">("+pversion+"&nbsp;&nbsp;"+ptype+")</span></h3>\n" +
+                            "                    <p>"+descript+"</p>\n" +
+                            "                </div>\n" +
+                            "            </li>\n" +
+                            "        </ul>\n" +
+                            "        </div>");
+                    }
+                    else if(pversion == currentVersion){
+                        $("#syslogmore .ver"+currentVersion.substring(0,1)+" ul li div."+tempvercls).append("<p>"+descript+"</p>");
+                    }
+                    else if(pversion.substring(0,1) == currentVersion.substring(0,1)){
+                        currentVersion = pversion;
+                        tempvercls = currentVersion.replace(".","-").replace(".","-").replace(".","-");
+                        $("#syslogmore .ver"+currentVersion.substring(0,1)+" ul").append("<li class=\"layui-timeline-item\">\n" +
+                            "                <i class=\"layui-icon layui-timeline-axis\"></i>\n" +
+                            "                <div class=\"layui-timeline-content layui-text "+tempvercls+"\">\n" +
+                            "                    <h3 class=\"layui-timeline-title\">"+ptime+"<span class=\"ptype\">("+pversion+"&nbsp;&nbsp;"+ptype+")</span></h3>\n" +
+                            "                    <p>"+descript+"</p>" +
+                            "                </div>\n" +
+                            "            </li>");
+                    }
+                    else{
+                        $("#syslogmore .ver"+currentVersion.substring(0,1)+" ul").append("<li class=\"layui-timeline-item\">\n" +
+                            "                <i class=\"layui-icon layui-anim layui-anim-rotate layui-anim-loop layui-timeline-axis\"></i>\n" +
+                            "            </li>");
+                        currentVersion = pversion;
+                        tempvercls = currentVersion.replace(".","-").replace(".","-").replace(".","-");
+                        $("#syslogmore").append("<div class=\"ver"+currentVersion.substring(0,1)+"\">\n" +
+                            "            <fieldset class=\"layui-elem-field layui-field-title first\">\n" +
+                            "                <legend>"+currentVersion.substring(0,1)+".x.x系列更新</legend>\n" +
+                            "            </fieldset>\n" +
+                            "            <ul class=\"layui-timeline\">\n" +
+                            "            <li class=\"layui-timeline-item\">\n" +
+                            "                <i class=\"layui-icon layui-timeline-axis\"></i>\n" +
+                            "                <div class=\"layui-timeline-content layui-text "+tempvercls+"\">\n" +
+                            "                    <h3 class=\"layui-timeline-title\">"+ptime+"<span class=\"ptype\">("+pversion+"&nbsp;&nbsp;"+ptype+")</span></h3>\n" +
+                            "                    <p>"+descript+"</p>\n" +
+                            "                </div>\n" +
+                            "            </li>\n" +
+                            "        </ul>\n" +
+                            "        </div>");
+                    }
+                });
+                $("#syslogmore .ver"+currentVersion.substring(0,1)+" ul").append("<li class=\"layui-timeline-item\">\n" +
+                    "                <i class=\"layui-icon layui-anim layui-anim-rotate layui-anim-loop layui-timeline-axis\"></i>\n" +
+                    "            </li>");
+                $("#syslogmore").append("<p class=\"nomore\">---加载到底啦---</p>");
+            },
+            error: function(xhr, status){
+                window.alert("后台环境异常导致无法获取版本更新数据，请稍后再试");
+                window.console.log(xhr);
+            }
+        });
+    };
+    async_getlogAll();
 
     /**
      * 异步获取当前家教的所有常用链接数据

@@ -12,8 +12,8 @@ $(function() {
             dataType: "json",
             success: function(data) {
                 //最上面更新
-                $(".layui-header .top_menu li.userinfo img").attr("src", data.imgsrc);
-                $(".layui-header .top_menu li.userinfo cite").text(data.nickname);
+                $(".layui-header .top_menu li.userinfo a img").attr("src", data.imgsrc);
+                $(".layui-header .top_menu li.userinfo > a cite").text(data.nickname);
                 //左侧更新
                 $(".layui-side .user-photo img").attr("src", data.imgsrc);
                 $(".layui-side .user-photo p span").text(data.nickname);
