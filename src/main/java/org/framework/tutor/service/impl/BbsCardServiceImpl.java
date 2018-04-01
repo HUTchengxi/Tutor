@@ -12,6 +12,7 @@
  */
 package org.framework.tutor.service.impl;
 
+import org.framework.tutor.domain.BbsCard;
 import org.framework.tutor.mapper.BbsCardMapper;
 import org.framework.tutor.service.BbsCardService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,5 +34,19 @@ public class BbsCardServiceImpl implements BbsCardService {
     public Integer getMyCardCount(String username) {
 
         return bbsCardMapper.getMyCardCount(username);
+    }
+
+
+    @Override
+    public BbsCard getByTitle(String title) {
+
+        return bbsCardMapper.getByTitle(title);
+    }
+
+
+    @Override
+    public void publishCard(String username, String title, String imgsrc, String descript) {
+
+        bbsCardMapper.publishCard(username, title, imgsrc, descript);
     }
 }

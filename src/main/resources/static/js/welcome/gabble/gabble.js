@@ -278,6 +278,7 @@ $(function () {
             $(this).closest("form").find(".errinfo").css("display", "block").find("p").text("请先登录哦");
             return false;
         }
+            $(this).closest("form").find(".errinfo").css("display", "none");
     };
     $(".pubdiscuss form a.btn-primary").click(submit_writeDescript);
 
@@ -295,6 +296,7 @@ $(function () {
             $(this).closest(".modal").find(".modal-body p.terr").css("display", "block").text("请输入标题");
         }
         else {
+            $(this).closest(".modal").find(".modal-body p.terr").css("display", "none");
             $.ajax({
                 async: true,
                 type: "post",
@@ -306,7 +308,19 @@ $(function () {
                 },
                 dataType: "json",
                 success: function (data) {
-                    console.log(data);
+                    var status = data.status;
+                    console.log(status == "valid");
+                    if(status == "texist"){
+                        $("#pubModal .modal-body p.terr").css("display", "block").text("标题已被使用");
+                    }
+                    else if(status == "valid"){
+                        window.alert("发表成功");
+                        $(".pubdiscuss p.descript").text("在这里写你的问题...");
+                        $("#pubModal .modal-body input").val("");
+                        async_getImgsrc();
+                        $("#pubModal .modal-footer button:nth-child(2)").trigger("click");
+                        async_getpubcount();
+                    }
                 },
                 error: function (xhr, status) {
                     window.alert("后台环境异常导致无法发表讨论，请稍后再试");

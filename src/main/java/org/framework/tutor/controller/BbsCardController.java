@@ -61,4 +61,36 @@ public class BbsCardController {
         writer.flush();
         writer.close();
     }
+
+
+    /**  
+     *    
+     * @Description 指定用户发表讨论
+     * @param [title, imgsrc, descript, request, response]    
+     * @return void
+     * @author yinjimin  
+     * @date 2018/4/1
+     */  
+    @RequestMapping("/publishCard")
+    public void publishCard(String title, String imgsrc, String descript, HttpServletRequest request, HttpServletResponse response)
+            throws IOException {
+
+        PrintWriter writer = response.getWriter();
+        HttpSession session = request.getSession();
+        String res = null;
+        String username = (String) session.getAttribute("username");
+
+        //判断标题是否已经被占用了
+        if(bbsCardService.getByTitle(title) != null){
+            res = "{\"status\": \"texist\"}";
+        }
+        else{
+            bbsCardService.publishCard(username, title, imgsrc, descript);
+            res = "{\"status\": \"valid\"}";
+        }
+
+        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.flush();
+        writer.close();
+    }
 }
