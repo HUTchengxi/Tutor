@@ -45,10 +45,13 @@
     <h4 class="text-left text-info">原创发布</h4>
     <form class="form-horizontal" role="form" action="javascript:;">
         <div class="form-group col-lg-12">
-            <p class="form-control" contenteditable="true">在这里写你的问题...</p>
+            <p class="form-control descript" contenteditable="true">在这里写你的问题...</p>
+        </div>
+        <div class="col-lg-3 pull-right errinfo">
+            <p>111</p>
         </div>
         <div class="form-group col-lg-1 pull-right">
-            <button class="btn btn-primary" type="submit">发起讨论</button>
+            <a class="btn btn-primary" data-toggle="modal" href="#pubModal">发起讨论</a>
         </div>
     </form>
 </div>
@@ -68,32 +71,8 @@
 
 <!--内容展示-->
 <div id="blog">
-    <h4 class="text-left text-info">热门讨论</h4>
+    <h4 class="text-left text-info">热门帖子</h4>
     <ul>
-        <li>
-            <div class="blog-left">
-                <p ><a href="detail.html" class="title">测试文章</a></p>
-                <p style="margin-top: 20px">内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示</p>
-                <p style="margin-top: 90px"><img src="http://img.php.cn/upload/course/000/000/004/58170f99f2430105.png" />测试<img src="http://img.php.cn/upload/course/000/000/004/58170fbda3f34844.png" style="margin-left: 20px"/>2016/10/31</p>
-            </div>
-            <div class="blog-right"><img src="http://img.php.cn/upload/course/000/000/004/58170bc487acc779.jpg"/></div>
-        </li>
-        <li>
-            <div class="blog-left">
-                <p ><a href="detail.html" class="title">测试文章</a></p>
-                <p style="margin-top: 20px">内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示</p>
-                <p style="margin-top: 90px"><img src="http://img.php.cn/upload/course/000/000/004/58170f99f2430105.png" />测试<img src="http://img.php.cn/upload/course/000/000/004/58170fbda3f34844.png" style="margin-left: 20px"/>2016/10/31</p>
-            </div>
-            <div class="blog-right"><img src="http://img.php.cn/upload/course/000/000/004/58170bc487acc779.jpg"/></div>
-        </li>
-        <li>
-            <div class="blog-left">
-                <p ><a href="detail.html" class="title">测试文章</a></p>
-                <p style="margin-top: 20px">内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示</p>
-                <p style="margin-top: 90px"><img src="http://img.php.cn/upload/course/000/000/004/58170f99f2430105.png" />测试<img src="http://img.php.cn/upload/course/000/000/004/58170fbda3f34844.png" style="margin-left: 20px"/>2016/10/31</p>
-            </div>
-            <div class="blog-right"><img src="http://img.php.cn/upload/course/000/000/004/58170bc487acc779.jpg"/></div>
-        </li>
         <li>
             <div class="blog-left">
                 <p ><a href="detail.html" class="title">测试文章</a></p>
@@ -121,15 +100,50 @@
         </li>
         <li>
             <p class="pubinfo text-info">原创：
-                <a href="#"><span class="pubcount">199</span></a>
+                <a href="/forward_con/gocardpublish"><span class="pubcount"></span></a>
             </p>
         </li>
         <li>
             <p class="colinfo text-info">收藏：
-                <a href="#"><span class="colcount">99</span></a>
+                <a href="/forward_con/gocardcollect"><span class="colcount"></span></a>
             </p>
         </li>
     </ul>
+</div>
+
+
+<!--发表文章modal-->
+<div class="modal fade" id="pubModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">相关设置</h4>
+            </div>
+            <div class="modal-body" data-id="null">
+                <div class="col-lg-8">
+                    <span>讨论标题</span>
+                    <input class="form-control title" type="text"/>
+                    <p class="pull-right errinfo terr">111</p>
+                </div>
+                <div class="col-lg-8">
+                    <span>展示图片选择</span>
+                    <select class="form-control imgsrc">
+                    </select>
+                    <p class="pull-right errinfo ierr">1 </p>
+                </div>
+                <div class="col-lg-8">
+                    <span>展示图片预览</span>
+                    <img src="/images/default/user_face.jpg" class="form-control" />
+                </div>
+                <div style="clear:both"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">发表</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 

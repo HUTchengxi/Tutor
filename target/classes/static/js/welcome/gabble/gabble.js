@@ -23,29 +23,104 @@ $(function () {
     /**
      * 获取用户的imgsrc和nickname
      */
-    var async_getuserinfo = function(){
+    var async_getuserinfo = function () {
 
         $.ajax({
             async: true,
             type: "post",
             url: "/usermain_con/getuserinfo",
             dataType: "json",
-            success: function(data) {
+            success: function (data) {
                 //资料卡片更新
                 $(".personal img").attr("src", data.imgsrc);
                 $(".personal p.userinfo").text(data.nickname);
             },
-            error: function(xhr, status){
+            error: function (xhr, status) {
                 window.alert("后台环境异常导致无法获取用户数据，请稍后再试");
                 console.log(xhr);
             }
         });
     };
-    async_getuserinfo();
+
+
+    /**
+     * 获取用户的原创总数
+     */
+    var async_getpubcount = function () {
+
+        $.ajax({
+            async: true,
+            type: "post",
+            url: "/bbscard_con/getmycardcount",
+            dataType: "json",
+            success: function (data) {
+                var count = data.count;
+                $(".personal .pubcount").text(count);
+            },
+            error: function (xhr, status) {
+                window.alert("后台环境异常导致无法获取用户的信息，请稍后再试");
+                window.console.log(xhr);
+            }
+        });
+    };
+
+
+    /**
+     * 获取用户的收藏总数
+     */
+    var async_getcolcount = function () {
+
+        $.ajax({
+            async: true,
+            type: "post",
+            url: "/bbscardcollect_con/getmycollectcount",
+            dataType: "json",
+            success: function (data) {
+                var count = data.count;
+                $(".personal .colcount").text(count);
+            },
+            error: function (xhr, status) {
+                window.alert("后台环境异常导致无法获取用户的信息，请稍后再试");
+                window.console.log(xhr);
+            }
+        });
+    };
+
+
+    /**
+     * 异步获取背景图片的imgsrc
+     */
+    var async_getImgsrc = function () {
+        $.ajax({
+            async: true,
+            type: "post",
+            url: "/commonimgsrc_con/getAll",
+            dataType: "json",
+            success: function (data) {
+                var img = "";
+                $("#pubModal .modal-body select").empty();
+                $.each(data, function (index, item) {
+                    var title = item.title;
+                    var imgsrc = item.imgsrc;
+                    if(img == ""){
+                        img = imgsrc;
+                    }
+                    $("#pubModal .modal-body select").append("<option value='" + imgsrc + "'>"+title+"</option>");
+                    $("#pubModal .modal-body img").attr("src", img);
+                });
+            },
+            error: function (xhr, status) {
+                window.alert("后台环境异常导致无法获取背景图片数据，请稍后再试");
+                window.console.log(xhr);
+            }
+        });
+    };
+
 
     /**
      * 判断当前用户是否登录
      */
+    var logstatus = true;
     var login_check = function () {
 
         $("nav ul.navbar-right").text("");
@@ -58,11 +133,17 @@ $(function () {
                 var status = data.status;
                 if (status === "nologin") {
                     $(".personal").empty();
+                    $("#pubModal").empty();
+                    logstatus = false;
                     $("nav ul.navbar-right").append("<li><a style='color: red;'>您好，请先登录</a></li>\n" +
                         "                    <li><a href='/forward_con/gologin'><span class='glyphicon glyphicon-log-in'></span> 登录</a></li>" +
                         "                    <li><a href='/forward_con/goregister'><span class='glyphicon glyphicon-user'></span> 注册</a></li>\n");
                 }
                 else {
+                    async_getuserinfo();
+                    async_getpubcount();
+                    async_getcolcount();
+                    async_getImgsrc();
                     $(".personal").css("display", "block");
                     var hour = new Date().getHours();
                     var now = new Date().format("yyyy-MM-dd hh:mm:ss");
@@ -164,17 +245,87 @@ $(function () {
     /**
      * 页面滚动到一定px固定资料卡片
      */
-    var window_scroll = function(){
+    var window_scroll = function () {
 
         var scrollTop = $(this).scrollTop();
-        if(scrollTop >= 225){
-            $(".personal").css("position", "fixed").css("top","76px");
+        if (scrollTop >= 225) {
+            $(".personal").css("position", "fixed").css("top", "76px");
         }
-        else{
+        else {
             $(".personal").css("position", "absolute").css("top", "300px");
         }
     };
     $(window).scroll(window_scroll);
     $(window).trigger("scroll");
+
+
+    //------------------------------发表讨论-----------------------------------------
+
+    /**
+     * 外部点击发表讨论的一级按钮
+     * @returns {boolean}
+     */
+    var submit_writeDescript = function () {
+
+        var descript = $(this).closest("form").find("p.descript").text();
+        //没有输入问题
+        if (descript.trim() == "" || descript.trim() == "在这里写你的问题...") {
+            $(this).closest("form").find(".errinfo").css("display", "block").find("p").text("请输入你的问题");
+            return false;
+        }
+        //没有登录
+        else if (!logstatus) {
+            $(this).closest("form").find(".errinfo").css("display", "block").find("p").text("请先登录哦");
+            return false;
+        }
+    };
+    $(".pubdiscuss form a.btn-primary").click(submit_writeDescript);
+
+
+    /**
+     * modal点击发表讨论触发事件
+     */
+    var submit_sendDescript = function () {
+
+        var title = $(this).closest(".modal").find(".modal-body input.title").val();
+        var imgsrc = $(this).closest(".modal").find(".modal-body select").val();
+        var descript = $(".pubdiscuss p.descript").text();
+
+        if (title.trim() == "") {
+            $(this).closest(".modal").find(".modal-body p.terr").css("display", "block").text("请输入标题");
+        }
+        else {
+            $.ajax({
+                async: true,
+                type: "post",
+                url: "/bbscard_con/publishCard",
+                data: {
+                    title: title,
+                    imgsrc: imgsrc,
+                    descript: descript
+                },
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+                },
+                error: function (xhr, status) {
+                    window.alert("后台环境异常导致无法发表讨论，请稍后再试");
+                    window.console.log(xhr);
+                }
+            });
+        }
+    };
+    $("#pubModal .modal-footer button:nth-child(1)").click(submit_sendDescript);
+
+
+    /**
+     * 点击进行更改背景图片
+     */
+    var modal_changeimgsrc = function(){
+
+        var imgsrc = $(this).val();
+        $("#pubModal .modal-body img").attr("src", imgsrc);
+    };
+    $("#pubModal .modal-body select").change(modal_changeimgsrc);
 
 });

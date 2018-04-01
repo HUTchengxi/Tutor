@@ -276,6 +276,48 @@ create table bbs_card(
 );
 
 
+
+#用户帖子收藏表
+create table bbs_card_collect(
+  id int primary key auto_increment comment "唯一标识",
+  username varchar(20) not null comment "收藏的用户名",
+  cardid int not null comment "收藏的帖子id",
+  coltime datetime default now() comment "收藏时间",
+  foreign key(username) references user_main(username),
+  foreign key(cardid) references bbs_card(id)
+);
+
+
+
+
+#用户帖子评论表
+create table bbs_card_command(
+  id int primary key auto_increment comment "唯一标识",
+  username varchar(20) not null comment "评论的用户名",
+  cardid int not null comment "评论的帖子id",
+  floor int not null comment "当前占楼",
+  repfloor int not null comment "若是回复则回复floor，不是则为null",
+  comment varchar(200) not null comment "评论信息",
+  comtime datetime default now() comment "评论时间",
+  gcount int default 0 comment "点赞数",
+  bcount int default 0 comment "踩数",
+  foreign key(username) references user_main(username),
+  foreign key(cardid) references bbs_card(id),
+  foreign key(repfloor) references bbs_card_command(floor)
+);
+
+
+
+
+#发表帖子的背景图片表
+create table common_imgsrc(
+  id int primary key auto_increment comment "唯一标识",
+  imgsrc varchar(100) not null comment "图片位置，相对于项目，绝对于网址"
+);
+
+
+
+
 #家教老师标签表
 #实名认证表
 #课程表

@@ -40,7 +40,7 @@ a:hover{color:red;text-decoration:none;}
     width: 280px;
     height: 200px;
 }
-.title{
+#blog .title{
     text-decoration:none;
     font-size: 26px;
 }
@@ -107,9 +107,20 @@ a:hover{color:red;text-decoration:none;}
 .pubdiscuss form p{
     height: 120px;
 }
+.pubdiscuss form .errinfo{
+    display: none;
+}
+.pubdiscuss form .errinfo p{
+    height: 0;
+    color: red;
+}
 .pubdiscuss form div.form-group{
+    margin-top: -2%;
     margin-left: 0;
-    margin-right: 0;
+    margin-right: 2.5%;
+}
+.pubdiscuss form div.form-group:nth-child(1){
+    margin-top: 0;
 }
 .pubdiscuss form div:nth-child(2){
     margin-right: 2.5%;
@@ -182,4 +193,22 @@ div.form-group p{
 .personal p span{
     display: inline-block;
     width: 15%;
+}
+
+
+ #pubModal div.modal-body div.col-lg-8{
+    margin-top: 5%;
+}
+ #pubModal div.modal-body div.col-lg-8:nth-child(1){
+     margin-top: 0;
+ }
+#pubModal div.modal-body div.col-lg-8 img{
+    height: 200px;
+}
+#pubModal div.modal-body input, #pubModal div.modal-body select, #pubModal div.modal-body img{
+    margin-left: 27%;
+}
+#pubModal .modal-body p.errinfo{
+    display: none;
+    color: red;
 }
