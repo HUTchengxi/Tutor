@@ -11,11 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bf479440-431d-499c-9612-40c14de1a166" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardController.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/BbsCardService.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/BbsCardService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/BbsCardServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/BbsCardServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/gabble.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/gabble.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/gabble.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/gabble.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -1017,7 +1012,7 @@
       <workItem from="1522498513621" duration="10000" />
       <workItem from="1522498726310" duration="12786000" />
       <workItem from="1522548508318" duration="1778000" />
-      <workItem from="1522552202403" duration="14683000" />
+      <workItem from="1522552202403" duration="14697000" />
     </task>
     <task id="LOCAL-00001" summary="将毕设项目提交到gitlab">
       <created>1520393481249</created>
@@ -1327,11 +1322,18 @@
       <option name="project" value="LOCAL" />
       <updated>1522592805410</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="论坛中心发表讨论板块除了发表帖子，其余的已经都已实现">
+      <created>1522595394929</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1522595394930</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="867980000" />
+    <option name="totallyTimeSpent" value="867994000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
