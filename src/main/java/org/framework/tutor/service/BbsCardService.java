@@ -2,6 +2,8 @@ package org.framework.tutor.service;
 
 import org.framework.tutor.domain.BbsCard;
 
+import java.util.List;
+
 public interface BbsCardService {
 
 
@@ -35,4 +37,26 @@ public interface BbsCardService {
      * @date 2018/4/1
      */
     void publishCard(String username, String title, String imgsrc, String descript);
+
+
+    /**
+     *
+     * @Description 关键字查询数据
+     * @param [keyword]
+     * @return java.util.List<org.framework.tutor.domain.BbsCard>
+     * @author yinjimin
+     * @date 2018/4/3
+     */
+    List<BbsCard> searchCard(String keyword);
+
+
+    /**
+     *
+     * @Description 加载最多五条热门数据
+     * @param []
+     * @return java.util.List<org.framework.tutor.domain.BbsCard>
+     * @author yinjimin
+     * @date 2018/4/3
+     */
+    List<BbsCard> loadHotCard();
 }

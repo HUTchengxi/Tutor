@@ -102,10 +102,10 @@ $(function () {
                 $.each(data, function (index, item) {
                     var title = item.title;
                     var imgsrc = item.imgsrc;
-                    if (img == "") {
+                    if(img == ""){
                         img = imgsrc;
                     }
-                    $("#pubModal .modal-body select").append("<option value='" + imgsrc + "'>" + title + "</option>");
+                    $("#pubModal .modal-body select").append("<option value='" + imgsrc + "'>"+title+"</option>");
                     $("#pubModal .modal-body img").attr("src", img);
                 });
             },
@@ -262,113 +262,129 @@ $(function () {
     /**
      * 校验字段
      */
-    var str_isnull = function (descript) {
-        if (descript.trim() == "" || descript.trim() == "在这里写你的问题...") {
+    var str_isnull = function(descript){
+        if(descript.trim() == "" || descript.trim() == "在这里写你的问题..."){
             return true;
         }
-        if (descript.indexOf("在这里写你的问题...") == 0) {
+        if(descript.indexOf("在这里写你的问题...") == 0){
             return true;
         }
         return false;
     };
 
 
-    //------------------------------发表讨论-----------------------------------------
-
     /**
-     * 外部点击发表讨论的一级按钮
-     * @returns {boolean}
+     * 异步将问题赋值到descript描述框中
      */
-    var submit_writeDescript = function () {
+    function async_loadDescript(){
 
-        var descript = $(this).closest("form").find("p.descript").text();
-        //没有输入问题
-        if (str_isnull(descript)) {
-            $(this).closest("form").find(".errinfo").css("display", "block").find("p").text("请输入你的问题");
-            return false;
+        var url = decodeURI(window.location.href);
+        var keyword = url.substring(url.lastIndexOf("keyword=")+8);
+        if(keyword.trim() != ""){
+            $(".pubdiscuss p.descript").text(keyword);
         }
-        //没有登录
-        else if (!logstatus) {
-            $(this).closest("form").find(".errinfo").css("display", "block").find("p").text("请先登录哦");
-            return false;
-        }
-        $(this).closest("form").find(".errinfo").css("display", "none");
-    };
-    $(".pubdiscuss form a.btn-primary").click(submit_writeDescript);
 
-
-    /**
-     * modal点击发表讨论触发事件
-     */
-    var submit_sendDescript = function () {
-
-        var title = $(this).closest(".modal").find(".modal-body input.title").val();
-        var imgsrc = $(this).closest(".modal").find(".modal-body select").val();
-        var descript = $(".pubdiscuss p.descript").text();
-
-        if (title.trim() == "") {
-            $(this).closest(".modal").find(".modal-body p.terr").css("display", "block").text("请输入标题");
-        }
-        else {
-            $(this).closest(".modal").find(".modal-body p.terr").css("display", "none");
-            $.ajax({
-                async: true,
-                type: "post",
-                url: "/bbscard_con/publishCard",
-                data: {
-                    title: title,
-                    imgsrc: imgsrc,
-                    descript: descript
-                },
-                dataType: "json",
-                success: function (data) {
-                    var status = data.status;
-                    if (status == "texist") {
-                        $("#pubModal .modal-body p.terr").css("display", "block").text("标题已被使用");
-                    }
-                    else if (status == "valid") {
-                        window.alert("发表成功");
-                        $(".pubdiscuss p.descript").text("在这里写你的问题...");
-                        $("#pubModal .modal-body input").val("");
-                        async_getImgsrc();
-                        $("#pubModal .modal-footer button:nth-child(2)").trigger("click");
-                        async_getpubcount();
-                    }
-                },
-                error: function (xhr, status) {
-                    window.alert("后台环境异常导致无法发表讨论，请稍后再试");
-                    window.console.log(xhr);
+        $.ajax({
+            async: true,
+            type: "post",
+            url: "/bbscard_con/searchCard",
+            data: {keyword: keyword},
+            dataType: "json",
+            success: function(data){
+                var count = data.count;
+                if(count == 0){
+                    $(".mineblog ul").remove();
+                    $(".mineblog div").remove();
+                    $(".mineblog").append("<p style='color: grey' class='text-center'>没有找到对应的结果</p>");
+                    return ;
                 }
-            });
-        }
+                $.each(data, function(index, item){
+                    var title = item.title;
+                    var id = item.id;
+                    var bimgsrc = item.bimgsrc;
+                    var crttime = item.crttime;
+                    var descript = item.descript;
+                    var imgsrc = item.imgsrc;
+                    var nickname = item.nickname;
+                    $(".mineblog ul").append("<li>\n" +
+                        "            <div class=\"blog-left\">\n" +
+                        "                <p ><a href=\"javascript:;\" data-id='"+id+"' class=\"title\">"+title+"</a></p>\n" +
+                        "                <p style=\"margin-top: 20px\">"+descript+"</p>\n" +
+                        "                <p style=\"margin-top: 80px\"><img src=\""+imgsrc+"\" style=\"width: 25px;height: 25px;border-radius: 50%;\" />"+nickname+"<img src=\"http://img.php.cn/upload/course/000/000/004/58170fbda3f34844.png\" style=\"margin-left: 20px\"/>"+crttime+"</p>\n" +
+                        "            </div>\n" +
+                        "            <div class=\"blog-right\"><img src=\""+bimgsrc+"\"/></div>\n" +
+                        "        </li>");
+                });
+            },
+            error: function(xhr, status){
+                alert("后台环境异常导致无法获取帖子数据，请稍后再试");
+                window.console.log(xhr);
+            }
+        });
     };
-    $("#pubModal .modal-footer button:nth-child(1)").click(submit_sendDescript);
+    async_loadDescript();
 
 
     /**
-     * 点击进行更改背景图片
+     * 异步获取最多五条最新帖子
      */
-    var modal_changeimgsrc = function () {
+    function async_loadHotCard(){
 
-        var imgsrc = $(this).val();
-        $("#pubModal .modal-body img").attr("src", imgsrc);
+        $.ajax({
+            async: true,
+            type: "post",
+            url: "/bbscard_con/loadhotcard",
+            dataType: "json",
+            success: function(data){
+                var count = data.count;
+                if(count == 0){
+                    $(".hotblog ul").remove();
+                    $(".hotblog div").remove();
+                    $(".hotblog").append("<p style='color: grey' class='text-center'>没有找到对应的结果</p>");
+                    return ;
+                }
+                $.each(data, function(index, item){
+                    var title = item.title;
+                    var id = item.id;
+                    var bimgsrc = item.bimgsrc;
+                    var crttime = item.crttime;
+                    var descript = item.descript;
+                    var imgsrc = item.imgsrc;
+                    var nickname = item.nickname;
+                    $(".hotblog ul").append("<li>\n" +
+                        "            <div class=\"blog-left\">\n" +
+                        "                <p ><a href=\"javascript:;\" data-id='"+id+"' class=\"title\">"+title+"</a></p>\n" +
+                        "                <p style=\"margin-top: 20px\">"+descript+"</p>\n" +
+                        "                <p style=\"margin-top: 80px\"><img src=\""+imgsrc+"\" style=\"width: 25px;height: 25px;border-radius: 50%;\" />"+nickname+"<img src=\"http://img.php.cn/upload/course/000/000/004/58170fbda3f34844.png\" style=\"margin-left: 20px\"/>"+crttime+"</p>\n" +
+                        "            </div>\n" +
+                        "            <div class=\"blog-right\"><img src=\""+bimgsrc+"\"/></div>\n" +
+                        "        </li>");
+                });
+            },
+            error: function(xhr, status){
+                console.log(xhr);
+            }
+        });
     };
-    $("#pubModal .modal-body select").change(modal_changeimgsrc);
+    async_loadHotCard();
+
+
+
+
 
 
     //--------------------------搜索问题-----------------------------------
     /**
      * 点击搜索问题
      */
-    var submit_searchcard = function () {
+    var submit_searchcard = function(){
 
-        var keyword = $(this).find("p").text();
-        console.log(keyword);
-        if (str_isnull(keyword)) {
+        var keyword = $(".pubdiscuss .descript").text();
+        if(str_isnull(keyword)){
             keyword = "";
         }
-        window.location = "/forward_con/showcardsearch?keyword=" + keyword;
+        window.location = "/forward_con/showcardsearch?keyword="+keyword;
     };
-    $(".finddiscuss form").submit(submit_searchcard);
+    $(".pubdiscuss a").click(submit_searchcard);
 
 });

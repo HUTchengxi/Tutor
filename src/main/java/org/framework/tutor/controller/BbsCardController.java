@@ -13,8 +13,13 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
+import org.framework.tutor.domain.BbsCard;
+import org.framework.tutor.domain.CourseLog;
+import org.framework.tutor.domain.UserMain;
 import org.framework.tutor.service.BbsCardService;
+import org.framework.tutor.service.UserMService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,6 +28,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.List;
 
 /**
  * @Description: 论坛帖子控制类
@@ -35,6 +42,9 @@ public class BbsCardController {
 
     @Autowired
     private BbsCardService bbsCardService;
+
+    @Autowired
+    private UserMService userMService;
 
 
     /**
@@ -87,6 +97,100 @@ public class BbsCardController {
         else{
             bbsCardService.publishCard(username, title, imgsrc, descript);
             res = "{\"status\": \"valid\"}";
+        }
+
+        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.flush();
+        writer.close();
+    }
+
+
+    /**
+     *
+     * @Description 获取指定关键字的帖子数据
+     * @param [keyword, response]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/3
+     */
+    @PostMapping("/searchCard")
+    public void searchCard(String keyword, HttpServletResponse response) throws IOException {
+
+        response.setCharacterEncoding("utf-8");
+        PrintWriter  writer = response.getWriter();
+        String res = null;
+
+        //获取课程记录
+        List<BbsCard> bbsCards = bbsCardService.searchCard(keyword);
+        if(bbsCards.size() == 0){
+            res = "{\"count\": \"0\"}";
+        }
+        else {
+            res = "{";
+            int i = 1;
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+            for (BbsCard bbsCard: bbsCards) {
+                UserMain userMain = userMService.getByUser(bbsCard.getUsername());
+                res += "\""+i+"\": ";
+                String temp = "{\"crttime\": \""+simpleDateFormat.format(bbsCard.getCrttime())+"\", " +
+                        "\"nickname\": \""+userMain.getNickname()+"\", " +
+                        "\"imgsrc\": \""+userMain.getImgsrc()+"\", " +
+                        "\"bimgsrc\": \""+bbsCard.getImgsrc()+"\", " +
+                        "\"id\": \""+bbsCard.getId()+"\", " +
+                        "\"descript\": \""+bbsCard.getDescript()+"\", " +
+                        "\"title\": \""+bbsCard.getTitle()+"\"}, ";
+                res += temp;
+                i++;
+            }
+            res = res.substring(0, res.length()-2);
+            res += "}";
+        }
+
+        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.flush();
+        writer.close();
+    }
+
+
+    /**  
+     *    
+     * @Description 加载最新五条热门帖子
+     * @param [response]
+     * @return void
+     * @author yinjimin  
+     * @date 2018/4/3
+     */  
+    @PostMapping("/loadhotcard")
+    public void loadHotCard(HttpServletResponse response) throws IOException {
+
+        response.setCharacterEncoding("utf-8");
+        PrintWriter  writer = response.getWriter();
+        String res = null;
+
+        //获取课程记录
+        List<BbsCard> bbsCards = bbsCardService.loadHotCard();
+        if(bbsCards.size() == 0){
+            res = "{\"count\": \"0\"}";
+        }
+        else {
+            res = "{";
+            int i = 1;
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+            for (BbsCard bbsCard: bbsCards) {
+                UserMain userMain = userMService.getByUser(bbsCard.getUsername());
+                res += "\""+i+"\": ";
+                String temp = "{\"crttime\": \""+simpleDateFormat.format(bbsCard.getCrttime())+"\", " +
+                        "\"nickname\": \""+userMain.getNickname()+"\", " +
+                        "\"imgsrc\": \""+userMain.getImgsrc()+"\", " +
+                        "\"bimgsrc\": \""+bbsCard.getImgsrc()+"\", " +
+                        "\"id\": \""+bbsCard.getId()+"\", " +
+                        "\"descript\": \""+bbsCard.getDescript()+"\", " +
+                        "\"title\": \""+bbsCard.getTitle()+"\"}, ";
+                res += temp;
+                i++;
+            }
+            res = res.substring(0, res.length()-2);
+            res += "}";
         }
 
         writer.print(new JsonParser().parse(res).getAsJsonObject());

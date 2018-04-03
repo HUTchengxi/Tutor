@@ -18,6 +18,8 @@ import org.framework.tutor.service.BbsCardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 /**
  * @author yinjimin
  * @Description: 论坛帖子服务层实现类
@@ -48,5 +50,17 @@ public class BbsCardServiceImpl implements BbsCardService {
     public void publishCard(String username, String title, String imgsrc, String descript) {
 
         bbsCardMapper.publishCard(username, title, imgsrc, descript);
+    }
+
+    @Override
+    public List<BbsCard> searchCard(String keyword) {
+
+        return bbsCardMapper.searchCard(keyword);
+    }
+
+    @Override
+    public List<BbsCard> loadHotCard() {
+
+        return bbsCardMapper.loadHotCard();
     }
 }

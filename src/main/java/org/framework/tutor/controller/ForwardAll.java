@@ -1,5 +1,6 @@
 package org.framework.tutor.controller;
 
+import com.google.gson.JsonParser;
 import org.framework.tutor.domain.UserVali;
 import org.framework.tutor.service.UserMService;
 import org.framework.tutor.service.UserVService;
@@ -11,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import sun.java2d.pipe.SpanShapeRenderer;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -300,5 +303,19 @@ public class ForwardAll {
     public String goSysTutorPersonal(){
 
         return "/sysconfig/tutor/personal";
+    }
+
+    /**  
+     *    
+     * @Description 查询帖子
+     * @param [response]    
+     * @return java.lang.String
+     * @author yinjimin  
+     * @date 2018/4/2
+     */  
+    @RequestMapping("/showcardsearch")
+    public String showCardSearch(HttpServletResponse response){
+
+        return "/home/showcard";
     }
 }

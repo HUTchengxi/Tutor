@@ -102,10 +102,10 @@ $(function () {
                 $.each(data, function (index, item) {
                     var title = item.title;
                     var imgsrc = item.imgsrc;
-                    if(img == ""){
+                    if (img == "") {
                         img = imgsrc;
                     }
-                    $("#pubModal .modal-body select").append("<option value='" + imgsrc + "'>"+title+"</option>");
+                    $("#pubModal .modal-body select").append("<option value='" + imgsrc + "'>" + title + "</option>");
                     $("#pubModal .modal-body img").attr("src", img);
                 });
             },
@@ -259,6 +259,20 @@ $(function () {
     $(window).trigger("scroll");
 
 
+    /**
+     * 校验字段
+     */
+    var str_isnull = function (descript) {
+        if (descript.trim() == "" || descript.trim() == "在这里写你的问题...") {
+            return true;
+        }
+        if (descript.indexOf("在这里写你的问题...") == 0) {
+            return true;
+        }
+        return false;
+    };
+
+
     //------------------------------发表讨论-----------------------------------------
 
     /**
@@ -269,7 +283,7 @@ $(function () {
 
         var descript = $(this).closest("form").find("p.descript").text();
         //没有输入问题
-        if (descript.trim() == "" || descript.trim() == "在这里写你的问题...") {
+        if (str_isnull(descript)) {
             $(this).closest("form").find(".errinfo").css("display", "block").find("p").text("请输入你的问题");
             return false;
         }
@@ -278,7 +292,7 @@ $(function () {
             $(this).closest("form").find(".errinfo").css("display", "block").find("p").text("请先登录哦");
             return false;
         }
-            $(this).closest("form").find(".errinfo").css("display", "none");
+        $(this).closest("form").find(".errinfo").css("display", "none");
     };
     $(".pubdiscuss form a.btn-primary").click(submit_writeDescript);
 
@@ -309,11 +323,10 @@ $(function () {
                 dataType: "json",
                 success: function (data) {
                     var status = data.status;
-                    console.log(status == "valid");
-                    if(status == "texist"){
+                    if (status == "texist") {
                         $("#pubModal .modal-body p.terr").css("display", "block").text("标题已被使用");
                     }
-                    else if(status == "valid"){
+                    else if (status == "valid") {
                         window.alert("发表成功");
                         $(".pubdiscuss p.descript").text("在这里写你的问题...");
                         $("#pubModal .modal-body input").val("");
@@ -335,11 +348,27 @@ $(function () {
     /**
      * 点击进行更改背景图片
      */
-    var modal_changeimgsrc = function(){
+    var modal_changeimgsrc = function () {
 
         var imgsrc = $(this).val();
         $("#pubModal .modal-body img").attr("src", imgsrc);
     };
     $("#pubModal .modal-body select").change(modal_changeimgsrc);
+
+
+    //--------------------------搜索问题-----------------------------------
+    /**
+     * 点击搜索问题
+     */
+    var submit_searchcard = function () {
+
+        var keyword = $(this).find("p").text();
+        console.log(keyword);
+        if (str_isnull(keyword)) {
+            keyword = "";
+        }
+        window.location = "/forward_con/showcardsearch?keyword=" + keyword;
+    };
+    $(".finddiscuss form").submit(submit_searchcard);
 
 });

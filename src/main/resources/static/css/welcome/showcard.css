@@ -1,0 +1,16 @@
+.pubdiscuss form p{
+    height: 34px;
+}
+.pubdiscuss form{
+    margin-top: 2%;
+}
+.pubdiscuss form div.col-lg-9{
+    margin-left: 4%;
+}
+.pubdiscuss form div.form-group{
+    margin-top: -6%;
+    margin-right: 10%;
+}
+#blog.hotblog{
+    margin: 3% auto;
+}

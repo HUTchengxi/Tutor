@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>论坛中心</title>
+    <title></title>
     <link rel="icon" href="/images/logo/web_logo.ico" />
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.css" />
     <link rel="stylesheet" href="/css/welcome/gabble.css" />
+    <link rel="stylesheet" href="/css/welcome/showcard.css" />
     <link rel="stylesheet" href="/css/common/footer.css" />
 </head>
 <body>
@@ -43,50 +44,32 @@
 
 <!--发起讨论-->
 <div class="pubdiscuss clearfix">
-    <h4 class="text-left text-info">原创发布</h4>
+    <h4 class="text-left text-info">问题搜素</h4>
     <form class="form-horizontal" role="form" action="javascript:;">
-        <div class="form-group col-lg-12">
+        <div class="form-group col-lg-9">
             <p class="form-control descript" contenteditable="true">在这里写你的问题...</p>
         </div>
         <div class="col-lg-3 pull-right errinfo">
             <p>111</p>
         </div>
         <div class="form-group col-lg-1 pull-right">
-            <a class="btn btn-primary" data-toggle="modal" href="#pubModal">发起讨论</a>
-        </div>
-    </form>
-</div>
-
-<!--问题搜索-->
-<div class="finddiscuss">
-    <h4 class="text-left text-info">问题搜索</h4>
-    <form class="form-horizontal clearfix" role="form" action="javascript:;">
-        <div class="form-group col-lg-8">
-            <p class="form-control" contenteditable="true">在这里写你的问题...</p>
-        </div>
-        <div class="form-group col-lg-3">
-            <button class="btn btn-primary" type="submit">搜索</button>
+            <a class="btn btn-primary" href="javascript:;">发起讨论</a>
         </div>
     </form>
 </div>
 
 <!--内容展示-->
-<div id="blog">
-    <h4 class="text-left text-info">热门帖子</h4>
-    <ul>
-        <li>
-            <div class="blog-left">
-                <p ><a href="detail.html" class="title">测试文章</a></p>
-                <p style="margin-top: 20px">内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示</p>
-                <p style="margin-top: 80px"><img src="http://img.php.cn/upload/course/000/000/004/58170f99f2430105.png" />测试<img src="http://img.php.cn/upload/course/000/000/004/58170fbda3f34844.png" style="margin-left: 20px"/>2016/10/31</p>
-            </div>
-            <div class="blog-right"><img src="http://img.php.cn/upload/course/000/000/004/58170bc487acc779.jpg"/></div>
-        </li>
-    </ul>
-
+<div id="blog" class="mineblog">
+    <h4 class="text-left text-info">搜素结果</h4>
+    <ul></ul>
     <div class="page">
         <a href="#">首页</a> <a href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">...</a><a href="#">尾页</a>
     </div>
+</div>
+
+<div id="blog" class="hotblog">
+    <h4 class="text-left text-info">热门帖子</h4>
+    <ul></ul>
 </div>
 
 <!--右侧个人中心-->
@@ -244,7 +227,7 @@
 
 <script src="/js/custom/jquery.min.js"></script>
 <script src="/bootstrap/js/bootstrap.js"></script>
-<script src="/js/welcome/gabble/gabble.js"></script>
+<script src="/js/welcome/gabble/showcard.js"></script>
 <script src="/js/welcome/gabble/canvas-particle.js"></script>
 </body>
 </html>
