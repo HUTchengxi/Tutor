@@ -318,4 +318,19 @@ public class ForwardAll {
 
         return "/home/showcard";
     }
+
+
+    /**  
+     *    
+     * @Description 帖子详情
+     * @param [response]    
+     * @return java.lang.String
+     * @author yinjimin  
+     * @date 2018/4/4
+     */  
+    @RequestMapping("/showcarddetail")
+    public String showCardDetail(HttpServletResponse response){
+
+        return "/home/carddetail";
+    }
 }

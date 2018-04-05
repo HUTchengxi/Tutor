@@ -275,6 +275,20 @@ create table bbs_card(
   foreign key(username) references user_main(username)
 );
 
+#帖子答案表
+create table bbs_card_answer(
+  id int auto_increment comment "唯一标识",
+  cardid int not null comment "帖子id",
+  username varchar(20) not null comment "答案制作者用户名",
+  answer text not null comment "答案",
+  crtime datetime default now() comment "回答时间",
+  gcount int default 0 comment "点赞数",
+  bcount int default 0 comment "踩数",
+  primary key(id),
+  foreign key(cardid) references bbs_card(id),
+  foreign key(username) references user_main(username)
+);
+
 
 
 #用户帖子收藏表
@@ -314,6 +328,8 @@ create table common_imgsrc(
   id int primary key auto_increment comment "唯一标识",
   imgsrc varchar(100) not null comment "图片位置，相对于项目，绝对于网址"
 );
+
+
 
 
 
