@@ -12,17 +12,27 @@
  */
 package org.framework.tutor.service.impl;
 
+import org.framework.tutor.domain.BbsCardAnswer;
 import org.framework.tutor.mapper.BbsCardAnswerMapper;
 import org.framework.tutor.service.BbsCardAnswerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 /**
  * @author yinjimin
  * @Description: 帖子答案服务层
  * @date 2018年04月05日
  */
+@Component
 public class BbsCardAnswerServiceImpl implements BbsCardAnswerService {
 
     @Autowired
     private BbsCardAnswerMapper bbsCardAnswerMapper;
+
+    @Override
+    public List<BbsCardAnswer> getByCardid(Integer cardId) {
+        return bbsCardAnswerMapper.getByCardid(cardId);
+    }
 }

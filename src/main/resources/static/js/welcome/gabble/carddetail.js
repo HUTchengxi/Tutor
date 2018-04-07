@@ -259,4 +259,151 @@ $(function () {
     $(window).trigger("scroll");
 
 
+    /**
+     * 获取url的请求参数
+     */
+    var str_geturlparam = function(name){
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    };
+
+
+    //-----------------------------------------------------
+    /**
+     * 获取对应的问题数据
+     */
+    var async_getcardinfo = function(){
+
+        var cardId = str_geturlparam("cardid");
+        $.ajax({
+            async: true,
+            type: "post",
+            url: "/bbscard_con/getcardbyid",
+            data: {
+                cardId: cardId
+            },
+            dataType: "json",
+            success: function(data){
+                $(".cardheader .title").text(data.title);
+                $(".cardheader .descript").text(data.descript);
+                $(".cardheader span.ptime").text(data.crtime);
+                $(".cardheader .userinfo img.userface").attr("src", data.imgsrc);
+                $(".cardheader .userinfo p.usernick").text(data.nickname);
+                $(".cardheader .userface img.userface").data("uname", data.username);
+                $(".cardheader .combtn .comcount").text(data.comcount);
+                $("body > div.carddatashow.clearfix > p > span").text(data.comcount);
+                $(".cardheader .header-right .viscount").text(data.viscount);
+                $(".cardheader .header-right .colcount").text(data.colcount);
+            },
+            error: function(xhr, status){
+                window.alert("后台环境异常导致无法获取问题数据，请稍后再试");
+                console.log(xhr);
+            }
+        });
+    };
+    async_getcardinfo();
+
+    /**
+     * 获取对应的问题的回答数据
+     */
+    var async_getcardanswerinfo = function(){
+
+        var cardId = str_geturlparam("cardid");
+        $.ajax({
+            async: true,
+            type: "post",
+            url: "/bbscardanswer_con/getcardanswerbycardid",
+            data: {
+                cardId: cardId
+            },
+            dataType: "json",
+            success: function(data){
+                console.log(data);
+                $.each(data, function(index, item){
+                    $(".cardmainlist").append("<div class=\"cardmain\">\n" +
+                        "        <!--回帖用户个人信息展示-->\n" +
+                        "        <div class=\"mainhead clearfix\">\n" +
+                        "            <img class=\"pull-left userface\" src=\""+item.imgsrc+"\" data-uname='"+item.username+"'/>\n" +
+                        "            <p class=\"pull-left usernick\">"+item.nickname+"</p>\n" +
+                        "        </div>\n" +
+                        "        <!--获取点赞人数信息-->\n" +
+                        "        <a class=\"gcountinfo\"><span class=\"gcount\">"+item.gcount+"</span>个人赞同了该回答</a>\n" +
+                        "        <!--回帖详细数据-->\n" +
+                        "        <div class=\"ansmain\">\n" +
+                        "            <p class=\"answer\">" +item.answer +
+                        "            </p>\n" +
+                        "            <p class=\"pubtimeinfo\">编辑于<span class=\"pubtime\">"+item.crttime+"</span></p>\n" +
+                        "        </div>\n" +
+                        "        <!--回帖相关操作-->\n" +
+                        "        <div class=\"cardfooter clearfix\">\n" +
+                        "            <div class=\"pull-left btndiv\">\n" +
+                        "                <a class=\"starlink\">\n" +
+                        "                    <span class=\"glyphicon glyphicon-thumbs-up\"></span>\n" +
+                        "                    <span class=\"goodcount\">"+item.gcount+"</span>\n" +
+                        "                </a>\n" +
+                        "                <a class=\"unstarlink\">\n" +
+                        "                    <span class=\"glyphicon glyphicon-thumbs-down\"></span>\n" +
+                        "                    <span class=\"goodcount\">"+item.bcount+"</span>\n" +
+                        "                </a>\n" +
+                        "                <a class=\"showcommand btn btn-link\" data-status='off' data-aid='"+item.id+"'>\n" +
+                        "                    <span class=\"glyphicon glyphicon-comment\"></span>\n" +
+                        "                    <span class=\"comcount\">"+item.comcount+"</span>条评论\n" +
+                        "                    <span class=\"glyphicon glyphicon-arrow-down\"></span>" +
+                        "                </a>\n" +
+                        "                <a class=\"report btn btn-link\">\n" +
+                        "                    <span class=\"glyphicon glyphicon-bell\"></span>举报\n" +
+                        "                </a>\n" +
+                        "            </div>\n" +
+                        "\n" +
+                        "        </div>\n" +
+                        "        <!--该回答评论列表-->\n" +
+                        "        <div class=\"commandlist\">\n" +
+                        "            <!--评论列表头部-->\n" +
+                        "            <div class=\"listheader clearfix\">\n" +
+                        "                <p class=\"pull-left\">全部<span class=\"comcount\">"+item.comcount+"</span>个回答</p>\n" +
+                        "                <button class=\"btn btn-link pull-right\">已按时间排序</button>\n" +
+                        "            </div>\n" +
+                        "            <!--评论列表详情数据-->\n" +
+                        "            <div class=\"commandmain\"></div>\n" +
+                        "            <!--输入评论form表单框-->\n" +
+                        "            <div class=\"mycommandinfo clearfix\">\n" +
+                        "                <input type=\"text\" class=\"pull-left col-lg-10\" name=\"mycommand\" placeholder=\"在这里输入你的评论\" />\n" +
+                        "                <button class=\"btn subcommand pull-left\">发表评论</button>\n" +
+                        "            </div>\n" +
+                        "        </div>\n" +
+                        "    </div>");
+                });
+            },
+            error: function(xhr, status){
+                window.alert("后台环境异常导致无法获取问题数据，请稍后再试");
+                console.log(xhr);
+            }
+        });
+    };
+    async_getcardanswerinfo();
+
+
+    /**
+     * 点击查看指定的答案的评论数据
+     */
+    var click_showanswercommand = function(){
+
+        var status = $(this).data("status");
+        var aid = $(this).data("aid");
+        if(status == "off"){
+            $(this).data("status", "on");
+            $(this).find("span.glyphicon-arrow-down").removeClass("glyphicon-arrow-down")
+                .addClass("glyphicon-arrow-up");
+            $(this).closest("div.cardmain").find("div.commandlist").css("display", "block");
+        }
+        else{
+            $(this).closest("div.cardmain").find("div.commandlist").css("display", "none");
+            $(this).data("status", "off");
+            $(this).find("span.glyphicon-arrow-up").removeClass("glyphicon-arrow-up")
+                .addClass("glyphicon-arrow-down");
+        }
+    };
+    $(document).on("click", ".cardmainlist div.cardfooter a.showcommand", click_showanswercommand);
+
 });

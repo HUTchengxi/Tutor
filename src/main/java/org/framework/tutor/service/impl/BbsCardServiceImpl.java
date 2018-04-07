@@ -63,4 +63,9 @@ public class BbsCardServiceImpl implements BbsCardService {
 
         return bbsCardMapper.loadHotCard();
     }
+
+    @Override
+    public BbsCard getCardById(Integer id) {
+        return bbsCardMapper.getCardById(id);
+    }
 }

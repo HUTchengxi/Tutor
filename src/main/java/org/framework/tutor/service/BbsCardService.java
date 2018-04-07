@@ -59,4 +59,15 @@ public interface BbsCardService {
      * @date 2018/4/3
      */
     List<BbsCard> loadHotCard();
+
+
+    /**
+     *
+     * @Description 获取对应的帖子详情数据
+     * @param [id]
+     * @return org.framework.tutor.domain.BbsCard
+     * @author yinjimin
+     * @date 2018/4/6
+     */
+    BbsCard getCardById(Integer id);
 }

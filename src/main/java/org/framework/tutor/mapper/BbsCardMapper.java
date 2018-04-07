@@ -68,4 +68,16 @@ public interface BbsCardMapper {
      */
     @Select("select * from bbs_card order by viscount desc limit 0, 5")
     List<BbsCard> loadHotCard();
+
+
+    /**
+     *
+     * @Description 获取对应的帖子数据
+     * @param [id]
+     * @return org.framework.tutor.domain.BbsCard
+     * @author yinjimin
+     * @date 2018/4/6
+     */
+    @Select("select * from bbs_card where id = #{id}")
+    BbsCard getCardById(@Param("id") Integer id);
 }

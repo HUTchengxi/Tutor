@@ -38,6 +38,13 @@ body{
 .cardheader .header-right div.pull-left p.colcount{
     font-weight: bold;
 }
+
+body > div.cardheader.clearfix > div.pull-left.header-left > p.ptimeinfo{
+    color: #808080b8;
+}
+body > div.cardheader.clearfix > div.pull-left.header-left > p.ptimeinfo span{
+    margin-left: 1%;
+}
 .cardheader .header-left .modbtn{
     padding: 1%;
 }
@@ -82,6 +89,21 @@ body > div.cardmainlist > div > div.commandlist > div.mycommandinfo.clearfix > b
     margin-right: 6px;
     top: 3px;
 }
+body > div.cardheader.clearfix > div.pull-left.header-left > div.pull-left.userinfo{
+    padding: 1%;
+}
+body > div.cardheader.clearfix > div.pull-left.header-left > div.pull-left.userinfo > img{
+    width: 30px;
+    height: 30px;
+}
+body > div.cardheader.clearfix > div.pull-left.header-left > div.pull-left.userinfo > p{
+    position: relative;
+    left: 5%;
+    margin-top: 10%;
+    font-weight: bold;
+}
+
+
 body > div.cardmainlist > div > div.cardfooter.clearfix > div > a.report.btn.btn-link span{
     margin-right: 3px;
 }
@@ -145,8 +167,7 @@ body > div.cardmainlist > div > div.commandlist > div.commandmain > div.btngroup
     margin-bottom: 5%;
 }
 .cardmainlist .cardmain{
-    margin-top: 1%;
-    margin-bottom: 5%;
+    margin: 1% 0 3% 0;
 }
 body > div.cardmainlist > div > div.mainhead.clearfix > img,
 body > div.cardmainlist > div > div.commandlist > div.commandmain > div > img{
@@ -155,6 +176,7 @@ body > div.cardmainlist > div > div.commandlist > div.commandmain > div > img{
 }
 body > div.cardmainlist > div > div.mainhead.clearfix > p{
     margin-top: 1%;
+    margin-left: .3%;
     font-weight: bold;
 }
 body > div.cardmainlist > div > a.gcountinfo{
@@ -216,6 +238,12 @@ body > div.cardmainlist > div > div.commandlist{
     padding: 15px;
     border: 1px solid #ebebeb;
     box-shadow: 0 1px 3px rgba(26,26,26,.1);
+    display: none;
+    transition: all .2s linear;
+}
+body > div.cardmainlist > div > div.commandlist > div.commandmain > div{
+    text-align: center;
+    color: grey;
 }
 body > div.cardmainlist > div > div.commandlist > div.listheader{
     height: 40px;

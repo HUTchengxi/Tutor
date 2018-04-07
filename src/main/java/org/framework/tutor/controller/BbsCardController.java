@@ -21,6 +21,7 @@ import org.framework.tutor.service.UserMService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
@@ -196,5 +197,50 @@ public class BbsCardController {
         writer.print(new JsonParser().parse(res).getAsJsonObject());
         writer.flush();
         writer.close();
+    }
+
+    /**  
+     *    
+     * @Description 获取对应问题数据
+     * @param [cardId, response]    
+     * @return void
+     * @author yinjimin  
+     * @date 2018/4/6
+     */  
+    @PostMapping("/getcardbyid")
+    public void getCardById(@RequestParam String cardId, HttpServletResponse response) throws IOException {
+
+        response.setCharacterEncoding("utf-8");
+        PrintWriter writer = response.getWriter();
+        String res = null;
+
+        try{
+            Integer id = Integer.parseInt(cardId);
+            BbsCard bbsCard = bbsCardService.getCardById(id);
+            if(bbsCard == null){
+                res = "{\"status\": \"none\"}";
+            }
+            else{
+                UserMain userMain = userMService.getByUser(bbsCard.getUsername());
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                res = "{\"crttime\": \""+simpleDateFormat.format(bbsCard.getCrttime())+"\", " +
+                        "\"username\": \""+bbsCard.getUsername()+"\", " +
+                        "\"viscount\": \""+bbsCard.getViscount()+"\", " +
+                        "\"colcount\": \""+bbsCard.getColcount()+"\", " +
+                        "\"comcount\": \""+bbsCard.getComcount()+"\", " +
+                        "\"nickname\": \""+userMain.getNickname()+"\", " +
+                        "\"imgsrc\": \""+userMain.getImgsrc()+"\", " +
+                        "\"id\": \""+bbsCard.getId()+"\", " +
+                        "\"descript\": \""+bbsCard.getDescript()+"\", " +
+                        "\"title\": \""+bbsCard.getTitle()+"\"}";
+            }
+        }catch (Exception e){
+            res = "{\"status\": \"sysexception\"}";
+            e.printStackTrace();
+        } finally {
+            writer.print(new JsonParser().parse(res).getAsJsonObject());
+            writer.flush();
+            writer.close();
+        }
     }
 }

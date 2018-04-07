@@ -10,22 +10,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf479440-431d-499c-9612-40c14de1a166" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardAnswerController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/BbsCardAnswer.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/3.x版本" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/BbsCardAnswerMapper.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/BbsCardAnswerService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/BbsCardAnswerServiceImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/css/welcome/carddetail.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/carddetail.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/carddetail.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/generatorConfig.xml" afterPath="$PROJECT_DIR$/src/generatorConfig.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.x版本" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.x版本" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/showcard.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/showcard.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/ForwardAll.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/ForwardAll.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardAnswerController.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardAnswerController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardController.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/BbsCardAnswer.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/BbsCardAnswer.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/BbsCardAnswerMapper.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/BbsCardAnswerMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/BbsCardMapper.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/BbsCardMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/BbsCardAnswerService.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/BbsCardAnswerService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/BbsCardService.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/BbsCardService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/BbsCardAnswerServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/BbsCardAnswerServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/BbsCardServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/BbsCardServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/welcome/carddetail.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/welcome/carddetail.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/carddetail.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/carddetail.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/carddetail.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/carddetail.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -39,16 +36,40 @@
   <component name="CompilerWorkspaceConfiguration">
     <option name="MAKE_PROJECT_ON_SAVE" value="true" />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="carddetail.html" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home/carddetail.html">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="509">
+                    <caret line="45" column="52" lean-forward="false" selection-start-line="45" selection-start-column="52" selection-end-line="45" selection-end-column="52" />
+                    <folding>
+                      <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                      <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                      <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="Tutor" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="3.x版本" pinned="false" current-in-tab="true">
+      <file leaf-file-name="3.x版本" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/3.x版本">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="74">
-              <caret line="2" column="12" lean-forward="true" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+            <state relative-caret-position="148">
+              <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -57,39 +78,31 @@
       <file leaf-file-name="1.21.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
+            <state relative-caret-position="10360">
               <caret line="280" column="37" lean-forward="false" selection-start-line="280" selection-start-column="37" selection-end-line="280" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="carddetail.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="carddetail.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/carddetail.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1850">
-              <caret line="259" column="0" lean-forward="false" selection-start-line="259" selection-start-column="0" selection-end-line="259" selection-end-column="0" />
+            <state relative-caret-position="2211">
+              <caret line="340" column="60" lean-forward="false" selection-start-line="340" selection-start-column="60" selection-end-line="340" selection-end-column="60" />
               <folding>
                 <element signature="e#89#832#0" expanded="false" />
-                <element signature="e#920#1435#0" expanded="false" />
                 <element signature="e#1512#1982#0" expanded="false" />
                 <element signature="e#2059#2539#0" expanded="false" />
                 <element signature="e#2620#3525#0" expanded="false" />
                 <element signature="e#3623#8612#0" expanded="false" />
                 <element signature="e#8702#9194#0" expanded="false" />
                 <element signature="e#9345#9613#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BbsCardAnswerServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/BbsCardAnswerServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="26" column="52" lean-forward="false" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <marker date="1523115295827" expanded="true" signature="4135:4146" ph="..." />
+                <marker date="1523115295827" expanded="true" signature="6413:6428" ph="..." />
+                <marker date="1523115295827" expanded="true" signature="6517:6530" ph="..." />
+                <marker date="1523115295827" expanded="true" signature="6588:6599" ph="..." />
+                <marker date="1523115295827" expanded="true" signature="7853:7864" ph="..." />
               </folding>
             </state>
           </provider>
@@ -98,8 +111,8 @@
       <file leaf-file-name="BbsCardAnswerController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardAnswerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="29" column="54" lean-forward="false" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
+            <state relative-caret-position="-139">
+              <caret line="59" column="26" lean-forward="true" selection-start-line="59" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -107,41 +120,40 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="carddetail.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home/carddetail.html">
+      <file leaf-file-name="BbsCardAnswer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/BbsCardAnswer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="9" column="7" lean-forward="false" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+            <state relative-caret-position="459">
+              <caret line="79" column="10" lean-forward="false" selection-start-line="79" selection-start-column="10" selection-end-line="79" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="showcard.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/showcard.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="185">
+              <caret line="279" column="0" lean-forward="false" selection-start-line="279" selection-start-column="0" selection-end-line="279" selection-end-column="0" />
               <folding>
-                <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#div#3;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#3;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="e#93#836#0" expanded="false" />
+                <element signature="e#924#1439#0" expanded="false" />
+                <element signature="e#1516#1986#0" expanded="false" />
+                <element signature="e#2063#2543#0" expanded="false" />
+                <element signature="e#2624#3529#0" expanded="false" />
+                <element signature="e#3627#8616#0" expanded="false" />
+                <element signature="e#8706#9198#0" expanded="false" />
+                <element signature="e#9349#9617#0" expanded="false" />
+                <element signature="e#9758#9978#0" expanded="false" />
+                <element signature="e#12465#14311#0" expanded="false" />
+                <element signature="e#14484#14692#0" expanded="false" />
+                <element signature="e#14815#14936#0" expanded="false" />
+                <marker date="1522936191522" expanded="true" signature="10866:10877" ph="..." />
+                <marker date="1522936191522" expanded="true" signature="11644:11660" ph="..." />
+                <marker date="1522936191522" expanded="true" signature="11737:11753" ph="..." />
+                <marker date="1522936191522" expanded="true" signature="11788:11832" ph="..." />
+                <marker date="1522936191522" expanded="true" signature="11935:11952" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="generatorConfig.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/generatorConfig.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="41" column="26" lean-forward="false" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BbsCardAnswerMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/BbsCardAnswerMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -149,8 +161,8 @@
       <file leaf-file-name="carddetail.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/welcome/carddetail.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="658">
-              <caret line="144" column="22" lean-forward="false" selection-start-line="144" selection-start-column="22" selection-end-line="144" selection-end-column="22" />
+            <state relative-caret-position="302">
+              <caret line="169" column="21" lean-forward="false" selection-start-line="169" selection-start-column="21" selection-end-line="169" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -171,8 +183,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>face</find>
-      <find>js</find>
       <find>body</find>
       <find>bodyTab.js</find>
       <find>bodyTab</find>
@@ -201,6 +211,8 @@
       <find>commandmain</find>
       <find>body &gt; div.cardmainlist &gt; div &gt; div.commandlist &gt; div.mycommandinfo.clearfix &gt; button</find>
       <find>2% 19%</find>
+      <find>transi</find>
+      <find>1% 0</find>
     </findStrings>
     <replaceStrings>
       <replace>/images/welcome/personal</replace>
@@ -225,7 +237,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/personal/personal.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/sysconfig/tutor/index.html" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/PublishLogService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/PublishLogServiceImpl.java" />
@@ -257,25 +268,26 @@
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/tutor.sql" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/gabble.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/gabble.js" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/BbsCardService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/BbsCardServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/BbsCardMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/welcome/showcard.css" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/showcard.html" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/showcard.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/carddetail.js" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/home/carddetail.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/css/welcome/carddetail.css" />
         <option value="$PROJECT_DIR$/src/generatorConfig.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/BbsCardAnswer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/BbsCardAnswerMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/BbsCardAnswerServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardAnswerController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.x版本" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/3.x版本" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/BbsCardService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/BbsCardServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/BbsCardAnswer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/BbsCardAnswerService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/BbsCardAnswerServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardAnswerController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/BbsCardAnswerMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/BbsCardMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/welcome/carddetail.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/carddetail.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/home/carddetail.html" />
       </list>
     </option>
   </component>
@@ -411,6 +423,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -629,15 +643,13 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="settings.editor.selected.configurable" value="flex.compiler" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -962,8 +974,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.ReverseProject" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Main2" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Main2" />
+        <item index="1" class="java.lang.String" itemvalue="Application.ReverseProject" />
         <item index="2" class="java.lang.String" itemvalue="Application.TestMain" />
         <item index="3" class="java.lang.String" itemvalue="Application.CommonUtil" />
         <item index="4" class="java.lang.String" itemvalue="Application.test" />
@@ -1103,7 +1115,8 @@
       <workItem from="1522805110510" duration="37000" />
       <workItem from="1522805251987" duration="76000" />
       <workItem from="1522854720710" duration="4335000" />
-      <workItem from="1522896343292" duration="18909000" />
+      <workItem from="1522896343292" duration="18936000" />
+      <workItem from="1522983494367" duration="16610000" />
     </task>
     <task id="LOCAL-00001" summary="将毕设项目提交到gitlab">
       <created>1520393481249</created>
@@ -1434,11 +1447,18 @@
       <option name="project" value="LOCAL" />
       <updated>1522768125299</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="模拟知乎简单设计了帖子详情的界面">
+      <created>1522943472047</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1522943472047</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="902166000" />
+    <option name="totallyTimeSpent" value="918803000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1471,11 +1491,12 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35949942" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66870093" sideWeight="0.5" order="21" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="22" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24115756" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1795284" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="24" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33105803" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1483,7 +1504,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33105803" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1715,43 +1735,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4588">
-          <caret line="170" column="48" lean-forward="false" selection-start-line="170" selection-start-column="48" selection-end-line="170" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#searchCard#0;class#BbsCardController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/BbsCardService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1924">
-          <caret line="54" column="30" lean-forward="false" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/BbsCardServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1702">
-          <caret line="63" column="29" lean-forward="false" selection-start-line="63" selection-start-column="29" selection-end-line="63" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/BbsCardMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2331">
-          <caret line="69" column="32" lean-forward="false" selection-start-line="69" selection-start-column="32" selection-end-line="69" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/技术.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="12728">
@@ -1790,43 +1773,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/showcard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-694">
-          <caret line="272" column="6" lean-forward="true" selection-start-line="272" selection-start-column="6" selection-end-line="272" selection-end-column="6" />
-          <folding>
-            <element signature="e#93#836#0" expanded="false" />
-            <element signature="e#924#1439#0" expanded="false" />
-            <element signature="e#1516#1986#0" expanded="false" />
-            <element signature="e#2063#2543#0" expanded="false" />
-            <element signature="e#2624#3529#0" expanded="false" />
-            <element signature="e#3627#8616#0" expanded="false" />
-            <element signature="e#8706#9198#0" expanded="false" />
-            <element signature="e#9349#9617#0" expanded="false" />
-            <element signature="e#9758#9978#0" expanded="false" />
-            <element signature="e#10059#12367#0" expanded="false" />
-            <element signature="e#12465#14311#0" expanded="false" />
-            <element signature="e#14484#14692#0" expanded="false" />
-            <element signature="e#14815#14936#0" expanded="false" />
-            <marker date="1522936191522" expanded="true" signature="4139:4150" ph="..." />
-            <marker date="1522936191522" expanded="true" signature="6417:6432" ph="..." />
-            <marker date="1522936191522" expanded="true" signature="6521:6534" ph="..." />
-            <marker date="1522936191522" expanded="true" signature="6592:6603" ph="..." />
-            <marker date="1522936191522" expanded="true" signature="7857:7868" ph="..." />
-            <marker date="1522936191522" expanded="true" signature="10866:10877" ph="..." />
-            <marker date="1522936191522" expanded="true" signature="11644:11660" ph="..." />
-            <marker date="1522936191522" expanded="true" signature="11737:11753" ph="..." />
-            <marker date="1522936191522" expanded="true" signature="11788:11832" ph="..." />
-            <marker date="1522936191522" expanded="true" signature="11935:11952" ph="..." />
-            <marker date="1522936191522" expanded="true" signature="12867:12878" ph="..." />
-            <marker date="1522936191522" expanded="true" signature="13644:13660" ph="..." />
-            <marker date="1522936191522" expanded="true" signature="13737:13753" ph="..." />
-            <marker date="1522936191522" expanded="true" signature="13788:13832" ph="..." />
-            <marker date="1522936191522" expanded="true" signature="13935:13952" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home/showcard.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-583">
@@ -1844,133 +1790,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
+        <state relative-caret-position="10360">
           <caret line="280" column="37" lean-forward="false" selection-start-line="280" selection-start-column="37" selection-end-line="280" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/welcome/carddetail.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="658">
-          <caret line="144" column="22" lean-forward="false" selection-start-line="144" selection-start-column="22" selection-end-line="144" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home/carddetail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="9" column="7" lean-forward="false" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-          <folding>
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#3;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#3;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/BbsCardAnswer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#494#495#0" expanded="false" />
-            <element signature="e#519#520#0" expanded="false" />
-            <element signature="e#556#557#0" expanded="false" />
-            <element signature="e#584#585#0" expanded="false" />
-            <element signature="e#618#619#0" expanded="false" />
-            <element signature="e#647#648#0" expanded="false" />
-            <element signature="e#692#693#0" expanded="false" />
-            <element signature="e#728#729#0" expanded="false" />
-            <element signature="e#763#764#0" expanded="false" />
-            <element signature="e#794#795#0" expanded="false" />
-            <element signature="e#842#843#0" expanded="false" />
-            <element signature="e#915#916#0" expanded="false" />
-            <element signature="e#946#947#0" expanded="false" />
-            <element signature="e#975#976#0" expanded="false" />
-            <element signature="e#1017#1018#0" expanded="false" />
-            <element signature="e#1053#1054#0" expanded="false" />
-            <element signature="e#1087#1088#0" expanded="false" />
-            <element signature="e#1116#1117#0" expanded="false" />
-            <element signature="e#1161#1162#0" expanded="false" />
-            <element signature="e#1197#1198#0" expanded="false" />
-            <element signature="e#1231#1232#0" expanded="false" />
-            <element signature="e#1260#1261#0" expanded="false" />
-            <element signature="e#1305#1306#0" expanded="false" />
-            <element signature="e#1341#1342#0" expanded="false" />
-            <element signature="e#1374#1375#0" expanded="false" />
-            <element signature="e#1403#1404#0" expanded="false" />
-            <element signature="e#1447#1448#0" expanded="false" />
-            <element signature="e#1514#1515#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/generatorConfig.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
+        <state relative-caret-position="1517">
           <caret line="41" column="26" lean-forward="false" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/BbsCardAnswerMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/BbsCardAnswerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="2" column="37" lean-forward="false" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/carddetail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1850">
-          <caret line="259" column="0" lean-forward="false" selection-start-line="259" selection-start-column="0" selection-end-line="259" selection-end-column="0" />
-          <folding>
-            <element signature="e#89#832#0" expanded="false" />
-            <element signature="e#920#1435#0" expanded="false" />
-            <element signature="e#1512#1982#0" expanded="false" />
-            <element signature="e#2059#2539#0" expanded="false" />
-            <element signature="e#2620#3525#0" expanded="false" />
-            <element signature="e#3623#8612#0" expanded="false" />
-            <element signature="e#8702#9194#0" expanded="false" />
-            <element signature="e#9345#9613#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/BbsCardAnswerServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="26" column="52" lean-forward="false" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardAnswerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="29" column="54" lean-forward="false" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1982,11 +1812,161 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/showcard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="279" column="0" lean-forward="false" selection-start-line="279" selection-start-column="0" selection-end-line="279" selection-end-column="0" />
+          <folding>
+            <element signature="e#93#836#0" expanded="false" />
+            <element signature="e#924#1439#0" expanded="false" />
+            <element signature="e#1516#1986#0" expanded="false" />
+            <element signature="e#2063#2543#0" expanded="false" />
+            <element signature="e#2624#3529#0" expanded="false" />
+            <element signature="e#3627#8616#0" expanded="false" />
+            <element signature="e#8706#9198#0" expanded="false" />
+            <element signature="e#9349#9617#0" expanded="false" />
+            <element signature="e#9758#9978#0" expanded="false" />
+            <element signature="e#12465#14311#0" expanded="false" />
+            <element signature="e#14484#14692#0" expanded="false" />
+            <element signature="e#14815#14936#0" expanded="false" />
+            <marker date="1522936191522" expanded="true" signature="10866:10877" ph="..." />
+            <marker date="1522936191522" expanded="true" signature="11644:11660" ph="..." />
+            <marker date="1522936191522" expanded="true" signature="11737:11753" ph="..." />
+            <marker date="1522936191522" expanded="true" signature="11788:11832" ph="..." />
+            <marker date="1522936191522" expanded="true" signature="11935:11952" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/BbsCardService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="65" column="31" lean-forward="false" selection-start-line="65" selection-start-column="31" selection-end-line="65" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/BbsCardServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="68" column="29" lean-forward="false" selection-start-line="68" selection-start-column="29" selection-end-line="68" selection-end-column="29" />
+          <folding>
+            <element signature="e#1669#1670#0" expanded="true" />
+            <element signature="e#1721#1722#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/3.x版本">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="2" column="12" lean-forward="true" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        <state relative-caret-position="148">
+          <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/BbsCardAnswerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="10" column="31" lean-forward="false" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/BbsCardAnswerServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="35" column="35" lean-forward="false" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1057#1058#0" expanded="true" />
+            <element signature="e#1119#1120#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1073">
+          <caret line="181" column="37" lean-forward="true" selection-start-line="181" selection-start-column="37" selection-end-line="181" selection-end-column="37" />
+          <folding>
+            <element signature="method#searchCard#0;class#BbsCardController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/BbsCardAnswerMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="24" column="21" lean-forward="true" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/BbsCardMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="842">
+          <caret line="80" column="52" lean-forward="false" selection-start-line="80" selection-start-column="52" selection-end-line="80" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/BbsCardAnswer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="79" column="10" lean-forward="false" selection-start-line="79" selection-start-column="10" selection-end-line="79" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardAnswerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-139">
+          <caret line="59" column="26" lean-forward="true" selection-start-line="59" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/welcome/carddetail.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="169" column="21" lean-forward="false" selection-start-line="169" selection-start-column="21" selection-end-line="169" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home/carddetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="509">
+          <caret line="45" column="52" lean-forward="false" selection-start-line="45" selection-start-column="52" selection-end-line="45" selection-end-column="52" />
+          <folding>
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/carddetail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2211">
+          <caret line="340" column="60" lean-forward="false" selection-start-line="340" selection-start-column="60" selection-end-line="340" selection-end-column="60" />
+          <folding>
+            <element signature="e#89#832#0" expanded="false" />
+            <element signature="e#1512#1982#0" expanded="false" />
+            <element signature="e#2059#2539#0" expanded="false" />
+            <element signature="e#2620#3525#0" expanded="false" />
+            <element signature="e#3623#8612#0" expanded="false" />
+            <element signature="e#8702#9194#0" expanded="false" />
+            <element signature="e#9345#9613#0" expanded="false" />
+            <marker date="1523115295827" expanded="true" signature="4135:4146" ph="..." />
+            <marker date="1523115295827" expanded="true" signature="6413:6428" ph="..." />
+            <marker date="1523115295827" expanded="true" signature="6517:6530" ph="..." />
+            <marker date="1523115295827" expanded="true" signature="6588:6599" ph="..." />
+            <marker date="1523115295827" expanded="true" signature="7853:7864" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

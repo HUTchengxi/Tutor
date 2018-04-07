@@ -25,6 +25,8 @@ public class BbsCardAnswer implements Serializable {
 
     private Integer bcount;
 
+    private Integer comcount;
+
     private String answer;
 
     public Integer getId() {
@@ -74,6 +76,10 @@ public class BbsCardAnswer implements Serializable {
     public void setBcount(Integer bcount) {
         this.bcount = bcount;
     }
+
+    public Integer getComcount(){return comcount;}
+
+    public void setComcount(Integer comcount){this.comcount = comcount;}
 
     public String getAnswer() {
         return answer;
