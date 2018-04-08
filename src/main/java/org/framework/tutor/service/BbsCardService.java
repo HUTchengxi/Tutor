@@ -81,4 +81,15 @@ public interface BbsCardService {
      * @date 2018/4/8
      */
     void addColCountByCardId(Integer cardId);
+
+
+    /**
+     *
+     * @Description 收藏jian减1
+     aram [cardId]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/8
+     */
+    void delColCountByCardId(Integer cardId);
 }

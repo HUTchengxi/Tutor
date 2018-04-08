@@ -73,4 +73,9 @@ public class BbsCardServiceImpl implements BbsCardService {
     public void addColCountByCardId(Integer cardId) {
         bbsCardMapper.addColCountById(cardId);
     }
+
+    @Override
+    public void delColCountByCardId(Integer cardId) {
+        bbsCardMapper.delColCountById(cardId);
+    }
 }

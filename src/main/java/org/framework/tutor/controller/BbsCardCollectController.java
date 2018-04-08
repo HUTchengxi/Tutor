@@ -129,4 +129,35 @@ public class BbsCardCollectController {
         writer.flush();
         writer.close();
     }
+
+    /**
+     *
+     * @Description 取消收藏问题
+     * @param [cardId, request, response]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/8
+     */
+    @PostMapping("/uncollectcard")
+    public void uncollectCard(@RequestParam Integer cardId, HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        HttpSession session = request.getSession();
+        PrintWriter writer = response.getWriter();
+        String res = null;
+        String username = (String) session.getAttribute("username");
+
+        //判断是否已收藏
+        if(bbsCardCollectService.checkCollectStatus(cardId, username) == null){
+            res = "{\"status\": \"none\"}";
+        }
+        else{
+            bbsCardCollectService.uncollectCard(cardId, username);
+            bbsCardService.delColCountByCardId(cardId);
+            res = "{\"status\": \"uncol\"}";
+        }
+
+        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.flush();
+        writer.close();
+    }
 }

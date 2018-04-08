@@ -88,4 +88,16 @@ public interface BbsCardMapper {
      */
     @Update("update bbs_card set colcount = colcount+1 where id=#{id}")
     void addColCountById(@Param("id") Integer cardId);
+
+
+    /**
+     *
+     * @Description 对应课程收藏jian减1
+     * @param [cardId]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/8
+     */
+    @Update("update bbs_card set colcount = colcount-1 where id=#{id}")
+    void delColCountById(@Param("id") Integer cardId);
 }

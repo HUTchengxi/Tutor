@@ -19,7 +19,6 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/BbsCardCollectServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/BbsCardCollectServiceImpl.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/BbsCardServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/BbsCardServiceImpl.java" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/carddetail.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/carddetail.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/carddetail.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/carddetail.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -48,16 +47,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="1.21.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10360">
-              <caret line="280" column="37" lean-forward="false" selection-start-line="280" selection-start-column="37" selection-end-line="280" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="carddetail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home/carddetail.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -71,21 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BbsCardCollectController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardCollectController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="41" column="14" lean-forward="true" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="carddetail.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/carddetail.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="440" column="7" lean-forward="true" selection-start-line="440" selection-start-column="7" selection-end-line="440" selection-end-column="7" />
+            <state relative-caret-position="194">
+              <caret line="456" column="40" lean-forward="true" selection-start-line="456" selection-start-column="40" selection-end-line="456" selection-end-column="40" />
               <folding>
                 <element signature="e#89#832#0" expanded="false" />
                 <element signature="e#1512#1982#0" expanded="false" />
@@ -252,14 +231,14 @@
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/BbsCardAnswerMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/welcome/carddetail.css" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/carddetail.html" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/BbsCardCollectService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/BbsCardCollectServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/BbsCardCollectMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/carddetail.js" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardCollectController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/BbsCardCollectService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/BbsCardService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/BbsCardServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/BbsCardMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/BbsCardCollectServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/BbsCardCollectMapper.java" />
       </list>
     </option>
   </component>
@@ -1090,14 +1069,7 @@
       <workItem from="1522896343292" duration="18936000" />
       <workItem from="1522983494367" duration="17638000" />
       <workItem from="1523150143975" duration="109000" />
-      <workItem from="1523195486584" duration="3237000" />
-    </task>
-    <task id="LOCAL-00001" summary="将毕设项目提交到gitlab">
-      <created>1520393481249</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1520393481249</updated>
+      <workItem from="1523195486584" duration="4094000" />
     </task>
     <task id="LOCAL-00002" summary="用户通知的设计与实现">
       <created>1520500315786</created>
@@ -1435,11 +1407,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523115384658</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="实现了帖子的收藏">
+      <created>1523198747149</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1523198747164</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="923177000" />
+    <option name="totallyTimeSpent" value="924034000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1495,7 +1474,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="个人中心的侧边栏的js实现" />
     <MESSAGE value="2.5版本，解决了三个小bug，可以查看版本日志" />
     <MESSAGE value="个人中心的密保设置与修改的实现" />
     <MESSAGE value="个人中心的手机号码的绑定与解绑功能的实现（接入了阿里云第三方语音验证码）" />
@@ -1520,7 +1498,8 @@
     <MESSAGE value="实现了帖子的搜素和热门的上线" />
     <MESSAGE value="模拟知乎简单设计了帖子详情的界面" />
     <MESSAGE value="帖子详情页面数据展示:问题数据/答案数据" />
-    <option name="LAST_COMMIT_MESSAGE" value="帖子详情页面数据展示:问题数据/答案数据" />
+    <MESSAGE value="实现了帖子的收藏" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现了帖子的收藏" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1846,28 +1825,67 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/BbsCardCollectService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="33" column="25" lean-forward="false" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+        <state relative-caret-position="305">
+          <caret line="44" column="27" lean-forward="false" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/BbsCardService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="87" column="28" lean-forward="false" selection-start-line="87" selection-start-column="28" selection-end-line="87" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/BbsCardMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="573">
+          <caret line="100" column="69" lean-forward="false" selection-start-line="100" selection-start-column="69" selection-end-line="100" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/BbsCardServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="749">
+          <caret line="78" column="22" lean-forward="false" selection-start-line="78" selection-start-column="22" selection-end-line="78" selection-end-column="22" />
+          <folding>
+            <element signature="e#1790#1791#0" expanded="true" />
+            <element signature="e#1843#1844#0" expanded="true" />
+            <element signature="e#1912#1913#0" expanded="true" />
+            <element signature="e#1965#1966#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/BbsCardCollectMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="51" column="89" lean-forward="false" selection-start-line="51" selection-start-column="89" selection-end-line="51" selection-end-column="89" />
+        <state relative-caret-position="573">
+          <caret line="60" column="89" lean-forward="false" selection-start-line="60" selection-start-column="89" selection-end-line="60" selection-end-column="89" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/BbsCardCollectServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="694">
-          <caret line="43" column="29" lean-forward="false" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
+        <state relative-caret-position="749">
+          <caret line="48" column="29" lean-forward="false" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
           <folding>
             <element signature="e#1364#1365#0" expanded="true" />
             <element signature="e#1430#1431#0" expanded="true" />
+            <element signature="e#1510#1511#0" expanded="true" />
+            <element signature="e#1578#1579#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardCollectController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="154" column="27" lean-forward="false" selection-start-line="154" selection-start-column="27" selection-end-line="154" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1882,45 +1900,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/BbsCardService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="76" column="24" lean-forward="false" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/BbsCardMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="86" column="21" lean-forward="true" selection-start-line="86" selection-start-column="21" selection-end-line="86" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/BbsCardServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="749">
-          <caret line="73" column="22" lean-forward="false" selection-start-line="73" selection-start-column="22" selection-end-line="73" selection-end-column="22" />
-          <folding>
-            <element signature="e#1790#1791#0" expanded="true" />
-            <element signature="e#1843#1844#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardCollectController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="41" column="14" lean-forward="true" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/carddetail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="440" column="7" lean-forward="true" selection-start-line="440" selection-start-column="7" selection-end-line="440" selection-end-column="7" />
+        <state relative-caret-position="194">
+          <caret line="456" column="40" lean-forward="true" selection-start-line="456" selection-start-column="40" selection-end-line="456" selection-end-column="40" />
           <folding>
             <element signature="e#89#832#0" expanded="false" />
             <element signature="e#1512#1982#0" expanded="false" />

@@ -446,6 +446,24 @@ $(function () {
         var cardId = str_geturlparam("cardId");
         var status = $(this).data("status");
         if(status == "col"){
+            $.ajax({
+                async: true,
+                type: "post",
+                url: "/bbscardcollect_con/uncollectcard",
+                data: {
+                    cardId: cardId
+                },
+                dataType: "json",
+                success: function(data){
+                    var status = data.status;
+                    if(status == "uncol"){
+                        $(".cardheader .header-left .modbtn .colbtn").text("收藏问题").data("status", status);
+                    }
+                },
+                error: function(xhr, status){
+                    console.log(xhr);
+                }
+            });
             return;
         }
         if(status == "none"){
@@ -469,7 +487,7 @@ $(function () {
             error: function(xhr, status){
                 console.log(xhr);
             }
-        })
+        });
     };
     $(".cardheader .header-left .modbtn .colbtn").click(click_collectcard);
 });

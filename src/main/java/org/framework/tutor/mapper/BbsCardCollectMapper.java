@@ -2,10 +2,7 @@ package org.framework.tutor.mapper;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.framework.tutor.domain.BbsCardCollect;
 
 /**  
@@ -51,4 +48,16 @@ public interface BbsCardCollectMapper {
      */
     @Insert("insert into bbs_card_collect(username, cardid) values(#{username}, #{cardId})")
     void collectCard(@Param("cardId") Integer cardId, @Param("username") String username);
+
+
+    /**
+     *
+     * @Description 取消问题的收藏
+     * @param [cardId, username]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/8
+     */
+    @Delete("delete from bbs_card_collect where cardid=#{cardId} and username=#{username}")
+    void uncollectCard(@Param("cardId") Integer cardId, @Param("username") String username);
 }

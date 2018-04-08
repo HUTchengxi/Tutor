@@ -38,4 +38,15 @@ public interface BbsCardCollectService {
       * @date 2018/4/8
       */
     void collectCard(Integer cardId, String username);
+
+
+    /**
+     *
+     * @Description 取消问题的收藏
+     * @param [cardId, username]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/8
+     */
+    void uncollectCard(Integer cardId, String username);
 }

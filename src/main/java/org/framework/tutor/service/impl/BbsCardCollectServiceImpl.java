@@ -43,4 +43,9 @@ public class BbsCardCollectServiceImpl implements BbsCardCollectService {
     public void collectCard(Integer cardId, String username) {
         bbsCardCollectMapper.collectCard(cardId, username);
     }
+
+    @Override
+    public void uncollectCard(Integer cardId, String username) {
+        bbsCardCollectMapper.uncollectCard(cardId, username);
+    }
 }
