@@ -125,7 +125,7 @@ $(function () {
 
         $("nav ul.navbar-right").text("");
         $.ajax({
-            async: true,
+            async: false,
             type: "post",
             url: "/login_con/login_statuscheck",
             dataType: "json",
@@ -287,7 +287,7 @@ $(function () {
             success: function(data){
                 $(".cardheader .title").text(data.title);
                 $(".cardheader .descript").text(data.descript);
-                $(".cardheader span.ptime").text(data.crtime);
+                $(".cardheader span.ptime").text(data.crttime);
                 $(".cardheader .userinfo img.userface").attr("src", data.imgsrc);
                 $(".cardheader .userinfo p.usernick").text(data.nickname);
                 $(".cardheader .userface img.userface").data("uname", data.username);
@@ -319,7 +319,6 @@ $(function () {
             },
             dataType: "json",
             success: function(data){
-                console.log(data);
                 $.each(data, function(index, item){
                     $(".cardmainlist").append("<div class=\"cardmain\">\n" +
                         "        <!--回帖用户个人信息展示-->\n" +
@@ -406,4 +405,71 @@ $(function () {
     };
     $(document).on("click", ".cardmainlist div.cardfooter a.showcommand", click_showanswercommand);
 
+
+    /**
+     * 当前用户是否收藏了问题
+     */
+    var async_checkUserCollect = function(){
+
+        var cardId = str_geturlparam("cardid");
+        $.ajax({
+            async: true,
+            type: "post",
+            url: "/bbscardcollect_con/checkcollectstatus",
+            data: {
+              cardId: cardId
+            },
+            dataType: "json",
+            success: function(data){
+                var status = data.status;
+                if(status == "col"){
+                    $(".cardheader .header-left .modbtn .colbtn").text("已收藏");
+                }
+                else {
+                    $(".cardheader .header-left .modbtn .colbtn").text("收藏问题");
+                }
+                $(".cardheader .header-left .modbtn .colbtn").data("status", status);
+            },
+            error: function(xhr, status){
+                console.log(xhr);
+            }
+        });
+    };
+    async_checkUserCollect();
+
+
+    /**
+     * 点击收藏问题
+     */
+    var click_collectcard = function(){
+
+        var cardId = str_geturlparam("cardId");
+        var status = $(this).data("status");
+        if(status == "col"){
+            return;
+        }
+        if(status == "none"){
+            alert("请先登录");
+            return ;
+        }
+        $.ajax({
+            async: true,
+            type: "post",
+            url: "/bbscardcollect_con/collectcard",
+            data: {
+                cardId: cardId
+            },
+            dataType: "json",
+            success: function(data){
+                var status = data.status;
+                if(status == "col"){
+                    $(".cardheader .header-left .modbtn .colbtn").text("已收藏").data("status", status);
+                }
+            },
+            error: function(xhr, status){
+                console.log(xhr);
+            }
+        })
+    };
+    $(".cardheader .header-left .modbtn .colbtn").click(click_collectcard);
 });

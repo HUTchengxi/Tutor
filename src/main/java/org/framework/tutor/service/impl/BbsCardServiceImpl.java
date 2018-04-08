@@ -68,4 +68,9 @@ public class BbsCardServiceImpl implements BbsCardService {
     public BbsCard getCardById(Integer id) {
         return bbsCardMapper.getCardById(id);
     }
+
+    @Override
+    public void addColCountByCardId(Integer cardId) {
+        bbsCardMapper.addColCountById(cardId);
+    }
 }

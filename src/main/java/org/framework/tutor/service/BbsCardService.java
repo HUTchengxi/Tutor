@@ -70,4 +70,15 @@ public interface BbsCardService {
      * @date 2018/4/6
      */
     BbsCard getCardById(Integer id);
+
+
+    /**
+     *
+     * @Description 收藏加1
+     * @param [cardId]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/8
+     */
+    void addColCountByCardId(Integer cardId);
 }

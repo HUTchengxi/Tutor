@@ -12,6 +12,7 @@
  */
 package org.framework.tutor.service.impl;
 
+import org.framework.tutor.domain.BbsCardCollect;
 import org.framework.tutor.mapper.BbsCardCollectMapper;
 import org.framework.tutor.service.BbsCardCollectService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,5 +32,15 @@ public class BbsCardCollectServiceImpl implements BbsCardCollectService {
     @Override
     public Integer getMyCollectCount(String username) {
         return bbsCardCollectMapper.getMyCollectCount(username);
+    }
+
+    @Override
+    public BbsCardCollect checkCollectStatus(Integer cardId, String username) {
+        return bbsCardCollectMapper.checkCollectStatus(cardId, username);
+    }
+
+    @Override
+    public void collectCard(Integer cardId, String username) {
+        bbsCardCollectMapper.collectCard(cardId, username);
     }
 }

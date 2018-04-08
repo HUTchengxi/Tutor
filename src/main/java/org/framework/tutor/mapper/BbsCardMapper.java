@@ -2,10 +2,7 @@ package org.framework.tutor.mapper;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.framework.tutor.domain.BbsCard;
 
 @Mapper
@@ -80,4 +77,15 @@ public interface BbsCardMapper {
      */
     @Select("select * from bbs_card where id = #{id}")
     BbsCard getCardById(@Param("id") Integer id);
+
+    /**
+     *
+     * @Description 对应课程收藏加1
+     * @param [cardId]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/8
+     */
+    @Update("update bbs_card set colcount = colcount+1 where id=#{id}")
+    void addColCountById(@Param("id") Integer cardId);
 }
