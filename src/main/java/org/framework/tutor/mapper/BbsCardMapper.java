@@ -100,4 +100,16 @@ public interface BbsCardMapper {
      */
     @Update("update bbs_card set colcount = colcount-1 where id=#{id}")
     void delColCountById(@Param("id") Integer cardId);
+
+
+    /**
+     *
+     * @Description 回答数加1
+     * @param [cardId]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/9
+     */
+    @Update("update bbs_card set comcount = comcount+1 where id=#{cardId}")
+    void addComCountByCardId(@Param("cardId") Integer cardId);
 }

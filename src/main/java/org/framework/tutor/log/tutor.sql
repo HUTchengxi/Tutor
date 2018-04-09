@@ -10,11 +10,12 @@ Target Server Type    : MYSQL
 Target Server Version : 50720
 File Encoding         : 65001
 
-Date: 2018-04-01 22:21:52
+Date: 2018-04-09 23:26:11
 */
 
-CREATE DATABASE TUTOR;
-USE TUTOR;
+CREATE DATABASE tutor;
+USE tutor;
+
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
@@ -34,11 +35,37 @@ CREATE TABLE `bbs_card` (
   PRIMARY KEY (`id`),
   KEY `username` (`username`),
   CONSTRAINT `bbs_card_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user_main` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bbs_card
 -- ----------------------------
+INSERT INTO `bbs_card` VALUES ('6', 'chengxi', '我先问问', '一个简单的问题', '/images/default/2.jpg', '2018-04-02 09:07:16', '0', '1', '1');
+
+-- ----------------------------
+-- Table structure for `bbs_card_answer`
+-- ----------------------------
+DROP TABLE IF EXISTS `bbs_card_answer`;
+CREATE TABLE `bbs_card_answer` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '唯一标识',
+  `cardid` int(11) NOT NULL COMMENT '帖子id',
+  `username` varchar(20) NOT NULL COMMENT '答案制作者用户名',
+  `answer` text NOT NULL COMMENT '答案',
+  `crtime` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '回答时间',
+  `gcount` int(11) DEFAULT '0' COMMENT '点赞数',
+  `bcount` int(11) DEFAULT '0' COMMENT '踩数',
+  `comcount` int(11) DEFAULT '0' COMMENT '答案回复数',
+  PRIMARY KEY (`id`),
+  KEY `cardid` (`cardid`),
+  KEY `username` (`username`),
+  CONSTRAINT `bbs_card_answer_ibfk_1` FOREIGN KEY (`cardid`) REFERENCES `bbs_card` (`id`),
+  CONSTRAINT `bbs_card_answer_ibfk_2` FOREIGN KEY (`username`) REFERENCES `user_main` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of bbs_card_answer
+-- ----------------------------
+INSERT INTO `bbs_card_answer` VALUES ('3', '6', 'chengxi', '这是一个简单的回答', '2018-04-09 23:25:13', '0', '0', '0');
 
 -- ----------------------------
 -- Table structure for `bbs_card_collect`
@@ -54,11 +81,12 @@ CREATE TABLE `bbs_card_collect` (
   KEY `cardid` (`cardid`),
   CONSTRAINT `bbs_card_collect_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user_main` (`username`),
   CONSTRAINT `bbs_card_collect_ibfk_2` FOREIGN KEY (`cardid`) REFERENCES `bbs_card` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bbs_card_collect
 -- ----------------------------
+INSERT INTO `bbs_card_collect` VALUES ('3', 'chengxi', '6', '2018-04-08 22:57:23');
 
 -- ----------------------------
 -- Table structure for `command_star`
@@ -368,7 +396,7 @@ CREATE TABLE `user_log` (
   `logip` varchar(15) NOT NULL COMMENT '登录的ip地址',
   `logsys` varchar(10) NOT NULL COMMENT '电脑的操作系统',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=179 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=187 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user_log
@@ -550,6 +578,14 @@ INSERT INTO `user_log` VALUES ('175', 'chengxi', '2018-04-01 11:17:43', '未知�
 INSERT INTO `user_log` VALUES ('176', 'chengxi', '2018-04-01 20:35:04', '未知地区', '183.16.85.249', 'Windows');
 INSERT INTO `user_log` VALUES ('177', 'chengxi', '2018-04-01 21:15:21', '未知地区', '183.16.85.249', 'Windows');
 INSERT INTO `user_log` VALUES ('178', 'chengxi', '2018-04-01 22:13:04', '未知地区', '183.16.85.249', 'Windows');
+INSERT INTO `user_log` VALUES ('179', 'chengxi', '2018-04-01 22:53:50', '未知地区', '183.16.85.249', 'Windows');
+INSERT INTO `user_log` VALUES ('180', 'chengxi', '2018-04-02 09:06:58', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('181', 'chengxi', '2018-04-02 09:08:11', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('182', 'chengxi', '2018-04-05 21:41:43', '未知地区', '183.16.85.254', 'Windows');
+INSERT INTO `user_log` VALUES ('183', 'chengxi', '2018-04-07 18:02:37', '未知地区', '183.16.85.254', 'Windows');
+INSERT INTO `user_log` VALUES ('184', 'chengxi', '2018-04-08 22:40:45', '未知地区', '113.91.87.209', 'Windows');
+INSERT INTO `user_log` VALUES ('185', 'chengxi', '2018-04-09 23:01:05', '未知地区', '113.91.87.27', 'Windows');
+INSERT INTO `user_log` VALUES ('186', 'chengxi', '2018-04-09 23:20:50', '未知地区', '113.91.87.27', 'Windows');
 
 -- ----------------------------
 -- Table structure for `user_main`

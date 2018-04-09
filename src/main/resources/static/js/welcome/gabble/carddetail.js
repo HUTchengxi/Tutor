@@ -120,7 +120,7 @@ $(function () {
     /**
      * 判断当前用户是否登录
      */
-    var logstatus = true;
+    var logstatus = false;
     var login_check = function () {
 
         $("nav ul.navbar-right").text("");
@@ -134,12 +134,12 @@ $(function () {
                 if (status === "nologin") {
                     $(".personal").empty();
                     $("#pubModal").empty();
-                    logstatus = false;
                     $("nav ul.navbar-right").append("<li><a style='color: red;'>您好，请先登录</a></li>\n" +
                         "                    <li><a href='/forward_con/gologin'><span class='glyphicon glyphicon-log-in'></span> 登录</a></li>" +
                         "                    <li><a href='/forward_con/goregister'><span class='glyphicon glyphicon-user'></span> 注册</a></li>\n");
                 }
                 else {
+                    logstatus = true;
                     async_getuserinfo();
                     async_getpubcount();
                     async_getcolcount();
@@ -319,6 +319,8 @@ $(function () {
             },
             dataType: "json",
             success: function(data){
+                var status = data.status;
+                if(status == "none") return;
                 $.each(data, function(index, item){
                     $(".cardmainlist").append("<div class=\"cardmain\">\n" +
                         "        <!--回帖用户个人信息展示-->\n" +
@@ -490,4 +492,89 @@ $(function () {
         });
     };
     $(".cardheader .header-left .modbtn .colbtn").click(click_collectcard);
+
+
+    /**
+     * 当前用户是否编写了回答
+     */
+    var async_checkUserCommand = function(){
+
+        var cardId = str_geturlparam("cardid");
+        $.ajax({
+            async: true,
+            type: "post",
+            url: "/bbscardanswer_con/checkusercommand",
+            data: {
+                cardId: cardId
+            },
+            dataType: "json",
+            success: function(data){
+                $(".cardheader .header-left .writebtn").data("status", data.status);
+                if(status == "none"){
+                    $("#writeAnswer").remove();
+                }
+            },
+            error: function(xhr, status){
+                console.log(xhr);
+            }
+        });
+    };
+    async_checkUserCommand();
+
+
+    /**
+     * 点击回答
+     */
+    var click_openAnswerModal = function(){
+
+        var status = $(this).data("status");
+        if(status == "none"){
+            alert("请先登录");
+            return false;
+        }
+        if(status == "ed"){
+            alert("您已回答了");
+            return false;
+        }
+    };
+    $(".cardheader .header-left .writebtn").click(click_openAnswerModal);
+
+
+    /**
+     * 提交回答
+     */
+    var click_submitAnswerModal = function(){
+
+        if(!logstatus){
+            alert("请先登录");
+            return ;
+        }
+        var answer = $("#writeAnswer .modal-body p.answer").text();
+        var cardId = str_geturlparam("cardId");
+        $.ajax({
+            async: true,
+            type: "post",
+            url: "/bbscardanswer_con/addanswer",
+            data: {
+                "answer": answer,
+                "cardId": cardId
+            },
+            dataType: "json",
+            success: function(data){
+                var status = data.status;
+                if(status == "valid"){
+                    alert("发布成功");
+                    window.history.go(0);
+                }
+                else{
+                    alert("非法操作哦");
+                    window.history.go(0);
+                }
+            },
+            error: function(xhr, status){
+                console.log(xhr);
+            }
+        });
+    };
+    $("#writeAnswer .modal-footer .publish").click(click_submitAnswerModal);
 });

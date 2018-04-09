@@ -44,7 +44,7 @@
         <p class="ptimeinfo">发起于<span class="ptime"></span></p>
         <div class="modbtn pull-left">
             <a class="colbtn" href="javascript:;">收藏问题</a>
-            <a class="writebtn" href="javascript:;"><span class="glyphicon glyphicon-pencil"></span>写回答</a>
+            <a class="writebtn" href="javascript:;" data-toggle="modal" data-target="#writeAnswer"><span class="glyphicon glyphicon-pencil"></span>写回答</a>
             <button class="combtn btn btn-link">
                 <span class="glyphicon glyphicon-comment"></span>
                 <span class="comcount"></span>条回答
@@ -100,6 +100,30 @@
             </p>
         </li>
     </ul>
+</div>
+
+<!-- 发表问题模态框 -->
+<div class="modal fade" id="writeAnswer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;
+                </button>
+                <h4 class="modal-title">编辑你的回答</h4>
+            </div>
+            <div class="modal-body" data-id="null">
+                <div class="col-lg-12">
+                    <span>撰写回答</span>
+                    <p class="form-control answer" contenteditable="true"></p>
+                </div>
+                <div style="clear:both"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary publish">发表</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 

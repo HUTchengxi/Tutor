@@ -35,4 +35,14 @@ public class BbsCardAnswerServiceImpl implements BbsCardAnswerService {
     public List<BbsCardAnswer> getByCardid(Integer cardId) {
         return bbsCardAnswerMapper.getByCardid(cardId);
     }
+
+    @Override
+    public BbsCardAnswer checkIsExistAnswer(Integer cardId, String username) {
+        return bbsCardAnswerMapper.checkIsExistAnswer(cardId, username);
+    }
+
+    @Override
+    public void addAnswer(Integer cardId, String username, String answer) {
+        bbsCardAnswerMapper.addAnswer(cardId, username, answer);
+    }
 }

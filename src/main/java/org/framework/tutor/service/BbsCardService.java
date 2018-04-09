@@ -92,4 +92,15 @@ public interface BbsCardService {
      * @date 2018/4/8
      */
     void delColCountByCardId(Integer cardId);
+
+
+    /**
+     *
+     * @Description 回答数加1
+     * @param [cardId]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/9
+     */
+    void addComCountByCardId(Integer cardId);
 }

@@ -330,3 +330,9 @@ body > div.cardmainlist > div > div.commandlist > div.mycommandinfo.clearfix > b
     display: inline-block;
     width: 15%;
 }
+
+#writeAnswer .modal-body p{
+    height: 210px;
+    line-height: 30px;
+    overflow: hidden;
+}

@@ -16,6 +16,7 @@ import com.google.gson.JsonParser;
 import org.framework.tutor.domain.BbsCardAnswer;
 import org.framework.tutor.domain.UserMain;
 import org.framework.tutor.service.BbsCardAnswerService;
+import org.framework.tutor.service.BbsCardService;
 import org.framework.tutor.service.UserMService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,7 +24,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
@@ -40,6 +43,9 @@ public class BbsCardAnswerController {
 
     @Autowired
     private BbsCardAnswerService bbsCardAnswerService;
+
+    @Autowired
+    private BbsCardService bbsCardService;
 
     @Autowired
     private UserMService userMService;
@@ -94,5 +100,67 @@ public class BbsCardAnswerController {
             writer.flush();
             writer.close();
         }
+    }
+
+    /**
+     *
+     * @Description 判断当前用户是否已回答问题
+     * @param [cardId, request, response]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/9
+     */
+    @PostMapping("/checkusercommand")
+    public void checkUserCommand(@RequestParam Integer cardId, HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        PrintWriter writer = response.getWriter();
+        HttpSession session = request.getSession();
+        String username = (String) session.getAttribute("username");
+        String res = null;
+
+        if(username == null){
+            res = "{\"status\": \"none\"}";
+        }
+        else if(bbsCardAnswerService.checkIsExistAnswer(cardId, username) == null){
+            res = "{\"status\": \"un\"}";
+        }
+        else{
+            res = "{\"status\": \"ed\"}";
+        }
+
+        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.flush();
+        writer.close();
+    }
+
+    /**
+     *
+     * @Description 添加回答
+     * @param [cardId, answer, request, response]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/9
+     */
+    @PostMapping("/addanswer")
+    public void addAnswer(@RequestParam Integer cardId, @RequestParam String answer, HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        PrintWriter writer = response.getWriter();
+        String res = null;
+        HttpSession session = request.getSession();
+        String username = (String) session.getAttribute("username");
+
+        //判断是否已经有了回答
+        if(bbsCardAnswerService.checkIsExistAnswer(cardId, username) != null){
+            res = "{\"status\": \"invalid\"}";
+        }
+        else{
+            bbsCardAnswerService.addAnswer(cardId, username, answer);
+            bbsCardService.addComCountByCardId(cardId);
+            res = "{\"status\": \"valid\"}";
+        }
+
+        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.flush();
+        writer.close();
     }
 }
