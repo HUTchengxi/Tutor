@@ -243,7 +243,7 @@ body > div.cardmainlist > div > div.commandlist{
     display: none;
     transition: all .2s linear;
 }
-body > div.cardmainlist > div > div.commandlist > div.commandmain > div{
+body > div.cardmainlist > div > div.commandlist > div.commandmain > div.none{
     text-align: center;
     color: grey;
 }
@@ -270,7 +270,12 @@ body > div.cardmainlist > div > div.commandlist > div.commandmain > div > p.pull
     color: #808080d9;
 }
 body > div.cardmainlist > div > div.commandlist > div.commandmain > div.commandmaininfo > p{
+    font-size: 16px;
     line-height: 20px;
+}
+.cardmainlist .commandlist > div.commandmain .comusernick > span{
+    margin-left: 5px;
+    color: red;
 }
 body > div.cardmainlist > div > div.commandlist > div.commandmain > div.commandmaininfo > p.ptimeinfo{
     height: 30px;
@@ -289,7 +294,22 @@ body > div.cardmainlist > div > div.commandlist > div.mycommandinfo.clearfix > i
     font-size: 1.5rem;
 }
 body > div.cardmainlist > div > div.commandlist > div.mycommandinfo.clearfix > button{
-    margin-left: 30px;
+    /*margin-left: 30px;*/
+}
+.cardmainlist .commandmain .loadmore{
+    text-align: center;
+}
+.cardmainlist .commandmain .loadmore a{
+    text-decoration: none;
+}
+.cardmainlist .commandmain .loadmore.none a{
+    color: grey;
+}
+.cardmainlist .commandmain .loadmore.none a:hover{
+    color: grey;
+}
+.cardmainlist .commandmain .loadmore a:hover{
+    text-decoration: none;
 }
 
 

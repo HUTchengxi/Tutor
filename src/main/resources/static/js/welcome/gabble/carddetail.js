@@ -102,10 +102,10 @@ $(function () {
                 $.each(data, function (index, item) {
                     var title = item.title;
                     var imgsrc = item.imgsrc;
-                    if(img == ""){
+                    if (img == "") {
                         img = imgsrc;
                     }
-                    $("#pubModal .modal-body select").append("<option value='" + imgsrc + "'>"+title+"</option>");
+                    $("#pubModal .modal-body select").append("<option value='" + imgsrc + "'>" + title + "</option>");
                     $("#pubModal .modal-body img").attr("src", img);
                 });
             },
@@ -262,10 +262,11 @@ $(function () {
     /**
      * 获取url的请求参数
      */
-    var str_geturlparam = function(name){
+    var str_geturlparam = function (name) {
         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
         var r = window.location.search.substr(1).match(reg);
-        if (r != null) return unescape(r[2]); return null;
+        if (r != null) return unescape(r[2]);
+        return null;
     };
 
 
@@ -273,7 +274,7 @@ $(function () {
     /**
      * 获取对应的问题数据
      */
-    var async_getcardinfo = function(){
+    var async_getcardinfo = function () {
 
         var cardId = str_geturlparam("cardid");
         $.ajax({
@@ -284,7 +285,7 @@ $(function () {
                 cardId: cardId
             },
             dataType: "json",
-            success: function(data){
+            success: function (data) {
                 $(".cardheader .title").text(data.title);
                 $(".cardheader .descript").text(data.descript);
                 $(".cardheader span.ptime").text(data.crttime);
@@ -296,7 +297,7 @@ $(function () {
                 $(".cardheader .header-right .viscount").text(data.viscount);
                 $(".cardheader .header-right .colcount").text(data.colcount);
             },
-            error: function(xhr, status){
+            error: function (xhr, status) {
                 window.alert("后台环境异常导致无法获取问题数据，请稍后再试");
                 console.log(xhr);
             }
@@ -307,7 +308,7 @@ $(function () {
     /**
      * 获取对应的问题的回答数据
      */
-    var async_getcardanswerinfo = function(){
+    var async_getcardanswerinfo = function () {
 
         var cardId = str_geturlparam("cardid");
         $.ajax({
@@ -318,38 +319,38 @@ $(function () {
                 cardId: cardId
             },
             dataType: "json",
-            success: function(data){
+            success: function (data) {
                 var status = data.status;
-                if(status == "none") return;
-                $.each(data, function(index, item){
-                    $(".cardmainlist").append("<div class=\"cardmain\" data-id='"+item.id+"'>\n" +
+                if (status == "none") return;
+                $.each(data, function (index, item) {
+                    $(".cardmainlist").append("<div class=\"cardmain\" data-id='" + item.id + "'>\n" +
                         "        <!--回帖用户个人信息展示-->\n" +
                         "        <div class=\"mainhead clearfix\">\n" +
-                        "            <img class=\"pull-left userface\" src=\""+item.imgsrc+"\" data-uname='"+item.username+"'/>\n" +
-                        "            <p class=\"pull-left usernick\">"+item.nickname+"</p>\n" +
+                        "            <img class=\"pull-left userface\" src=\"" + item.imgsrc + "\" data-uname='" + item.username + "'/>\n" +
+                        "            <p class=\"pull-left usernick\">" + item.nickname + "</p>\n" +
                         "        </div>\n" +
                         "        <!--获取点赞人数信息-->\n" +
-                        "        <a class=\"gcountinfo\"><span class=\"gcount\">"+item.gcount+"</span>个人赞同了该回答</a>\n" +
+                        "        <a class=\"gcountinfo\"><span class=\"gcount\">" + item.gcount + "</span>个人赞同了该回答</a>\n" +
                         "        <!--回帖详细数据-->\n" +
                         "        <div class=\"ansmain\">\n" +
-                        "            <p class=\"answer\">" +item.answer +
+                        "            <p class=\"answer\">" + item.answer +
                         "            </p>\n" +
-                        "            <p class=\"pubtimeinfo\">编辑于<span class=\"pubtime\">"+item.crttime+"</span></p>\n" +
+                        "            <p class=\"pubtimeinfo\">编辑于<span class=\"pubtime\">" + item.crttime + "</span></p>\n" +
                         "        </div>\n" +
                         "        <!--回帖相关操作-->\n" +
                         "        <div class=\"cardfooter clearfix\">\n" +
                         "            <div class=\"pull-left btndiv\">\n" +
                         "                <a class=\"starlink tempstar\" data-score='1'>\n" +
                         "                    <span class=\"glyphicon glyphicon-thumbs-up\"></span>\n" +
-                        "                    <span class=\"goodcount\">"+item.gcount+"</span>\n" +
+                        "                    <span class=\"goodcount\">" + item.gcount + "</span>\n" +
                         "                </a>\n" +
                         "                <a class=\"unstarlink tempstar\" data-score='0'>\n" +
                         "                    <span class=\"glyphicon glyphicon-thumbs-down\"></span>\n" +
-                        "                    <span class=\"goodcount\">"+item.bcount+"</span>\n" +
+                        "                    <span class=\"goodcount\">" + item.bcount + "</span>\n" +
                         "                </a>\n" +
-                        "                <a class=\"showcommand btn btn-link\" data-status='off' data-aid='"+item.id+"'>\n" +
+                        "                <a class=\"showcommand btn btn-link\" data-status='off' data-aid='" + item.id + "'>\n" +
                         "                    <span class=\"glyphicon glyphicon-comment\"></span>\n" +
-                        "                    <span class=\"comcount\">"+item.comcount+"</span>条评论\n" +
+                        "                    <span class=\"comcount\">" + item.comcount + "</span>条评论\n" +
                         "                    <span class=\"glyphicon glyphicon-arrow-down\"></span>" +
                         "                </a>\n" +
                         "                <a class=\"report btn btn-link\">\n" +
@@ -362,7 +363,7 @@ $(function () {
                         "        <div class=\"commandlist\">\n" +
                         "            <!--评论列表头部-->\n" +
                         "            <div class=\"listheader clearfix\">\n" +
-                        "                <p class=\"pull-left\">全部<span class=\"comcount\">"+item.comcount+"</span>个回答</p>\n" +
+                        "                <p class=\"pull-left\">全部<span class=\"comcount\">" + item.comcount + "</span>个回答</p>\n" +
                         "                <button class=\"btn btn-link pull-right\">已按时间排序</button>\n" +
                         "            </div>\n" +
                         "            <!--评论列表详情数据-->\n" +
@@ -370,16 +371,16 @@ $(function () {
                         "            <!--输入评论form表单框-->\n" +
                         "            <div class=\"mycommandinfo clearfix\">\n" +
                         "                <input type=\"text\" class=\"pull-left col-lg-10\" name=\"mycommand\" placeholder=\"在这里输入你的评论\" />\n" +
-                        "                <button class=\"btn subcommand pull-left\">发表评论</button>\n" +
+                        "                <button class=\"btn subcommand pull-left\" data-cardid='"+cardId+"'>发表评论</button>\n" +
                         "            </div>\n" +
                         "        </div>\n" +
                         "    </div>");
 
                     //判断当前登录用户是否对该评论进行过评分
-                    if(!logstatus){
+                    if (!logstatus) {
                         $(".tempstar").removeClass("tempstar");
                     }
-                    else{
+                    else {
                         $.ajax({
                             async: false,
                             type: "post",
@@ -388,24 +389,24 @@ $(function () {
                                 "aid": item.id
                             },
                             dataType: "json",
-                            success: function(data){
+                            success: function (data) {
                                 var status = data.status;
-                                if(status == "star"){
+                                if (status == "star") {
                                     $(".tempstar.starlink").addClass("stared");
                                 }
-                                else if(status == "unstar"){
+                                else if (status == "unstar") {
                                     $(".tempstar.unstarlink").addClass("stared");
                                 }
                                 $(".tempstar").data("status", status).removeClass("tempstar");
                             },
-                            error: function(xhr, status){
+                            error: function (xhr, status) {
                                 console.log(xhr);
                             }
                         });
                     }
                 });
             },
-            error: function(xhr, status){
+            error: function (xhr, status) {
                 window.alert("后台环境异常导致无法获取问题数据，请稍后再试");
                 console.log(xhr);
             }
@@ -417,17 +418,80 @@ $(function () {
     /**
      * 点击查看指定的答案的评论数据
      */
-    var click_showanswercommand = function(){
+    var state = false;
+    var click_showanswercommand = function () {
 
         var status = $(this).data("status");
         var aid = $(this).data("aid");
-        if(status == "off"){
+        if (status == "off") {
             $(this).data("status", "on");
             $(this).find("span.glyphicon-arrow-down").removeClass("glyphicon-arrow-down")
                 .addClass("glyphicon-arrow-up");
             $(this).closest("div.cardmain").find("div.commandlist").css("display", "block");
+
+            if (!state) {
+                //获取五条评论数据
+                state = true;
+                var $this = $(this);
+                $.ajax({
+                    async: true,
+                    type: "post",
+                    url: "/bbscardanswercommand_con/getcommandlistbyaid",
+                    data: {
+                        aid: aid,
+                        startpos: 0
+                    },
+                    dataType: "json",
+                    success: function (data) {
+                        var status = data.status;
+                        if (status == "none") {
+                            $this.closest("div.cardmain").find(".commandlist .commandmain").append("<div class='none'>当前暂无评论，快来抢沙发吧</div>");
+                        }
+                        else {
+                            var count = 0;
+                            $.each(data, function (index, item) {
+                                count++;
+                                var id = item.id;
+                                var comtime = item.comtime;
+                                var command = item.descript;
+                                var floor = item.floor;
+                                var cardid = item.cardid;
+                                var imgsrc = item.imgsrc;
+                                var nickname = item.nickname;
+                                var repfloor = item.repfloor;
+                                $this.closest("div.cardmain").find(".commandlist .commandmain").append("<div class=\"commandmainhead clearfix\">\n" +
+                                    "    <img class=\"pull-left comuserface\" src=\"" + imgsrc + "\" />\n" +
+                                    "    <p class=\"pull-left comusernick\">" + nickname + "" + ((repfloor != "null" && repfloor.trim() != '') ? "<span>@</span>" + repfloor + "楼" : "") + "</p>" +
+                                    "    <p class=\"pull-right comfloor\">" + floor + "楼</p>\n" +
+                                    "</div>\n" +
+                                    "<div class=\"commandmaininfo\">\n" +
+                                    "    <p class=\"info\">" + command + "</p>\n" +
+                                    "    <p class=\"ptimeinfo\">评论于<span class=\"ptime\">" + comtime + "</span></p>\n" +
+                                    "</div>\n" +
+                                    "<div class=\"btngroup\">\n" +
+                                    "    <a href=\"javascript:;\" class=\"recommand\" data-repfloor='"+floor+"' data-cardid='"+cardid+"' data-aid='"+id+"'>\n" +
+                                    "        <span class=\"glyphicon glyphicon-share-alt\"></span>回复\n" +
+                                    "    </a>\n" +
+                                    "    <a href=\"javascript:;\" class=\"report btn btn-link\">\n" +
+                                    "        <span class=\"glyphicon glyphicon-bell\"></span>举报\n" +
+                                    "    </a>\n" +
+                                    "</div>");
+                            });
+                            if (count < 5) {
+                                $this.closest("div.cardmain").find(".commandlist .commandmain").append("<div class='loadmore'><a href='javascript:;' data-status='none'>--我是有底线的--</a></div>");
+                            }
+                            else {
+                                $this.closest("div.cardmain").find(".commandlist .commandmain").append("<div class='loadmore'><a href='javascript:;' data-startpos='1' data-id='" + aid + "'>加载更多</a></div>");
+                            }
+                        }
+                    },
+                    error: function (xhr, status) {
+                        console.log(xhr);
+                    }
+                });
+            }
         }
-        else{
+        else {
             $(this).closest("div.cardmain").find("div.commandlist").css("display", "none");
             $(this).data("status", "off");
             $(this).find("span.glyphicon-arrow-up").removeClass("glyphicon-arrow-up")
@@ -438,9 +502,161 @@ $(function () {
 
 
     /**
+     * 点击加载更多评论数据
+     */
+    var click_loadmorecommand = function () {
+
+        var status = $(this).data("status");
+        if (status == "none") {
+            return;
+        }
+        var startpos = parseInt($(this).data("startpos"));
+        var aid = parseInt($(this).data("id"));
+        var $this = $(this);
+        $.ajax({
+            async: true,
+            type: "post",
+            url: "/bbscardanswercommand_con/getcommandlistbyaid",
+            data: {
+                aid: aid,
+                startpos: startpos
+            },
+            dataType: "json",
+            success: function (data) {
+                var count = 0;
+                if(data.status != "none") {
+                    $.each(data, function (index, item) {
+                        count++;
+                        var id = item.id;
+                        var comtime = item.comtime;
+                        var command = item.descript;
+                        var floor = item.floor;
+                        var imgsrc = item.imgsrc;
+                        var nickname = item.nickname;
+                        var repfloor = item.repfloor;
+                        $this.closest("div.cardmain").find(".commandlist .commandmain").append("<div class=\"commandmainhead clearfix\">\n" +
+                            "    <img class=\"pull-left comuserface\" src=\"" + imgsrc + "\" />\n" +
+                            "    <p class=\"pull-left comusernick\">" + nickname + "" + (repfloor != "null" ? "<span>@</span>" + repfloor + "楼" : "") + "</p>" +
+                            "    <p class=\"pull-right comfloor\">" + floor + "楼</p>\n" +
+                            "</div>\n" +
+                            "<div class=\"commandmaininfo\">\n" +
+                            "    <p class=\"info\">" + command + "</p>\n" +
+                            "    <p class=\"ptimeinfo\">评论于<span class=\"ptime\">" + comtime + "</span></p>\n" +
+                            "</div>\n" +
+                            "<div class=\"btngroup\">\n" +
+                            "    <a href=\"javascript:;\" class=\"recommand\">\n" +
+                            "        <span class=\"glyphicon glyphicon-share-alt\"></span>回复\n" +
+                            "    </a>\n" +
+                            "    <a href=\"javascript:;\" class=\"report btn btn-link\">\n" +
+                            "        <span class=\"glyphicon glyphicon-bell\"></span>举报\n" +
+                            "    </a>\n" +
+                            "</div>");
+                    });
+                }
+                if (count < 5) {
+                    $this.closest("div.cardmain").find(".commandlist .commandmain").append("<div class='loadmore'><a href='javascript:;' data-status='none'>--我是有底线的--</a></div>");
+                }
+                else {
+                    $this.closest("div.cardmain").find(".commandlist .commandmain").append("<div class='loadmore'><a href='javascript:;' data-startpos='"+(startpos+1)+"' data-id='" + aid + "'>加载更多</a></div>");
+                }
+                $this.closest("div.loadmore").remove();
+            },
+            error: function (xhr, status) {
+                console.log(xhr);
+            }
+        });
+    };
+    $(document).on("click", ".cardmainlist .commandmain .loadmore a", click_loadmorecommand);
+
+
+    /**
+     * 点击回复指定评论
+     */
+    var click_openRepCommand = function(){
+
+        var repfloor = $(this).data("repfloor");
+        $(this).closest("div.commandlist").find(".mycommandinfo input").val("@"+repfloor+"楼:").focus();
+        $(this).closest("div.commandlist").find(".mycommandinfo button").data("repfloor", repfloor);
+    };
+    $(document).on("click", ".cardmainlist .commandmain a.recommand", click_openRepCommand);
+
+
+    /**
+     * 点击发表评论
+     */
+    var click_publishCommand = function(){
+
+        if(!logstatus){
+            alert("请先登录");
+            return ;
+        }
+
+        var answer = $(this).closest("div.mycommandinfo").find("input").val();
+        var cardid = $(this).data("cardid");
+        var aid = $(this).closest("div.cardmain").data("id");
+        answer = answer.trim();
+        var repfloor = $(this).data("repfloor");
+        //进行回复
+        if(answer.indexOf("@"+repfloor+"楼:") == 0){
+            answer = answer.replace("@"+repfloor+"楼:", "");
+            if(answer.trim() == ""){
+                alert("回复内容不能为空");
+                return ;
+            }
+            $.ajax({
+                async: true,
+                type: "post",
+                url: "/bbscardanswercommand_con/publishcommand",
+                data: {
+                    answer: answer.trim(),
+                    cardid: cardid,
+                    aid: aid,
+                    repfloor: repfloor
+                },
+                dataType: "json",
+                success: function(data){
+                    var status = data.status;
+                    if(status == "valid"){
+                        alert("回复成功");
+                        $(".commandlist .mycommandinfo input").val("");
+                        return ;
+                    }
+                }
+            });
+        }
+        //进行评论
+        else{
+            if(answer.trim() == ""){
+                alert("回复内容不能为空");
+                return ;
+            }
+            $.ajax({
+                async: true,
+                type: "post",
+                url: "/bbscardanswercommand_con/publishcommand",
+                data: {
+                    answer: answer.trim(),
+                    cardid: cardid
+                },
+                dataType: "json",
+                success: function(data){
+                    var status = data.status;
+                    if(status == "valid"){
+                        alert("评论成功");
+                        $(".commandlist .mycommandinfo input").val("");
+                        return ;
+                    }
+                }
+            });
+        }
+    };
+    $(document).on("click", ".commandlist .mycommandinfo button", click_publishCommand);
+
+
+    /**
      * 当前用户是否收藏了问题
      */
-    var async_checkUserCollect = function(){
+    var async_checkUserCollect = function () {
 
         var cardId = str_geturlparam("cardid");
         $.ajax({
@@ -448,12 +664,12 @@ $(function () {
             type: "post",
             url: "/bbscardcollect_con/checkcollectstatus",
             data: {
-              cardId: cardId
+                cardId: cardId
             },
             dataType: "json",
-            success: function(data){
+            success: function (data) {
                 var status = data.status;
-                if(status == "col"){
+                if (status == "col") {
                     $(".cardheader .header-left .modbtn .colbtn").text("已收藏");
                 }
                 else {
@@ -461,7 +677,7 @@ $(function () {
                 }
                 $(".cardheader .header-left .modbtn .colbtn").data("status", status);
             },
-            error: function(xhr, status){
+            error: function (xhr, status) {
                 console.log(xhr);
             }
         });
@@ -472,11 +688,11 @@ $(function () {
     /**
      * 点击收藏问题
      */
-    var click_collectcard = function(){
+    var click_collectcard = function () {
 
         var cardId = str_geturlparam("cardId");
         var status = $(this).data("status");
-        if(status == "col"){
+        if (status == "col") {
             $.ajax({
                 async: true,
                 type: "post",
@@ -485,21 +701,21 @@ $(function () {
                     cardId: cardId
                 },
                 dataType: "json",
-                success: function(data){
+                success: function (data) {
                     var status = data.status;
-                    if(status == "uncol"){
+                    if (status == "uncol") {
                         $(".cardheader .header-left .modbtn .colbtn").text("收藏问题").data("status", status);
                     }
                 },
-                error: function(xhr, status){
+                error: function (xhr, status) {
                     console.log(xhr);
                 }
             });
             return;
         }
-        if(status == "none"){
+        if (status == "none") {
             alert("请先登录");
-            return ;
+            return;
         }
         $.ajax({
             async: true,
@@ -509,13 +725,13 @@ $(function () {
                 cardId: cardId
             },
             dataType: "json",
-            success: function(data){
+            success: function (data) {
                 var status = data.status;
-                if(status == "col"){
+                if (status == "col") {
                     $(".cardheader .header-left .modbtn .colbtn").text("已收藏").data("status", status);
                 }
             },
-            error: function(xhr, status){
+            error: function (xhr, status) {
                 console.log(xhr);
             }
         });
@@ -526,7 +742,7 @@ $(function () {
     /**
      * 当前用户是否编写了回答
      */
-    var async_checkUserCommand = function(){
+    var async_checkUserCommand = function () {
 
         var cardId = str_geturlparam("cardid");
         $.ajax({
@@ -537,13 +753,13 @@ $(function () {
                 cardId: cardId
             },
             dataType: "json",
-            success: function(data){
+            success: function (data) {
                 $(".cardheader .header-left .writebtn").data("status", data.status);
-                if(status == "none"){
+                if (status == "none") {
                     $("#writeAnswer").remove();
                 }
             },
-            error: function(xhr, status){
+            error: function (xhr, status) {
                 console.log(xhr);
             }
         });
@@ -554,14 +770,14 @@ $(function () {
     /**
      * 点击回答
      */
-    var click_openAnswerModal = function(){
+    var click_openAnswerModal = function () {
 
         var status = $(this).data("status");
-        if(status == "none"){
+        if (status == "none") {
             alert("请先登录");
             return false;
         }
-        if(status == "ed"){
+        if (status == "ed") {
             alert("您已回答了");
             return false;
         }
@@ -572,11 +788,11 @@ $(function () {
     /**
      * 提交回答
      */
-    var click_submitAnswerModal = function(){
+    var click_submitAnswerModal = function () {
 
-        if(!logstatus){
+        if (!logstatus) {
             alert("请先登录");
-            return ;
+            return;
         }
         var answer = $("#writeAnswer .modal-body p.answer").text();
         var cardId = str_geturlparam("cardId");
@@ -589,18 +805,18 @@ $(function () {
                 "cardId": cardId
             },
             dataType: "json",
-            success: function(data){
+            success: function (data) {
                 var status = data.status;
-                if(status == "valid"){
+                if (status == "valid") {
                     alert("发布成功");
                     window.history.go(0);
                 }
-                else{
+                else {
                     alert("非法操作哦");
                     window.history.go(0);
                 }
             },
-            error: function(xhr, status){
+            error: function (xhr, status) {
                 console.log(xhr);
             }
         });
@@ -611,20 +827,20 @@ $(function () {
     /**
      * 点赞与踩的实现
      */
-    var click_starAndUnstar = function(){
+    var click_starAndUnstar = function () {
 
-        if(!logstatus){
+        if (!logstatus) {
             alert("请先登录");
-            return ;
+            return;
         }
         var status = $(this).data("status");
 
-        if(status == "nologin"){
+        if (status == "nologin") {
             alert("请先登录");
-            return ;
+            return;
         }
         //以评论过
-        if(status != "none"){
+        if (status != "none") {
             return;
         }
         //进行评分
@@ -640,23 +856,21 @@ $(function () {
                 "score": score
             },
             dataType: "json",
-            success: function(data){
-                if(data.status == "valid"){
+            success: function (data) {
+                if (data.status == "valid") {
                     $this.addClass("stared");
                     $this.find("div.btndiv").find("a").data("status", "star");
-                    var count = parseInt($this.find("span.goodcount").text())+1;
+                    var count = parseInt($this.find("span.goodcount").text()) + 1;
                     $this.find("span.goodcount").text(count);
                 }
                 return;
             },
-            error: function(xhr, status){
+            error: function (xhr, status) {
                 console.log(xhr);
             }
         });
     };
     $(document).on("click", ".cardmain .cardfooter .btndiv .starlink", click_starAndUnstar);
     $(document).on("click", ".cardmain .cardfooter .btndiv .unstarlink", click_starAndUnstar);
-
-
 
 });

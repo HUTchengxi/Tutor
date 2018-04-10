@@ -55,4 +55,9 @@ public class BbsCardAnswerServiceImpl implements BbsCardAnswerService {
     public void addBcount(Integer aid) {
         bbsCardAnswerMapper.addBcount(aid);
     }
+
+    @Override
+    public void addComcount(Integer aid) {
+        bbsCardAnswerMapper.addComcount(aid);
+    }
 }

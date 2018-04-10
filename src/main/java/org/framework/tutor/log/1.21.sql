@@ -305,19 +305,20 @@ create table bbs_card_collect(
 
 
 #用户帖子评论表
-create table bbs_card_command(
+create table bbs_card_answer_command(
   id int primary key auto_increment comment "唯一标识",
   username varchar(20) not null comment "评论的用户名",
   cardid int not null comment "评论的帖子id",
+  aid int not null comment "评论的帖子答案id",
   floor int not null comment "当前占楼",
-  repfloor int not null comment "若是回复则回复floor，不是则为null",
+  repfloor int comment "若是回复则回复floor，不是则为null",
   comment varchar(200) not null comment "评论信息",
   comtime datetime default now() comment "评论时间",
   gcount int default 0 comment "点赞数",
   bcount int default 0 comment "踩数",
   foreign key(username) references user_main(username),
   foreign key(cardid) references bbs_card(id),
-  foreign key(repfloor) references bbs_card_command(floor)
+  foreign key(aid) references bbs_card_answer(id)
 );
 
 

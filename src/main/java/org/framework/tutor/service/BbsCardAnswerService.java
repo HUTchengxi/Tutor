@@ -57,4 +57,15 @@ public interface BbsCardAnswerService {
      * @date 2018/4/10
      */
     void addBcount(Integer aid);
+
+
+    /**
+     *
+     * @Description 对应的回答评论数加1
+     * @param [aid]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/10
+     */
+    void addComcount(Integer aid);
 }

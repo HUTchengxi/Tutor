@@ -371,4 +371,59 @@ $(function () {
     };
     $(".finddiscuss form").submit(submit_searchcard);
 
+
+    /**
+     * 获取热门帖子数据
+     */
+    function async_loadHotCard(){
+
+        $.ajax({
+            async: true,
+            type: "post",
+            url: "/bbscard_con/loadhotcard",
+            dataType: "json",
+            success: function(data){
+                var count = data.count;
+                if(count == 0){
+                    $(".hotblog ul").remove();
+                    $(".hotblog div").remove();
+                    $(".hotblog").append("<p style='color: grey' class='text-center'>没有找到对应的结果</p>");
+                    return ;
+                }
+                $.each(data, function(index, item){
+                    var title = item.title;
+                    var id = item.id;
+                    var bimgsrc = item.bimgsrc;
+                    var crttime = item.crttime;
+                    var descript = item.descript;
+                    var imgsrc = item.imgsrc;
+                    var nickname = item.nickname;
+                    $("#blog ul").append("<li>\n" +
+                        "            <div class=\"blog-left\">\n" +
+                        "                <p ><a href=\"javascript:;\" data-id='"+id+"' class=\"showlink\">"+title+"</a></p>\n" +
+                        "                <p style=\"margin-top: 20px\">"+descript+"</p>\n" +
+                        "                <p style=\"margin-top: 80px\"><img src=\""+imgsrc+"\" style=\"width: 25px;height: 25px;border-radius: 50%;\" />"+nickname+"<img src=\"http://img.php.cn/upload/course/000/000/004/58170fbda3f34844.png\" style=\"margin-left: 20px\"/>"+crttime+"</p>\n" +
+                        "            </div>\n" +
+                        "            <div class=\"blog-right\"><img src=\""+bimgsrc+"\"/></div>\n" +
+                        "        </li>");
+                });
+            },
+            error: function(xhr, status){
+                console.log(xhr);
+            }
+        });
+    };
+    async_loadHotCard();
+
+
+    /**
+     * 点击进入对应的帖子详情
+     */
+    function click_showcarddetail(){
+
+        var cardId = $(this).data("id");
+        window.location = "/forward_con/showcarddetail?cardId="+cardId;
+    };
+    $(document).on("click", ".showlink", click_showcarddetail);
+
 });

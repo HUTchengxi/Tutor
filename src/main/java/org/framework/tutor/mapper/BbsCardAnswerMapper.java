@@ -72,4 +72,16 @@ public interface BbsCardAnswerMapper {
      */
     @Update("update bbs_card_answer set bcount = bcount+1 where id=#{id}")
     void addBcount(@Param("id") Integer aid);
+
+
+    /**
+     *
+     * @Description 对应的回答评论数加1
+     * @param [aid]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/10
+     */
+    @Update("update bbs_card_answer set comcount = comcount+1 where id=#{aid} ")
+    void addComcount(@Param("aid") Integer aid);
 }
