@@ -220,11 +220,13 @@ body > div.cardmainlist > div > div.cardfooter.clearfix > div > a.unstarlink:hov
     background-color: rgba(0,132,255,.06);
 }
 
-body > div.cardmainlist > div > div.cardfooter.clearfix > div > a.starlink.stared{
+body > div.cardmainlist > div > div.cardfooter.clearfix > div > a.starlink.stared,
+body > div.cardmainlist > div > div.cardfooter.clearfix > div > a.unstarlink.stared{
     background-color: #0084ff;
     color: #fff;
 }
-body > div.cardmainlist > div > div.cardfooter.clearfix > div > a.starlink.stared:hover{
+body > div.cardmainlist > div > div.cardfooter.clearfix > div > a.starlink.stared:hover,
+body > div.cardmainlist > div > div.cardfooter.clearfix > div > a.unstarlink.stared:hover{
     background-color: #0084ff;
     color: #fff;
 }

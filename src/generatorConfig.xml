@@ -48,7 +48,7 @@
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
         <!-- 指定数据库表 -->
-        <!--<table schema="" tableName="bbs_card_answer"></table>-->
+        <!--<table schema="" tableName="bbs_card_answer_star"></table>-->
         <!--<table schema="" tableName="publish_type"></table>-->
         <!--<table schema="" tableName="publish_log"></table>-->
         <!--<table schema="" tableName="tutor_btns"></table>-->

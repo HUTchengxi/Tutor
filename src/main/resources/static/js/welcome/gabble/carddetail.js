@@ -133,7 +133,7 @@ $(function () {
                 var status = data.status;
                 if (status === "nologin") {
                     $(".personal").empty();
-                    $("#pubModal").empty();
+                    $("#writeAnswer").remove();
                     $("nav ul.navbar-right").append("<li><a style='color: red;'>您好，请先登录</a></li>\n" +
                         "                    <li><a href='/forward_con/gologin'><span class='glyphicon glyphicon-log-in'></span> 登录</a></li>" +
                         "                    <li><a href='/forward_con/goregister'><span class='glyphicon glyphicon-user'></span> 注册</a></li>\n");
@@ -322,7 +322,7 @@ $(function () {
                 var status = data.status;
                 if(status == "none") return;
                 $.each(data, function(index, item){
-                    $(".cardmainlist").append("<div class=\"cardmain\">\n" +
+                    $(".cardmainlist").append("<div class=\"cardmain\" data-id='"+item.id+"'>\n" +
                         "        <!--回帖用户个人信息展示-->\n" +
                         "        <div class=\"mainhead clearfix\">\n" +
                         "            <img class=\"pull-left userface\" src=\""+item.imgsrc+"\" data-uname='"+item.username+"'/>\n" +
@@ -339,11 +339,11 @@ $(function () {
                         "        <!--回帖相关操作-->\n" +
                         "        <div class=\"cardfooter clearfix\">\n" +
                         "            <div class=\"pull-left btndiv\">\n" +
-                        "                <a class=\"starlink\">\n" +
+                        "                <a class=\"starlink tempstar\" data-score='1'>\n" +
                         "                    <span class=\"glyphicon glyphicon-thumbs-up\"></span>\n" +
                         "                    <span class=\"goodcount\">"+item.gcount+"</span>\n" +
                         "                </a>\n" +
-                        "                <a class=\"unstarlink\">\n" +
+                        "                <a class=\"unstarlink tempstar\" data-score='0'>\n" +
                         "                    <span class=\"glyphicon glyphicon-thumbs-down\"></span>\n" +
                         "                    <span class=\"goodcount\">"+item.bcount+"</span>\n" +
                         "                </a>\n" +
@@ -374,6 +374,35 @@ $(function () {
                         "            </div>\n" +
                         "        </div>\n" +
                         "    </div>");
+
+                    //判断当前登录用户是否对该评论进行过评分
+                    if(!logstatus){
+                        $(".tempstar").removeClass("tempstar");
+                    }
+                    else{
+                        $.ajax({
+                            async: false,
+                            type: "post",
+                            url: "/bbscardanswerstar_con/checkuserstar",
+                            data: {
+                                "aid": item.id
+                            },
+                            dataType: "json",
+                            success: function(data){
+                                var status = data.status;
+                                if(status == "star"){
+                                    $(".tempstar.starlink").addClass("stared");
+                                }
+                                else if(status == "unstar"){
+                                    $(".tempstar.unstarlink").addClass("stared");
+                                }
+                                $(".tempstar").data("status", status).removeClass("tempstar");
+                            },
+                            error: function(xhr, status){
+                                console.log(xhr);
+                            }
+                        });
+                    }
                 });
             },
             error: function(xhr, status){
@@ -577,4 +606,57 @@ $(function () {
         });
     };
     $("#writeAnswer .modal-footer .publish").click(click_submitAnswerModal);
+
+
+    /**
+     * 点赞与踩的实现
+     */
+    var click_starAndUnstar = function(){
+
+        if(!logstatus){
+            alert("请先登录");
+            return ;
+        }
+        var status = $(this).data("status");
+
+        if(status == "nologin"){
+            alert("请先登录");
+            return ;
+        }
+        //以评论过
+        if(status != "none"){
+            return;
+        }
+        //进行评分
+        var score = $(this).data("score");
+        var aid = $(this).closest("div.cardmain").data("id");
+        var $this = $(this);
+        $.ajax({
+            async: false,
+            type: "post",
+            url: "/bbscardanswerstar_con/adduserstar",
+            data: {
+                "aid": aid,
+                "score": score
+            },
+            dataType: "json",
+            success: function(data){
+                if(data.status == "valid"){
+                    $this.addClass("stared");
+                    $this.find("div.btndiv").find("a").data("status", "star");
+                    var count = parseInt($this.find("span.goodcount").text())+1;
+                    $this.find("span.goodcount").text(count);
+                }
+                return;
+            },
+            error: function(xhr, status){
+                console.log(xhr);
+            }
+        });
+    };
+    $(document).on("click", ".cardmain .cardfooter .btndiv .starlink", click_starAndUnstar);
+    $(document).on("click", ".cardmain .cardfooter .btndiv .unstarlink", click_starAndUnstar);
+
+
+
 });

@@ -1,9 +1,6 @@
 package org.framework.tutor.mapper;
 
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.framework.tutor.domain.BbsCardAnswer;
 
 import java.util.List;
@@ -51,4 +48,28 @@ public interface BbsCardAnswerMapper {
      */
     @Insert("insert into bbs_card_answer(cardId,username, answer) values(#{cardId}, #{username}, #{answer})")
     void addAnswer(@Param("cardId") Integer cardId, @Param("username") String username, @Param("answer") String answer);
+
+
+    /**
+     *
+     * @Description 点赞加1
+     * @param [aid]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/10
+     */
+    @Update("update bbs_card_answer set gcount = gcount+1 where id=#{id}")
+    void addGcount(@Param("id") Integer aid);
+
+
+    /**
+     *
+     * @Description 踩加1
+     * @param [aid]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/10
+     */
+    @Update("update bbs_card_answer set bcount = bcount+1 where id=#{id}")
+    void addBcount(@Param("id") Integer aid);
 }

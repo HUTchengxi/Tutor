@@ -37,4 +37,24 @@ public interface BbsCardAnswerService {
      * @date 2018/4/9
      */
     void addAnswer(Integer cardId, String username, String answer);
+
+    /**
+     *
+     * @Description 点赞加1
+     * @param [aid]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/10
+     */
+    void addGcount(Integer aid);
+
+    /**
+     *
+     * @Description 踩加1
+     * @param [aid]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/10
+     */
+    void addBcount(Integer aid);
 }

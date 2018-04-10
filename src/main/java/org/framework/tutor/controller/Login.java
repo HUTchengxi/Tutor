@@ -115,20 +115,24 @@ public class Login {
 
         String user = null;
         String pass = null;
-        for(int i=0; i<cookies.length; i++){
-            if("username".equals(cookies[i].getName())){
-                user = cookies[i].getValue();
-            }
-            if("password".equals(cookies[i].getName())){
-                pass = cookies[i].getValue();
-            }
-        }
-
-        if(user == null){
+        if(cookies == null || cookies.length <= 0){
             res = "{\"status\": \"none\"}";
         }
-        else{
-            res = "{\"username\": \""+user+"\", \"password\": \""+pass+"\"}";
+        else {
+            for (int i = 0; i < cookies.length; i++) {
+                if ("username".equals(cookies[i].getName())) {
+                    user = cookies[i].getValue();
+                }
+                if ("password".equals(cookies[i].getName())) {
+                    pass = cookies[i].getValue();
+                }
+            }
+
+            if (user == null) {
+                res = "{\"status\": \"none\"}";
+            } else {
+                res = "{\"username\": \"" + user + "\", \"password\": \"" + pass + "\"}";
+            }
         }
 
         writer.print(new JsonParser().parse(res).getAsJsonObject());

@@ -45,4 +45,14 @@ public class BbsCardAnswerServiceImpl implements BbsCardAnswerService {
     public void addAnswer(Integer cardId, String username, String answer) {
         bbsCardAnswerMapper.addAnswer(cardId, username, answer);
     }
+
+    @Override
+    public void addGcount(Integer aid) {
+        bbsCardAnswerMapper.addGcount(aid);
+    }
+
+    @Override
+    public void addBcount(Integer aid) {
+        bbsCardAnswerMapper.addBcount(aid);
+    }
 }

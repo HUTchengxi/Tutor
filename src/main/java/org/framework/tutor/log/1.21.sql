@@ -331,6 +331,19 @@ create table common_imgsrc(
 
 
 
+#帖子回答star记录表
+create table bbs_card_answer_star(
+  id int primary key auto_increment comment "唯一标识",
+  aid int not null comment "回答标识",
+  username varchar(20) not null comment "用户名",
+  score int not null comment "0踩，1赞",
+  stime datetime default now() comment "star时间",
+  foreign key(aid) references bbs_card_answer(id),
+  foreign key(username) references user_main(username)
+);
+
+
+
 
 
 
