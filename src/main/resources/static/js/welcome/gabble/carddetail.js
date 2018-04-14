@@ -86,6 +86,47 @@ $(function () {
         });
     };
 
+    /**
+     * 获取用户的评论总数
+     */
+    var async_getanscount = function(){
+
+        $.ajax({
+            async: true,
+            type: "post",
+            url: "/bbscardanswer_con/getmyanswercount",
+            dataType: "json",
+            success: function (data) {
+                var count = data.count;
+                $(".personal .anscount").text(count);
+            },
+            error: function (xhr, status) {
+                window.alert("后台环境异常导致无法获取用户的信息，请稍后再试");
+                window.console.log(xhr);
+            }
+        });
+    };
+
+    /**
+     * 获取用户的回答总数
+     */
+    var async_getcomcount = function(){
+
+        $.ajax({
+            async: true,
+            type: "post",
+            url: "/bbscardanswercommand_con/getmycommandcount",
+            dataType: "json",
+            success: function (data) {
+                var count = data.count;
+                $(".personal .comcount").text(count);
+            },
+            error: function (xhr, status) {
+                window.alert("后台环境异常导致无法获取用户的信息，请稍后再试");
+                window.console.log(xhr);
+            }
+        });
+    };
 
     /**
      * 异步获取背景图片的imgsrc
@@ -143,6 +184,8 @@ $(function () {
                     async_getuserinfo();
                     async_getpubcount();
                     async_getcolcount();
+                    async_getcomcount();
+                    async_getanscount();
                     async_getImgsrc();
                     $(".personal").css("display", "block");
                     var hour = new Date().getHours();
@@ -286,6 +329,7 @@ $(function () {
             },
             dataType: "json",
             success: function (data) {
+                $("html head title").text(data.title+"----论坛中心----勤成家教网");
                 $(".cardheader .title").text(data.title);
                 $(".cardheader .descript").text(data.descript);
                 $(".cardheader span.ptime").text(data.crttime);
@@ -304,6 +348,28 @@ $(function () {
         });
     };
     async_getcardinfo();
+
+
+    /**
+     * 对应的问题访问量加1
+     */
+    var async_addcardviscount = function(){
+
+        $.ajax({
+            async: true,
+            type: "post",
+            url: "/bbscard_con/addviscount",
+            data: {cardid: str_geturlparam("cardId")},
+            dataType: "json",
+            success: function(data){
+            },
+            error: function(xhr, status){
+                console.log(xhr);
+            }
+        });
+    };
+    async_addcardviscount();
+
 
     /**
      * 获取对应的问题的回答数据
@@ -626,6 +692,7 @@ $(function () {
         }
         //进行评论
         else{
+            console.log(answer);
             if(answer.trim() == ""){
                 alert("回复内容不能为空");
                 return ;
@@ -636,7 +703,8 @@ $(function () {
                 url: "/bbscardanswercommand_con/publishcommand",
                 data: {
                     answer: answer.trim(),
-                    cardid: cardid
+                    cardid: cardid,
+                    aid: aid
                 },
                 dataType: "json",
                 success: function(data){

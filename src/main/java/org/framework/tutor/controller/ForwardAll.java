@@ -6,6 +6,7 @@ import org.framework.tutor.service.UserMService;
 import org.framework.tutor.service.UserVService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -308,13 +309,12 @@ public class ForwardAll {
     /**  
      *    
      * @Description 查询帖子
-     * @param [response]    
      * @return java.lang.String
      * @author yinjimin  
      * @date 2018/4/2
      */  
     @RequestMapping("/showcardsearch")
-    public String showCardSearch(HttpServletResponse response){
+    public String showCardSearch(){
 
         return "/home/showcard";
     }
@@ -323,14 +323,27 @@ public class ForwardAll {
     /**  
      *    
      * @Description 帖子详情
-     * @param [response]    
      * @return java.lang.String
      * @author yinjimin  
      * @date 2018/4/4
      */  
     @RequestMapping("/showcarddetail")
-    public String showCardDetail(HttpServletResponse response){
+    public String showCardDetail(){
 
         return "/home/carddetail";
+    }
+
+    /**
+     *
+     * @Description 进入我的论坛中心的个人中心
+     * @param []
+     * @return java.lang.String
+     * @author yinjimin
+     * @date 2018/4/12
+     */
+    @GetMapping("/gomybbsinfo")
+    public String goMyBbsInfo(){
+
+        return "/home/mybbs";
     }
 }

@@ -60,4 +60,14 @@ public class BbsCardAnswerServiceImpl implements BbsCardAnswerService {
     public void addComcount(Integer aid) {
         bbsCardAnswerMapper.addComcount(aid);
     }
+
+    @Override
+    public Integer getMyAnswerCount(String username) {
+        return bbsCardAnswerMapper.getMyAnswerCount(username);
+    }
+
+    @Override
+    public List<BbsCardAnswer> getmyAnswerInfo(String username) {
+        return bbsCardAnswerMapper.getMyAnswerInfo(username);
+    }
 }

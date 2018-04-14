@@ -84,4 +84,28 @@ public interface BbsCardAnswerMapper {
      */
     @Update("update bbs_card_answer set comcount = comcount+1 where id=#{aid} ")
     void addComcount(@Param("aid") Integer aid);
+
+
+    /**
+     *
+     * @Description 获取用户回答总数
+     * @param [username]
+     * @return java.lang.Integer
+     * @author yinjimin
+     * @date 2018/4/12
+     */
+    @Select("select count(*) from bbs_card_answer where username=#{username}")
+    Integer getMyAnswerCount(@Param("username") String username);
+
+
+    /**
+     *
+     * @Description 获取指定用户的回答数据
+     * @param [username]
+     * @return java.util.List<org.framework.tutor.domain.BbsCardAnswer>
+     * @author yinjimin
+     * @date 2018/4/13
+     */
+    @Select("select * from bbs_card_answer where username=#{username}")
+    List<BbsCardAnswer> getMyAnswerInfo(@Param("username") String username);
 }

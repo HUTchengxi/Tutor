@@ -18,6 +18,8 @@ import org.framework.tutor.service.BbsCardCollectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 /**
  * @author yinjimin
  * @Description: 用户帖子收藏服务层实现类
@@ -47,5 +49,10 @@ public class BbsCardCollectServiceImpl implements BbsCardCollectService {
     @Override
     public void uncollectCard(Integer cardId, String username) {
         bbsCardCollectMapper.uncollectCard(cardId, username);
+    }
+
+    @Override
+    public List<BbsCardCollect> getMyCollectInfo(String username) {
+        return bbsCardCollectMapper.getMyCollectInfo(username);
     }
 }

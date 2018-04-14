@@ -60,4 +60,17 @@ public interface BbsCardCollectMapper {
      */
     @Delete("delete from bbs_card_collect where cardid=#{cardId} and username=#{username}")
     void uncollectCard(@Param("cardId") Integer cardId, @Param("username") String username);
+
+
+    /**
+     *
+     * @Description 获取当前用户收藏的帖子数据
+     * @param [username]
+     * @return java.util.List<org.framework.tutor.domain.BbsCardCollect>
+     * @author yinjimin
+     * @date 2018/4/13
+     */
+    @Select("select * from bbs_card_collect where username=#{username} order by coltime desc")
+    List<BbsCardCollect> getMyCollectInfo(@Param("username") String username);
+
 }

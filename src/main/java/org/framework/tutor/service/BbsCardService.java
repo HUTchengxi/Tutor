@@ -103,4 +103,26 @@ public interface BbsCardService {
      * @date 2018/4/9
      */
     void addComCountByCardId(Integer cardId);
+
+
+    /**
+     *
+     * @Description 文章访问量加1
+     * @param [cardid]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/11
+     */
+    void addViscountByCardId(Integer cardid);
+
+
+    /**
+     *
+     * @Description 获取当前用户的发帖数据
+     * @param [username]
+     * @return java.util.List<org.framework.tutor.domain.BbsCard>
+     * @author yinjimin
+     * @date 2018/4/13
+     */
+    List<BbsCard> getMyCardInfo(String username);
 }

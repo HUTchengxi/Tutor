@@ -163,4 +163,75 @@ public class BbsCardAnswerController {
         writer.flush();
         writer.close();
     }
+
+    /**
+     *
+     * @Description 获取用户回答总数
+     * @param [request, response]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/12
+     */
+    @PostMapping("/getmyanswercount")
+    public void getMyAnswerCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        PrintWriter writer = response.getWriter();
+        String res = null;
+        HttpSession session = request.getSession();
+        String username = (String) session.getAttribute("username");
+
+        Integer count = bbsCardAnswerService.getMyAnswerCount(username);
+        res = "{\"count\": \""+count+"\"}";
+
+        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.flush();
+        writer.close();
+    }
+
+
+    @PostMapping("/getmyanswerinfo")
+    public void getMyAnswerInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        response.setCharacterEncoding("utf-8");
+        PrintWriter writer = response.getWriter();
+        String res = null;
+        HttpSession session = request.getSession();
+        String username = (String) session.getAttribute("username");
+
+        try{
+            List<BbsCardAnswer> bbsCardAnswerList = bbsCardAnswerService.getmyAnswerInfo(username);
+            if(bbsCardAnswerList.size() == 0){
+                res = "{\"status\": \"none\"}";
+            }
+            else{
+                res = "{";
+                int i = 1;
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                for(BbsCardAnswer bbsCardAnswer: bbsCardAnswerList){
+                    UserMain userMain = userMService.getByUser(bbsCardAnswer.getUsername());
+                    res += "\""+i+"\": ";
+                    String temp = "{\"crttime\": \""+simpleDateFormat.format(bbsCardAnswer.getCrtime())+"\", " +
+                            "\"nickname\": \""+userMain.getNickname()+"\", " +
+                            "\"imgsrc\": \""+userMain.getImgsrc()+"\", " +
+                            "\"answer\": \""+bbsCardAnswer.getAnswer()+"\", " +
+                            "\"cid\": \""+bbsCardAnswer.getCardid()+"\", " +
+                            "\"aid\": \""+bbsCardAnswer.getId()+"\", " +
+                            "\"gcount\": \""+bbsCardAnswer.getGcount()+"\", " +
+                            "\"bcount\": \""+bbsCardAnswer.getBcount()+"\", " +
+                            "\"comcount\": \""+bbsCardAnswer.getComcount()+"\"}, ";
+                    res += temp;
+                    i++;
+                }
+                res = res.substring(0, res.length()-2);
+                res += "}";
+            }
+        }catch (Exception e){
+            res = "{\"status\": \"sysexception\"}";
+            e.printStackTrace();
+        } finally {
+            writer.print(new JsonParser().parse(res).getAsJsonObject());
+            writer.flush();
+            writer.close();
+        }
+    }
 }

@@ -37,12 +37,22 @@ public class BbsCardAnswerCommandServiceImpl implements BbsCardAnswerCommandServ
     }
 
     @Override
-    public Integer getCurrentFloor(Integer cardid) {
-        return bbsCardAnswerCommandMapper.getCurrentFloor(cardid);
+    public Integer getCurrentFloor(Integer cardid, Integer aid) {
+        return bbsCardAnswerCommandMapper.getCurrentFloor(cardid, aid);
     }
 
     @Override
     public void publishCommand(String username, Integer cardid, Integer aid, String answer, Integer floor, Integer repfloor) {
         bbsCardAnswerCommandMapper.publishCommand(username, cardid, aid, answer, floor, repfloor);
+    }
+
+    @Override
+    public Integer getComcountByUser(String username) {
+        return bbsCardAnswerCommandMapper.getComCountByUser(username);
+    }
+
+    @Override
+    public List<BbsCardAnswerCommand> getMyCommandInfo(String username) {
+        return  bbsCardAnswerCommandMapper.getMyCommandInfo(username);
     }
 }

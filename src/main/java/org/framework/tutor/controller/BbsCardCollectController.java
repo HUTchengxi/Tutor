@@ -13,6 +13,8 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
+import org.framework.tutor.domain.BbsCard;
+import org.framework.tutor.domain.BbsCardCollect;
 import org.framework.tutor.service.BbsCardCollectService;
 import org.framework.tutor.service.BbsCardService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.List;
 
 /**
  * @author yinjimin
@@ -154,6 +158,54 @@ public class BbsCardCollectController {
             bbsCardCollectService.uncollectCard(cardId, username);
             bbsCardService.delColCountByCardId(cardId);
             res = "{\"status\": \"uncol\"}";
+        }
+
+        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.flush();
+        writer.close();
+    }
+
+
+    /**
+     *
+     * @Description 获取当前用户收藏的帖子数据
+     * @param [request, response]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/13
+     */
+    @PostMapping("/getmycollectinfo")
+    public void getMyCollectInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        response.setCharacterEncoding("utf-8");
+        PrintWriter writer = response.getWriter();
+        String res = null;
+        HttpSession session = request.getSession();
+        String username = (String) session.getAttribute("username");
+
+        List<BbsCardCollect> bbsCardList = bbsCardCollectService.getMyCollectInfo(username);
+        if(bbsCardList.size() == 0){
+            res = "{\"status\": \"none\"}";
+        }else{
+            res = "{";
+            int i = 1;
+            SimpleDateFormat ysdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            for (BbsCardCollect bbsCardCollect: bbsCardList) {
+                BbsCard bbsCard = bbsCardService.getCardById(bbsCardCollect.getCardid());
+                res += "\""+i+"\": ";
+                String temp = "{\"id\": \""+bbsCard.getId()+"\", " +
+                        "\"crtime\": \""+ysdf.format(bbsCard.getCrttime())+"\", " +
+                        "\"coltime\": \""+ysdf.format(bbsCardCollect.getColtime())+"\", " +
+                        "\"title\": \""+bbsCard.getTitle()+"\", " +
+                        "\"comcount\": \""+bbsCard.getComcount()+"\", " +
+                        "\"viscount\": \""+bbsCard.getViscount()+"\", " +
+                        "\"colcount\": \""+bbsCard.getColcount()+"\", " +
+                        "\"descript\": \""+bbsCard.getDescript()+"\"}, ";
+                res += temp;
+                i++;
+            }
+            res = res.substring(0, res.length()-2);
+            res += "}";
         }
 
         writer.print(new JsonParser().parse(res).getAsJsonObject());

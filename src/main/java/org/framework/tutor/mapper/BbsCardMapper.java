@@ -112,4 +112,27 @@ public interface BbsCardMapper {
      */
     @Update("update bbs_card set comcount = comcount+1 where id=#{cardId}")
     void addComCountByCardId(@Param("cardId") Integer cardId);
+
+    /**
+     *
+     * @Description 访问量加1
+     * @param [cardid]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/11
+     */
+    @Update("update bbs_card set viscount = viscount+1 where id=#{cardId}")
+    void addViscountByCardId(@Param("cardId") Integer cardid);
+
+
+    /**
+     *
+     * @Description 获取当前用户发表的帖子数据
+     * @param [username]
+     * @return java.util.List<org.framework.tutor.domain.BbsCard>
+     * @author yinjimin
+     * @date 2018/4/13
+     */
+    @Select("select * from bbs_card where username=#{username} order by crttime desc")
+    List<BbsCard> getMyCardInfo(@Param("username") String username);
 }

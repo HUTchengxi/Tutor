@@ -18,6 +18,7 @@ import org.framework.tutor.domain.CourseLog;
 import org.framework.tutor.domain.UserMain;
 import org.framework.tutor.service.BbsCardService;
 import org.framework.tutor.service.UserMService;
+import org.framework.tutor.util.CommonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -242,5 +243,76 @@ public class BbsCardController {
             writer.flush();
             writer.close();
         }
+    }
+
+    @PostMapping("/addviscount")
+    public void addViscount(@RequestParam Integer cardid, HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        PrintWriter writer = response.getWriter();
+        String res = null;
+        HttpSession session = request.getSession();
+        String curIp = (String) session.getAttribute("ip");
+
+        //获取真实ip
+        String ip = CommonUtil.getIpAddr(request);
+        //同一ip同一文章目前只加一次
+        if(curIp != null && curIp.equals(ip) && CommonUtil.isExistCardid(cardid)){
+                res = "{}";
+        }
+        else{
+            bbsCardService.addViscountByCardId(cardid);
+            CommonUtil.addCardList(cardid);
+            session.setAttribute("ip", ip);
+            res = "{\"status\": \"valid\"}";
+        }
+
+        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.flush();
+        writer.close();
+    }
+
+    /**
+     *
+     * @Description 获取当前用户发表的帖子数据
+     * @param [request, response]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/13
+     */
+    @PostMapping("/getmycardinfo")
+    public void getMyCardInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        response.setCharacterEncoding("utf-8");
+        PrintWriter writer = response.getWriter();
+        String res = null;
+        HttpSession session = request.getSession();
+        String username = (String) session.getAttribute("username");
+
+        List<BbsCard> bbsCardList = bbsCardService.getMyCardInfo(username);
+        if(bbsCardList.size() == 0){
+            res = "{\"status\": \"none\"}";
+        }else{
+            res = "{";
+            int i = 1;
+            SimpleDateFormat ysdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            for (BbsCard bbsCard: bbsCardList) {
+                res += "\""+i+"\": ";
+                String temp = "{\"id\": \""+bbsCard.getId()+"\", " +
+                        "\"crtime\": \""+ysdf.format(bbsCard.getCrttime())+"\", " +
+                        "\"title\": \""+bbsCard.getTitle()+"\", " +
+                        "\"comcount\": \""+bbsCard.getComcount()+"\", " +
+                        "\"viscount\": \""+bbsCard.getViscount()+"\", " +
+                        "\"colcount\": \""+bbsCard.getColcount()+"\", " +
+                        "\"descript\": \""+bbsCard.getDescript()+"\"}, ";
+                res += temp;
+                i++;
+            }
+            res = res.substring(0, res.length()-2);
+            res += "}";
+        }
+
+        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.flush();
+        writer.close();
     }
 }

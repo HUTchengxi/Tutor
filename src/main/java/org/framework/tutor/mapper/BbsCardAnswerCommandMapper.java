@@ -37,8 +37,8 @@ public interface BbsCardAnswerCommandMapper {
      * @author yinjimin
      * @date 2018/4/10
      */
-    @Select("select floor from bbs_card_answer_command where cardid=#{cardid} order by floor desc limit 0,1")
-    Integer getCurrentFloor(@Param("cardid") Integer cardid);
+    @Select("select floor from bbs_card_answer_command where cardid=#{cardid} and aid=#{aid} order by floor desc limit 0,1")
+    Integer getCurrentFloor(@Param("cardid") Integer cardid, @Param("aid") Integer aid);
 
     /**
      *
@@ -50,4 +50,28 @@ public interface BbsCardAnswerCommandMapper {
      */
     @Insert("insert into bbs_card_answer_command(username, cardid, aid, comment, floor, repfloor) values(#{username}, #{cardid}, #{aid}, #{answer}, #{floor}, #{repfloor})")
     void publishCommand(@Param("username") String username, @Param("cardid") Integer cardid, @Param("aid") Integer aid, @Param("answer") String answer, @Param("floor") Integer floor, @Param("repfloor") Integer repfloor);
+
+
+    /**
+     *
+     * @Description 获取用户的评论总数
+     * @param [username]
+     * @return java.lang.Integer
+     * @author yinjimin
+     * @date 2018/4/12
+     */
+    @Select("select count(*) from bbs_card_answer_command where username=#{username}")
+    Integer getComCountByUser(@Param("username") String username);
+
+
+    /**
+     *
+     * @Description 获取指定用户的评论数据
+     * @param [username]
+     * @return java.util.List<org.framework.tutor.domain.BbsCardAnswerCommand>
+     * @author yinjimin
+     * @date 2018/4/14
+     */
+    @Select("select * from bbs_card_answer_command where username=#{username} order by comtime desc")
+    List<BbsCardAnswerCommand> getMyCommandInfo(@Param("username") String username);
 }

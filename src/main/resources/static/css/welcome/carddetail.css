@@ -270,7 +270,7 @@ body > div.cardmainlist > div > div.commandlist > div.commandmain > div > p.pull
     color: #808080d9;
 }
 body > div.cardmainlist > div > div.commandlist > div.commandmain > div.commandmaininfo > p{
-    font-size: 16px;
+    font-size: 1.5rem;
     line-height: 20px;
 }
 .cardmainlist .commandlist > div.commandmain .comusernick > span{
@@ -292,9 +292,6 @@ body > div.cardmainlist > div > div.commandlist > div.mycommandinfo.clearfix > i
     height: 34px;
     background-color: #f6f6f6;
     font-size: 1.5rem;
-}
-body > div.cardmainlist > div > div.commandlist > div.mycommandinfo.clearfix > button{
-    /*margin-left: 30px;*/
 }
 .cardmainlist .commandmain .loadmore{
     text-align: center;

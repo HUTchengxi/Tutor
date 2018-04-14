@@ -2,6 +2,8 @@ package org.framework.tutor.service;
 
 import org.framework.tutor.domain.BbsCardCollect;
 
+import java.util.List;
+
 /**
  *    
  * @Description 用户帖子收藏服务层接口
@@ -49,4 +51,16 @@ public interface BbsCardCollectService {
      * @date 2018/4/8
      */
     void uncollectCard(Integer cardId, String username);
+
+    
+    /**  
+     *    
+     * @Description 获取当前用户收藏的帖子数据
+     * @param [username]
+     * @return java.util.List<org.framework.tutor.domain.BbsCardCollect>
+     * @author yinjimin  
+     * @date 2018/4/13
+     */  
+    List<BbsCardCollect> getMyCollectInfo(String username);
+
 }

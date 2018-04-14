@@ -83,4 +83,14 @@ public class BbsCardServiceImpl implements BbsCardService {
     public void addComCountByCardId(Integer cardId) {
         bbsCardMapper.addComCountByCardId(cardId);
     }
+
+    @Override
+    public void addViscountByCardId(Integer cardid) {
+        bbsCardMapper.addViscountByCardId(cardid);
+    }
+
+    @Override
+    public List<BbsCard> getMyCardInfo(String username) {
+        return bbsCardMapper.getMyCardInfo(username);
+    }
 }
