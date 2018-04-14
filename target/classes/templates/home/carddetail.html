@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>论坛中心---勤成家教网</title>
+    <link rel="icon" href="/images/logo/web_logo.ico"/>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.css"/>
+    <link rel="stylesheet" href="/css/welcome/carddetail.css"/>
+</head>
+<body>
+<!--头部-->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid" style="padding-top: 13px;">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/forward_con/welcome">勤成家教网</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#navbar-collapse">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse" style="">
+            <ul class="nav navbar-nav">
+                <li style="margin:0 10px;"><a href="/forward_con/welcome">首页</a></li>
+                <li style="margin:0 10px;"><a href="/forward_con/classify">分类</a></li>
+                <li style="margin:0 10px;" class="active"><a href="/forward_con/gabble" target="_blank">论坛中心</a></li>
+                <li style="margin:0 10px;"><a href="/forward_con/gorank">勤成榜</a></li>
+                <li style="margin:0 10px;"><a href="/forward_con/contact">联系我们</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!--头部问题描述-->
+<div class="cardheader clearfix">
+    <div class="pull-left header-left">
+        <h4 class="title"></h4>
+        <p class="descript"></p>
+        <p class="ptimeinfo">发起于<span class="ptime"></span></p>
+        <div class="modbtn pull-left">
+            <a class="colbtn" href="javascript:;">收藏问题</a>
+            <a class="writebtn" href="javascript:;" data-toggle="modal" data-target="#writeAnswer"><span class="glyphicon glyphicon-pencil"></span>写回答</a>
+            <button class="combtn btn btn-link">
+                <span class="glyphicon glyphicon-comment"></span>
+                <span class="comcount"></span>条回答
+            </button>
+        </div>
+        <div class="pull-left userinfo">
+            <img class="pull-left userface" src=""/>
+            <p class="pull-left usernick"></p>
+        </div>
+    </div>
+    <div class="pull-left header-right">
+        <div class="pull-left">
+            <p>被浏览</p>
+            <p class="viscount">0</p>
+        </div>
+        <div class="pull-left">
+            <p>被收藏</p>
+            <p class="colcount">0</p>
+        </div>
+    </div>
+</div>
+
+<!--多少条回答    排序方式（时间排序/点赞数/评论数）-->
+<!--<div class="carddatashow clearfix">-->
+<!--<p class="pull-left">全部<span class="comcount">938</span>个回答</p>-->
+<!--<button class="btn btn-link pull-right">发布最新</button>-->
+<!--<button class="btn btn-link pull-right">点赞最多</button>-->
+<!--<button class="btn btn-link pull-right">评论最多</button>-->
+<!--</div>-->
+
+<!--帖子详情-->
+<div class="cardmainlist"></div>
+
+<!--右侧个人中心-->
+<div class="personal">
+    <h5 class="text-left">资料卡片</h5>
+    <ul>
+        <li>
+            <a href="/forward_con/gomybbsinfo"><img src="/images/default/user_face.jpg"/></a>
+        </li>
+        <li>
+            <a href="/forward_con/gomybbsinfo"><p class="username text-danger"></p></a>
+        </li>
+        <li>
+            <p class="pubinfo text-info">原创：
+                <a href="/forward_con/gomybbsinfo?page=1"><span class="pubcount"></span></a>
+            </p>
+        </li>
+        <li>
+            <p class="ansinfo text-info">回答：
+                <a href="/forward_con/gomybbsinfo?page=2"><span class="anscount"></span></a>
+            </p>
+        </li>
+        <li>
+            <p class="colinfo text-info">收藏：
+                <a href="/forward_con/gomybbsinfo?page=3"><span class="colcount"></span></a>
+            </p>
+        </li>
+        <li>
+            <p class="cominfo text-info">评论：
+                <a href="/forward_con/gomybbsinfo?page=4"><span class="comcount"></span></a>
+            </p>
+        </li>
+    </ul>
+</div>
+
+<!-- 发表问题模态框 -->
+<div class="modal fade" id="writeAnswer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;
+                </button>
+                <h4 class="modal-title">编辑你的回答</h4>
+            </div>
+            <div class="modal-body" data-id="null">
+                <div class="col-lg-12">
+                    <span>撰写回答</span>
+                    <p class="form-control answer" contenteditable="true"></p>
+                </div>
+                <div style="clear:both"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary publish">发表</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="/js/custom/jquery.min.js"></script>
+<script src="/bootstrap/js/bootstrap.js"></script>
+<script src="/js/welcome/gabble/carddetail.js"></script>
+</body>
+</html>

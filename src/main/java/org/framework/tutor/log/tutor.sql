@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50720
 File Encoding         : 65001
 
-Date: 2018-04-10 17:10:37
+Date: 2018-04-14 14:55:15
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -32,12 +32,13 @@ CREATE TABLE `bbs_card` (
   PRIMARY KEY (`id`),
   KEY `username` (`username`),
   CONSTRAINT `bbs_card_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user_main` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bbs_card
 -- ----------------------------
-INSERT INTO `bbs_card` VALUES ('6', 'chengxi', '我先问问', '一个简单的问题', '/images/default/2.jpg', '2018-04-02 09:07:16', '0', '1', '1');
+INSERT INTO `bbs_card` VALUES ('6', 'chengxi', '我先问问', '一个简单的问题', '/images/default/2.jpg', '2018-04-02 09:07:16', '21', '2', '0');
+INSERT INTO `bbs_card` VALUES ('7', 'chengxi', '我再问一个问题', '小雪是谁', '/images/default/3.jpg', '2018-04-13 20:05:50', '6', '1', '3');
 
 -- ----------------------------
 -- Table structure for `bbs_card_answer`
@@ -57,12 +58,47 @@ CREATE TABLE `bbs_card_answer` (
   KEY `username` (`username`),
   CONSTRAINT `bbs_card_answer_ibfk_1` FOREIGN KEY (`cardid`) REFERENCES `bbs_card` (`id`),
   CONSTRAINT `bbs_card_answer_ibfk_2` FOREIGN KEY (`username`) REFERENCES `user_main` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bbs_card_answer
 -- ----------------------------
-INSERT INTO `bbs_card_answer` VALUES ('3', '6', 'chengxi', '这是一个简单的回答', '2018-04-09 23:25:13', '2', '0', '0');
+INSERT INTO `bbs_card_answer` VALUES ('3', '6', 'chengxi', '这是一个简单的回答', '2018-04-09 23:25:13', '2', '0', '7');
+
+-- ----------------------------
+-- Table structure for `bbs_card_answer_command`
+-- ----------------------------
+DROP TABLE IF EXISTS `bbs_card_answer_command`;
+CREATE TABLE `bbs_card_answer_command` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '唯一标识',
+  `username` varchar(20) NOT NULL COMMENT '评论的用户名',
+  `cardid` int(11) NOT NULL COMMENT '评论的帖子id',
+  `aid` int(11) NOT NULL COMMENT '评论的帖子答案id',
+  `floor` int(11) NOT NULL COMMENT '当前占楼',
+  `repfloor` int(11) DEFAULT NULL COMMENT '若是回复则回复floor，不是则为null',
+  `comment` varchar(200) NOT NULL COMMENT '评论信息',
+  `comtime` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '评论时间',
+  `gcount` int(11) DEFAULT '0' COMMENT '点赞数',
+  `bcount` int(11) DEFAULT '0' COMMENT '踩数',
+  PRIMARY KEY (`id`),
+  KEY `username` (`username`),
+  KEY `cardid` (`cardid`),
+  KEY `aid` (`aid`),
+  CONSTRAINT `bbs_card_answer_command_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user_main` (`username`),
+  CONSTRAINT `bbs_card_answer_command_ibfk_2` FOREIGN KEY (`cardid`) REFERENCES `bbs_card` (`id`),
+  CONSTRAINT `bbs_card_answer_command_ibfk_3` FOREIGN KEY (`aid`) REFERENCES `bbs_card_answer` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of bbs_card_answer_command
+-- ----------------------------
+INSERT INTO `bbs_card_answer_command` VALUES ('1', 'chengxi', '6', '3', '1', null, 'ing论大搜到年底', '2018-04-10 19:58:24', '10', '5');
+INSERT INTO `bbs_card_answer_command` VALUES ('2', 'chengxi', '6', '3', '2', '1', 'sdasopdsmpdodmas', '2018-04-10 19:58:37', '4', '1');
+INSERT INTO `bbs_card_answer_command` VALUES ('3', 'chengxi', '6', '3', '3', null, 'sdjsaodpjdopsdksdnmdjopasdj', '2018-04-10 19:58:52', '8', '1');
+INSERT INTO `bbs_card_answer_command` VALUES ('4', 'chengxi', '6', '3', '4', '2', 'sndosadnsdn', '2018-04-10 19:59:07', '10', '8');
+INSERT INTO `bbs_card_answer_command` VALUES ('7', 'chengxi', '6', '3', '5', '4', '简单的回复一下', '2018-04-10 23:19:04', '0', '0');
+INSERT INTO `bbs_card_answer_command` VALUES ('8', 'chengxi', '6', '3', '6', '1', '你这个楼层做的有点高啊', '2018-04-11 21:33:14', '0', '0');
+INSERT INTO `bbs_card_answer_command` VALUES ('9', 'chengxi', '6', '3', '7', null, '12', '2018-04-12 20:57:01', '0', '0');
 
 -- ----------------------------
 -- Table structure for `bbs_card_answer_star`
@@ -100,12 +136,12 @@ CREATE TABLE `bbs_card_collect` (
   KEY `cardid` (`cardid`),
   CONSTRAINT `bbs_card_collect_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user_main` (`username`),
   CONSTRAINT `bbs_card_collect_ibfk_2` FOREIGN KEY (`cardid`) REFERENCES `bbs_card` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bbs_card_collect
 -- ----------------------------
-INSERT INTO `bbs_card_collect` VALUES ('3', 'chengxi', '6', '2018-04-08 22:57:23');
+INSERT INTO `bbs_card_collect` VALUES ('4', 'chengxi', '7', '2018-04-13 20:41:25');
 
 -- ----------------------------
 -- Table structure for `command_star`
@@ -121,7 +157,7 @@ CREATE TABLE `command_star` (
   KEY `cmid` (`cmid`),
   CONSTRAINT `command_star_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user_main` (`username`),
   CONSTRAINT `command_star_ibfk_2` FOREIGN KEY (`cmid`) REFERENCES `course_command` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of command_star
@@ -183,7 +219,7 @@ CREATE TABLE `course_collect` (
   PRIMARY KEY (`cid`,`username`),
   KEY `id` (`id`),
   CONSTRAINT `course_collect_ibfk_1` FOREIGN KEY (`cid`) REFERENCES `course_main` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of course_collect
@@ -225,7 +261,7 @@ CREATE TABLE `course_log` (
   `username` varchar(20) NOT NULL,
   `logtime` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '浏览时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of course_log
@@ -310,7 +346,7 @@ CREATE TABLE `course_treply` (
   CONSTRAINT `course_treply_ibfk_1` FOREIGN KEY (`cid`) REFERENCES `course_main` (`id`),
   CONSTRAINT `course_treply_ibfk_2` FOREIGN KEY (`tname`) REFERENCES `user_main` (`username`),
   CONSTRAINT `course_treply_ibfk_3` FOREIGN KEY (`cmid`) REFERENCES `course_command` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of course_treply
@@ -330,7 +366,7 @@ CREATE TABLE `publish_log` (
   PRIMARY KEY (`id`,`pversion`),
   KEY `typeid` (`typeid`),
   CONSTRAINT `publish_log_ibfk_1` FOREIGN KEY (`typeid`) REFERENCES `publish_type` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of publish_log
@@ -415,7 +451,7 @@ CREATE TABLE `user_log` (
   `logip` varchar(15) NOT NULL COMMENT '登录的ip地址',
   `logsys` varchar(10) NOT NULL COMMENT '电脑的操作系统',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=188 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=197 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user_log
@@ -606,6 +642,15 @@ INSERT INTO `user_log` VALUES ('184', 'chengxi', '2018-04-08 22:40:45', '未知�
 INSERT INTO `user_log` VALUES ('185', 'chengxi', '2018-04-09 23:01:05', '未知地区', '113.91.87.27', 'Windows');
 INSERT INTO `user_log` VALUES ('186', 'chengxi', '2018-04-09 23:20:50', '未知地区', '113.91.87.27', 'Windows');
 INSERT INTO `user_log` VALUES ('187', 'chengxi', '2018-04-10 16:39:39', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('188', 'chengxi', '2018-04-10 19:23:54', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('189', 'chengxi', '2018-04-10 23:02:44', '未知地区', '183.16.91.53', 'Windows');
+INSERT INTO `user_log` VALUES ('190', 'chengxi', '2018-04-11 21:33:01', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('191', 'chengxi', '2018-04-12 20:55:03', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('192', 'chengxi', '2018-04-13 19:04:21', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('193', 'chengxi', '2018-04-13 20:11:26', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('194', 'chengxi', '2018-04-13 20:45:28', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('195', 'chengxi', '2018-04-14 11:00:41', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('196', 'chengxi', '2018-04-14 11:49:33', '未知地区', '112.95.135.83', 'Windows');
 
 -- ----------------------------
 -- Table structure for `user_main`
@@ -654,7 +699,7 @@ CREATE TABLE `user_message` (
   KEY `id` (`id`),
   KEY `username` (`username`),
   CONSTRAINT `user_message_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user_main` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user_message

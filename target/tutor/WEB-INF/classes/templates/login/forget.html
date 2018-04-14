@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>勤成家教网-----忘记密码？没关系，勤臣来带你找回</title>
+    <link rel="icon" href="/images/logo/web_logo.ico" type="images/x-icon"/>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.css" />
+</head>
+<body>
+<div class="usercheck">
+    <label>请输入你的用户名：</label>
+    <input type="text" name="username" class="username" />
+    <a href="javascript:void(0)" class="findpass">找回密码</a>
+    <p class="err err-user">111</p>
+</div>
+<div class="container">
+    <nav>
+        <ul class="clearfix">
+            <li class="pull-left cli">
+                <a href="javascript:void(0)" class="byphone" data-cls="main-phone" data-hg="230">手机找回</a>
+            </li>
+            <li class="pull-left">
+                <a href="javascript:void(0)" class="byemail" data-cls="main-email" data-hg="230">邮箱找回</a>
+            </li>
+            <li class="pull-left">
+                <a href="javascript:void(0)" class="bysecret" data-cls="main-secret" data-hg="410">密保找回</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="mainshow">
+        <div class="main-phone main">
+            <form action="javascript:void(0)" method="post">
+                <label for="phone">手机号码：</label>
+                <input type="text" name="phone" class="phone" pleceholder="请输入账号绑定的手机号码" />
+                <br />
+                <label for="valicode">验证短码：</label>
+                <input type="text" name="valicode" class="valicode" />
+                <a href="javascript:void(0)" class="resend">获取验证码</a>
+                <br />
+                <label for="newpass">新的密码：</label>
+                <input type="password" name="newpass" class="newpass password" placeholder="请设置新的密码" />
+                <br />
+                <label for="repass">再次确认：</label>
+                <input type="password" name="repass" class="repass password" placeholder="再次确认新的密码" />
+                <br />
+                <button class="submit">提&nbsp;&nbsp;交</button>
+            </form>
+            <p class="err err-phone">1</p>
+            <p class="err err-valicode">1</p>
+            <p class="err err-newpass">1</p>
+            <p class="err err-repass">1</p>
+        </div>
+        <div class="main-email main">
+            <form action="javascript:void(0)" method="post">
+                <label for="email">电子邮箱：</label>
+                <input type="text" name="email" class="email" pleceholder="请输入账号绑定的电子邮箱" />
+                <br />
+                <label for="valicode">验证短码：</label>
+                <input type="text" name="valicode" class="valicode" />
+                <a href="javascript:void(0)" class="resend">获取验证码</a>
+                <br />
+                <label for="newpass">新的密码：</label>
+                <input type="password" name="newpass" class="newpass password" placeholder="请设置新的密码" />
+                <br />
+                <label for="repass">再次确认：</label>
+                <input type="password" name="repass" class="repass password" placeholder="再次确认新的密码" />
+                <br />
+                <button class="submit">提&nbsp;&nbsp;交</button>
+            </form>
+            <p class="err err-email">1</p>
+            <p class="err err-valicode">1</p>
+            <p class="err err-newpass">1</p>
+            <p class="err err-repass">1</p>
+        </div>
+        <div class="main-secret main">
+            <form action="javascript:void(0)" method="post">
+                <label for="mb1">密保问题：</label>
+                <input type="text" name="mb1" class="mb1"  />
+                <br />
+                <label for="mb1-answer" class="answer">密保答案：</label>
+                <input type="text" name="mb1-answer" class="mb1-answer" />
+                <br />
+                <label for="mb2">密保问题：</label>
+                <input type="text" name="mb2" class="mb2" />
+                <br />
+                <label for="mb2-answer" class="answer">密保答案：</label>
+                <input type="text" name="mb2-answer" class="mb2-answer" />
+                <br />
+                <label for="mb3">密保问题：</label>
+                <input type="text" name="mb3" class="mb3" />
+                <br />
+                <label for="mb3-answer" class="answer">密保答案：</label>
+                <input type="text" name="mb3-answer" class="mb3-answer" />
+                <br />
+                <label for="newpass">新的密码：</label>
+                <input type="password" name="newpass" class="newpass password" placeholder="请设置新的密码" />
+                <br />
+                <label for="repass">再次确认：</label>
+                <input type="password" name="repass" class="repass password" placeholder="再次确认新的密码" />
+                <br />
+                <button class="submit">提&nbsp;&nbsp;交</button>
+            </form>
+            <p class="err err-mb1">1</p>
+            <p class="err err-mb2">1</p>
+            <p class="err err-mb3">1</p>
+            <p class="err err-newpass">1</p>
+            <p class="err err-repass">1</p>
+        </div>
+    </div>
+    <a href="javascript:void(0)" class="close">	<i class="glyphicon glyphicon-remove"></i></a>
+</div>
+<div class="zhezhao"></div>
+
+<style>
+    .zhezhao{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 99;
+        display: none;
+        background-color: rgba(128, 128, 128, 0.25);
+    }
+
+
+    .usercheck{
+        width: 28%;
+        margin: 10% auto;
+    }
+    .usercheck input{
+        margin-left: 2%;
+        border: 1px solid #00000042;
+        background-color: white;
+        height: 30px;
+        padding: 0 1%;
+    }
+    .usercheck a{
+        display:  inline-block;
+        background-color: #037afc;
+        color: white;
+        width: 20%;
+        text-align:  center;
+        height: 30px;
+        line-height:  30px;
+        margin-left: .5%;
+        text-decoration: none;
+        font-size: 12px;
+    }
+    .usercheck p{
+        width: 35%;
+        margin: 1% auto;
+        display: none;
+        color: red;
+    }
+
+
+    .container a.close{
+        position: absolute;
+        top: 2%;
+        right: 1%;
+        text-decoration: none;
+    }
+    .container a.close.hover{
+        text-decoration: none;
+    }
+
+    .container .mainshow .main-secret p.none{
+        font-size: 16px;
+        color: gray;
+        text-align:  center;
+    }
+    .container .mainshow .main-secret .answer{
+        color: red;
+    }
+    .container .mainshow .main.main-secret .err.err-mb1{
+        top: 16%;
+    }
+    .container .mainshow .main.main-secret .err.err-mb2{
+        top: 42%;
+
+    }
+    .container .mainshow .main.main-secret .err.err-mb3{
+        top: 58%;
+    }
+    .container .mainshow .main.main-secret .err.err-newpass{
+        top: 56%;
+    }
+    .container .mainshow .main.main-secret .err.err-repass{
+        top: 70%;
+    }
+
+    .container .mainshow .main p.err{
+        position: absolute;
+        top: 2%;
+        right: 14%;
+        color: red;
+        display: none;
+    }
+    .container .mainshow .main p.err-valicode{
+        top: 24%;
+    }
+    .container .mainshow .main p.err-newpass{
+        top: 46%;
+    }
+    .container .mainshow .main p.err-repass{
+        top: 68%;
+    }
+
+    .container .mainshow .main{
+        width: 65%;
+        margin: auto;
+        position: relative;
+        overflow: hidden;
+        height: 0;
+    }
+    .container .mainshow .main-phone{
+        margin-top: 7%;
+        height: 230px;
+    }
+    .container .mainshow .main label{
+        color: #0000009c;
+        margin-bottom: 5%;
+    }
+    .container .mainshow .main input{
+        margin-left: 5%;
+        border: 1px solid #00000042;
+        background-color: white;
+        height: 30px;
+        padding: 0 1%;
+    }
+    .container .mainshow .main .valicode{
+        width: 23%;
+    }
+    .container .mainshow .main a.resend{
+        display:  inline-block;
+        background-color: #037afc;
+        color: white;
+        width: 20%;
+        text-align:  center;
+        height: 30px;
+        line-height:  30px;
+        margin-left: .5%;
+        text-decoration: none;
+        font-size: 12px;
+    }
+    .container .mainshow .main .valicode:hover{
+        text-decoration: none;
+    }
+    .container .mainshow .main button{
+        background-color: #037afc;
+        color: white;
+        border: none;
+        width: 41%;
+        margin-left: 18%;
+        height: 27px;
+        line-height:  27px;
+        font-size: 15px;
+    }
+
+    body{
+        background-color: #80808021;
+    }
+    .container{
+        width: 45%;
+        margin: 10% auto;
+        background-color: white;
+        position: absolute;
+        left: 27%;
+        top: -700px;
+        z-index: 199;
+    }
+
+    .container nav{
+        margin-top: 5%;
+    }
+
+    .container nav ul li {
+        list-style-type: none;
+        width: 27%;
+        border: 1px solid #878e8e12;
+        height: 35px;
+        line-height: 35px;
+        text-align:  center;
+    }
+
+    .container nav ul li a{
+        display: inline-block;
+        width: 100%;
+        text-decoration: none;
+        color: #000000b0;
+    }
+    .container nav ul li:hover{
+        background-color: #80808021;
+    }
+    .container nav ul li a:hover{
+        text-decoration: none;
+    }
+
+    .container nav ul li.cli{
+        border-bottom: 2px solid #00e8ff;
+        background-color: #80808021;
+    }
+</style>
+
+<script src="/js/custom/jquery.min.js"></script>
+<script src="/bootstrap/js/bootstrap.js"></script>
+
+<script src="/js/login/mine/forget.js"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <title>勤成家教网-------家教管理后台------一切尽在掌控之中</title>
+    <link rel="stylesheet" href="/layui/css/layui.css" />
+    <link rel="icon" href="/images/logo/web_logo.ico" type="images/x-icon" />
+    <link rel="stylesheet" href="/layui-admin/css/main.css" />
+    <link rel="stylesheet" href="/layui-admin/css/font_eolqem241z66flxr.css" />
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo">
+            <a href="/forward_con/gosysconfig" style="color: #dd08088c;">家教管理后台</a>
+        </div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <!--<ul class="layui-nav layui-layout-left">-->
+            <!--<li class="layui-nav-item"><a href="/forward_con/gosysconfig">后台首页</a></li>-->
+            <!--<li class="layui-nav-item"><a href="">个人中心</a></li>-->
+        <!--</ul>-->
+        <div class="layui-form-select" style="left: 300px; top: 10px;">
+            <div class="layui-select-title">
+                <input type="text" placeholder="搜索组件或模块" value="" class="layui-input" style="width:  200px;background-color: rgba(255,255,255,.05);color: white; border: none;"/>
+                <i class="layui-edge"></i>
+            </div>
+            <dl class="layui-anim layui-anim-upbit" style="">
+                <dd lay-value="" class="layui-select-tips">进行全局搜索</dd>
+            </dl>
+        </div>
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="javascript:void(0);">
+                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img" />
+                    <span class="author">成兮</span>
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="javascript:void(0)" class="logoff">我的钱包</a></dd>
+                    <dd><a href="javascript:void(0)" class="logoff">个人中心</a></dd>
+                    <dd><a href="javascript:void(0)" class="logoff">注销登录</a></dd>
+                </dl>
+            </li>
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a class="" href="javascript:;">课程管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">发布课程</a></dd>
+                        <dd><a href="javascript:;">历史发布</a></dd>
+                        <dd><a href="javascript:;">课程评论</a></dd>
+                        <dd><a href="javascript:;">访问统计</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a class="" href="javascript:;">订单管理</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">消息推送</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">课程订单通知</a></dd>
+                        <dd><a href="javascript:;">课程评价通知</a></dd>
+                        <dd><a href="javasript:;">课程举报通知</a></dd>
+                        <dd><a href="javasript:;">课程审核通知</a></dd>
+                        <dd><a href="javasript:;">用户私信通知</a></dd>
+                        <dd><a href="javasript:;">管理员推送通知</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div style="padding: 15px;">
+            <!--今日数据统计-->
+            <h4 style="margin: 15px 0; padding: 3px; border-left: 2px solid #009688;">今日数据统计</h4>
+            <div class="panel_box row">
+                <div class="panel col">
+                    <a href="javascript:;" data-url="page/message/message.html">
+                        <div class="panel_icon" style="background-color:#009688;">
+                            <i class="layui-icon" data-icon=""></i>
+                        </div>
+                        <div class="panel_word newMessage">
+                            <h5>今日课程访问</h5>
+                            <cite>100+</cite>
+                        </div>
+                    </a>
+                </div>
+                <div class="panel col">
+                    <a href="javascript:;" data-url="page/user/allUsers.html">
+                        <div class="panel_icon" style="background-color:#009688;">
+                            <i class="layui-icon" data-icon="">&#xe600;</i>
+                        </div>
+                        <div class="panel_word userAll">
+                            <h5>今日课程收藏</h5>
+                            <cite>100+</cite>
+                        </div>
+                    </a>
+                </div>
+                <div class="panel col">
+                    <a href="javascript:;" data-url="page/img/images.html">
+                        <div class="panel_icon" style="background-color:#5FB878;">
+                            <i class="layui-icon" data-icon="">&#xe657;</i>
+                        </div>
+                        <div class="panel_word imgAll">
+                            <h5>今日课程下单</h5>
+                            <cite>100+</cite>
+                        </div>
+                    </a>
+                </div>
+                <div class="panel col">
+                    <a href="javascript:;" data-url="page/news/newsList.html">
+                        <div class="panel_icon" style="background-color:#F7B824;">
+                            <i class="layui-icon" data-icon="">&#xe63a;</i>
+                        </div>
+                        <div class="panel_word waitNews">
+                            <h5>今日课程评价</h5>
+                            <cite>100+</cite>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!--常用链接设置-->
+            <h4 style="color: #009fff;margin: 15px 0; padding: 3px; border-left: 2px solid #23c8e3;">常用链接
+                <a href="javascript:void(0)" style="margin-left: 65px; color: #009fff;">编辑</a>
+            </h4>
+            <blockquote class="layui-elem-quote news_search">
+                <div class="layui-inline">
+                    <a class="layui-btn layui-btn-normal newsAdd_btn">添加文章</a>
+                </div>
+                <div class="layui-inline">
+                    <a class="layui-btn recommend" style="background-color:#5FB878">推荐文章</a>
+                </div>
+                <div class="layui-inline">
+                    <a class="layui-btn audit_btn">审核文章</a>
+                    <i class="layui-icon remove">&#x1006;</i>
+                </div>
+                <div class="layui-inline">
+                    <a class="layui-btn layui-btn-danger batchDel">批量删除</a>
+                </div>
+                <div class="layui-inline">
+                    <a class="layui-btn layui-btn-danger batchDel">
+                        <i class="layui-icon">&#xe61f;</i>
+                    </a>
+                </div>
+            </blockquote>
+        </div>
+    </div>
+
+    <!--<div class="layui-footer">-->
+        <!-- 底部固定区域 -->
+        <!--© layui.com - 底部固定区域-->
+    <!--</div>-->
+</div>
+<script src="/layui/layui.js"></script>
+<script src="/js/custom/jquery.min.js"></script>
+<script src="/js/sysconfig/tutor/index.js"></script>
+<script>
+    //JavaScript代码区域
+    layui.use('element', function(){
+        var element = layui.element;
+
+    });
+
+    //管理员发送消息的时候可以弹出一个框框，然后进行异步表示该家教已经弹出过了
+    // layui.use('layer', function(){
+    //     var layer = layui.layer;
+    //     layer.open({
+    //         title: '在线调试',
+    //         content: '可以填写任意的layer代码'
+    //     });
+    // });
+</script>
+</body>
+</html>

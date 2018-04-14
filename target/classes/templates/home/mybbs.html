@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>个人中心----论坛中心----勤成家教网</title>
+    <link rel="icon" href="/images/logo/web_logo.ico"/>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.css"/>
+    <link rel="stylesheet" href="/css/welcome/mybbs.css"/>
+</head>
+<body>
+<!--头部-->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid" style="padding-top: 13px;">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/forward_con/welcome">勤成家教网</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#navbar-collapse">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse" style="">
+            <ul class="nav navbar-nav">
+                <li style="margin:0 10px;"><a href="/forward_con/welcome">首页</a></li>
+                <li style="margin:0 10px;"><a href="/forward_con/classify">分类</a></li>
+                <li style="margin:0 10px;" class="active"><a href="/forward_con/gabble" target="_blank">论坛中心</a></li>
+                <li style="margin:0 10px;"><a href="/forward_con/gorank">勤成榜</a></li>
+                <li style="margin:0 10px;"><a href="/forward_con/contact">联系我们</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="checklist">
+    <ul class="clearfix nav nav-tabs">
+        <li class="pull-left">
+            <a href="#pubshow" data-toggle="tab">
+                我的原创
+            </a>
+        </li>
+        <li class="pull-left">
+            <a href="#ansshow" data-toggle="tab">
+                我的回答
+            </a>
+        </li>
+        <li class="pull-left">
+            <a href="#colshow" data-toggle="tab">
+                我的收藏
+            </a>
+        </li>
+        <li class="pull-left">
+            <a href="#comshow" data-toggle="tab">
+                我的评论
+            </a>
+        </li>
+    </ul>
+</header>
+
+<div class="info-main tab-content" style="margin-bottom: 8%;">
+    <div id="pubshow" class="tab-pane fade">
+        <h4 class="tip">我的原创问题</h4>
+    </div>
+    <div id="ansshow" class="tab-pane fade">
+        <h4 class="tip">我的回答列表</h4>
+        <div class="cardmainlist">
+        </div>
+    </div>
+    <div id="colshow" class="tab-pane fade">
+        <h4 class="tip">我的收藏帖子</h4>
+    </div>
+    <div id="comshow" class="tab-pane fade">
+        <h4 class="tip">我的评论列表</h4>
+    </div>
+</div>
+
+<!--右侧个人中心-->
+<div class="personal">
+    <h5 class="text-left">资料卡片</h5>
+    <ul>
+        <li>
+            <a href="/forward_con/gomybbsinfo"><img src="/images/default/user_face.jpg"/></a>
+        </li>
+        <li>
+            <a href="/forward_con/gomybbsinfo"><p class="username text-danger"></p></a>
+        </li>
+        <li>
+            <p class="pubinfo text-info">原创：
+                <a href="/forward_con/gomybbsinfo?page=1"><span class="pubcount"></span></a>
+            </p>
+        </li>
+        <li>
+            <p class="ansinfo text-info">回答：
+                <a href="/forward_con/gomybbsinfo?page=2"><span class="anscount"></span></a>
+            </p>
+        </li>
+        <li>
+            <p class="colinfo text-info">收藏：
+                <a href="/forward_con/gomybbsinfo?page=3"><span class="colcount"></span></a>
+            </p>
+        </li>
+        <li>
+            <p class="cominfo text-info">评论：
+                <a href="/forward_con/gomybbsinfo?page=4"><span class="comcount"></span></a>
+            </p>
+        </li>
+    </ul>
+</div>
+
+<script src="/js/custom/jquery.min.js"></script>
+<script src="/bootstrap/js/bootstrap.js"></script>
+<script src="/js/welcome/gabble/mybbs.js"></script>
+</body>
+</html>

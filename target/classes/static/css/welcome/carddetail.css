@@ -1,0 +1,357 @@
+body{
+    background-color: #F0F0F0;
+}
+*{
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+    font-size: 1.3rem;
+}
+.cardheader{
+    margin-top: 4%;
+    background-color: white;
+    padding: 2% 19%;
+    width: 100%;
+}
+.cardheader > div.pull-left.header-left{
+    width: 65%;
+}
+.cardheader h4.title{
+    font-weight: bold;
+}
+.cardheader > div.header-right{
+    margin-left: 8%;
+    width: 27%;
+    position: relative;
+    left: 10%;
+}
+.cardheader .header-right div.pull-left{
+    height: 48px;
+    width: 35%;
+    text-align: center;
+}
+.cardheader .header-right div.pull-left:nth-child(1){
+    border-right: 1px solid rgba(128, 128, 128, 0.54);
+    margin-left: 0;
+}
+.cardheader .header-right div.pull-left p.viscount,
+.cardheader .header-right div.pull-left p.colcount{
+    font-weight: bold;
+}
+
+body > div.cardheader.clearfix > div.pull-left.header-left > p.ptimeinfo{
+    color: #808080b8;
+}
+body > div.cardheader.clearfix > div.pull-left.header-left > p.ptimeinfo span{
+    margin-left: 1%;
+}
+.cardheader .header-left .modbtn{
+    padding: 1%;
+}
+.cardheader .header-left .modbtn a.colbtn,
+body > div.cardmainlist > div > div.commandlist > div.mycommandinfo.clearfix > button{
+    display: inline-block;
+    color: #fff;
+    background-color: #0084ff;
+    width: 96px;
+    height: 34px;
+    border: 1px solid #0084ff;
+    font-size: 1.3rem;
+    padding: 0 16px;
+    line-height: 32px;
+    text-align: center;
+    border-radius: 3px;
+    text-decoration: none;
+}
+.cardheader .header-left .modbtn a.colbtn:hover,
+body > div.cardmainlist > div > div.commandlist > div.mycommandinfo.clearfix > button:hover{
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #0077e6;
+    border-color: #0077e6;
+}
+.cardheader .header-left .modbtn a.writebtn{
+    margin: 0 20px;
+    display: inline-block;
+    color: #0084ff;
+    background-color: #fff;
+    width: 96px;
+    height: 34px;
+    border: 1px solid #0084ff;
+    font-size: 1.3rem;
+    padding: 0 16px;
+    line-height: 32px;
+    text-align: center;
+    border-radius: 3px;
+    text-decoration: none;
+}
+.cardheader .header-left .modbtn a.writebtn span{
+    margin-right: 6px;
+    top: 3px;
+}
+body > div.cardheader.clearfix > div.pull-left.header-left > div.pull-left.userinfo{
+    padding: 1%;
+}
+body > div.cardheader.clearfix > div.pull-left.header-left > div.pull-left.userinfo > img{
+    width: 30px;
+    height: 30px;
+}
+body > div.cardheader.clearfix > div.pull-left.header-left > div.pull-left.userinfo > p{
+    position: relative;
+    left: 5%;
+    margin-top: 10%;
+    font-weight: bold;
+}
+
+
+body > div.cardmainlist > div > div.cardfooter.clearfix > div > a.report.btn.btn-link span{
+    margin-right: 3px;
+}
+.cardheader .header-left .modbtn a.writebtn:hover{
+    cursor: pointer;
+    text-decoration: none;
+    background-color: rgba(0,132,255,.06);
+}
+.cardheader .header-left .modbtn button.combtn,
+body > div.cardmainlist > div > div.cardfooter.clearfix > div > a.showcommand.btn.btn-link,
+body > div.cardmainlist > div > div.cardfooter.clearfix > div > a.report.btn.btn-link,
+body > div.cardmainlist > div > div.commandlist > div > button,
+body > div.cardmainlist > div > div.commandlist > div.commandmain > div.btngroup > a.recommand,
+body > div.cardmainlist > div > div.commandlist > div.commandmain > div.btngroup > a.report.btn.btn-link {
+    text-decoration: none;
+    color: #8590a6;
+    background-color: transparent;
+}
+.cardheader .header-left .modbtn button.combtn:hover,
+body > div.cardmainlist > div > div.cardfooter.clearfix > div > a.showcommand.btn.btn-link:hover,
+body > div.cardmainlist > div > div.cardfooter.clearfix > div > a.report.btn.btn-link:hover,
+body > div.cardmainlist > div > div.commandlist > div > button:hover,
+body > div.cardmainlist > div > div.commandlist > div.commandmain > div.btngroup > a.recommand:hover,
+body > div.cardmainlist > div > div.commandlist > div.commandmain > div.btngroup > a.report.btn.btn-link:hover{
+    text-decoration: none;
+    color: #77839c;
+}
+
+
+
+.carddatashow{
+    width: 65%;
+    overflow: hidden;
+    margin: 1% auto;
+    background-color: #fff;
+    height: 34px;
+}
+.carddatashow p{
+    font-weight: 600;
+    line-height: 34px;
+    padding-left: 2%;
+}
+.carddatashow button{
+    color: rgba(0, 0, 0, 0.56);
+    text-decoration: none;
+    margin-right: 4%;
+    font-size: 1.3rem;
+}
+.carddatashow button:hover{
+    text-decoration: none;
+    color: black;
+}
+
+
+.cardmainlist{
+    width: 65%;
+    overflow: hidden;
+    margin: 1% auto;
+    background-color: #fff;
+    padding: 1%;
+    margin-bottom: 5%;
+}
+.cardmainlist .cardmain{
+    margin: 1% 0 3% 0;
+}
+body > div.cardmainlist > div > div.mainhead.clearfix > img,
+body > div.cardmainlist > div > div.commandlist > div.commandmain > div > img{
+    width: 38px;
+    height: 38px;
+}
+body > div.cardmainlist > div > div.mainhead.clearfix > p{
+    margin-top: 1%;
+    margin-left: .3%;
+    font-weight: bold;
+}
+body > div.cardmainlist > div > a.gcountinfo{
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px 0;
+}
+body > div.cardmainlist > div > a.gcountinfo:hover{
+    text-decoration: none;
+    cursor: pointer;
+}
+body > div.cardmainlist > div > div.ansmain > p.answer{
+    line-height: 25px;
+}
+body > div.cardmainlist > div > div.ansmain > p.pubtimeinfo{
+    margin-top: 2%;
+    color: grey;
+}
+body > div.cardmainlist > div > div.cardfooter.clearfix > div > a.starlink,
+body > div.cardmainlist > div > div.cardfooter.clearfix > div > a.unstarlink{
+    display: inline-block;
+    background-color: #fff;
+    color: #0084ff;
+    width: 96px;
+    height: 34px;
+    border: 1px solid #0084ff;
+    font-size: 1.3rem;
+    padding: 0 16px;
+    line-height: 32px;
+    text-align: center;
+    border-radius: 3px;
+    text-decoration: none;
+}
+body > div.cardmainlist > div > div.cardfooter.clearfix > div > a.unstarlink{
+    margin-left: 5px;
+}
+body > div.cardmainlist > div > div.cardfooter.clearfix > div > a.starlink:hover,
+body > div.cardmainlist > div > div.cardfooter.clearfix > div > a.unstarlink:hover{
+    cursor: pointer;
+    text-decoration: none;
+    background-color: rgba(0,132,255,.06);
+}
+
+body > div.cardmainlist > div > div.cardfooter.clearfix > div > a.starlink.stared,
+body > div.cardmainlist > div > div.cardfooter.clearfix > div > a.unstarlink.stared{
+    background-color: #0084ff;
+    color: #fff;
+}
+body > div.cardmainlist > div > div.cardfooter.clearfix > div > a.starlink.stared:hover,
+body > div.cardmainlist > div > div.cardfooter.clearfix > div > a.unstarlink.stared:hover{
+    background-color: #0084ff;
+    color: #fff;
+}
+
+
+
+body > div.cardmainlist > div > div.commandlist{
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+    padding: 15px;
+    border: 1px solid #ebebeb;
+    box-shadow: 0 1px 3px rgba(26,26,26,.1);
+    display: none;
+    transition: all .2s linear;
+}
+body > div.cardmainlist > div > div.commandlist > div.commandmain > div.none{
+    text-align: center;
+    color: grey;
+}
+body > div.cardmainlist > div > div.commandlist > div.listheader{
+    height: 40px;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+
+body > div.cardmainlist > div > div.commandlist > div.commandmain{
+    margin-top: 5px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+body > div.cardmainlist > div > div.commandlist > div.commandmain > div > p.comusernick{
+    margin-top: 10px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+body > div.cardmainlist > div > div.commandlist > div.commandmain > div > p.pull-right.comfloor{
+    margin-top: 10px;
+    font-size: 1.5rem;
+    color: #808080d9;
+}
+body > div.cardmainlist > div > div.commandlist > div.commandmain > div.commandmaininfo > p{
+    font-size: 1.5rem;
+    line-height: 20px;
+}
+.cardmainlist .commandlist > div.commandmain .comusernick > span{
+    margin-left: 5px;
+    color: red;
+}
+body > div.cardmainlist > div > div.commandlist > div.commandmain > div.commandmaininfo > p.ptimeinfo{
+    height: 30px;
+    line-height:  30px;
+    color: grey;
+}
+body > div.cardmainlist > div > div.commandlist > div.commandmain > div.commandmaininfo > p.ptimeinfo > span{
+    margin-left: 5px;
+}
+body > div.cardmainlist > div > div.commandlist > div.commandmain > div.btngroup{
+    margin-top: -10px;
+}
+body > div.cardmainlist > div > div.commandlist > div.mycommandinfo.clearfix > input{
+    height: 34px;
+    background-color: #f6f6f6;
+    font-size: 1.5rem;
+}
+.cardmainlist .commandmain .loadmore{
+    text-align: center;
+}
+.cardmainlist .commandmain .loadmore a{
+    text-decoration: none;
+}
+.cardmainlist .commandmain .loadmore.none a{
+    color: grey;
+}
+.cardmainlist .commandmain .loadmore.none a:hover{
+    color: grey;
+}
+.cardmainlist .commandmain .loadmore a:hover{
+    text-decoration: none;
+}
+
+
+
+
+.personal{
+    position: absolute;
+    top: 255px;
+    right: 0;
+    width: 13%;
+    margin: 0 2%;
+    overflow: hidden;
+    background-color: white;
+    display: none;
+}
+.personal h5{
+    background-color: #f5f5f5;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 11px;
+    margin-top: -1%;
+}
+.personal ul{
+    text-align: center;
+    margin: 5% 0;
+}
+.personal img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.personal p.username{
+    margin-top: 2%;
+    color: red;
+}
+.personal p.pubinfo{
+    margin-top: 2%;
+}
+.personal p span{
+    display: inline-block;
+    width: 15%;
+}
+
+#writeAnswer .modal-body p{
+    height: 210px;
+    line-height: 30px;
+    overflow: hidden;
+}

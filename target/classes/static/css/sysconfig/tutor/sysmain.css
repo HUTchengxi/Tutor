@@ -1,0 +1,24 @@
+body{
+    overflow-x: hidden;
+}
+.panel_box.row{
+    margin-bottom: 10%;
+}
+#syslogmore{
+    padding: 0 20%;
+}
+#syslogmore fieldset{
+    text-align: center;
+}
+#syslogmore ul{
+    margin-left: 30%;
+    margin-bottom: 10%;
+}
+#syslogmore li.layui-timeline-item p{
+    margin-bottom: 1%;
+}
+#syslogmore p.nomore{
+    text-align: center;
+    color: grey;
+    border-bottom: 1px solid #8080804a;
+}

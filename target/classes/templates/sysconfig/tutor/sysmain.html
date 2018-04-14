@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.css"/>
+    <link rel="stylesheet" href="/layui/css/layui.css"/>
+    <link rel="stylesheet" href="/layui-admin/css/main.css"/>
+    <link rel="stylesheet" href="/layui-admin/css/font_eolqem241z66flxr.css"/>
+    <link rel="stylesheet" href="/css/sysconfig/tutor/sysmain.css"/>
+</head>
+<body class="childrenBody">
+<!-- 内容主体区域 -->
+<div style="padding: 15px;" class="tab-content">
+    <!--后台首页-->
+    <div id="sysmain" class="tab-pane fade">
+        <!--今日数据统计-->
+        <h4 style="margin: 15px 0; padding: 3px; border-left: 2px solid #009688;">今日数据统计</h4>
+        <div class="panel_box row">
+            <div class="panel col">
+                <a href="javascript:;">
+                    <div class="panel_icon" style="background-color:#009688;">
+                        <i class="layui-icon" data-icon=""></i>
+                    </div>
+                    <div class="panel_word newMessage">
+                        <h5>今日课程评分</h5>
+                        <cite></cite>
+                    </div>
+                </a>
+            </div>
+            <div class="panel col">
+                <a href="javascript:;">
+                    <div class="panel_icon" style="background-color:#009688;">
+                        <i class="layui-icon" data-icon="">&#xe600;</i>
+                    </div>
+                    <div class="panel_word userAll">
+                        <h5>今日课程收藏</h5>
+                        <cite></cite>
+                    </div>
+                </a>
+            </div>
+            <div class="panel col">
+                <a href="javascript:;">
+                    <div class="panel_icon" style="background-color:#5FB878;">
+                        <i class="layui-icon" data-icon="">&#xe657;</i>
+                    </div>
+                    <div class="panel_word imgAll">
+                        <h5>今日课程下单</h5>
+                        <cite></cite>
+                    </div>
+                </a>
+            </div>
+            <div class="panel col">
+                <a href="javascript:;">
+                    <div class="panel_icon" style="background-color:#F7B824;">
+                        <i class="layui-icon" data-icon="">&#xe63a;</i>
+                    </div>
+                    <div class="panel_word waitNews">
+                        <h5>今日课程评价</h5>
+                        <cite></cite>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!--下路div-->
+        <div class="row">
+            <div class="sysNotice col" style="padding-left: 15px;">
+                <blockquote class="layui-elem-quote title">
+                    最新资讯<i class="iconfont icon-new1"></i>
+                    <a href="javascript:;" class="pull-right" title="点击加载更多">更多</a>
+                </blockquote>
+                <table class="layui-table" lay-skin="line">
+                    <colgroup>
+                        <col/>
+                        <col width="110"/>
+                    </colgroup>
+                    <tbody class="hot_news">
+                    <tr>
+                        <td align="left">
+                            <p>
+                                <a href="javascript:;">css3用transition实现边框动画效果</a>
+                            </p>
+                        </td>
+                        <td class="news-time">2017-04-14</td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <p>
+                                <a href="javascript:;">css3用transition实现边框动画效果</a>
+                            </p>
+                        </td>
+                        <td class="news-time">2017-04-14</td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <p>
+                                <a href="javascript:;">css3用transition实现边框动画效果</a>
+                            </p>
+                        </td>
+                        <td class="news-time">2017-04-14</td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <p>
+                                <a href="javascript:;">css3用transition实现边框动画效果</a>
+                            </p>
+                        </td>
+                        <td class="news-time">2017-04-14</td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <p>
+                                <a href="javascript:;">css3用transition实现边框动画效果</a>
+                            </p>
+                        </td>
+                        <td class="news-time">2017-04-14</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="sysNotice col syslog" style="width: 48.8%;">
+                <blockquote class="layui-elem-quote title">
+                    系统更新日志<i class="layui-icon comment-icon">&#xe638;</i>
+                    <a href="#syslogmore" class="pull-right" data-toggle="tab" title="点击加载更多">历史更新</a>
+                </blockquote>
+                <table class="layui-table" lay-skin="line">
+                    <colgroup>
+                        <col/>
+                        <col width="100"/>
+                    </colgroup>
+                    <thead>
+                    <tr style="background-color: white;">
+                        <td>
+                            <h4>#
+                                <span class="pub-version"></span>
+                                <span class="pub-type"></span> -
+                                <span class="pub-time"></span>
+                            </h4>
+                        </td>
+                    </tr>
+                    </thead>
+                    <tbody class="hot_news">
+                    <!--<tr>-->
+                    <!--<td align="left">-->
+                    <!--<p>* checkbox复选框原始风格支持不显示文字（之前会默认显示：勾选）</p>-->
+                    <!--</td>-->
+                    <!--</tr>-->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!--系统更新记录汇总-->
+    <div id="syslogmore" class="tab-pane fade in active">
+        <a class="btn btn-info pull-right" href="#sysmain" data-toggle="tab">返回首页</a>
+    </div>
+</div>
+
+<script src="/js/custom/jquery.min.js"></script>
+<script src="/bootstrap/js/bootstrap.js"></script>
+<script src="/layui/layui.js"></script>
+<script src="/js/sysconfig/tutor/sysmain.js"></script>
+</body>
+</html>
