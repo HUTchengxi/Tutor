@@ -13,7 +13,7 @@
 <!-- 内容主体区域 -->
 <div style="padding: 15px;" class="tab-content">
     <!--后台首页-->
-    <div id="sysmain" class="tab-pane fade">
+    <div id="sysmain" class="tab-pane fade in active">
         <!--今日数据统计-->
         <h4 style="margin: 15px 0; padding: 3px; border-left: 2px solid #009688;">今日数据统计</h4>
         <div class="panel_box row">
@@ -65,61 +65,7 @@
 
         <!--下路div-->
         <div class="row">
-            <div class="sysNotice col" style="padding-left: 15px;">
-                <blockquote class="layui-elem-quote title">
-                    最新资讯<i class="iconfont icon-new1"></i>
-                    <a href="javascript:;" class="pull-right" title="点击加载更多">更多</a>
-                </blockquote>
-                <table class="layui-table" lay-skin="line">
-                    <colgroup>
-                        <col/>
-                        <col width="110"/>
-                    </colgroup>
-                    <tbody class="hot_news">
-                    <tr>
-                        <td align="left">
-                            <p>
-                                <a href="javascript:;">css3用transition实现边框动画效果</a>
-                            </p>
-                        </td>
-                        <td class="news-time">2017-04-14</td>
-                    </tr>
-                    <tr>
-                        <td align="left">
-                            <p>
-                                <a href="javascript:;">css3用transition实现边框动画效果</a>
-                            </p>
-                        </td>
-                        <td class="news-time">2017-04-14</td>
-                    </tr>
-                    <tr>
-                        <td align="left">
-                            <p>
-                                <a href="javascript:;">css3用transition实现边框动画效果</a>
-                            </p>
-                        </td>
-                        <td class="news-time">2017-04-14</td>
-                    </tr>
-                    <tr>
-                        <td align="left">
-                            <p>
-                                <a href="javascript:;">css3用transition实现边框动画效果</a>
-                            </p>
-                        </td>
-                        <td class="news-time">2017-04-14</td>
-                    </tr>
-                    <tr>
-                        <td align="left">
-                            <p>
-                                <a href="javascript:;">css3用transition实现边框动画效果</a>
-                            </p>
-                        </td>
-                        <td class="news-time">2017-04-14</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="sysNotice col syslog" style="width: 48.8%;">
+            <div class="sysNotice col syslog" style="width: 100%;">
                 <blockquote class="layui-elem-quote title">
                     系统更新日志<i class="layui-icon comment-icon">&#xe638;</i>
                     <a href="#syslogmore" class="pull-right" data-toggle="tab" title="点击加载更多">历史更新</a>
@@ -152,7 +98,7 @@
         </div>
     </div>
     <!--系统更新记录汇总-->
-    <div id="syslogmore" class="tab-pane fade in active">
+    <div id="syslogmore" class="tab-pane fade">
         <a class="btn btn-info pull-right" href="#sysmain" data-toggle="tab">返回首页</a>
     </div>
 </div>

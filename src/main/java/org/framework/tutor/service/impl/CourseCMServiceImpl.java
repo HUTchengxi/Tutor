@@ -100,4 +100,9 @@ public class CourseCMServiceImpl implements CourseCMService {
 
         return courseCMMapper.loadMyCommandInfo(username);
     }
+
+    @Override
+    public Integer getMyPublishAvg(Integer id) {
+        return courseCMMapper.getMyPublishAvg(id);
+    }
 }

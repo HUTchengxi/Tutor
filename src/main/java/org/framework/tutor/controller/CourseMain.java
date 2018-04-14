@@ -2,9 +2,12 @@ package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
 import org.framework.tutor.domain.UserMain;
+import org.framework.tutor.service.CourseCMService;
 import org.framework.tutor.service.CourseMService;
+import org.framework.tutor.service.CourseOService;
 import org.framework.tutor.service.UserMService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,6 +33,12 @@ public class CourseMain {
 
     @Autowired
     private UserMService userMService;
+
+    @Autowired
+    private CourseCMService courseCMService;
+
+    @Autowired
+    private CourseOService courseOService;
 
     /**
      * 加载课程数据
@@ -367,6 +376,58 @@ public class CourseMain {
         }
 
         res = "{\"total\": \""+total+"\"}";
+
+        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.flush();
+        writer.close();
+    }
+
+    /**
+     *
+     * @Description 获取当前家教的所有发布数据
+     * @param [request, response]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/14
+     */
+    @PostMapping("/getmypublish")
+    public void getMyPublish(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        response.setCharacterEncoding("utf-8");
+        PrintWriter writer = response.getWriter();
+        String res = null;
+        HttpSession session = request.getSession();
+        String username = (String) session.getAttribute("username");
+
+        List<org.framework.tutor.domain.CourseMain> courseMains = courseMService.getMyPublish(username);
+        if (courseMains.size() == 0) {
+            res = "{\"status\": \"0\"}";
+        } else {
+            res = "{";
+            int i = 1;
+            for (org.framework.tutor.domain.CourseMain courseMain : courseMains) {
+                UserMain userMain = userMService.getByUser(courseMain.getUsername());
+                Integer score = courseCMService.getMyPublishAvg(courseMain.getId());
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy年MM月");
+                SimpleDateFormat simpleDateFormat2 = new SimpleDateFormat("yyyy-MM-dd");
+                Integer buycount = courseOService.getMyCourseOrderCount(courseMain.getId()).size();
+                res += "\"" + i + "\": ";
+                String temp = "{\"imgsrc\": \"" + courseMain.getImgsrc() + "\", " +
+                        "\"id\": \"" + courseMain.getId() + "\", " +
+                        "\"name\": \"" + courseMain.getName() + "\", " +
+                        "\"viscount\": \"" + courseMain.getHcount() + "\", " +
+                        "\"ptime\": \"" + simpleDateFormat2.format(courseMain.getPtime()) + "\", " +
+                        "\"regtime\": \"" + simpleDateFormat.format(courseMain.getPtime()) + "\", " +
+                        "\"comcount\": \"" + courseMain.getCcount() + "\", " +
+                        "\"buycount\": \"" + courseMain.getCcount() + "\", " +
+                        "\"score\": \"" + score + "\"}, ";
+                res += temp;
+                i++;
+            }
+            res = res.substring(0, res.length() - 2);
+            res += "}";
+        }
+
 
         writer.print(new JsonParser().parse(res).getAsJsonObject());
         writer.flush();

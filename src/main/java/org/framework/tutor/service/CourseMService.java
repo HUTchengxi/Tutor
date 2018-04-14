@@ -294,4 +294,15 @@ public interface CourseMService {
      * @return
      */
     Integer getCourseCountCSK(String ctype, Integer stype, String keyword);
+
+
+    /**
+     *
+     * @Description 获取指定用户的发布课程数据
+     * @param [username]
+     * @return java.util.List<org.framework.tutor.domain.CourseMain>
+     * @author yinjimin
+     * @date 2018/4/14
+     */
+    List<CourseMain> getMyPublish(String username);
 }

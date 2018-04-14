@@ -443,4 +443,9 @@ public class CourseMServiceImpl implements CourseMService {
 
         return courseMMapper.getCourseCountCSK(ctype, stype, keyword);
     }
+
+    @Override
+    public List<CourseMain> getMyPublish(String username) {
+        return courseMMapper.getMyPublish(username);
+    }
 }

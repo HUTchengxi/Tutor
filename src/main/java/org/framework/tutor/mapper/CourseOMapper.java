@@ -108,4 +108,15 @@ public interface CourseOMapper {
      */
     @Select("select * from course_order where cid=#{cid} and username=#{username} and state=#{state}")
     CourseOrder getByUserAndState(@Param("cid") Integer cid, @Param("username") String username, @Param("state") Integer state);
+
+    /**
+     *
+     * @Description 获取指定课程的订单数据
+     * @param [id]
+     * @return java.util.List<org.framework.tutor.domain.CourseOrder>
+     * @author yinjimin
+     * @date 2018/4/14
+     */
+    @Select("select * from course_order where cid=#{id}")
+    List<CourseOrder> getMyCourseOrderCount(@Param("id") Integer id);
 }

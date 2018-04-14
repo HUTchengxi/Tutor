@@ -97,4 +97,15 @@ public interface CourseOService {
      * @return
      */
     CourseOrder getByUserAndState(Integer cid, String username, Integer state);
+
+
+    /**
+     *
+     * @Description 获取指定课程的订单数据
+     * @param [id]
+     * @return ActionMap
+     * @author yinjimin
+     * @date 2018/4/14
+     */
+    List<CourseOrder> getMyCourseOrderCount(Integer id);
 }

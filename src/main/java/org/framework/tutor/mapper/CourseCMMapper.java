@@ -78,4 +78,16 @@ public interface CourseCMMapper {
      */
     @Select("select * from course_command where username=#{username}")
     List<CourseCommand> loadMyCommandInfo(@Param("username") String username);
+
+    
+    /**  
+     *    
+     * @Description 获取指定课程的评分平均值
+     * @param [id]    
+     * @return java.lang.Integer
+     * @author yinjimin  
+     * @date 2018/4/14
+     */
+    @Select("select avg(score) from course_command where cid=#{cid}")
+    Integer getMyPublishAvg(@Param("cid") Integer id);
 }

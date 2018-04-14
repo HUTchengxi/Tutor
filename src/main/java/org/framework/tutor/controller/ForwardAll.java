@@ -6,10 +6,7 @@ import org.framework.tutor.service.UserMService;
 import org.framework.tutor.service.UserVService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import sun.java2d.pipe.SpanShapeRenderer;
 
 import javax.servlet.http.HttpServletRequest;
@@ -308,6 +305,34 @@ public class ForwardAll {
 
     /**  
      *    
+     * @Description 进入我的课程发布界面
+     * @param []    
+     * @return java.lang.String
+     * @author yinjimin  
+     * @date 2018/4/14
+     */  
+    @RequestMapping("/gosystutorpublish")
+    public String goSystutorPublish(){
+
+        return "/sysconfig/tutor/mypublish";
+    }
+
+    /**
+     *
+     * @Description 进入发布新的课程界面
+     * @param []
+     * @return java.lang.String
+     * @author yinjimin
+     * @date 2018/4/14
+     */
+    @RequestMapping("gosystutorpublishnew")
+    public String goSystutorPublishNew(){
+
+        return "sysconfig/tutor/publishnew";
+    }
+
+    /**  
+     *    
      * @Description 查询帖子
      * @return java.lang.String
      * @author yinjimin  
@@ -346,4 +371,5 @@ public class ForwardAll {
 
         return "/home/mybbs";
     }
+
 }

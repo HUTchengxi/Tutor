@@ -150,4 +150,9 @@ public class CourseOServiceImpl implements CourseOService {
 
         return courseOMapper.getByUserAndState(cid, username, state);
     }
+
+    @Override
+    public List<CourseOrder> getMyCourseOrderCount(Integer id) {
+        return courseOMapper.getMyCourseOrderCount(id);
+    }
 }

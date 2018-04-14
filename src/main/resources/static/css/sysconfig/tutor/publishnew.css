@@ -1,0 +1,39 @@
+div.form-group{
+    margin: 2% 0;
+}
+p.comPerson{
+    height: 102px;
+}
+p.courseDetail{
+    height: 102px;
+}
+p.connect{
+    height: 68px;
+}
+p.desc{
+    height: 51px;
+}
+legend{
+    margin-top: 2%;
+    color: #08e2da;
+}
+div.btndiv{
+    text-align: center;
+    margin: 5rem 0 10rem 0;
+}
+div.btndiv button{
+    width: 15%;
+    color: white;
+    background: orange;
+    border: 1px solid orange;
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: 3px;
+    height: 40px;
+    margin-right: 2%;
+}
+div.btndiv button:nth-child(2){
+    background-color: white;
+    border-color: #0000002b;
+    color: #0000009c;
+}

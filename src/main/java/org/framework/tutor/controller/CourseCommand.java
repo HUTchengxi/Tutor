@@ -8,6 +8,7 @@ import org.framework.tutor.service.CourseMService;
 import org.framework.tutor.service.CourseOService;
 import org.framework.tutor.service.UserMService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -310,4 +311,5 @@ public class CourseCommand {
         writer.flush();
         writer.close();
     }
+
 }

@@ -334,4 +334,16 @@ public interface CourseMMapper {
      */
     @Select("select count(*) from course_main where ctype=#{ctype} and stype=#{stype} and name like CONCAT('%', #{keyword}, '%')")
     Integer getCourseCountCSK(@Param("ctype") String ctype, @Param("stype") Integer stype, @Param("keyword") String keyword);
+
+
+    /**
+     *
+     * @Description 获取指定用户的发布数据
+     * @param [username]
+     * @return java.util.List<org.framework.tutor.domain.CourseMain>
+     * @author yinjimin
+     * @date 2018/4/14
+     */
+    @Select("select * from course_main where username=#{username} order by ptime desc")
+    List<CourseMain> getMyPublish(@Param("username") String username);
 }

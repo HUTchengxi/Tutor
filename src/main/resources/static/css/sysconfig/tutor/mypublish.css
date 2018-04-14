@@ -1,0 +1,49 @@
+ul li h3{
+    margin-left: 2%;
+}
+
+.publog{
+    width: 60%;
+    padding: 1%;
+    margin: 2% 0;
+}
+.publog > div.pull-left:nth-child(1){
+    width: 60%;
+    height: 230px;
+}
+.publog > div.pull-left img{
+    width: 100%;
+    height: 230px;
+}
+.publog > div.pull-left:nth-child(2){
+    margin-top: 2%;
+    margin-left: 2%;
+}
+.publog div.pull-left .main-top{
+    font-size: 2rem;
+    font-weight: bold;
+}
+.publog div.pull-left p.ctime{
+    margin-top: 7%;
+    color: grey;
+}
+.publog div.pull-left p.count{
+    margin: 7% 0;
+}
+.publog div.pull-left p.count span{
+    color: red;
+    margin-right: 1%;
+}
+.publog div.pull-left p span{
+    color: grey;
+}
+.publog div.pull-left p span.glyphicon{
+    color: #ff9900;
+}
+
+div.none{
+    font-size:  2rem;
+    color: #808080b5;
+    text-align:  center;
+    margin-top: 16%;
+}

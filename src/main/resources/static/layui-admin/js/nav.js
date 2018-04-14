@@ -16,9 +16,9 @@ var navs = [{
             "spread": false
         },
         {
-            "title": "我的课程评论",
+            "title": "发布新的课程",
             "icon": "&#xe631;",
-            "href": "/forward_con/gosystutorcommand",
+            "href": "/forward_con/gosystutorpublishnew",
             "spread": false
         },
         {

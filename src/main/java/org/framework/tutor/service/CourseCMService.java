@@ -64,4 +64,14 @@ public interface CourseCMService {
      * @return
      */
     List<CourseCommand> loadMyCommandInfo(String username);
+
+    /**
+     *
+     * @Description 获取指定课程的评分平均值
+     * @param [id]
+     * @return java.lang.Integer
+     * @author yinjimin
+     * @date 2018/4/14
+     */
+    Integer getMyPublishAvg(Integer id);
 }
