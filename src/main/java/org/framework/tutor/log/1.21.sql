@@ -344,6 +344,29 @@ create table bbs_card_answer_star(
 );
 
 
+#课程概述表
+create table course_summary(
+  id int primary key auto_increment comment "唯一标识",
+  username varchar(20) not null comment "用户标识",
+  cid int not null comment "课程标识",
+  title varchar(50) not null comment "概述标题",
+  descript varchar(200) not null comment "概述内容",
+  foreign key(username) references user_main(username),
+  foreign key(cid) references course_main(id)
+);
+
+#课程下线申请表
+create table course_delete_req(
+  id int primary key auto_increment comment "唯一标识",
+  username varchar(20) not null comment "用户标识",
+  cid int not null comment "课程标识",
+  reqtime datetime default now() comment "申请时间",
+  descript text not null comment "申请原因",
+  foreign key(username) references user_main(username),
+  foreign key(cid) references course_main(id)
+);
+
+
 
 
 

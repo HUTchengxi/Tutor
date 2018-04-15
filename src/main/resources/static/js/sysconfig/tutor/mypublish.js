@@ -65,7 +65,7 @@ $(function() {
                             "                        <button class=\"btn btn-primary\" data-toggle='modal' data-target='#chapterModal'>课程目录</button>\n" +
                             "                        <button class=\"btn btn-primary\" data-toggle='modal' data-target='#summaryModal'>课程概述</button>\n" +
                             "                        <button class=\"btn btn-primary\" data-toggle='modal' data-target='#infoModal'>基本信息</button>\n" +
-                            "                        <button class=\"btn btn-primary\" data-toggle='modal' data-target='#commandModal'>课程评论</button>\n" +
+                            "                        <button class=\"btn btn-primary\" data-toggle='modal' data-target='#delModal'>申请下线</button>\n" +
                             "                    </div>" +
                             "                </div>");
                         if(regtime != rtime){
@@ -309,6 +309,114 @@ $(function() {
 
 
     //----------------------------------------课程概述--------------------------------------
-    //TODO：还需要创建课程概述表
+    /**
+     * 获取课程概述信息
+     */
+    var click_getcoursesummaryinfo = function(){
 
+        var cid = $(this).closest("#talkbubble").data("cid");
+
+        $.ajax({
+            type: "post",
+            url: "/coursesummary_con/getcoursesummaryinfo",
+            data: {
+                cid: cid
+            },
+            dataType: "json",
+            success: function(data){
+                $("#summaryModal .modal-body").empty();
+                var status = data.status;
+                if(status == 0){
+                    //TODO: 因为课程概述必须设置的，可能是黑客或者管理员删了导致无法获取
+                    $("#summaryModal .modal-body").append("<div class='none'>无法获取数据，请联系管理员</div>");
+                    return ;
+                }
+                $.each(data, function(index, item){
+                    var id = item.id;
+                    var title = item.title;
+                    var descript = item.descript;
+                    $("#summaryModal .modal-body").append("<div class=\"col-lg-12\" data-sid='"+id+"'>\n" +
+                        "                        <span>"+title+"</span>\n" +
+                        "                        <p class=\"form-control\" contenteditable='true'>"+descript+"</p>\n" +
+                        "                    </div>");
+                });
+                $("#summaryModal .modal-body").append("<div class=\"clearfix\"></div>");
+            }
+        });
+    };
+    $(document).on("click", "#talkbubble button:nth-child(2)", click_getcoursesummaryinfo);
+
+    /**
+     * 保存课程概述的修改
+     */
+    var click_updatecoursesummary = function(){
+
+        $("#summaryModal .modal-body .col-lg-12").each(function(){
+
+            var id = $(this).data("sid");
+            var title = $(this).find("span").text();
+            var descript = $(this).find("p").text();
+
+            $.ajax({
+                async: false,
+                type: "post",
+                url: "/coursesummary_con/updatecoursesummary",
+                data: {
+                    id: id,
+                    title: title,
+                    descript: descript
+                },
+                dataType: "json",
+                success: function(data){
+                    var status = data.status;
+                    if(status != "valid"){
+                        alert("数据发生错误，请联系管理员");
+                        return;
+                    }
+                }
+            });
+        });
+        alert("更新成功");
+        $("#summaryModal .modal-footer button:nth-child(2)").click();
+    };
+    $("#summaryModal .modal-footer button:nth-child(1)").click(click_updatecoursesummary);
+
+
+
+    //---------------------------------------课程下线申请--------------------------
+    /**
+     * 打开modal，传入cid
+     */
+    var click_opendelmodal = function(){
+
+        var cid = $(this).closest("#talkbubble").data("cid");
+        $("#delModal").data("cid", cid);
+    };
+    $(document).on("click", "#talkbubble button:nth-child(4)", click_opendelmodal);
+    /**
+     * 提交课程下线申请
+     */
+    var click_setmycoursedeletereq = function(){
+
+        var descript = $("#delModal .modal-body p").text();
+        var cid = $("#delModal").data("cid");
+        $.ajax({
+            type: "post",
+            url: "/coursedeletereq_con/setmycoursedeletereq",
+            data: {
+                cid: cid,
+                descript: descript
+            },
+            dataType: "json",
+            success: function(data){
+                var status = data.status;
+                if(status == "valid"){
+                    alert("提交成功，请等待审核");
+                    $("#delModal .modal-footer button:nth-child(2)").click();
+                    $("#delModal p").text("");
+                }
+            }
+        });
+    };
+    $("#delModal .modal-footer button:nth-child(1)").click(click_setmycoursedeletereq);
 });

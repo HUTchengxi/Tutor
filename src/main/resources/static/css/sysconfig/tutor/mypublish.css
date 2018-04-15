@@ -104,3 +104,7 @@ div.none{
 #infoModal .special{
     margin-top: 15px;
 }
+
+#summaryModal p, #delModal p{
+    height: 68px;
+}
