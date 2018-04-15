@@ -298,20 +298,25 @@ public class CourseMain {
         String res = null;
 
         org.framework.tutor.domain.CourseMain courseMain = courseMService.getCourseById(id);
-        UserMain userMain = userMService.getByUser(courseMain.getUsername());
-        res = "{\"imgsrc\": \"" + courseMain.getImgsrc() + "\", " +
-                "\"id\": \"" + courseMain.getId() + "\", " +
-                "\"stype\": \"" + courseMain.getStype() + "\", " +
-                "\"ctype\": \"" + courseMain.getCtype() + "\", " +
-                "\"name\": \"" + courseMain.getName() + "\", " +
-                "\"jcount\": \"" + courseMain.getJcount() + "\", " +
-                "\"nickname\": \"" + userMain.getNickname() + "\", " +
-                "\"info\": \"" + userMain.getInfo() + "\", " +
-                "\"price\": \"" + courseMain.getPrice() + "\", " +
-                "\"uimgsrc\": \"" + userMain.getImgsrc() + "\", " +
-                "\"total\": \"" + courseMain.getTotal() + "\", " +
-                "\"descript\": \"" + courseMain.getDescript() + "\"}";
-
+        if(courseMain == null){
+            res = "{\"status\": \"invalid\"}";
+        }
+        else {
+            UserMain userMain = userMService.getByUser(courseMain.getUsername());
+            
+            res = "{\"imgsrc\": \"" + courseMain.getImgsrc() + "\", " +
+                    "\"id\": \"" + courseMain.getId() + "\", " +
+                    "\"stype\": \"" + courseMain.getStype() + "\", " +
+                    "\"ctype\": \"" + courseMain.getCtype() + "\", " +
+                    "\"name\": \"" + courseMain.getName() + "\", " +
+                    "\"jcount\": \"" + courseMain.getJcount() + "\", " +
+                    "\"nickname\": \"" + userMain.getNickname() + "\", " +
+                    "\"info\": \"" + userMain.getInfo() + "\", " +
+                    "\"price\": \"" + courseMain.getPrice() + "\", " +
+                    "\"uimgsrc\": \"" + userMain.getImgsrc() + "\", " +
+                    "\"total\": \"" + courseMain.getTotal() + "\", " +
+                    "\"descript\": \"" + courseMain.getDescript() + "\"}";
+        }
         writer.print(new JsonParser().parse(res).getAsJsonObject());
         writer.flush();
         writer.close();

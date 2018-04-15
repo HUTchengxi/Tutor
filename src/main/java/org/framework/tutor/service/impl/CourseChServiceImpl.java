@@ -29,4 +29,29 @@ public class CourseChServiceImpl implements CourseChService {
 
         return courseChMapper.getCourseChapter(cid);
     }
+
+    @Override
+    public CourseChapter getById(Integer id) {
+        return courseChMapper.getById(id);
+    }
+
+    @Override
+    public void deleteChapter(Integer id) {
+        courseChMapper.deleteChapter(id);
+    }
+
+    @Override
+    public void addChapter(Integer cid, Integer ord, String title, String descript) {
+        courseChMapper.addChapter(cid, ord, title, descript);
+    }
+
+    @Override
+    public void modChapter(Integer id, String title, String descript) {
+        courseChMapper.modChapter(id, title, descript);
+    }
+
+    @Override
+    public Integer getLastOrd(Integer cid) {
+        return courseChMapper.getLastOrg(cid);
+    }
 }

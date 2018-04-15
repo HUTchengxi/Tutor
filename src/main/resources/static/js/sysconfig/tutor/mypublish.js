@@ -60,7 +60,13 @@ $(function() {
                             "                            <p class=\"comcount count\"><span>"+comcount+"</span>条评论</p>\n" +
                             "                            <p class=\"buycount count\"><span >"+buycount+"</span>人购买</p>\n" +
                             "                        </div>\n" +
-                            "                    </div>\n" +
+                            "                    </div>"  +
+                            "                    <div class=\"pull-left\" id=\"talkbubble\" data-cid=\""+cid+"\">\n" +
+                            "                        <button class=\"btn btn-primary\" data-toggle='modal' data-target='#chapterModal'>课程目录</button>\n" +
+                            "                        <button class=\"btn btn-primary\" data-toggle='modal' data-target='#summaryModal'>课程概述</button>\n" +
+                            "                        <button class=\"btn btn-primary\" data-toggle='modal' data-target='#infoModal'>基本信息</button>\n" +
+                            "                        <button class=\"btn btn-primary\" data-toggle='modal' data-target='#commandModal'>课程评论</button>\n" +
+                            "                    </div>" +
                             "                </div>");
                         if(regtime != rtime){
                             regtime = rtime;
@@ -87,4 +93,222 @@ $(function() {
         });
     };
     async_getmypublish();
+
+
+
+    //--------------------------------课程目录----------------------------------
+
+
+    /**
+     * 获取指定课程的目录数据
+     */
+    var click_getcoursechapter = function(){
+
+        var cid = $(this).closest("#talkbubble").data("cid");
+        $("#chapterModal").data("cid", cid);
+        $.ajax({
+            type: "post",
+            url: "/coursechapter_con/getcoursechapter",
+            data: {
+                cid: cid
+            },
+            dataType: "json",
+            success: function(data){
+                $("#chapterModal .btndiv button:nth-child(2)").data("status", "off").text("删除目录");
+                $("#chapterModal .chapters").empty();
+                var count = data.count;
+                if(count == 0){
+                    $("#chapterModal .chapters").append("<div class=\"none\">暂未设置任何目录</div>");
+                }
+                else{
+                    $.each(data, function(index, item){
+                        var id = item.id;
+                        var ord = item.ord;
+                        var title = item.title;
+                        var descript = item.descript;
+                        $("#chapterModal .chapters").append("<div class=\"chapter\" data-id='"+id+"' data-ord='"+ord+"'>\n" +
+                            "                        <legend class=\"clearfix\">目录<span class=\"pull-right glyphicon glyphicon-remove\"></span></legend>\n" +
+                            "                        <div class=\"col-lg-12\">\n" +
+                            "                            <span>目录标题</span>\n" +
+                            "                            <input class=\"form-control title\" type=\"text\" value='"+title+"' />\n" +
+                            "                        </div>\n" +
+                            "                        <div class=\"col-lg-12\">\n" +
+                            "                            <span>目录描述</span>\n" +
+                            "                            <input class=\"form-control descript\" type=\"text\" value='"+descript+"' />\n" +
+                            "                        </div>\n" +
+                            "                        <div class=\"clearfix\"></div>\n" +
+                            "                    </div>")
+                    });
+                }
+            }
+        })
+    };
+    $(document).on("click", "#talkbubble button:nth-child(1)", click_getcoursechapter);
+
+    /**
+     * 点击删除，显示所有remove按钮
+     */
+    var click_showchapterdelbtn = function(){
+
+        var status = $(this).data("status");
+        console.log(status);
+        if(status != "on"){
+            $(this).data("status", "on");
+            $("#chapterModal .modal-body legend span").css("display", "inline-block");
+            $(this).text("考虑一下");
+        }
+        else{
+            $(this).data("status", "off");
+            $("#chapterModal .modal-body legend span").css("display", "none");
+            $(this).text("删除目录");
+        }
+    };
+    $("#chapterModal .modal-body .btndiv button:nth-child(2)").click(click_showchapterdelbtn);
+
+    /**
+     * 删除指定目录
+     */
+    var click_delchapter = function(){
+
+        if(window.confirm("确定删除该目录吗？")){
+            var id = $(this).closest(".chapter").data("id");
+            var $this = $(this);
+            $.ajax({
+                type: "post",
+                url: "/coursechapter_con/deletechapter",
+                data: {
+                    id: id
+                },
+                dataType: "json",
+                success: function(data){
+                    var status = data.status;
+                    if(status == "valid"){
+                        $this.closest(".chapter").remove();
+                        $("#chapterModal .btndiv button:nth-child(2)").click();
+                    }
+                }
+            });
+        }
+    };
+    $(document).on("click", "#chapterModal .modal-body legend span", click_delchapter);
+
+    /**
+     * 点击增加添加一个增加输入框
+     */
+    var click_showaddchapter = function(){
+
+        if($("#chapterModal .chapters div").hasClass("none")){
+            $("#chapterModal .chapters").empty();
+        }
+        $("#chapterModal .chapters").append("<div class=\"chapter chapteradd\">\n" +
+            "                        <legend class=\"clearfix\">新增目录</legend>\n" +
+            "                        <div class=\"col-lg-12\">\n" +
+            "                            <span>输入目录标题</span>\n" +
+            "                            <input class=\"form-control title\" type=\"text\" placeholder='输入新增目录标题' />\n" +
+            "                        </div>\n" +
+            "                        <div class=\"col-lg-12\">\n" +
+            "                            <span>输入目录描述</span>\n" +
+            "                            <input class=\"form-control descript\" type=\"text\" placeholder='输入新增目录描述' />\n" +
+            "                        </div>\n" +
+            "                        <div class=\"clearfix\"></div>\n" +
+            "                    </div>")
+    };
+    $("#chapterModal .modal-body .btndiv button:nth-child(1)").click(click_showaddchapter);
+
+    /**
+     * 点击保存课程目录的修改（新增/修改）
+     */
+    var click_submodchapter = function(){
+
+        var flag = true;
+        $("#chapterModal .chapters .chapter").each(function(){
+            if(str_isnull($(this).find(".title").val()) || str_isnull($(this).find(".descript").val())){
+                flag = false;
+            }
+        });
+        if(!flag){
+            alert("请填写完整");
+            return;
+        }
+        var cid = $("#chapterModal").data("cid");
+        $("#chapterModal .chapters .chapter").each(function(){
+            var id = $(this).data("id");
+            var ord = $(this).data("ord");
+            var title = $(this).find(".title").val();
+            var descript = $(this).find(".descript").val();
+
+            $.ajax({
+                async: false,
+                type: "post",
+                url: "/coursechapter_con/modchapter",
+                data: {
+                    id: id,
+                    cid: cid,
+                    ord: ord,
+                    title: title,
+                    descript: descript
+                },
+                dataType: "json",
+                success: function(data){
+                    var status = data.status;
+                    if(statsu != "valid"){
+                        alert("上传过程中报错了，请稍后再试");
+                        return ;
+                    }
+                }
+            });
+        });
+            alert("保存成功");
+            $("#chapterModal .modal-footer button:nth-child(2)").click();
+    };
+    $("#chapterModal .modal-footer button:nth-child(1)").click(click_submodchapter);
+
+
+
+
+    //----------------------------------------- 课程基本信息 -------------------------------------------
+    /**
+     * 获取对应的课程基本信息数据
+     */
+    var click_getcoursemaininfo = function(){
+
+        var cid = $(this).closest("#talkbubble").data("cid");
+
+        $.ajax({
+            type: "post",
+            url: "/coursemain_con/getcoursebyid",
+            data: {
+                id: cid
+            },
+            dataType: "json",
+            success: function(data){
+                var status = data.status;
+                if(status == "invalid"){
+                    return ;
+                }
+                var stype = "";
+                var ctype = "";
+                $.each(data, function(index, item){
+                   $("#infoModal p."+index).text(item);
+                   if(index == "imgsrc"){
+                       $("#infoModal img").attr("src", item);
+                   }
+                   if(index == "stype"){
+                       stype = item==1?"小学":item==2?"初中":item==3?"高中":"其他";
+                   }
+                   if(index == "ctype"){
+                        ctype = item;
+                   }
+                });
+                $("#infoModal p.courseType").text(stype+"--"+ctype);
+            }
+        });
+    };
+    $(document).on("click", "#talkbubble button:nth-child(3)", click_getcoursemaininfo);
+
+
+
+    //----------------------------------------课程概述--------------------------------------
+    //TODO：还需要创建课程概述表
+
 });
