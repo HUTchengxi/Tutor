@@ -10,19 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf479440-431d-499c-9612-40c14de1a166" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseDeleteReqController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseSummaryController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/CourseDeleteReqService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/CourseSummaryService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/CourseDeleteReqServiceImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/CourseSummaryServiceImpl.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/CourseDeleteReq.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/CourseSummary.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/CourseDeleteReqMapper.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/CourseSummaryMapper.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/generatorConfig.xml" afterPath="$PROJECT_DIR$/src/generatorConfig.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/sysconfig/tutor/mypublish.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/sysconfig/tutor/mypublish.css" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/tutor/mypublish.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/tutor/mypublish.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sysconfig/tutor/mypublish.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/sysconfig/tutor/mypublish.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/sysconfig/tutor/mypublish.html" afterPath="$PROJECT_DIR$/target/classes/templates/sysconfig/tutor/mypublish.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -52,22 +44,7 @@
     <favorites_list name="Tutor" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="CourseDeleteReqServiceImpl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/CourseDeleteReqServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="851">
-              <caret line="43" column="30" lean-forward="false" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1036#1037#0" expanded="true" />
-                <element signature="e#1094#1095#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -1082,14 +1059,7 @@
       <workItem from="1523766259836" duration="38000" />
       <workItem from="1523771703643" duration="8479000" />
       <workItem from="1523781911479" duration="1971000" />
-      <workItem from="1523789295397" duration="4616000" />
-    </task>
-    <task id="LOCAL-00010" summary="实现了课程的分页浏览，并解决了三级搜索的undefined的bug">
-      <created>1520670384644</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1520670384644</updated>
+      <workItem from="1523789295397" duration="4751000" />
     </task>
     <task id="LOCAL-00011" summary="实现了课程的指定页面跳转浏览和一些前端展示bug的解决，具体2.0版本文件中介绍">
       <created>1520691542304</created>
@@ -1427,11 +1397,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523783852295</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="初步完成了家教后台-课程发布历史界面的所有功能设计">
+      <created>1523795127171</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1523795127171</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1007391000" />
+    <option name="totallyTimeSpent" value="1007526000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1464,7 +1441,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287827" sideWeight="0.5" order="20" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66870093" sideWeight="0.5" order="21" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="22" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18488745" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24276528" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="24" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
@@ -1522,7 +1499,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="家教后台管理界面的初步设置" />
     <MESSAGE value="通过layui简单设计了家教后台管理系统的首页" />
     <MESSAGE value="实现了历史版本记录/常用链接动态实现" />
     <MESSAGE value="更新到2.7版本，可查看2.x版本日志文件" />
@@ -1547,7 +1523,8 @@
     <MESSAGE value="初步完成了论坛中心的所有功能2" />
     <MESSAGE value="初步设计了课程发布界面和课程发布历史浏览界面，明天实现课程发布+课程展示界面的课程概述+课程发布历史的课程编辑按钮设计" />
     <MESSAGE value="重构了课程历史发布界面，设计了目录的修改/基本信息的查看（目前不提供修改接口）" />
-    <option name="LAST_COMMIT_MESSAGE" value="重构了课程历史发布界面，设计了目录的修改/基本信息的查看（目前不提供修改接口）" />
+    <MESSAGE value="初步完成了家教后台-课程发布历史界面的所有功能设计" />
+    <option name="LAST_COMMIT_MESSAGE" value="初步完成了家教后台-课程发布历史界面的所有功能设计" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1900,20 +1877,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/CourseDeleteReq.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#443#444#0" expanded="true" />
-            <element signature="e#474#475#0" expanded="true" />
-            <element signature="e#523#524#0" expanded="true" />
-            <element signature="e#563#564#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/CourseDeleteReqService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="638">
@@ -1989,12 +1952,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/CourseDeleteReqServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="851">
-          <caret line="43" column="30" lean-forward="false" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
+        <state relative-caret-position="777">
+          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1036#1037#0" expanded="true" />
             <element signature="e#1094#1095#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/CourseDeleteReq.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#443#444#0" expanded="true" />
+            <element signature="e#474#475#0" expanded="true" />
+            <element signature="e#523#524#0" expanded="true" />
+            <element signature="e#563#564#0" expanded="true" />
           </folding>
         </state>
       </provider>
