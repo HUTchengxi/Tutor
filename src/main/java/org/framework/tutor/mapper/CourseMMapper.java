@@ -1,9 +1,6 @@
 package org.framework.tutor.mapper;
 
-import org.apache.ibatis.annotations.MapKey;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.framework.tutor.domain.CourseMain;
 
 import java.util.List;
@@ -346,4 +343,22 @@ public interface CourseMMapper {
      */
     @Select("select * from course_main where username=#{username} order by ptime desc")
     List<CourseMain> getMyPublish(@Param("username") String username);
+
+
+    /**
+     *
+     * @Description 获取所有科目类别
+     * @param []
+     * @return java.util.List<org.framework.tutor.domain.CourseMain>
+     * @author yinjimin
+     * @date 2018/4/15
+     */
+    @Select("select distinct ctype from course_main")
+    List<CourseMain> getAllCourseType();
+
+    @Insert("insert into course_main(username, name, imgsrc,stype, ctype, jcount, descript, price, total) values(#{username}, #{name}, #{imgsrc},#{stype}, #{ctype}, #{jcount}, #{descript}, #{price}, #{total})")
+    void publishCourse(@Param("username") String username, @Param("name") String name, @Param("imgsrc") String originalFilename, @Param("stype") Integer stype, @Param("ctype") String ctype, @Param("jcount") Integer jcount, @Param("descript") String descript, @Param("price") Double price, @Param("total") Integer total);
+
+    @Select("select * from course_main where username=#{username} and name=#{name} and stype=#{stype} and ctype=#{ctype}")
+    CourseMain getByName(@Param("username") String username, @Param("name") String name, @Param("stype") Integer stype, @Param("ctype") String ctype);
 }

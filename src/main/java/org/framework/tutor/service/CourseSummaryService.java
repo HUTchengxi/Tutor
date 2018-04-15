@@ -26,4 +26,6 @@ public interface CourseSummaryService {
      * @date 2018/4/15
      */
     Integer updateCourseSummary(Integer id, String title, String descript);
+
+    void addCourseSummary(String username, Integer id, String sumTitle1, String sumDescript1);
 }

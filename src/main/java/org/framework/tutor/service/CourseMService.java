@@ -305,4 +305,36 @@ public interface CourseMService {
      * @date 2018/4/14
      */
     List<CourseMain> getMyPublish(String username);
+
+    /**
+     *
+     * @Description 获取所有科目类别
+     * @param []
+     * @return java.util.List<org.framework.tutor.domain.CourseMain>
+     * @author yinjimin
+     * @date 2018/4/15
+     */
+    List<CourseMain> getAllCourseType();
+
+
+    /**
+     *
+     * @Description 发布课程
+     * @param [username, name, originalFilename, stype, ctype, jcount, descript, price, total]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/15
+     */
+    void publishCourse(String username, String name, String originalFilename, Integer stype, String ctype, Integer jcount, String descript, Double price, Integer total);
+
+
+    /**
+     *
+     * @Description 通过一连串数据获取课程
+     * @param [username, name, stype, ctype]
+     * @return org.framework.tutor.domain.CourseMain
+     * @author yinjimin
+     * @date 2018/4/15
+     */
+    CourseMain getByName(String username, String name, Integer stype, String ctype);
 }

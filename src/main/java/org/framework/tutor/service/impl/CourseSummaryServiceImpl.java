@@ -40,4 +40,9 @@ public class CourseSummaryServiceImpl implements CourseSummaryService {
     public Integer updateCourseSummary(Integer id, String title, String descript) {
         return courseSummaryMapper.updateCourseSummary(id, title, descript);
     }
+
+    @Override
+    public void addCourseSummary(String username, Integer id, String sumTitle1, String sumDescript1) {
+        courseSummaryMapper.addCourseSummary(username, id, sumTitle1, sumDescript1);
+    }
 }

@@ -448,4 +448,19 @@ public class CourseMServiceImpl implements CourseMService {
     public List<CourseMain> getMyPublish(String username) {
         return courseMMapper.getMyPublish(username);
     }
+
+    @Override
+    public List<CourseMain> getAllCourseType() {
+        return courseMMapper.getAllCourseType();
+    }
+
+    @Override
+    public void publishCourse(String username, String name, String originalFilename, Integer stype, String ctype, Integer jcount, String descript, Double price, Integer total) {
+        courseMMapper.publishCourse(username, name, originalFilename, stype, ctype, jcount, descript, price, total);
+    }
+
+    @Override
+    public CourseMain getByName(String username, String name, Integer stype, String ctype) {
+        return  courseMMapper.getByName(username, name, stype, ctype);
+    }
 }

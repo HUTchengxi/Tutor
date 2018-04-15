@@ -2,14 +2,14 @@ package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
 import org.framework.tutor.domain.UserMain;
-import org.framework.tutor.service.CourseCMService;
-import org.framework.tutor.service.CourseMService;
-import org.framework.tutor.service.CourseOService;
-import org.framework.tutor.service.UserMService;
+import org.framework.tutor.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -39,6 +39,12 @@ public class CourseMain {
 
     @Autowired
     private CourseOService courseOService;
+
+    @Autowired
+    private CourseChService courseChService;
+
+    @Autowired
+    private CourseSummaryService courseSummaryService;
 
     /**
      * 加载课程数据
@@ -204,7 +210,42 @@ public class CourseMain {
     }
 
     /**
-     * 获取所有科目类别
+     *
+     * @Description 获取所有科目类别
+     * @param [response]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/15
+     */
+    @PostMapping("/getallcoursetype")
+    public void getAllCourseType(HttpServletResponse response) throws IOException {
+
+        response.setCharacterEncoding("utf-8");
+        PrintWriter writer = response.getWriter();
+        String res = null;
+
+        List<org.framework.tutor.domain.CourseMain> courseMains = courseMService.getAllCourseType();
+        if (courseMains.size() == 0) {
+            res = "{\"status\": \"valid\", \"len\": \"0\"}";
+        } else {
+            res = "{";
+            int i = 0;
+            for (org.framework.tutor.domain.CourseMain courseMain : courseMains) {
+                String temp = "\"ctype" + i + "\": \"" + courseMain.getCtype() + "\", ";
+                res += temp;
+                i++;
+            }
+            res = res.substring(0, res.length() - 2);
+            res += "}";
+        }
+
+        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.flush();
+        writer.close();
+    }
+
+    /**
+     * 获取指定主类别的所有科目类别
      *
      * @param stype
      * @param request
@@ -303,7 +344,7 @@ public class CourseMain {
         }
         else {
             UserMain userMain = userMService.getByUser(courseMain.getUsername());
-            
+
             res = "{\"imgsrc\": \"" + courseMain.getImgsrc() + "\", " +
                     "\"id\": \"" + courseMain.getId() + "\", " +
                     "\"stype\": \"" + courseMain.getStype() + "\", " +
@@ -433,6 +474,59 @@ public class CourseMain {
             res += "}";
         }
 
+
+        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.flush();
+        writer.close();
+    }
+
+    /**
+     *
+     * @Description 发布课程
+     * @param [name, stype, ctype, imgsrc, total, jcount, price, sumTitle1, sumTitle2, sumTitle3,
+     *               sumDescript1, sumDescript2, sumDescript3, chapTitle, chaDescript, request, response]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/15
+     */
+    @PostMapping("/publishnewcourse")
+    @Transactional
+    public void publishNewCourse(@RequestParam String name, @RequestParam Integer stype, @RequestParam String ctype,@RequestParam String descript,
+                                 MultipartFile imgsrc, @RequestParam Integer total, @RequestParam Integer jcount,
+                                 @RequestParam Double price, @RequestParam String sumTitle1, @RequestParam String sumTitle2,
+                                 @RequestParam String sumTitle3, @RequestParam String sumDescript1, @RequestParam String sumDescript2,
+                                 @RequestParam String sumDescript3, @RequestParam String chapTitle, @RequestParam String chapDescript,
+                                 HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        PrintWriter writer = response.getWriter();
+        String res = null;
+
+        HttpSession session = request.getSession();
+        String username = (String) session.getAttribute("username");
+        Integer identity = (Integer) session.getAttribute("identity");
+        //判断当前用户是否为家教身份
+        if(identity != 1){
+            res = "{\"status\": \"invalid\"}";
+        }
+        else {
+            //保存课程基本信息
+            courseMService.publishCourse(username, name, imgsrc.getOriginalFilename(), stype, ctype, jcount, descript, price, total);
+            org.framework.tutor.domain.CourseMain courseMain = courseMService.getByName(username, name, stype, ctype);
+            //保存课程概述信息
+            courseSummaryService.addCourseSummary(username, courseMain.getId(), sumTitle1, sumDescript1);
+            courseSummaryService.addCourseSummary(username, courseMain.getId(), sumTitle2, sumDescript2);
+            courseSummaryService.addCourseSummary(username, courseMain.getId(), sumTitle3, sumDescript3);
+            //保存目录信息
+            String eq = "c03c1650fa940cd2f5de959bfbd6d8a6";
+            String[] titleArr = chapTitle.split(eq);
+            String[] descriptArr = chapDescript.split(eq);
+            int i = 1;
+            for(String title: titleArr){
+                courseChService.addChapter(courseMain.getId(), i, title, descriptArr[--i]);
+                i+=2;
+            }
+            res = "{\"status\": \"valid\"}";
+        }
 
         writer.print(new JsonParser().parse(res).getAsJsonObject());
         writer.flush();

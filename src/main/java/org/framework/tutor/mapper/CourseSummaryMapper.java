@@ -1,9 +1,6 @@
 package org.framework.tutor.mapper;
 
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 import org.framework.tutor.domain.CourseSummary;
 
 import java.util.List;
@@ -39,4 +36,7 @@ public interface CourseSummaryMapper {
      */
     @Update("update course_summary set title=#{title}, descript=#{descript} where id=#{id}")
     Integer updateCourseSummary(@Param("id") Integer id, @Param("title") String title, @Param("descript") String descript);
+
+    @Insert("insert into course_summary(username, cid, title, descript) values(#{username}, #{id}, #{title}, #{descript})")
+    void addCourseSummary(@Param("username") String username, @Param("id") Integer id, @Param("title") String sumTitle1, @Param("descript") String sumDescript1);
 }
