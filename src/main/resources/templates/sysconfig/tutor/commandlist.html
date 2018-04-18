@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.css"/>
+    <link rel="stylesheet" href="/layui/css/layui.css"/>
+    <link rel="stylesheet" href="/layui-admin/css/font_eolqem241z66flxr.css"/>
+    <link rel="stylesheet" href="/css/sysconfig/tutor/commandlist.css"/>
+</head>
+<body class="childrenBody">
+
+<div id="pagecommand" class="tab-pane fade in active">
+    <h3 class="text-center page-title">课程评论管理</h3>
+    <!--课程查询的form-->
+    <div class="page-command-searchform">
+        <form class="form-horizontal" role="form" action="javascript:;">
+            <legend>课程查询器</legend>
+            <div class="form-group">
+                <label for="courseName" class="col-sm-2 control-label">课程名称</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control courseName" name="courseName"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary">查询课程</button>
+                    <button type="reset" class="btn btn-link">清空筛选条件</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!--评论列表的展示-->
+    <div class="page-command-showlist">
+        <table id="courseTable" class="table" data-undefined-text=""></table>
+    </div>
+    <!--删除模态框-->
+    <div class="modal fade" id="comDele" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;
+                    </button>
+                    <h4 class="modal-title">删除评论申请</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="col-lg-6">
+                        <span>评论用户：</span>
+                        <span class="commandUser"></span>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="col-lg-12">
+                        <span>评论内容：</span>
+                        <span class="commandDesc"></span>
+                    </div>
+                    <div class="col-lg-12">
+                        <span>删除原因：</span>
+                        <p class="reqInfo form-control" contenteditable="true"></p>
+                    </div>
+                    <div style="clear:both" class=""></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger">提交申请</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭窗口</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/common/jquery.min.js"></script>
+<script src="/bootstrap/js/bootstrap.js"></script>
+<script src="/js/common/bootstrap-table.js"></script>
+<script src="/js/common/bootstrap-table-zh-CN.js"></script>
+<script src="/layui/layui.js"></script>
+<script src="/js/sysconfig/tutor/commandlist.js"></script>
+</body>
+</html>

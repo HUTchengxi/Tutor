@@ -18,6 +18,24 @@ public class CourseCommand implements Serializable{
     private String info;
     private Date ctime;
     private Integer score;
+    private Integer god;
+    private Integer status;
+
+    public Integer getGod() {
+        return god;
+    }
+
+    public void setGod(Integer god) {
+        this.god = god;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
 
     public CourseCommand(){
 
@@ -67,14 +85,6 @@ public class CourseCommand implements Serializable{
         return ctime;
     }
 
-    public void setCtime(Date ctime) {
-        this.ctime = ctime;
-    }
-
-    public Integer getScore(){return this.score;}
-
-    public void setScore(Integer score){this.score = score;}
-
     @Override
     public String toString() {
         return "CourseCommand{" +
@@ -85,6 +95,18 @@ public class CourseCommand implements Serializable{
                 ", info='" + info + '\'' +
                 ", ctime=" + ctime +
                 ", score=" + score +
+                ", god=" + god +
+                ", status=" + status +
                 '}';
     }
+
+    public void setCtime(Date ctime) {
+        this.ctime = ctime;
+    }
+
+    public Integer getScore(){return this.score;}
+
+    public void setScore(Integer score){this.score = score;}
+
+
 }

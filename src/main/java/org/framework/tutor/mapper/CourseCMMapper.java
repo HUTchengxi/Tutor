@@ -1,10 +1,7 @@
 package org.framework.tutor.mapper;
 
 
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.framework.tutor.domain.CourseCommand;
 
 import java.util.List;
@@ -90,4 +87,22 @@ public interface CourseCMMapper {
      */
     @Select("select avg(score) from course_command where cid=#{cid}")
     Integer getMyPublishAvg(@Param("cid") Integer id);
+
+    @Select("select * from course_command where cid in (#{courseId}) limit #{offset}, #{pageSize}")
+    List<CourseCommand> getMyCommandList(@Param("courseId") String courseId, @Param("offset") Integer offset, @Param("pageSize") Integer pageSize);
+
+    @Select("select count(*) from course_command where cid in (#{courseId})")
+    Integer getCommandCountByIdlist(@Param("courseId") String courseId);
+
+    @Select("select * from course_command where id=#{id}")
+    CourseCommand getCommandById(@Param("id") Integer id);
+
+    @Update("update course_command set god=1 where id=#{id}")
+    void setCommandGodstate(@Param("id") Integer id);
+
+    @Select("select count(*) from course_command where cid=#{cid} and god=1")
+    Integer geGodCountById(@Param("cid") Integer cid);
+
+    @Update("update course_command set status = #{status} where id=#{id}")
+    void updateCommandStatus(@Param("id") Integer cid, @Param("status") Integer status);
 }

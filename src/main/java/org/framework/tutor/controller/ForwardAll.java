@@ -331,6 +331,20 @@ public class ForwardAll {
         return "sysconfig/tutor/publishnew";
     }
 
+    /**
+     *
+     * @Description 进入课程评论管理界面
+     * @param []
+     * @return java.lang.String
+     * @author yinjimin
+     * @date 2018/4/18
+     */
+    @RequestMapping("/gosystutorcommand")
+    public String goSystutorCommand(){
+
+        return "sysconfig/tutor/commandlist";
+    }
+
     /**  
      *    
      * @Description 查询帖子

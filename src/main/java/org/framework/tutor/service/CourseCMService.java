@@ -74,4 +74,64 @@ public interface CourseCMService {
      * @date 2018/4/14
      */
     Integer getMyPublishAvg(Integer id);
+
+    /**
+     *
+     * @Description 查询当前家教的课程评论数据
+     * @param [courseId]
+     * @return java.util.List<org.framework.tutor.domain.CourseCommand>
+     * @author yinjimin
+     * @date 2018/4/18
+     */
+    List<CourseCommand> getMyCommandList(String courseId, Integer offset, Integer pageSize);
+
+    /**
+     *
+     * @Description 获取指定家教的课程评论总数
+     * @param [courseId]
+     * @return java.lang.Integer
+     * @author yinjimin
+     * @date 2018/4/18
+     */
+    Integer getCommandCountByIdlist(String courseId);
+
+    /**  
+     *    
+     * @Description 通过id获取对应的评论数据
+     * @param to    
+     * @return org.framework.tutor.domain.CourseCommand
+     * @author yinjimin  
+     * @date 2018/4/18
+     */  
+    CourseCommand getCommandById(Integer id);
+
+    /**
+     *
+     * @Description 设置神评
+     * @param [id]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/18
+     */
+    void setCommandGodstate(Integer id);
+
+    /**
+     *
+     * @Description 获取指定课程的神评数量
+     * @param [cid]
+     * @return java.lang.Integer
+     * @author yinjimin
+     * @date 2018/4/18
+     */
+    Integer getGodCountById(Integer cid);
+
+    /**
+     *
+     * @Description 更新对应的评论的status状态
+     * @param [cid, status]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/18
+     */
+    void updateCommandStatus(Integer cid, Integer status);
 }

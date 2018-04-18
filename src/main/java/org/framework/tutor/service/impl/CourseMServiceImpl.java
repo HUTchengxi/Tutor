@@ -468,4 +468,14 @@ public class CourseMServiceImpl implements CourseMService {
     public CourseMain checkIsexistName(String name) {
         return courseMMapper.checkIsexistName(name);
     }
+
+    @Override
+    public List<CourseMain> getMyCourseList(String username) {
+        return courseMMapper.getMyCommandList(username);
+    }
+
+    @Override
+    public List<CourseMain> getByCoursename(String courseName) {
+        return courseMMapper.getByCoursename(courseName);
+    }
 }

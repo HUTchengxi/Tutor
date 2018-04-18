@@ -10,7 +10,7 @@ var navs = [{
     "spread": false,
     "children": [
         {
-            "title": "我的课程发布",
+            "title": "发布课程管理",
             "icon": "&#xe631;",
             "href": "/forward_con/gosystutorpublish",
             "spread": false
@@ -22,7 +22,13 @@ var navs = [{
             "spread": false
         },
         {
-            "title": "我的课程订单",
+            "title": "课程评论管理",
+            "icon": "&#xe631;",
+            "href": "/forward_con/gosystutorcommand",
+            "spread": false
+        },
+        {
+            "title": "课程订单管理",
             "icon": "&#xe631;",
             "href": "/forward_con/gosystutororder",
             "spread": false

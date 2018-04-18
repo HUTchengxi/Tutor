@@ -1,0 +1,16 @@
+div.form-group {
+    margin: 2% 0;
+}
+#pagecommand legend{
+    margin-top: 2%;
+}
+
+#comDele .col-lg-12{
+    margin-top: 2%;
+}
+#comDele .col-lg-6 span:nth-child(1), #comDele .col-lg-12 span:nth-child(1){
+    color: rgba(128, 128, 128, 0.92);
+}
+#comDele .col-lg-6 span:nth-child(2), #comDele .col-lg-12 span:nth-child(2){
+    color: red;
+}

@@ -105,4 +105,34 @@ public class CourseCMServiceImpl implements CourseCMService {
     public Integer getMyPublishAvg(Integer id) {
         return courseCMMapper.getMyPublishAvg(id);
     }
+
+    @Override
+    public List<CourseCommand> getMyCommandList(String courseId, Integer offset, Integer pageSize) {
+        return courseCMMapper.getMyCommandList(courseId, offset, pageSize);
+    }
+
+    @Override
+    public Integer getCommandCountByIdlist(String courseId) {
+        return courseCMMapper.getCommandCountByIdlist(courseId);
+    }
+
+    @Override
+    public CourseCommand getCommandById(Integer id) {
+        return courseCMMapper.getCommandById(id);
+    }
+
+    @Override
+    public void setCommandGodstate(Integer id) {
+        courseCMMapper.setCommandGodstate(id);
+    }
+
+    @Override
+    public Integer getGodCountById(Integer cid) {
+        return courseCMMapper.geGodCountById(cid);
+    }
+
+    @Override
+    public void updateCommandStatus(Integer cid, Integer status) {
+        courseCMMapper.updateCommandStatus(cid, status);
+    }
 }

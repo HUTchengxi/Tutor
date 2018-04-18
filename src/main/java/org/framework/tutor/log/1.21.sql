@@ -367,6 +367,15 @@ create table course_delete_req(
 );
 
 
+#评论删除待审表 家教用
+create table course_command_delete_req(
+  id int primary key auto_increment comment "唯一标识",
+  reqer varchar(20) not null comment "防止sql恶意注入，校验申请用户名",
+  cid int not null comment "要删除的评论id",
+  reqtime datetime default now() comment "申请时间",
+  foreign key(reqer) references user_main(username),
+  foreign key(cid) references course_command(cid)
+);
 
 
 

@@ -347,4 +347,16 @@ public interface CourseMService {
      * @date 2018/4/18
      */
     CourseMain checkIsexistName(String name);
+
+    /**
+     *
+     * @Description 获取指定家教的课程数据
+     * @param [username]
+     * @return java.util.List<org.framework.tutor.controller.CourseMain>
+     * @author yinjimin
+     * @date 2018/4/18
+     */
+    List<CourseMain> getMyCourseList(String username);
+
+    List<CourseMain> getByCoursename(String courseName);
 }

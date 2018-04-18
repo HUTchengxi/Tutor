@@ -364,4 +364,18 @@ public interface CourseMMapper {
 
     @Select("select * from course_main where name=#{name} limit 0,1")
     CourseMain checkIsexistName(@Param("name") String name);
+
+    /**  
+     *    
+     * @Description 获取指定家教的课程数据
+     * @param [username]
+     * @return java.util.List<org.framework.tutor.controller.CourseMain>
+     * @author yinjimin  
+     * @date 2018/4/18
+     */
+    @Select("select * from course_main where username=#{username}")
+    List<CourseMain> getMyCommandList(@Param("username") String username);
+
+    @Select("select * from course_main where name like CONCAT('%',#{name},'%')")
+    List<CourseMain> getByCoursename(@Param("name") String courseName);
 }
