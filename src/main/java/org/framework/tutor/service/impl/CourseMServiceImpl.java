@@ -463,4 +463,9 @@ public class CourseMServiceImpl implements CourseMService {
     public CourseMain getByName(String username, String name, Integer stype, String ctype) {
         return  courseMMapper.getByName(username, name, stype, ctype);
     }
+
+    @Override
+    public CourseMain checkIsexistName(String name) {
+        return courseMMapper.checkIsexistName(name);
+    }
 }

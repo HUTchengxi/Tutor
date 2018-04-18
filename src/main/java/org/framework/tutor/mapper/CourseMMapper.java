@@ -359,6 +359,9 @@ public interface CourseMMapper {
     @Insert("insert into course_main(username, name, imgsrc,stype, ctype, jcount, descript, price, total) values(#{username}, #{name}, #{imgsrc},#{stype}, #{ctype}, #{jcount}, #{descript}, #{price}, #{total})")
     void publishCourse(@Param("username") String username, @Param("name") String name, @Param("imgsrc") String originalFilename, @Param("stype") Integer stype, @Param("ctype") String ctype, @Param("jcount") Integer jcount, @Param("descript") String descript, @Param("price") Double price, @Param("total") Integer total);
 
-    @Select("select * from course_main where username=#{username} and name=#{name} and stype=#{stype} and ctype=#{ctype}")
+    @Select("select * from course_main where username=#{username} and name=#{name} and stype=#{stype} and ctype=#{ctype} limit 0, 1")
     CourseMain getByName(@Param("username") String username, @Param("name") String name, @Param("stype") Integer stype, @Param("ctype") String ctype);
+
+    @Select("select * from course_main where name=#{name} limit 0,1")
+    CourseMain checkIsexistName(@Param("name") String name);
 }

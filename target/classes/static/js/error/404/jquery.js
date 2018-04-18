@@ -2146,7 +2146,7 @@ Expr = Sizzle.selectors = {
     "PSEUDO": function( pseudo, argument ) {
       // pseudo-class names are case-insensitive
       // http://www.w3.org/TR/selectors/#pseudo-classes
-      // Prioritize by case sensitivity in case custom pseudos are added with uppercase letters
+      // Prioritize by case sensitivity in case common pseudos are added with uppercase letters
       // Remember that setFilters inherits from pseudos
       var args,
         fn = Expr.pseudos[ pseudo ] || Expr.setFilters[ pseudo.toLowerCase() ] ||
@@ -4742,7 +4742,7 @@ jQuery.event = {
       return;
     }
 
-    // Caller can pass in an object of custom data in lieu of the handler
+    // Caller can pass in an object of common data in lieu of the handler
     if ( handler.handler ) {
       handleObjIn = handler;
       handler = handleObjIn.handler;
@@ -5348,7 +5348,7 @@ jQuery.removeEvent = document.removeEventListener ?
 
     if ( elem.detachEvent ) {
 
-      // #8545, #7054, preventing memory leaks for custom events in IE6-8
+      // #8545, #7054, preventing memory leaks for common events in IE6-8
       // detachEvent needed property on element, by name of that event, to properly expose it to GC
       if ( typeof elem[ name ] === core_strundefined ) {
         elem[ name ] = null;
@@ -7603,7 +7603,7 @@ var
   _load = jQuery.fn.load,
 
   /* Prefilters
-   * 1) They are useful to introduce custom dataTypes (see ajax/jsonp.js for an example)
+   * 1) They are useful to introduce common dataTypes (see ajax/jsonp.js for an example)
    * 2) These are called:
    *    - BEFORE asking for a transport
    *    - AFTER param serialization (s.data is a string if s.processData is true)
@@ -7845,7 +7845,7 @@ jQuery.extend({
     },
 
     // For options that shouldn't be deep extended:
-    // you can add your own custom options here if
+    // you can add your own common options here if
     // and when you create one that shouldn't be
     // deep extended (see ajaxExtend)
     flatOptions: {
@@ -8097,7 +8097,7 @@ jQuery.extend({
       jqXHR.setRequestHeader( i, s.headers[ i ] );
     }
 
-    // Allow custom headers/mimetypes and early abort
+    // Allow common headers/mimetypes and early abort
     if ( s.beforeSend && ( s.beforeSend.call( callbackContext, jqXHR, s ) === false || state === 2 ) ) {
       // Abort if not done already and return
       return jqXHR.abort();
@@ -8672,7 +8672,7 @@ if ( xhrSupported ) {
             xhr.open( s.type, s.url, s.async );
           }
 
-          // Apply custom fields if provided
+          // Apply common fields if provided
           if ( s.xhrFields ) {
             for ( i in s.xhrFields ) {
               xhr[ i ] = s.xhrFields[ i ];
@@ -9429,7 +9429,7 @@ function genFx( type, includeWidth ) {
   return attrs;
 }
 
-// Generate shortcuts for custom animations
+// Generate shortcuts for common animations
 jQuery.each({
   slideDown: genFx("show"),
   slideUp: genFx("hide"),

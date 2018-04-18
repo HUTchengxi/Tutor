@@ -14,8 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
@@ -509,23 +508,47 @@ public class CourseMain {
             res = "{\"status\": \"invalid\"}";
         }
         else {
-            //保存课程基本信息
-            courseMService.publishCourse(username, name, imgsrc.getOriginalFilename(), stype, ctype, jcount, descript, price, total);
-            org.framework.tutor.domain.CourseMain courseMain = courseMService.getByName(username, name, stype, ctype);
-            //保存课程概述信息
-            courseSummaryService.addCourseSummary(username, courseMain.getId(), sumTitle1, sumDescript1);
-            courseSummaryService.addCourseSummary(username, courseMain.getId(), sumTitle2, sumDescript2);
-            courseSummaryService.addCourseSummary(username, courseMain.getId(), sumTitle3, sumDescript3);
-            //保存目录信息
-            String eq = "c03c1650fa940cd2f5de959bfbd6d8a6";
-            String[] titleArr = chapTitle.split(eq);
-            String[] descriptArr = chapDescript.split(eq);
-            int i = 1;
-            for(String title: titleArr){
-                courseChService.addChapter(courseMain.getId(), i, title, descriptArr[--i]);
-                i+=2;
+            //判断课程名称是否已存在
+            org.framework.tutor.domain.CourseMain nameCourseMain = courseMService.checkIsexistName(name);
+            if (nameCourseMain != null) {
+                res = "{\"status\": \"courseexist\"}";
+            } else {
+                //上传图片
+                String webPath = session.getServletContext().getRealPath("/");
+                System.out.println(webPath);
+                String srcPath = webPath.substring(0, webPath.lastIndexOf("\\"));
+                srcPath = srcPath.substring(0, srcPath.lastIndexOf("\\"));
+                System.out.println(srcPath);
+                File file = new File(srcPath + File.separator + "/resources/static/images/user/course/" + imgsrc.getOriginalFilename());
+                if (file.exists()) {
+                    res = "{\"status\": \"filexist\"}";
+                    writer.print(new JsonParser().parse(res).getAsJsonObject());
+                    writer.flush();
+                    writer.close();
+                    throw new RuntimeException();
+                }
+                FileOutputStream fos = new FileOutputStream(file);
+                fos.write(imgsrc.getBytes());
+                fos.flush();
+                fos.close();
+                res = "{\"status\": \"valid\"}";
+                //保存课程基本信息
+                courseMService.publishCourse(username, name, "/images/user/face/" + imgsrc.getOriginalFilename(), stype, ctype, jcount, descript, price, total);
+                org.framework.tutor.domain.CourseMain courseMain = courseMService.getByName(username, name, stype, ctype);
+                //保存课程概述信息
+                courseSummaryService.addCourseSummary(username, courseMain.getId(), sumTitle1, sumDescript1);
+                courseSummaryService.addCourseSummary(username, courseMain.getId(), sumTitle2, sumDescript2);
+                courseSummaryService.addCourseSummary(username, courseMain.getId(), sumTitle3, sumDescript3);
+                //保存目录信息
+                String eq = "c03c1650fa940cd2f5de959bfbd6d8a6";
+                String[] titleArr = chapTitle.split(eq);
+                String[] descriptArr = chapDescript.split(eq);
+                int i = 1;
+                for (String title : titleArr) {
+                    courseChService.addChapter(courseMain.getId(), i, title, descriptArr[--i]);
+                    i += 2;
+                }
             }
-            res = "{\"status\": \"valid\"}";
         }
 
         writer.print(new JsonParser().parse(res).getAsJsonObject());

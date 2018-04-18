@@ -337,4 +337,14 @@ public interface CourseMService {
      * @date 2018/4/15
      */
     CourseMain getByName(String username, String name, Integer stype, String ctype);
+
+    /**
+     *
+     * @Description 判断课程名称是否已经存在
+     * @param [name]
+     * @return org.framework.tutor.domain.CourseMain
+     * @author yinjimin
+     * @date 2018/4/18
+     */
+    CourseMain checkIsexistName(String name);
 }
