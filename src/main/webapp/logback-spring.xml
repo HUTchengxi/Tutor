@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- logback整合日志-->
+<!--
+   scan：如果配置文件发生改变，是否重新加载，默认true
+   scanPeriod：设置监控配置文件是否有修改的时间间隔，默认单位毫秒，可以指定单位，scan为true时才生效
+   debug：是否打印出logback内部的实时日志信息，默认false
+-->
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+    <!--
+        设置应用的上下文名称，默认为default
+    -->
+    <contextName>tutor</contextName>
+    <!--
+        包含其他配置文件，这里包含的是SpringBoot自带的logback配置文件
+    -->
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <!--
+        通过property定义属性，可以通过${}来访问对应的值
+    -->
+    <!-- 定义日志文件 输入位置 ${log_dir} -->
+
+    <!-- ConsoleAppender 控制台输出日志 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- 对日志进行格式化 -->
+        <encoder>
+            <pattern>logback打印%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger -%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- ERROR级别日志 -->
+
+    <!--输出到mysql数据库的appender配置-->
+
+    <!--
+        logger用来设置某一个包或者某一个具体类的日志打印级别
+            name: 指定包或者类
+            level: 设置日志打印级别，默认继承上级级别
+            additivity：是否像上级logger传递打印信息，默认为true
+    -->
+    <logger name="org.framework.tutor.mapper" level="info" additivity="false" />
+
+    <!--
+        root是根logger元素，只有一个level属性，表示设置全局的日志打印级别
+            appender-ref：将对应的appender添加到这个root里面来
+    -->
+
+    <root level="INFO">
+        <!-- 控制台输出 -->
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>
