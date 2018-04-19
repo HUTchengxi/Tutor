@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50720
 File Encoding         : 65001
 
-Date: 2018-04-14 14:55:15
+Date: 2018-04-19 15:35:42
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -37,8 +37,8 @@ CREATE TABLE `bbs_card` (
 -- ----------------------------
 -- Records of bbs_card
 -- ----------------------------
-INSERT INTO `bbs_card` VALUES ('6', 'chengxi', '我先问问', '一个简单的问题', '/images/default/2.jpg', '2018-04-02 09:07:16', '21', '2', '0');
-INSERT INTO `bbs_card` VALUES ('7', 'chengxi', '我再问一个问题', '小雪是谁', '/images/default/3.jpg', '2018-04-13 20:05:50', '6', '1', '3');
+INSERT INTO `bbs_card` VALUES ('6', 'chengxi', '我先问问', '一个简单的问题', '/images/default/2.jpg', '2018-04-02 09:07:16', '23', '2', '0');
+INSERT INTO `bbs_card` VALUES ('7', 'chengxi', '我再问一个问题', '小雪是谁', '/images/default/3.jpg', '2018-04-13 20:05:50', '7', '1', '3');
 
 -- ----------------------------
 -- Table structure for `bbs_card_answer`
@@ -58,7 +58,7 @@ CREATE TABLE `bbs_card_answer` (
   KEY `username` (`username`),
   CONSTRAINT `bbs_card_answer_ibfk_1` FOREIGN KEY (`cardid`) REFERENCES `bbs_card` (`id`),
   CONSTRAINT `bbs_card_answer_ibfk_2` FOREIGN KEY (`username`) REFERENCES `user_main` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bbs_card_answer
@@ -87,7 +87,7 @@ CREATE TABLE `bbs_card_answer_command` (
   CONSTRAINT `bbs_card_answer_command_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user_main` (`username`),
   CONSTRAINT `bbs_card_answer_command_ibfk_2` FOREIGN KEY (`cardid`) REFERENCES `bbs_card` (`id`),
   CONSTRAINT `bbs_card_answer_command_ibfk_3` FOREIGN KEY (`aid`) REFERENCES `bbs_card_answer` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bbs_card_answer_command
@@ -157,12 +157,11 @@ CREATE TABLE `command_star` (
   KEY `cmid` (`cmid`),
   CONSTRAINT `command_star_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user_main` (`username`),
   CONSTRAINT `command_star_ibfk_2` FOREIGN KEY (`cmid`) REFERENCES `course_command` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of command_star
 -- ----------------------------
-INSERT INTO `command_star` VALUES ('1', 'chengxi', '10', '1');
 
 -- ----------------------------
 -- Table structure for `common_imgsrc`
@@ -195,16 +194,14 @@ CREATE TABLE `course_chapter` (
   PRIMARY KEY (`id`,`cid`),
   KEY `cid` (`cid`),
   CONSTRAINT `course_chapter_ibfk_1` FOREIGN KEY (`cid`) REFERENCES `course_main` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of course_chapter
 -- ----------------------------
-INSERT INTO `course_chapter` VALUES ('1', '3', '1', '目录1', '是多少啊嗲是的吧骚i到死电脑i俺倒是你都啊是电脑上电脑sand爬山的哪怕是的阿斯顿那时的哪怕是的');
+INSERT INTO `course_chapter` VALUES ('1', '3', '1', '目录1', '嗲是的吧骚i到死电脑i俺倒是你都啊是电脑上电脑sand爬山的哪怕是的阿斯顿那时的哪怕是的');
 INSERT INTO `course_chapter` VALUES ('2', '3', '2', '目录2', '是多少啊嗲是的吧骚i到死电脑i俺倒是你都啊是电脑上电脑sand爬山的哪怕是的阿斯顿那时的哪怕是的');
 INSERT INTO `course_chapter` VALUES ('3', '3', '3', '目录3', '是多少啊嗲是的吧骚i到死电脑i俺倒是你都啊是电脑上电脑sand爬山的哪怕是的阿斯顿那时的哪怕是的');
-INSERT INTO `course_chapter` VALUES ('4', '3', '4', '目录4', '是多少啊嗲是的吧骚i到死电脑i俺倒是你都啊是电脑上电脑sand爬山的哪怕是的阿斯顿那时的哪怕是的');
-INSERT INTO `course_chapter` VALUES ('5', '3', '5', '目录5', '是多少啊嗲是的吧骚i到死电脑i俺倒是你都啊是电脑上电脑sand爬山的哪怕是的阿斯顿那时的哪怕是的');
 
 -- ----------------------------
 -- Table structure for `course_collect`
@@ -238,18 +235,67 @@ CREATE TABLE `course_command` (
   `ctime` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '评论时间',
   `score` int(11) DEFAULT '5' COMMENT '评价星级，默认为5，1-5',
   `god` int(11) DEFAULT '0' COMMENT '1为家教指定神评',
+  `status` int(11) DEFAULT '0' COMMENT '0:正常  1:删除待审 2:已删除',
   PRIMARY KEY (`cid`,`username`,`id`),
   KEY `id` (`id`),
   KEY `username` (`username`),
   CONSTRAINT `course_command_ibfk_1` FOREIGN KEY (`cid`) REFERENCES `course_main` (`id`),
   CONSTRAINT `course_command_ibfk_2` FOREIGN KEY (`username`) REFERENCES `user_main` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of course_command
 -- ----------------------------
-INSERT INTO `course_command` VALUES ('10', '3', 'chengxi', '个人中心评价汇总测试', '2018-03-24 19:02:25', '3', '0');
-INSERT INTO `course_command` VALUES ('12', '10', 'chengxi', '五星级评论，说的那送i第三哦都那送到看到是你都i是大苏打实打实的啊实打实大苏打撒旦阿三大苏打实打实大苏打撒啊萨达萨达撒旦啊大苏打是都阿斯顿阿德按时', '2018-03-26 20:20:58', '5', '0');
+INSERT INTO `course_command` VALUES ('1', '1', 'chengxi', 'sdnaid大苏打顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶的杀杀杀杀杀杀杀杀杀杀杀杀杀杀杀杀杀杀', '2018-04-18 04:59:50', '3', '1', '1');
+INSERT INTO `course_command` VALUES ('2', '1', 'chengxi', 'sndasdni ', '2018-04-18 13:00:21', '5', '1', '1');
+INSERT INTO `course_command` VALUES ('3', '1', 'chengxi', 'dhasiodhaoid', '2018-04-18 17:04:48', '5', '0', '0');
+INSERT INTO `course_command` VALUES ('36', '1', 'chengxi', 'sdnaid大苏打顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶的杀杀杀杀杀杀杀杀杀杀杀杀杀杀杀杀杀杀', '2018-04-18 04:59:50', '3', '1', '0');
+
+-- ----------------------------
+-- Table structure for `course_command_delete_req`
+-- ----------------------------
+DROP TABLE IF EXISTS `course_command_delete_req`;
+CREATE TABLE `course_command_delete_req` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '唯一标识',
+  `reqer` varchar(20) NOT NULL COMMENT '防止sql恶意注入，校验申请用户名',
+  `cid` int(11) NOT NULL COMMENT '要删除的评论id',
+  `reqtime` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '申请时间',
+  `info` varchar(200) NOT NULL COMMENT '申请原因',
+  PRIMARY KEY (`id`),
+  KEY `reqer` (`reqer`),
+  KEY `course_command_delete_req_ibfk_2` (`cid`),
+  CONSTRAINT `course_command_delete_req_ibfk_1` FOREIGN KEY (`reqer`) REFERENCES `user_main` (`username`),
+  CONSTRAINT `course_command_delete_req_ibfk_2` FOREIGN KEY (`cid`) REFERENCES `course_command` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of course_command_delete_req
+-- ----------------------------
+INSERT INTO `course_command_delete_req` VALUES ('6', 'chengxi', '1', '2018-04-18 17:56:37', '11');
+INSERT INTO `course_command_delete_req` VALUES ('7', 'chengxi', '2', '2018-04-18 17:57:33', '12');
+
+-- ----------------------------
+-- Table structure for `course_delete_req`
+-- ----------------------------
+DROP TABLE IF EXISTS `course_delete_req`;
+CREATE TABLE `course_delete_req` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '唯一标识',
+  `username` varchar(20) NOT NULL COMMENT '用户标识',
+  `cid` int(11) NOT NULL COMMENT '课程标识',
+  `reqtime` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '申请时间',
+  `descript` text NOT NULL COMMENT '申请原因',
+  `reqcount` int(11) DEFAULT NULL COMMENT '请求次数累计',
+  PRIMARY KEY (`id`),
+  KEY `username` (`username`),
+  KEY `cid` (`cid`),
+  CONSTRAINT `course_delete_req_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user_main` (`username`),
+  CONSTRAINT `course_delete_req_ibfk_2` FOREIGN KEY (`cid`) REFERENCES `course_main` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of course_delete_req
+-- ----------------------------
+INSERT INTO `course_delete_req` VALUES ('2', 'chengxi', '10', '2018-04-15 20:23:46', '1221', '2');
 
 -- ----------------------------
 -- Table structure for `course_log`
@@ -279,17 +325,17 @@ CREATE TABLE `course_main` (
   `stype` int(11) DEFAULT '4' COMMENT '主类别：1小学，2初中，3高中，4其他兴趣',
   `ctype` varchar(20) NOT NULL COMMENT '类别名称',
   `jcount` int(11) NOT NULL COMMENT '课程总人数',
-  `hcount` int(11) NOT NULL COMMENT '课程点击量',
-  `ccount` int(11) NOT NULL COMMENT '课程评论量',
+  `hcount` int(11) DEFAULT '0' COMMENT '课程点击量',
+  `ccount` int(11) DEFAULT '0' COMMENT '课程评论量',
   `descript` varchar(500) NOT NULL COMMENT '课程描述信息',
   `price` decimal(6,1) NOT NULL COMMENT '课程报名费用',
   `ptime` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '课程发布时间',
-  `stime` datetime NOT NULL COMMENT '课程开课时间',
+  `stime` datetime DEFAULT NULL COMMENT '课程开课时间',
   `total` int(11) NOT NULL COMMENT '课程总天数',
   PRIMARY KEY (`username`,`id`),
   KEY `id` (`id`),
   CONSTRAINT `course_main_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user_main` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of course_main
@@ -330,6 +376,54 @@ INSERT INTO `course_order` VALUES ('1', '3', 'chengxi', '1', '2018-03-09 16:09:2
 INSERT INTO `course_order` VALUES ('3', '10', 'chengxi', '1', '2018-03-24 18:10:50');
 
 -- ----------------------------
+-- Table structure for `course_order_manager`
+-- ----------------------------
+DROP TABLE IF EXISTS `course_order_manager`;
+CREATE TABLE `course_order_manager` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '唯一标识',
+  `code` varchar(20) NOT NULL COMMENT '订单编号，内置算法生成',
+  `oid` int(11) NOT NULL COMMENT '对应的订单id',
+  `tutorstatus` int(11) DEFAULT '0' COMMENT '家教的处理状态：0初始状态，1已经接收，2开始教学，3教学完成，4完成订单，-1申请撤销，-2订单异常复审申请',
+  `userstatus` int(11) DEFAULT '0' COMMENT '用户的处理状态 0初始状态，1正在听课，2听课完成，3完成订单，-1申请退款，-2订单异常复审申请',
+  `userinfo` varchar(500) DEFAULT NULL COMMENT '用户提交申请',
+  `tutorinfo` varchar(500) DEFAULT NULL COMMENT '家教课程申请',
+  `tutorname` varchar(20) NOT NULL COMMENT '家教name',
+  PRIMARY KEY (`code`),
+  KEY `oid` (`oid`),
+  KEY `id` (`id`),
+  KEY `course_order_manager` (`tutorname`),
+  CONSTRAINT `course_order_manager` FOREIGN KEY (`tutorname`) REFERENCES `user_main` (`username`),
+  CONSTRAINT `course_order_manager_ibfk_1` FOREIGN KEY (`oid`) REFERENCES `course_order` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of course_order_manager
+-- ----------------------------
+INSERT INTO `course_order_manager` VALUES ('2', 'dhaoisdhewinw', '3', '1', '0', 'sdkalndl kn', '确认接单状态修改', 'chengxi');
+INSERT INTO `course_order_manager` VALUES ('1', 'sdjadhihdi', '4', '0', '0', 'dasjdiasd', 'sanodianoid ', 'chengxi');
+
+-- ----------------------------
+-- Table structure for `course_summary`
+-- ----------------------------
+DROP TABLE IF EXISTS `course_summary`;
+CREATE TABLE `course_summary` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '唯一标识',
+  `username` varchar(20) NOT NULL COMMENT '用户标识',
+  `cid` int(11) NOT NULL COMMENT '课程标识',
+  `title` varchar(50) NOT NULL COMMENT '概述标题',
+  `descript` varchar(200) NOT NULL COMMENT '概述内容',
+  PRIMARY KEY (`id`),
+  KEY `username` (`username`),
+  KEY `cid` (`cid`),
+  CONSTRAINT `course_summary_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user_main` (`username`),
+  CONSTRAINT `course_summary_ibfk_2` FOREIGN KEY (`cid`) REFERENCES `course_main` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of course_summary
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for `course_treply`
 -- ----------------------------
 DROP TABLE IF EXISTS `course_treply`;
@@ -346,12 +440,11 @@ CREATE TABLE `course_treply` (
   CONSTRAINT `course_treply_ibfk_1` FOREIGN KEY (`cid`) REFERENCES `course_main` (`id`),
   CONSTRAINT `course_treply_ibfk_2` FOREIGN KEY (`tname`) REFERENCES `user_main` (`username`),
   CONSTRAINT `course_treply_ibfk_3` FOREIGN KEY (`cmid`) REFERENCES `course_command` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of course_treply
 -- ----------------------------
-INSERT INTO `course_treply` VALUES ('1', '3', '10', 'chengxi', '欢迎来到我的课堂，祝您学的开心');
 
 -- ----------------------------
 -- Table structure for `publish_log`
@@ -451,7 +544,7 @@ CREATE TABLE `user_log` (
   `logip` varchar(15) NOT NULL COMMENT '登录的ip地址',
   `logsys` varchar(10) NOT NULL COMMENT '电脑的操作系统',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=197 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=241 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user_log
@@ -651,6 +744,50 @@ INSERT INTO `user_log` VALUES ('193', 'chengxi', '2018-04-13 20:11:26', '未知�
 INSERT INTO `user_log` VALUES ('194', 'chengxi', '2018-04-13 20:45:28', '未知地区', '112.95.135.83', 'Windows');
 INSERT INTO `user_log` VALUES ('195', 'chengxi', '2018-04-14 11:00:41', '未知地区', '112.95.135.83', 'Windows');
 INSERT INTO `user_log` VALUES ('196', 'chengxi', '2018-04-14 11:49:33', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('197', 'chengxi', '2018-04-14 17:19:19', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('198', 'chengxi', '2018-04-14 18:13:20', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('199', 'chengxi', '2018-04-14 18:20:34', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('200', 'chengxi', '2018-04-14 19:11:41', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('201', 'chengxi', '2018-04-14 19:12:47', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('202', 'chengxi', '2018-04-14 19:29:24', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('203', 'chengxi', '2018-04-14 19:44:50', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('204', 'chengxi', '2018-04-15 09:59:57', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('205', 'chengxi', '2018-04-15 13:55:32', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('206', 'chengxi', '2018-04-15 14:35:21', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('207', 'chengxi', '2018-04-15 16:51:24', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('208', 'chengxi', '2018-04-15 19:01:01', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('209', 'chengxi', '2018-04-15 19:47:31', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('210', 'chengxi', '2018-04-17 21:37:01', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('211', 'chengxi', '2018-04-18 09:24:10', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('212', 'chengxi', '2018-04-18 10:01:05', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('213', 'chengxi', '2018-04-18 11:23:51', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('214', 'chengxi', '2018-04-18 11:30:39', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('215', 'chengxi', '2018-04-18 12:50:08', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('216', 'chengxi', '2018-04-18 12:59:06', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('217', 'chengxi', '2018-04-18 13:03:20', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('218', 'chengxi', '2018-04-18 13:46:17', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('219', 'chengxi', '2018-04-18 14:04:28', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('220', 'chengxi', '2018-04-18 14:07:13', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('221', 'chengxi', '2018-04-18 14:23:07', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('222', 'chengxi', '2018-04-18 14:34:24', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('223', 'chengxi', '2018-04-18 14:35:19', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('224', 'chengxi', '2018-04-18 14:50:42', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('225', 'chengxi', '2018-04-18 15:20:13', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('226', 'chengxi', '2018-04-18 15:43:43', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('227', 'chengxi', '2018-04-18 15:49:18', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('228', 'chengxi', '2018-04-18 16:16:19', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('229', 'chengxi', '2018-04-18 17:26:43', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('230', 'chengxi', '2018-04-18 18:00:59', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('231', 'chengxi', '2018-04-18 19:59:04', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('232', 'chengxi', '2018-04-18 20:01:00', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('233', 'chengxi', '2018-04-18 20:53:55', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('234', 'chengxi', '2018-04-18 21:32:51', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('235', 'chengxi', '2018-04-18 21:45:05', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('236', 'chengxi', '2018-04-18 21:55:33', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('237', 'chengxi', '2018-04-19 09:14:07', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('238', 'chengxi', '2018-04-19 10:05:32', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('239', 'chengxi', '2018-04-19 11:16:28', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('240', 'chengxi', '2018-04-19 13:42:36', '未知地区', '112.95.135.83', 'Windows');
 
 -- ----------------------------
 -- Table structure for `user_main`
@@ -737,7 +874,7 @@ CREATE TABLE `user_sign` (
   KEY `id` (`id`),
   KEY `username` (`username`),
   CONSTRAINT `user_sign_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user_main` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user_sign
@@ -751,6 +888,7 @@ INSERT INTO `user_sign` VALUES ('7', 'yuanfen', '2018-02-26 14:18:53');
 INSERT INTO `user_sign` VALUES ('8', 'chengxi', '2018-03-04 09:49:59');
 INSERT INTO `user_sign` VALUES ('9', 'chengxi', '2018-03-09 15:46:35');
 INSERT INTO `user_sign` VALUES ('10', 'chengxi', '2018-03-10 10:08:06');
+INSERT INTO `user_sign` VALUES ('11', 'chengxi', '2018-04-15 16:08:13');
 
 -- ----------------------------
 -- Table structure for `user_vali`

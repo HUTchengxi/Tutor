@@ -257,4 +257,9 @@ public class UserMServiceImpl implements UserMService {
 
         return userMMapper.registerByPhone(identity, username, password, nickname, telephone);
     }
+
+    @Override
+    public UserMain checkAdminLogin(String username, String password) {
+        return userMMapper.checkAdminLogin(username, password);
+    }
 }

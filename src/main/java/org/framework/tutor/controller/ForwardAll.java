@@ -400,4 +400,33 @@ public class ForwardAll {
         return "/home/mybbs";
     }
 
+
+    /**  
+     *    
+     * @Description 管理员登录页面
+     * @param []    
+     * @return java.lang.String
+     * @author yinjimin  
+     * @date 2018/4/19
+     */  
+    @RequestMapping("/adminloginpage")
+    public String adminLoginPage(){
+
+        return "/sysconfig/admin/adminlogin";
+    }
+
+    /**
+     *
+     * @Description 进入管理后台界面
+     * @param []
+     * @return java.lang.String
+     * @author yinjimin
+     * @date 2018/4/19
+     */
+    @RequestMapping("/gosysadminmain")
+    public String goSysadminMain(){
+
+        return "/sysconfig/admin/main";
+    }
+
 }

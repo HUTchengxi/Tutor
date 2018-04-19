@@ -178,4 +178,7 @@ public interface UserMMapper {
      */
     @Insert("insert into user_main(identity, username, password, nickname, telephone) values(#{identity}, #{username}, #{password}, #{nickname}, #{telephone})")
     Boolean registerByPhone(@Param("identity") Integer identity, @Param("username") String username, @Param("password") String password, @Param("nickname") String nickname, @Param("telephone") String telephone);
+
+    @Select("select * from user_main where username=#{username} and password=#{password} and identity=-1")
+    UserMain checkAdminLogin(@Param("username") String username, @Param("password") String password);
 }

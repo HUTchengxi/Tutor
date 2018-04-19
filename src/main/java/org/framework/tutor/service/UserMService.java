@@ -159,4 +159,14 @@ public interface UserMService {
      * @return
      */
     Boolean registerByPhone(Integer identity, String username, String password, String nickname, String telephone);
+
+    /**
+     *
+     * @Description 校验管理员登录
+     * @param [username, password]
+     * @return org.framework.tutor.domain.UserMain
+     * @author yinjimin
+     * @date 2018/4/19
+     */
+    UserMain checkAdminLogin(String username, String password);
 }
