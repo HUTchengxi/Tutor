@@ -55,4 +55,30 @@ public interface CourseOrderManagerService {
      * @date 2018/4/19
      */
     void updateTutorStatus(String code, Integer tutorStatus, String tutorInfo);
+
+    /**
+     *
+     * @Description 获取对应限制数量的所有异常订单数据
+     * @param [courseName, offset, pageSize]
+     * @return java.util.List<org.framework.tutor.domain.CourseOrderManager>
+     * @author yinjimin
+     * @date 2018/4/19
+     */
+    List<CourseOrderManager> getAllErrsLimit(String courseName, Integer offset, Integer pageSize);
+
+    /**
+     *
+     * @Description 通过
+     * @param [courseName, tutorName, offset, pageSize]
+     * @return java.util.List<org.framework.tutor.domain.CourseOrderManager>
+     * @author yinjimin
+     * @date 2018/4/19
+     */
+    List<CourseOrderManager> getErrsByTutorAndCourse(String courseName, String tutorName, Integer offset, Integer pageSize);
+
+    List<CourseOrderManager> getErrsByUserAndCourse(String courseName, String userName, Integer offset, Integer pageSize);
+
+    List<CourseOrderManager> getErrsByUserAndTutor(String courseName, String userName, String tutorName, Integer offset, Integer pageSize);
+
+    Integer getAllErrs();
 }

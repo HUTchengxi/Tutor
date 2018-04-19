@@ -29,4 +29,27 @@ public interface CourseOrderManagerMapper {
 
     @Update("update course_order_manager set tutorinfo=#{tutorinfo}, tutorstatus=#{tutorstatus} where code=#{code}")
     void updateTutorStatus(@Param("code") String code, @Param("tutorstatus") Integer tutorStatus, @Param("tutorinfo") String tutorInfo);
+
+    @Select("select * from course_order_manager where oid in (select co.id from course_order co where co.cid in (" +
+            "select cm.id from course_main cm where cm.name like CONCAT('%',#{coursename}, '%'))) and (tutorstatus in (-1,-2) or userstatus in (-1,-2)) " +
+            "limit #{offset}, #{pagesize}")
+    List<CourseOrderManager> getAllErrsLimit(@Param("coursename") String courseName, @Param("offset") Integer offset, @Param("pagesize") Integer pageSize);
+
+    @Select("select * from course_order_manager where oid in (select co.id from course_order co where co.cid in (" +
+            "select cm.id from course_main cm where cm.name like CONCAT('%',#{coursename},'%') and cm.username=#{tutorname})) " +
+            "and (tutorstatus in (-1,-2) or userstatus in (-1,-2)) limit #{offset}, #{pagesize}")
+    List<CourseOrderManager> getErrsByTutorAndCourse(@Param("coursename") String courseName, @Param("tutorname") String tutorName, @Param("offset") Integer offset, @Param("pagesize") Integer pageSize);
+
+    @Select("select * from course_order_manager where oid in (select co.id from course_order co where co.cid in(" +
+            "select cm.id from course_main cm where cm.name like CONCAT('%', #{coursename}, '%')) and co.username=#{username}) " +
+            "and (tutorstatus in (-1,-2) or userstatus in (-1,-2)) limit #{offset}, #{pagesize}")
+    List<CourseOrderManager> getErrsByUserAndCourse(@Param("coursename") String courseName, @Param("username") String userName, @Param("offset") Integer offset, @Param("pagesize") Integer pageSize);
+
+    @Select("select * from course_order_manager where oid in (select co.id from course_order co where co.cid in (" +
+            "select cm.id from course_main cm where cm.name like CONCAT('%', #{coursename}, '%') and cm.username=#{tutorname}) and " +
+            "co.username=#{username}) and (tutorstatus in (-1,-2) or userstatus in (-1,-2)) limit #{offset}, #{pagesize}")
+    List<CourseOrderManager> getErrsByUserAndTutor(@Param("coursename") String courseName, @Param("username") String userName, @Param("tutorname") String tutorName, @Param("offset") Integer offset, @Param("pagesize") Integer pageSize);
+
+    @Select("select count(*) from course_order_manager where tutorstatus in (-1,-2) or userstatus in (-1,-2)")
+    Integer getAllErrs();
 }

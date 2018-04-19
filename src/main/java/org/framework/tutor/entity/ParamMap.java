@@ -12,6 +12,8 @@
  */
 package org.framework.tutor.entity;
 
+import java.util.Date;
+
 /**
  * @author yinjimin
  * @Description: bootstrap-table传递参数封装类
@@ -24,6 +26,12 @@ public class ParamMap {
     private Integer pageSize;
 
     private String courseName;
+
+    private Date startTime;
+
+    private String username;
+
+    private String tutorName;
 
     public Integer getPageNo() {
         return pageNo;
@@ -49,6 +57,30 @@ public class ParamMap {
         this.courseName = courseName;
     }
 
+    public Date getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(Date startTime) {
+        this.startTime = startTime;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getTutorName() {
+        return tutorName;
+    }
+
+    public void setTutorName(String tutorName) {
+        this.tutorName = tutorName;
+    }
+
     public ParamMap(){
 
     }
@@ -59,6 +91,9 @@ public class ParamMap {
                 "pageNo=" + pageNo +
                 ", pageSize=" + pageSize +
                 ", courseName='" + courseName + '\'' +
+                ", startTime=" + startTime +
+                ", username='" + username + '\'' +
+                ", tutorName='" + tutorName + '\'' +
                 '}';
     }
 }

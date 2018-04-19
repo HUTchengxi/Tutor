@@ -429,4 +429,18 @@ public class ForwardAll {
         return "/sysconfig/admin/main";
     }
 
+    /**
+     *
+     * @Description 订单异常管理界面
+     * @param []
+     * @return java.lang.String
+     * @author yinjimin
+     * @date 2018/4/19
+     */
+    @RequestMapping("/gosysordermanage")
+    public String goSysOrderManage(){
+
+        return "/sysconfig/admin/ordermanage";
+    }
+
 }

@@ -1,0 +1,20 @@
+div.form-group {
+    margin: 2% 0;
+}
+#pageorder legend{
+    margin-top: 2%;
+}
+
+#orderMore .col-lg-6,#orderMore .col-lg-12, #orderStatusEditAlert .col-lg-12{
+    margin-bottom: 2%;
+}
+#orderStatusEditAlert legend{
+    margin-top: 2%;
+}
+#orderMore .col-lg-6 span:nth-child(1), #orderMore .col-lg-12 span:nth-child(1),
+#orderStatusEditAlert .col-lg-12 span:nth-child(1){
+    color: rgba(128, 128, 128, 0.92);
+}
+#orderMore .col-lg-6 span:nth-child(2), #orderMore .col-lg-12 span:nth-child(2){
+    color: rgba(255, 0, 0, 0.75);
+}
