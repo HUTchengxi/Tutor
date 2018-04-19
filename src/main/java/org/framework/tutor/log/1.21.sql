@@ -378,6 +378,19 @@ create table course_command_delete_req(
 );
 
 
+#课程订单管理表
+create table course_order_manager(
+  id int auto_increment comment "唯一标识",
+  code varchar(20) not null comment "订单编号，内置算法生成",
+  oid int not null comment "对应的订单id",
+  tutorstatus int default 0 comment "家教的处理状态：0初始状态，1已经接收，2开始教学，3教学完成，4完成订单，-1申请撤销，-2订单异常复审申请",
+  userstatus int default 0 comment "用户的处理状态 0初始状态，1正在听课，2听课完成，3完成订单，-1申请退款，-2订单异常复审申请",
+  foreign key(oid) references course_order(id),
+  primary key(code),
+  key(id)
+);
+
+
 
 
 #家教老师标签表

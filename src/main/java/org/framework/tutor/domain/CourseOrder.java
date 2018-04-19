@@ -17,6 +17,16 @@ public class CourseOrder implements Serializable{
 
     private Integer state;
 
+    private String username;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     private Date otime;
 
     public Integer getId() {
@@ -45,5 +55,16 @@ public class CourseOrder implements Serializable{
 
     public void setOtime(Date otime) {
         this.otime = otime;
+    }
+
+    @Override
+    public String toString() {
+        return "CourseOrder{" +
+                "id=" + id +
+                ", cid=" + cid +
+                ", state=" + state +
+                ", username='" + username + '\'' +
+                ", otime=" + otime +
+                '}';
     }
 }

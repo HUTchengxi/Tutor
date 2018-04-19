@@ -478,4 +478,9 @@ public class CourseMServiceImpl implements CourseMService {
     public List<CourseMain> getByCoursename(String courseName) {
         return courseMMapper.getByCoursename(courseName);
     }
+
+    @Override
+    public Integer checkOrderBelongs(String username, String code) {
+        return courseMMapper.checkOrderBelongs(username, code);
+    }
 }

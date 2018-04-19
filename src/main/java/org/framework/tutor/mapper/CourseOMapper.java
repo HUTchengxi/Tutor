@@ -119,4 +119,26 @@ public interface CourseOMapper {
      */
     @Select("select * from course_order where cid=#{id}")
     List<CourseOrder> getMyCourseOrderCount(@Param("id") Integer id);
+
+    /**
+     *
+     * @Description 获取所有指定课程id对应的订单数据
+     * @param [courseId]
+     * @return java.util.List<org.framework.tutor.domain.CourseOrder>
+     * @author yinjimin
+     * @date 2018/4/18
+     */
+    @Select("select * from course_order where cid in (select id from course_main cm where cm.username=#{username})")
+    List<CourseOrder> getMyOrderListByIdList(@Param("username") String username);
+
+    /**
+     *
+     * @Description 获取指定数据
+     * @param [oid]
+     * @return org.framework.tutor.domain.CourseOrder
+     * @author yinjimin
+     * @date 2018/4/18
+     */
+    @Select("select * from course_order where id=#{oid}")
+    CourseOrder getById(@Param("oid") Integer oid);
 }

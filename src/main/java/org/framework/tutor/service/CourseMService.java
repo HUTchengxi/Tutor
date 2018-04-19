@@ -359,4 +359,14 @@ public interface CourseMService {
     List<CourseMain> getMyCourseList(String username);
 
     List<CourseMain> getByCoursename(String courseName);
+
+    /**
+     *
+     * @Description 判断code订单对应的课程是否为username发布的
+     * @param [username, code]
+     * @return java.lang.Integer
+     * @author yinjimin
+     * @date 2018/4/19
+     */
+    Integer checkOrderBelongs(String username, String code);
 }

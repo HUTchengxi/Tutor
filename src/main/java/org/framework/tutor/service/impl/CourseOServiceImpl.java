@@ -155,4 +155,14 @@ public class CourseOServiceImpl implements CourseOService {
     public List<CourseOrder> getMyCourseOrderCount(Integer id) {
         return courseOMapper.getMyCourseOrderCount(id);
     }
+
+    @Override
+    public List<CourseOrder> getMyOrderListByIdList(String courseId) {
+        return courseOMapper.getMyOrderListByIdList(courseId);
+    }
+
+    @Override
+    public CourseOrder getById(Integer oid) {
+        return courseOMapper.getById(oid);
+    }
 }

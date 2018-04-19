@@ -12,10 +12,47 @@
  */
 package org.framework.tutor.service.impl;
 
+import org.framework.tutor.domain.CourseOrderManager;
+import org.framework.tutor.mapper.CourseOrderManagerMapper;
+import org.framework.tutor.service.CourseOrderManagerService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
 /**
  * @author yinjimin
- * @Description:
+ * @Description: 已购订单管理表
  * @date 2018年04月18日
  */
-public class CourseOrderManagerServiceImpl {
+@Service("courseOrderManagerService")
+public class CourseOrderManagerServiceImpl implements CourseOrderManagerService {
+
+    @Autowired
+    private CourseOrderManagerMapper courseOrderManagerMapper;
+
+    @Override
+    public Integer getCountByOidList(String orderId) {
+        return courseOrderManagerMapper.getCountByOidList(orderId);
+    }
+
+    @Override
+    public List<CourseOrderManager> getByOidList(String orderId, int offset, Integer pageSize) {
+        return courseOrderManagerMapper.getByOidList(orderId, offset, pageSize);
+    }
+
+    @Override
+    public List<CourseOrderManager> getByUserAndName(String username, String courseName, int offset, Integer pageSize) {
+        return courseOrderManagerMapper.getByUserAndName(username, courseName, offset, pageSize);
+    }
+
+    @Override
+    public CourseOrderManager getByCode(String code) {
+        return courseOrderManagerMapper.getByCode(code);
+    }
+
+    @Override
+    public void updateTutorStatus(String code, Integer tutorStatus, String tutorInfo) {
+        courseOrderManagerMapper.updateTutorStatus(code, tutorStatus, tutorInfo);
+    }
 }

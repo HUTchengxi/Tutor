@@ -108,4 +108,24 @@ public interface CourseOService {
      * @date 2018/4/14
      */
     List<CourseOrder> getMyCourseOrderCount(Integer id);
+
+    /**
+     *
+     * @Description 获取所有课程id对应的订单数据
+     * @param [courseId]
+     * @return java.util.List<org.framework.tutor.domain.CourseOrder>
+     * @author yinjimin
+     * @date 2018/4/18
+     */
+    List<CourseOrder> getMyOrderListByIdList(String courseId);
+
+    /**
+     *
+     * @Description 获取对应的订单数据
+     * @param [oid]
+     * @return org.framework.tutor.domain.CourseOrder
+     * @author yinjimin
+     * @date 2018/4/18
+     */
+    CourseOrder getById(Integer oid);
 }

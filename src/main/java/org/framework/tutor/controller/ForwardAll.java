@@ -345,6 +345,20 @@ public class ForwardAll {
         return "sysconfig/tutor/commandlist";
     }
 
+    /**
+     *
+     * @Description 进入课程订单管理界面
+     * @param []
+     * @return java.lang.String
+     * @author yinjimin
+     * @date 2018/4/18
+     */
+    @RequestMapping("/gosystutororder")
+    public String goSystutorOrder(){
+
+        return "sysconfig/tutor/orderlist";
+    }
+
     /**  
      *    
      * @Description 查询帖子

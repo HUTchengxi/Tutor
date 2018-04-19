@@ -378,4 +378,8 @@ public interface CourseMMapper {
 
     @Select("select * from course_main where name like CONCAT('%',#{name},'%')")
     List<CourseMain> getByCoursename(@Param("name") String courseName);
+
+    @Select("select count(1) from course_main cm where cm.username=#{username} and cm.id = (" +
+            "select co.cid from course_order co where co.id = (select oid from course_order_manager where code=#{code}))")
+    Integer checkOrderBelongs(@Param("username") String username, @Param("code") String code);
 }
