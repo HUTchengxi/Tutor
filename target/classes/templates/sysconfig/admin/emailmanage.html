@@ -6,37 +6,28 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.css"/>
     <link rel="stylesheet" href="/layui/css/layui.css"/>
     <link rel="stylesheet" href="/layui-admin/css/font_eolqem241z66flxr.css"/>
-    <link rel="stylesheet" href="/css/sysconfig/admin/ordermanage.css"/>
+    <link rel="stylesheet" href="/css/sysconfig/admin/emailmanage.css"/>
 </head>
 <body class="childrenBody">
 
 <div id="pageorder" class="tab-pane fade in active">
-    <h3 class="text-center page-title">订单异常管理</h3>
+    <h3 class="text-center page-title">邮件管理系统</h3>
     <!--课程查询的form-->
     <div class="page-order-searchform">
         <form class="form-horizontal" role="form" action="javascript:;">
-            <legend>查询指定课程订单</legend>
             <div class="form-group">
-                <label for="courseName" class="col-sm-2 control-label">课程名称</label>
+                <label for="courseName" class="col-sm-2 control-label">选择邮箱</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control courseName" name="courseName"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="tutorName" class="col-sm-2 control-label">家教用户</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control tutorName" name="tutorName"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="userName" class="col-sm-2 control-label">下单用户</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control userName" name="userName"/>
+                    <select type="text" class="form-control emailStatus" name="emailStatus">
+                        <option value="-1">全部</option>
+                        <option value="1">已发送</option>
+                        <option value="0">草稿箱</option>
+                    </select>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-primary">查询订单</button>
+                    <button type="submit" class="btn btn-primary">查询邮箱</button>
                     <button type="reset" class="btn btn-link">清空筛选条件</button>
                 </div>
             </div>
@@ -75,7 +66,7 @@
         </div>
     </div>
     <!--详情模态框-->
-    <div class="modal fade" id="orderMore" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    <div class="modal fade" id="emailMore" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
          aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -85,37 +76,21 @@
                     <h4 class="modal-title">课程订单详情</h4>
                 </div>
                 <div class="modal-body">
-                    <div class="col-lg-6 col-sm-6">
-                        <span>订单编号：</span>
-                        <span class="orderCode"></span>
+                    <div class="col-lg-6 col-sm-6 col-md-6 col-xs-6">
+                        <span>收件人：</span>
+                        <span class="sendto"></span>
                     </div>
-                    <div class="col-lg-6 col-sm-6">
-                        <span>下单用户：</span>
-                        <span class="userName"></span>
+                    <div class="col-lg-6 col-sm-6 col-md-6 col-xs-6">
+                        <span>邮件状态：</span>
+                        <span class="status"></span>
                     </div>
-                    <div class="col-lg-6 col-sm-6">
-                        <span>家教：</span>
-                        <span class="tutorName"></span>
+                    <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                        <span>邮件主题：</span>
+                        <span class="theme"></span>
                     </div>
-                    <div class="col-lg-6 col-sm-6">
-                        <span>课程名称：</span>
-                        <span class="courseName"></span>
-                    </div>
-                    <div class="col-lg-6 col-sm-6">
-                        <span>家教状态：</span>
-                        <span class="tutorStatus"></span>
-                    </div>
-                    <div class="col-lg-6 col-sm-6">
-                        <span>用户状态：</span>
-                        <span class="userStatus"></span>
-                    </div>
-                    <div class="col-lg-12 col-sm-12 clearfix">
-                        <span>家教标注信息：</span>
-                        <span class="tutorInfo"></span>
-                    </div>
-                    <div class="col-lg-12 col-sm-12">
-                        <span>用户标注信息：</span>
-                        <span class="userInfo"></span>
+                    <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                        <span>邮件内容：</span>
+                        <span class="email"></span>
                     </div>
                     <div style="clear:both" class=""></div>
                 </div>
@@ -132,6 +107,6 @@
 <script src="/js/common/bootstrap-table.js"></script>
 <script src="/js/common/bootstrap-table-zh-CN.js"></script>
 <script src="/layui/layui.js"></script>
-<script src="/js/sysconfig/admin/ordermanage.js"></script>
+<script src="/js/sysconfig/admin/emailmanage.js"></script>
 </body>
 </html>

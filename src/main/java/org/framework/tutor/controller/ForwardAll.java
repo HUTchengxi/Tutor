@@ -457,4 +457,18 @@ public class ForwardAll {
         return "sysconfig/admin/sendmail";
     }
 
+    /**
+     *
+     * @Description 邮件管理界面
+     * @param []
+     * @return java.lang.String
+     * @author yinjimin
+     * @date 2018/4/20
+     */
+    @RequestMapping("/gosysadminemailmanage")
+    public String goEmailManagePage(){
+
+        return "sysconfig/admin/emailmanage";
+    }
+
 }

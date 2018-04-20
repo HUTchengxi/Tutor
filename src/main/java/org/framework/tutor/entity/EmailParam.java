@@ -29,6 +29,28 @@ public class EmailParam {
 
     private String formatEmail;
 
+    private Integer emailStatus;
+
+    public Integer getPageNo() {
+        return pageNo;
+    }
+
+    public void setPageNo(Integer pageNo) {
+        this.pageNo = pageNo;
+    }
+
+    public Integer getPageSize() {
+        return pageSize;
+    }
+
+    public void setPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
+    }
+
+    private Integer pageNo;
+
+    private Integer pageSize;
+
     public Integer getId() {
         return id;
     }
@@ -53,8 +75,17 @@ public class EmailParam {
         this.theme = theme;
     }
 
+    public Integer getEmailStatus() {
+        return emailStatus;
+    }
+
+    public void setEmailStatus(Integer emailStatus) {
+        this.emailStatus = emailStatus;
+    }
+
     public String getEmail() {
         return email;
+
     }
 
     public void setEmail(String email) {

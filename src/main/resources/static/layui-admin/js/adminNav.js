@@ -16,27 +16,22 @@ var navs = [{
             "spread": false
         },
         {
-            "title": "发布新的课程",
+            "title": "邮件系统",
+            "icon": "&#xe631;",
+            "href": "/forward_con/gosysadminemailmanage",
+            "spread": false
+        },
+        {
+            "title": "课程下线申请",
             "icon": "&#xe631;",
             "href": "/forward_con/gosystutorpublishnew",
             "spread": false
         },
         {
-            "title": "课程评论管理",
-            "icon": "&#xe631;",
-            "href": "/forward_con/gosystutorcommand",
-            "spread": false
-        },
-        {
-            "title": "课程订单管理",
+            "title": "通知管理",
             "icon": "&#xe631;",
             "href": "/forward_con/gosystutororder",
             "spread": false
         }
     ]
-}, {
-    "title": "通知中心",
-    "icon": "icon-text",
-    "href": "/forward_con/gosystutormessage",
-    "spread": false
 }]
