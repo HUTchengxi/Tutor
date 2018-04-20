@@ -46,55 +46,36 @@
     <div class="page-order-showlist">
         <table id="orderTable" class="table" data-undefined-text=""></table>
     </div>
-    <!--修改状态模态框-->
-    <div class="modal fade" id="orderStatusEditAlert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <!--异常处理模态框-->
+    <div class="modal fade" id="errDear" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;
                     </button>
-                    <h4 class="modal-title text-center text-danger">修改订单状态</h4>
+                    <h4 class="modal-title text-center text-danger">异常订单处理</h4>
                 </div>
                 <div class="modal-body">
-                    <legend>订单信息</legend>
-                    <div class="col-lg-12 col-sm-12">
-                        <span>订单编号：</span>
-                        <span class="orderCode"></span>
-                    </div>
-                    <div class="col-lg-12 col-sm-12">
-                        <span>课程名称：</span>
-                        <span class="courseName"></span>
-                    </div>
-                    <div class="col-lg-12 col-sm-12">
-                        <span>原处理状态：</span>
-                        <span class="tutorStatus"></span>
-                    </div>
-                    <div class="col-lg-12 col-sm-12">
-                        <span>原处理标注信息：</span>
-                        <span class="tutorInfo"></span>
+                    <legend>选择处理方式</legend>
+                    <div class="col-lg-6 col-sm-6 col-lg-offset-3 col-sm-offset-3">
+                        <a href="javascript:;" class="form-control text-center email">发送家教邮件</a>
                     </div>
                     <div class="clearfix"></div>
-                    <legend>状态修改</legend>
-                    <div class="col-lg-12 col-sm-12">
-                        <span>修改状态：</span>
-                        <select class="form-control newTutorStatus">
-                            <option value="1">确认接单</option>
-                            <option value="2">正在教学</option>
-                            <option value="3">等待确认</option>
-                            <option value="4">完成订单</option>
-                            <option value="-1">撤销申请</option>
-                            <option value="-2">订单复审申请</option>
-                        </select>
-                    </div>
-                    <div class="col-lg-12 col-sm-12">
-                        <span>修改标注信息：</span>
-                        <input class="newTutorInfo form-control" />
+                    <br />
+                    <div class="col-lg-6 col-sm-6 col-lg-offset-3 col-sm-offset-3">
+                        <a href="javascript:;" class="form-control email text-center">发送用户邮件</a>
                     </div>
                     <div class="clearfix"></div>
-                    <p class="text-danger text-center" style="color: rgba(255,0,0,0.8);">
-                        <span class="glyphicon glyphicon-exclamation-sign"></span>
-                        处理状态请仔细确认后再修改哦，随意修改将会影响您的信誉！
-                    </p>
+                    <br />
+                    <div class="col-lg-6 col-sm-6 col-lg-offset-3 col-sm-offset-3">
+                        <a href="javascript:;" class="form-control message text-center">发送家教通知</a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <br />
+                    <div class="col-lg-6 col-sm-6 col-lg-offset-3 col-sm-offset-3">
+                        <a href="javascript:;" class="form-control message text-center">发送用户通知</a>
+                    </div>
+                    <div class="clearfix"></div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger">保存修改</button>

@@ -391,6 +391,18 @@ create table course_order_manager(
 );
 
 
+#系统邮件表
+create table sys_email(
+  id int primary key auto_increment comment "唯一标识",
+  sendto varchar(20) not null comment "接收者",
+  theme varchar(100) not null comment "邮件主题",
+  email text not null comment "邮件内容",
+  sendtime datetime default now() comment "发送/更新时间",
+  status int not null comment "邮件状态：1发送，-1保存",
+  foreign key(sendto) references user_main(sendto)
+);
+
+
 
 
 #家教老师标签表

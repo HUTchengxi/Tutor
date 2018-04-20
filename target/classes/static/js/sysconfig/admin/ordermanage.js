@@ -84,7 +84,7 @@ $(function () {
                     valign: 'middle',
                     formatter: function (value, row, index) {
                         var orderCode = value;
-                        return "<button class='btn-primary btn btn-statusMod' data-toggle='modal' data-target='#orderStatusEditAlert' data-code='" + orderCode + "'>修改状态</button>&nbsp;&nbsp;" +
+                        return "<button class='btn-primary btn btn-errdear' data-toggle='modal' data-target='#errDear' data-code='" + orderCode + "'>异常处理</button>&nbsp;&nbsp;" +
                             "<button class='btn btn-danger' data-code='" + orderCode + "'>建立会话</button>&nbsp;&nbsp;" +
                             "<button class='btn btn-danger btn-more' data-toggle='modal' data-target='#orderMore' data-code='" + orderCode + "'>查看详情</button>&nbsp;&nbsp;";
                     }
@@ -141,4 +141,37 @@ $(function () {
     };
     $(document).on("click", "#orderTable button.btn-more", click_openordermore);
 
+    /**
+     * 点击处理
+     */
+    var click_openerrdear = function(){
+
+        var username = $(this).closest("tr").find("td:nth-child(2)").text();
+        var tutorname = $(this).closest("tr").find("td:nth-child(3)").text();
+        $("#errDear .col-lg-6:nth-child(2) a").data("username", tutorname);
+        $("#errDear .col-lg-6:nth-child(5) a").data("username", username);
+        $("#errDear .col-lg-6:nth-child(8) a").data("username", tutorname);
+        $("#errDear .col-lg-6:nth-child(11) a").data("username", username);
+    };
+    $(document).on("click", "#orderTable button.btn-errdear", click_openerrdear);
+
+    /**
+     * 点击发送邮件
+     */
+    var click_redirectSendMail = function(){
+
+        var username = $(this).data("username");
+        window.location = "/forward_con/sendmailpage?username=" + username;
+    };
+    $("#errDear .email").click(click_redirectSendMail);
+
+    /**
+     * 点击发送邮件
+     */
+    var click_redirectSendMail = function(){
+
+        var username = $(this).data("username");
+        window.location = "/forward_con/sendmessagepage?username=" + username;
+    };
+    $("#errDear .message").click(click_redirectSendMail);
 });

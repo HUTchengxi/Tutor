@@ -443,4 +443,18 @@ public class ForwardAll {
         return "/sysconfig/admin/ordermanage";
     }
 
+    /**
+     *
+     * @Description 发送邮件界面
+     * @param []
+     * @return java.lang.String
+     * @author yinjimin
+     * @date 2018/4/20
+     */
+    @RequestMapping("/sendmailpage")
+    public String goSendMailPage(){
+
+        return "sysconfig/admin/sendmail";
+    }
+
 }
