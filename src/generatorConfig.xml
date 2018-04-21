@@ -27,28 +27,28 @@
         </javaTypeResolver>
 
         <!-- targetProject:生成PO类的位置 -->
-        <javaModelGenerator targetPackage="main.java.org.framework.tutor.domain"
-                            targetProject=".\src">
+        <javaModelGenerator targetPackage="org.framework.tutor.domain"
+                            targetProject=".\src\main\java">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false"/>
             <!-- 从数据库返回的值被清理前后的空格 -->
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
         <!-- targetProject:mapper映射文件生成的位置 -->
-        <sqlMapGenerator targetPackage="main.java.org.framework.tutor.mapper"
-                         targetProject=".\src">
+        <sqlMapGenerator targetPackage="org.framework.tutor.mapper"
+                         targetProject=".\src\main\java">
              <!--enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
          <!--targetPackage：mapper接口生成的位置-->
         <javaClientGenerator type="XMLMAPPER"
-                             targetPackage="main.java.org.framework.tutor.mapper"
-                             targetProject=".\src">
+                             targetPackage="org.framework.tutor.mapper"
+                             targetProject=".\src\main\java">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
         <!-- 指定数据库表 -->
-        <!--<table schema="" tableName="sys_email_manage"></table>-->
+        <!--<table schema="" tableName="course_delete_resp"></table>-->
         <!--<table schema="" tableName="publish_type"></table>-->
         <!--<table schema="" tableName="publish_log"></table>-->
         <!--<table schema="" tableName="tutor_btns"></table>-->

@@ -24,7 +24,7 @@ var navs = [{
         {
             "title": "课程下线申请",
             "icon": "&#xe631;",
-            "href": "/forward_con/gosystutorpublishnew",
+            "href": "/forward_con/gosystutorcoursedeletemanage",
             "spread": false
         },
         {

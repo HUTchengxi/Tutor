@@ -33,6 +33,16 @@ public class ParamMap {
 
     private String tutorName;
 
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    private Integer status;
+
     public Integer getPageNo() {
         return pageNo;
     }

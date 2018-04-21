@@ -2,6 +2,8 @@ package org.framework.tutor.service;
 
 import org.framework.tutor.domain.CourseDeleteReq;
 
+import java.util.List;
+
 public interface CourseDeleteReqService {
 
     /**
@@ -34,4 +36,12 @@ public interface CourseDeleteReqService {
      * @date 2018/4/15
      */
     void updateCourseDeleteReq(Integer cid, String descript);
+
+    List<CourseDeleteReq> getAllLimit(String courName, Integer offset, Integer pageSize);
+
+    Integer getAllCount(String courName);
+
+    List<CourseDeleteReq> getRespAllLimit(String courName, Integer status, Integer offset, Integer pageSize);
+
+    Integer getRespAll(String courName, Integer status);
 }

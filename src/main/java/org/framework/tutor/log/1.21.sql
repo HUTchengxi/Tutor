@@ -403,6 +403,15 @@ create table sys_email(
 );
 
 
+#课程下线申请响应表
+create table course_delete_resp(
+  id int primary key auto_increment comment "唯一标识",
+  reqid int not null comment "课程下线申请标识",
+  status int default 0 comment "0待处理，1同意，2不同意",
+  response varchar(200) not null comment "响应标注信息",
+  resptime datetime default now() comment "响应时间"
+);
+
 
 
 #家教老师标签表

@@ -471,4 +471,17 @@ public class ForwardAll {
         return "sysconfig/admin/emailmanage";
     }
 
+    /**
+     *
+     * @Description 进入课程下线申请管理界面
+     * @param []
+     * @return java.lang.String
+     * @author yinjimin
+     * @date 2018/4/21
+     */
+    @RequestMapping("/gosystutorcoursedeletemanage")
+    public String goCourseDeleteManage(){
+
+        return "sysconfig/admin/coursedeletemanage";
+    }
 }

@@ -18,6 +18,8 @@ import org.framework.tutor.service.CourseDeleteReqService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 /**
  * @author yinjimin
  * @Description: 课程下线申请
@@ -42,5 +44,25 @@ public class CourseDeleteReqServiceImpl implements CourseDeleteReqService {
     @Override
     public void updateCourseDeleteReq(Integer cid, String descript) {
         courseDeleteReqMapper.updateCourseDeleteReq(cid, descript);
+    }
+
+    @Override
+    public List<CourseDeleteReq> getAllLimit(String courName, Integer offset, Integer pageSize) {
+        return courseDeleteReqMapper.getAllLimit(courName, offset, pageSize);
+    }
+
+    @Override
+    public Integer getAllCount(String courName) {
+        return courseDeleteReqMapper.getAllCount(courName);
+    }
+
+    @Override
+    public List<CourseDeleteReq> getRespAllLimit(String courName, Integer status, Integer offset, Integer pageSize) {
+        return courseDeleteReqMapper.getRepsAllLimit(courName, status, offset, pageSize);
+    }
+
+    @Override
+    public Integer getRespAll(String courName, Integer status) {
+        return courseDeleteReqMapper.getRespAll(courName, status);
     }
 }
