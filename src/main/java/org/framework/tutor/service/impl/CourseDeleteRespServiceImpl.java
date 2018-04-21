@@ -31,6 +31,16 @@ public class CourseDeleteRespServiceImpl implements CourseDeleteRespService {
 
     @Override
     public CourseDeleteResp getByRid(Integer id) {
-        return courseDeleteRespMapper.getById(id);
+        return courseDeleteRespMapper.getByRid(id);
+    }
+
+    @Override
+    public void insertResp(Integer id, Integer status, String respDesc) {
+        courseDeleteRespMapper.insertResp(id, status, respDesc);
+    }
+
+    @Override
+    public void updateResp(Integer id, Integer status, String respDesc) {
+        courseDeleteRespMapper.updateResp(id, status, respDesc);
     }
 }

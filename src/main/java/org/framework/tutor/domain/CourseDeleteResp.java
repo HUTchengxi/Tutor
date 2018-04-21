@@ -56,4 +56,15 @@ public class CourseDeleteResp implements Serializable {
     public void setResptime(Date resptime) {
         this.resptime = resptime;
     }
+
+    @Override
+    public String toString() {
+        return "CourseDeleteResp{" +
+                "id=" + id +
+                ", reqid=" + reqid +
+                ", status=" + status +
+                ", response='" + response + '\'' +
+                ", resptime=" + resptime +
+                '}';
+    }
 }

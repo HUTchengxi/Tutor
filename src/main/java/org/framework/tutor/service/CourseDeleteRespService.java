@@ -13,4 +13,8 @@ public interface CourseDeleteRespService {
      * @date 2018/4/21
      */  
     CourseDeleteResp getByRid(Integer id);
+
+    void insertResp(Integer id, Integer status, String respDesc);
+
+    void updateResp(Integer id, Integer status, String respDesc);
 }

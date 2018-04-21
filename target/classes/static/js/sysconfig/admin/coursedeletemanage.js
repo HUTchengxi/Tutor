@@ -97,6 +97,16 @@ $(function () {
     };
     $("#pageorder form").submit(click_selectorderlist);
 
+    /**
+     * 打开处理申请，渲染id到statusMod上
+     */
+    var click_openerrdear = function(){
+
+        var id = $(this).data("code");
+        $("#statusMod").data("reqid", id);
+    };
+    $(document).on("click", "#pageorder .btn-errdear", click_openerrdear);
+
 
     /**
      * 打开订单模态框进行数据渲染
@@ -119,5 +129,37 @@ $(function () {
         });
     };
     $(document).on("click", "#orderTable button.btn-more", click_openordermore);
+
+    /**
+     * 保存修改对应的状态
+     */
+    var click_modreqstatus = function(){
+
+        var reqid = $("#statusMod").data("reqid");
+        var status = $("#statusMod .status").val();
+        var respDesc = $("#statusMod .respDesc").val();
+        
+        $.ajax({
+            type: "post",
+            url: "/coursedeleteresp_con/modreqstatus",
+            data: {
+                id: reqid,
+                status: status,
+                respDesc: respDesc
+            },
+            dataType: "json",
+            success: function(data){
+                var status = data.status;
+                if(status == "valid"){
+                    alert("操作成功");
+                    $(".modal").modal('hide');
+                    $("#pageorder button[name=refresh]").click();
+                }else{
+                    alert("操作失败");
+                }
+            }
+        });
+    };
+    $("#statusMod button.btn-save").click(click_modreqstatus);
 
 });
