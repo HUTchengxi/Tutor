@@ -52,4 +52,8 @@ public interface CourseOrderManagerMapper {
 
     @Select("select count(*) from course_order_manager where tutorstatus in (-1,-2) or userstatus in (-1,-2)")
     Integer getAllErrs();
+
+    @Select("select * from course_order_manager com where com.oid in (select co.id from course_order co where co.cid in (" +
+            "select cdr.cid from course_delete_req cdr where cdr.id=#{reqid}))")
+    List<CourseOrderManager> getByReqid(@Param("reqid") Integer reqid);
 }

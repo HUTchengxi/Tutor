@@ -65,4 +65,9 @@ public class CourseDeleteReqServiceImpl implements CourseDeleteReqService {
     public Integer getRespAll(String courName, Integer status) {
         return courseDeleteReqMapper.getRespAll(courName, status);
     }
+
+    @Override
+    public CourseDeleteReq getById(Integer reqid) {
+        return courseDeleteReqMapper.getById(reqid);
+    }
 }

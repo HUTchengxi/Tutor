@@ -61,4 +61,7 @@ public interface CourseDeleteReqMapper {
     @Select("select count(*) from course_delete_req cdr where cdr.id in (select reqid from course_delete_resp where status=#{status}) " +
             "and cdr.cid in (select cn.id from course_main cn where cn.name like CONCAT('%',#{coursename},'%'))")
     Integer getRespAll(@Param("coursename") String coursname, @Param("status") Integer status);
+
+    @Select("select * from course_delete_req where id=#{reqid}")
+    CourseDeleteReq getById(@Param("reqid") Integer reqid);
 }

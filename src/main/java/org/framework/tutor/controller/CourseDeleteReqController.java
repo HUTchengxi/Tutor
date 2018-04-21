@@ -17,10 +17,12 @@ import com.google.gson.JsonParser;
 import org.framework.tutor.domain.CourseDeleteReq;
 import org.framework.tutor.domain.CourseDeleteResp;
 import org.framework.tutor.domain.CourseMain;
+import org.framework.tutor.domain.CourseOrderManager;
 import org.framework.tutor.entity.ParamMap;
 import org.framework.tutor.service.CourseDeleteReqService;
 import org.framework.tutor.service.CourseDeleteRespService;
 import org.framework.tutor.service.CourseMService;
+import org.framework.tutor.service.CourseOrderManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -52,6 +54,9 @@ public class CourseDeleteReqController {
 
     @Autowired
     private CourseDeleteRespService courseDeleteRespService;
+
+    @Autowired
+    private CourseOrderManagerService courseOrderManagerService;
 
     /**
      *
@@ -160,6 +165,34 @@ public class CourseDeleteReqController {
             resultMap.put("rows", rowList);
             resultMap.put("total", total);
         }
+
+        writer.print(gson.toJson(resultMap));
+        writer.flush();
+        writer.close();
+    }
+
+    /**
+     *
+     * @Description 获取课程下线申请详情
+     * @param [reqid, response]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/21
+     */
+    @PostMapping("/getreqdetail")
+    public void getReqDetail(@RequestParam Integer reqid, HttpServletResponse response) throws IOException {
+
+        response.setCharacterEncoding("utf-8");
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(3);
+        PrintWriter writer = response.getWriter();
+
+        CourseDeleteReq courseDeleteReq = courseDeleteReqService.getById(reqid);
+        CourseMain courseMain = courseMService.getCourseById(courseDeleteReq.getCid());
+        List<CourseOrderManager> courseOrderManagers = courseOrderManagerService.getByReqid(reqid);
+        resultMap.put("courseName", courseMain.getName());
+        resultMap.put("reqDesc", courseDeleteReq.getDescript());
+        resultMap.put("hasOrder", courseOrderManagers.size() == 0?"无": "有");
 
         writer.print(gson.toJson(resultMap));
         writer.flush();

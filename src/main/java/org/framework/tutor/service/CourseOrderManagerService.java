@@ -81,4 +81,6 @@ public interface CourseOrderManagerService {
     List<CourseOrderManager> getErrsByUserAndTutor(String courseName, String userName, String tutorName, Integer offset, Integer pageSize);
 
     Integer getAllErrs();
+
+    List<CourseOrderManager> getByReqid(Integer reqid);
 }

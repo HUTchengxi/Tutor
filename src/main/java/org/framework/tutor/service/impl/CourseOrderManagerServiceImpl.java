@@ -80,4 +80,9 @@ public class CourseOrderManagerServiceImpl implements CourseOrderManagerService 
     public Integer getAllErrs() {
         return courseOrderManagerMapper.getAllErrs();
     }
+
+    @Override
+    public List<CourseOrderManager> getByReqid(Integer reqid) {
+        return courseOrderManagerMapper.getByReqid(reqid);
+    }
 }

@@ -106,9 +106,9 @@ $(function () {
         var code = $(this).data("code");
         $.ajax({
             type: "post",
-            url: "/courseordermanager_con/geterrororderdetail",
+            url: "/coursedeletereq_con/getreqdetail",
             data: {
-                code: code
+                reqid: code
             },
             dataType: "json",
             success: function(data){

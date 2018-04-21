@@ -44,4 +44,6 @@ public interface CourseDeleteReqService {
     List<CourseDeleteReq> getRespAllLimit(String courName, Integer status, Integer offset, Integer pageSize);
 
     Integer getRespAll(String courName, Integer status);
+
+    CourseDeleteReq getById(Integer reqid);
 }
