@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8"/>
+    <title>发送邮件</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.css" />
+    <link rel="stylesheet" href="/editor-md/css/editormd.css"/>
+    <link rel="stylesheet" href="/css/sysconfig/admin/sendmail.css" />
+    <link rel="shortcut icon" href="/images/logo/web_logo.ico" type="image/x-icon"/>
+</head>
+<body>
+<div class="header">
+    <p class="text-center text-info clearfix"><a href="/forward_con/gosysordermanage" class="btn btn-link pull-left">返回</a>勤成网邮件系统--powered by editormd</p>
+</div>
+<div class="editor-header">
+    <input type="number" style="display: none;" readonly="readonly" class="emailId" />
+    <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12">
+        <span class="control-label col-lg-offset-3 col-lg-1 col-sm-offset-3 col-sm-1 col-sm-offset-3 col-sm-1 col-md-offset-3 col-md-1">收件人username: </span>
+        <div class="col-lg-5 col-sm-5 col-xs-5 col-md-5 senddiv">
+            <input class="form-control sender" />
+        </div>
+    </div>
+    <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12">
+        <span class="control-label col-lg-offset-3 col-lg-1 col-sm-offset-3 col-sm-1 col-sm-offset-3 col-sm-1 col-md-offset-3 col-md-1">邮件主题: </span>
+        <div class="col-lg-5 col-sm-5 col-xs-5 col-md-5">
+            <input class="form-control theme" />
+        </div>
+    </div>
+</div>
+<div id="my-editormd" >
+    <textarea id="my-editormd-markdown-doc" name="my-editormd-markdown-doc" style="display:none;"></textarea>
+    <!-- 注意：name属性的值-->
+    <textarea id="my-editormd-html-code" name="my-editormd-html-code" style="display:none;"></textarea>
+</div>
+<div class="editor-footer clearfix">
+    <div class="clearfix pull-right">
+        <button class="btn-primary btn btn-send">发送邮件</button>
+        <button class="btn-info btn btn-save">保存草稿</button>
+    </div>
+</div>
+<script src="/js/common/jquery.min.js"></script>
+<script src="/editor-md/js/editormd.min.js"></script>
+<script type="text/javascript" src="/js/sysconfig/admin/sendmail.js"></script>
+</body>
+</html>
