@@ -479,9 +479,23 @@ public class ForwardAll {
      * @author yinjimin
      * @date 2018/4/21
      */
-    @RequestMapping("/gosystutorcoursedeletemanage")
+    @RequestMapping("/gosyscoursedeletemanage")
     public String goCourseDeleteManage(){
 
         return "sysconfig/admin/coursedeletemanage";
+    }
+
+    /**  
+     *    
+     * @Description进入管理员消息管理界面
+     * @param []    
+     * @return java.lang.String
+     * @author yinjimin  
+     * @date 2018/4/22
+     */  
+    @RequestMapping("/gosysadminmessagemanage")
+    public String goAdminMessageManage(){
+        
+        return "sysconfig/admin/messagemanage";
     }
 }

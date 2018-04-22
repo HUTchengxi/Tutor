@@ -80,4 +80,14 @@ public interface UserMSMapper {
      */
     @Update("update user_message set status=1 where username=#{username}")
     Integer setAllStatus(@Param("username") String username);
+
+    @Select("select * from user_message where identity=#{identity} and title like CONCAT('%',#{title},'%') and stime like CONCAT('%',#{stime},'%')" +
+            " limit #{offset}, #{pagesize}")
+    List<UserMessage> getMessageListLimit(@Param("identity") Integer identity, @Param("title") String title, @Param("stime") String startTime, @Param("offset") Integer offset, @Param("pagesize") Integer pageSize);
+
+    @Select("select count(*) from user_message where identity=#{identity} and title like CONCAT('%',#{title},'%') and stime like CONCAT('%',#{stime},'%')")
+    Integer getMessageCountLimit(@Param("identity") Integer identity, @Param("title") String title, @Param("stime") String startTime);
+
+    @Select("select * from user_message where id=#{id}")
+    UserMessage getById(@Param("id") Integer id);
 }

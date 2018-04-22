@@ -69,4 +69,10 @@ public interface UserMSService {
      * @return
      */
     Integer setAllStatus(String username);
+
+    List<UserMessage> getMessageListLimit(Integer identity, String title, String startTime, Integer offset, Integer pageSize);
+
+    Integer getMessageCountLimit(Integer identity, String title, String startTime);
+
+    UserMessage getById(Integer id);
 }

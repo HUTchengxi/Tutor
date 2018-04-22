@@ -24,13 +24,13 @@ var navs = [{
         {
             "title": "课程下线申请",
             "icon": "&#xe631;",
-            "href": "/forward_con/gosystutorcoursedeletemanage",
+            "href": "/forward_con/gosyscoursedeletemanage",
             "spread": false
         },
         {
             "title": "通知管理",
             "icon": "&#xe631;",
-            "href": "/forward_con/gosystutororder",
+            "href": "/forward_con/gosysadminmessagemanage",
             "spread": false
         }
     ]

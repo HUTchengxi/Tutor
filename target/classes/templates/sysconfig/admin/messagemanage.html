@@ -11,30 +11,37 @@
 <body class="childrenBody">
 
 <div id="pageorder" class="tab-pane fade in active">
-    <h3 class="text-center page-title">课程下线申请管理</h3>
+    <h3 class="text-center page-title">通知管理</h3>
     <!--课程查询的form-->
     <div class="page-order-searchform">
         <form class="form-horizontal" role="form" action="javascript:;">
-            <legend>下线申请查询</legend>
+            <legend>查询指定通知</legend>
             <div class="form-group">
-                <label for="courseName" class="col-sm-2 control-label">课程名称</label>
+                <label for="username" class="col-sm-2 control-label">通知方式</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control courseName" name="courseName"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="respStatus" class="col-sm-2 control-label">处理状态</label>
-                <div class="col-sm-9">
-                    <select class="form-control respStatus" name="respStatus">
-                        <option value="0">未处理</option>
-                        <option value="1">已处理</option>
+                    <select type="text" class="form-control status" name="status">
+                        <option value="0">对公</option>
+                        <option value="1">对私</option>
                     </select>
                 </div>
             </div>
             <div class="form-group">
+                <label for="sendTitle" class="col-sm-2 control-label">通知标题</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control sendTitle" name="sendTitle"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="sendTime" class="col-sm-2 control-label">通知时间</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control sendTime" name="sendTime" />
+                </div>
+            </div>
+            <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-primary">查询申请</button>
+                    <button type="submit" class="btn btn-primary">查询通知</button>
                     <button type="reset" class="btn btn-link">清空筛选条件</button>
+                    <button type="button" class="btn btn-success">发送新的通知</button>
                 </div>
             </div>
         </form>
@@ -55,7 +62,7 @@
                 <div class="modal-body">
                     <legend>选择处理方式</legend>
                     <div class="col-lg-6 col-sm-6 col-lg-offset-3 col-sm-offset-3">
-                        <a href="javascript:;" class="form-control text-center link-sendmail">发送邮件</a>
+                        <a href="/forward_con/sendmailpage" class="form-control text-center">发送邮件</a>
                     </div>
                     <div class="clearfix"></div>
                     <br />
@@ -63,51 +70,9 @@
                         <a href="/forward_con/sendmessagepage" class="form-control text-center">发送通知</a>
                     </div>
                     <div class="clearfix"></div>
-                    <br />
-                    <div class="col-lg-6 col-sm-6 col-lg-offset-3 col-sm-offset-3">
-                        <a href="#" class="form-control text-center">建立会话</a>
-                    </div>
-                    <div class="clearfix"></div>
-                    <br />
-                    <div class="col-lg-6 col-sm-6 col-lg-offset-3 col-sm-offset-3">
-                        <a href="javascript:;" data-toggle="modal" data-target="#statusMod" class="form-control text-center">修改状态</a>
-                    </div>
-                    <div class="clearfix"></div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger">保存修改</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--更改处理状态-->
-    <div class="modal fade" id="statusMod" tabindex="-2" role="dialog" aria-labelledby="myModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">修改状态</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="col-lg-6 col-sm-6 col-lg-offset-3 col-sm-offset-3">
-                        <span>你想改为：</span>
-                        <select class="status">
-                            <option value="0">待处理</option>
-                            <option value="1">已同意</option>
-                            <option value="2">已拒绝</option>
-                        </select>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="col-lg-6 col-sm-6 col-lg-offset-3 col-sm-offset-3">
-                        <span>添加标注：</span>
-                        <input class="form-control respDesc" />
-                    </div>
-                    <div style="clear:both" class=""></div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default btn-save">保存</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                 </div>
             </div>
@@ -121,20 +86,32 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;
                     </button>
-                    <h4 class="modal-title">课程申请详情</h4>
+                    <h4 class="modal-title">通知详情</h4>
                 </div>
                 <div class="modal-body">
                     <div class="col-lg-6 col-sm-6">
-                        <span>课程名称：</span>
-                        <span class="courseName"></span>
+                        <span>通知标题：</span>
+                        <span class="title"></span>
                     </div>
                     <div class="col-lg-6 col-sm-6">
-                        <span>申请原因：</span>
-                        <span class="reqDesc"></span>
+                        <span>通知方式：</span>
+                        <span class="identity"></span>
                     </div>
                     <div class="col-lg-6 col-sm-6">
-                        <span>是否有未完成订单：</span>
-                        <span class="hasOrder"></span>
+                        <span>通知用户：</span>
+                        <span class="username"></span>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <span>通知信息：</span>
+                        <span class="message"></span>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <span>通知时间：</span>
+                        <span class="time"></span>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <span>用户状态：</span>
+                        <span class="status"></span>
                     </div>
                     <div style="clear:both" class=""></div>
                 </div>
@@ -150,7 +127,9 @@
 <script src="/bootstrap/js/bootstrap.js"></script>
 <script src="/js/common/bootstrap-table.js"></script>
 <script src="/js/common/bootstrap-table-zh-CN.js"></script>
+<script src="/js/common/bootstrap-datetimepicker.min.js"></script>
+<script src="/js/common/bootstrap-datetimepicker.zh-CN.js"></script>
 <script src="/layui/layui.js"></script>
-<script src="/js/sysconfig/admin/coursedeletemanage.js"></script>
+<script src="/js/sysconfig/admin/messagemanage.js"></script>
 </body>
 </html>

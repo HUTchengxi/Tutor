@@ -34,6 +34,7 @@ $(function () {
             saveHTMLToTextarea: true, //注意3：这个配置，方便post提交表单
             onload: function(){
                 var id = str_geturlparam("id");
+                var username = str_geturlparam("username");
                 var $this = this;
                 //修改
                 if(!str_isnull(id)){
@@ -56,6 +57,9 @@ $(function () {
                             }
                         }
                     });
+                }else if(!str_isnull(username)){
+                    $(".sender").remove();
+                    $(".senddiv").append("<span class='form-control sender'>"+username+"</span>");
                 }
             }
         });

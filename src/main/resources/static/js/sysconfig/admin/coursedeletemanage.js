@@ -47,6 +47,12 @@ $(function () {
                     valign: 'middle'
                 },
                 {
+                    title: '申请用户',
+                    field: 'reqUser',
+                    align: 'center',
+                    valign: 'middle'
+                },
+                {
                     title: '申请时间',
                     field: 'reqTime',
                     align: 'center',
@@ -104,6 +110,8 @@ $(function () {
 
         var id = $(this).data("code");
         $("#statusMod").data("reqid", id);
+        var reqUser = $(this).closest("tr").find("td:nth-child(2)").text();
+        $("#errDear").data("username", reqUser);
     };
     $(document).on("click", "#pageorder .btn-errdear", click_openerrdear);
 
@@ -162,4 +170,12 @@ $(function () {
     };
     $("#statusMod button.btn-save").click(click_modreqstatus);
 
+    /**
+     * 点击发送邮件
+     */
+    var click_opensendmailpage = function(){
+
+        window.open("/forward_con/sendmailpage?username="+$("#errDear").data("username"));
+    };
+    $("#errDear .link-sendmail").click(click_opensendmailpage);
 });

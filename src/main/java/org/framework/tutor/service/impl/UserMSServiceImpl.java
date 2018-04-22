@@ -109,4 +109,19 @@ public class UserMSServiceImpl implements UserMSService {
 
         return userMSMapper.setAllStatus(username);
     }
+
+    @Override
+    public List<UserMessage> getMessageListLimit(Integer identity, String title, String startTime, Integer offset, Integer pageSize) {
+        return userMSMapper.getMessageListLimit(identity, title, startTime, offset, pageSize);
+    }
+
+    @Override
+    public Integer getMessageCountLimit(Integer identity, String title, String startTime) {
+        return userMSMapper.getMessageCountLimit(identity, title, startTime);
+    }
+
+    @Override
+    public UserMessage getById(Integer id) {
+        return userMSMapper.getById(id);
+    }
 }

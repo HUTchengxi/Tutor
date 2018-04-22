@@ -12,6 +12,8 @@
  */
 package org.framework.tutor.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 /**
@@ -27,6 +29,7 @@ public class ParamMap {
 
     private String courseName;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date startTime;
 
     private String username;

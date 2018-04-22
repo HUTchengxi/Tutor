@@ -8,12 +8,24 @@ $(function () {
     };
 
     /**
+     * 初始化datetimepicker控件
+     */
+    var load_datetimepicker = function(){
+        $("input[name=sendTime]").datetimepicker({
+            format: 'yyyy-mm-dd hh:ii:ss',
+            autoclose: true,
+            todayBtn: true
+        });
+    };
+    load_datetimepicker();
+
+    /**
      * 初始化orderTable表格控件并获取评论列表数据
      */
     var load_getorderlist = function () {
 
         $('#orderTable').bootstrapTable({
-            url: "/coursedeletereq_con/getreqlist",
+            url: "/usermessage_con/getmessagelist",
             dataType: "json",
             undefinedText: "",
             pagination: true,
@@ -28,51 +40,57 @@ $(function () {
             paginationPreText: '上一页',
             paginationNextText: '下一页',
             data_local: "zh-US",
-            uniqueId: "serviceId",
+            uniqueId: "id",
             sidePagination: "server",
             queryParams: function (params) {
                 return {
                     pageNo: params.offset / params.limit,
                     pageSize: params.limit,
-                    courseName: $("#pageorder form .courseName").val(),
-                    status: $("#pageorder form .respStatus").val()
+                    status: $("#pageorder form .status").val(),
+                    startTime: $("#pageorder form .sendTime").val(),
+                    courseName: $("#pageorder form .sendTitle").val()
                 };
             },
-            idField: 'orderCode',//指定主键列
+            idField: 'id',//指定主键列
             columns: [
                 {
-                    title: '课程名称',
-                    field: 'courseName',
+                    title: '标题',
+                    field: 'title',
                     align: 'center',
                     valign: 'middle'
                 },
                 {
-                    title: '申请用户',
-                    field: 'reqUser',
+                    title: '通知方式',
+                    field: 'identity',
                     align: 'center',
                     valign: 'middle'
                 },
                 {
-                    title: '申请时间',
-                    field: 'reqTime',
+                    title: '通知用户',
+                    field: 'username',
                     align: 'center',
                     valign: 'middle'
                 },
                 {
-                    title: '处理状态',
-                    field: 'respStatus',
+                    title: '通知时间',
+                    field: 'time',
+                    align: 'center',
+                    valign: 'middle'
+                },
+                {
+                    title: '接收状态',
+                    field: 'status',
                     align: 'center',
                     valign: 'middle'
                 },
                 {
                     title: '操作',
-                    field: 'reqId',
+                    field: 'id',
                     align: 'center',
                     valign: 'middle',
                     formatter: function (value, row, index) {
                         var orderCode = value;
-                        return "<button class='btn-primary btn btn-errdear' data-toggle='modal' data-target='#errDear' data-code='" + orderCode + "'>处理申请</button>&nbsp;&nbsp;" +
-                            "<button class='btn btn-danger btn-more' data-toggle='modal' data-target='#orderMore' data-code='" + orderCode + "'>查看详情</button>&nbsp;&nbsp;";
+                        return "<button class='btn btn-danger btn-more' data-toggle='modal' data-target='#orderMore' data-code='" + orderCode + "'>查看详情</button>&nbsp;&nbsp;";
                     }
                 }
             ]
@@ -87,12 +105,13 @@ $(function () {
 
         $.ajax({
             type: "post",
-            url: "/coursedeletereq_con/getreqlist",
+            url: "/usermessage_con/getmessagelist",
             data: JSON.stringify({
                 "pageNo": 0,
                 "pageSize": 10,
-                courseName: $("#pageorder form .courseName").val(),
-                status: $("#pageorder form .respStatus").val()
+                status: $("#pageorder form .status").val(),
+                startTime: $("#pageorder form .sendTime").val(),
+                courseName: $("#pageorder form .sendTitle").val()
             }),
             contentType: "application/json",
             dataType: "json",
@@ -103,18 +122,6 @@ $(function () {
     };
     $("#pageorder form").submit(click_selectorderlist);
 
-    /**
-     * 打开处理申请，渲染id到statusMod上
-     */
-    var click_openerrdear = function(){
-
-        var id = $(this).data("code");
-        $("#statusMod").data("reqid", id);
-        var reqUser = $(this).closest("tr").find("td:nth-child(2)").text();
-        $("#errDear").data("username", reqUser);
-    };
-    $(document).on("click", "#pageorder .btn-errdear", click_openerrdear);
-
 
     /**
      * 打开订单模态框进行数据渲染
@@ -124,9 +131,9 @@ $(function () {
         var code = $(this).data("code");
         $.ajax({
             type: "post",
-            url: "/coursedeletereq_con/getreqdetail",
+            url: "/usermessage_con/getmessagedetail",
             data: {
-                reqid: code
+                id: code
             },
             dataType: "json",
             success: function(data){
@@ -138,44 +145,4 @@ $(function () {
     };
     $(document).on("click", "#orderTable button.btn-more", click_openordermore);
 
-    /**
-     * 保存修改对应的状态
-     */
-    var click_modreqstatus = function(){
-
-        var reqid = $("#statusMod").data("reqid");
-        var status = $("#statusMod .status").val();
-        var respDesc = $("#statusMod .respDesc").val();
-        
-        $.ajax({
-            type: "post",
-            url: "/coursedeleteresp_con/modreqstatus",
-            data: {
-                id: reqid,
-                status: status,
-                respDesc: respDesc
-            },
-            dataType: "json",
-            success: function(data){
-                var status = data.status;
-                if(status == "valid"){
-                    alert("操作成功");
-                    $(".modal").modal('hide');
-                    $("#pageorder button[name=refresh]").click();
-                }else{
-                    alert("操作失败");
-                }
-            }
-        });
-    };
-    $("#statusMod button.btn-save").click(click_modreqstatus);
-
-    /**
-     * 点击发送邮件
-     */
-    var click_opensendmailpage = function(){
-
-        window.open("/forward_con/sendmailpage?username="+$("#errDear").data("username"));
-    };
-    $("#errDear .link-sendmail").click(click_opensendmailpage);
 });
