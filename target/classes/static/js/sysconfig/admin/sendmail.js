@@ -25,9 +25,10 @@ $(function () {
 
         testEditor = editormd("my-editormd", {//注意1：这里的就是上面的DIV的id属性值
             width: "90%",
-            height: 400,
+            height: 600,
             syncScrolling: "single",
             path: "../../editor-md/lib/",//注意2：你的路径
+            placeholder: "在这里输入邮件内容...",
             tex: true,
             flowChart: true,
             sequenceDiagram: true,

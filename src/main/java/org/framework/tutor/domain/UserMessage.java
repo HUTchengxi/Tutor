@@ -13,12 +13,21 @@ public class UserMessage implements Serializable {
 
     private Integer id;
     private Integer identity;
-    private String suser;
     private String username;
     private String title;
     private String descript;
     private Integer status;
     private Date stime;
+
+    public String getSuser() {
+        return suser;
+    }
+
+    public void setSuser(String suser) {
+        this.suser = suser;
+    }
+
+    private String suser;
 
     public UserMessage(){
 
@@ -38,14 +47,6 @@ public class UserMessage implements Serializable {
 
     public void setIdentity(Integer identity) {
         this.identity = identity;
-    }
-
-    public String getSuser() {
-        return suser;
-    }
-
-    public void setSuser(String suser) {
-        this.suser = suser;
     }
 
     public String getUsername() {
@@ -89,7 +90,6 @@ public class UserMessage implements Serializable {
         return "UserMessage{" +
                 "id=" + id +
                 ", identity=" + identity +
-                ", suser='" + suser + '\'' +
                 ", username='" + username + '\'' +
                 ", title='" + title + '\'' +
                 ", text='" + descript + '\'' +

@@ -413,6 +413,16 @@ create table course_delete_resp(
 );
 
 
+#用户通知删除中间表
+create table user_message_delete(
+  id int primary key auto_increment comment "唯一标识",
+  mid int not null comment "通知id",
+  username varchar(20) not null comment "用户id",
+  foreign key(mid) references user_message(id),
+  foreign key(username) references user_main(username)
+);
+
+
 
 #家教老师标签表
 #实名认证表

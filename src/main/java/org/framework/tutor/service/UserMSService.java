@@ -72,7 +72,11 @@ public interface UserMSService {
 
     List<UserMessage> getMessageListLimit(Integer identity, String title, String startTime, Integer offset, Integer pageSize);
 
-    Integer getMessageCountLimit(Integer identity, String title, String startTime);
+    Integer getMessageCountLimit(Integer identity, String username, String title, String startTime);
 
     UserMessage getById(Integer id);
+
+    Integer sendMessage(Integer identity, String suser, String username, String title, String message);
+
+    UserMessage checkIsExistTitle(String title);
 }

@@ -6,29 +6,38 @@
     </artifacts-to-build>
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" line="420" mnemonic="3" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" line="430" mnemonic="3" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf479440-431d-499c-9612-40c14de1a166" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/messagemanage.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/messagemanage.html" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMessageDeleteController.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMessageDeleteService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMessageDeleteServiceImpl.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/sendmessage.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/sendmessage.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/generatorConfig.xml" afterPath="$PROJECT_DIR$/src/generatorConfig.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMessage.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMessage.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/entity/ParamMap.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/entity/ParamMap.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/UserMessage.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/UserMessage.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMSMapper.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMSMapper.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMSService.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMSService.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMSServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMSServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/coursedeletemanage.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/coursedeletemanage.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/sysconfig/admin/sendmail.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/sysconfig/admin/sendmail.css" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/sendmail.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/sendmail.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/layui-admin/js/adminNav.js" afterPath="$PROJECT_DIR$/src/main/resources/static/layui-admin/js/adminNav.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/coursedeletemanage.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/coursedeletemanage.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/mymessage.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/mymessage.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/messagemanage.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/messagemanage.html" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/ForwardAll.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/ForwardAll.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/sysconfig/admin/coursedeletemanage.js" afterPath="$PROJECT_DIR$/target/classes/static/js/sysconfig/admin/coursedeletemanage.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/UserMessage.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/UserMessage.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/domain/UserMessage.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/domain/UserMessage.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/mapper/UserMSMapper.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/mapper/UserMSMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/UserMSService.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/UserMSService.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/impl/UserMSServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/impl/UserMSServiceImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/sysconfig/admin/sendmail.css" afterPath="$PROJECT_DIR$/target/classes/static/css/sysconfig/admin/sendmail.css" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/js/sysconfig/admin/sendmail.js" afterPath="$PROJECT_DIR$/target/classes/static/js/sysconfig/admin/sendmail.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layui-admin/js/adminNav.js" afterPath="$PROJECT_DIR$/target/classes/static/layui-admin/js/adminNav.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/sysconfig/admin/coursedeletemanage.html" afterPath="$PROJECT_DIR$/target/classes/templates/sysconfig/admin/coursedeletemanage.html" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/mymessage.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/mymessage.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/sysconfig/admin/messagemanage.html" afterPath="$PROJECT_DIR$/target/classes/templates/sysconfig/admin/messagemanage.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -75,48 +84,64 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="CourseDeleteReqController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseDeleteReqController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="142" column="39" lean-forward="false" selection-start-line="142" selection-start-column="39" selection-end-line="142" selection-end-column="39" />
-              <folding>
-                <element signature="method#setMyCourseDeleteReq#0;class#CourseDeleteReqController#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="messagemanage.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/messagemanage.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="43" column="40" lean-forward="false" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
-              <folding>
-                <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="messagemanage.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/messagemanage.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4884">
-              <caret line="132" column="25" lean-forward="true" selection-start-line="132" selection-start-column="25" selection-end-line="132" selection-end-column="25" />
-              <folding>
-                <marker date="1524394628338" expanded="true" signature="3061:3067" ph="&amp;nbsp;" />
-                <marker date="1524394628338" expanded="true" signature="3067:3073" ph="&amp;nbsp;" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserMessage.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserMessage.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMessage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="378" column="75" lean-forward="false" selection-start-line="378" selection-start-column="75" selection-end-line="378" selection-end-column="75" />
+            <state relative-caret-position="407">
+              <caret line="45" column="21" lean-forward="true" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserMSMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMSMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="20" column="101" lean-forward="false" selection-start-line="20" selection-start-column="101" selection-end-line="20" selection-end-column="101" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserMessageDeleteController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMessageDeleteController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="58" column="47" lean-forward="false" selection-start-line="58" selection-start-column="47" selection-end-line="58" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mymessage.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/mymessage.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="379">
+              <caret line="373" column="44" lean-forward="false" selection-start-line="373" selection-start-column="44" selection-end-line="373" selection-end-column="44" />
+              <folding>
+                <marker date="1524401873852" expanded="true" signature="1945:1960" ph="..." />
+                <marker date="1524401873852" expanded="true" signature="2049:2062" ph="..." />
+                <marker date="1524401873852" expanded="true" signature="2120:2131" ph="..." />
+                <marker date="1524401873852" expanded="true" signature="5317:5327" ph="..." />
+                <marker date="1524401873852" expanded="true" signature="9758:9766" ph="&amp;##xe610;" />
+                <marker date="1524401873852" expanded="true" signature="11626:11634" ph="&amp;##xe610;" />
+                <marker date="1524401873852" expanded="true" signature="15633:15641" ph="&amp;##xe610;" />
+                <marker date="1524401873852" expanded="true" signature="17588:17596" ph="&amp;##xe610;" />
+                <marker date="1524401873852" expanded="true" signature="23941:23949" ph="&amp;##xe610;" />
+                <marker date="1524401873852" expanded="true" signature="26249:26257" ph="&amp;##xe610;" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sendmail.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/sendmail.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="98" column="34" lean-forward="true" selection-start-line="98" selection-start-column="34" selection-end-line="98" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -137,12 +162,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>../../..</find>
-      <find>nav</find>
-      <find>nav.js</find>
-      <find>navs</find>
-      <find>getuserlog</find>
-      <find>co.name</find>
       <find>getorderde</find>
       <find>css</find>
       <find>matches</find>
@@ -167,6 +186,12 @@
       <find>jquery</find>
       <find>woff</find>
       <find>date</find>
+      <find>在这里</find>
+      <find>suser</find>
+      <find>getmessagebysta</find>
+      <find>getMessageBySta</find>
+      <find>getmymessage</find>
+      <find>delmymessage</find>
     </findStrings>
     <replaceStrings>
       <replace>/images/welcome/personal</replace>
@@ -203,16 +228,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/88ea465c-30a4-493a-8729-db0757a5a27b/console.sql" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/css/sysconfig/admin/ordermanage.css" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseOrderManagerController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/editor-md/editormd.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/editor-md/examples/simple.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/editor-md/editormd.min.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/editor-md/js/editormd.min.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/css/sysconfig/admin/sendmail.css" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/SysEmailManage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/util/EmailUtils.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/ordermanage.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/ordermanage.html" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/entity/EmailParam.java" />
@@ -224,8 +239,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/emailmanage.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/sendmail.html" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/SysEmailManagerController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" />
-        <option value="$PROJECT_DIR$/src/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/CourseDeleteReqService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/CourseOrderManagerService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/CourseOrderManagerServiceImpl.java" />
@@ -244,16 +257,28 @@
         <option value="$USER_HOME$/Downloads/picture_magnifier(jb51.net)/picture_magnifier/index.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/coursedeletemanage.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/coursedeletemanage.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/sendmail.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/layui-admin/js/adminNav.js" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/entity/ParamMap.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/messagemanage.js" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/messagemanage.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/editor-md/js/editormd.min.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/sendmessage.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/sendmail.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/sysconfig/admin/sendmail.css" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/UserMessage.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/sendmessage.js" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" />
+        <option value="$PROJECT_DIR$/src/generatorConfig.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/mymessage.js" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMessageDeleteController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMessage.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMSService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMSServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMessageDeleteService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMessageDeleteServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMessageDeleteMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMSMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/messagemanage.html" />
       </list>
     </option>
   </component>
@@ -452,7 +477,58 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="framework" type="462c0819:PsiDirectoryNode" />
               <item name="tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tutorweb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="tutor" type="462c0819:PsiDirectoryNode" />
               <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tutorweb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="log" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tutorweb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tutorweb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tutorweb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
@@ -468,6 +544,55 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tutorweb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tutorweb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="sysconfig" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tutorweb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="sysconfig" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tutorweb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="editor-md" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tutorweb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="editor-md" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
@@ -587,7 +712,7 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="RequestMappingsPanelOrder2" value="2" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/gitrepo/Tutor/src/main/resources/static/js/welcome/rank.js" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/gitrepo/tutorweb/src/main/resources/static/js/welcome/mymessage.js" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../blog" />
     <property name="jsx.switch.disabled" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
@@ -903,9 +1028,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.UserMessage" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Main2" />
-        <item index="2" class="java.lang.String" itemvalue="Application.ReverseProject" />
+        <item index="0" class="java.lang.String" itemvalue="Application.ReverseProject" />
+        <item index="1" class="java.lang.String" itemvalue="Application.UserMessage" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Main2" />
         <item index="3" class="java.lang.String" itemvalue="Application.TestMain" />
         <item index="4" class="java.lang.String" itemvalue="Application.CommonUtil" />
       </list>
@@ -1085,7 +1210,7 @@
       <workItem from="1524318634940" duration="1033000" />
       <workItem from="1524373039370" duration="1610000" />
       <workItem from="1524379191207" duration="1994000" />
-      <workItem from="1524384771629" duration="8137000" />
+      <workItem from="1524384771629" duration="15705000" />
     </task>
     <task id="LOCAL-00013" summary="邮箱注册以及后续的验证的实现，还未实现邮箱注册后的等待/重发界面">
       <created>1520780099718</created>
@@ -1434,7 +1559,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1126328000" />
+    <option name="totallyTimeSpent" value="1133896000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1562,101 +1687,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseOrderManagerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="439" column="50" lean-forward="false" selection-start-line="439" selection-start-column="50" selection-end-line="439" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/ordermanage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="52" column="42" lean-forward="false" selection-start-line="52" selection-start-column="42" selection-end-line="52" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/ordermanage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="141" column="80" lean-forward="false" selection-start-line="141" selection-start-column="80" selection-end-line="141" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/sysconfig/admin/emailmanage.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/SysEmailManageService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="32" column="8" lean-forward="false" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/SysEmailManageMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1184">
-          <caret line="35" column="56" lean-forward="false" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/SysEmailMessageServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="712">
-          <caret line="75" column="29" lean-forward="false" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/emailmanage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="8" column="59" lean-forward="false" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/editor-md/js/editormd.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="1" column="180" lean-forward="false" selection-start-line="1" selection-start-column="180" selection-end-line="1" selection-end-column="180" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/editor-md/examples/full.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="161" column="48" lean-forward="true" selection-start-line="161" selection-start-column="48" selection-end-line="161" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/SysEmailManagerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3071">
-          <caret line="157" column="58" lean-forward="true" selection-start-line="157" selection-start-column="58" selection-end-line="157" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/sysconfig/admin/sendmail.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="6" column="15" lean-forward="false" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/sendmail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="481">
           <caret line="25" column="57" lean-forward="true" selection-start-line="25" selection-start-column="57" selection-end-line="25" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="51" column="65" lean-forward="true" selection-start-line="51" selection-start-column="65" selection-end-line="51" selection-end-column="65" />
         </state>
       </provider>
     </entry>
@@ -1671,20 +1705,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="409" column="47" lean-forward="true" selection-start-line="409" selection-start-column="47" selection-end-line="409" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/entity/EmailParam.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="33" column="30" lean-forward="false" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -1822,14 +1842,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/sendmail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1193">
-          <caret line="61" column="29" lean-forward="false" selection-start-line="61" selection-start-column="29" selection-end-line="61" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/layui-admin/js/adminNav.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="564">
@@ -1846,24 +1858,6 @@
             <element signature="n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseDeleteReqController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="142" column="39" lean-forward="false" selection-start-line="142" selection-start-column="39" selection-end-line="142" selection-end-column="39" />
-          <folding>
-            <element signature="method#setMyCourseDeleteReq#0;class#CourseDeleteReqController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="495" column="27" lean-forward="false" selection-start-line="495" selection-start-column="27" selection-end-line="495" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1910,46 +1904,29 @@
         <state relative-caret-position="690">
           <caret line="32" column="27" lean-forward="true" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#906#907#0" expanded="true" />
-            <element signature="e#935#936#0" expanded="true" />
-            <element signature="e#1545#1546#0" expanded="true" />
-            <element signature="e#1577#1578#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#906#907#0" expanded="false" />
+            <element signature="e#935#936#0" expanded="false" />
+            <element signature="e#1545#1546#0" expanded="false" />
+            <element signature="e#1577#1578#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMSService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseDeleteReqController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
-          <caret line="76" column="24" lean-forward="false" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMSMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="90" column="54" lean-forward="false" selection-start-line="90" selection-start-column="54" selection-end-line="90" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMSServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="749">
-          <caret line="124" column="38" lean-forward="false" selection-start-line="124" selection-start-column="38" selection-end-line="124" selection-end-column="38" />
+        <state relative-caret-position="740">
+          <caret line="177" column="19" lean-forward="true" selection-start-line="177" selection-start-column="19" selection-end-line="177" selection-end-column="19" />
           <folding>
-            <element signature="e#2857#2858#0" expanded="true" />
-            <element signature="e#2904#2905#0" expanded="true" />
+            <element signature="method#setMyCourseDeleteReq#0;class#CourseDeleteReqController#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMessage.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="378" column="75" lean-forward="false" selection-start-line="378" selection-start-column="75" selection-end-line="378" selection-end-column="75" />
+        <state relative-caret-position="1064">
+          <caret line="510" column="36" lean-forward="true" selection-start-line="510" selection-start-column="36" selection-end-line="510" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -1965,13 +1942,208 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/editor-md/js/editormd.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="1" column="7049" lean-forward="false" selection-start-line="1" selection-start-column="7049" selection-end-line="1" selection-end-column="7049" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/messagemanage.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="453">
-          <caret line="43" column="40" lean-forward="false" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
+          <caret line="43" column="79" lean-forward="false" selection-start-line="43" selection-start-column="79" selection-end-line="43" selection-end-column="79" />
           <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#3;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/sysconfig/admin/sendmail.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="11" column="18" lean-forward="false" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/entity/EmailParam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="25" column="25" lean-forward="true" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/UserMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+          <folding>
+            <element signature="e#455#456#0" expanded="true" />
+            <element signature="e#483#484#0" expanded="true" />
+            <element signature="e#525#526#0" expanded="true" />
+            <element signature="e#559#560#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/sendmessage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-83">
+          <caret line="34" column="29" lean-forward="false" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/sendmail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="98" column="34" lean-forward="true" selection-start-line="98" selection-start-column="34" selection-end-line="98" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/sendmessage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="786">
+          <caret line="73" column="17" lean-forward="true" selection-start-line="73" selection-start-column="17" selection-end-line="73" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/generatorConfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="768">
+          <caret line="48" column="30" lean-forward="true" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/UserMessageDelete.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="416" column="33" lean-forward="true" selection-start-line="416" selection-start-column="33" selection-end-line="416" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/mysetting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1521125655826" expanded="true" signature="1238:1249" ph="..." />
+            <marker date="1521125655826" expanded="true" signature="3269:3284" ph="..." />
+            <marker date="1521125655826" expanded="true" signature="3369:3382" ph="..." />
+            <marker date="1521125655826" expanded="true" signature="3436:3447" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/mymessage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="373" column="44" lean-forward="false" selection-start-line="373" selection-start-column="44" selection-end-line="373" selection-end-column="44" />
+          <folding>
+            <marker date="1524401873852" expanded="true" signature="1945:1960" ph="..." />
+            <marker date="1524401873852" expanded="true" signature="2049:2062" ph="..." />
+            <marker date="1524401873852" expanded="true" signature="2120:2131" ph="..." />
+            <marker date="1524401873852" expanded="true" signature="5317:5327" ph="..." />
+            <marker date="1524401873852" expanded="true" signature="9758:9766" ph="&amp;##xe610;" />
+            <marker date="1524401873852" expanded="true" signature="11626:11634" ph="&amp;##xe610;" />
+            <marker date="1524401873852" expanded="true" signature="15633:15641" ph="&amp;##xe610;" />
+            <marker date="1524401873852" expanded="true" signature="17588:17596" ph="&amp;##xe610;" />
+            <marker date="1524401873852" expanded="true" signature="23941:23949" ph="&amp;##xe610;" />
+            <marker date="1524401873852" expanded="true" signature="26249:26257" ph="&amp;##xe610;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMessageDeleteController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="58" column="47" lean-forward="false" selection-start-line="58" selection-start-column="47" selection-end-line="58" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMessageDeleteMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="17" column="50" lean-forward="false" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMessageDeleteServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="653">
+          <caret line="38" column="39" lean-forward="false" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1053#1054#0" expanded="true" />
+            <element signature="e#1124#1125#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMessageDeleteService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="16" column="68" lean-forward="true" selection-start-line="16" selection-start-column="68" selection-end-line="16" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMSServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="119" column="42" lean-forward="false" selection-start-line="119" selection-start-column="42" selection-end-line="119" selection-end-column="42" />
+          <folding>
+            <element signature="e#2884#2885#0" expanded="true" />
+            <element signature="e#2931#2932#0" expanded="true" />
+            <element signature="e#3220#3221#0" expanded="true" />
+            <element signature="e#3280#3281#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMSService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2330">
+          <caret line="74" column="67" lean-forward="false" selection-start-line="74" selection-start-column="67" selection-end-line="74" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMSMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="20" column="101" lean-forward="false" selection-start-line="20" selection-start-column="101" selection-end-line="20" selection-end-column="101" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="45" column="21" lean-forward="true" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>

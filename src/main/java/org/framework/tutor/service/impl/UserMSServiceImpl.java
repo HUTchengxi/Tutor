@@ -116,12 +116,22 @@ public class UserMSServiceImpl implements UserMSService {
     }
 
     @Override
-    public Integer getMessageCountLimit(Integer identity, String title, String startTime) {
-        return userMSMapper.getMessageCountLimit(identity, title, startTime);
+    public Integer getMessageCountLimit(Integer identity, String username, String title, String startTime) {
+        return userMSMapper.getMessageCountLimit(identity, username, title, startTime);
     }
 
     @Override
     public UserMessage getById(Integer id) {
         return userMSMapper.getById(id);
+    }
+
+    @Override
+    public Integer sendMessage(Integer identity, String suser, String username, String title, String message) {
+        return userMSMapper.sendMessage(identity, suser, username, title, message);
+    }
+
+    @Override
+    public UserMessage checkIsExistTitle(String title) {
+        return userMSMapper.checkIsExistTitle(title);
     }
 }

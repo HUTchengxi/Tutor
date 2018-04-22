@@ -498,4 +498,18 @@ public class ForwardAll {
         
         return "sysconfig/admin/messagemanage";
     }
+
+    /**
+     *
+     * @Description 进入发送通知界面
+     * @param []
+     * @return java.lang.String
+     * @author yinjimin
+     * @date 2018/4/22
+     */
+    @RequestMapping("/sendmessagepage")
+    public String sendMessagePage(){
+
+        return "sysconfig/admin/sendmessage";
+    }
 }
