@@ -413,6 +413,17 @@ create table course_delete_resp(
 );
 
 
+#通知删除中间表
+create table user_message_delete(
+  id int primary key auto_increment comment "唯一标识",
+  mid int not null comment "通知标识id",
+  username varchar(20) not null comment "删除通知的用户名",
+  status int not null comment "-1表示删除，1表示已读",
+  foreign key(mid) references user_message(id),
+  foreign key(username) references user_main(username)
+);
+
+
 
 #家教老师标签表
 #实名认证表

@@ -45,16 +45,26 @@ public interface UserMSService {
      * @param username
      * @return
      */
-    Integer setMessageStatus(String suser, String username);
+    Integer setMessageRead(String suser, String username);
 
     /**
-     * 查看已读/未读通知数据
+     * 查看已读通知数据
      * @param suser
      * @param username
      * @param sta
      * @return
      */
-    List<UserMessage> getMessageByStatus(String suser, String username, Integer sta);
+    List<UserMessage> getReadMessage(String suser, String username);
+
+    /**
+     *
+     * @Description 查看未读通知数据
+     * @param [suser, username]
+     * @return java.util.List<org.framework.tutor.domain.UserMessage>
+     * @author yinjimin
+     * @date 2018/4/23
+     */
+    List<UserMessage> getUnreadMessage(String suser, String username);
 
     /**
      * 删除指定的通知数据

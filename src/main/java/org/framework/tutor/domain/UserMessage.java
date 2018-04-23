@@ -82,7 +82,7 @@ public class UserMessage implements Serializable {
 
     public void setStatus(Integer status){this.status = status;}
 
-    public Integer getStatus(){return this.status;}
+    public Integer getStatus(){return this.status==null?0:1;}
 
     @Override
     public String toString() {

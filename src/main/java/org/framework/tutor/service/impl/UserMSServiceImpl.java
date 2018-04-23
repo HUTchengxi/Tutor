@@ -70,22 +70,35 @@ public class UserMSServiceImpl implements UserMSService {
      * @return
      */
     @Override
-    public Integer setMessageStatus(String suser, String username) {
+    public Integer setMessageRead(String suser, String username) {
 
-        return userMSMapper.setMessageStatus(suser, username);
+        return userMSMapper.setMessageRead(suser, username);
     }
 
     /**
-     * 查看已读/未读通知信息
+     * 查看已读通知信息
      * @param suser
      * @param username
      * @param sta
      * @return
      */
     @Override
-    public List<UserMessage> getMessageByStatus(String suser, String username, Integer sta) {
+    public List<UserMessage> getReadMessage(String suser, String username) {
 
-        return userMSMapper.getMessageByStatus(suser, username, sta);
+        return userMSMapper.getReadMessage(suser, username);
+    }
+
+    /**
+     * 查看已读通知信息
+     * @param suser
+     * @param username
+     * @param sta
+     * @return
+     */
+    @Override
+    public List<UserMessage> getUnreadMessage(String suser, String username) {
+
+        return userMSMapper.getUnreadMessage(suser, username);
     }
 
     /**

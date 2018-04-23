@@ -17,7 +17,7 @@ public interface UserMSMapper {
      * @param username
      * @return
      */
-    @Select("select count(*) from user_message um where (identity=0 || um.username=#{username}) and status=0 and um.id not in (" +
+    @Select("select count(*) from user_message um where (identity=0 || um.username=#{username}) and um.id not in (" +
             "select mid from user_message_delete umd where umd.username=#{username})")
     Integer getMyMessageCount(@Param("username") String username);
 
@@ -26,8 +26,9 @@ public interface UserMSMapper {
      * @param username
      * @return
      */
-    @Select("select * from user_message um where um.username=#{username} || identity=0 and um.id not in (" +
-            "select mid from user_message_delete umd where umd.username=#{username}) order by stime desc")
+    @Select("select * from user_message um where um.username=#{username} || identity=0 and " +
+            "um.id not in (select mid from user_message_delete umd where umd.username=#{username} and status=-1) " +
+            "order by stime desc")
     List<UserMessage> getMyMessage(@Param("username") String username);
 
     /**
@@ -36,8 +37,8 @@ public interface UserMSMapper {
      * @param username
      * @return
      */
-    @Select("select count(*) from user_message um where suser=#{suser} and (um.username=#{username} || identity=0) and status=0 " +
-            "and um.id not in (select mid from user_message_delete umd where umd.username=#{username})")
+    @Select("select count(*) from user_message um where suser=#{suser} and (um.username=#{username} || identity=0) and " +
+            "um.id not in (select mid from user_message_delete umd where umd.username=#{username})")
     Integer getNoMessageCount(@Param("suser") String suser, @Param("username") String username);
 
     /**
@@ -47,7 +48,8 @@ public interface UserMSMapper {
      * @return
      */
     @Select("select * from user_message um where suser=#{suser} and (um.username=#{username} || identity=0) and " +
-            "um.id not in (select mid from user_message_delete umd where umd.username=#{username}) order by stime asc")
+            "um.id not in (select mid from user_message_delete umd where umd.username=#{username} and status=-1)" +
+            " order by stime asc")
     List<UserMessage> getMessageBySuser(@Param("suser") String suser, @Param("username") String username);
 
     /**
@@ -56,27 +58,39 @@ public interface UserMSMapper {
      * @param username
      * @return
      */
-    @Update("update user_message um set status=1 where suser=#{suser} and (um.username=#{username} || identity=0) and" +
-            " um.id not in (select mid from user_message_delete umd where umd.username=#{username})")
-    Integer setMessageStatus(@Param("suser") String suser, @Param("username") String username);
+    @Update("insert into user_message_delete(mid, username, status) select id as mid, #{username} as username, " +
+            "1 as status from user_message um where suser=#{suser} and (um.username=#{username} || identity=0) and " +
+            "um.id not in (select mid from user_message_delete umd where umd.username=#{username} and status=-1)")
+    Integer setMessageRead(@Param("suser") String suser, @Param("username") String username);
 
     /**
-     * 查看已读/未读通知数据
+     * 查看已读通知数据
      * @param suser
      * @param username
      * @param sta
      * @return
      */
-    @Select("select * from user_message um where suser=#{suser} and (um.username=#{username}||identity=0) and status=#{sta} and " +
+    @Select("select * from user_message um where suser=#{suser} and (um.username=#{username}||identity=0) and " +
+            "um.id in (select mid from user_message_delete umd where umd.username=#{username} and status=1)")
+    List<UserMessage> getReadMessage(@Param("suser") String suser, @Param("username") String username);
+
+    /**
+     * 查看已读通知数据
+     * @param suser
+     * @param username
+     * @param sta
+     * @return
+     */
+    @Select("select * from user_message um where suser=#{suser} and (um.username=#{username}||identity=0) and " +
             "um.id not in (select mid from user_message_delete umd where umd.username=#{username})")
-    List<UserMessage> getMessageByStatus(@Param("suser") String suser, @Param("username") String username, @Param("sta") Integer sta);
+    List<UserMessage> getUnreadMessage(@Param("suser") String suser, @Param("username") String username);
 
     /**
      * 删除选中的通知信息
      * @param did
      * @return
      */
-    @Insert("insert into user_message_delete(mid, username) values(#{did}, #{username})")
+    @Insert("insert into user_message_delete(mid, username, status) values(#{did}, #{username}, -1)")
     Integer delMyMessage(@Param("did") Integer did, @Param("username") String username);
 
     /**
@@ -84,8 +98,8 @@ public interface UserMSMapper {
      * @param username
      * @return
      */
-    @Update("update user_message um set status=1 where um.username=#{username} and um.id not in (" +
-            "select mid from user_message_delete umd where umd.username=#{username})")
+    @Update("insert into user_message_delete(mid, username, status) select id as mid, #{username} as username, 1 as status " +
+            "from user_message_delete umd where umd.username=#{umd.username} || umd,identity=0")
     Integer setAllStatus(@Param("username") String username);
 
     @Select("select * from user_message where identity=#{identity} and title like CONCAT('%',#{title},'%') and stime like CONCAT('%',#{stime},'%')" +

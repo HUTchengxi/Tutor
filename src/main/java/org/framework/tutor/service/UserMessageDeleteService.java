@@ -4,5 +4,7 @@ import org.framework.tutor.domain.UserMessageDelete;
 
 public interface UserMessageDeleteService {
 
-    UserMessageDelete checkIsDelete(Integer id, String username);
+    UserMessageDelete getStatus(Integer id, String username);
+
+    void deleteRepeatRead(String suser, String username);
 }

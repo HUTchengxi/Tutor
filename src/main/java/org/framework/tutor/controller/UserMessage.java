@@ -7,6 +7,7 @@ import org.framework.tutor.entity.ParamMap;
 import org.framework.tutor.service.UserMSService;
 import org.framework.tutor.service.UserMessageDeleteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -23,6 +24,7 @@ import java.util.Map;
 
 /**
  * 用户通知控制类
+ *
  * @author chengxi
  */
 @RestController
@@ -37,6 +39,7 @@ public class UserMessage {
 
     /**
      * 获取我的未读通知的数量
+     *
      * @param request
      * @param response
      */
@@ -50,10 +53,9 @@ public class UserMessage {
 
         if (username == null) {
             res = "{\"status\": \"invalid\"}";
-        }
-        else{
+        } else {
             Integer count = userMSService.getMyMessageCount(username);
-            res = "{\"count\": \""+count+"\"}";
+            res = "{\"count\": \"" + count + "\"}";
         }
 
         writer.print(new JsonParser().parse(res).getAsJsonObject());
@@ -63,6 +65,7 @@ public class UserMessage {
 
     /**
      * 获取我的通知数据(简单数据)
+     *
      * @param request
      * @param response
      * @throws IOException
@@ -76,24 +79,17 @@ public class UserMessage {
         String username = (String) session.getAttribute("username");
         String res = null;
 
-        if(username == null){
+        if (username == null) {
             res = "{\"status\": \"invalid\"}";
-        }
-        else{
+        } else {
             //首先获取所有的我的通知数据
             List<org.framework.tutor.domain.UserMessage> userMessageList = userMSService.getMyMessage(username);
-            if(userMessageList.size() == 0){
+            if (userMessageList.size() == 0) {
                 res = "{\"status\": \"valid\"}";
-            }
-            else {
+            } else {
                 res = "{";
                 int i = 1;
-                for (org.framework.tutor.domain.UserMessage userMessage: userMessageList) {
-                    //判断当前用户是否已经删除了该数据
-                    UserMessageDelete userMessageDelete = userMessageDeleteService.checkIsDelete(userMessage.getId(), username);
-                    if(userMessageDelete != null){
-                        continue;
-                    }
+                for (org.framework.tutor.domain.UserMessage userMessage : userMessageList) {
                     //获取指定发送通知的管理员的指定用户的未读通知总数据
                     Integer nocount = userMSService.getNoMessageCount(userMessage.getSuser(), username);
                     res += "\"" + i + "\": ";
@@ -104,9 +100,9 @@ public class UserMessage {
                     res += temp;
                     i++;
                 }
-                if(res.equals("{")){
+                if (res.equals("{")) {
                     res = "{\"status\": \"valid\"}";
-                }else {
+                } else {
                     res = res.substring(0, res.length() - 2);
                     res += "}";
                 }
@@ -120,13 +116,14 @@ public class UserMessage {
 
     /**
      * 获取指定管理员发送的我的通知数据
+     *
      * @param suser
      * @param request
      * @param response
      * @throws IOException
      */
     @RequestMapping("/getmessagebysuser")
-    public void getMessageByUser(String suser,HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void getMessageByUser(String suser, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
@@ -135,26 +132,27 @@ public class UserMessage {
         String username = (String) session.getAttribute("username");
         String res = null;
 
-        if(username == null){
+        if (username == null) {
             res = "{\"status\": \"invalid\"}";
-        }
-        else{
+        } else {
             //首先获取所有的我的通知数据
             List<org.framework.tutor.domain.UserMessage> userMessageList = userMSService.getMessageBySuser(suser, username);
-            if(userMessageList.size() == 0){
+            if (userMessageList.size() == 0) {
                 res = "{\"status\": \"valid\"}";
-            }
-            else {
+            } else {
+                System.out.println(userMessageList.size());
                 res = "{";
                 int i = 1;
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-                for (org.framework.tutor.domain.UserMessage userMessage: userMessageList) {
-                    UserMessageDelete userMessageDelete = userMessageDeleteService.checkIsDelete(userMessage.getId(), username);
-                    if(userMessageDelete != null){
-                        continue;
+                for (org.framework.tutor.domain.UserMessage userMessage : userMessageList) {
+                    UserMessageDelete userMessageDelete = userMessageDeleteService.getStatus(userMessage.getId(), username);
+                    Integer status = null;
+                    if (userMessageDelete != null) {
+                        status = userMessageDelete.getStatus();
                     }
+                    status = status == null ? 0 : 1;
                     res += "\"" + i + "\": ";
-                    String temp = "{\"status\": \"" + userMessage.getStatus() + "\", " +
+                    String temp = "{\"status\": \"" + status + "\", " +
                             "\"stime\": \"" + simpleDateFormat.format(userMessage.getStime()) + "\", " +
                             "\"id\": \"" + userMessage.getId() + "\", " +
                             "\"imgsrc\": \"/images/user/face/bg.png\", " +
@@ -162,9 +160,9 @@ public class UserMessage {
                     res += temp;
                     i++;
                 }
-                if(res.equals("{")){
+                if (res.equals("{")) {
                     res = "{\"status\": \"valid\"}";
-                }else {
+                } else {
                     res = res.substring(0, res.length() - 2);
                     res += "}";
                 }
@@ -178,28 +176,30 @@ public class UserMessage {
 
     /**
      * 通知阅读完毕之后的读状态的更改
+     *
      * @param suser
      * @param request
      * @param response
      */
     @RequestMapping("/setmessagestatus")
+    @Transactional
     public void setMessageStatus(String suser, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         request.setCharacterEncoding("utf-8");
-        PrintWriter writer =response.getWriter();
+        PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         String res = null;
 
-        if(username == null){
+        if (username == null) {
             res = "{\"stauts\": \"invalid\"}";
-        }
-        else{
-            Integer row = userMSService.setMessageStatus(suser, username);
-            if(row > 0){
+        } else {
+            //清空所有的suser和username相关的已读数据
+            userMessageDeleteService.deleteRepeatRead(suser, username);
+            Integer row = userMSService.setMessageRead(suser, username);
+            if (row > 0) {
                 res = "{\"status\": \"ok\"}";
-            }
-            else{
+            } else {
                 res = "{\"status\": \"valid\"}";
             }
         }
@@ -211,6 +211,7 @@ public class UserMessage {
 
     /**
      * 获取未读/已读消息
+     *
      * @param suser
      * @param status
      * @param request
@@ -227,26 +228,25 @@ public class UserMessage {
         String username = (String) session.getAttribute("username");
         String res = null;
 
-        if(username == null){
+        if (username == null) {
             res = "{\"status\": \"invalid\"}";
-        }
-        else{
-            Integer sta = "ed".equals(status)?1: 0;
-            List<org.framework.tutor.domain.UserMessage> userMessages = userMSService.getMessageByStatus(suser, username, sta);
-            if(userMessages.size() == 0){
-                res = "{\"status\": \"valid\"}";
+        } else {
+            Integer sta = "ed".equals(status) ? 1 : 0;
+            List<org.framework.tutor.domain.UserMessage> userMessages = null;
+            if (sta == 1) {
+                userMessages = userMSService.getReadMessage(suser, username);
+            } else {
+                userMessages = userMSService.getUnreadMessage(suser, username);
             }
-            else{
+            if (userMessages == null || userMessages.size() == 0) {
+                res = "{\"status\": \"valid\"}";
+            } else {
                 res = "{";
                 int i = 1;
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-                for (org.framework.tutor.domain.UserMessage userMessage: userMessages) {
-                    UserMessageDelete userMessageDelete = userMessageDeleteService.checkIsDelete(userMessage.getId(), username);
-                    if(userMessageDelete != null){
-                        continue;
-                    }
+                for (org.framework.tutor.domain.UserMessage userMessage : userMessages) {
                     res += "\"" + i + "\": ";
-                    String temp = "{\"status\": \"" + userMessage.getStatus() + "\", " +
+                    String temp = "{\"status\": \"" + sta + "\", " +
                             "\"stime\": \"" + simpleDateFormat.format(userMessage.getStime()) + "\", " +
                             "\"id\": \"" + userMessage.getId() + "\", " +
                             "\"imgsrc\": \"/images/user/face/bg.png\", " +
@@ -254,9 +254,9 @@ public class UserMessage {
                     res += temp;
                     i++;
                 }
-                if(res.equals("{")){
+                if (res.equals("{")) {
                     res = "{\"status\": \"valid\"}";
-                }else {
+                } else {
                     res = res.substring(0, res.length() - 2);
                     res += "}";
                 }
@@ -270,6 +270,7 @@ public class UserMessage {
 
     /**
      * 删除所选通知数据
+     *
      * @param did
      * @param request
      * @param response
@@ -283,15 +284,13 @@ public class UserMessage {
         String username = (String) session.getAttribute("username");
         String res = null;
 
-        if(username == null){
+        if (username == null) {
             res = "{\"status\": \"invalid\"}";
-        }
-        else{
+        } else {
             Integer row = userMSService.delMyMessage(did, username);
-            if(row == 1){
+            if (row == 1) {
                 res = "{\"status\": \"valid\"}";
-            }
-            else{
+            } else {
                 res = "{\"status\": \"mysqlerr\"}";
             }
         }
@@ -303,6 +302,7 @@ public class UserMessage {
 
     /**
      * 标记全部为已读
+     *
      * @param request
      * @param response
      */
@@ -314,10 +314,9 @@ public class UserMessage {
         String res = null;
         String username = (String) session.getAttribute("username");
 
-        if(username == null){
+        if (username == null) {
             res = "{\"status\": \"invalid\"}";
-        }
-        else{
+        } else {
             Integer row = userMSService.setAllStatus(username);
             res = "{\"status\": \"valid\"}";
         }
@@ -328,10 +327,9 @@ public class UserMessage {
     }
 
     /**
-     *
-     * @Description 管理员身份获取通知数据列表
      * @param [paramMap, response]
      * @return void
+     * @Description 管理员身份获取通知数据列表
      * @author yinjimin
      * @date 2018/4/22
      */
@@ -349,34 +347,34 @@ public class UserMessage {
         Integer pageSize = paramMap.getPageSize();
         Integer offset = pageNo * pageSize;
         Integer identity = 0;
-        if(paramMap.getStatus() != null){
+        if (paramMap.getStatus() != null) {
             identity = paramMap.getStatus();
         }
         String startTime = "";
-        if(paramMap.getStartTime() != null) {
+        if (paramMap.getStartTime() != null) {
             startTime = simpleDateFormat.format(paramMap.getStartTime());
         }
         String title = "";
-        if(paramMap.getCourseName() != null){
+        if (paramMap.getCourseName() != null) {
             title = paramMap.getCourseName();
         }
 
         //模糊查询所有的数据
         List<org.framework.tutor.domain.UserMessage> userMessages = userMSService.getMessageListLimit(identity, title, startTime, offset, pageSize);
         Integer count = userMSService.getMessageCountLimit(identity, title, startTime);
-        if(userMessages.size() == 0){
+        if (userMessages.size() == 0) {
             resultMap.put("rows", rowList);
             resultMap.put("total", 0);
-        }else{
-            for(org.framework.tutor.domain.UserMessage userMessage: userMessages){
+        } else {
+            for (org.framework.tutor.domain.UserMessage userMessage : userMessages) {
                 Map<String, Object> rowMap = new HashMap<>(1);
                 rowMap.put("id", userMessage.getId());
                 rowMap.put("title", userMessage.getTitle());
                 rowMap.put("time", simpleDateFormat.format(userMessage.getStime()));
-                String status = userMessage.getStatus()==1?"已读":"未读";
+                String status = userMessage.getStatus() == 1 ? "已读" : "未读";
                 rowMap.put("status", status);
-                String ident = userMessage.getIdentity()==1?"是":"否";
-                rowMap.put("username", ident.equals("是")? userMessage.getUsername(): "所有人");
+                String ident = userMessage.getIdentity() == 1 ? "是" : "否";
+                rowMap.put("username", ident.equals("是") ? userMessage.getUsername() : "所有人");
                 rowMap.put("identity", ident);
                 rowList.add(rowMap);
             }
@@ -390,10 +388,9 @@ public class UserMessage {
     }
 
     /**
-     *
-     * @Description 管理员身份查看通知详情
      * @param [id, response]
      * @return void
+     * @Description 管理员身份查看通知详情
      * @author yinjimin
      * @date 2018/4/22
      */
@@ -407,16 +404,16 @@ public class UserMessage {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
         org.framework.tutor.domain.UserMessage userMessage = userMSService.getById(id);
-        if(userMessage == null){
+        if (userMessage == null) {
             resultMap.put("status", "invalid");
-        }else{
+        } else {
             resultMap.put("title", userMessage.getTitle());
             resultMap.put("message", userMessage.getDescript());
-            String status = userMessage.getStatus()==1?"已读":"未读";
+            String status = userMessage.getStatus() == 1 ? "已读" : "未读";
             resultMap.put("status", status);
-            String ident = userMessage.getIdentity()==1?"是":"否";
+            String ident = userMessage.getIdentity() == 1 ? "是" : "否";
             resultMap.put("identity", ident);
-            resultMap.put("username", ident.equals("是")? userMessage.getUsername(): "所有人");
+            resultMap.put("username", ident.equals("是") ? userMessage.getUsername() : "所有人");
             resultMap.put("time", simpleDateFormat.format(userMessage.getStime()));
         }
 

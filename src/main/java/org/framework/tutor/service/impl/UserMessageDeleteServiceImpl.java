@@ -30,7 +30,12 @@ public class UserMessageDeleteServiceImpl implements UserMessageDeleteService {
     private UserMessageDeleteMapper userMessageDeleteMapper;
 
     @Override
-    public UserMessageDelete checkIsDelete(Integer id, String username) {
-        return userMessageDeleteMapper.checkIsDelete(id, username);
+    public UserMessageDelete getStatus(Integer id, String username) {
+        return userMessageDeleteMapper.getStatus(id, username);
+    }
+
+    @Override
+    public void deleteRepeatRead(String suser, String username) {
+        userMessageDeleteMapper.deleteRepeatRead(suser, username);
     }
 }
