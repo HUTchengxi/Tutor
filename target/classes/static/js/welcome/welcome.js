@@ -202,7 +202,7 @@ $(function(){
                         "                    </li>");
 
                     var ident = data.ident;
-                    if(ident == 0 || ident == -2){
+                    if(ident != 1){
                         $("nav ul.navbar-right li.sysconfig").remove();
                     }
                 }

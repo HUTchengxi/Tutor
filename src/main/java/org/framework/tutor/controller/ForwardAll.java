@@ -459,6 +459,20 @@ public class ForwardAll {
 
     /**
      *
+     * @Description 发送邮件界面
+     * @param []
+     * @return java.lang.String
+     * @author yinjimin
+     * @date 2018/4/20
+     */
+    @RequestMapping("/sendmessagepage")
+    public String goSendMessagePage(){
+
+        return "sysconfig/admin/sendmessage";
+    }
+
+    /**
+     *
      * @Description 邮件管理界面
      * @param []
      * @return java.lang.String

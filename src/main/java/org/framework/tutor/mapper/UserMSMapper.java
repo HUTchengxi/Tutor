@@ -17,7 +17,8 @@ public interface UserMSMapper {
      * @param username
      * @return
      */
-    @Select("select count(*) from user_message where (identity=0 || username=#{username}) and status=0")
+    @Select("select count(*) from user_message um where (identity=0 || um.username=#{username}) and status=0 and um.id not in (" +
+            "select mid from user_message_delete umd where umd.username=#{username})")
     Integer getMyMessageCount(@Param("username") String username);
 
     /**
@@ -25,7 +26,8 @@ public interface UserMSMapper {
      * @param username
      * @return
      */
-    @Select("select * from user_message where username=#{username} || identity=0 order by stime desc")
+    @Select("select * from user_message um where um.username=#{username} || identity=0 and um.id not in (" +
+            "select mid from user_message_delete umd where umd.username=#{username}) order by stime desc")
     List<UserMessage> getMyMessage(@Param("username") String username);
 
     /**
@@ -34,7 +36,8 @@ public interface UserMSMapper {
      * @param username
      * @return
      */
-    @Select("select count(*) from user_message where suser=#{suser} and (username=#{username} || identity=0) and status=0")
+    @Select("select count(*) from user_message um where suser=#{suser} and (um.username=#{username} || identity=0) and status=0 " +
+            "and um.id not in (select mid from user_message_delete umd where umd.username=#{username})")
     Integer getNoMessageCount(@Param("suser") String suser, @Param("username") String username);
 
     /**
@@ -43,7 +46,8 @@ public interface UserMSMapper {
      * @param username
      * @return
      */
-    @Select("select * from user_message where suser=#{suser} and (username=#{username} || identity=0) order by stime asc")
+    @Select("select * from user_message um where suser=#{suser} and (um.username=#{username} || identity=0) and " +
+            "um.id not in (select mid from user_message_delete umd where umd.username=#{username}) order by stime asc")
     List<UserMessage> getMessageBySuser(@Param("suser") String suser, @Param("username") String username);
 
     /**
@@ -52,7 +56,8 @@ public interface UserMSMapper {
      * @param username
      * @return
      */
-    @Update("update user_message set status=1 where suser=#{suser} and username=#{username}")
+    @Update("update user_message um set status=1 where suser=#{suser} and (um.username=#{username} || identity=0) and" +
+            " um.id not in (select mid from user_message_delete umd where umd.username=#{username})")
     Integer setMessageStatus(@Param("suser") String suser, @Param("username") String username);
 
     /**
@@ -62,7 +67,8 @@ public interface UserMSMapper {
      * @param sta
      * @return
      */
-    @Select("select * from user_message where suser=#{suser} and username=#{username} and status=#{sta}")
+    @Select("select * from user_message um where suser=#{suser} and (um.username=#{username}||identity=0) and status=#{sta} and " +
+            "um.id not in (select mid from user_message_delete umd where umd.username=#{username})")
     List<UserMessage> getMessageByStatus(@Param("suser") String suser, @Param("username") String username, @Param("sta") Integer sta);
 
     /**
@@ -70,15 +76,16 @@ public interface UserMSMapper {
      * @param did
      * @return
      */
-    @Delete("delete from user_message where id=#{did}")
-    Integer delMyMessage(@Param("did") Integer did);
+    @Insert("insert into user_message_delete(mid, username) values(#{did}, #{username})")
+    Integer delMyMessage(@Param("did") Integer did, @Param("username") String username);
 
     /**
      * 标记全部为已读
      * @param username
      * @return
      */
-    @Update("update user_message set status=1 where username=#{username}")
+    @Update("update user_message um set status=1 where um.username=#{username} and um.id not in (" +
+            "select mid from user_message_delete umd where umd.username=#{username})")
     Integer setAllStatus(@Param("username") String username);
 
     @Select("select * from user_message where identity=#{identity} and title like CONCAT('%',#{title},'%') and stime like CONCAT('%',#{stime},'%')" +

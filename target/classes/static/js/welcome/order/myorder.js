@@ -80,7 +80,7 @@ $(function() {
                         "                   <li><a style=\"color: black;\"><p>"+hello+"：<span class=\"span-cls-nick\" style=\"color: red;\">"+nickname+"</span></p></a></li>\n");
 
                     var ident = data.ident;
-                    if(ident == 0 || ident == -2){
+                    if(ident != 1){
                         $("nav ul.navbar-right li.sysconfig").remove();
                     }
                 }

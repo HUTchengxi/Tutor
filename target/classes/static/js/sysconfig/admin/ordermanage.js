@@ -85,7 +85,6 @@ $(function () {
                     formatter: function (value, row, index) {
                         var orderCode = value;
                         return "<button class='btn-primary btn btn-errdear' data-toggle='modal' data-target='#errDear' data-code='" + orderCode + "'>异常处理</button>&nbsp;&nbsp;" +
-                            "<button class='btn btn-danger' data-code='" + orderCode + "'>建立会话</button>&nbsp;&nbsp;" +
                             "<button class='btn btn-danger btn-more' data-toggle='modal' data-target='#orderMore' data-code='" + orderCode + "'>查看详情</button>&nbsp;&nbsp;";
                     }
                 }

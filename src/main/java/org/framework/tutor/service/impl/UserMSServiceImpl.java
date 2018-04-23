@@ -94,9 +94,9 @@ public class UserMSServiceImpl implements UserMSService {
      * @return
      */
     @Override
-    public Integer delMyMessage(Integer did) {
+    public Integer delMyMessage(Integer did, String username) {
 
-        return userMSMapper.delMyMessage(did);
+        return userMSMapper.delMyMessage(did, username);
     }
 
     /**

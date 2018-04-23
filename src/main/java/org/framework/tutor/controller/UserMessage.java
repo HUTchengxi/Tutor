@@ -2,8 +2,10 @@ package org.framework.tutor.controller;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonParser;
+import org.framework.tutor.domain.UserMessageDelete;
 import org.framework.tutor.entity.ParamMap;
 import org.framework.tutor.service.UserMSService;
+import org.framework.tutor.service.UserMessageDeleteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,6 +31,9 @@ public class UserMessage {
 
     @Autowired
     private UserMSService userMSService;
+
+    @Autowired
+    private UserMessageDeleteService userMessageDeleteService;
 
     /**
      * 获取我的未读通知的数量
@@ -84,6 +89,11 @@ public class UserMessage {
                 res = "{";
                 int i = 1;
                 for (org.framework.tutor.domain.UserMessage userMessage: userMessageList) {
+                    //判断当前用户是否已经删除了该数据
+                    UserMessageDelete userMessageDelete = userMessageDeleteService.checkIsDelete(userMessage.getId(), username);
+                    if(userMessageDelete != null){
+                        continue;
+                    }
                     //获取指定发送通知的管理员的指定用户的未读通知总数据
                     Integer nocount = userMSService.getNoMessageCount(userMessage.getSuser(), username);
                     res += "\"" + i + "\": ";
@@ -94,8 +104,12 @@ public class UserMessage {
                     res += temp;
                     i++;
                 }
-                res = res.substring(0, res.length() - 2);
-                res += "}";
+                if(res.equals("{")){
+                    res = "{\"status\": \"valid\"}";
+                }else {
+                    res = res.substring(0, res.length() - 2);
+                    res += "}";
+                }
             }
         }
 
@@ -135,6 +149,10 @@ public class UserMessage {
                 int i = 1;
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
                 for (org.framework.tutor.domain.UserMessage userMessage: userMessageList) {
+                    UserMessageDelete userMessageDelete = userMessageDeleteService.checkIsDelete(userMessage.getId(), username);
+                    if(userMessageDelete != null){
+                        continue;
+                    }
                     res += "\"" + i + "\": ";
                     String temp = "{\"status\": \"" + userMessage.getStatus() + "\", " +
                             "\"stime\": \"" + simpleDateFormat.format(userMessage.getStime()) + "\", " +
@@ -144,8 +162,12 @@ public class UserMessage {
                     res += temp;
                     i++;
                 }
-                res = res.substring(0, res.length() - 2);
-                res += "}";
+                if(res.equals("{")){
+                    res = "{\"status\": \"valid\"}";
+                }else {
+                    res = res.substring(0, res.length() - 2);
+                    res += "}";
+                }
             }
         }
 
@@ -219,6 +241,10 @@ public class UserMessage {
                 int i = 1;
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
                 for (org.framework.tutor.domain.UserMessage userMessage: userMessages) {
+                    UserMessageDelete userMessageDelete = userMessageDeleteService.checkIsDelete(userMessage.getId(), username);
+                    if(userMessageDelete != null){
+                        continue;
+                    }
                     res += "\"" + i + "\": ";
                     String temp = "{\"status\": \"" + userMessage.getStatus() + "\", " +
                             "\"stime\": \"" + simpleDateFormat.format(userMessage.getStime()) + "\", " +
@@ -228,8 +254,12 @@ public class UserMessage {
                     res += temp;
                     i++;
                 }
-                res = res.substring(0, res.length() - 2);
-                res += "}";
+                if(res.equals("{")){
+                    res = "{\"status\": \"valid\"}";
+                }else {
+                    res = res.substring(0, res.length() - 2);
+                    res += "}";
+                }
             }
         }
 
@@ -257,7 +287,7 @@ public class UserMessage {
             res = "{\"status\": \"invalid\"}";
         }
         else{
-            Integer row = userMSService.delMyMessage(did);
+            Integer row = userMSService.delMyMessage(did, username);
             if(row == 1){
                 res = "{\"status\": \"valid\"}";
             }
@@ -299,7 +329,7 @@ public class UserMessage {
 
     /**
      *
-     * @Description 获取通知数据列表
+     * @Description 管理员身份获取通知数据列表
      * @param [paramMap, response]
      * @return void
      * @author yinjimin
@@ -361,7 +391,7 @@ public class UserMessage {
 
     /**
      *
-     * @Description 查看通知详情
+     * @Description 管理员身份查看通知详情
      * @param [id, response]
      * @return void
      * @author yinjimin

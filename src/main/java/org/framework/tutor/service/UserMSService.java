@@ -61,7 +61,7 @@ public interface UserMSService {
      * @param did
      * @return
      */
-    Integer delMyMessage(Integer did);
+    Integer delMyMessage(Integer did, String username);
 
     /**
      * 标记全部为已读
