@@ -98,8 +98,8 @@ public interface UserMSMapper {
      * @param username
      * @return
      */
-    @Update("insert into user_message_delete(mid, username, status) select id as mid, #{username} as username, 1 as status " +
-            "from user_message_delete umd where umd.username=#{umd.username} || umd,identity=0")
+    @Insert("insert into user_message_delete(mid, username, status) (select id as mid, #{username} as username, 1 as status " +
+            "from user_message um where um.username=#{username} || um.identity=0)")
     Integer setAllStatus(@Param("username") String username);
 
     @Select("select * from user_message where identity=#{identity} and title like CONCAT('%',#{title},'%') and stime like CONCAT('%',#{stime},'%')" +
@@ -111,4 +111,7 @@ public interface UserMSMapper {
 
     @Select("select * from user_message where id=#{id}")
     UserMessage getById(@Param("id") Integer id);
+
+    @Insert("insert into user_message(identity, suser, username, title, descript) values(#{identity}, #{suser}, #{username}, #{title}, #{message})")
+    void sendMessage(@Param("identity") Integer identity, @Param("suser") String suser, @Param("username") String username, @Param("title") String title, @Param("message") String message);
 }

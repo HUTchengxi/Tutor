@@ -3,6 +3,7 @@ package org.framework.tutor.controller;
 import com.google.gson.Gson;
 import com.google.gson.JsonParser;
 import org.framework.tutor.domain.UserMessageDelete;
+import org.framework.tutor.entity.EmailParam;
 import org.framework.tutor.entity.ParamMap;
 import org.framework.tutor.service.UserMSService;
 import org.framework.tutor.service.UserMessageDeleteService;
@@ -417,6 +418,45 @@ public class UserMessage {
             resultMap.put("time", simpleDateFormat.format(userMessage.getStime()));
         }
 
+        writer.print(gson.toJson(resultMap));
+        writer.flush();
+        writer.close();
+    }
+
+    /**
+     *
+     * @Description 发送通知
+     * @param [emailParam, response]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/24
+     */
+    @PostMapping("/sendmessage")
+    public void sendMessage(@RequestBody EmailParam emailParam, HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        PrintWriter writer = response.getWriter();
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(1);
+        HttpSession session = request.getSession();
+        String suser = (String) session.getAttribute("username");
+
+        try {
+            Integer identity = emailParam.getId();
+            String username = suser;
+            if(emailParam.getSend()==null || emailParam.getSend().equals("")){
+                username = emailParam.getSend();
+            }
+            String title = emailParam.getTheme();
+            String message = emailParam.getEmail();
+
+            userMSService.seneMessage(identity, suser, username, title, message);
+            resultMap.put("status", "valid");
+        }catch (Exception e){
+            e.printStackTrace();
+            resultMap.put("status", "sqlerr");
+        }
+
+        //TODO: 使用try/catch之后的下面的语句还是可以执行的，就算是调用了e.printStackTrace();
         writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();

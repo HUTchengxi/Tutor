@@ -137,4 +137,9 @@ public class UserMSServiceImpl implements UserMSService {
     public UserMessage getById(Integer id) {
         return userMSMapper.getById(id);
     }
+
+    @Override
+    public void seneMessage(Integer identity, String suser, String username, String title, String message) {
+        userMSMapper.sendMessage(identity, suser, username, title, message);
+    }
 }

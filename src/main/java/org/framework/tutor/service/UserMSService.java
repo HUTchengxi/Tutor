@@ -85,4 +85,6 @@ public interface UserMSService {
     Integer getMessageCountLimit(Integer identity, String title, String startTime);
 
     UserMessage getById(Integer id);
+
+    void seneMessage(Integer identity, String suser, String username, String title, String message);
 }

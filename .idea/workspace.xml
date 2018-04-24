@@ -12,18 +12,19 @@
     <list default="true" id="bf479440-431d-499c-9612-40c14de1a166" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMessage.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMessage.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/UserMessage.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/UserMessage.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/UserMessageDelete.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/UserMessageDelete.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMSMapper.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMSMapper.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMessageDeleteMapper.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMessageDeleteMapper.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMSService.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMSService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMessageDeleteService.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMessageDeleteService.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMSServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMSServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMessageDeleteServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMessageDeleteServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/domain/UserMessageDelete.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/domain/UserMessageDelete.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/mapper/UserMSMapper.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/impl/UserMSServiceImpl.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/sysconfig/admin/sendmail.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/sysconfig/admin/sendmail.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/sendmessage.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/sendmessage.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/sendmessage.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/sendmessage.html" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/UserMessage.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/UserMessage.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/mapper/UserMSMapper.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/mapper/UserMSMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/UserMSService.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/UserMSService.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/impl/UserMSServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/service/impl/UserMSServiceImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/sysconfig/admin/sendmail.css" afterPath="$PROJECT_DIR$/target/classes/static/css/sysconfig/admin/sendmail.css" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/sysconfig/admin/sendmessage.js" afterPath="$PROJECT_DIR$/target/classes/static/js/sysconfig/admin/sendmessage.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/sysconfig/admin/sendmessage.html" afterPath="$PROJECT_DIR$/target/classes/templates/sysconfig/admin/sendmessage.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -70,87 +71,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="UserMessage.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserMessage.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMessage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1827">
-              <caret line="264" column="0" lean-forward="true" selection-start-line="264" selection-start-column="0" selection-end-line="264" selection-end-column="0" />
+            <state relative-caret-position="1138">
+              <caret line="179" column="6" lean-forward="true" selection-start-line="179" selection-start-column="6" selection-end-line="179" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserMSMapper.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserMSMapper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMSMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="84" column="100" lean-forward="true" selection-start-line="84" selection-start-column="100" selection-end-line="84" selection-end-column="100" />
+            <state relative-caret-position="416">
+              <caret line="112" column="49" lean-forward="true" selection-start-line="112" selection-start-column="49" selection-end-line="112" selection-end-column="49" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserMessageDeleteServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMessageDeleteServiceImpl.java">
+      <file leaf-file-name="sendmessage.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/sendmessage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="33" column="44" lean-forward="true" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
+            <state relative-caret-position="9">
+              <caret line="16" column="57" lean-forward="true" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserMessageDeleteMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMessageDeleteMapper.java">
+      <file leaf-file-name="sendmessage.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/sendmessage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="11" column="63" lean-forward="false" selection-start-line="11" selection-start-column="63" selection-end-line="11" selection-end-column="63" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="1.21.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="554">
-              <caret line="420" column="45" lean-forward="false" selection-start-line="420" selection-start-column="45" selection-end-line="420" selection-end-column="45" />
+            <state relative-caret-position="1637">
+              <caret line="69" column="53" lean-forward="true" selection-start-line="69" selection-start-column="53" selection-end-line="69" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserMSServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMSServiceImpl.java">
+      <file leaf-file-name="EmailParam.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/entity/EmailParam.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="74" column="34" lean-forward="true" selection-start-line="74" selection-start-column="34" selection-end-line="74" selection-end-column="34" />
+            <state relative-caret-position="-333">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="e#3123#3124#0" expanded="true" />
-                <element signature="e#3170#3171#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mymessage.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/mymessage.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="467" column="44" lean-forward="true" selection-start-line="467" selection-start-column="44" selection-end-line="467" selection-end-column="44" />
-              <folding>
-                <marker date="1524486778710" expanded="true" signature="1945:1960" ph="..." />
-                <marker date="1524486778710" expanded="true" signature="2049:2062" ph="..." />
-                <marker date="1524486778710" expanded="true" signature="2120:2131" ph="..." />
-                <marker date="1524486778710" expanded="true" signature="5317:5327" ph="..." />
-                <marker date="1524486778710" expanded="true" signature="9758:9766" ph="&amp;##xe610;" />
-                <marker date="1524486778710" expanded="true" signature="11626:11634" ph="&amp;##xe610;" />
-                <marker date="1524486778710" expanded="true" signature="15633:15641" ph="&amp;##xe610;" />
-                <marker date="1524486778710" expanded="true" signature="17588:17596" ph="&amp;##xe610;" />
-                <marker date="1524486778710" expanded="true" signature="23933:23941" ph="&amp;##xe610;" />
-                <marker date="1524486778710" expanded="true" signature="26241:26249" ph="&amp;##xe610;" />
+                <element signature="e#0#2271#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -238,8 +205,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/CourseDeleteReqService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/CourseOrderManagerService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/CourseOrderManagerServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/CourseDeleteReqServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/CourseDeleteReqMapper.java" />
@@ -276,19 +241,21 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/ordermanage.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/ordermanage.html" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/sendmessage.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/mymessage.js" />
         <option value="$PROJECT_DIR$/src/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/UserMessageDelete.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMSServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMSService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/UserMessage.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMessageDeleteServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMessageDeleteService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMessageDeleteMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/sysconfig/admin/sendmail.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/sendmessage.html" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMSService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMSServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMessage.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMSMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/sendmessage.js" />
       </list>
     </option>
   </component>
@@ -560,6 +527,36 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tutorweb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="sysconfig" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tutorweb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="sysconfig" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tutorweb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -644,8 +641,8 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1161,7 +1158,8 @@
       <workItem from="1524373039370" duration="1610000" />
       <workItem from="1524379191207" duration="1994000" />
       <workItem from="1524384771629" duration="8137000" />
-      <workItem from="1524488069693" duration="4722000" />
+      <workItem from="1524488069693" duration="4782000" />
+      <workItem from="1524532553877" duration="2512000" />
     </task>
     <task id="LOCAL-00013" summary="邮箱注册以及后续的验证的实现，还未实现邮箱注册后的等待/重发界面">
       <created>1520780099718</created>
@@ -1510,7 +1508,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1134830000" />
+    <option name="totallyTimeSpent" value="1137402000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1523,6 +1521,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992035" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1540,11 +1539,11 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287827" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287827" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6348123" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6348123" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66870093" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287827" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25723472" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1637,20 +1636,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/emailmanage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/sendmail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1193">
-          <caret line="61" column="29" lean-forward="false" selection-start-line="61" selection-start-column="29" selection-end-line="61" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/layui-admin/js/adminNav.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="564">
@@ -1865,13 +1850,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/sendmessage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1036">
-          <caret line="28" column="10" lean-forward="true" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="283">
@@ -1890,13 +1868,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
           <caret line="87" column="98" lean-forward="false" selection-start-line="87" selection-start-column="98" selection-end-line="87" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/sendmessage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="32" column="34" lean-forward="true" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -1919,18 +1890,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="407">
           <caret line="11" column="32" lean-forward="false" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-          <folding>
-            <element signature="e#240#241#0" expanded="true" />
-            <element signature="e#285#286#0" expanded="true" />
-            <element signature="e#321#322#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/mymessage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="467" column="44" lean-forward="true" selection-start-line="467" selection-start-column="44" selection-end-line="467" selection-end-column="44" />
+        <state relative-caret-position="17279">
+          <caret line="467" column="44" lean-forward="false" selection-start-line="467" selection-start-column="44" selection-end-line="467" selection-end-column="44" />
           <folding>
             <marker date="1524486778710" expanded="true" signature="1945:1960" ph="..." />
             <marker date="1524486778710" expanded="true" signature="2049:2062" ph="..." />
@@ -1950,10 +1916,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2109">
           <caret line="84" column="57" lean-forward="false" selection-start-line="84" selection-start-column="57" selection-end-line="84" selection-end-column="57" />
-          <folding>
-            <element signature="e#1437#1438#0" expanded="true" />
-            <element signature="e#1471#1472#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1961,22 +1923,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
+        <state relative-caret-position="15540">
           <caret line="420" column="45" lean-forward="false" selection-start-line="420" selection-start-column="45" selection-end-line="420" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMSService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="718">
-          <caret line="73" column="55" lean-forward="true" selection-start-line="73" selection-start-column="55" selection-end-line="73" selection-end-column="55" />
           <folding />
         </state>
       </provider>
@@ -1985,51 +1938,89 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
           <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMSServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="74" column="34" lean-forward="true" selection-start-line="74" selection-start-column="34" selection-end-line="74" selection-end-column="34" />
-          <folding>
-            <element signature="e#3123#3124#0" expanded="true" />
-            <element signature="e#3170#3171#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMessageDeleteServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="33" column="44" lean-forward="true" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
+        <state relative-caret-position="666">
+          <caret line="33" column="44" lean-forward="false" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMessageDeleteMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
+        <state relative-caret-position="259">
           <caret line="11" column="63" lean-forward="false" selection-start-line="11" selection-start-column="63" selection-end-line="11" selection-end-column="63" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMessage.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/sysconfig/admin/sendmail.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1827">
-          <caret line="264" column="0" lean-forward="true" selection-start-line="264" selection-start-column="0" selection-end-line="264" selection-end-column="0" />
+        <state relative-caret-position="407">
+          <caret line="11" column="18" lean-forward="false" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/entity/EmailParam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-333">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#2271#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMSService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="607">
+          <caret line="88" column="8" lean-forward="false" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMSServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="749">
+          <caret line="142" column="21" lean-forward="false" selection-start-line="142" selection-start-column="21" selection-end-line="142" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/sendmessage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1637">
+          <caret line="69" column="53" lean-forward="true" selection-start-line="69" selection-start-column="53" selection-end-line="69" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/sendmessage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9">
+          <caret line="16" column="57" lean-forward="true" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMSMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="84" column="100" lean-forward="true" selection-start-line="84" selection-start-column="100" selection-end-line="84" selection-end-column="100" />
+        <state relative-caret-position="416">
+          <caret line="112" column="49" lean-forward="true" selection-start-line="112" selection-start-column="49" selection-end-line="112" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1138">
+          <caret line="179" column="6" lean-forward="true" selection-start-line="179" selection-start-column="6" selection-end-line="179" selection-end-column="6" />
           <folding />
         </state>
       </provider>
