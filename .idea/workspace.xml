@@ -10,7 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf479440-431d-499c-9612-40c14de1a166" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/commit.log" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -80,8 +80,8 @@
       <file leaf-file-name="1.21.sql" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="444" column="21" lean-forward="true" selection-start-line="444" selection-start-column="21" selection-end-line="444" selection-end-column="21" />
+            <state relative-caret-position="573">
+              <caret line="444" column="0" lean-forward="false" selection-start-line="444" selection-start-column="0" selection-end-line="444" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -218,8 +218,8 @@
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMessage.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMSMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/sendmessage.js" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/commit.log" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" />
       </list>
     </option>
   </component>
@@ -1123,7 +1123,7 @@
       <workItem from="1524379191207" duration="1994000" />
       <workItem from="1524384771629" duration="8137000" />
       <workItem from="1524488069693" duration="4782000" />
-      <workItem from="1524532553877" duration="3411000" />
+      <workItem from="1524532553877" duration="4916000" />
     </task>
     <task id="LOCAL-00013" summary="邮箱注册以及后续的验证的实现，还未实现邮箱注册后的等待/重发界面">
       <created>1520780099718</created>
@@ -1472,7 +1472,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1138301000" />
+    <option name="totallyTimeSpent" value="1139806000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1963,7 +1963,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#2271#0" expanded="true" />
+            <element signature="e#0#2271#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2010,8 +2010,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="444" column="21" lean-forward="true" selection-start-line="444" selection-start-column="21" selection-end-line="444" selection-end-column="21" />
+        <state relative-caret-position="573">
+          <caret line="444" column="0" lean-forward="false" selection-start-line="444" selection-start-column="0" selection-end-line="444" selection-end-column="0" />
           <folding />
         </state>
       </provider>

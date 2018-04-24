@@ -442,7 +442,5 @@ select count(*) from course_command where cid in (select id from course_main whe
 select count(*) from course_order where cid in (select id from course_main where username=#{username}) and otime like CONCAT('%', #{NOW}, '%')
 
 
-everything up to date
-
 #修改了user表的主键为username
 
