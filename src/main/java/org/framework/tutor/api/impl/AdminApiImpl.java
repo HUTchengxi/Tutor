@@ -63,7 +63,7 @@ public class AdminApiImpl implements AdminApi {
             session.setAttribute("nickname", userMain.getNickname());
             session.setAttribute("identity", userMain.getIdentity());
             resultMap.put("status", "success");
-            resultMap.put("url", "/forward_con/gosysadminmain");
+            resultMap.put("url", "/adminpage_con/gosysadminmain");
         }
 
         writer.print(gson.toJson(resultMap));

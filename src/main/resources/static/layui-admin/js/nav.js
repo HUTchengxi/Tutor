@@ -1,7 +1,7 @@
 var navs = [{
     "title": "后台首页",
     "icon": "icon-computer",
-    "href": "/gosystutormain",
+    "href": "gosystutormain",
     "spread": false
 }, {
     "title": "我的课程",
@@ -12,31 +12,31 @@ var navs = [{
         {
             "title": "发布课程管理",
             "icon": "&#xe631;",
-            "href": "/forward_con/gosystutorpublish",
+            "href": "/tutorpage_con/gosystutorpublish",
             "spread": false
         },
         {
             "title": "发布新的课程",
             "icon": "&#xe631;",
-            "href": "/forward_con/gosystutorpublishnew",
+            "href": "/tutorpage_con/gosystutorpublishnew",
             "spread": false
         },
         {
             "title": "课程评论管理",
             "icon": "&#xe631;",
-            "href": "/forward_con/gosystutorcommand",
+            "href": "/tutorpage_con/gosystutorcommand",
             "spread": false
         },
         {
             "title": "课程订单管理",
             "icon": "&#xe631;",
-            "href": "/forward_con/gosystutororder",
+            "href": "/tutorpage_con/gosystutororder",
             "spread": false
         }
     ]
 }, {
     "title": "通知中心",
     "icon": "icon-text",
-    "href": "/forward_con/gosystutormessage",
+    "href": "/tutorpage_con/gosystutormessage",
     "spread": false
 }]

@@ -12,25 +12,25 @@ var navs = [{
         {
             "title": "订单异常管理",
             "icon": "&#xe631;",
-            "href": "/forward_con/gosysordermanage",
+            "href": "/adminpage_con/gosysordermanage",
             "spread": false
         },
         {
             "title": "邮件系统",
             "icon": "&#xe631;",
-            "href": "/forward_con/gosysadminemailmanage",
+            "href": "/adminpage_con/gosysadminemailmanage",
             "spread": false
         },
         {
             "title": "课程下线申请",
             "icon": "&#xe631;",
-            "href": "/forward_con/gosyscoursedeletemanage",
+            "href": "/adminpage_con/gosyscoursedeletemanage",
             "spread": false
         },
         {
             "title": "通知管理",
             "icon": "&#xe631;",
-            "href": "/forward_con/gosysadminmessagemanage",
+            "href": "/adminpage_con/gosysadminmessagemanage",
             "spread": false
         }
     ]

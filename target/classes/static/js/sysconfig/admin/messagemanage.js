@@ -145,4 +145,11 @@ $(function () {
     };
     $(document).on("click", "#orderTable button.btn-more", click_openordermore);
 
+    /**
+     * 点击按钮进入发送通知界面
+     */
+    var click_gosendmessage = function(){
+        window.open("/adminpage_con/sendmessagepage");
+    };
+    $("#pageorder form button.btn-success").click(click_gosendmessage);
 });

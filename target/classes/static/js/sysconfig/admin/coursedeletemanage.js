@@ -175,7 +175,7 @@ $(function () {
      */
     var click_opensendmailpage = function(){
 
-        window.open("/forward_con/sendmailpage?username="+$("#errDear").data("username"));
+        window.open("/adminpage_con/sendmailpage?username="+$("#errDear").data("username"));
     };
     $("#errDear .link-sendmail").click(click_opensendmailpage);
 });

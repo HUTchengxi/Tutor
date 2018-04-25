@@ -156,7 +156,7 @@ $(function () {
     var click_openmod = function(){
 
         var id = $(this).data("code");
-        window.open("/forward_con/sendmailpage?id="+id);
+        window.open("/adminpage_con/sendmailpage?id="+id);
     };
     $(document).on("click", "#pageorder button.btn-mod", click_openmod);
 });
