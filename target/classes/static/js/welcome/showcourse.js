@@ -961,6 +961,54 @@ $(function() {
 
 
 
+    //------------------课程概述----------------------
+    /**
+     * 异步获取课程概述数据
+     */
+    var async_loadcoursesummary = function(){
+
+        var cid = -1;
+        var reg = new RegExp("(^|&)id=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) cid = unescape(r[2]);
+
+        $.ajax({
+            type: "post",
+            url: "/coursemain_con/getcoursesummary",
+            data: {
+                cid: cid
+            },
+            dataType: "json",
+            success: function(data){
+                var status = data.status;
+                if(status == "none"){
+                    $(".descmain").remove();
+                    $("#coursedesc").append("<p class='none'>暂无概述</p>");
+                }else{
+                    $.each(data, function(index, item){
+
+                        if(index == "nickname"){
+                            $("#coursedesc .nickname").text(item);
+                        }else if(index == "imgsrc"){
+                            $("#coursedesc img").attr("src", item);
+                        }else{
+                            $.each(item, function(key, value){
+                                if(value.title == "适合人群"){
+                                    $("#coursedesc .suite").text(value.descript);
+                                }else if(value.title == "课程概述"){
+                                    $("#coursedesc .desc").text(value.descript);
+                                }else{
+                                    $("#coursedesc .markinfo").text(value.descript);
+                                }
+                            });
+                        }
+                    });
+                }
+            }
+        });
+    };
+    async_loadcoursesummary();
+
 
 
 

@@ -40,7 +40,7 @@ public interface BbsCardMapper {
      * @author yinjimin
      * @date 2018/4/1
      */
-    @Insert("insert into bbs_card(username, title, descript, imgsrc) values(#{username}, #{title}, #{descript}, #{imgsrc}) order by id desc")
+    @Insert("insert into bbs_card(username, title, descript, imgsrc) values(#{username}, #{title}, #{descript}, #{imgsrc})")
     void publishCard(@Param("username") String username, @Param("title") String title, @Param("imgsrc") String imgsrc, @Param("descript") String descript);
 
     /**

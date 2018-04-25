@@ -1,5 +1,6 @@
 package org.framework.tutor.service;
 
+import org.apache.ibatis.annotations.Param;
 import org.framework.tutor.domain.CourseSummary;
 
 import java.util.List;
@@ -28,4 +29,6 @@ public interface CourseSummaryService {
     Integer updateCourseSummary(Integer id, String title, String descript);
 
     void addCourseSummary(String username, Integer id, String sumTitle1, String sumDescript1);
+
+    List<CourseSummary> getCourseSummary(Integer cid);
 }

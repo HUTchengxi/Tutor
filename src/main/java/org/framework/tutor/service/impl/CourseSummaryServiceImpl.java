@@ -45,4 +45,9 @@ public class CourseSummaryServiceImpl implements CourseSummaryService {
     public void addCourseSummary(String username, Integer id, String sumTitle1, String sumDescript1) {
         courseSummaryMapper.addCourseSummary(username, id, sumTitle1, sumDescript1);
     }
+
+    @Override
+    public List<CourseSummary> getCourseSummary(Integer cid) {
+        return courseSummaryMapper.getCourseSummary(cid);
+    }
 }

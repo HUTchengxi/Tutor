@@ -39,4 +39,7 @@ public interface CourseSummaryMapper {
 
     @Insert("insert into course_summary(username, cid, title, descript) values(#{username}, #{id}, #{title}, #{descript})")
     void addCourseSummary(@Param("username") String username, @Param("id") Integer id, @Param("title") String sumTitle1, @Param("descript") String sumDescript1);
+
+    @Select("select * from course_summary where cid=#{cid}")
+    List<CourseSummary> getCourseSummary(@Param("cid") Integer cid);
 }

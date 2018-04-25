@@ -1,14 +1,13 @@
 package org.framework.tutor.controller;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonParser;
+import org.framework.tutor.domain.CourseSummary;
 import org.framework.tutor.domain.UserMain;
 import org.framework.tutor.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,7 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.*;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 课程表控制类
@@ -97,10 +99,9 @@ public class CourseMain {
                         courseMains = courseMService.getCourseListHotKW(keyword, startpos);
                     }
                 } else {
-                    if(status == null || status == 0) {
+                    if (status == null || status == 0) {
                         courseMains = courseMService.getCourseListHot(stype, startpos);
-                    }
-                    else{
+                    } else {
                         courseMains = courseMService.getCourseListHotSKW(stype, keyword, startpos);
                     }
                 }
@@ -108,17 +109,15 @@ public class CourseMain {
             //评论最多排序
             else {
                 if (stype == -1) {
-                    if(status == null || status == 0) {
+                    if (status == null || status == 0) {
                         courseMains = courseMService.getCourseListMore(startpos);
-                    }
-                    else{
+                    } else {
                         courseMains = courseMService.getCourseListMoreKW(keyword, startpos);
                     }
                 } else {
-                    if(status == null || status == 0) {
+                    if (status == null || status == 0) {
                         courseMains = courseMService.getCourseListMore(stype, startpos);
-                    }
-                    else{
+                    } else {
                         courseMains = courseMService.getCourseListMoreSKW(stype, keyword, startpos);
                     }
                 }
@@ -129,17 +128,15 @@ public class CourseMain {
             //时间最新排序
             if (sort.equals("new")) {
                 if (stype == -1) {
-                    if(status == null || status == 0) {
+                    if (status == null || status == 0) {
                         courseMains = courseMService.getCourseListNewAC(ctype, startpos);
-                    }
-                    else{
+                    } else {
                         courseMains = courseMService.getCourseListNewACK(ctype, keyword, startpos);
                     }
                 } else {
-                    if(status == null || status == 0) {
+                    if (status == null || status == 0) {
                         courseMains = courseMService.getCourseListNew(stype, ctype, startpos);
-                    }
-                    else{
+                    } else {
                         courseMains = courseMService.getCourseListNewKW(stype, ctype, keyword, startpos);
                     }
                 }
@@ -147,17 +144,15 @@ public class CourseMain {
             //搜索最热排序
             else if (sort.equals("hot")) {
                 if (stype == -1) {
-                    if(status == null || status == 0) {
+                    if (status == null || status == 0) {
                         courseMains = courseMService.getCourseListHotAC(ctype, startpos);
-                    }
-                    else{
+                    } else {
                         courseMains = courseMService.getCourseListHotACK(ctype, keyword, startpos);
                     }
                 } else {
-                    if(status == null || status == 0) {
+                    if (status == null || status == 0) {
                         courseMains = courseMService.getCourseListHot(stype, ctype, startpos);
-                    }
-                    else{
+                    } else {
                         courseMains = courseMService.getCourseListHotKW(stype, ctype, keyword, startpos);
                     }
                 }
@@ -165,17 +160,15 @@ public class CourseMain {
             //评论最多排序
             else {
                 if (stype == -1) {
-                    if(status == null || status == 0) {
+                    if (status == null || status == 0) {
                         courseMains = courseMService.getCourseListMoreAC(ctype, startpos);
-                    }
-                    else{
+                    } else {
                         courseMains = courseMService.getCourseListMoreACK(ctype, keyword, startpos);
                     }
                 } else {
-                    if(status == null || status == 0) {
+                    if (status == null || status == 0) {
                         courseMains = courseMService.getCourseListMore(stype, ctype, startpos);
-                    }
-                    else{
+                    } else {
                         courseMains = courseMService.getCourseListMoreKW(stype, ctype, keyword, startpos);
                     }
                 }
@@ -209,10 +202,9 @@ public class CourseMain {
     }
 
     /**
-     *
-     * @Description 获取所有科目类别
      * @param [response]
      * @return void
+     * @Description 获取所有科目类别
      * @author yinjimin
      * @date 2018/4/15
      */
@@ -326,6 +318,7 @@ public class CourseMain {
 
     /**
      * 获取指定的课程的数据
+     *
      * @param id
      * @param response
      * @throws IOException
@@ -338,10 +331,9 @@ public class CourseMain {
         String res = null;
 
         org.framework.tutor.domain.CourseMain courseMain = courseMService.getCourseById(id);
-        if(courseMain == null){
+        if (courseMain == null) {
             res = "{\"status\": \"invalid\"}";
-        }
-        else {
+        } else {
             UserMain userMain = userMService.getByUser(courseMain.getUsername());
 
             res = "{\"imgsrc\": \"" + courseMain.getImgsrc() + "\", " +
@@ -364,6 +356,7 @@ public class CourseMain {
 
     /**
      * 获取所搜索的课程数量，便于实现分页
+     *
      * @param stype
      * @param ctype
      * @param status
@@ -381,46 +374,39 @@ public class CourseMain {
 
         Integer total = 0;
         //默认，不限课程类别进行排序
-        if(ctype.equals("all")){
+        if (ctype.equals("all")) {
             //未指定主类别
-            if(stype == -1){
+            if (stype == -1) {
                 //不是通过用户搜素
-                if(status == null || status == 0){
+                if (status == null || status == 0) {
                     total = courseMService.getCourseCount();
-                }
-                else{
+                } else {
                     total = courseMService.getCourseCountK(keyword);
                 }
-            }
-            else{
-                if(status == null || status == 0){
+            } else {
+                if (status == null || status == 0) {
                     total = courseMService.getCourseCountS(stype);
-                }
-                else{
+                } else {
                     total = courseMService.getCourseCountSK(stype, keyword);
                 }
             }
-        }
-        else{
-            if(stype == -1){
-                if(status == null || status == 0){
+        } else {
+            if (stype == -1) {
+                if (status == null || status == 0) {
                     total = courseMService.getCourseCountC(ctype);
-                }
-                else{
+                } else {
                     total = courseMService.getCourseCountCK(ctype, keyword);
                 }
-            }
-            else{
-                if(status == null || status == 0){
+            } else {
+                if (status == null || status == 0) {
                     total = courseMService.getCourseCountCS(ctype, stype);
-                }
-                else{
+                } else {
                     total = courseMService.getCourseCountCSK(ctype, stype, keyword);
                 }
             }
         }
 
-        res = "{\"total\": \""+total+"\"}";
+        res = "{\"total\": \"" + total + "\"}";
 
         writer.print(new JsonParser().parse(res).getAsJsonObject());
         writer.flush();
@@ -428,10 +414,9 @@ public class CourseMain {
     }
 
     /**
-     *
-     * @Description 获取当前家教的所有发布数据
      * @param [request, response]
      * @return void
+     * @Description 获取当前家教的所有发布数据
      * @author yinjimin
      * @date 2018/4/14
      */
@@ -480,17 +465,16 @@ public class CourseMain {
     }
 
     /**
-     *
-     * @Description 发布课程
      * @param [name, stype, ctype, imgsrc, total, jcount, price, sumTitle1, sumTitle2, sumTitle3,
      *               sumDescript1, sumDescript2, sumDescript3, chapTitle, chaDescript, request, response]
      * @return void
+     * @Description 发布课程
      * @author yinjimin
      * @date 2018/4/15
      */
     @PostMapping("/publishnewcourse")
     @Transactional
-    public void publishNewCourse(@RequestParam String name, @RequestParam Integer stype, @RequestParam String ctype,@RequestParam String descript,
+    public void publishNewCourse(@RequestParam String name, @RequestParam Integer stype, @RequestParam String ctype, @RequestParam String descript,
                                  MultipartFile imgsrc, @RequestParam Integer total, @RequestParam Integer jcount,
                                  @RequestParam Double price, @RequestParam String sumTitle1, @RequestParam String sumTitle2,
                                  @RequestParam String sumTitle3, @RequestParam String sumDescript1, @RequestParam String sumDescript2,
@@ -504,10 +488,9 @@ public class CourseMain {
         String username = (String) session.getAttribute("username");
         Integer identity = (Integer) session.getAttribute("identity");
         //判断当前用户是否为家教身份
-        if(identity != 1){
+        if (identity != 1) {
             res = "{\"status\": \"invalid\"}";
-        }
-        else {
+        } else {
             //判断课程名称是否已存在
             org.framework.tutor.domain.CourseMain nameCourseMain = courseMService.checkIsexistName(name);
             if (nameCourseMain != null) {
@@ -533,7 +516,7 @@ public class CourseMain {
                 fos.close();
                 res = "{\"status\": \"valid\"}";
                 //保存课程基本信息
-                courseMService.publishCourse(username, name, "/images/user/face/" + imgsrc.getOriginalFilename(), stype, ctype, jcount, descript, price, total);
+                courseMService.publishCourse(username, name, "/images/user/course/" + imgsrc.getOriginalFilename(), stype, ctype, jcount, descript, price, total);
                 org.framework.tutor.domain.CourseMain courseMain = courseMService.getByName(username, name, stype, ctype);
                 //保存课程概述信息
                 courseSummaryService.addCourseSummary(username, courseMain.getId(), sumTitle1, sumDescript1);
@@ -554,5 +537,42 @@ public class CourseMain {
         writer.print(new JsonParser().parse(res).getAsJsonObject());
         writer.flush();
         writer.close();
+    }
+
+
+    /**
+     *
+     * @Description 获取课程概述
+     * @param
+     * @return java.lang.String
+     * @author yinjimin
+     * @date 2018/4/25
+     */
+    @PostMapping("/getcoursesummary")
+    public @ResponseBody String getCourseSummary(@RequestParam Integer cid) {
+
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(3);
+
+        List<CourseSummary> courseSummarys = courseSummaryService.getCourseSummary(cid);
+
+        if (courseSummarys.size() == 0) {
+            resultMap.put("status", "none");
+        } else {
+
+            UserMain userMain = userMService.getByUser(courseSummarys.get(0).getUsername());
+            resultMap.put("nickname", userMain.getNickname());
+            resultMap.put("imgsrc", userMain.getImgsrc());
+            List<Object> rowList = new ArrayList<>(3);
+            for (CourseSummary courseSummary : courseSummarys) {
+                Map<String, Object> rowMap = new HashMap<>(2);
+                rowMap.put("title", courseSummary.getTitle());
+                rowMap.put("descript", courseSummary.getDescript());
+                rowList.add(rowMap);
+            }
+            resultMap.put("rows", rowList);
+        }
+
+        return gson.toJson(resultMap);
     }
 }
