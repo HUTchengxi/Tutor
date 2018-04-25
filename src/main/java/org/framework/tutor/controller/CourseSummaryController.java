@@ -13,6 +13,7 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
+import org.framework.tutor.api.CourseSummaryApi;
 import org.framework.tutor.domain.CourseSummary;
 import org.framework.tutor.service.CourseSummaryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +39,7 @@ import java.util.List;
 public class CourseSummaryController {
 
     @Autowired
-    private CourseSummaryService courseSummaryService;
+    private CourseSummaryApi courseSummaryApi;
 
 
     /**
@@ -52,35 +53,7 @@ public class CourseSummaryController {
     @PostMapping("/getcoursesummaryinfo")
     public void getCourseSummaryInfo(@RequestParam Integer cid, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
-        String res = null;
-        HttpSession session = request.getSession();
-        String username = (String) session.getAttribute("username");
-
-        List<CourseSummary> courseSummarys = courseSummaryService.getCourseSummaryInfo(cid);
-
-        if(courseSummarys.size() == 0){
-            res = "{\"status\": \"0\"}";
-        }
-        else{
-            res = "{";
-            int i = 1;
-            for (CourseSummary courseSummary: courseSummarys) {
-                res += "\"" + i + "\": ";
-                String temp = "{\"title\": \"" + courseSummary.getTitle() + "\", " +
-                        "\"id\": \"" + courseSummary.getId() + "\", " +
-                        "\"descript\": \"" + courseSummary.getDescript() + "\"}, ";
-                res += temp;
-                i++;
-            }
-            res = res.substring(0, res.length() - 2);
-            res += "}";
-        }
-
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
-        writer.flush();
-        writer.close();
+        courseSummaryApi.getCourseSummaryInfo(cid, request, response);
     }
 
 
@@ -95,20 +68,7 @@ public class CourseSummaryController {
     @PostMapping("/updatecoursesummary")
     public void updateCourseSummary(@RequestParam Integer id, String title, String descript, HttpServletResponse response) throws IOException {
 
-        PrintWriter writer = response.getWriter();
-        String res = null;
-
-        Integer row = courseSummaryService.updateCourseSummary(id, title, descript);
-        if(row == 1){
-            res = "{\"status\": \"valid\"}";
-        }
-        else{
-            res = "{\"status\": \"sqlerr\"}";
-        }
-
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
-        writer.flush();
-        writer.close();
+        courseSummaryApi.updateCourseSummary(id, title, descript, response);
     }
 
 }

@@ -13,6 +13,7 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
+import org.framework.tutor.api.BbsCardAnswerStarApi;
 import org.framework.tutor.domain.BbsCardAnswerStar;
 import org.framework.tutor.service.BbsCardAnswerService;
 import org.framework.tutor.service.BbsCardAnswerStarService;
@@ -38,10 +39,7 @@ import java.io.PrintWriter;
 public class BbsCardAnswerStarController {
 
     @Autowired
-    private BbsCardAnswerStarService bbsCardAnswerStarService;
-
-    @Autowired
-    private BbsCardAnswerService bbsCardAnswerService;
+    private BbsCardAnswerStarApi bbsCardAnswerStarApi;
 
     /**
      *
@@ -54,33 +52,7 @@ public class BbsCardAnswerStarController {
     @RequestMapping("/checkuserstar")
     public void checkUserStar(@RequestParam Integer aid, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        PrintWriter writer = response.getWriter();
-        HttpSession session = request.getSession();
-        String username = (String) session.getAttribute("username");
-        String res = null;
-
-        if(username == null){
-            res = "{\"status\": \"nologin\"}";
-        }
-        else{
-            BbsCardAnswerStar bbsCardAnswerStar = bbsCardAnswerStarService.checkUserStar(aid, username);
-            if(bbsCardAnswerStar == null){
-                res = "{\"status\": \"none\"}";
-            }
-            else{
-                Integer score = bbsCardAnswerStar.getScore();
-                if(score == 1){
-                    res = "{\"status\": \"star\"}";
-                }
-                else{
-                    res = "{\"status\": \"unstar\"}";
-                }
-            }
-        }
-
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
-        writer.flush();
-        writer.close();
+        bbsCardAnswerStarApi.checkUserStar(aid, request, response);
     }
 
 
@@ -95,28 +67,6 @@ public class BbsCardAnswerStarController {
     @PostMapping("/adduserstar")
     public void addUserStar(@RequestParam Integer aid, @RequestParam Integer score, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        PrintWriter writer = response.getWriter();
-        HttpSession session = request.getSession();
-        String username = (String) session.getAttribute("username");
-        String res = null;
-
-        //判断是否已经star过
-        if(bbsCardAnswerStarService.checkUserStar(aid, username) != null){
-            res = "{\"status\": \"invalid\"}";
-        }
-        else{
-            bbsCardAnswerStarService.addUserStar(aid, username, score);
-            if(score == 1){
-                bbsCardAnswerService.addGcount(aid);
-            }
-            else{
-                bbsCardAnswerService.addBcount(aid);
-            }
-            res = "{\"status\": \"valid\"}";
-        }
-
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
-        writer.flush();
-        writer.close();
+        bbsCardAnswerStarApi.addUserStar(aid, score, request, response);
     }
 }

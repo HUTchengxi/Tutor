@@ -1,6 +1,7 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
+import org.framework.tutor.api.CourseChapterApi;
 import org.framework.tutor.domain.CourseMain;
 import org.framework.tutor.service.CourseChService;
 import org.framework.tutor.service.CourseMService;
@@ -26,10 +27,7 @@ import java.util.List;
 public class CourseChapter {
 
     @Autowired
-    private CourseChService courseChService;
-
-    @Autowired
-    private CourseMService courseMService;
+    private CourseChapterApi courseChapterApi;
 
     /**
      * 获取指定课程的章节目录数据
@@ -39,33 +37,7 @@ public class CourseChapter {
     @RequestMapping("/getcoursechapter")
     public void getCourseChapter(Integer cid, HttpServletResponse response) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
-        String res = null;
-
-        List<org.framework.tutor.domain.CourseChapter> courseChapters = courseChService.getCourseChapter(cid);
-        if(courseChapters.size() == 0){
-            res = "{\"count\": \"0\"}";
-        }
-        else{
-            res = "{";
-            int i = 1;
-            for (org.framework.tutor.domain.CourseChapter courseChapter: courseChapters) {
-                res += "\""+i+"\": ";
-                String temp = "{\"title\": \""+courseChapter.getTitle()+"\", " +
-                        "\"id\": \""+courseChapter.getId()+"\", " +
-                        "\"ord\": \""+courseChapter.getOrd()+"\", " +
-                        "\"descript\": \""+courseChapter.getDescript()+"\"}, ";
-                res += temp;
-                i++;
-            }
-            res = res.substring(0, res.length()-2);
-            res += "}";
-        }
-
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
-        writer.flush();
-        writer.close();
+        courseChapterApi.getCourseChapter(cid, response);
     }
 
     /**
@@ -79,32 +51,7 @@ public class CourseChapter {
     @PostMapping("/deletechapter")
     public void deleteChapter(Integer id, HttpServletResponse response, HttpServletRequest request) throws IOException {
 
-        PrintWriter writer = response.getWriter();
-        String res = null;
-
-        HttpSession session  = request.getSession();
-        String username = (String) session.getAttribute("username");
-
-        //判断待删除的目录是否为当前登录用户的目录
-        org.framework.tutor.domain.CourseChapter courseChapter = courseChService.getById(id);
-        if(courseChapter == null){
-            res = "{\"status\": \"invalid\"}";
-        }
-        else {
-            CourseMain courseMain = courseMService.getCourseById(courseChapter.getCid());
-            String realUser = courseMain.getUsername();
-            if (!realUser.equals(username)) {
-                res = "{\"status\": \"invalid\"}";
-            }
-            else{
-                courseChService.deleteChapter(id);
-                res = "{\"status\": \"valid\"}";
-            }
-        }
-
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
-        writer.flush();
-        writer.close();
+        courseChapterApi.deleteChapter(id, response, request);
     }
 
     /**
@@ -118,40 +65,6 @@ public class CourseChapter {
     @PostMapping("/modchapter")
     public void modChapter(Integer id, @RequestParam Integer cid, @RequestParam String title, @RequestParam String descript, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        PrintWriter writer = response.getWriter();
-        String res = null;
-
-        HttpSession session = request.getSession();
-        String username = (String) session.getAttribute("username");
-
-        //判断更新的目录是否为当前登录用户的目录
-        org.framework.tutor.domain.CourseChapter courseChapter = courseChService.getById(cid);
-        if(courseChapter == null){
-            res = "{\"status\": \"invalid\"}";
-        }
-        else {
-            CourseMain courseMain = courseMService.getCourseById(courseChapter.getCid());
-            String realUser = courseMain.getUsername();
-            if (!realUser.equals(username)) {
-                res = "{\"status\": \"invalid\"}";
-            }
-            else{
-                //新增
-                if(id == null){
-                    //获取最大的ord
-                    Integer ord = courseChService.getLastOrd(cid)+1;
-                    courseChService.addChapter(cid, ord, title, descript);
-                }
-                //修改
-                else{
-                    courseChService.modChapter(id, title, descript);
-                }
-                res = "{\"status\": \"valid\"}";
-            }
-        }
-
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
-        writer.flush();
-        writer.close();
+        courseChapterApi.modChapter(id, cid, title, descript, request, response);
     }
 }

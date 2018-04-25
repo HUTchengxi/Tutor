@@ -1,6 +1,7 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
+import org.framework.tutor.api.CourseTreplyApi;
 import org.framework.tutor.service.CourseTService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +20,7 @@ import java.io.PrintWriter;
 public class CourseTreply {
 
     @Autowired
-    private CourseTService courseTService;
+    private CourseTreplyApi courseTreplyApi;
 
     /**
      * 获取对应用户的指定课程的家教回复数据
@@ -30,22 +31,6 @@ public class CourseTreply {
      */
     @RequestMapping("/gettreply")
     public void getTreply(Integer cid, Integer cmid, HttpServletResponse response) throws IOException {
-
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
-        String res = null;
-
-        org.framework.tutor.domain.CourseTreply courseTreply = courseTService.getCourseTreply(cid, cmid);
-
-        if(courseTreply == null){
-            res = "{\"info\": \"null\"}";
-        }
-        else {
-            res = "{\"info\": \"" + courseTreply.getInfo() + "\"}";
-        }
-
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
-        writer.flush();
-        writer.close();
+        courseTreplyApi.getTreply(cid, cmid, response);
     }
 }

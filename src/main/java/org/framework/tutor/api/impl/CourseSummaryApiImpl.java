@@ -12,10 +12,100 @@
  */
 package org.framework.tutor.api.impl;
 
+import com.google.gson.JsonParser;
+import org.framework.tutor.api.CourseSummaryApi;
+import org.framework.tutor.domain.CourseSummary;
+import org.framework.tutor.service.CourseSummaryService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
+
 /**
  * @author yinjimin
  * @Description:
  * @date 2018年04月25日
  */
-public class CourseSummaryApiImpl {
+@Component
+public class CourseSummaryApiImpl implements CourseSummaryApi {
+
+    @Autowired
+    private CourseSummaryService courseSummaryService;
+
+    /**
+     *
+     * @Description 获取指定课程的课程概述
+     * @param [cid, request, response]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/15
+     */
+    @Override
+    public void getCourseSummaryInfo(Integer cid, HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        response.setCharacterEncoding("utf-8");
+        PrintWriter writer = response.getWriter();
+        String res = null;
+        HttpSession session = request.getSession();
+        String username = (String) session.getAttribute("username");
+
+        List<CourseSummary> courseSummarys = courseSummaryService.getCourseSummaryInfo(cid);
+
+        if(courseSummarys.size() == 0){
+            res = "{\"status\": \"0\"}";
+        }
+        else{
+            res = "{";
+            int i = 1;
+            for (CourseSummary courseSummary: courseSummarys) {
+                res += "\"" + i + "\": ";
+                String temp = "{\"title\": \"" + courseSummary.getTitle() + "\", " +
+                        "\"id\": \"" + courseSummary.getId() + "\", " +
+                        "\"descript\": \"" + courseSummary.getDescript() + "\"}, ";
+                res += temp;
+                i++;
+            }
+            res = res.substring(0, res.length() - 2);
+            res += "}";
+        }
+
+        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.flush();
+        writer.close();
+    }
+
+
+    /**
+     *
+     * @Description 更新课程概述
+     * @param [id, title, descript, response]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/15
+     */
+    @Override
+    public void updateCourseSummary(Integer id, String title, String descript, HttpServletResponse response) throws IOException {
+
+        PrintWriter writer = response.getWriter();
+        String res = null;
+
+        Integer row = courseSummaryService.updateCourseSummary(id, title, descript);
+        if(row == 1){
+            res = "{\"status\": \"valid\"}";
+        }
+        else{
+            res = "{\"status\": \"sqlerr\"}";
+        }
+
+        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.flush();
+        writer.close();
+    }
 }

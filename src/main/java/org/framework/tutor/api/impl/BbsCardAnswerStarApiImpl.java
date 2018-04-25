@@ -12,10 +12,109 @@
  */
 package org.framework.tutor.api.impl;
 
+import com.google.gson.JsonParser;
+import org.framework.tutor.api.BbsCardAnswerStarApi;
+import org.framework.tutor.domain.BbsCardAnswerStar;
+import org.framework.tutor.service.BbsCardAnswerService;
+import org.framework.tutor.service.BbsCardAnswerStarService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.io.PrintWriter;
+
 /**
  * @author yinjimin
  * @Description:
  * @date 2018年04月25日
  */
-public class BbsCardAnswerStarApiImpl {
+@Component
+public class BbsCardAnswerStarApiImpl implements BbsCardAnswerStarApi {
+
+    @Autowired
+    private BbsCardAnswerStarService bbsCardAnswerStarService;
+
+    @Autowired
+    private BbsCardAnswerService bbsCardAnswerService;
+
+    /**
+     *
+     * @Description 判断当前用户是否star指定回答
+     * @param [cardId, request, response]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/10
+     */
+    public void checkUserStar(Integer aid, HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        PrintWriter writer = response.getWriter();
+        HttpSession session = request.getSession();
+        String username = (String) session.getAttribute("username");
+        String res = null;
+
+        if(username == null){
+            res = "{\"status\": \"nologin\"}";
+        }
+        else{
+            BbsCardAnswerStar bbsCardAnswerStar = bbsCardAnswerStarService.checkUserStar(aid, username);
+            if(bbsCardAnswerStar == null){
+                res = "{\"status\": \"none\"}";
+            }
+            else{
+                Integer score = bbsCardAnswerStar.getScore();
+                if(score == 1){
+                    res = "{\"status\": \"star\"}";
+                }
+                else{
+                    res = "{\"status\": \"unstar\"}";
+                }
+            }
+        }
+
+        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.flush();
+        writer.close();
+    }
+
+
+    /**
+     *
+     * @Description 用户star指定回答
+     * @param [aid, score, request, response]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/10
+     */
+    public void addUserStar(Integer aid, Integer score, HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        PrintWriter writer = response.getWriter();
+        HttpSession session = request.getSession();
+        String username = (String) session.getAttribute("username");
+        String res = null;
+
+        //判断是否已经star过
+        if(bbsCardAnswerStarService.checkUserStar(aid, username) != null){
+            res = "{\"status\": \"invalid\"}";
+        }
+        else{
+            bbsCardAnswerStarService.addUserStar(aid, username, score);
+            if(score == 1){
+                bbsCardAnswerService.addGcount(aid);
+            }
+            else{
+                bbsCardAnswerService.addBcount(aid);
+            }
+            res = "{\"status\": \"valid\"}";
+        }
+
+        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.flush();
+        writer.close();
+    }
 }

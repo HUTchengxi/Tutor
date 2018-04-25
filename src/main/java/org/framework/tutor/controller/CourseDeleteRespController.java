@@ -13,6 +13,7 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.Gson;
+import org.framework.tutor.api.CourseDeleteRespApi;
 import org.framework.tutor.domain.CourseDeleteResp;
 import org.framework.tutor.service.CourseDeleteRespService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +38,7 @@ import java.util.Map;
 public class CourseDeleteRespController {
 
     @Autowired
-    private CourseDeleteRespService courseDeleteRespService;
+    private CourseDeleteRespApi courseDeleteRespApi;
 
     /**
      *
@@ -50,20 +51,6 @@ public class CourseDeleteRespController {
     @PostMapping("/modreqstatus")
     public void modReqStatus(@RequestParam Integer id, @RequestParam Integer status, @RequestParam String respDesc, HttpServletResponse response) throws IOException {
 
-        PrintWriter writer = response.getWriter();
-        Gson gson = new Gson();
-        Map<String, Object> resultMap = new HashMap<>(1);
-
-        CourseDeleteResp courseDeleteResp = courseDeleteRespService.getByRid(id);
-        if(courseDeleteResp == null){
-            courseDeleteRespService.insertResp(id, status, respDesc);
-        }else{
-            courseDeleteRespService.updateResp(id, status, respDesc);
-        }
-        resultMap.put("status", "valid");
-
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        courseDeleteRespApi.modReqStatus(id, status, respDesc, response);
     }
 }

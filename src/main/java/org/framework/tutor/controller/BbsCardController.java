@@ -13,6 +13,7 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
+import org.framework.tutor.api.BbsCardApi;
 import org.framework.tutor.domain.BbsCard;
 import org.framework.tutor.domain.CourseLog;
 import org.framework.tutor.domain.UserMain;
@@ -43,10 +44,7 @@ import java.util.List;
 public class BbsCardController {
 
     @Autowired
-    private BbsCardService bbsCardService;
-
-    @Autowired
-    private UserMService userMService;
+    private BbsCardApi bbsCardApi;
 
 
     /**
@@ -60,18 +58,7 @@ public class BbsCardController {
     @RequestMapping("/getmycardcount")
     public void getMyCardCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        HttpSession session = request.getSession();
-        String username = (String) session.getAttribute("username");
-        String res = null;
-        PrintWriter writer = response.getWriter();
-
-        Integer count = bbsCardService.getMyCardCount(username);
-
-        res = "{\"count\": \""+count+"\"}";
-
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
-        writer.flush();
-        writer.close();
+        bbsCardApi.getMyCardCount(request, response);
     }
 
 
@@ -87,23 +74,7 @@ public class BbsCardController {
     public void publishCard(String title, String imgsrc, String descript, HttpServletRequest request, HttpServletResponse response)
             throws IOException {
 
-        PrintWriter writer = response.getWriter();
-        HttpSession session = request.getSession();
-        String res = null;
-        String username = (String) session.getAttribute("username");
-
-        //判断标题是否已经被占用了
-        if(bbsCardService.getByTitle(title) != null){
-            res = "{\"status\": \"texist\"}";
-        }
-        else{
-            bbsCardService.publishCard(username, title, imgsrc, descript);
-            res = "{\"status\": \"valid\"}";
-        }
-
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
-        writer.flush();
-        writer.close();
+        bbsCardApi.publishCard(title, imgsrc, descript, request, response);
     }
 
 
@@ -118,39 +89,7 @@ public class BbsCardController {
     @PostMapping("/searchCard")
     public void searchCard(String keyword, HttpServletResponse response) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter  writer = response.getWriter();
-        String res = null;
-
-        //获取课程记录
-        List<BbsCard> bbsCards = bbsCardService.searchCard(keyword);
-        if(bbsCards.size() == 0){
-            res = "{\"count\": \"0\"}";
-        }
-        else {
-            res = "{";
-            int i = 1;
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-            for (BbsCard bbsCard: bbsCards) {
-                UserMain userMain = userMService.getByUser(bbsCard.getUsername());
-                res += "\""+i+"\": ";
-                String temp = "{\"crttime\": \""+simpleDateFormat.format(bbsCard.getCrttime())+"\", " +
-                        "\"nickname\": \""+userMain.getNickname()+"\", " +
-                        "\"imgsrc\": \""+userMain.getImgsrc()+"\", " +
-                        "\"bimgsrc\": \""+bbsCard.getImgsrc()+"\", " +
-                        "\"id\": \""+bbsCard.getId()+"\", " +
-                        "\"descript\": \""+bbsCard.getDescript()+"\", " +
-                        "\"title\": \""+bbsCard.getTitle()+"\"}, ";
-                res += temp;
-                i++;
-            }
-            res = res.substring(0, res.length()-2);
-            res += "}";
-        }
-
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
-        writer.flush();
-        writer.close();
+        bbsCardApi.searchCard(keyword, response);
     }
 
 
@@ -165,39 +104,7 @@ public class BbsCardController {
     @PostMapping("/loadhotcard")
     public void loadHotCard(HttpServletResponse response) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter  writer = response.getWriter();
-        String res = null;
-
-        //获取课程记录
-        List<BbsCard> bbsCards = bbsCardService.loadHotCard();
-        if(bbsCards.size() == 0){
-            res = "{\"count\": \"0\"}";
-        }
-        else {
-            res = "{";
-            int i = 1;
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-            for (BbsCard bbsCard: bbsCards) {
-                UserMain userMain = userMService.getByUser(bbsCard.getUsername());
-                res += "\""+i+"\": ";
-                String temp = "{\"crttime\": \""+simpleDateFormat.format(bbsCard.getCrttime())+"\", " +
-                        "\"nickname\": \""+userMain.getNickname()+"\", " +
-                        "\"imgsrc\": \""+userMain.getImgsrc()+"\", " +
-                        "\"bimgsrc\": \""+bbsCard.getImgsrc()+"\", " +
-                        "\"id\": \""+bbsCard.getId()+"\", " +
-                        "\"descript\": \""+bbsCard.getDescript()+"\", " +
-                        "\"title\": \""+bbsCard.getTitle()+"\"}, ";
-                res += temp;
-                i++;
-            }
-            res = res.substring(0, res.length()-2);
-            res += "}";
-        }
-
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
-        writer.flush();
-        writer.close();
+        bbsCardApi.loadHotCard(response);
     }
 
     /**  
@@ -211,64 +118,13 @@ public class BbsCardController {
     @PostMapping("/getcardbyid")
     public void getCardById(@RequestParam String cardId, HttpServletResponse response) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
-        String res = null;
-
-        try{
-            Integer id = Integer.parseInt(cardId);
-            BbsCard bbsCard = bbsCardService.getCardById(id);
-            if(bbsCard == null){
-                res = "{\"status\": \"none\"}";
-            }
-            else{
-                UserMain userMain = userMService.getByUser(bbsCard.getUsername());
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                res = "{\"crttime\": \""+simpleDateFormat.format(bbsCard.getCrttime())+"\", " +
-                        "\"username\": \""+bbsCard.getUsername()+"\", " +
-                        "\"viscount\": \""+bbsCard.getViscount()+"\", " +
-                        "\"colcount\": \""+bbsCard.getColcount()+"\", " +
-                        "\"comcount\": \""+bbsCard.getComcount()+"\", " +
-                        "\"nickname\": \""+userMain.getNickname()+"\", " +
-                        "\"imgsrc\": \""+userMain.getImgsrc()+"\", " +
-                        "\"id\": \""+bbsCard.getId()+"\", " +
-                        "\"descript\": \""+bbsCard.getDescript()+"\", " +
-                        "\"title\": \""+bbsCard.getTitle()+"\"}";
-            }
-        }catch (Exception e){
-            res = "{\"status\": \"sysexception\"}";
-            e.printStackTrace();
-        } finally {
-            writer.print(new JsonParser().parse(res).getAsJsonObject());
-            writer.flush();
-            writer.close();
-        }
+        bbsCardApi.getCardById(cardId, response);
     }
 
     @PostMapping("/addviscount")
     public void addViscount(@RequestParam Integer cardid, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        PrintWriter writer = response.getWriter();
-        String res = null;
-        HttpSession session = request.getSession();
-        String curIp = (String) session.getAttribute("ip");
-
-        //获取真实ip
-        String ip = CommonUtil.getIpAddr(request);
-        //同一ip同一文章目前只加一次
-        if(curIp != null && curIp.equals(ip) && CommonUtil.isExistCardid(cardid)){
-                res = "{}";
-        }
-        else{
-            bbsCardService.addViscountByCardId(cardid);
-            CommonUtil.addCardList(cardid);
-            session.setAttribute("ip", ip);
-            res = "{\"status\": \"valid\"}";
-        }
-
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
-        writer.flush();
-        writer.close();
+        bbsCardApi.addViscount(cardid, request, response);
     }
 
     /**
@@ -282,37 +138,6 @@ public class BbsCardController {
     @PostMapping("/getmycardinfo")
     public void getMyCardInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
-        String res = null;
-        HttpSession session = request.getSession();
-        String username = (String) session.getAttribute("username");
-
-        List<BbsCard> bbsCardList = bbsCardService.getMyCardInfo(username);
-        if(bbsCardList.size() == 0){
-            res = "{\"status\": \"none\"}";
-        }else{
-            res = "{";
-            int i = 1;
-            SimpleDateFormat ysdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            for (BbsCard bbsCard: bbsCardList) {
-                res += "\""+i+"\": ";
-                String temp = "{\"id\": \""+bbsCard.getId()+"\", " +
-                        "\"crtime\": \""+ysdf.format(bbsCard.getCrttime())+"\", " +
-                        "\"title\": \""+bbsCard.getTitle()+"\", " +
-                        "\"comcount\": \""+bbsCard.getComcount()+"\", " +
-                        "\"viscount\": \""+bbsCard.getViscount()+"\", " +
-                        "\"colcount\": \""+bbsCard.getColcount()+"\", " +
-                        "\"descript\": \""+bbsCard.getDescript()+"\"}, ";
-                res += temp;
-                i++;
-            }
-            res = res.substring(0, res.length()-2);
-            res += "}";
-        }
-
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
-        writer.flush();
-        writer.close();
+        bbsCardApi.getMyCardInfo(request, response);
     }
 }

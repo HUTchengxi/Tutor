@@ -13,6 +13,7 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
+import org.framework.tutor.api.CommonImgsrcApi;
 import org.framework.tutor.domain.CommonImgsrc;
 import org.framework.tutor.service.CommonImgsrcService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +35,7 @@ import java.util.List;
 public class CommonImgsrcController {
 
     @Autowired
-    private CommonImgsrcService commonImgsrcService;
+    private CommonImgsrcApi commonImgsrcApi;
 
 
     /**
@@ -48,25 +49,6 @@ public class CommonImgsrcController {
     @RequestMapping("/getAll")
     public void getAll(HttpServletResponse response) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
-        String res = null;
-
-        List<CommonImgsrc> commonImgsrcList = commonImgsrcService.getAll();
-
-        int i = 0;
-        res = "{";
-        for (CommonImgsrc commonImgsrc: commonImgsrcList) {
-            res += "\"" + (i++) + "\": ";
-            String temp = "{\"imgsrc\": \"" + commonImgsrc.getImgsrc() +
-                    "\",\"title\": \"" + commonImgsrc.getTitle() + "\"}, ";
-            res += temp;
-        }
-        res = res.substring(0, res.length() - 2);
-        res += "}";
-
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
-        writer.flush();
-        writer.close();
+        commonImgsrcApi.getAll(response);
     }
 }

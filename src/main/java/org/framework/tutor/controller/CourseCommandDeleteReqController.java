@@ -13,6 +13,7 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.Gson;
+import org.framework.tutor.api.CourseCommandDeleteReqApi;
 import org.framework.tutor.domain.CourseCommand;
 import org.framework.tutor.service.CourseCMService;
 import org.framework.tutor.service.CourseCommandDeleteReqService;
@@ -41,10 +42,7 @@ import java.util.Map;
 public class CourseCommandDeleteReqController {
 
     @Autowired
-    private CourseCommandDeleteReqService courseCommandDeleteReqService;
-
-    @Autowired
-    private CourseCMService courseCMService;
+    private CourseCommandDeleteReqApi courseCommandDeleteReqApi;
 
     /**
      *
@@ -55,31 +53,8 @@ public class CourseCommandDeleteReqController {
      * @date 2018/4/18
      */
     @PostMapping("/addcommanddeletereq")
-    @Transactional
     public void addCommandDeleteReq(@RequestParam Integer cid, @RequestParam String info, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        PrintWriter writer = response.getWriter();
-        Gson gson = new Gson();
-        Map<String, Object> resultMap = new HashMap<>(1);
-        HttpSession session = request.getSession();
-        String username = (String) session.getAttribute("username");
-
-        //判断评论的课程username是否所属相同
-        CourseCommand courseCommand = courseCMService.getCommandById(cid);
-        if(courseCommand == null || !courseCommand.getUsername().equals(username)){
-            resultMap.put("status", "invalid");
-        }else{
-            //提交申请，不管有没有都是添加，不会update
-            courseCommandDeleteReqService.addCommandDeleteReq(username, cid, info);
-
-            //对应的评论状态更新
-            Integer status = 1;
-            courseCMService.updateCommandStatus(cid,status);
-            resultMap.put("status", "valid");
-        }
-
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        courseCommandDeleteReqApi.addCommandDeleteReq(cid, info, request, response);
     }
 }

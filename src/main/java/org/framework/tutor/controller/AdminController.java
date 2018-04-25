@@ -13,6 +13,7 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.Gson;
+import org.framework.tutor.api.AdminApi;
 import org.framework.tutor.domain.UserMain;
 import org.framework.tutor.service.UserMService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +41,7 @@ import java.util.Map;
 public class AdminController {
 
     @Autowired
-    private UserMService userMService;
+    private AdminApi adminApi;
 
     /**
      *
@@ -53,24 +54,6 @@ public class AdminController {
     @PostMapping("login.json")
     public void Login(@RequestParam String username, @RequestParam String password, HttpServletResponse response, HttpServletRequest request) throws IOException {
 
-        PrintWriter writer = response.getWriter();
-        Gson gson = new Gson();
-        Map<String, Object> resultMap = new HashMap<>(1);
-        HttpSession session = request.getSession();
-
-        UserMain userMain = userMService.checkAdminLogin(username, password);
-        if(userMain == null){
-            resultMap.put("status", "error");
-        }else{
-            session.setAttribute("username", userMain.getUsername());
-            session.setAttribute("nickname", userMain.getNickname());
-            session.setAttribute("identity", userMain.getIdentity());
-            resultMap.put("status", "success");
-            resultMap.put("url", "/forward_con/gosysadminmain");
-        }
-
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        adminApi.Login(username, password, response, request);
     }
 }

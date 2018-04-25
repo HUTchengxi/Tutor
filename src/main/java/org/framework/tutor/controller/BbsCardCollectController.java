@@ -13,6 +13,7 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
+import org.framework.tutor.api.BbsCardCollectApi;
 import org.framework.tutor.domain.BbsCard;
 import org.framework.tutor.domain.BbsCardCollect;
 import org.framework.tutor.service.BbsCardCollectService;
@@ -41,10 +42,7 @@ import java.util.List;
 public class BbsCardCollectController {
 
     @Autowired
-    private BbsCardCollectService bbsCardCollectService;
-
-    @Autowired
-    private BbsCardService bbsCardService;
+    private BbsCardCollectApi bbsCardCollectApi;
     
     /**  
      *    
@@ -57,18 +55,7 @@ public class BbsCardCollectController {
     @RequestMapping("/getmycollectcount")
     public void getMyCollectCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        PrintWriter writer = response.getWriter();
-        HttpSession sessions = request.getSession();
-        String username = (String) sessions.getAttribute("username");
-        String res = null;
-
-        Integer count = bbsCardCollectService.getMyCollectCount(username);
-
-        res = "{\"count\": \""+count+"\"}";
-
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
-        writer.flush();
-        writer.close();
+        bbsCardCollectApi.getMyCollectCount(request, response);
     }
 
     /**
@@ -82,24 +69,7 @@ public class BbsCardCollectController {
     @PostMapping("/checkcollectstatus")
     public void checkCollectStatus(@RequestParam Integer cardId, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        HttpSession session = request.getSession();
-        PrintWriter writer = response.getWriter();
-        String res = null;
-        String username = (String) session.getAttribute("username");
-
-        if(username == null){
-            res = "{\"status\": \"none\"}";
-        }
-        else if(bbsCardCollectService.checkCollectStatus(cardId, username) != null){
-            res = "{\"status\": \"col\"}";
-        }
-        else{
-            res = "{\"status\": \"uncol\"}";
-        }
-
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
-        writer.flush();
-        writer.close();
+        bbsCardCollectApi.checkCollectStatus(cardId, request, response);
     }
 
 
@@ -114,24 +84,7 @@ public class BbsCardCollectController {
     @PostMapping("/collectcard")
     public void collectCard(@RequestParam Integer cardId, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        HttpSession session = request.getSession();
-        PrintWriter writer = response.getWriter();
-        String res = null;
-        String username = (String) session.getAttribute("username");
-
-        //判断是否已收藏
-        if(bbsCardCollectService.checkCollectStatus(cardId, username) != null){
-            res = "{\"status\": \"none\"}";
-        }
-        else{
-            bbsCardCollectService.collectCard(cardId, username);
-            bbsCardService.addColCountByCardId(cardId);
-            res = "{\"status\": \"col\"}";
-        }
-
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
-        writer.flush();
-        writer.close();
+        bbsCardCollectApi.collectCard(cardId, request, response);
     }
 
     /**
@@ -145,24 +98,7 @@ public class BbsCardCollectController {
     @PostMapping("/uncollectcard")
     public void uncollectCard(@RequestParam Integer cardId, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        HttpSession session = request.getSession();
-        PrintWriter writer = response.getWriter();
-        String res = null;
-        String username = (String) session.getAttribute("username");
-
-        //判断是否已收藏
-        if(bbsCardCollectService.checkCollectStatus(cardId, username) == null){
-            res = "{\"status\": \"none\"}";
-        }
-        else{
-            bbsCardCollectService.uncollectCard(cardId, username);
-            bbsCardService.delColCountByCardId(cardId);
-            res = "{\"status\": \"uncol\"}";
-        }
-
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
-        writer.flush();
-        writer.close();
+        bbsCardCollectApi.uncollectCard(cardId, request, response);
     }
 
 
@@ -177,39 +113,6 @@ public class BbsCardCollectController {
     @PostMapping("/getmycollectinfo")
     public void getMyCollectInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
-        String res = null;
-        HttpSession session = request.getSession();
-        String username = (String) session.getAttribute("username");
-
-        List<BbsCardCollect> bbsCardList = bbsCardCollectService.getMyCollectInfo(username);
-        if(bbsCardList.size() == 0){
-            res = "{\"status\": \"none\"}";
-        }else{
-            res = "{";
-            int i = 1;
-            SimpleDateFormat ysdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            for (BbsCardCollect bbsCardCollect: bbsCardList) {
-                BbsCard bbsCard = bbsCardService.getCardById(bbsCardCollect.getCardid());
-                res += "\""+i+"\": ";
-                String temp = "{\"id\": \""+bbsCard.getId()+"\", " +
-                        "\"crtime\": \""+ysdf.format(bbsCard.getCrttime())+"\", " +
-                        "\"coltime\": \""+ysdf.format(bbsCardCollect.getColtime())+"\", " +
-                        "\"title\": \""+bbsCard.getTitle()+"\", " +
-                        "\"comcount\": \""+bbsCard.getComcount()+"\", " +
-                        "\"viscount\": \""+bbsCard.getViscount()+"\", " +
-                        "\"colcount\": \""+bbsCard.getColcount()+"\", " +
-                        "\"descript\": \""+bbsCard.getDescript()+"\"}, ";
-                res += temp;
-                i++;
-            }
-            res = res.substring(0, res.length()-2);
-            res += "}";
-        }
-
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
-        writer.flush();
-        writer.close();
+        bbsCardCollectApi.getMyCollectInfo(request, response);
     }
 }

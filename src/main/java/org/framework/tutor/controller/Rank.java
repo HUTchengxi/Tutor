@@ -1,6 +1,7 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
+import org.framework.tutor.api.RankApi;
 import org.framework.tutor.domain.RankTemp;
 import org.framework.tutor.domain.UserMain;
 import org.framework.tutor.domain.UserSign;
@@ -29,10 +30,7 @@ import java.util.Map;
 public class Rank {
 
     @Autowired
-    private UserSService userSService;
-
-    @Autowired
-    private UserMService userMService;
+    private RankApi rankApi;
 
     /**
      * 获取rank榜数据
@@ -46,66 +44,6 @@ public class Rank {
     @RequestMapping("/rank_select")
     public void rankSelect(String type, String mark, Integer startpos, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
-        String res = null;
-
-        //最勤打卡榜
-        if("sign".equals(type)){
-            //日榜
-            if("day".equals(mark)){
-                //获取今天的日期
-                Date now = new Date();
-                SimpleDateFormat sdf = new SimpleDateFormat("-MM-dd");
-                String daystr = sdf.format(now);
-
-                List<UserSign> userSigns = userSService.rankSignDay(daystr, startpos);
-                if(userSigns.size() == 0){
-                    res = "{\"count\": \"0\"}";
-                }
-                else{
-                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss");
-                    res = "{";
-                    int i = 1;
-                    for (UserSign userSign: userSigns) {
-                        UserMain userMain = userMService.getByUser(userSign.getUsername());
-                        res += "\""+i+"\": ";
-                        String temp = "{\"nickname\": \""+userMain.getNickname()+"\", " +
-                                "\"stime\": \""+simpleDateFormat.format(userSign.getStime())+"\"}, ";
-                        res += temp;
-                        i++;
-                    }
-                    res = res.substring(0, res.length()-2);
-                    res += "}";
-                }
-            }
-            //总榜
-            else if("total".equals(mark)){
-
-                System.out.println("total");
-                List<RankTemp> userSigns = userSService.rankSignTotal(startpos);
-                if(userSigns.size() == 0){
-                    res = "{\"count\": \"0\"}";
-                }
-                else{
-                    res = "{";
-                    int i = 1;
-                    for (RankTemp userSign: userSigns) {
-                        UserMain userMain = userMService.getByUser(userSign.getUsername());
-                        res += "\"" + i + "\": ";
-                        String temp = "{\"nickname\": \"" + userMain.getNickname() + "\", " +
-                                "\"stime\": \"" +userSign.getTotal()+ "\"}, ";
-                        res += temp;
-                        i++;
-                    }
-                    res = res.substring(0, res.length()-2);
-                    res += "}";
-                }
-            }
-        }
-
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
-        writer.flush();
-        writer.close();
+        rankApi.rankSelect(type, mark, startpos, request, response);
     }
 }

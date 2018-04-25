@@ -1,6 +1,7 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
+import org.framework.tutor.api.CourseLogAPi;
 import org.framework.tutor.domain.CourseMain;
 import org.framework.tutor.service.CourseLService;
 import org.framework.tutor.service.CourseMService;
@@ -25,10 +26,7 @@ import java.util.List;
 public class CourseLog {
 
     @Autowired
-    private CourseLService courseLService;
-
-    @Autowired
-    private CourseMService courseMService;
+    private CourseLogAPi courseLogAPi;
 
     /**
      * 获取我的课程记录
@@ -38,45 +36,7 @@ public class CourseLog {
     @RequestMapping("/getlog")
     public void getLog(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-
-        PrintWriter writer = response.getWriter();
-        HttpSession session = request.getSession();
-        String username = (String) session.getAttribute("username");
-        String res = null;
-
-        if(username == null){
-            res = "{\"status\": \"invalid\", \"url\": \"/forward_con/welcome\"}";
-        }
-        else{
-            //获取课程记录
-            List<org.framework.tutor.domain.CourseLog> courseLogs  = courseLService.getUserlog(username);
-            if(courseLogs.size() == 0){
-                res = "{\"status\": \"ok\", \"len\": \"0\"}";
-            }
-            else {
-                res = "{";
-                int i = 1;
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-                for (org.framework.tutor.domain.CourseLog courseLog : courseLogs) {
-                    CourseMain courseMain = courseMService.getCourseById(courseLog.getCid());
-                    res += "\""+i+"\": ";
-                    String temp = "{\"logtime\": \""+simpleDateFormat.format(courseLog.getLogtime())+"\", " +
-                            "\"imgsrc\": \""+courseMain.getImgsrc()+"\", " +
-                            "\"id\": \""+courseLog.getId()+"\", " +
-                            "\"cid\": \""+courseLog.getCid()+"\", " +
-                            "\"cname\": \""+courseMain.getName()+"\"}, ";
-                    res += temp;
-                    i++;
-                }
-                res = res.substring(0, res.length()-2);
-                res += "}";
-            }
-        }
-
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
-        writer.flush();
-        writer.close();
+        courseLogAPi.getLog(request, response);
     }
 
 
@@ -89,27 +49,6 @@ public class CourseLog {
     @RequestMapping("/dellog")
     public void delLog(Integer id, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-
-        HttpSession session = request.getSession();
-        PrintWriter writer = response.getWriter();
-        String username = (String) session.getAttribute("username");
-        String res = null;
-
-        if(username == null){
-            res = "{\"status\": \"invalid\", \"url\": \"/forward_con/welcome\"}";
-        }
-        else{
-            if(!courseLService.delLog(id)){
-                res = "{\"status\": \"mysqlerr\", \"msg\": \"I'm sorry\"}";
-            }
-            else{
-                res = "{\"status\": \"ok\"}";
-            }
-        }
-
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
-        writer.flush();
-        writer.close();
+        courseLogAPi.delLog(id, request, response);
     }
 }
