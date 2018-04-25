@@ -10,12 +10,12 @@
  *
  *
  */
-package org.framework.tutor.controller;
+package org.framework.tutor.api.impl;
 
 /**
  * @author yinjimin
  * @Description:
- * @date 2018年04月22日
+ * @date 2018年04月25日
  */
-public class UserMessageDeleteController {
+public class UserSIgnApiImpl {
 }
