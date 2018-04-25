@@ -1,0 +1,199 @@
+.sliderbar {
+    position: fixed;
+    right: 2%;
+    bottom: 25%;
+    z-index: 200;
+}
+
+.sliderbar ul li {
+    list-style-type: none;
+    margin-bottom: 30%;
+}
+
+.sliderbar ul li a {
+    display: inline-block;
+    /*width: 200%;*/
+    /*height: 35px;*/
+    border: 1px solid black;
+    text-decoration: none;
+    background-color: #80808030;
+    border-color: #0000004d;
+}
+
+.sliderbar ul li a.gotop {
+    display: none;
+}
+
+.sliderbar ul li a:hover {
+    text-decoration: none;
+}
+
+.sliderbar ul li a i {
+    font-size: 35px;
+    color: #808080a3;
+    font-weight: bold;
+}
+
+div.table-responsive {
+    margin-top: 2%;
+}
+
+div.table-responsive table tbody tr.none td {
+    color: #808080b0;
+}
+
+div.table-responsive table tbody tr td:nth-child(2) {
+    color: red;
+}
+
+div.table-responsive table tbody tr td a {
+    text-decoration: none;
+}
+
+div.table-responsive table tbody tr td a:hover {
+    text-decoration: none;
+}
+
+div.table-responsive table tr td {
+    text-align: center;
+}
+
+body {
+    background-color: #f8fafc;
+}
+
+.ordermain {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 70px;
+    padding: 5% 0;
+    min-height: 403px;
+}
+
+.ordermain .main {
+    width: 80%;
+    margin-left: 5%;
+}
+
+.ordermain .main .alink li a {
+    text-decoration: none;
+}
+
+.ordermain .main .alink li a:hover {
+    color: red;
+    text-decoration: none;
+}
+
+.ordermain .main .orders {
+    background-color: white;
+    margin-top: 2%;
+    height: 200px;
+    display: none;
+}
+
+.ordermain .orders li.none {
+    width: 100%;
+}
+
+.ordermain .orders li.none p {
+    text-align: center;
+    margin-top: 13%;
+    font-size: 17px;
+    color: grey;
+}
+
+.ordermain .bar {
+    width: 15%;
+}
+
+.ordermain .bar h1 {
+    font-size: 18px;
+    height: 35px;
+    line-height: 25px;
+    border-bottom: 1px solid #80808073;
+}
+
+.ordermain .bar ul li {
+    position: relative;
+    height: 32px;
+    line-height: 32px;
+}
+
+.ordermain .bar ul li a {
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+    color: grey;
+}
+
+.ordermain .bar ul li a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.ordermain .bar ul li a:hover span {
+    color: red;
+}
+
+.ordermain .bar ul li a span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.ordermain .bar ul li.cli {
+    background-color: #80808017;
+}
+
+.ordermain .bar ul li.cli a {
+    color: black;
+}
+
+.ordermain .bar ul li.cli a span {
+    color: red;
+}
+
+footer.footer {
+    background-color: #000000;
+    width: 100%;
+}
+
+footer.footer .webmap, footer.footer .link, footer.footer .copyright {
+    margin: 0 auto;
+    width: 80%;
+    margin-bottom: 1%;
+}
+
+footer.footer h4 {
+    color: white;
+}
+
+footer.footer ul {
+    margin-left: 1%;
+}
+
+footer.footer ul li {
+    margin: 1%;
+}
+
+footer.footer ul li a {
+    color: #c8cdd2ad;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+footer.footer ul li a:hover {
+    color: #c8cdd2;
+    text-decoration: none;
+}
+
+footer.footer .copyright {
+    margin-top: -1%;
+}
+
+footer.footer .copyright h5 {
+    color: #787d82c7;
+}
+

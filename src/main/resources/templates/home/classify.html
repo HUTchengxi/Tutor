@@ -2,17 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>勤成家教网---论坛中心--让你更好的选择</title>
-    <link rel="icon" href="/images/logo/web_logo.ico" type="images/x-icon"/>
 
-    <!--bootstrap css-->
+    <title>勤成家教网---课程中心--让你更好的选择</title>
+
+    <!--LOGO-->
+    <link rel="icon" href="/images/logo/web_logo.ico" type="images/x-icon"/>
+    <!--BOOTSTRAP-->
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.css"/>
     <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.css"/>
-
-    <!--layui css-->
+    <!--LAYUI-->
     <link rel="stylesheet" href="/layui/css/layui.css"/>
+    <!--my css-->
+    <link rel="stylesheet" href="/css/welcome/classify.css"/>
 </head>
-<body style="font-size: 16px;">
+<body>
 <!--头部-->
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container-fluid" style="padding-top: 13px;">
@@ -41,49 +44,29 @@
 </nav>
 
 <!--搜索输入框-->
-<header class="clearfix" style="margin-top: 70px; background: url(/images/welcome/classify/header_search_bg.png);
-        background-size: cover; background-repeat: no-repeat;">
+<header class="clearfix searchheader">
     <p class="none"></p>
-    <div class="searchbox" style="display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-pack:center;-webkit-box-align:center;
-            margin-top: 5%;">
-        <input class="form-control"
-               style="width: 71.6%; height: 48px;border-bottom-right-radius: 0; border-top-right-radius: 0;"
-               placeholder="输你所要，搜你所想"/>
-        <input class="btn" style="width: 104px; height: 48px; background: #F01414; line-height: 48px; text-align: center;
-                   color: white; border-radius: 0 4px 0 0;letter-spacing: 1em;" value="搜索"
-               readonly="readonly" data-status="0"/>
+    <div class="searchbox">
+        <input class="form-control" placeholder="输你所要，搜你所想"/>
+        <input class="btn" value="搜索" readonly="readonly" data-status="0"/>
         <i class="layui-icon del">&#x1006;</i>
     </div>
     <div class="searchshow">
-        <ul>
-            <!--<li class="none">抱歉，没有找到对应的课程</li>-->
-            <!--<li>sdsdasad</li>-->
-        </ul>
+        <ul></ul>
     </div>
-    <style>
-    </style>
-    <div class="searchmain" style="margin: 1% 0;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-pack:center;
-            -webkit-box-align:center;">
+    <div class="searchmain">
         <ul class="clearfix">
-            <li class="pull-left cli" style="width: 112px; height: 52px; text-align: center; line-height: 52px; -webkit-border-radius: 26px;
-                     -moz-border-radius: 26px;border-radius: 26px;">
-                <a href="javascript: void(0);" style="width: 100%; display: inline-block;  -webkit-border-radius: 26px;
-                     -moz-border-radius: 26px;border-radius: 26px;" data-stype="1">小学家教</a>
+            <li class="pull-left cli">
+                <a href="javascript: void(0);" data-stype="1">小学家教</a>
             </li>
-            <li class="pull-left" style="width: 112px; height: 52px; text-align: center; line-height: 52px; -webkit-border-radius: 26px;
-                     -moz-border-radius: 26px;border-radius: 26px;">
-                <a href="javascript: void(0);" style="width: 100%; display: inline-block;  -webkit-border-radius: 26px;
-                     -moz-border-radius: 26px;border-radius: 26px;" data-stype="2">初中家教</a>
+            <li class="pull-left">
+                <a href="javascript: void(0);" data-stype="2">初中家教</a>
             </li>
-            <li class="pull-left" style="width: 112px; height: 52px; text-align: center; line-height: 52px; -webkit-border-radius: 26px;
-                     -moz-border-radius: 26px;border-radius: 26px;">
-                <a href="javascript: void(0);" style="width: 100%; display: inline-block;  -webkit-border-radius: 26px;
-                     -moz-border-radius: 26px;border-radius: 26px;" data-stype="3">高中家教</a>
+            <li class="pull-left">
+                <a href="javascript: void(0);" data-stype="3">高中家教</a>
             </li>
-            <li class="pull-left" style="width: 112px; height: 52px; text-align: center; line-height: 52px; -webkit-border-radius: 26px;
-                     -moz-border-radius: 26px;border-radius: 26px;">
-                <a href="javascript: void(0);" style="width: 100%; display: inline-block;  -webkit-border-radius: 26px;
-                     -moz-border-radius: 26px;border-radius: 26px;" data-stype="4">其他兴趣</a>
+            <li class="pull-left">
+                <a href="javascript: void(0);" data-stype="4">其他兴趣</a>
             </li>
         </ul>
     </div>
@@ -91,11 +74,13 @@
 
 <!--主要内容选择展示-->
 <div class="mainshow">
+
     <!--学科详细分类-->
-    <header style="border-bottom: 1px solid #D9DDE1;">
+    <header>
         <ul class="clearfix">
         </ul>
     </header>
+
     <!--排序分类-->
     <nav class="sortshow">
         <ul class="clearfix">
@@ -113,9 +98,6 @@
 
     <!--主要课程内容卡片-->
     <div class="listshow">
-        <!--<div class="none">-->
-        <!--<p>课程制作中，敬请期待!</p>-->
-        <!--</div>-->
         <ul class="clearfix main"></ul>
     </div>
 
@@ -129,18 +111,11 @@
             <a href="javascript:;" data-page="2" class="pgtwo pglink" data-current="1">2</a>
             <a href="javascript:;" data-page="3" class="pgthree pglink" data-current="1">3</a>
             <span class="layui-laypage-spr pgmoren">…</span>
-            <a href="javascript:;" class="layui-laypage-last pgend pglink" title="尾页" data-page="10" data-current="1">10</a>
+            <a href="javascript:;" class="layui-laypage-last pgend pglink" title="尾页" data-page="10"
+               data-current="1">10</a>
             <a href="javascript:;" class="layui-laypage-next" data-current="1">下一页</a>
-            <!--<span class="layui-laypage-limits">-->
-                <!--<select lay-ignore="">-->
-                    <!--<option value="4" selected="">4 条/页</option>-->
-                    <!--<option value="8">8 条/页</option>-->
-                    <!--<option value="16">16 条/页</option>-->
-                    <!--<option value="32">32 条/页</option>-->
-                <!--</select>-->
-            <!--</span>-->
             <span class="layui-laypage-skip">到第
-                <input type="text" value="" class="layui-input input-page" />页
+                <input type="text" value="" class="layui-input input-page"/>页
                 <button type="button" class="layui-laypage-btn">确定</button>
                 <span class="err-info">页码不存在</span>
             </span>
@@ -168,38 +143,6 @@
         </li>
     </ul>
 </div>
-
-<style>
-    .sliderbar{
-        position: fixed;
-        right: 2%;
-        bottom: 25%;
-    }
-    .sliderbar ul li{
-        list-style-type: none;
-        margin-bottom: 30%;
-    }
-    .sliderbar ul li a{
-        display: inline-block;
-        /*width: 200%;*/
-        /*height: 35px;*/
-        border: 1px solid black;
-        text-decoration: none;
-        background-color: #80808030;
-        border-color: #0000004d;
-    }
-    .sliderbar ul li a.gotop{
-        display: none;
-    }
-    .sliderbar ul li a:hover{
-        text-decoration: none;
-    }
-    .sliderbar ul li a i{
-        font-size: 35px;
-        color: #808080a3;
-        font-weight: bold;
-    }
-</style>
 
 <!--页脚-->
 <footer class="footer">
@@ -295,387 +238,13 @@
     <br/>
 </footer>
 
-<style>
-    .navbar-fixed-top ul li a{
-        font-size: 14px;
-    }
-    .coursebody .author a:nth-child(3){margin-left: 2%;}
-    .pageshow{position: relative;}
-    .pageshow .err-info{border: none; position: absolute; top: 20%; left: 70%; color: red; display: none;}
-    .listshow ul li ul.price li{margin-left: -3%;}
-    .listshow ul li .coursebody ul.price li a{color: red; font-weight: bold; font-size: 14px;}
-
-    .pageshow .btn-cli{background-color: #009688; color: white;}
-    .pageshow .pgmorep{display: none;}
-    .pageshow .btn-cli:hover{background-color: #009688; color: white;}
-    nav a .mcount {
-        color: red;
-        margin-left: 2px;
-    }
-
-    header .searchbox i.del {
-        background-color: grey;
-        color: white;
-        border: 1px solid grey;
-        border-radius: 10px;
-        font-size: 14px;
-        position: relative;
-        right: 105%;
-        visibility: hidden;
-    }
-
-    header .searchbox i.del:hover {
-        cursor: pointer;
-    }
-
-    header .searchshow {
-        position: absolute;
-        width: 71.6%;
-        background-color: white;
-        margin-left: 7.5%;
-        border: 1px solid grey;
-        border-radius: 4px;
-        overflow: hidden;
-        height: 0;
-        display: none;
-    }
-
-    header .searchshow ul li {
-        font-size: 16px;
-        color: #0000009c;
-        height: 30px;
-        line-height: 30px;
-        border-bottom: 1px solid #00000036;
-        padding-left: 12px;
-    }
-
-    header .searchshow ul li:hover {
-        cursor: pointer;
-        color: #000000b5;
-    }
-
-    header .searchshow ul li.none {
-        color: #000000b5;
-        text-align: center;
-        height: 31px;
-        line-height: 31px;
-    }
-
-    header .searchshow ul li.smore {
-        color: #000000b5;
-        text-align: center;
-    }
-
-    header .searchshow ul li.smore span {
-        color: red;
-    }
-
-    header .searchshow ul li.none:hover {
-        cursor: auto;
-    }
-
-    .listshow ul {
-        width: 98%;
-    }
-
-    .listshow .none {
-        margin: 12% 0 12% 0;
-    }
-
-    .listshow .none p {
-        font-size: 20px;
-        color: #00000070;
-    }
-
-    footer.footer {
-        background-color: #000000;
-        width: 100%;
-    }
-
-    footer.footer .webmap, footer.footer .link, footer.footer .copyright {
-        margin: 0 auto;
-        width: 80%;
-        margin-bottom: 1%;
-    }
-
-    footer.footer h4 {
-        color: white;
-    }
-
-    footer.footer ul {
-        margin-left: 1%;
-    }
-
-    footer.footer ul li {
-        margin: 1%;
-    }
-
-    footer.footer ul li a {
-        color: #c8cdd2ad;
-        font-size: 14px;
-        text-decoration: none;
-    }
-
-    footer.footer ul li a:hover {
-        color: #c8cdd2;
-        text-decoration: none;
-    }
-
-    footer.footer .copyright {
-        margin-top: -1%;
-    }
-
-    footer.footer .copyright h5 {
-        color: #787d82c7;
-    }
-
-    .searchmain li {
-        margin: 0 40px;
-    }
-
-    .searchmain li.cli a {
-        background-color: white;
-        color: black;
-    }
-
-    .searchmain a {
-        color: white;
-        text-decoration: none;
-    }
-
-    .searchmain a:hover {
-        text-decoration: none;
-        background: rgba(255, 255, 255, 0.2);
-    }
-
-    .mainshow header {
-        display: -webkit-box;
-        -webkit-box-orient: horizontal;
-        -webkit-box-pack: center;
-        -webkit-box-align: center;
-    }
-
-    .mainshow header ul {
-        padding: 24px 0 10px;
-        width: 80%;
-    }
-
-    .mainshow header li {
-        margin: 0 1%;
-    }
-
-    .mainshow header a {
-        margin-right: 30px;
-        margin-left: 30px;
-        font-size: 14px;
-        line-height: 32px;
-        height: 32px;
-        width: 100%;
-        display: inline-block;
-        border-radius: 16px;
-        margin-bottom: 12px;
-        text-align: center;
-        text-decoration: none;
-    }
-
-    .mainshow header a:hover {
-        text-decoration: none;
-        background-color: #D9DDE1;
-    }
-
-    .mainshow header li.cli a {
-        background-color: black;
-        color: white;
-    }
-
-    .sortshow {
-        padding: 20px 12px;
-        box-sizing: border-box;
-        margin-left: 38%;
-    }
-
-    .sortshow li {
-        margin: 0 1%;
-    }
-
-    .sortshow li a {
-        color: #4D555D;
-        display: inline-block;
-        width: 100%;
-        height: 16px;
-        line-height: 16px;
-        text-align: center;
-        font-size: 12px;
-        text-decoration: none;
-        padding: 0 6px;
-    }
-
-    .sortshow li a:hover {
-        color: #07111B;
-        text-decoration: none;
-    }
-
-    .sortshow li.cli a {
-        background-color: #93999F;
-        color: white;
-        border-radius: 10px;
-    }
-
-    .listshow {
-        display: -webkit-box;
-        -webkit-box-orient: horizontal;
-        -webkit-box-pack: center;
-        -webkit-box-align: center;
-    }
-
-    .listshow ul {
-        margin-left: 2%;
-        margin-right: 2%;
-        margin-bottom: 2%;
-    }
-
-    .listshow ul li {
-        width: 20%;
-        margin-top: 4%;
-        margin-left: 2.3%;
-        margin-right: 2.3%;
-        border-radius: 13px;
-    }
-
-    .listshow ul li div.course:hover {
-        background-color: #0000000f;
-        cursor: pointer;
-        border-radius: 13px;
-    }
-
-    .listshow ul li img {
-        width: 100%;
-        height: 148px;
-        border-radius: 13px;
-        border: 1px solid grey;
-    }
-
-    .listshow ul li .coursebody p.title {
-        font-size: .9em;
-        line-height: 24px;
-        min-height: 48px;
-        margin: 16px 2% 0 2%;
-        font-weight: 700;
-        -ms-word-wrap: break-word;
-        word-wrap: break-word;
-        text-align: center;
-    }
-
-    .listshow ul li .coursebody p.type {
-        font-size: 12px;
-        color: #93999f;
-        margin: 2%;
-    }
-
-    .listshow ul li .coursebody p.type i {
-        font-size: 12px;
-        color: #93999f;
-    }
-
-    .listshow ul li .coursebody p.descript {
-        font-size: 12px;
-        color: #93999f;
-        word-break: break-all;
-        -ms-word-wrap: break-word;
-        word-wrap: break-word;
-        height: 44px;
-        line-height: 20px;
-        margin-top: 6px;
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
-    }
-
-    /*.listshow ul li .coursebody p.descript:after{content: "..."}*/
-    .listshow ul li .coursebody p.descript:hover {
-        color: #1c1f21c2;
-    }
-
-    .listshow ul li .coursebody ul {
-        margin-top: 2%;
-    }
-
-    .listshow ul li .coursebody ul li a {
-        text-decoration: none;
-        color: #4D555D;
-        font-size: 12px;
-    }
-
-    .listshow ul li .coursebody ul li a:hover {
-        text-decoration: none;
-    }
-
-    .listshow ul li .coursebody div.author span {
-        font-size: 14px;
-        color: #93999f;
-    }
-
-    .listshow ul li .coursebody div.author img {
-        width: 30px;
-        height: 30px;
-        border-radius: 30px;
-    }
-
-    .listshow ul li .coursebody div.author a {
-        text-decoration: none;
-        color: #ff0000ab;
-        font-size: 14px;
-    }
-
-    .listshow ul li .coursebody div.author a:hover {
-        text-decoration: none;
-        color: red;
-    }
-
-    .listshow ul li .coursebody footer {
-        text-align: center;
-        background-color: #11cee2;
-        width: 0;
-        opacity: 0;
-        -webkit-transition: all 1s;
-        transition: all .3s linear;
-        height: 21px;
-        overflow: hidden;
-        margin: 3% 0 0 0;
-    }
-
-    .listshow ul li .course:hover .coursebody footer {
-        width: 100%;
-        opacity: 1;
-    }
-
-    .listshow ul li .coursebody footer a {
-        text-decoration: none;
-        color: white;
-    }
-
-    .listshow ul li .coursebody footer a:hover {
-        text-decoration: none;
-    }
-
-    .mainshow .pageshow {
-        display: -webkit-box;
-        -webkit-box-orient: horizontal;
-        -webkit-box-pack: center;
-        -webkit-box-align: center;
-    }
-</style>
-
-
-<!--jquery-->
+<!--JQUERY-->
 <script src="/js/common/jquery.min.js"></script>
-<!--bootstrap-->
+<!--BOOTSTRAP-->
 <script src="/bootstrap/js/bootstrap.js"></script>
-<!--layui-->
+<!--LAYUI-->
 <script src="/layui/layui.js"></script>
-
-<!--My JS-->
+<!--my js-->
 <script src="/js/welcome/classify.js"></script>
 </body>
 </html>

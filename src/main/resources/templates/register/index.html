@@ -1,180 +1,142 @@
-
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-	<head>
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<title>勤成家教网---用户注册界面</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>勤成家教网---用户注册界面</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-		<link rel="icon" href="/images/logo/web_logo.ico" type="images/x-icon" />
+    <link rel="icon" href="/images/logo/web_logo.ico" type="images/x-icon"/>
 
-		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'/>
 
-		<!-- bootstrap css -->
-		<link rel="stylesheet" href="/bootstrap/css/bootstrap.css" />
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css"/>
 
-		<link rel="stylesheet" href="/css/login/animate.css" />
-		<link rel="stylesheet" href="/css/login/style.css" />
+    <link rel="stylesheet" href="/css/login/animate.css"/>
+    <link rel="stylesheet" href="/css/login/style.css"/>
 
-		<!-- Modernizr JS -->
-		<script src="/js/login/modernizr-2.6.2.min.js"></script>
-		<!-- FOR IE9 below -->
-		<!--[if lt IE 9]>
-		<script src="/js/login/respond.min.js"></script>
-		<![endif]-->
+    <!-- Modernizr JS -->
+    <script src="/js/login/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="/js/login/respond.min.js"></script>
+    <![endif]-->
 
-	</head>
-	<body class="style-2">
+</head>
+<body class="style-2">
 
-		<div class="row" style="margin-right: 0; position:relative; right: -15px; margin-left: 0; left: -15px;">
-			<a href="/forward_con/welcome">
-				<img src="/images/logo/web_logo.jpg" />
-			</a>
-		</div>
+<div class="row" style="margin-right: 0; position:relative; right: -15px; margin-left: 0; left: -15px;">
+    <a href="/forward_con/welcome">
+        <img src="/images/logo/web_logo.jpg"/>
+    </a>
+</div>
 
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4" style="position:relative; top: -120px;">
-					<!-- Start Sign In Form -->
-					<form action="javascript:void(0);" class="fh5co-form animate-box" data-animate-effect="fadeInLeft">
-						<h2>你正在注册</h2>
-						<div class="form-group" style="height: 0;overflow:hidden;">
-							<!--
-							注册警告框
-							0: 无状态
-							1：用户名为空
-							2：用户名已存在
-							10：正确
-							-->
-							<div class="alert alert-danger div-cls-userinfo" role="alert" data-status="0">1111</div>
-						</div>
-						<div class="form-group">
-							<label for="username" class="sr-only">用户名</label>
-							<input type="text" class="form-control" name="username" id="username" placeholder="输入用户名" autocomplete="off" />
-						</div>
-						<div class="form-group" style="height: 0;overflow:hidden;">
-							<!--
-							注册警告框
-							0: 无状态
-							1：密码为空
-							2: 密码长度不符合要求
-							10：正确
-							-->
-							<div class="alert alert-danger div-cls-passinfo" role="alert" data-status="0"></div>
-						</div>
-						<div class="form-group">
-							<label for="password" class="sr-only">密&nbsp;&nbsp;码</label>
-							<input type="password" class="form-control" name="password" id="password" placeholder="输入密码" autocomplete="off" />
-						</div>
-						<div class="form-group" style="height: 0;overflow:hidden;">
-							<!--
-							注册警告框
-							0: 无状态
-							1：两次密码不相同
-							2: 输入的二次密码为空
-							10：正确
-							-->
-							<div class="alert alert-danger div-cls-repassinfo" role="alert" data-status="0"></div>
-						</div>
-						<div class="form-group">
-							<label for="re-password" class="sr-only">密码确认</label>
-							<input type="password" class="form-control" id="re-password" placeholder="再次输入您的密码" autocomplete="off" />
-						</div>
-						<div class="form-group" style="height: 0;overflow: hidden;">
-							<!--
-							注册警告框
-							0: 无状态
-							1: 未选择校验方式
-							10：正确
-							-->
-							<div class="alert alert-danger div-cls-checkinfo" role="alert" data-status="0"></div>
-						</div>
-						<div class="form-group" style="position:relative;">
-							<select class="form-control" name="checktype" id="checktype">
-								<option selected="selected" value="null" class="text-secondary">校验方式</option>
-								<option value="telephone">手机验证</option>
-								<option value="email">邮箱验证</option>
-								<option value="none">暂不验证</option>
-							</select>
-							<!--<a href="javascript:void(0);" title="查看帮助">-->
-								<!--<span class="glyphicon glyphicon-question-sign text-info" style="position: absolute; right: -5%; top: 54%;"></span>-->
-							<!--</a>-->
-						</div>
-						<div class="email-group" style="overflow:hidden;height: 0;">
-							<div class="form-group" style="height: 0;overflow:hidden;">
-								<!--
-								注册警告框
-								0: 无状态
-								1：邮箱地址为空
-								2：邮箱地址不正确
-								3：邮箱已被注册
-								10：正确
-								-->
-								<div class="alert alert-danger div-cls-emailinfo" role="alert" data-status="0"></div>
-							</div>
-							<div class="form-group">
-								<label for="email" class="sr-only">邮&nbsp;&nbsp;箱</label>
-								<input type="email" name="email" class="form-control" id="email" placeholder="请输入邮箱" autocomplete="off"/>
-							</div>
-						</div>
-						<div class="telephone-group" style="overflow: hidden;height: 0;">
-							<div class="form-group" style="height: 0;overflow:hidden;">
-								<!--
-								注册警告框
-								0: 无状态
-								1：手机号码为空
-								2：手机号码格式错误
-								3：手机号码已被注册
-								4：验证码为空
-								5：验证码不正确
-								10：正确
-								-->
-								<div class="alert alert-danger div-cls-phoneinfo" role="alert" data-status="0"></div>
-							</div>
-							<div class="form-group">
-								<label for="telephone" class="sr-only">手机号码</label>
-								<input type="text" name="telephone" class="form-control" id="telephone" placeholder="请输入手机号码" autocomplete="off" />
-							</div>
-							<div class="form-group">
-								<div class="input-group">
-									<label for="valicode" class="input-group-addon" style="background: white;border: none;">验证码</label>
-									<input type="text" name="valicode" maxlength="6" id="valicode" class="form-control" style="border: 1px solid grey; width: 45%; height:34px; position:  relative;left: 20%;" />
-									<span class="input-group-btn">
+<div class="container">
+    <div class="row">
+        <div class="col-md-4" style="position:relative; top: -120px;">
+            <!-- Start Sign In Form -->
+            <form action="javascript:void(0);" class="fh5co-form animate-box" data-animate-effect="fadeInLeft">
+                <h2>你正在注册</h2>
+                <div class="form-group" style="height: 0;overflow:hidden;">
+                    <div class="alert alert-danger div-cls-userinfo" role="alert" data-status="0">1111</div>
+                </div>
+                <div class="form-group">
+                    <label for="username" class="sr-only">用户名</label>
+                    <input type="text" class="form-control" name="username" id="username" placeholder="输入用户名"
+                           autocomplete="off"/>
+                </div>
+                <div class="form-group" style="height: 0;overflow:hidden;">
+                    <div class="alert alert-danger div-cls-passinfo" role="alert" data-status="0"></div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="sr-only">密&nbsp;&nbsp;码</label>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="输入密码"
+                           autocomplete="off"/>
+                </div>
+                <div class="form-group" style="height: 0;overflow:hidden;">
+                    <div class="alert alert-danger div-cls-repassinfo" role="alert" data-status="0"></div>
+                </div>
+                <div class="form-group">
+                    <label for="re-password" class="sr-only">密码确认</label>
+                    <input type="password" class="form-control" id="re-password" placeholder="再次输入您的密码"
+                           autocomplete="off"/>
+                </div>
+                <div class="form-group" style="height: 0;overflow: hidden;">
+                    <div class="alert alert-danger div-cls-checkinfo" role="alert" data-status="0"></div>
+                </div>
+                <div class="form-group" style="position:relative;">
+                    <select class="form-control" name="checktype" id="checktype">
+                        <option selected="selected" value="null" class="text-secondary">校验方式</option>
+                        <option value="telephone">手机验证</option>
+                        <option value="email">邮箱验证</option>
+                        <option value="none">暂不验证</option>
+                    </select>
+                </div>
+                <div class="email-group" style="overflow:hidden;height: 0;">
+                    <div class="form-group" style="height: 0;overflow:hidden;">
+                        <div class="alert alert-danger div-cls-emailinfo" role="alert" data-status="0"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="sr-only">邮&nbsp;&nbsp;箱</label>
+                        <input type="email" name="email" class="form-control" id="email" placeholder="请输入邮箱"
+                               autocomplete="off"/>
+                    </div>
+                </div>
+                <div class="telephone-group" style="overflow: hidden;height: 0;">
+                    <div class="form-group" style="height: 0;overflow:hidden;">
+                        <div class="alert alert-danger div-cls-phoneinfo" role="alert" data-status="0"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="telephone" class="sr-only">手机号码</label>
+                        <input type="text" name="telephone" class="form-control" id="telephone" placeholder="请输入手机号码"
+                               autocomplete="off"/>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <label for="valicode" class="input-group-addon"
+                                   style="background: white;border: none;">验证码</label>
+                            <input type="text" name="valicode" maxlength="6" id="valicode" class="form-control"
+                                   style="border: 1px solid grey; width: 45%; height:34px; position:  relative;left: 20%;"/>
+                            <span class="input-group-btn">
 										<button class="btn btn-default btn-cls-sendcode" type="button">获取验证码</button>
 									</span>
-								</div>
-							</div>
-						</div>
-						<div class="form-group">
-							<p>已有账号？<a href="/forward_con/gologin">登录</a></p>
-						</div>
-						<div class="form-group">
-							<input type="submit" value="Sign Up" class="btn btn-primary btn-cls-submit" />
-							<p id="p-id-err" style="display: none;color: red;position: relative; top:-34px;left: 103px;">请认真填写</p>
-						</div>
-					</form>
-					<!-- END Sign In Form -->
-				</div>
-			</div>
-		</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <p>已有账号？<a href="/forward_con/gologin">登录</a></p>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Sign Up" class="btn btn-primary btn-cls-submit"/>
+                    <p id="p-id-err" style="display: none;color: red;position: relative; top:-34px;left: 103px;">
+                        请认真填写</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
-		<!-- jQuery -->
-		<script src="/js/login/jquery.min.js"></script>
-		<!-- Bootstrap -->
-		<script src="/bootstrap/js/bootstrap.js"></script>
-		<!-- Placeholder -->
-		<script src="/js/login/jquery.placeholder.min.js"></script>
-		<!-- Waypoints -->
-		<script src="/js/login/jquery.waypoints.min.js"></script>
-		<!-- Main JS -->
-		<script src="/js/login/main.js"></script>
+<!-- jQuery -->
+<script src="/js/login/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="/bootstrap/js/bootstrap.js"></script>
+<!-- Placeholder -->
+<script src="/js/login/jquery.placeholder.min.js"></script>
+<!-- Waypoints -->
+<script src="/js/login/jquery.waypoints.min.js"></script>
+<!-- Main JS -->
+<script src="/js/login/main.js"></script>
 
-		<!--My JS-->
-		<script src="/js/register/mine/register.js"></script>
-	</body>
+<!--My JS-->
+<script src="/js/register/mine/register.js"></script>
+</body>
 </html>
 

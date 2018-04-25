@@ -1,0 +1,305 @@
+.div-cls-childpage {
+    position: relative;
+    top: 60px;
+}
+
+.div-cls-childpage h3 {
+    opacity: 0;
+}
+
+.div-cls-childpage img.img1 {
+    position: relative;
+    margin-left: 100px;
+    right: 600px;
+}
+
+.div-cls-childpage img.img2 {
+    position: relative;
+    top: 500px;
+}
+
+.div-cls-childpage img.img3 {
+    position: relative;
+    margin-left: 100px;
+    right: -1200px;
+}
+
+.div-cls-parentpage {
+    position: relative;
+    top: 50px;
+}
+
+.div-cls-parentpage h3 {
+    text-align: center;
+    margin-bottom: 50px;
+    height: 0;
+    overflow: hidden;
+}
+
+.div-cls-parentpage img.img1 {
+    position: relative;
+    left: -500px;
+}
+
+.div-cls-parentpage img.img2 {
+    position: relative;
+    left: 1200px;
+}
+
+.div-cls-crampage ul.pull-left {
+    list-style-type: none;
+    position: relative;
+    top: 300px;
+    left: 150px;
+}
+
+.div-cls-crampage ul li {
+    font-size: 20px;
+    margin-bottom: 20px;
+    opacity: 0;
+}
+
+.div-cls-crampage p.p1 {
+    font-size: 20px;
+    width: 20px;
+    position: relative;
+    left: 450px;
+    top: -1000px;
+    opacity: 0;
+}
+
+.div-cls-crampage p.p2 {
+    font-size: 20px;
+    width: 20px;
+    position: relative;
+    top: 570px;
+    left: 750px;
+    opacity: 0;
+}
+
+.div-cls-crampage ul.pull-right {
+    list-style-type: none;
+    position: relative;
+    left: -150px;
+    top: -800px;
+}
+
+.div-cls-mainpage > h3 {
+    width: 200px;
+    margin: auto;
+    margin-bottom: 200px;
+    position: relative;
+    top: -1000px;
+    opacity: 0;
+    color: #ff4f49;
+}
+
+.div-cls-mainpage > div.pull-left {
+    margin-right: 230px;
+}
+
+.div-cls-mainpage div.div1 {
+    margin-left: 200px;
+}
+
+.div-cls-mainpage div.div11 {
+    position: relative;
+    left: 30px;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    transform: rotateZ(-45deg);
+    border: 2px solid #1284c778;
+    background: #1284c778;
+    z-index: 20;
+}
+
+.div-cls-mainpage header {
+    color: white;
+    font-size: 20px;
+    width: 150px;
+    position: relative;
+    top: -90px;
+    left: 34px;
+    z-index: 21;
+}
+
+.div-cls-mainpage div.div12 {
+    padding: 15px;
+    font-size: 20px;
+    font-size: 20px;
+    width: 213px;
+    position: relative;
+    border: 2px solid #51585a3b;
+    top: -100px;
+    word-wrap: break-word;
+    background: #1284c724;
+}
+
+.div-cls-foruser {
+    position: relative;
+    top: -50px;
+}
+
+.div-cls-foruser .foruser-top {
+    text-align: center;
+    opacity: 0;
+}
+
+.div-cls-foruser div.div1 {
+    position: relative;
+    left: 700px;
+    top: 100px;
+}
+
+.div-cls-foruser ul {
+    opacity: 0;
+}
+
+.div-cls-foruser .timeline-left, .div-cls-foruser .timeline-left2 {
+    position: relative;
+    left: 1000px;
+}
+
+.div-cls-foruser h3 {
+    color: red;
+}
+
+.div-cls-foruser .timeline-right {
+    position: relative;
+    left: -1448px;
+}
+
+.div-cls-foruser .timeline-right h3 {
+    position: relative;
+    left: 335px;
+}
+
+.div-cls-foruser .timeline-right2 {
+    position: relative;
+    left: -1528px;
+}
+
+.div-cls-foruser .timeline-right2 h3 {
+    position: relative;
+    left: 417px;
+}
+
+.div-cls-step {
+    position: relative;
+    top: 60px;
+}
+
+.div-cls-step h3 {
+    text-align: center;
+    opacity: 0;
+    color: red;
+}
+
+.div-cls-step div {
+    margin: auto;
+    width: 429px;
+    background-image: url(/images/welcome/page6/tutor_step.png);
+    background-repeat: no-repeat;
+    position: relative;
+    top: -30px;
+}
+
+.div-cls-end {
+    position: relative;
+    top: 50px;
+}
+
+.div-cls-end h3 {
+    text-align: center;
+    margin-bottom: 50px;
+    height: 0;
+    overflow: hidden;
+}
+
+.div-cls-end img.img1 {
+    position: relative;
+    left: -500px;
+}
+
+.div-cls-end img.img2 {
+    position: relative;
+    left: 1200px;
+}
+
+.div-cls-end a {
+    background: #286090;
+    color: white;
+    position: relative;
+    margin: auto;
+    display: block;
+    width: 130px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #286090;
+    border-radius: 8px;
+    height: 0;
+    opacity: 0;
+}
+
+.div-cls-end a i {
+    display: inline-block;
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.div-cls-menu {
+    position: fixed;
+    right: 30px;
+    top: 300px;
+    z-index: 70;
+}
+
+.div-cls-menu ul {
+    list-style-type: none;
+}
+
+.div-cls-menu ul li {
+    margin: 0 10px 0 0;
+    font-size: 14px;
+}
+
+.node rect {
+    stroke: #333;
+    fill: #999;
+    font-size: 30px;
+}
+
+.edgePath path {
+    stroke: #333;
+    fill: #333;
+    stroke-width: 1.5px;
+    font-size: 30px;
+}
+
+.div-cls-end a:hover {
+    text-decoration: none;
+}
+
+.div-cls-menu ul a {
+    float: left;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #333;
+    text-decoration: none;
+}
+
+.div-cls-menu ul .active a {
+    color: #fff;
+    background-color: #333;
+}
+
+nav a .mcount {
+    color: red;
+    margin-left: 2px;
+}

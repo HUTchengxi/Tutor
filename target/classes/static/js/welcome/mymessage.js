@@ -365,6 +365,7 @@ $(function () {
             window.alert("您未选中任何消息");
             return ;
         }
+        var flag = true;
         if(window.confirm("确定删除所有选中的消息吗?")) {
             $("div.container .m-main .main-right .main-show ul li:nth-child(4) a.cli").each(function(){
                 var did = $(this).data("did");
@@ -376,92 +377,8 @@ $(function () {
                     dataType: "json",
                     success: function(data){
                         var status = data.status;
-                        if(status == "valid"){
-                            window.alert("删除成功");
-                            var suser = $(".container .m-main .main-left .left-show.cli").find("h5").text();
-                            suser = suser.substring(0, suser.lastIndexOf("("));
-
-                            //异步获取指定通知管理员的所有通知数据
-                            $.ajax({
-                                async: true,
-                                type: "post",
-                                url: "/usermessage_con/getmessagebysuser",
-                                data: {suser: suser},
-                                dataType: "json",
-                                success: function (data) {
-                                    var status = data.status;
-                                    if (status === "invalid") {
-                                        window.location = "/forward_con/welcome";
-                                        return;
-                                    }
-                                    if (status === "valid") {
-                                        $("div.container .m-main .main-right .right-show").css("display", "block").empty();
-                                        $("div.container .m-main .main-right footer").css("display", "block");
-                                        $("div.container .m-main .main-right footer input.info-btn:nth-child(4)").css("display", "none");
-                                        return;
-                                    }
-                                    $("div.container .m-main .main-right footer input.info-btn:nth-child(4)").css("display", "none");
-                                    $("div.container .m-main .main-right .right-show").css("display", "block").empty();
-                                    $("div.container .m-main .main-right footer").css("display", "block");
-                                    $.each(data, function (index, item) {
-                                        var id = item.id;
-                                        var imgsrc = item.imgsrc;
-                                        var descript = item.descript;
-                                        var stime = item.stime;
-                                        var status = item.status;
-                                        if (status == 1) {
-                                            $("div.container .m-main .main-right .right-show").append("<div class=\"main-show show-left sta" + status + "\">\n" +
-                                                "                            <ul class=\"clearfix\">\n" +
-                                                "                                <li class=\"pull-left\">\n" +
-                                                "                                    <a href=\"javascript:void(0)\">\n" +
-                                                "                                        <img src=\"" + imgsrc + "\" />\n" +
-                                                "                                    </a>\n" +
-                                                "                                </li>\n" +
-                                                "                                <li class=\"pull-left\">\n" +
-                                                "                                    <pre class=\"main-info\">" + descript + "</pre>\n" +
-                                                "                                </li>\n" +
-                                                "                                <li class=\"pull-left\">\n" +
-                                                "                                    <p class=\"main-time\">" + stime + "</p>\n" +
-                                                "                                </li>\n" +
-                                                "                                <li>\n" +
-                                                "                                    <a href=\"javascript:void(0)\" data-did='"+id+"'>\n" +
-                                                "                                        <span class=\"layui-icon\">&#xe610;</span>\n" +
-                                                "                                    </a>\n" +
-                                                "                                </li>" +
-                                                "                            </ul>\n" +
-                                                "                        </div>");
-                                        }
-                                        else {
-                                            $("div.container .m-main .main-right .right-show").append("<div class=\"main-show show-left unread sta" + status + "\">\n" +
-                                                "                            <ul class=\"clearfix\">\n" +
-                                                "                                <li class=\"pull-left\">\n" +
-                                                "                                    <a href=\"javascript:void(0)\">\n" +
-                                                "                                        <img src=\"" + imgsrc + "\" />\n" +
-                                                "                                    </a>\n" +
-                                                "                                </li>\n" +
-                                                "                                <li class=\"pull-left\">\n" +
-                                                "                                    <pre class=\"main-info\">" + descript + "</pre>\n" +
-                                                "                                </li>\n" +
-                                                "                                <li class=\"pull-left\">\n" +
-                                                "                                    <p class=\"main-time\">" + stime + "</p>\n" +
-                                                "                                </li>\n" +
-                                                "                                <li>\n" +
-                                                "                                    <a href=\"javascript:void(0)\" data-did='"+id+"'>\n" +
-                                                "                                        <span class=\"layui-icon\">&#xe610;</span>\n" +
-                                                "                                    </a>\n" +
-                                                "                                </li>" +
-                                                "                            </ul>\n" +
-                                                "                        </div>");
-                                        }
-                                    });
-                                },
-                                error: function (xhr, status) {
-                                    window.alert("后台环境异常导致无法获取通知数据，请稍后重试");
-                                    window.console.log(xhr);
-                                }
-                            });
-                        }else{
-                            alert("删除失败，请稍后再试");
+                        if(status != "valid"){
+                            flag = false;
                         }
                     },
                     error: function(xhr, status){
@@ -470,6 +387,93 @@ $(function () {
                     }
                 });
             });
+            if(flag){
+                window.alert("删除成功");
+                var suser = $(".container .m-main .main-left .left-show.cli").find("h5").text();
+                suser = suser.substring(0, suser.lastIndexOf("("));
+
+                //异步获取指定通知管理员的所有通知数据
+                $.ajax({
+                    async: true,
+                    type: "post",
+                    url: "/usermessage_con/getmessagebysuser",
+                    data: {suser: suser},
+                    dataType: "json",
+                    success: function (data) {
+                        var status = data.status;
+                        if (status === "invalid") {
+                            window.location = "/forward_con/welcome";
+                            return;
+                        }
+                        if (status === "valid") {
+                            $("div.container .m-main .main-right .right-show").css("display", "block").empty();
+                            $("div.container .m-main .main-right footer").css("display", "block");
+                            $("div.container .m-main .main-right footer input.info-btn:nth-child(4)").css("display", "none");
+                            return;
+                        }
+                        $("div.container .m-main .main-right footer input.info-btn:nth-child(4)").css("display", "none");
+                        $("div.container .m-main .main-right .right-show").css("display", "block").empty();
+                        $("div.container .m-main .main-right footer").css("display", "block");
+                        $.each(data, function (index, item) {
+                            var id = item.id;
+                            var imgsrc = item.imgsrc;
+                            var descript = item.descript;
+                            var stime = item.stime;
+                            var status = item.status;
+                            if (status == 1) {
+                                $("div.container .m-main .main-right .right-show").append("<div class=\"main-show show-left sta" + status + "\">\n" +
+                                    "                            <ul class=\"clearfix\">\n" +
+                                    "                                <li class=\"pull-left\">\n" +
+                                    "                                    <a href=\"javascript:void(0)\">\n" +
+                                    "                                        <img src=\"" + imgsrc + "\" />\n" +
+                                    "                                    </a>\n" +
+                                    "                                </li>\n" +
+                                    "                                <li class=\"pull-left\">\n" +
+                                    "                                    <pre class=\"main-info\">" + descript + "</pre>\n" +
+                                    "                                </li>\n" +
+                                    "                                <li class=\"pull-left\">\n" +
+                                    "                                    <p class=\"main-time\">" + stime + "</p>\n" +
+                                    "                                </li>\n" +
+                                    "                                <li>\n" +
+                                    "                                    <a href=\"javascript:void(0)\" data-did='"+id+"'>\n" +
+                                    "                                        <span class=\"layui-icon\">&#xe610;</span>\n" +
+                                    "                                    </a>\n" +
+                                    "                                </li>" +
+                                    "                            </ul>\n" +
+                                    "                        </div>");
+                            }
+                            else {
+                                $("div.container .m-main .main-right .right-show").append("<div class=\"main-show show-left unread sta" + status + "\">\n" +
+                                    "                            <ul class=\"clearfix\">\n" +
+                                    "                                <li class=\"pull-left\">\n" +
+                                    "                                    <a href=\"javascript:void(0)\">\n" +
+                                    "                                        <img src=\"" + imgsrc + "\" />\n" +
+                                    "                                    </a>\n" +
+                                    "                                </li>\n" +
+                                    "                                <li class=\"pull-left\">\n" +
+                                    "                                    <pre class=\"main-info\">" + descript + "</pre>\n" +
+                                    "                                </li>\n" +
+                                    "                                <li class=\"pull-left\">\n" +
+                                    "                                    <p class=\"main-time\">" + stime + "</p>\n" +
+                                    "                                </li>\n" +
+                                    "                                <li>\n" +
+                                    "                                    <a href=\"javascript:void(0)\" data-did='"+id+"'>\n" +
+                                    "                                        <span class=\"layui-icon\">&#xe610;</span>\n" +
+                                    "                                    </a>\n" +
+                                    "                                </li>" +
+                                    "                            </ul>\n" +
+                                    "                        </div>");
+                            }
+                        });
+                    },
+                    error: function (xhr, status) {
+                        window.alert("后台环境异常导致无法获取通知数据，请稍后重试");
+                        window.console.log(xhr);
+                    }
+                });
+            }else{
+                alert("操作失败");
+            }
         }
     };
     $("div.container .m-main .main-right footer input.info-btn:nth-child(4)").click(cli_delall);

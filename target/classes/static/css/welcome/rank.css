@@ -1,0 +1,139 @@
+.sliderbar {
+    position: fixed;
+    right: 2%;
+    bottom: 25%;
+    z-index: 99;
+}
+
+.sliderbar ul li {
+    list-style-type: none;
+    margin-bottom: 30%;
+}
+
+.sliderbar ul li a {
+    display: inline-block;
+    /*width: 200%;*/
+    /*height: 35px;*/
+    border: 1px solid black;
+    text-decoration: none;
+    background-color: #80808030;
+    border-color: #0000004d;
+}
+
+.sliderbar ul li a.gotop {
+    display: none;
+}
+
+.sliderbar ul li a:hover {
+    text-decoration: none;
+}
+
+.sliderbar ul li a i {
+    font-size: 35px;
+    color: #808080a3;
+    font-weight: bold;
+}
+
+.div-cls-rank nav li.cli {
+    background-color: #00bc9b;
+}
+
+.div-cls-rank nav li.cli a {
+    color: white;
+}
+
+.div-cls-rank nav a:hover {
+    text-decoration: none;
+}
+
+.div-cls-rank header h1:before {
+    background-color: red;
+    content: "";
+    width: 7px;
+    height: 7px;
+    display: inline-block;
+    margin-right: 2%;
+    margin-left: 2%;
+    margin-bottom: 1%;
+    vertical-align: middle;
+}
+
+.div-cls-rank .rank {
+    height: 346.28px;
+}
+
+.div-cls-rank .rank-show {
+    height: 228px;
+}
+
+.div-cls-rank .rank-show tr {
+    border: 1px dashed #80808047;
+    border-left: none;
+    border-right: none;
+}
+
+.div-cls-rank .rank-show td {
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+}
+
+.div-cls-rank footer a:hover {
+    text-decoration: none;
+    color: #25bb9b;
+}
+
+.div-cls-rank footer a:hover i {
+    text-decoration: none;
+}
+
+i.glyphicon-fire {
+    color: red;
+}
+
+nav a .mcount {
+    color: red;
+    margin-left: 2px;
+}
+
+footer.footer {
+    background-color: #000000;
+    width: 100%;
+}
+
+footer.footer .webmap, footer.footer .link, footer.footer .copyright {
+    margin: 0 auto;
+    width: 80%;
+    margin-bottom: 1%;
+}
+
+footer.footer h4 {
+    color: white;
+}
+
+footer.footer ul {
+    margin-left: 1%;
+}
+
+footer.footer ul li {
+    margin: 1%;
+}
+
+footer.footer ul li a {
+    color: #c8cdd2ad;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+footer.footer ul li a:hover {
+    color: #c8cdd2;
+    text-decoration: none;
+}
+
+footer.footer .copyright {
+    margin-top: -1%;
+}
+
+footer.footer .copyright h5 {
+    color: #787d82c7;
+}

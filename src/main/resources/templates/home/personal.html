@@ -2,22 +2,26 @@
 <html>
 <head>
     <title>勤成家教网---个人中心</title>
-    <!-- for-mobile-apps -->
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--LOGO-->
     <link rel="shortcut icon" href="/images/logo/web_logo.ico" />
-    <!-- //for-mobile-apps -->
+    <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.css" />
-    <link rel="stylesheet" href="/css/welcome/personal/style.css" media="all" />
-    <!--layui-->
+    <!--LAYUI-->
     <link rel="stylesheet" href="/layui/css/layui.css" />
-    <!--datepicker-->
+    <!--DATETIMEPICKER-->
     <link rel="stylesheet" href="/css/welcome/personal/jquery.datetimepicker.css" />
-    <!-- //js -->
+    <!--FONTS -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css' />
     <link href='https://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css' />
     <link href='https://fonts.googleapis.com/css?family=Comfortaa:400,300,700' rel='stylesheet' type='text/css' />
+    <!--my css-->
+    <link rel="stylesheet" href="/css/welcome/personal/style.css" media="all" />
+    <link rel="stylesheet" href="/css/welcome/personal/personal.css" />
 </head>
 <body>
 
@@ -321,76 +325,6 @@
         <p class="err-email">aaa</p>
     </div>
 
-    <style>
-        .alert-unbind{
-            position: absolute;
-            z-index: 199;
-            /*top: 25%;*/
-            left: 30%;
-            width: 40%;
-            background-color: white;
-            height: 200px;
-            padding-top: 1%;
-            border-radius: 1%;
-            top: -40%;
-            opacity: 0;
-        }
-        .alert-unbind p{
-            height: 30px;
-            line-height: 30px;
-            font-size: 18px;
-            text-align: center;
-        }
-        .alert-unbind .div-valicode{
-            margin: 5% 0;
-            margin-left: 33%;
-        }
-        .alert-unbind .div-valicode input{
-            height: 30px;
-            line-height: 30px;
-            width: 15%;
-            padding: 0 1%;
-        }
-        .alert-unbind .div-valicode a{
-            display:  inline-block;
-            background-color: #037afc;
-            color: white;
-            width: 18%;
-            text-align:  center;
-            height: 30px;
-            line-height:  30px;
-            margin-left: .5%;
-            text-decoration: none;
-            font-size: 12px;
-        }
-        .alert-unbind .div-unbind{
-            margin-left: 37%;
-        }
-        .alert-unbind .div-unbind button{
-            width: 18%;
-            height: 30px;
-            background-color: #037afc;
-            color: white;
-            border: none;
-        }
-        .alert-unbind .div-unbind button.btn-reset{
-            background-color: rgba(128, 128, 128, 0.68);
-            margin-left: 5%;
-        }
-        .alert-unbind .alink-unbind{
-            position:  absolute;
-            top: 4%;
-            right: 0.5%;
-        }
-        .alert-unbind .err-email{
-            position:  absolute;
-            top: 37%;
-            right: 23%;
-            color: red;
-            display: none;
-        }
-    </style>
-
     <!--进行绑定-->
     <div class="alert-bind">
         <p>绑定验证</p>
@@ -413,83 +347,6 @@
         <p class="err-email">aaa</p>
         <p class="err-vali">bbb</p>
     </div>
-
-    <style>
-        .alert-bind{
-            position: absolute;
-            z-index: 199;
-            /*top: 25%;*/
-            left: 30%;
-            width: 50%;
-            background-color: white;
-            height: 35%;
-            padding-top: 1%;
-            border-radius: 1%;
-            top: -40%;
-            opacity: 0;
-        }
-        .alert-bind p{
-            height: 30px;
-            line-height: 30px;
-            font-size: 18px;
-            text-align: center;
-        }
-        .alert-bind .div-valicode{
-            margin: 5% 0;
-            margin-left: 33%;
-        }
-        .alert-bind .div-valicode input{
-            height: 30px;
-            line-height: 30px;
-            width: 15%;
-            padding: 0 1%;
-        }
-        .alert-bind .div-valicode input.valiinfo{
-            width: 35%;
-        }
-        .alert-bind .div-valicode a{
-            display:  inline-block;
-            background-color: #037afc;
-            color: white;
-            width: 18%;
-            text-align:  center;
-            height: 30px;
-            line-height:  30px;
-            margin-left: .5%;
-            text-decoration: none;
-            font-size: 12px;
-        }
-        .alert-bind .div-unbind{
-            margin-left: 37%;
-        }
-        .alert-bind .div-unbind button{
-            width: 18%;
-            height: 30px;
-            background-color: #037afc;
-            color: white;
-            border: none;
-        }
-        .alert-bind .div-unbind button.btn-reset{
-            background-color: rgba(128, 128, 128, 0.68);
-            margin-left: 5%;
-        }
-        .alert-bind .alink-unbind{
-            position:  absolute;
-            top: 2%;
-            right: 0.5%;
-        }
-        .alert-bind .err-email, .alert-bind .err-vali{
-            position:  absolute;
-            top: 27%;
-            right: 11%;
-            color: red;
-            display: none;
-            font-size: 14px;
-        }
-        .alert-bind .err-vali{
-            top: 50%;
-        }
-    </style>
 
     <!--密保数据的设置/修改-->
     <div class="alert-secretinfo">
@@ -533,62 +390,6 @@
         </a>
     </div>
 
-    <style>
-        .alert-secretinfo{
-            position: absolute;
-            /*top: 25%;*/
-            width: 40%;
-            left: 30%;
-            background-color: white;
-            border-radius: 2%;
-            border: 1px solid black;
-            top: -40%;
-            opacity: 0;
-            z-index: 199;
-        }
-        .alert-secretinfo p.p-title{
-            text-align: center;
-            font-size: 20px;
-            padding: 2%;
-        }
-        .alert-secretinfo div.secret-one{
-            width: 70%;
-            margin: 4% auto;
-            padding-left: 10%;
-        }
-        .alert-secretinfo div.secret-one input{
-            height: 25px;
-        }
-        .alert-secretinfo div.secret-one .err-info{
-            text-align: center;
-            width: 60%;
-            display: none;
-        }
-        .alert-secretinfo div.btn-group{
-            width: 100%;
-            text-align: center;
-        }
-        .alert-secretinfo div.btn-group button{
-            width: 20%;
-            height: 30px;
-            margin: 0 3% 3% 3%;
-            border: none;
-        }
-        .alert-secretinfo .btn-group .btn-submit{
-            background-color: #037afc;
-            color: white;
-        }
-        .alert-secretinfo .btn-group .btn-reset{
-            background-color: rgba(128, 128, 128, 0.68);
-            color: white;
-        }
-        .alert-secretinfo .close{
-            position: absolute;
-            top: 2%;
-            right: 0.5%;
-        }
-    </style>
-
     <!--侧边栏-->
     <div class="sliderbar">
         <ul>
@@ -609,39 +410,6 @@
             </li>
         </ul>
     </div>
-
-    <style>
-        .sliderbar{
-            position: fixed;
-            right: 2%;
-            bottom: 25%;
-        }
-        .sliderbar ul li{
-            list-style-type: none;
-            margin-bottom: 30%;
-        }
-        .sliderbar ul li a{
-            display: inline-block;
-            /*width: 200%;*/
-            /*height: 35px;*/
-            border: 1px solid black;
-            text-decoration: none;
-            background-color: #80808030;
-            border-color: #0000004d;
-        }
-        .sliderbar ul li a.gotop{
-            display: none;
-        }
-        .sliderbar ul li a:hover{
-            text-decoration: none;
-        }
-        .sliderbar ul li a i{
-            font-size: 35px;
-            color: #808080a3;
-            font-weight: bold;
-        }
-    </style>
-
 
     <!--点击头像放大弹出层-->
     <div class="showbig bigface">
@@ -766,170 +534,14 @@
         <p>今日已签到</p>
     </div>
 
-    <style>
-
-        .signed{position:  absolute;top: 63%;left: 49%;background-color: #000000a6;color: #ffffffc2;width: 10%;height: 23px;
-            line-height:  23px;text-align:  center;border: 1px solid white;border-radius: 7%;opacity: 0;}
-
-        #usersign{height: 61.2%;}
-        #usersign .maininfo img{width: 80%; margin: 10px 10%; height: 300px;}
-        #usersign .sublink li{margin-left: 37%;}
-
-        .custom-date-style {background-color: red !important;}
-        .xdsoft_datepicker.active{width: 98%!important;}
-        .xdsoft_timepicker.active{display: none!important;}
-
-        footer.footer{background-color: #000000; width: 100%;}
-        footer.footer .webmap, footer.footer .link, footer.footer .copyright{margin: 0 auto; width: 80%;margin-bottom: 1%;}
-        footer.footer h4{color: white;}
-        footer.footer ul{margin-left: 1%;}
-        footer.footer ul li{margin: 1%;}
-        footer.footer ul li a{color: #c8cdd2ad; font-size: 14px; text-decoration: none;}
-        footer.footer ul li a:hover{color: #c8cdd2; text-decoration: none;}
-        footer.footer .copyright{margin-top: -1%;}
-        footer.footer .copyright h5{color: #787d82c7;}
-
-        /*.infobox .box .maininfo ul li:last-child label{margin-top: 30px;}*/
-        /*.infobox .box .maininfo ul li:last-child p{position: relative; top: -30px;}*/
-        .infobox .logdiv p.msg{background-color: #fff4e5;color: #f56108;text-align:  center;height: 25px;line-height: 25px;
-            overflow: hidden; position: relative;}
-        .infobox .logdiv p.msg a{position: absolute; right: 0; text-decoration: none;}
-        .infobox .logdiv p.msg a:hover{text-decoration: none;}
-        .infobox .logdiv .maininfo{margin-top: 10px;}
-        .infobox .logdiv table{width: 100%;}
-        .infobox .logdiv table tr{min-height: 48px; line-height: 48px;}
-        .infobox .logdiv table tr{border-bottom: 1px solid #d9dde1;}
-        .infobox .logdiv table tr:nth-child(1){background-color: #f3f5f7; border-bottom: none;}
-        .infobox .logdiv table tr th, .infobox .logdiv table tr td{text-align: center; max-width: 232px; word-break: break-all;}
-        .infobox .logdiv table tr td:nth-child(1){color: #00b6ff;}
-        .infobox .logdiv table tr td:nth-child(2){color: #5bea3a;}
-        .infobox .logdiv table tr td:nth-child(3){color: #f56108;}
-        .infobox .logdiv table tr td:nth-child(4){color: red;}
-
-        div.logo{overflow: hidden;}
-        div.logo:hover{cursor: pointer;}
-        div.logo a{width: 100%;display:  block; position: relative;top: 83%; font-size: 12px;
-            color: white; background-color: black; height: 35px;line-height: 30px; text-align: center;
-            margin-top: 35px;transition: all .1s linear;}
-        div.logo:hover a{margin-top: 0;}
-
-        .banner-body-right{padding: 2%;}
-        .banner-body-right header{height: 40px;}
-        .banner-body-right header span{font-size: 16px; font-weight: bold; line-height: 40px;}
-        .banner-body-right header a{display: inline-block; height: 40px; line-height: 40px;
-            color: #777; text-decoration: none;}
-        .banner-body-right header a:hover{color: black; text-decoration: none;}
-
-        .banner-body-right .maininfo ul{padding: 2% 5%;}
-        .banner-body-right .maininfo li{margin: 2% 0;}
-        .banner-body-right .maininfo li label{width: 20%;height: 60px;background-color: #f3f5f7;text-align:  center;
-            line-height:  60px;}
-        .banner-body-right .maininfo li input{width: 78%; height: 60px; border: none; border-bottom: 1px solid #d9dde1;
-            padding: 3%;}
-        .banner-body-right .maininfo li p{display: inline-block; border: 1px solid #d9dde1;height: 120px; width: 78%;
-            padding: 3%;}
-
-        .infobox .binddiv.box, .infobox .logdiv.box, .infobox .signdiv.box {display: none; opacity: 0;}
-        .infobox .binddiv header a i{color: #008cc8;}
-        .infobox .binddiv .mainbind ul li div{height: 90px; position: relative; border-bottom: 1px solid #80808059;}
-        .infobox .binddiv .mainbind ul li div a.imglogo{display:  inline-block;width: 10%;height: 90px;line-height: 90px; position: absolute;}
-        .infobox .binddiv .mainbind ul li div a.imglogo i{font-size: 45px; color: #d9dde1;}
-        .infobox .binddiv .mainbind div p{position:  relative;left: 55px;top: 20px;font-size: 16px;font-weight:  bold;}
-        .infobox .binddiv .mainbind div p span{color: red; font-weight: normal;}
-        .infobox .binddiv .mainbind div p span.ok{color: #ffd331;}
-        .infobox .binddiv .mainbind div p:nth-child(3){margin-top: 5px; font-weight: normal; font-size: 14px;}
-        .infobox .binddiv .mainbind div p:nth-child(3) a{margin-right: 60px;display:  inline-block;color: grey;height: 30px;
-            line-height:  30px;border: 1px solid grey;border-radius: 15px;width: 80px;text-align: center;text-decoration: none;
-            margin-top: -15px;}
-        .infobox .binddiv .mainbind div p a.more:nth-child(1){margin-top: -43px;}
-        .infobox .binddiv .mainbind div p a.more:nth-child(2){margin-top: 10px;}
-
-        .zhezhao{position: fixed; top: 0; left: 0;width: 100%; background-color: #41414173;
-            z-index: 99;}
-
-        .bigface{z-index: 999; background: white; position: fixed; top: 24%; left: 30%;
-            -webkit-box-shadow: 0 8px 16px 0 rgba(7,17,27,0.2);
-            -moz-box-shadow: 0 8px 16px 0 rgba(7,17,27,0.2);
-            box-shadow: 0 8px 16px 0 rgba(7,17,27,0.2); border-radius: 12px; width: 40%; height: 46%;
-            opacity: 0; display: none;}
-        .bigface .main{position: relative;}
-        .bigface .main a.close{display: inline-block; position: absolute; right: -5%; top: -7%;
-            border: 1px solid white; -webkit-border-radius: 10px; -moz-border-radius: 10px;
-            border-radius: 10px; text-decoration: none;}
-        .bigface .main a.close:hover{text-decoration: none;}
-        .bigface .main a.close i{font-size: 18px;}
-        .bigface h4{margin-top: 10px; margin-left: 10px; font-size: 16px; font-weight: bold;}
-        .bigface img.bigimg{width: 100%; margin: 20px 0 10px 0; height: 350px;}
-
-        .modface div.show{width: 53%; height: 191.64px;
-            margin: 10px 23%; border: 4px solid #d9dde1; border-radius: 96px;}
-        .modface .modlink input{display: none;}
-        .modface .modlink ul li{margin: 5px 15%;}
-        .modface .modlink ul li a{color: #008cc8; letter-spacing: 2px; text-decoration: none;}
-        .modface .modlink ul li a:hover{text-decoration: none;}
-        .modface .sublink ul li{width: 23%; height: 36px; line-height: 36px; margin: 10px 0;
-            text-align: center;}
-        .modface .sublink ul li:nth-child(1){margin-left: 16%;}
-        .modface .sublink ul li:nth-child(2){margin-left: 16%; margin-right: 16%;}
-        .modface .sublink ul li a{width: 100%; background-color: #1481b8; color: white;
-            display: inline-block; -webkit-border-radius: 12px; -moz-border-radius: 12px;
-            border-radius: 12px; text-decoration: none;}
-        .modface .sublink ul li a:hover{text-decoration: none;}
-        .modface .sublink ul li:nth-child(2) a{background-color: white; border: 1px solid #545c63;
-            color: #545c63;}
-        .modface .sublink ul li:nth-child(1) a:hover{background-color: #0f618a;}
-        .modface .sublink ul li:nth-child(2) a:hover{color: black; background-color: transparent;
-            border-color: black;}
-
-        div.modinfo{height: 56.2%;}
-
-        div.modinfo{padding: 2%;}
-        .modinfo header{height: 30px;}
-        .modinfo header span{font-size: 16px; font-weight: bold; line-height: 30px;}
-
-        .modinfo .main a.close{top: -10%; right: -10%;}
-
-        .modinfo .maininfo ul{padding: 2% 5%;}
-        .modinfo .maininfo li{margin: 2% 0;}
-        .modinfo .maininfo li label{width: 20%;height: 30px;background-color: #f3f5f7;text-align:  center;
-            line-height:  30px;}
-        .modinfo .maininfo li input{width: 78%; height: 30px; border: none; border-bottom: 1px solid #d9dde1;
-            padding: 3%;}
-        .modinfo .maininfo li p{display: inline-block; border: 1px solid #d9dde1;height: 80px; width: 78%;
-            padding: 3%;}
-
-        .modinfo .sublink ul li{width: 23%; height: 36px; line-height: 36px; margin: 10px 0;
-            text-align: center;}
-        .modinfo .sublink ul li:nth-child(1){margin-left: 16%;}
-        .modinfo .sublink ul li:nth-child(2){margin-left: 16%; margin-right: 16%;}
-        .modinfo .sublink ul li a{width: 100%; background-color: #1481b8; color: white;
-            display: inline-block; -webkit-border-radius: 12px; -moz-border-radius: 12px;
-            border-radius: 12px; text-decoration: none;}
-        .modinfo .sublink ul li a:hover{text-decoration: none;}
-        .modinfo .sublink ul li:nth-child(2) a{background-color: white; border: 1px solid #545c63;
-            color: #545c63;}
-        .modinfo .sublink ul li:nth-child(1) a:hover{background-color: #0f618a;}
-        .modinfo .sublink ul li:nth-child(2) a:hover{color: black; background-color: transparent;
-            border-color: black;}
-
-        .modinfo .maininfo li label.sexlabel{width: 10%; height: 10%; font-size: 12px; margin: 0 7%; background-color: white;}
-        .modinfo .maininfo li label.sexlabel input.sex{width: 50%; height: 15px;}
-    </style>
-    <!-- //banner-body -->
-
-    <!--jquery-->
+    <!--JQUERY-->
     <script src="/js/common/jquery.min.js"></script>
-    <!--datepicker-->
+    <!--DATETIMEPICKER-->
     <script src="/js/welcome/personal/jquery.datetimepicker.full.js"></script>
-    <!--bootstrap-->
+    <!--BOOTSTRAP-->
     <script src="/bootstrap/js/bootstrap.js"></script>
-    <!--layui-->
+    <!--LAYUI-->
     <script src="/layui/layui.js"></script>
-
-    <!-- for bootstrap working -->
-    <script src="/js/welcome/personal/bootstrap.js"></script>
-    <!-- //for bootstrap working -->
-
     <!--my js-->
     <script src="/js/welcome/personal/personal.js"></script>
 </body>

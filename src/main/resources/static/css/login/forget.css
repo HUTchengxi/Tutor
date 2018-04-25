@@ -1,0 +1,209 @@
+.zhezhao {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    display: none;
+    background-color: rgba(128, 128, 128, 0.25);
+}
+
+.usercheck {
+    width: 40%;
+    margin: 10% auto;
+}
+
+.usercheck input {
+    margin-left: 2%;
+    border: 1px solid #00000042;
+    background-color: white;
+    height: 30px;
+    padding: 0 1%;
+}
+
+.usercheck a {
+    display: inline-block;
+    background-color: #037afc;
+    color: white;
+    width: 20%;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    margin-left: .5%;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.usercheck p {
+    width: 35%;
+    margin: 1% auto;
+    display: none;
+    color: red;
+}
+
+.container a.close {
+    position: absolute;
+    top: 2%;
+    right: 1%;
+    text-decoration: none;
+}
+
+.container a.close.hover {
+    text-decoration: none;
+}
+
+.container .mainshow .main-secret p.none {
+    font-size: 16px;
+    color: gray;
+    text-align: center;
+}
+
+.container .mainshow .main-secret .answer {
+    color: red;
+}
+
+.container .mainshow .main.main-secret .err.err-mb1 {
+    top: 16%;
+}
+
+.container .mainshow .main.main-secret .err.err-mb2 {
+    top: 42%;
+
+}
+
+.container .mainshow .main.main-secret .err.err-mb3 {
+    top: 58%;
+}
+
+.container .mainshow .main.main-secret .err.err-newpass {
+    top: 56%;
+}
+
+.container .mainshow .main.main-secret .err.err-repass {
+    top: 70%;
+}
+
+.container .mainshow .main p.err {
+    position: absolute;
+    top: 2%;
+    right: 14%;
+    color: red;
+    display: none;
+}
+
+.container .mainshow .main p.err-valicode {
+    top: 24%;
+}
+
+.container .mainshow .main p.err-newpass {
+    top: 46%;
+}
+
+.container .mainshow .main p.err-repass {
+    top: 68%;
+}
+
+.container .mainshow .main {
+    width: 65%;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    height: 0;
+}
+
+.container .mainshow .main-phone {
+    margin-top: 7%;
+    height: 230px;
+}
+
+.container .mainshow .main label {
+    color: #0000009c;
+    margin-bottom: 5%;
+}
+
+.container .mainshow .main input {
+    margin-left: 5%;
+    border: 1px solid #00000042;
+    background-color: white;
+    height: 30px;
+    padding: 0 1%;
+}
+
+.container .mainshow .main .valicode {
+    width: 23%;
+}
+
+.container .mainshow .main a.resend {
+    display: inline-block;
+    background-color: #037afc;
+    color: white;
+    width: 20%;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    margin-left: .5%;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.container .mainshow .main .valicode:hover {
+    text-decoration: none;
+}
+
+.container .mainshow .main button {
+    background-color: #037afc;
+    color: white;
+    border: none;
+    width: 41%;
+    margin-left: 18%;
+    height: 27px;
+    line-height: 27px;
+    font-size: 15px;
+}
+
+body {
+    background-color: #80808021;
+}
+
+.container {
+    width: 45%;
+    margin: 10% auto;
+    background-color: white;
+    position: absolute;
+    left: 27%;
+    top: -700px;
+    z-index: 199;
+}
+
+.container nav {
+    margin-top: 5%;
+}
+
+.container nav ul li {
+    list-style-type: none;
+    width: 27%;
+    border: 1px solid #878e8e12;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+}
+
+.container nav ul li a {
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+    color: #000000b0;
+}
+
+.container nav ul li:hover {
+    background-color: #80808021;
+}
+
+.container nav ul li a:hover {
+    text-decoration: none;
+}
+
+.container nav ul li.cli {
+    border-bottom: 2px solid #00e8ff;
+    background-color: #80808021;
+}

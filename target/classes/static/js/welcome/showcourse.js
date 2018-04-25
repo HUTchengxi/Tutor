@@ -621,7 +621,7 @@ $(function() {
                                     "                                    <div class=\"face\">\n" +
                                     "                                    </div>\n" +
                                     "                                    <h5>"+username+"</h5>\n" +
-                                    "                                    <p class=\"star\"></p>\n" +
+                                    "                                    <p class=\"star startemp\"></p>\n" +
                                     "                                    <div class=\"info\">\n" +
                                     "                                        <p>"+info+"</p>\n" +
                                     "                                    </div>\n" +
@@ -634,7 +634,7 @@ $(function() {
                                     "                                    <div class=\"face\">\n" +
                                     "                                    </div>\n" +
                                     "                                    <h5>"+username+"</h5>\n" +
-                                    "                                    <p class=\"star\"></p>\n" +
+                                    "                                    <p class=\"star startemp\"></p>\n" +
                                     "                                    <div class=\"info\">\n" +
                                     "                                        <p>"+info+"</p>\n" +
                                     "                                    </div>\n" +
@@ -643,8 +643,9 @@ $(function() {
                             }
 
                             while(score-- != 0){
-                                $("#usercommand .header ul li p.star").append("<span class='glyphicon glyphicon-star'></span>");
+                                $("#usercommand .header ul li p.star.startemp").append("<span class='glyphicon glyphicon-star'></span>");
                             }
+                            $("#usercommand .header ul li p.star.startemp").removeClass("startemp");
 
                             /**
                              * 异步获取用户评价对应的家教老师回复
