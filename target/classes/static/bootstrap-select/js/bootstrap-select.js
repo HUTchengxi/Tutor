@@ -292,7 +292,7 @@
 
       this.$element.addClass('bs-select-hidden');
       // store originalIndex (key) and newIndex (value) in this.liObj for fast accessibility
-      // allows us to do this.$lis.eq(that.liObj[index]) instead of this.$lis.filter('[data-original-index="' + index + '"]')
+      // allows us to do this.$lis.eq(that.liObj[index]) instead of this.$lis.interceptor('[data-original-index="' + index + '"]')
       this.liObj = {};
       this.multiple = this.$element.prop('multiple');
       this.autofocus = this.$element.prop('autofocus');
@@ -384,7 +384,7 @@
       var drop =
           '<div class="btn-group bootstrap-select' + multiple + inputGroup + '">' +
           '<button type="button" class="' + this.options.styleBase + ' dropdown-toggle" data-toggle="dropdown"' + autofocus + '>' +
-          '<span class="filter-option pull-left"></span>&nbsp;' +
+          '<span class="interceptor-option pull-left"></span>&nbsp;' +
           '<span class="caret"></span>' +
           '</button>' +
           '<div class="dropdown-menu open">' +
@@ -628,7 +628,7 @@
 
       //strip all html-tags and trim the result
       this.$button.attr('title', $.trim(title.replace(/<[^>]*>?/g, '')));
-      this.$button.children('.filter-option').html(title);
+      this.$button.children('.interceptor-option').html(title);
 
       this.$element.trigger('rendered.bs.select');
     },

@@ -10,92 +10,63 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf479440-431d-499c-9612-40c14de1a166" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAdminPageController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardPersonalPageController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardTutorPageController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/ForwardPersonalPageController.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/ForwardTutorPageController.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_9_3.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_cache_1_4_0.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_config_core_1_4_0.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_config_ogdl_1_4_0.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_core_1_4_0.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_crypto_cipher_1_4_0.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_crypto_core_1_4_0.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_crypto_hash_1_4_0.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_event_1_4_0.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_lang_1_4_0.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_spring_1_4_0.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_web_1_4_0.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/annotation/RequireAuth.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/config/AbstractHandlerInterceptor.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/config/InterceptorConfig.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/interceptor/UrlInterceptor.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Tutor_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/Tutor_war_exploded.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/logs/spring-boot-logging.log" afterPath="$PROJECT_DIR$/logs/spring-boot-logging.log" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/AdminApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/AdminApiImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.26.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.27.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.28.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.29.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.31.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.13.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.3.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.x版本" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/3.x版本" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/commit.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/guns.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/tutor.sql" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/tutor.sql" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/技术.txt" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/技术.txt" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/coursedeletemanage.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/coursedeletemanage.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/emailmanage.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/emailmanage.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/messagemanage.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/messagemanage.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/classify.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/classify.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/contact.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/contact.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/carddetail.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/carddetail.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/gabble.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/gabble.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/mybbs.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/mybbs.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/showcard.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/showcard.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/rank.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/rank.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/welcome.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/welcome.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/layui-admin/js/adminNav.js" afterPath="$PROJECT_DIR$/src/main/resources/static/layui-admin/js/adminNav.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/layui-admin/js/nav.js" afterPath="$PROJECT_DIR$/src/main/resources/static/layui-admin/js/nav.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/carddetail.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/carddetail.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/classify.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/classify.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/gabble.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/gabble.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/mybbs.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/mybbs.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/mycourse.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/mycourse.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/mymessage.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/mymessage.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/mysetting.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/mysetting.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/order/mycart.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/order/mycart.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/order/mycycle.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/order/mycycle.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/order/myorder.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/order/myorder.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/personal.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/personal.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/rank.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/rank.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/showcard.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/showcard.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/showcourse.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/showcourse.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/coursedeletemanage.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/coursedeletemanage.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/emailmanage.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/emailmanage.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/main.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/main.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/messagemanage.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/messagemanage.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/ordermanage.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/ordermanage.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/sendmail.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/sendmail.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/sendmessage.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/sendmessage.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sysconfig/tutor/index.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/sysconfig/tutor/index.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/ForwardAll.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/ForwardAll.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/classify.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/classify.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/contact.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/contact.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/gabble/carddetail.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/gabble/carddetail.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/gabble/gabble.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/gabble/gabble.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/gabble/mybbs.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/gabble/mybbs.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/gabble/showcard.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/gabble/showcard.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/rank.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/rank.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/showcourse.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/showcourse.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/welcome.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/welcome.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layui-admin/js/nav.js" afterPath="$PROJECT_DIR$/target/classes/static/layui-admin/js/nav.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/carddetail.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/carddetail.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/classify.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/classify.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/gabble.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/gabble.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/mybbs.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/mybbs.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/mycourse.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/mycourse.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/mymessage.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/mymessage.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/mysetting.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/mysetting.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/order/mycart.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/order/mycart.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/order/mycycle.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/order/mycycle.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/order/myorder.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/order/myorder.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/personal.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/personal.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/rank.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/rank.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/showcard.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/showcard.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/showcourse.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/showcourse.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/sysconfig/admin/main.html" afterPath="$PROJECT_DIR$/target/classes/templates/sysconfig/admin/main.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/sysconfig/tutor/index.html" afterPath="$PROJECT_DIR$/target/classes/templates/sysconfig/tutor/index.html" />
+      <change beforePath="$PROJECT_DIR$/Tutor.iml" afterPath="$PROJECT_DIR$/Tutor.iml" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/Main2.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/Main2.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardPersonalPageController.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardPersonalPageController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/bootstrap-select/js/bootstrap-select.js" afterPath="$PROJECT_DIR$/src/main/resources/static/bootstrap-select/js/bootstrap-select.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/editor-md/lib/codemirror/addon/hint/javascript-hint.js" afterPath="$PROJECT_DIR$/src/main/resources/static/editor-md/lib/codemirror/addon/hint/javascript-hint.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/editor-md/lib/codemirror/codemirror.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/editor-md/lib/codemirror/codemirror.min.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/editor-md/lib/codemirror/lib/codemirror.js" afterPath="$PROJECT_DIR$/src/main/resources/static/editor-md/lib/codemirror/lib/codemirror.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/editor-md/lib/codemirror/mode/clojure/clojure.js" afterPath="$PROJECT_DIR$/src/main/resources/static/editor-md/lib/codemirror/mode/clojure/clojure.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/editor-md/lib/codemirror/mode/javascript/test.js" afterPath="$PROJECT_DIR$/src/main/resources/static/editor-md/lib/codemirror/mode/javascript/test.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/editor-md/lib/codemirror/mode/mirc/mirc.js" afterPath="$PROJECT_DIR$/src/main/resources/static/editor-md/lib/codemirror/mode/mirc/mirc.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/editor-md/lib/codemirror/mode/stylus/stylus.js" afterPath="$PROJECT_DIR$/src/main/resources/static/editor-md/lib/codemirror/mode/stylus/stylus.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/common/bootstrap-table.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/common/bootstrap-table.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/error/404/jquery.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/error/404/jquery.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/login/mine/login.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/login/mine/login.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/layui/lay/modules/carousel.js" afterPath="$PROJECT_DIR$/src/main/resources/static/layui/lay/modules/carousel.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/layui/lay/modules/element.js" afterPath="$PROJECT_DIR$/src/main/resources/static/layui/lay/modules/element.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/layui/lay/modules/form.js" afterPath="$PROJECT_DIR$/src/main/resources/static/layui/lay/modules/form.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/layui/lay/modules/layedit.js" afterPath="$PROJECT_DIR$/src/main/resources/static/layui/lay/modules/layedit.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/layui/lay/modules/table.js" afterPath="$PROJECT_DIR$/src/main/resources/static/layui/lay/modules/table.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/layui/layui.all.js" afterPath="$PROJECT_DIR$/src/main/resources/static/layui/layui.all.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/ForwardPersonalPageController.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/ForwardPersonalPageController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap-select/js/bootstrap-select.js" afterPath="$PROJECT_DIR$/target/classes/static/bootstrap-select/js/bootstrap-select.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/editor-md/lib/codemirror/addon/hint/javascript-hint.js" afterPath="$PROJECT_DIR$/target/classes/static/editor-md/lib/codemirror/addon/hint/javascript-hint.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/editor-md/lib/codemirror/codemirror.min.js" afterPath="$PROJECT_DIR$/target/classes/static/editor-md/lib/codemirror/codemirror.min.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/editor-md/lib/codemirror/lib/codemirror.js" afterPath="$PROJECT_DIR$/target/classes/static/editor-md/lib/codemirror/lib/codemirror.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/editor-md/lib/codemirror/mode/clojure/clojure.js" afterPath="$PROJECT_DIR$/target/classes/static/editor-md/lib/codemirror/mode/clojure/clojure.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/editor-md/lib/codemirror/mode/javascript/test.js" afterPath="$PROJECT_DIR$/target/classes/static/editor-md/lib/codemirror/mode/javascript/test.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/editor-md/lib/codemirror/mode/mirc/mirc.js" afterPath="$PROJECT_DIR$/target/classes/static/editor-md/lib/codemirror/mode/mirc/mirc.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/editor-md/lib/codemirror/mode/stylus/stylus.js" afterPath="$PROJECT_DIR$/target/classes/static/editor-md/lib/codemirror/mode/stylus/stylus.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/common/bootstrap-table.js" afterPath="$PROJECT_DIR$/target/classes/static/js/common/bootstrap-table.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/error/404/jquery.js" afterPath="$PROJECT_DIR$/target/classes/static/js/error/404/jquery.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/carousel.js" afterPath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/carousel.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/element.js" afterPath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/element.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/form.js" afterPath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/form.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/layedit.js" afterPath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/layedit.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/table.js" afterPath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/table.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/layui/layui.all.js" afterPath="$PROJECT_DIR$/target/classes/static/layui/layui.all.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -141,12 +112,44 @@
     <favorites_list name="Tutor" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="ForwardAll.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java">
+    <leaf>
+      <file leaf-file-name="Main2.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/Main2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1415">
-              <caret line="209" column="5" lean-forward="false" selection-start-line="209" selection-start-column="5" selection-end-line="209" selection-end-column="5" />
+            <state relative-caret-position="-490">
+              <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ForwardPersonalPageController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardPersonalPageController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UrlInterceptor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/interceptor/UrlInterceptor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="453">
+              <caret line="71" column="86" lean-forward="false" selection-start-line="71" selection-start-column="86" selection-end-line="71" selection-end-column="86" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/login/mine/login.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-518">
+              <caret line="112" column="19" lean-forward="false" selection-start-line="112" selection-start-column="19" selection-end-line="112" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -242,13 +245,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardCollectApiImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CommandStarApiImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardCollectController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/BbsCardAnswerStarApi.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardAnswerStarController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardAnswerStarApiImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/BbsCardAnswerApi.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardAnswerApiImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardAnswerController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/BbsCardAnswerCommandApi.java" />
@@ -288,11 +284,18 @@
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/技术.txt" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/order/myorder.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/order/mycart.html" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardPersonalPageController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardTutorPageController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAdminPageController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/messagemanage.js" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/annotation/RequireAuth.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/config/InterceptorConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/config/AbstractHandlerInterceptor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/Main2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardPersonalPageController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/interceptor/UrlInterceptor.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/login/mine/login.js" />
       </list>
     </option>
   </component>
@@ -429,6 +432,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -479,7 +485,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="framework" type="462c0819:PsiDirectoryNode" />
               <item name="tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
@@ -489,7 +495,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="framework" type="462c0819:PsiDirectoryNode" />
               <item name="tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="log" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
@@ -602,6 +608,27 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tutorweb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
+              <item name="mine" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tutorweb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="sysconfig" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -675,9 +702,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1196,7 +1220,9 @@
       <workItem from="1524488069693" duration="4782000" />
       <workItem from="1524532553877" duration="4916000" />
       <workItem from="1524578841144" duration="353000" />
-      <workItem from="1524618894019" duration="28641000" />
+      <workItem from="1524618894019" duration="28684000" />
+      <workItem from="1524704408753" duration="2200000" />
+      <workItem from="1524725445457" duration="5536000" />
     </task>
     <task id="LOCAL-00013" summary="邮箱注册以及后续的验证的实现，还未实现邮箱注册后的等待/重发界面">
       <created>1520780099718</created>
@@ -1545,7 +1571,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1168800000" />
+    <option name="totallyTimeSpent" value="1176579000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1576,10 +1602,10 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287827" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287827" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41410694" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31968147" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66870093" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287827" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25937834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26312968" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1621,7 +1647,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66870093" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287827" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992035" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26045015" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26312968" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1699,80 +1725,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/UserLogApiImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-263">
-          <caret line="36" column="30" lean-forward="true" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/UserMessageApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="28" column="33" lean-forward="false" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5439">
-          <caret line="169" column="66" lean-forward="true" selection-start-line="169" selection-start-column="66" selection-end-line="169" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/SysEmailManagerApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1147">
-          <caret line="31" column="37" lean-forward="false" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/SysEmailManagerApiImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="50" column="10" lean-forward="false" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#2147#2172#1" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/SysEmailManagerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3256">
-          <caret line="126" column="56" lean-forward="true" selection-start-line="126" selection-start-column="56" selection-end-line="126" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseCommandApiImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="489" column="24" lean-forward="false" selection-start-line="489" selection-start-column="24" selection-end-line="489" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/CourseCommandApi.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="370">
           <caret line="26" column="20" lean-forward="true" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1788,9 +1744,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
           <caret line="48" column="10" lean-forward="false" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1798,9 +1751,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
           <caret line="111" column="24" lean-forward="true" selection-start-line="111" selection-start-column="24" selection-end-line="111" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1816,9 +1766,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
           <caret line="20" column="33" lean-forward="false" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1826,9 +1773,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
           <caret line="39" column="10" lean-forward="false" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1844,9 +1788,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="274">
           <caret line="91" column="56" lean-forward="false" selection-start-line="91" selection-start-column="56" selection-end-line="91" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1862,9 +1803,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="814">
           <caret line="29" column="40" lean-forward="false" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1872,10 +1810,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="547">
           <caret line="129" column="82" lean-forward="true" selection-start-line="129" selection-start-column="82" selection-end-line="129" selection-end-column="82" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1768#1793#1" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1883,9 +1817,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="259">
           <caret line="24" column="30" lean-forward="false" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1893,7 +1824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="481">
           <caret line="28" column="16" lean-forward="false" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1901,9 +1831,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="379">
           <caret line="47" column="10" lean-forward="false" selection-start-line="47" selection-start-column="10" selection-end-line="47" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1923,115 +1850,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.txt" />
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.25.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-19">
           <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.26.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.27.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.28.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.29.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.31.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.3.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2979">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.13.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="10" column="25" lean-forward="true" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.x版本">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/3.x版本">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1">
-          <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/commit.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/guns.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.26.txt" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.27.txt" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.28.txt" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.29.txt" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.31.txt" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.3.txt" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.13.txt" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.x版本" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/3.x版本" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/commit.log" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/guns.sql" />
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/技术.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="776">
           <caret line="469" column="0" lean-forward="true" selection-start-line="469" selection-start-column="0" selection-end-line="469" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2047,7 +1888,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2063,7 +1903,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2071,7 +1910,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
           <caret line="17" column="46" lean-forward="false" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2079,17 +1917,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
           <caret line="15" column="62" lean-forward="false" selection-start-line="15" selection-start-column="62" selection-end-line="15" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardPersonalPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="21" column="33" lean-forward="false" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2098,9 +1925,9 @@
         <state relative-caret-position="407">
           <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#876#877#0" expanded="true" />
-            <element signature="e#923#924#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#876#877#0" expanded="false" />
+            <element signature="e#923#924#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2109,7 +1936,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4357">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2117,7 +1943,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2125,10 +1950,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="583">
           <caret line="151" column="54" lean-forward="false" selection-start-line="151" selection-start-column="54" selection-end-line="151" selection-end-column="54" />
-          <folding>
-            <marker date="1524662761589" expanded="true" signature="3061:3067" ph="&amp;nbsp;" />
-            <marker date="1524662761589" expanded="true" signature="3067:3073" ph="&amp;nbsp;" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2137,17 +1958,87 @@
         <state relative-caret-position="860">
           <caret line="143" column="6" lean-forward="true" selection-start-line="143" selection-start-column="6" selection-end-line="143" selection-end-column="6" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#882#883#0" expanded="true" />
-            <element signature="e#931#932#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#882#883#0" expanded="false" />
+            <element signature="e#931#932#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1415">
-          <caret line="209" column="5" lean-forward="false" selection-start-line="209" selection-start-column="5" selection-end-line="209" selection-end-column="5" />
+        <state relative-caret-position="-2599">
+          <caret line="125" column="32" lean-forward="true" selection-start-line="125" selection-start-column="32" selection-end-line="125" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/annotation/RequireAuth.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="29" column="31" lean-forward="true" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/config/InterceptorConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/config/AbstractHandlerInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="29" column="21" lean-forward="true" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/Main2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-490">
+          <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardPersonalPageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/interceptor/UrlInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="71" column="86" lean-forward="false" selection-start-line="71" selection-start-column="86" selection-end-line="71" selection-end-column="86" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="601">
+          <caret line="111" column="21" lean-forward="true" selection-start-line="111" selection-start-column="21" selection-end-line="111" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/login/mine/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-518">
+          <caret line="112" column="19" lean-forward="false" selection-start-line="112" selection-start-column="19" selection-end-line="112" selection-end-column="19" />
           <folding />
         </state>
       </provider>

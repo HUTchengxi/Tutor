@@ -1511,7 +1511,7 @@ setDocument = Sizzle.setDocument = function( node ) {
     return !doc.getElementsByName || !doc.getElementsByName( expando ).length;
   });
 
-  // ID find and filter
+  // ID find and interceptor
   if ( support.getById ) {
     Expr.find["ID"] = function( id, context ) {
       if ( typeof context.getElementById !== strundefined && documentIsHTML ) {
@@ -1967,7 +1967,7 @@ Expr = Sizzle.selectors = {
           Sizzle.error( match[0] );
         }
 
-        // numeric x and y parameters for Expr.filter.CHILD
+        // numeric x and y parameters for Expr.interceptor.CHILD
         // remember that false/true cast respectively to 0/1
         match[4] = +( match[4] ? match[5] + (match[6] || 1) : 2 * ( match[3] === "even" || match[3] === "odd" ) );
         match[5] = +( ( match[7] + match[8] ) || match[3] === "odd" );
@@ -2004,7 +2004,7 @@ Expr = Sizzle.selectors = {
         match[2] = unquoted.slice( 0, excess );
       }
 
-      // Return only captures needed by the pseudo filter method (type and argument)
+      // Return only captures needed by the pseudo interceptor method (type and argument)
       return match.slice( 0, 3 );
     }
   },
@@ -2153,7 +2153,7 @@ Expr = Sizzle.selectors = {
           Sizzle.error( "unsupported pseudo: " + pseudo );
 
       // The user may use createPseudo to indicate that
-      // arguments are needed to create the filter function
+      // arguments are needed to create the interceptor function
       // just as Sizzle does
       if ( fn[ expando ] ) {
         return fn( argument );
@@ -3362,7 +3362,7 @@ jQuery.support = (function( support ) {
   support.hrefNormalized = a.getAttribute("href") === "/a";
 
   // Make sure that element opacity exists
-  // (IE uses filter instead)
+  // (IE uses interceptor instead)
   // Use a regex to work around a WebKit issue. See #5145
   support.opacity = /^0.5/.test( a.style.opacity );
 
@@ -5952,7 +5952,7 @@ jQuery.extend({
   }
 });
 
-// Implement the identical functionality for filter and not
+// Implement the identical functionality for interceptor and not
 function winnow( elements, qualifier, not ) {
   if ( jQuery.isFunction( qualifier ) ) {
     return jQuery.grep( elements, function( elem, i ) {
@@ -6837,7 +6837,7 @@ function vendorPropName( style, name ) {
 }
 
 function isHidden( elem, el ) {
-  // isHidden might be called from jQuery#filter function;
+  // isHidden might be called from jQuery#interceptor function;
   // in that case, element will be second argument
   elem = el || elem;
   return jQuery.css( elem, "display" ) === "none" || !jQuery.contains( elem.ownerDocument, elem );
@@ -7089,7 +7089,7 @@ if ( window.getComputedStyle ) {
     var width, minWidth, maxWidth,
       computed = _computed || getStyles( elem ),
 
-      // getPropertyValue is only needed for .css('filter') in IE9, see #12537
+      // getPropertyValue is only needed for .css('interceptor') in IE9, see #12537
       ret = computed ? computed.getPropertyValue( name ) || computed[ name ] : undefined,
       style = elem.style;
 
@@ -7350,24 +7350,24 @@ if ( !jQuery.support.opacity ) {
       // Force it by setting the zoom level
       style.zoom = 1;
 
-      // if setting opacity to 1, and no other filters exist - attempt to remove filter attribute #6652
+      // if setting opacity to 1, and no other filters exist - attempt to remove interceptor attribute #6652
       // if value === "", then remove inline opacity #12685
       if ( ( value >= 1 || value === "" ) &&
           jQuery.trim( filter.replace( ralpha, "" ) ) === "" &&
           style.removeAttribute ) {
 
-        // Setting style.filter to null, "" & " " still leave "filter:" in the cssText
-        // if "filter:" is present at all, clearType is disabled, we want to avoid this
+        // Setting style.interceptor to null, "" & " " still leave "interceptor:" in the cssText
+        // if "interceptor:" is present at all, clearType is disabled, we want to avoid this
         // style.removeAttribute is IE Only, but so apparently is this code path...
         style.removeAttribute( "filter" );
 
-        // if there is no filter style applied in a css rule or unset inline opacity, we are done
+        // if there is no interceptor style applied in a css rule or unset inline opacity, we are done
         if ( value === "" || currentStyle && !currentStyle.filter ) {
           return;
         }
       }
 
-      // otherwise, set new filter values
+      // otherwise, set new interceptor values
       style.filter = ralpha.test( filter ) ?
         filter.replace( ralpha, opacity ) :
         filter + " " + opacity;
@@ -7464,7 +7464,7 @@ jQuery.fn.extend({
   },
   serializeArray: function() {
     return this.map(function(){
-      // Can add propHook for "elements" to filter or add form elements
+      // Can add propHook for "elements" to interceptor or add form elements
       var elements = jQuery.prop( this, "elements" );
       return elements ? jQuery.makeArray( elements ) : this;
     })

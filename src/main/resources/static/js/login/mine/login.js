@@ -106,13 +106,16 @@
                             console.log("/usermain_con/loginlog error");
                         }
                     })
-                    if(document.referrer == window.location.href || document.referrer.trim() == ""){
+                    if(window.location.href.indexOf("forward_con/gologin") < 0){
+                        window.history.go(0);
+                    }
+                    else if(document.referrer == window.location.href || document.referrer.trim() == ""){
                         window.location.href = "/forward_con/welcome";
                     }
-                    else if("http://localhost:8080/forward_con/goforget" == document.referrer){
+                    else if(document.referrer.indexOf("forward_con/goforget") >= 0){
                         window.location = "/forward_con/welcome";
                     }
-                    else if("http://localhost:8080/forward_con/goregister" == document.referrer){
+                    else if(document.referrer.indexOf("forward_con/goregister") >= 0){
                         window.location = "/forward_con/welcome";
                     }
                     else{

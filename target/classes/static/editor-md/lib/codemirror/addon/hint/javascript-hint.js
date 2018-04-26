@@ -90,7 +90,7 @@
   var stringProps = ("charAt charCodeAt indexOf lastIndexOf substring substr slice trim trimLeft trimRight " +
                      "toUpperCase toLowerCase split concat match replace search").split(" ");
   var arrayProps = ("length concat join splice push pop shift unshift slice reverse sort indexOf " +
-                    "lastIndexOf every some filter forEach map reduce reduceRight ").split(" ");
+                    "lastIndexOf every some interceptor forEach map reduce reduceRight ").split(" ");
   var funcProps = "prototype apply call bind".split(" ");
   var javascriptKeywords = ("break case catch continue debugger default delete do else false finally for function " +
                   "if in instanceof new null return switch throw true try typeof var void while with").split(" ");

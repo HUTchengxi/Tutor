@@ -14,8 +14,6 @@ import org.springframework.http.HttpStatus;
  * @author chengxi
  */
 @SpringBootApplication
-//指定mapper包，自动扫描，也可以@Mapper修饰每一个mapper类，不过这样更简单
-//@MapperScan(basePackages = "org.springframework.tutor.mapper")
 public class Main2 {
 
     /**

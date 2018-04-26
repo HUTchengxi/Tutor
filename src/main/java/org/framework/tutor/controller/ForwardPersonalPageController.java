@@ -12,6 +12,7 @@
  */
 package org.framework.tutor.controller;
 
+import org.framework.tutor.annotation.RequireAuth;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,6 +31,7 @@ public class ForwardPersonalPageController {
      * 进入个人中心界面
      * @return
      */
+    @RequireAuth(ident = "user")
     @RequestMapping("/personal")
     public String Personal(){
 
@@ -40,6 +42,7 @@ public class ForwardPersonalPageController {
      * 进入我的课程界面
      * @return
      */
+    @RequireAuth(ident = "user")
     @RequestMapping("/gomycourse")
     public String goMyCourse(){
 
@@ -50,6 +53,7 @@ public class ForwardPersonalPageController {
      * 进入我的订单中心
      * @return
      */
+    @RequireAuth(ident = "user")
     @RequestMapping("/gomyorder")
     public String goMyOrder(){
 
@@ -60,6 +64,7 @@ public class ForwardPersonalPageController {
      * 进入我的购物车
      * @return
      */
+    @RequireAuth(ident = "user")
     @RequestMapping("/gomycart")
     public String goMyCart(){
 
@@ -70,6 +75,7 @@ public class ForwardPersonalPageController {
      * 进入我的通知界面
      * @return
      */
+    @RequireAuth(ident = "user")
     @RequestMapping("/gomessage")
     public String goMessage(){
 
@@ -79,6 +85,7 @@ public class ForwardPersonalPageController {
     /**
      * 进入设置中心
      */
+    @RequireAuth(ident = "user")
     @RequestMapping("/gosetting")
     public String goSetting(){
 
@@ -93,6 +100,7 @@ public class ForwardPersonalPageController {
      * @author yinjimin
      * @date 2018/4/12
      */
+    @RequireAuth(ident = "user")
     @GetMapping("/gomybbsinfo")
     public String goMyBbsInfo(){
 
