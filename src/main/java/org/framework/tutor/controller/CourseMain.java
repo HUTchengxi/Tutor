@@ -2,6 +2,7 @@ package org.framework.tutor.controller;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonParser;
+import org.framework.tutor.annotation.RequireAuth;
 import org.framework.tutor.api.CourseMainApi;
 import org.framework.tutor.domain.CourseSummary;
 import org.framework.tutor.domain.UserMain;
@@ -131,6 +132,7 @@ public class CourseMain {
      * @author yinjimin
      * @date 2018/4/14
      */
+    @RequireAuth(ident = "tutor", type = "api")
     @PostMapping("/getmypublish")
     public void getMyPublish(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -145,8 +147,8 @@ public class CourseMain {
      * @author yinjimin
      * @date 2018/4/15
      */
+    @RequireAuth(ident = "tutor", type = "api")
     @PostMapping("/publishnewcourse")
-    @Transactional
     public void publishNewCourse(@RequestParam String name, @RequestParam Integer stype, @RequestParam String ctype, @RequestParam String descript,
                                  MultipartFile imgsrc, @RequestParam Integer total, @RequestParam Integer jcount,
                                  @RequestParam Double price, @RequestParam String sumTitle1, @RequestParam String sumTitle2,

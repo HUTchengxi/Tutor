@@ -1,6 +1,7 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
+import org.framework.tutor.annotation.RequireAuth;
 import org.framework.tutor.api.CourseChapterApi;
 import org.framework.tutor.domain.CourseMain;
 import org.framework.tutor.service.CourseChService;
@@ -48,6 +49,7 @@ public class CourseChapter {
      * @author yinjimin
      * @date 2018/4/15
      */
+    @RequireAuth(ident = "tutor", type = "api")
     @PostMapping("/deletechapter")
     public void deleteChapter(Integer id, HttpServletResponse response, HttpServletRequest request) throws IOException {
 
@@ -62,6 +64,7 @@ public class CourseChapter {
      * @author yinjimin
      * @date 2018/4/15
      */
+    @RequireAuth(ident = "tutor", type = "api")
     @PostMapping("/modchapter")
     public void modChapter(Integer id, @RequestParam Integer cid, @RequestParam String title, @RequestParam String descript, HttpServletRequest request, HttpServletResponse response) throws IOException {
 

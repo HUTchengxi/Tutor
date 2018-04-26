@@ -1,6 +1,7 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
+import org.framework.tutor.annotation.RequireAuth;
 import org.framework.tutor.api.UserLogApi;
 import org.framework.tutor.service.UserLService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,7 @@ public class UserLog {
      * @param request
      * @param response
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/loginlog")
     public void loginLog(String logcity, String ip, String logsystem, HttpServletRequest request,
                          HttpServletResponse response) throws IOException {
@@ -47,6 +49,7 @@ public class UserLog {
      * @param request
      * @param response
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/getuserlog")
     public void getUserlog(HttpServletRequest request, HttpServletResponse response) throws IOException {
 

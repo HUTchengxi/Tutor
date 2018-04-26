@@ -12,17 +12,16 @@
  */
 package org.framework.tutor.interceptor;
 
+import com.google.gson.Gson;
 import org.framework.tutor.annotation.RequireAuth;
-import org.framework.tutor.config.AbstractHandlerInterceptor;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.method.HandlerMethod;
-import org.springframework.web.servlet.HandlerInterceptor;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.logging.Handler;
+import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author yinjimin
@@ -32,10 +31,9 @@ import java.util.logging.Handler;
 public class UrlInterceptor extends AbstractHandlerInterceptor {
 
     /**
-     *
-     * @Description 进入Controller之前时调用
      * @param [httpServletRequest, httpServletResponse, o]
      * @return boolean
+     * @Description 进入Controller之前时调用
      * @author yinjimin
      * @date 2018/4/26
      */
@@ -43,33 +41,69 @@ public class UrlInterceptor extends AbstractHandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
         //目前该拦截器暂时只支持拦截方法级别
-        if(!handler.getClass().isAssignableFrom(HandlerMethod.class)){
+        if (!handler.getClass().isAssignableFrom(HandlerMethod.class)) {
             System.out.println("INFO urlInterceptor : 暂时不支持方法级别的拦截");
             return true;
         }
         HandlerMethod handlerMethod = (HandlerMethod) handler;
         RequireAuth requireAuth = handlerMethod.getMethod().getAnnotation(RequireAuth.class);
-        if(requireAuth == null){
+        if (requireAuth == null) {
             System.out.println("INFO urlInterceptor : 无需校验权限的方法->" + handlerMethod.getMethod().getName());
             return true;
         }
 
         String ident = requireAuth.ident();
+        String type = requireAuth.type();
         HttpSession session = request.getSession();
         Integer identity = (Integer) session.getAttribute("identity");
-        if(ident == null){
+        if (ident == null) {
             return true;
         }
-        if(ident.equals("user") && identity != null){
-            return true;
+        //url拦截
+        if (type.equals("url")) {
+            if (ident.equals("user") && identity != null) {
+                return true;
+            }
+            if (ident.equals("admin") && identity == -1) {
+                return true;
+            }
+            if (ident.equals("tutor") && (identity == 1 || identity == -1)) {
+                return true;
+            }
+            //管理接口盗用时模拟404页面不存在
+            if (ident.equals("admin") && identity != -1) {
+                request.getRequestDispatcher("/forward_con/zouyi").forward(request, response);
+                return false;
+            }
+            request.getRequestDispatcher("/forward_con/gologin").forward(request, response);
         }
-        if(ident.equals("admin") && identity == -1){
-            return true;
+        //api接口拦截
+        else {
+            Gson gson = new Gson();
+            PrintWriter writer = response.getWriter();
+            Map<String, Object> resultMap = new HashMap<>(1);
+            if (ident.equals("user") && identity != null) {
+                return true;
+            }
+            if (ident.equals("admin") && identity == -1) {
+                return true;
+            }
+            if (ident.equals("tutor") && (identity == 1 || identity == -1)) {
+                return true;
+            }
+            //管理接口盗用时模拟404页面不存在
+            if (ident.equals("admin") && identity != -1) {
+                resultMap.put("status", "notfound");
+                writer.print(gson.toJson(resultMap));
+                writer.flush();
+                writer.close();
+                return false;
+            }
+            resultMap.put("status", "invalid");
+            writer.print(gson.toJson(resultMap));
+            writer.flush();
+            writer.close();
         }
-        if(ident.equals("tutor") && identity == 1){
-            return true;
-        }
-        request.getRequestDispatcher("/forward_con/gologin").forward(request, response);
         return false;
     }
 }

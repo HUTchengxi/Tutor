@@ -2,6 +2,7 @@ package org.framework.tutor.controller;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
+import org.framework.tutor.annotation.RequireAuth;
 import org.framework.tutor.api.CourseCollectApi;
 import org.framework.tutor.domain.CourseMain;
 import org.framework.tutor.service.CourseCService;
@@ -37,6 +38,7 @@ public class CourseCollect {
      * @param startpos
      * @throws IOException
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/getmycollect")
     public void getMyCollect(HttpServletRequest request, HttpServletResponse response, Integer startpos) throws IOException {
 
@@ -49,6 +51,7 @@ public class CourseCollect {
      * @param request
      * @param response
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/checkusercollect")
     public void checkUserCollect(Integer cid, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -64,6 +67,7 @@ public class CourseCollect {
      * @param response
      * @throws IOException
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/modusercollect")
     public void modUserCollect(Integer cid, String mod, String descript, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -75,6 +79,7 @@ public class CourseCollect {
      * @param request
      * @param response
      */
+    @RequireAuth(ident = "tutor", type = "api")
     @RequestMapping("/getcollectcount")
     public void getCollectCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
 

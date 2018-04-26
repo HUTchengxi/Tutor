@@ -13,6 +13,7 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
+import org.framework.tutor.annotation.RequireAuth;
 import org.framework.tutor.api.BbsCardCollectApi;
 import org.framework.tutor.domain.BbsCard;
 import org.framework.tutor.domain.BbsCardCollect;
@@ -51,7 +52,8 @@ public class BbsCardCollectController {
      * @return void
      * @author yinjimin  
      * @date 2018/4/1
-     */  
+     */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/getmycollectcount")
     public void getMyCollectCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -66,6 +68,7 @@ public class BbsCardCollectController {
      * @author yinjimin
      * @date 2018/4/8
      */
+    @RequireAuth(ident = "user", type = "api")
     @PostMapping("/checkcollectstatus")
     public void checkCollectStatus(@RequestParam Integer cardId, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -81,6 +84,7 @@ public class BbsCardCollectController {
      * @author yinjimin
      * @date 2018/4/8
      */
+    @RequireAuth(ident = "user", type = "api")
     @PostMapping("/collectcard")
     public void collectCard(@RequestParam Integer cardId, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -95,6 +99,7 @@ public class BbsCardCollectController {
      * @author yinjimin
      * @date 2018/4/8
      */
+    @RequireAuth(ident = "user", type = "api")
     @PostMapping("/uncollectcard")
     public void uncollectCard(@RequestParam Integer cardId, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -110,6 +115,7 @@ public class BbsCardCollectController {
      * @author yinjimin
      * @date 2018/4/13
      */
+    @RequireAuth(ident = "user", type = "api")
     @PostMapping("/getmycollectinfo")
     public void getMyCollectInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
 

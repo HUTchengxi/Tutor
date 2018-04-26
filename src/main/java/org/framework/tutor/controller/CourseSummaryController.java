@@ -13,6 +13,7 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
+import org.framework.tutor.annotation.RequireAuth;
 import org.framework.tutor.api.CourseSummaryApi;
 import org.framework.tutor.domain.CourseSummary;
 import org.framework.tutor.service.CourseSummaryService;
@@ -65,6 +66,7 @@ public class CourseSummaryController {
      * @author yinjimin
      * @date 2018/4/15
      */
+    @RequireAuth(ident = "tutor", type = "api")
     @PostMapping("/updatecoursesummary")
     public void updateCourseSummary(@RequestParam Integer id, String title, String descript, HttpServletResponse response) throws IOException {
 

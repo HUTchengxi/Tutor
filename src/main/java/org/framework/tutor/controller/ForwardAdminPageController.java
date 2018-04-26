@@ -12,6 +12,7 @@
  */
 package org.framework.tutor.controller;
 
+import org.framework.tutor.annotation.RequireAuth;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -29,6 +30,7 @@ public class ForwardAdminPageController {
      * @param request
      * @return
      */
+    @RequireAuth(ident = "admin")
     @RequestMapping("/gosystutormain")
     public String goSysconfig(){
         return "/sysconfig/tutor/sysmain";
@@ -42,6 +44,7 @@ public class ForwardAdminPageController {
      * @author yinjimin
      * @date 2018/4/19
      */
+    @RequireAuth(ident = "admin")
     @RequestMapping("/adminloginpage")
     public String adminLoginPage(){
 
@@ -56,6 +59,7 @@ public class ForwardAdminPageController {
      * @author yinjimin
      * @date 2018/4/19
      */
+    @RequireAuth(ident = "admin")
     @RequestMapping("/gosysadminmain")
     public String goSysadminMain(){
 
@@ -70,6 +74,7 @@ public class ForwardAdminPageController {
      * @author yinjimin
      * @date 2018/4/19
      */
+    @RequireAuth(ident = "admin")
     @RequestMapping("/gosysordermanage")
     public String goSysOrderManage(){
 
@@ -84,6 +89,7 @@ public class ForwardAdminPageController {
      * @author yinjimin
      * @date 2018/4/20
      */
+    @RequireAuth(ident = "admin")
     @RequestMapping("/sendmailpage")
     public String goSendMailPage(){
 
@@ -98,6 +104,7 @@ public class ForwardAdminPageController {
      * @author yinjimin
      * @date 2018/4/20
      */
+    @RequireAuth(ident = "admin")
     @RequestMapping("/sendmessagepage")
     public String goSendMessagePage(){
 
@@ -112,6 +119,7 @@ public class ForwardAdminPageController {
      * @author yinjimin
      * @date 2018/4/20
      */
+    @RequireAuth(ident = "admin")
     @RequestMapping("/gosysadminemailmanage")
     public String goEmailManagePage(){
 
@@ -126,6 +134,7 @@ public class ForwardAdminPageController {
      * @author yinjimin
      * @date 2018/4/21
      */
+    @RequireAuth(ident = "admin")
     @RequestMapping("/gosyscoursedeletemanage")
     public String goCourseDeleteManage(){
 
@@ -140,6 +149,7 @@ public class ForwardAdminPageController {
      * @author yinjimin
      * @date 2018/4/22
      */
+    @RequireAuth(ident = "admin")
     @RequestMapping("/gosysadminmessagemanage")
     public String goAdminMessageManage(){
 

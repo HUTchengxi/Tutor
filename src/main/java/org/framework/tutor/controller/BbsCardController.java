@@ -13,6 +13,7 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
+import org.framework.tutor.annotation.RequireAuth;
 import org.framework.tutor.api.BbsCardApi;
 import org.framework.tutor.domain.BbsCard;
 import org.framework.tutor.domain.CourseLog;
@@ -55,6 +56,7 @@ public class BbsCardController {
      * @author yinjimin
      * @date 2018/3/31
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/getmycardcount")
     public void getMyCardCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -69,7 +71,8 @@ public class BbsCardController {
      * @return void
      * @author yinjimin  
      * @date 2018/4/1
-     */  
+     */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/publishCard")
     public void publishCard(String title, String imgsrc, String descript, HttpServletRequest request, HttpServletResponse response)
             throws IOException {
@@ -135,6 +138,7 @@ public class BbsCardController {
      * @author yinjimin
      * @date 2018/4/13
      */
+    @RequireAuth(ident = "user", type = "api")
     @PostMapping("/getmycardinfo")
     public void getMyCardInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
 

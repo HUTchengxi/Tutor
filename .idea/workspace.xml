@@ -10,63 +10,73 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf479440-431d-499c-9612-40c14de1a166" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_9_3.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_cache_1_4_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_config_core_1_4_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_config_ogdl_1_4_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_core_1_4_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_crypto_cipher_1_4_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_crypto_core_1_4_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_crypto_hash_1_4_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_event_1_4_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_lang_1_4_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_spring_1_4_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_web_1_4_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/annotation/RequireAuth.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/config/AbstractHandlerInterceptor.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/config/InterceptorConfig.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/interceptor/UrlInterceptor.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Tutor_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/Tutor_war_exploded.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Tutor.iml" afterPath="$PROJECT_DIR$/Tutor.iml" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/Main2.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/Main2.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardPersonalPageController.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardPersonalPageController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/bootstrap-select/js/bootstrap-select.js" afterPath="$PROJECT_DIR$/src/main/resources/static/bootstrap-select/js/bootstrap-select.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/editor-md/lib/codemirror/addon/hint/javascript-hint.js" afterPath="$PROJECT_DIR$/src/main/resources/static/editor-md/lib/codemirror/addon/hint/javascript-hint.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/editor-md/lib/codemirror/codemirror.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/editor-md/lib/codemirror/codemirror.min.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/editor-md/lib/codemirror/lib/codemirror.js" afterPath="$PROJECT_DIR$/src/main/resources/static/editor-md/lib/codemirror/lib/codemirror.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/editor-md/lib/codemirror/mode/clojure/clojure.js" afterPath="$PROJECT_DIR$/src/main/resources/static/editor-md/lib/codemirror/mode/clojure/clojure.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/editor-md/lib/codemirror/mode/javascript/test.js" afterPath="$PROJECT_DIR$/src/main/resources/static/editor-md/lib/codemirror/mode/javascript/test.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/editor-md/lib/codemirror/mode/mirc/mirc.js" afterPath="$PROJECT_DIR$/src/main/resources/static/editor-md/lib/codemirror/mode/mirc/mirc.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/editor-md/lib/codemirror/mode/stylus/stylus.js" afterPath="$PROJECT_DIR$/src/main/resources/static/editor-md/lib/codemirror/mode/stylus/stylus.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/common/bootstrap-table.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/common/bootstrap-table.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/error/404/jquery.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/error/404/jquery.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/login/mine/login.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/login/mine/login.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/layui/lay/modules/carousel.js" afterPath="$PROJECT_DIR$/src/main/resources/static/layui/lay/modules/carousel.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/layui/lay/modules/element.js" afterPath="$PROJECT_DIR$/src/main/resources/static/layui/lay/modules/element.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/layui/lay/modules/form.js" afterPath="$PROJECT_DIR$/src/main/resources/static/layui/lay/modules/form.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/layui/lay/modules/layedit.js" afterPath="$PROJECT_DIR$/src/main/resources/static/layui/lay/modules/layedit.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/layui/lay/modules/table.js" afterPath="$PROJECT_DIR$/src/main/resources/static/layui/lay/modules/table.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/layui/layui.all.js" afterPath="$PROJECT_DIR$/src/main/resources/static/layui/layui.all.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/ForwardPersonalPageController.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/ForwardPersonalPageController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap-select/js/bootstrap-select.js" afterPath="$PROJECT_DIR$/target/classes/static/bootstrap-select/js/bootstrap-select.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/editor-md/lib/codemirror/addon/hint/javascript-hint.js" afterPath="$PROJECT_DIR$/target/classes/static/editor-md/lib/codemirror/addon/hint/javascript-hint.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/editor-md/lib/codemirror/codemirror.min.js" afterPath="$PROJECT_DIR$/target/classes/static/editor-md/lib/codemirror/codemirror.min.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/editor-md/lib/codemirror/lib/codemirror.js" afterPath="$PROJECT_DIR$/target/classes/static/editor-md/lib/codemirror/lib/codemirror.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/editor-md/lib/codemirror/mode/clojure/clojure.js" afterPath="$PROJECT_DIR$/target/classes/static/editor-md/lib/codemirror/mode/clojure/clojure.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/editor-md/lib/codemirror/mode/javascript/test.js" afterPath="$PROJECT_DIR$/target/classes/static/editor-md/lib/codemirror/mode/javascript/test.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/editor-md/lib/codemirror/mode/mirc/mirc.js" afterPath="$PROJECT_DIR$/target/classes/static/editor-md/lib/codemirror/mode/mirc/mirc.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/editor-md/lib/codemirror/mode/stylus/stylus.js" afterPath="$PROJECT_DIR$/target/classes/static/editor-md/lib/codemirror/mode/stylus/stylus.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/common/bootstrap-table.js" afterPath="$PROJECT_DIR$/target/classes/static/js/common/bootstrap-table.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/error/404/jquery.js" afterPath="$PROJECT_DIR$/target/classes/static/js/error/404/jquery.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/carousel.js" afterPath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/carousel.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/element.js" afterPath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/element.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/form.js" afterPath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/form.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/layedit.js" afterPath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/layedit.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/table.js" afterPath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/table.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layui/layui.all.js" afterPath="$PROJECT_DIR$/target/classes/static/layui/layui.all.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/annotation/RequireAuth.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/annotation/RequireAuth.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseOrderApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseOrderApiImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/config/AbstractHandlerInterceptor.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/interceptor/AbstractHandlerInterceptor.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardAnswerCommandController.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardAnswerCommandController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardAnswerController.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardAnswerController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardAnswerStarController.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardAnswerStarController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardCollectController.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardCollectController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardController.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CommandStarController.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CommandStarController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseChapter.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseChapter.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseCollect.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseCollect.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseCommand.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseCommand.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseCommandDeleteReqController.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseCommandDeleteReqController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseDeleteReqController.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseDeleteReqController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseDeleteRespController.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseDeleteRespController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseLog.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseLog.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseMain.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseMain.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseOrder.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseOrder.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseOrderManagerController.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseOrderManagerController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseSummaryController.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseSummaryController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAdminPageController.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAdminPageController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardTutorPageController.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardTutorPageController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/PublishLogController.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/PublishLogController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/SysEmailManagerController.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/SysEmailManagerController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/TutorBtnsController.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/TutorBtnsController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserLog.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserLog.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMessage.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMessage.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserSecret.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserSecret.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserSign.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserSign.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/interceptor/UrlInterceptor.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/interceptor/UrlInterceptor.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/welcome/showcourse.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/welcome/showcourse.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/default/7.jpg" afterPath="$PROJECT_DIR$/src/main/resources/static/images/default/2.jpg" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/annotation/RequireAuth.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/annotation/RequireAuth.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseOrderApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseOrderApiImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/config/AbstractHandlerInterceptor.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/BbsCardAnswerCommandController.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/BbsCardAnswerCommandController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/BbsCardAnswerController.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/BbsCardAnswerController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/BbsCardAnswerStarController.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/BbsCardAnswerStarController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/BbsCardCollectController.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/BbsCardCollectController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/BbsCardController.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/BbsCardController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/CommandStarController.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/CommandStarController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/CourseChapter.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/CourseChapter.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/CourseCollect.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/CourseCollect.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/CourseCommand.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/CourseCommand.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/CourseCommandDeleteReqController.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/CourseCommandDeleteReqController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/CourseDeleteReqController.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/CourseDeleteReqController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/CourseDeleteRespController.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/CourseDeleteRespController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/CourseLog.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/CourseLog.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/CourseMain.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/CourseMain.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/CourseOrder.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/CourseOrder.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/CourseOrderManagerController.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/CourseOrderManagerController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/CourseSummaryController.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/CourseSummaryController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/ForwardAdminPageController.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/ForwardAdminPageController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/ForwardTutorPageController.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/ForwardTutorPageController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/PublishLogController.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/PublishLogController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/SysEmailManagerController.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/SysEmailManagerController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/TutorBtnsController.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/TutorBtnsController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/UserLog.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/UserLog.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/UserMain.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/UserMain.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/UserMessage.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/UserMessage.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/UserSecret.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/UserSecret.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/UserSign.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/UserSign.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/interceptor/UrlInterceptor.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/interceptor/UrlInterceptor.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/welcome/showcourse.css" afterPath="$PROJECT_DIR$/target/classes/static/css/welcome/showcourse.css" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/default/7.jpg" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -113,31 +123,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main2.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/Main2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-490">
-              <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ForwardPersonalPageController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardPersonalPageController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="UrlInterceptor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/interceptor/UrlInterceptor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="71" column="86" lean-forward="false" selection-start-line="71" selection-start-column="86" selection-end-line="71" selection-end-column="86" />
+            <state relative-caret-position="-435">
+              <caret line="69" column="74" lean-forward="false" selection-start-line="69" selection-start-column="74" selection-end-line="69" selection-end-column="74" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -145,11 +135,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/login/mine/login.js">
+      <file leaf-file-name="showcourse.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/welcome/showcourse.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-518">
-              <caret line="112" column="19" lean-forward="false" selection-start-line="112" selection-start-column="19" selection-end-line="112" selection-end-column="19" />
+            <state relative-caret-position="444">
+              <caret line="535" column="22" lean-forward="false" selection-start-line="535" selection-start-column="22" selection-end-line="535" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -245,57 +235,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardAnswerApiImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardAnswerController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/BbsCardAnswerCommandApi.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardAnswerCommandApiImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardAnswerCommandController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/AdminApi.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/AdminController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/AdminApiImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/BbsCardApi.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardApiImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/TutorBtnsApiImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/UserLogApiImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/UserMessageApi.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/UserMessageAPiImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMessage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/SysEmailManagerApi.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/SysEmailManagerApiImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/SysEmailManagerController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/CourseCommandApi.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseCommandApiImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/CourseMainApi.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseMainApiImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseMain.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/CourseOrderApi.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseOrderApiImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseOrder.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseOrderManagerApiImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/CourseOrderManagerApi.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseOrderManagerController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/UserMainApiImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/UserMainApi.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/UserMessageApiImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.28.txt" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/技术.txt" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/order/myorder.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/order/mycart.html" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardTutorPageController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAdminPageController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/messagemanage.js" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/annotation/RequireAuth.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/config/InterceptorConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/config/AbstractHandlerInterceptor.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/Main2.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardPersonalPageController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/interceptor/UrlInterceptor.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/login/mine/login.js" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAdminPageController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardTutorPageController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/interceptor/AbstractHandlerInterceptor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/annotation/RequireAuth.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardAnswerCommandController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardAnswerController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardAnswerStarController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardCollectController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseCommandDeleteReqController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseCollect.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseChapter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CommandStarController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseDeleteReqController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseDeleteRespController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseLog.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseMain.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseOrder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseOrderApiImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseTreply.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseSummaryController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseOrderManagerController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserSign.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserSecret.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMessage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserLog.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/TutorBtnsController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/SysEmailManagerController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/PublishLogController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/interceptor/UrlInterceptor.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/welcome/showcourse.css" />
       </list>
     </option>
   </component>
@@ -485,6 +475,27 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="framework" type="462c0819:PsiDirectoryNode" />
               <item name="tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tutorweb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tutorweb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="tutor" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -496,6 +507,16 @@
               <item name="framework" type="462c0819:PsiDirectoryNode" />
               <item name="tutor" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tutorweb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="interceptor" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
@@ -570,6 +591,16 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tutorweb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
@@ -1222,7 +1253,7 @@
       <workItem from="1524578841144" duration="353000" />
       <workItem from="1524618894019" duration="28684000" />
       <workItem from="1524704408753" duration="2200000" />
-      <workItem from="1524725445457" duration="5536000" />
+      <workItem from="1524725445457" duration="8819000" />
     </task>
     <task id="LOCAL-00013" summary="邮箱注册以及后续的验证的实现，还未实现邮箱注册后的等待/重发界面">
       <created>1520780099718</created>
@@ -1571,7 +1602,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1176579000" />
+    <option name="totallyTimeSpent" value="1179862000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1584,7 +1615,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992035" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1605,7 +1635,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31968147" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66870093" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287827" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26312968" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26312968" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1725,177 +1755,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/CourseCommandApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="26" column="20" lean-forward="true" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4773">
-          <caret line="149" column="49" lean-forward="true" selection-start-line="149" selection-start-column="49" selection-end-line="149" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseMainApiImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="48" column="10" lean-forward="false" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/CourseMainApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="111" column="24" lean-forward="true" selection-start-line="111" selection-start-column="24" selection-end-line="111" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5624">
-          <caret line="171" column="51" lean-forward="false" selection-start-line="171" selection-start-column="51" selection-end-line="171" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/CourseOrderApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="20" column="33" lean-forward="false" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseOrderApiImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="39" column="10" lean-forward="false" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseOrder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="916">
-          <caret line="127" column="56" lean-forward="true" selection-start-line="127" selection-start-column="56" selection-end-line="127" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseOrderManagerApiImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="91" column="56" lean-forward="false" selection-start-line="91" selection-start-column="56" selection-end-line="91" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseOrderManagerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3071">
-          <caret line="117" column="66" lean-forward="true" selection-start-line="117" selection-start-column="66" selection-end-line="117" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/CourseOrderManagerApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="814">
-          <caret line="29" column="40" lean-forward="false" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/UserMainApiImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="129" column="82" lean-forward="true" selection-start-line="129" selection-start-column="82" selection-end-line="129" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/UserMainApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="24" column="30" lean-forward="false" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/CourseCollectApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="28" column="16" lean-forward="false" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/UserMessageApiImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="47" column="10" lean-forward="false" selection-start-line="47" selection-start-column="10" selection-end-line="47" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseCollect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-231">
-          <caret line="46" column="23" lean-forward="true" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3543">
-          <caret line="191" column="0" lean-forward="true" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.txt" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.25.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-19">
-          <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.26.txt" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.27.txt" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.28.txt" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.29.txt" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.31.txt" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.3.txt" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.13.txt" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/2.x版本" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/3.x版本" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/commit.log" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/guns.sql" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/技术.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="776">
-          <caret line="469" column="0" lean-forward="true" selection-start-line="469" selection-start-column="0" selection-end-line="469" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1296">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/tutor.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/Rank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1920,18 +1783,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardTutorPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#876#877#0" expanded="false" />
-            <element signature="e#923#924#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/messagemanage.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4357">
@@ -1953,18 +1804,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAdminPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="860">
-          <caret line="143" column="6" lean-forward="true" selection-start-line="143" selection-start-column="6" selection-end-line="143" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#882#883#0" expanded="false" />
-            <element signature="e#931#932#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAll.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2599">
@@ -1973,38 +1812,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/annotation/RequireAuth.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="29" column="31" lean-forward="true" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+        <state relative-caret-position="601">
+          <caret line="111" column="21" lean-forward="true" selection-start-line="111" selection-start-column="21" selection-end-line="111" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/config/InterceptorConfig.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardTutorPageController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="370">
+          <caret line="118" column="31" lean-forward="true" selection-start-line="118" selection-start-column="31" selection-end-line="118" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/config/AbstractHandlerInterceptor.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAdminPageController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="29" column="21" lean-forward="true" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="3339">
+          <caret line="153" column="41" lean-forward="true" selection-start-line="153" selection-start-column="41" selection-end-line="153" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/Main2.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-490">
-          <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+        <state relative-caret-position="653">
+          <caret line="56" column="62" lean-forward="true" selection-start-line="56" selection-start-column="62" selection-end-line="56" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/login/mine/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1415">
+          <caret line="174" column="13" lean-forward="true" selection-start-line="174" selection-start-column="13" selection-end-line="174" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -2017,28 +1860,306 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/interceptor/UrlInterceptor.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/config/InterceptorConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="71" column="86" lean-forward="false" selection-start-line="71" selection-start-column="86" selection-end-line="71" selection-end-column="86" />
+        <state relative-caret-position="554">
+          <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/interceptor/AbstractHandlerInterceptor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="601">
-          <caret line="111" column="21" lean-forward="true" selection-start-line="111" selection-start-column="21" selection-end-line="111" selection-end-column="21" />
+        <state relative-caret-position="407">
+          <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/annotation/RequireAuth.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="591">
+          <caret line="31" column="30" lean-forward="false" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/login/mine/login.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-518">
-          <caret line="112" column="19" lean-forward="false" selection-start-line="112" selection-start-column="19" selection-end-line="112" selection-end-column="19" />
+        <state relative-caret-position="3996">
+          <caret line="140" column="46" lean-forward="false" selection-start-line="140" selection-start-column="46" selection-end-line="140" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardAnswerCommandController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="95" column="46" lean-forward="false" selection-start-line="95" selection-start-column="46" selection-end-line="95" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardAnswerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="108" column="46" lean-forward="false" selection-start-line="108" selection-start-column="46" selection-end-line="108" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardAnswerStarController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="68" column="46" lean-forward="false" selection-start-line="68" selection-start-column="46" selection-end-line="68" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardCollectController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="117" column="46" lean-forward="false" selection-start-line="117" selection-start-column="46" selection-end-line="117" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseCommandDeleteReqController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="55" column="31" lean-forward="false" selection-start-line="55" selection-start-column="31" selection-end-line="55" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseCollect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1471">
+          <caret line="81" column="31" lean-forward="false" selection-start-line="81" selection-start-column="31" selection-end-line="81" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="41" column="40" lean-forward="true" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseChapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1656">
+          <caret line="66" column="31" lean-forward="false" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CommonImgsrcController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="47" column="7" lean-forward="true" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CommandStarController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="912">
+          <caret line="51" column="46" lean-forward="false" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseDeleteReqController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="91" column="31" lean-forward="false" selection-start-line="91" selection-start-column="31" selection-end-line="91" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseDeleteRespController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="51" column="31" lean-forward="false" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseLog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="50" column="4" lean-forward="false" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="169" column="7" lean-forward="true" selection-start-line="169" selection-start-column="7" selection-end-line="169" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseOrderApiImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8880">
+          <caret line="269" column="0" lean-forward="true" selection-start-line="269" selection-start-column="0" selection-end-line="269" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="131" column="31" lean-forward="false" selection-start-line="131" selection-start-column="31" selection-end-line="131" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseSummaryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="68" column="31" lean-forward="false" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseOrderManagerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="119" column="31" lean-forward="false" selection-start-line="119" selection-start-column="31" selection-end-line="119" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseTreply.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-46">
+          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/Main2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserSign.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="44" column="46" lean-forward="false" selection-start-line="44" selection-start-column="46" selection-end-line="44" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserSecret.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="875">
+          <caret line="65" column="46" lean-forward="false" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="768">
+          <caret line="175" column="31" lean-forward="false" selection-start-line="175" selection-start-column="31" selection-end-line="175" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="749">
+          <caret line="258" column="0" lean-forward="true" selection-start-line="258" selection-start-column="0" selection-end-line="258" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserLog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="749">
+          <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/TutorBtnsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="36" column="31" lean-forward="false" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/SysEmailManagerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="129" column="31" lean-forward="false" selection-start-line="129" selection-start-column="31" selection-end-line="129" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/Register.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-194">
+          <caret line="57" column="19" lean-forward="true" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/Rank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-157">
+          <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/PublishLogController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="749">
+          <caret line="51" column="31" lean-forward="false" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/interceptor/UrlInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-435">
+          <caret line="69" column="74" lean-forward="false" selection-start-line="69" selection-start-column="74" selection-end-line="69" selection-end-column="74" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/welcome/showcourse.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="535" column="22" lean-forward="false" selection-start-line="535" selection-start-column="22" selection-end-line="535" selection-end-column="22" />
           <folding />
         </state>
       </provider>

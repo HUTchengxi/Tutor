@@ -2,6 +2,7 @@ package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
 import org.apache.http.HttpResponse;
+import org.framework.tutor.annotation.RequireAuth;
 import org.framework.tutor.api.UserMainApi;
 import org.framework.tutor.service.UserMService;
 import org.framework.tutor.service.UserSCService;
@@ -43,6 +44,7 @@ public class UserMain {
      * @param response
      * @throws IOException
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/getimgsrc")
     public void getImgsrc(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -56,6 +58,7 @@ public class UserMain {
      * @param response
      * @throws IOException
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/getuserinfo")
     public void getUserinfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -69,6 +72,7 @@ public class UserMain {
      * @param response
      * @param imgsrc
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/modimgsrc")
     public void modImgsrc(HttpServletRequest request, HttpServletResponse response, String imgsrc) throws IOException {
 
@@ -83,6 +87,7 @@ public class UserMain {
      * @param imgfile
      * @param oimgsrc
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/modimgfile")
     public void modImgfile(HttpServletRequest request, HttpServletResponse response,
                            MultipartFile imgfile, String oimgsrc) throws IOException {
@@ -101,6 +106,7 @@ public class UserMain {
      * @param request
      * @param response
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/moduserinfo")
     public void modUserinfo(String username, String nickname, Integer sex, Integer age, String info,
                             HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -114,6 +120,7 @@ public class UserMain {
      * @param request
      * @param response
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/getbindinfo")
     public void getBindInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -184,6 +191,7 @@ public class UserMain {
      * @param request
      * @param response
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/unbind_valicode")
     public void userUnbind(String type, String valicode, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -228,6 +236,7 @@ public class UserMain {
      * @param response
      * @throws IOException
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/sendunbindphone")
     public void sendUnbindPhone(@RequestParam("phone") String phone, String username, HttpServletRequest request, HttpServletResponse response) throws IOException {
 

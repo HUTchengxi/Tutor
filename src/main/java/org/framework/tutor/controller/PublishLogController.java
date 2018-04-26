@@ -1,6 +1,7 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
+import org.framework.tutor.annotation.RequireAuth;
 import org.framework.tutor.api.PublishLogApi;
 import org.framework.tutor.domain.PublishLog;
 import org.framework.tutor.domain.PublishType;
@@ -32,6 +33,7 @@ public class PublishLogController {
      * @param response
      * @return
      */
+    @RequireAuth(ident = "tutor", type = "api")
     @RequestMapping("/getlognew")
     public void getLogNew(HttpServletResponse response) throws IOException {
 
@@ -47,6 +49,7 @@ public class PublishLogController {
      * @author yinjimin
      * @date 2018/3/31
      */
+    @RequireAuth(ident = "tutor", type = "api")
     @RequestMapping("/getlogall")
     public void getLogAll(HttpServletResponse response) throws IOException {
         publishLogApi.getLogAll(response);

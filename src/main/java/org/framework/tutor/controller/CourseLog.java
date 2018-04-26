@@ -1,6 +1,7 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
+import org.framework.tutor.annotation.RequireAuth;
 import org.framework.tutor.api.CourseLogAPi;
 import org.framework.tutor.domain.CourseMain;
 import org.framework.tutor.service.CourseLService;
@@ -33,6 +34,7 @@ public class CourseLog {
      * @param request
      * @param response
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/getlog")
     public void getLog(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -46,6 +48,7 @@ public class CourseLog {
      * @param request
      * @param response
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/dellog")
     public void delLog(Integer id, HttpServletRequest request, HttpServletResponse response) throws IOException {
 

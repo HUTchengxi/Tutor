@@ -12,6 +12,7 @@
  */
 package org.framework.tutor.controller;
 
+import org.framework.tutor.annotation.RequireAuth;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -29,6 +30,7 @@ public class ForwardTutorPageController {
      * @param request
      * @return
      */
+    @RequireAuth(ident = "tutor")
     @RequestMapping("/gosysconfig")
     public String goSysconfig(){
         return "/sysconfig/tutor/index";
@@ -42,6 +44,7 @@ public class ForwardTutorPageController {
      * @author yinjimin
      * @date 2018/3/28
      */
+    @RequireAuth(ident = "tutor")
     @RequestMapping("/gosystutormain")
     public String goSysTutorMain(){
 
@@ -57,6 +60,7 @@ public class ForwardTutorPageController {
      * @author yinjimin
      * @date 2018/3/30
      */
+    @RequireAuth(ident = "tutor")
     @RequestMapping("/gosystutorpersonal")
     public String goSysTutorPersonal(){
 
@@ -71,6 +75,7 @@ public class ForwardTutorPageController {
      * @author yinjimin
      * @date 2018/4/14
      */
+    @RequireAuth(ident = "tutor")
     @RequestMapping("/gosystutorpublish")
     public String goSystutorPublish(){
 
@@ -85,6 +90,7 @@ public class ForwardTutorPageController {
      * @author yinjimin
      * @date 2018/4/14
      */
+    @RequireAuth(ident = "tutor")
     @RequestMapping("gosystutorpublishnew")
     public String goSystutorPublishNew(){
 
@@ -99,6 +105,7 @@ public class ForwardTutorPageController {
      * @author yinjimin
      * @date 2018/4/18
      */
+    @RequireAuth(ident = "tutor")
     @RequestMapping("/gosystutorcommand")
     public String goSystutorCommand(){
 
@@ -113,6 +120,7 @@ public class ForwardTutorPageController {
      * @author yinjimin
      * @date 2018/4/18
      */
+    @RequireAuth(ident = "tutor")
     @RequestMapping("/gosystutororder")
     public String goSystutorOrder(){
 

@@ -14,6 +14,7 @@ package org.framework.tutor.controller;
 
 import com.fasterxml.jackson.core.filter.FilteringGeneratorDelegate;
 import com.google.gson.Gson;
+import org.framework.tutor.annotation.RequireAuth;
 import org.framework.tutor.api.SysEmailManagerApi;
 import org.framework.tutor.domain.SysEmailManage;
 import org.framework.tutor.domain.UserMain;
@@ -60,6 +61,7 @@ public class SysEmailManagerController {
      * @author yinjimin
      * @date 2018/4/20
      */
+    @RequireAuth(ident = "tutor", type = "api")
     @RequestMapping("/sendemail")
     public void sendEmail(@RequestBody EmailParam emailParam, HttpServletRequest request, HttpServletResponse response) throws IOException, MessagingException {
 
@@ -69,10 +71,11 @@ public class SysEmailManagerController {
     /**
      * @param [emailParam, request, response]
      * @return void
-     * @Description 发送邮件
+     * @Description 保存邮件
      * @author yinjimin
      * @date 2018/4/20
      */
+    @RequireAuth(ident = "tutor", type = "api")
     @RequestMapping("/saveemail")
     public void saveEmail(@RequestBody EmailParam emailParam, HttpServletRequest request, HttpServletResponse response) throws IOException, MessagingException {
 
@@ -87,6 +90,7 @@ public class SysEmailManagerController {
      * @author yinjimin
      * @date 2018/4/20
      */
+    @RequireAuth(ident = "tutor", type = "api")
     @RequestMapping("/getemaillist")
     public void getEmailList(@RequestBody EmailParam emailParam, HttpServletResponse response) throws IOException {
 
@@ -101,6 +105,7 @@ public class SysEmailManagerController {
      * @author yinjimin
      * @date 2018/4/20
      */
+    @RequireAuth(ident = "tutor", type = "api")
     @PostMapping("/getemaildetail")
     public void getEmailDetail(@RequestParam Integer id, HttpServletResponse response) throws IOException {
 
@@ -115,12 +120,14 @@ public class SysEmailManagerController {
      * @author yinjimin
      * @date 2018/4/20
      */
+    @RequireAuth(ident = "tutor", type = "api")
     @PostMapping("/deleteemail")
     public void deleteEmail(@RequestParam Integer id, HttpServletResponse response) throws IOException {
 
         sysEmailManagerApi.deleteEmail(id, response);
     }
 
+    @RequireAuth(ident = "tutor", type = "api")
     @PostMapping("/getmodinfobyid")
     public void getModinfoById(@RequestParam Integer id, HttpServletResponse response) throws IOException {
 

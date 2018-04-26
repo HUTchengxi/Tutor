@@ -13,6 +13,7 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
+import org.framework.tutor.annotation.RequireAuth;
 import org.framework.tutor.api.BbsCardAnswerStarApi;
 import org.framework.tutor.domain.BbsCardAnswerStar;
 import org.framework.tutor.service.BbsCardAnswerService;
@@ -49,6 +50,7 @@ public class BbsCardAnswerStarController {
      * @author yinjimin
      * @date 2018/4/10
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/checkuserstar")
     public void checkUserStar(@RequestParam Integer aid, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -64,6 +66,7 @@ public class BbsCardAnswerStarController {
      * @author yinjimin
      * @date 2018/4/10
      */
+    @RequireAuth(ident = "user", type = "api")
     @PostMapping("/adduserstar")
     public void addUserStar(@RequestParam Integer aid, @RequestParam Integer score, HttpServletRequest request, HttpServletResponse response) throws IOException {
 

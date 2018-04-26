@@ -1,6 +1,7 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
+import org.framework.tutor.annotation.RequireAuth;
 import org.framework.tutor.api.UserSignApi;
 import org.framework.tutor.service.UserSService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,7 @@ public class UserSign {
      * @param response
      * @throws IOException
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/getmysign")
     public void getMySign(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -40,6 +42,7 @@ public class UserSign {
     }
 
 
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/addusersign")
     public void addUsersign(HttpServletRequest request, HttpServletResponse response) throws IOException {
 

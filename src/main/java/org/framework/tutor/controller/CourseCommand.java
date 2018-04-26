@@ -2,6 +2,7 @@ package org.framework.tutor.controller;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonParser;
+import org.framework.tutor.annotation.RequireAuth;
 import org.framework.tutor.api.CourseCommandApi;
 import org.framework.tutor.domain.CourseMain;
 import org.framework.tutor.domain.UserMain;
@@ -65,6 +66,7 @@ public class CourseCommand {
      * @param response
      * @throws IOException
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/selmycommand")
     public void selMyCommand(Integer cid, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -80,6 +82,7 @@ public class CourseCommand {
      * @param request
      * @param response
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/submycommand")
     public void subMyCommand(Integer cid, String command, Integer score, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -93,6 +96,7 @@ public class CourseCommand {
      * @param response
      * @throws IOException
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/getcommandcount")
     public void getCommandCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -106,6 +110,7 @@ public class CourseCommand {
      * @param response
      * @throws IOException
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/getscoreavg")
     public void getScoreAvg(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -119,6 +124,7 @@ public class CourseCommand {
      * @param response
      * @throws IOException
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/loadmycommandinfo")
     public void loadMyCommandInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -146,6 +152,7 @@ public class CourseCommand {
      * @author yinjimin
      * @date 2018/4/18
      */
+    @RequireAuth(ident = "user", type = "api")
     @PostMapping("/setcommandgodstate")
     public void setCommandGodstate(@RequestParam Integer id, HttpServletRequest request, HttpServletResponse response) throws IOException {
 

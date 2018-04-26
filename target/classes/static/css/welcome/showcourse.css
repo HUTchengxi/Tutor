@@ -533,6 +533,7 @@ body{
     color: #ffffffeb;
     width: 25%;
     margin-left: 4%;
+    font-size: 1.3rem;
 }
 
 .coursecontainer .container-top .info ul li:nth-child(1) p {

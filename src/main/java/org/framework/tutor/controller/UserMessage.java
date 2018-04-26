@@ -2,6 +2,7 @@ package org.framework.tutor.controller;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonParser;
+import org.framework.tutor.annotation.RequireAuth;
 import org.framework.tutor.api.UserMessageApi;
 import org.framework.tutor.domain.UserMessageDelete;
 import org.framework.tutor.entity.EmailParam;
@@ -42,6 +43,7 @@ public class UserMessage {
      * @param request
      * @param response
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/getmymessagecount")
     public void getMyMessageCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -55,6 +57,7 @@ public class UserMessage {
      * @param response
      * @throws IOException
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/getmymessage")
     public void getMyMessage(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -69,6 +72,7 @@ public class UserMessage {
      * @param response
      * @throws IOException
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/getmessagebysuser")
     public void getMessageByUser(String suser, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -82,8 +86,8 @@ public class UserMessage {
      * @param request
      * @param response
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/setmessagestatus")
-    @Transactional
     public void setMessageStatus(String suser, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         userMessageApi.setMessageStatus(suser, request, response);
@@ -98,6 +102,7 @@ public class UserMessage {
      * @param response
      * @throws IOException
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/getmessagebystatus")
     public void getMessageByStatus(String suser, String status, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -112,6 +117,7 @@ public class UserMessage {
      * @param response
      * @throws IOException
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/delmymessage")
     public void delMyMessage(Integer did, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -124,6 +130,7 @@ public class UserMessage {
      * @param request
      * @param response
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/setallstatus")
     public void setAllStatus(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -137,6 +144,7 @@ public class UserMessage {
      * @author yinjimin
      * @date 2018/4/22
      */
+    @RequireAuth(ident = "admin", type = "api")
     @PostMapping("/getmessagelist")
     public void getMessageList(@RequestBody ParamMap paramMap, HttpServletResponse response) throws IOException {
 
@@ -150,6 +158,7 @@ public class UserMessage {
      * @author yinjimin
      * @date 2018/4/22
      */
+    @RequireAuth(ident = "admin", type = "api")
     @PostMapping("/getmessagedetail")
     public void getMessageDetail(@RequestParam Integer id, HttpServletResponse response) throws IOException {
 
@@ -164,6 +173,7 @@ public class UserMessage {
      * @author yinjimin
      * @date 2018/4/24
      */
+    @RequireAuth(ident = "admin", type = "api")
     @PostMapping("/sendmessage")
     public void sendMessage(@RequestBody EmailParam emailParam, HttpServletRequest request, HttpServletResponse response) throws IOException {
 

@@ -10,7 +10,7 @@
  *
  *
  */
-package org.framework.tutor.config;
+package org.framework.tutor.interceptor;
 
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;

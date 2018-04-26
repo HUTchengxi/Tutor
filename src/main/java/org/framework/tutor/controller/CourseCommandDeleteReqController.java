@@ -13,6 +13,7 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.Gson;
+import org.framework.tutor.annotation.RequireAuth;
 import org.framework.tutor.api.CourseCommandDeleteReqApi;
 import org.framework.tutor.domain.CourseCommand;
 import org.framework.tutor.service.CourseCMService;
@@ -52,6 +53,7 @@ public class CourseCommandDeleteReqController {
      * @author yinjimin
      * @date 2018/4/18
      */
+    @RequireAuth(ident = "tutor", type = "api")
     @PostMapping("/addcommanddeletereq")
     public void addCommandDeleteReq(@RequestParam Integer cid, @RequestParam String info, HttpServletRequest request, HttpServletResponse response) throws IOException {
 

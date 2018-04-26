@@ -13,6 +13,7 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
+import org.framework.tutor.annotation.RequireAuth;
 import org.framework.tutor.api.BbsCardAnswerCommandApi;
 import org.framework.tutor.domain.BbsCard;
 import org.framework.tutor.domain.BbsCardAnswerCommand;
@@ -70,12 +71,14 @@ public class BbsCardAnswerCommandController {
      * @author yinjimin
      * @date 2018/4/10
      */
+    @RequireAuth(ident = "user", type = "api")
     @PostMapping("/publishcommand")
     public void publishCommand(@RequestParam Integer cardid, @RequestParam Integer aid, @RequestParam String answer, Integer repfloor, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         bbsCardAnswerCommandApi.publishCommand(cardid, aid, answer, repfloor, request, response);
     }
 
+    @RequireAuth(ident = "user", type = "api")
     @PostMapping("getmycommandcount")
     public void getMyCommandCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -90,6 +93,7 @@ public class BbsCardAnswerCommandController {
      * @author yinjimin
      * @date 2018/4/14
      */
+    @RequireAuth(ident = "user", type = "api")
     @PostMapping("/getmycommandinfo")
     public void getMyCommandInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
 

@@ -13,6 +13,7 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
+import org.framework.tutor.annotation.RequireAuth;
 import org.framework.tutor.api.BbsCardAnswerApi;
 import org.framework.tutor.domain.BbsCardAnswer;
 import org.framework.tutor.domain.UserMain;
@@ -67,6 +68,7 @@ public class BbsCardAnswerController {
      * @author yinjimin
      * @date 2018/4/9
      */
+    @RequireAuth(ident = "user", type = "api")
     @PostMapping("/checkusercommand")
     public void checkUserCommand(@RequestParam Integer cardId, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -81,6 +83,7 @@ public class BbsCardAnswerController {
      * @author yinjimin
      * @date 2018/4/9
      */
+    @RequireAuth(ident = "user", type = "api")
     @PostMapping("/addanswer")
     public void addAnswer(@RequestParam Integer cardId, @RequestParam String answer, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -95,6 +98,7 @@ public class BbsCardAnswerController {
      * @author yinjimin
      * @date 2018/4/12
      */
+    @RequireAuth(ident = "user", type = "api")
     @PostMapping("/getmyanswercount")
     public void getMyAnswerCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -102,6 +106,7 @@ public class BbsCardAnswerController {
     }
 
 
+    @RequireAuth(ident = "user", type = "api")
     @PostMapping("/getmyanswerinfo")
     public void getMyAnswerInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
 

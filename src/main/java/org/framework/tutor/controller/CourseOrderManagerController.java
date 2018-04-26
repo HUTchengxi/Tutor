@@ -13,6 +13,7 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.Gson;
+import org.framework.tutor.annotation.RequireAuth;
 import org.framework.tutor.api.CourseOrderManagerApi;
 import org.framework.tutor.domain.CourseMain;
 import org.framework.tutor.domain.CourseOrder;
@@ -56,6 +57,7 @@ public class CourseOrderManagerController {
      * @author yinjimin
      * @date 2018/4/18
      */
+    @RequireAuth(ident = "tutor", type = "api")
     @PostMapping("/getcourseorderlist")
     public void getCourseOrderList(@RequestBody ParamMap paramMap, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -70,6 +72,7 @@ public class CourseOrderManagerController {
      * @author yinjimin
      * @date 2018/4/19
      */
+    @RequireAuth(ident = "tutor", type = "api")
     @PostMapping("/getorderdetail")
     public void getOrderDetail(@RequestParam String code, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -84,6 +87,7 @@ public class CourseOrderManagerController {
      * @author yinjimin
      * @date 2018/4/19
      */
+    @RequireAuth(ident = "admin", type = "api")
     @PostMapping("/updatetutorstatus")
     public void updateTutorStatus(@RequestParam String code, @RequestParam Integer tutorStatus, @RequestParam String tutorInfo, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -98,6 +102,7 @@ public class CourseOrderManagerController {
      * @author yinjimin
      * @date 2018/4/19
      */
+    @RequireAuth(ident = "admin", type = "api")
     @PostMapping("/geterrororderlist")
     public void getErrorOrderList(@RequestBody ParamMap paramMap, HttpServletResponse response) throws IOException {
 
@@ -112,6 +117,7 @@ public class CourseOrderManagerController {
      * @author yinjimin
      * @date 2018/4/19
      */
+    @RequireAuth(ident = "admin", type = "api")
     @PostMapping("/geterrororderdetail")
     public void getErrorOrderDetail(@RequestParam String code, HttpServletResponse response) throws IOException {
 

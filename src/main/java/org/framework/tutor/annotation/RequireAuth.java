@@ -29,4 +29,5 @@ import java.lang.annotation.*;
 @Documented
 public @interface RequireAuth {
     String ident() default "";
+    String type() default "url";
 }

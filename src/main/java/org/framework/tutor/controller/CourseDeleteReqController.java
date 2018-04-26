@@ -14,6 +14,7 @@ package org.framework.tutor.controller;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonParser;
+import org.framework.tutor.annotation.RequireAuth;
 import org.framework.tutor.api.CourseDeleteReqApi;
 import org.framework.tutor.domain.CourseDeleteReq;
 import org.framework.tutor.domain.CourseDeleteResp;
@@ -58,6 +59,7 @@ public class CourseDeleteReqController {
      * @author yinjimin
      * @date 2018/4/15
      */
+    @RequireAuth(ident = "tutor", type = "api")
     @PostMapping("/setmycoursedeletereq")
     public void setMyCourseDeleteReq(@RequestParam Integer cid, @RequestParam String descript, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -72,6 +74,7 @@ public class CourseDeleteReqController {
      * @author yinjimin
      * @date 2018/4/21
      */
+    @RequireAuth(ident = "admin", type = "api")
     @PostMapping("/getreqlist")
     public void getReqList(@RequestBody ParamMap paramMap, HttpServletResponse response) throws IOException {
 
@@ -86,6 +89,7 @@ public class CourseDeleteReqController {
      * @author yinjimin
      * @date 2018/4/21
      */
+    @RequireAuth(ident = "admin", type = "api")
     @PostMapping("/getreqdetail")
     public void getReqDetail(@RequestParam Integer reqid, HttpServletResponse response) throws IOException {
 

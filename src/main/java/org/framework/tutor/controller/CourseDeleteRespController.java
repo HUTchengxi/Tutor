@@ -13,6 +13,7 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.Gson;
+import org.framework.tutor.annotation.RequireAuth;
 import org.framework.tutor.api.CourseDeleteRespApi;
 import org.framework.tutor.domain.CourseDeleteResp;
 import org.framework.tutor.service.CourseDeleteRespService;
@@ -48,6 +49,7 @@ public class CourseDeleteRespController {
      * @author yinjimin
      * @date 2018/4/21
      */
+    @RequireAuth(ident = "admin", type = "api")
     @PostMapping("/modreqstatus")
     public void modReqStatus(@RequestParam Integer id, @RequestParam Integer status, @RequestParam String respDesc, HttpServletResponse response) throws IOException {
 

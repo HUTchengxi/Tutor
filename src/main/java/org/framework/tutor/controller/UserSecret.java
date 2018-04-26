@@ -1,6 +1,7 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
+import org.framework.tutor.annotation.RequireAuth;
 import org.framework.tutor.api.UserSecretApi;
 import org.framework.tutor.service.UserSCService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,7 @@ public class UserSecret {
      * @param request
      * @param response
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/getsecretinfo")
     public void getSecretInfo(String username, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -46,6 +48,7 @@ public class UserSecret {
      * @param response
      * @throws IOException
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/delusersecret")
     public void delUserSecret(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -60,6 +63,7 @@ public class UserSecret {
      * @param response
      * @param request
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/addusersecret")
     public void addUserSecret(String question, String answer, HttpServletResponse response, HttpServletRequest request) throws IOException {
 

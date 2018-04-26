@@ -3,6 +3,7 @@ package org.framework.tutor.controller;
 import com.google.gson.JsonParser;
 import org.apache.catalina.servlet4preview.http.HttpServletRequestWrapper;
 import org.apache.ibatis.annotations.Select;
+import org.framework.tutor.annotation.RequireAuth;
 import org.framework.tutor.api.CourseOrderApi;
 import org.framework.tutor.domain.CourseMain;
 import org.framework.tutor.service.CourseMService;
@@ -50,6 +51,7 @@ public class CourseOrder {
      * @param request
      * @param response
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/addcart")
     public void addCart(Integer cid, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -61,6 +63,7 @@ public class CourseOrder {
      * @param request
      * @param response
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/getmycart")
     public void getMyCart(Integer startpos, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -73,6 +76,7 @@ public class CourseOrder {
      * @param request
      * @param response
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/delmycart")
     public void delMyCart(Integer id, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -85,6 +89,7 @@ public class CourseOrder {
      * @param response
      * @throws IOException
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/getmycartcount")
     public void getMyCartCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -98,6 +103,7 @@ public class CourseOrder {
      * @param request
      * @param response
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/getmyorder")
     public void getMyOrder(@RequestParam("status") String status, Integer startpos, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -110,6 +116,7 @@ public class CourseOrder {
      * @param request
      * @param response
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/setinrecycle")
     public void setInCycle(Integer oid, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -122,6 +129,7 @@ public class CourseOrder {
      * @param response
      * @throws IOException
      */
+    @RequireAuth(ident = "tutor", type = "api")
     @RequestMapping("/getordercount")
     public void getOrderCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
 

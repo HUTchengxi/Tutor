@@ -1,6 +1,7 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
+import org.framework.tutor.annotation.RequireAuth;
 import org.framework.tutor.api.TutorBtnsApi;
 import org.framework.tutor.domain.TutorBtns;
 import org.framework.tutor.domain.TutorsysBtns;
@@ -33,6 +34,7 @@ public class TutorBtnsController {
      * @param request
      * @param response
      */
+    @RequireAuth(ident = "tutor", type = "api")
     @RequestMapping("/getbtnslist")
     public void getBtnsList(HttpServletRequest request, HttpServletResponse response) throws IOException {
 

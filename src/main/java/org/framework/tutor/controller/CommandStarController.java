@@ -1,6 +1,7 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
+import org.framework.tutor.annotation.RequireAuth;
 import org.framework.tutor.api.CommandStarApi;
 import org.framework.tutor.domain.CommandStar;
 import org.framework.tutor.service.CommandStarService;
@@ -33,6 +34,7 @@ public class CommandStarController {
      * @param request
      * @param response
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/getmycommandstar")
     public void getMyCommandStar( Integer cmid, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -47,6 +49,7 @@ public class CommandStarController {
      * @param response
      * @throws IOException
      */
+    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/addmystar")
     public void addMyStar(Integer score, Integer cmid, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
