@@ -1,17 +1,6 @@
-/*
- * Copyright (C) 2011-2013 ShenZhen iBoxpay Information Technology Co. Ltd.
- *
- * All right reserved.
- *
- * This software is the confidential and proprietary information of iBoxPay Company of China.
- * ("Confidential Information").
- * You shall not disclose such Confidential Information and shall use it only
- * in accordance with the terms of the contract agreement you entered into with iBoxpay inc.
- *
- *
- */
 package org.framework.tutor.api.impl;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonParser;
 import org.framework.tutor.api.CourseOrderApi;
 import org.framework.tutor.domain.CourseMain;
@@ -29,8 +18,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author yinjimin
@@ -59,26 +47,26 @@ public class CourseOrderApiImpl implements CourseOrderApi {
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
         //获取课程订购人数
         Integer ccount = courseOService.getOrderCount(cid);
-
-        res = "{\"count\": \"" + ccount + "\", ";
+        resultMap.put("count", ccount);
 
         org.framework.tutor.domain.CourseOrder courseOrder = courseOService.getUserOrder(username, cid);
         if (courseOrder == null) {
-            res += "\"state\": \"valid\"}";
+            resultMap.put("state", "valid");
         } else {
             Integer state = courseOrder.getState();
             if (state == 0) {
-                res += "\"state\": \"cart\"}";
+                resultMap.put("state", "cart");
             } else {
-                res += "\"state\": \"buy\"}";
+                resultMap.put("state", "buy");
             }
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -96,16 +84,18 @@ public class CourseOrderApiImpl implements CourseOrderApi {
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
+        List<Object> rowList = new ArrayList<>();
 
         Integer state = 0;
         if (!(courseOService.addUserOrder(username, cid, state))) {
-            res = "{\"status\": \"mysqlerr\"}";
+            resultMap.put("status", "mysqlerr");
         } else {
-            res = "{\"status\": \"valid\"}";
+            resultMap.put("statue", "valid");
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -123,33 +113,29 @@ public class CourseOrderApiImpl implements CourseOrderApi {
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
+        List<Object> rowList = new ArrayList<>();
 
         Integer status = 0;
         List<CourseOrder> courseOrders = courseOService.getMyOrder(username, status, startpos);
         if (courseOrders.size() == 0) {
-            res = "{\"status\": \"valid\"}";
+            resultMap.put("status", "valid");
         } else {
-            res = "{";
-            int i = 1;
             for (org.framework.tutor.domain.CourseOrder courseOrder : courseOrders) {
                 CourseMain courseMain = courseMService.getCourseById(courseOrder.getCid());
-                res += "\"" + i + "\": ";
-                String temp = "{\"imgsrc\": \"" + courseMain.getImgsrc() + "\", " +
-                        "\"name\": \"" + courseMain.getName() + "\", " +
-                        "\"id\": \"" + courseOrder.getId() + "\", " +
-                        "\"cid\": \"" + courseOrder.getCid() + "\", " +
-                        "\"price\": \"" + courseMain.getPrice() + "\"}, ";
-                res += temp;
-                i++;
+                Map<String, Object> rowMap = new HashMap<>(8);
+                rowMap.put("imgsrc", courseMain.getImgsrc());
+                rowMap.put("name", courseMain.getName());
+                rowMap.put("id", courseOrder.getId());
+                rowMap.put("cid", courseOrder.getCid());
+                rowMap.put("price", courseMain.getPrice());
+                rowList.add(rowMap);
             }
-            res = res.substring(0, res.length() - 2);
-            res += "}";
+            resultMap.put("list", rowList);
         }
 
-        System.out.println(res);
-
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -168,16 +154,17 @@ public class CourseOrderApiImpl implements CourseOrderApi {
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
         int len = courseOService.delMyCart(id, username);
         if (len == 0) {
-            res = "{\"status\": \"invalid\"}";
+            resultMap.put("status", "invalid");
         } else {
-            res = "{\"status\": \"valid\"}";
+            resultMap.put("status", "valid");
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.close();
     }
 
@@ -193,12 +180,11 @@ public class CourseOrderApiImpl implements CourseOrderApi {
 
         HttpSession session = request.getSession();
         PrintWriter writer = response.getWriter();
-        String res = null;
         String username = (String) session.getAttribute("username");
-
-        res = "{\"count\": \"" + courseOService.getMyCartCount(username) + "\"}";
-
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
+        resultMap.put("count", courseOService.getMyCartCount(username));
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -218,7 +204,9 @@ public class CourseOrderApiImpl implements CourseOrderApi {
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
+        List<Object> rowList = new ArrayList<>();
 
         Integer state = 1;
         if (status.equals("ned")) {
@@ -228,27 +216,23 @@ public class CourseOrderApiImpl implements CourseOrderApi {
         }
         List<org.framework.tutor.domain.CourseOrder> courseOrders = courseOService.getMyOrder(username, state, startpos);
         if (courseOrders.size() == 0) {
-            res = "{\"status\": \"valid\"}";
+            resultMap.put("status", "valid");
         } else {
-            res = "{";
-            int i = 1;
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             for (org.framework.tutor.domain.CourseOrder courseOrder : courseOrders) {
                 CourseMain courseMain = courseMService.getCourseById(courseOrder.getCid());
-                res += "\"" + i + "\": ";
-                String temp = "{\"name\": \"" + courseMain.getName() + "\", " +
-                        "\"id\": \"" + courseOrder.getId() + "\", " +
-                        "\"cid\": \"" + courseOrder.getCid() + "\", " +
-                        "\"otime\": \"" + sdf.format(courseOrder.getOtime()) + "\", " +
-                        "\"price\": \"" + courseMain.getPrice() + "\"}, ";
-                res += temp;
-                i++;
+                Map<String, Object> rowMap = new HashMap<>(8);
+                rowMap.put("name", courseMain.getName());
+                rowMap.put("id", courseOrder.getId());
+                rowMap.put("cid", courseOrder.getCid());
+                rowMap.put("otime", sdf.format(courseOrder.getOtime()));
+                rowMap.put("price", courseMain.getPrice());
+                rowList.add(rowMap);
             }
-            res = res.substring(0, res.length() - 2);
-            res += "}";
+            resultMap.put("status", rowList);
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -266,22 +250,23 @@ public class CourseOrderApiImpl implements CourseOrderApi {
         HttpSession session = request.getSession();
         PrintWriter writer = response.getWriter();
         String username = (String) session.getAttribute("username");
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
         //判断用户名和订单是否对应，防止api非法调用
         org.framework.tutor.domain.CourseOrder courseOrder = courseOService.getByIdAndUser(username, oid);
         if (courseOrder == null) {
-            res = "{\"status\": \"invalid\"}";
+            resultMap.put("status", "invalid");
         } else {
             Integer row = courseOService.setInCycle(oid);
             if (row == 1) {
-                res = "{\"status\": \"valid\"}";
+                resultMap.put("status", "valid");
             } else {
-                res = "{\"status\": \"mysqlerr\"}";
+                resultMap.put("status", "mysqlerr");
             }
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -299,14 +284,14 @@ public class CourseOrderApiImpl implements CourseOrderApi {
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String now = simpleDateFormat.format(new Date());
 
-        res = "{\"count\": \"" + courseOService.getOrderCountNow(username, now) + "\"}";
-
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        resultMap.put("count", courseOService.getOrderCountNow(username, now));
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }

@@ -12,6 +12,7 @@
  */
 package org.framework.tutor.api.impl;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonParser;
 import org.framework.tutor.api.CourseSummaryApi;
 import org.framework.tutor.domain.CourseSummary;
@@ -26,7 +27,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author yinjimin
@@ -52,31 +56,29 @@ public class CourseSummaryApiImpl implements CourseSummaryApi {
 
         response.setCharacterEncoding("utf-8");
         PrintWriter writer = response.getWriter();
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
+        List<Object> rowList = new ArrayList<>();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
 
         List<CourseSummary> courseSummarys = courseSummaryService.getCourseSummaryInfo(cid);
 
         if(courseSummarys.size() == 0){
-            res = "{\"status\": \"0\"}";
+            resultMap.put("status", 0);
         }
         else{
-            res = "{";
-            int i = 1;
             for (CourseSummary courseSummary: courseSummarys) {
-                res += "\"" + i + "\": ";
-                String temp = "{\"title\": \"" + courseSummary.getTitle() + "\", " +
-                        "\"id\": \"" + courseSummary.getId() + "\", " +
-                        "\"descript\": \"" + courseSummary.getDescript() + "\"}, ";
-                res += temp;
-                i++;
+                Map<String, Object> rowMap = new HashMap<>(8);
+                rowMap.put("title", courseSummary.getTitle());
+                rowMap.put("id", courseSummary.getId());
+                rowMap.put("descript", courseSummary.getDescript());
+                rowList.add(rowMap);
             }
-            res = res.substring(0, res.length() - 2);
-            res += "}";
+            resultMap.put("list", rowList);
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -94,17 +96,18 @@ public class CourseSummaryApiImpl implements CourseSummaryApi {
     public void updateCourseSummary(Integer id, String title, String descript, HttpServletResponse response) throws IOException {
 
         PrintWriter writer = response.getWriter();
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
         Integer row = courseSummaryService.updateCourseSummary(id, title, descript);
         if(row == 1){
-            res = "{\"status\": \"valid\"}";
+            resultMap.put("status", "valid");
         }
         else{
-            res = "{\"status\": \"sqlerr\"}";
+            resultMap.put("status", "sqlerr");
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }

@@ -48,6 +48,7 @@ public class AdminApiImpl implements AdminApi {
      * @author yinjimin
      * @date 2018/4/19
      */
+    @Override
     public void Login(String username, String password, HttpServletResponse response, HttpServletRequest request) throws IOException {
 
         PrintWriter writer = response.getWriter();

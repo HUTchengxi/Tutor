@@ -34,7 +34,6 @@ $(function () {
             success: function (data) {
                 var status = data.status;
                 if (status === "nologin") {
-                    window.location = "/forward_con/welcome";
                 }
                 else {
                     ident = data.ident;
@@ -224,7 +223,6 @@ $(function () {
                 success: function (data) {
                     var status = data.status;
                     if (status === "invalid") {
-                        window.location.href = "/forward_con/welcome";
                     }
                     else if (status === "mysqlerr") {
                         alert("后台数据库出了点问题，请稍后再试");
@@ -254,7 +252,6 @@ $(function () {
                 success: function (data) {
                     var status = data.status;
                     if (status === "invalid") {
-                        window.location.href = "/forward_con/welcome";
                     }
                     else if (status === "mysqlerr") {
                         alert("后台数据库出了点问题，请稍后再试");
@@ -335,12 +332,12 @@ $(function () {
             success: function (data) {
                 var status = data.status;
                 if (status === "invalid") {
-                    window.location = data.url;
+                    return ;
                 }
                 else if (status === "ok") {
                     return;
                 }
-                $.each(data, function (index, item) {
+                $.each(data.list, function (index, item) {
                     var id = item.id;
                     var logtime = item.logtime;
                     var cname = item.cname;
@@ -386,7 +383,7 @@ $(function () {
             success: function (data) {
                 var status = data.status;
                 if (status === "invalid") {
-                    window.location = data.url;
+                    return ;
                 }
                 else if (status === "mysqlerr") {
                     window.alert("后台数据库异常导致无法删除课程记录，请刷新页面重试");
@@ -432,7 +429,7 @@ $(function () {
                     $(".commanddiv").append("<div class='none'><p>暂未收藏课程</p></div>");
                 }
                 else{
-                    $.each(data, function(index, item){
+                    $.each(data.list, function(index, item){
                         var cid = item.cid;
                         var imgsrc = item.imgsrc;
                         var score = parseInt(item.score);
@@ -488,7 +485,7 @@ $(function () {
             success: function (data) {
                 var status = data.status;
                 if (status === "invalid") {
-                    window.location = data.url;
+                    return;
                 }
                 //没有收藏课程的情况
                 else if (status === "valid") {
@@ -499,7 +496,7 @@ $(function () {
                     var year = "";
                     var day = "";
                     var count = 0;
-                    $.each(data, function (index, item) {
+                    $.each(data.list, function (index, item) {
                         count++;
                         var cyear = item.cyear;
                         var cid = item.cid;

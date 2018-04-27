@@ -12,6 +12,7 @@
  */
 package org.framework.tutor.api.impl;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonParser;
 import org.framework.tutor.api.UserSecretApi;
 import org.framework.tutor.service.UserSCService;
@@ -24,7 +25,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author yinjimin
@@ -43,41 +47,30 @@ public class UserSecretApiImpl implements UserSecretApi {
      * @param request
      * @param response
      */
+    @Override
     public void getSecretInfo(String username, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         response.setCharacterEncoding("utf-8");
         HttpSession session = request.getSession();
         PrintWriter writer = response.getWriter();
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
+        List<Object> rowList = new ArrayList<>();
 
-        if (username == null) {
-            username = (String) session.getAttribute("username");
-            if (username == null) {
-                res = "{\"status\": \"invalid\"}";
-                writer.print(new JsonParser().parse(res).getAsJsonObject());
-                writer.flush();
-                writer.close();
-                return;
-            }
-        }
         List<main.java.org.framework.tutor.domain.UserSecret> userSecretList = userSCService.getSecretInfoByUsername(username);
         if (userSecretList.size() == 0) {
-            res = "{\"status\": \"valid\"}";
+            resultMap.put("status", "valid");
         } else {
-            res = "{";
-            int i = 1;
             for (main.java.org.framework.tutor.domain.UserSecret userSecret : userSecretList) {
-                res += "\"" + i + "\": ";
-                String temp = "{\"question\": \"" + userSecret.getQuestion() + "\", " +
-                        "\"answer\": \"" + userSecret.getAnswer() + "\"}, ";
-                res += temp;
-                i++;
+                Map<String, Object> rowMap = new HashMap<>(4);
+                rowMap.put("question", userSecret.getQuestion());
+                rowMap.put("answer", userSecret.getAnswer());
+                rowList.add(rowMap);
             }
-            res = res.substring(0, res.length() - 2);
-            res += "}";
+            resultMap.put("list", rowList);
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -89,23 +82,21 @@ public class UserSecretApiImpl implements UserSecretApi {
      * @param response
      * @throws IOException
      */
+    @Override
     public void delUserSecret(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         response.setCharacterEncoding("utf-8");
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
-        if (username == null) {
-            res = "{\"status\": \"invalid\"}";
-        } else {
-            //删除当前用户的所有密保数据
-            userSCService.delUserSecret(username);
-            res = "{\"status\": \"valid\"}";
-        }
+        //删除当前用户的所有密保数据
+        userSCService.delUserSecret(username);
+        resultMap.put("status", "valid");
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -118,25 +109,23 @@ public class UserSecretApiImpl implements UserSecretApi {
      * @param response
      * @param request
      */
+    @Override
     public void addUserSecret(String question, String answer, HttpServletResponse response, HttpServletRequest request) throws IOException {
 
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
-        if (username == null) {
-            res = "{\"status\": \"invalid\"}";
+        Integer row = userSCService.addUserSecret(question, answer, username);
+        if (row <= 0) {
+            resultMap.put("status", "mysqlerr");
         } else {
-            Integer row = userSCService.addUserSecret(question, answer, username);
-            if (row <= 0) {
-                res = "{\"status\": \"mysqlerr\"}";
-            } else {
-                res = "{\"status\": \"valid\"}";
-            }
+            resultMap.put("status", "valid");
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }

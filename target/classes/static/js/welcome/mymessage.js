@@ -33,7 +33,7 @@ $(function () {
             success: function (data) {
                 var status = data.status;
                 if (status === "nologin") {
-                    window.location = "/forward_con/welcome";
+                    return ;
                 }
                 else {
                     var hour = new Date().getHours();
@@ -80,7 +80,7 @@ $(function () {
             success: function (data) {
                 var status = data.status;
                 if (status == "invalid") {
-                    window.location = "/forward_con/welcome";
+                    return;
                 }
                 else if (status == "valid") {
                     return;
@@ -88,7 +88,7 @@ $(function () {
                 else {
                     var susered = [];
                     var count = 0;
-                    $.each(data, function (index, item) {
+                    $.each(data.list, function (index, item) {
                         var stime = item.stime;
                         var suser = item.suser;
                         var title = item.title;
@@ -173,7 +173,6 @@ $(function () {
             success: function (data) {
                 var status = data.status;
                 if (status === "invalid") {
-                    window.location = "/forward_con/welcome";
                     return;
                 }
                 if (status === "valid") {
@@ -185,7 +184,7 @@ $(function () {
                 $("div.container .m-main .main-right footer input.info-btn:nth-child(4)").css("display", "none");
                 $("div.container .m-main .main-right .right-show").css("display", "block").empty();
                 $("div.container .m-main .main-right footer").css("display", "block");
-                $.each(data, function (index, item) {
+                $.each(data.list, function (index, item) {
                     var id = item.id;
                     var imgsrc = item.imgsrc;
                     var descript = item.descript;
@@ -267,7 +266,6 @@ $(function () {
                 success: function (data) {
                     var status = data.status;
                     if (status === "invalid") {
-                        window.location = "/forward_con/welcome";
                         return;
                     }
                     if (status === "valid") {
@@ -275,7 +273,7 @@ $(function () {
                         return;
                     }
                     $("div.container .m-main .main-right .right-show").css("display", "block").empty();
-                    $.each(data, function (index, item) {
+                    $.each(data.list, function (index, item) {
                         var id = item.id;
                         var imgsrc = item.imgsrc;
                         var descript = item.descript;
@@ -402,7 +400,6 @@ $(function () {
                     success: function (data) {
                         var status = data.status;
                         if (status === "invalid") {
-                            window.location = "/forward_con/welcome";
                             return;
                         }
                         if (status === "valid") {
@@ -414,7 +411,7 @@ $(function () {
                         $("div.container .m-main .main-right footer input.info-btn:nth-child(4)").css("display", "none");
                         $("div.container .m-main .main-right .right-show").css("display", "block").empty();
                         $("div.container .m-main .main-right footer").css("display", "block");
-                        $.each(data, function (index, item) {
+                        $.each(data.list, function (index, item) {
                             var id = item.id;
                             var imgsrc = item.imgsrc;
                             var descript = item.descript;
@@ -491,7 +488,7 @@ $(function () {
             success: function(data){
                 var status = data.status;
                 if(status == "invalid"){
-                    window.location = "/forward_con/welcome";
+                    return ;
                 }
                 else{
                     window.alert("设置成功");

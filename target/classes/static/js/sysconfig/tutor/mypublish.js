@@ -24,7 +24,7 @@ $(function() {
                 }
                 else {
                     var regtime = "";
-                    $.each(data, function (index, item) {
+                    $.each(data.list, function (index, item) {
                         var rtime = item.regtime;
                         var cid = item.id;
                         var imgsrc = item.imgsrc;
@@ -121,7 +121,7 @@ $(function() {
                     $("#chapterModal .chapters").append("<div class=\"none\">暂未设置任何目录</div>");
                 }
                 else{
-                    $.each(data, function(index, item){
+                    $.each(data.list, function(index, item){
                         var id = item.id;
                         var ord = item.ord;
                         var title = item.title;
@@ -151,7 +151,6 @@ $(function() {
     var click_showchapterdelbtn = function(){
 
         var status = $(this).data("status");
-        console.log(status);
         if(status != "on"){
             $(this).data("status", "on");
             $("#chapterModal .modal-body legend span").css("display", "inline-block");
@@ -331,7 +330,7 @@ $(function() {
                     $("#summaryModal .modal-body").append("<div class='none'>无法获取数据，请联系管理员</div>");
                     return ;
                 }
-                $.each(data, function(index, item){
+                $.each(data.list, function(index, item){
                     var id = item.id;
                     var title = item.title;
                     var descript = item.descript;

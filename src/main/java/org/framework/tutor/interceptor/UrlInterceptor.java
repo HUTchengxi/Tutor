@@ -40,6 +40,7 @@ public class UrlInterceptor extends AbstractHandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
+        response.setCharacterEncoding("utf-8");
         //目前该拦截器暂时只支持拦截方法级别
         if (!handler.getClass().isAssignableFrom(HandlerMethod.class)) {
             System.out.println("INFO urlInterceptor : 暂时不支持方法级别的拦截");

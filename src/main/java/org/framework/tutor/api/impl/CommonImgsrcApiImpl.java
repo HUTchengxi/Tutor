@@ -12,6 +12,7 @@
  */
 package org.framework.tutor.api.impl;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonParser;
 import org.framework.tutor.api.CommonImgsrcApi;
 import org.framework.tutor.domain.CommonImgsrc;
@@ -23,7 +24,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author yinjimin
@@ -45,26 +49,26 @@ public class CommonImgsrcApiImpl implements CommonImgsrcApi {
      * @author yinjimin
      * @date 2018/4/1
      */
+    @Override
     public void getAll(HttpServletResponse response) throws IOException {
 
         response.setCharacterEncoding("utf-8");
         PrintWriter writer = response.getWriter();
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
+        List<Object> rowList = new ArrayList<>();
 
         List<CommonImgsrc> commonImgsrcList = commonImgsrcService.getAll();
 
-        int i = 0;
-        res = "{";
         for (CommonImgsrc commonImgsrc: commonImgsrcList) {
-            res += "\"" + (i++) + "\": ";
-            String temp = "{\"imgsrc\": \"" + commonImgsrc.getImgsrc() +
-                    "\",\"title\": \"" + commonImgsrc.getTitle() + "\"}, ";
-            res += temp;
+            Map<String, Object> rowMap = new HashMap<>(4);
+            rowMap.put("imgsrc", commonImgsrc.getImgsrc());
+            rowMap.put("title", commonImgsrc.getTitle());
+            rowList.add(rowMap);
         }
-        res = res.substring(0, res.length() - 2);
-        res += "}";
+        resultMap.put("list", rowList);
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }

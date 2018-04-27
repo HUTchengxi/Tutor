@@ -12,6 +12,7 @@
  */
 package org.framework.tutor.api.impl;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonParser;
 import org.framework.tutor.api.CourseCollectApi;
 import org.framework.tutor.domain.CourseCollect;
@@ -28,8 +29,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author yinjimin
@@ -47,6 +47,7 @@ public class CourseCollectionApiImpl implements CourseCollectApi {
 
     /**
      * 获取我的课程收藏记录
+     *
      * @param request
      * @param response
      * @param startpos
@@ -60,45 +61,39 @@ public class CourseCollectionApiImpl implements CourseCollectApi {
         HttpSession session = request.getSession();
         PrintWriter writer = response.getWriter();
         String username = (String) session.getAttribute("username");
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(4);
+        List<Object> rowList = new ArrayList<>();
 
-        if(username == null){
-            res = "{\"status\": \"invalid\", \"url\": \"/forward_con/welcome\"}";
-        }
-        else{
-            List<CourseCollect> courseCollects = courseCService.getMyCollect(username, startpos);
-            if(courseCollects.size() == 0){
-                res = "{\"status\": \"valid\", \"length\": \"0\"}";
+        List<CourseCollect> courseCollects = courseCService.getMyCollect(username, startpos);
+        if (courseCollects.size() == 0) {
+            resultMap.put("status", "valid");
+            resultMap.put("length", 0);
+        } else {
+            SimpleDateFormat ysdf = new SimpleDateFormat("yyyy年");
+            SimpleDateFormat osdf = new SimpleDateFormat("MM月dd日");
+            for (org.framework.tutor.domain.CourseCollect courseCollect : courseCollects) {
+                CourseMain courseMain = courseMService.getCourseById(courseCollect.getId());
+                Map<String, Object> rowMap = new HashMap<>(16);
+                rowMap.put("cyear", ysdf.format(courseCollect.getColtime()));
+                rowMap.put("cday", osdf.format(courseCollect.getColtime()));
+                rowMap.put("cimgsrc", courseMain.getImgsrc());
+                rowMap.put("cname", courseMain.getName());
+                rowMap.put("cid", courseCollect.getCid());
+                rowMap.put("descript", courseCollect.getDescript());
+                rowList.add(rowMap);
             }
-            else{
-                res = "{";
-                int i = 1;
-                SimpleDateFormat ysdf = new SimpleDateFormat("yyyy年");
-                SimpleDateFormat osdf = new SimpleDateFormat("MM月dd日");
-                for (org.framework.tutor.domain.CourseCollect courseCollect: courseCollects) {
-                    CourseMain courseMain = courseMService.getCourseById(courseCollect.getId());
-                    res += "\""+i+"\": ";
-                    String temp = "{\"cyear\": \""+ysdf.format(courseCollect.getColtime())+"\", " +
-                            "\"cday\": \""+osdf.format(courseCollect.getColtime())+"\", " +
-                            "\"cimgsrc\": \""+courseMain.getImgsrc()+"\", " +
-                            "\"cname\": \""+courseMain.getName()+"\", " +
-                            "\"cid\": \""+courseCollect.getCid()+"\", " +
-                            "\"descript\": \""+courseCollect.getDescript()+"\"}, ";
-                    res += temp;
-                    i++;
-                }
-                res = res.substring(0, res.length()-2);
-                res += "}";
-            }
+            resultMap.put("list", rowList);
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
 
     /**
      * 判断当前用户是否收藏了指定的课程
+     *
      * @param cid
      * @param request
      * @param response
@@ -108,24 +103,25 @@ public class CourseCollectionApiImpl implements CourseCollectApi {
 
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
-        String res = null;
         String username = (String) session.getAttribute("username");
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
         org.framework.tutor.domain.CourseCollect courseCollect = courseCService.getCollect(cid, username);
-        if(courseCollect == null){
-            res = "{\"status\": \"uncollect\"}";
-        }
-        else{
-            res = "{\"status\": \"collect\"}";
+        if (courseCollect == null) {
+            resultMap.put("status", "uncollect");
+        } else {
+            resultMap.put("status", "collect");
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
 
     /**
      * 收藏/取消收藏
+     *
      * @param cid
      * @param mod
      * @param descript
@@ -139,34 +135,34 @@ public class CourseCollectionApiImpl implements CourseCollectApi {
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
         //收藏
-        if("collect".equals(mod)){
-            if(courseCService.Collect(cid, username, descript)){
-                res = "{\"status\": \"valid\"}";
-            }
-            else{
-                res = "{\"status\": \"mysqlerr\"}";
+        if ("collect".equals(mod)) {
+            if (courseCService.Collect(cid, username, descript)) {
+                resultMap.put("status", "valid");
+            } else {
+                resultMap.put("status", "mysqlerr");
             }
         }
         //取消收藏
-        else{
-            if(courseCService.unCollect(cid, username)){
-                res = "{\"status\": \"valid\"}";
-            }
-            else{
-                res = "{\"status\": \"mysqlerr\"}";
+        else {
+            if (courseCService.unCollect(cid, username)) {
+                resultMap.put("status", "valid");
+            } else {
+                resultMap.put("status", "mysqlerr");
             }
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
 
     /**
      * 获取家教的今日课程收藏数量
+     *
      * @param request
      * @param response
      */
@@ -176,14 +172,15 @@ public class CourseCollectionApiImpl implements CourseCollectApi {
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String now = simpleDateFormat.format(new Date());
 
-        res = "{\"count\": \""+courseCService.getCollectCountNow(username, now)+"\"}";
+        resultMap.put("count", courseCService.getCollectCountNow(username, now));
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }

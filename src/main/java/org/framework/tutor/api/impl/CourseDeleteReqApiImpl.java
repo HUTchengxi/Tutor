@@ -73,14 +73,15 @@ public class CourseDeleteReqApiImpl implements CourseDeleteReqApi {
     public void setMyCourseDeleteReq(Integer cid, String descript, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         PrintWriter writer = response.getWriter();
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
 
         //判断课程是否为当前登录用户的
         CourseMain courseMain = courseMService.getCourseById(cid);
         if(courseMain == null || !courseMain.getUsername().equals(username)){
-            res = "{\"status\": \"invalid\"}";
+            resultMap.put("status", "invalid");
         }
         else{
             //判断该课程是否已经提交
@@ -91,10 +92,10 @@ public class CourseDeleteReqApiImpl implements CourseDeleteReqApi {
             else{
                 courseDeleteReqService.updateCourseDeleteReq(cid, descript);
             }
-            res = "{\"status\": \"valid\"}";
+            resultMap.put("status", "valid");
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }

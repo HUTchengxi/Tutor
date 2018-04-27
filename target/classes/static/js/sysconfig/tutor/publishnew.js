@@ -43,7 +43,7 @@ $(function() {
             url: "/coursemain_con/getallcoursetype",
             dataType: "json",
             success: function(data){
-                $.each(data, function(index, item){
+                $.each(data.list, function(index, item){
                    $(".courseCtype").append("<option value='"+item+"'>"+item+"</option>");
                 });
             }

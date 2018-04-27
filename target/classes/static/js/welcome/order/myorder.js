@@ -61,7 +61,7 @@ $(function() {
                         success: function(data){
                             var status = data.status;
                             if(status === "invalid"){
-                                window.location = "/forward_con/welcome";
+                                return ;
                             }
                             else if(status === "mysqlerr"){
                                 window.alert("后台服务器异常导致无法获取通知数据，请刷新页面重试");
@@ -138,7 +138,6 @@ $(function() {
                 success: function(data){
                     var stauts = data.status;
                     if(status == "invalid"){
-                        window.location = "/forward_con/welcome";
                     }
                     else if(status == "mysqlerr"){
                         window.alert("后台数据库异常导致无法进行回收站操作，请稍后再试");
@@ -175,7 +174,6 @@ $(function() {
                 var status = data.status;
                 $("#mytable tbody").empty();
                 if(status == "invalid"){
-                    window.location = "/forward_con/welcome";
                 }
                 else if(status == "valid"){
                     $("#mytable tbody").append("<tr class=\"none\">\n" +
@@ -184,7 +182,7 @@ $(function() {
                     return ;
                 }
                 else{
-                    $.each(data, function(index, item){
+                    $.each(data.list, function(index, item){
                         var cid = item.cid;
                         var id = item.id;
                         var name = item.name;

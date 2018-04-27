@@ -12,6 +12,7 @@
  */
 package org.framework.tutor.api.impl;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonParser;
 import org.framework.tutor.api.CourseTreplyApi;
 import org.framework.tutor.service.CourseTService;
@@ -22,6 +23,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author yinjimin
@@ -41,22 +44,24 @@ public class CourseTreplyApiImpl implements CourseTreplyApi {
      * @param response
      * @throws IOException
      */
+    @Override
     public void getTreply(Integer cid, Integer cmid, HttpServletResponse response) throws IOException {
 
         response.setCharacterEncoding("utf-8");
         PrintWriter writer = response.getWriter();
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
         org.framework.tutor.domain.CourseTreply courseTreply = courseTService.getCourseTreply(cid, cmid);
 
         if(courseTreply == null){
-            res = "{\"info\": \"null\"}";
+            resultMap.put("info", "null");
         }
         else {
-            res = "{\"info\": \"" + courseTreply.getInfo() + "\"}";
+            resultMap.put("info", courseTreply.getInfo());
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }

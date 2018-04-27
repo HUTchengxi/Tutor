@@ -19,7 +19,7 @@ $(function() {
                 var ptype = null;
                 var pversion = null;
                 var ptime = null;
-                $.each(data, function(index, item){
+                $.each(data.list, function(index, item){
                    ptype = item.ptype;
                    pversion = item.pversion;
                    ptime = item.ptime;
@@ -56,7 +56,7 @@ $(function() {
             success: function(data){
                 var currentVersion = "";
                 var tempvercls = "";
-                $.each(data, function(index, item){
+                $.each(data.list, function(index, item){
                     var ptype = item.ptype;
                     var pversion = item.pversion;
                     var ptime = item.ptime;

@@ -124,6 +124,14 @@ public class BbsCardController {
         bbsCardApi.getCardById(cardId, response);
     }
 
+    /**
+     *
+     * @Description 访问量加1
+     * @param [cardid, request, response]
+     * @return void
+     * @author yinjimin
+     * @date 2018/4/26
+     */
     @PostMapping("/addviscount")
     public void addViscount(@RequestParam Integer cardid, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -142,6 +150,7 @@ public class BbsCardController {
     @PostMapping("/getmycardinfo")
     public void getMyCardInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
+        response.setCharacterEncoding("utf-8");
         bbsCardApi.getMyCardInfo(request, response);
     }
 }

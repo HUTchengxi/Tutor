@@ -69,34 +69,33 @@ public class CourseCommandApiImpl implements CourseCommandApi {
 
         response.setCharacterEncoding("utf-8");
         PrintWriter writer = response.getWriter();
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(4);
+        List<Object> rowList = new ArrayList<>();
 
         List<CourseCommand> courseCommands = courseCMService.getCourseCommand(cid, startpos);
         int count = courseCommands.size();
         if (count == 0) {
-            res = "{\"count\": \"" + courseCommands.size() + "\"}";
+            resultMap.put("count", courseCommands.size());
         } else {
-            res = "{\"count\": \"" + courseCommands.size() + "\", ";
-            int i = 1;
+            resultMap.put("count", courseCommands.size());
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
             for (org.framework.tutor.domain.CourseCommand courseCommand : courseCommands) {
                 UserMain userMain = userMService.getByUser(courseCommand.getUsername());
-                res += "\"" + i + "\": ";
-                String temp = "{\"ctime\": \"" + simpleDateFormat.format(courseCommand.getCtime()) + "\", " +
-                        "\"info\": \"" + courseCommand.getInfo() + "\", " +
-                        "\"id\": \"" + courseCommand.getId() + "\", " +
-                        "\"repid\": \"" + courseCommand.getRepid() + "\", " +
-                        "\"uimgsrc\": \"" + userMain.getImgsrc() + "\", " +
-                        "\"score\": \"" + courseCommand.getScore() + "\", " +
-                        "\"username\": \"" + userMain.getNickname() + "\"}, ";
-                res += temp;
-                i++;
+                Map<String, Object> rowMap = new HashMap<>(16);
+                rowMap.put("ctime", simpleDateFormat.format(courseCommand.getCtime()));
+                rowMap.put("info", courseCommand.getInfo());
+                rowMap.put("id", courseCommand.getId());
+                rowMap.put("repid", courseCommand.getRepid());
+                rowMap.put("uimgsrc", userMain.getImgsrc());
+                rowMap.put("score", courseCommand.getScore());
+                rowMap.put("username", userMain.getNickname());
+                rowList.add(rowMap);
             }
-            res = res.substring(0, res.length() - 2);
-            res += "}";
+            resultMap.put("list", rowList);
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -113,34 +112,33 @@ public class CourseCommandApiImpl implements CourseCommandApi {
 
         response.setCharacterEncoding("utf-8");
         PrintWriter writer = response.getWriter();
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(4);
+        List<Object> rowList = new ArrayList<>();
 
         List<org.framework.tutor.domain.CourseCommand> courseCommands = courseCMService.getCourseCommandGod(cid);
         int count = courseCommands.size();
         if (count == 0) {
-            res = "{\"count\": \"" + courseCommands.size() + "\"}";
+            resultMap.put("count", courseCommands.size());
         } else {
-            res = "{\"count\": \"" + courseCommands.size() + "\", ";
-            int i = 1;
+            resultMap.put("count", courseCommands.size());
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
             for (org.framework.tutor.domain.CourseCommand courseCommand : courseCommands) {
                 UserMain userMain = userMService.getByUser(courseCommand.getUsername());
-                res += "\"" + i + "\": ";
-                String temp = "{\"ctime\": \"" + simpleDateFormat.format(courseCommand.getCtime()) + "\", " +
-                        "\"info\": \"" + courseCommand.getInfo() + "\", " +
-                        "\"id\": \"" + courseCommand.getId() + "\", " +
-                        "\"repid\": \"" + courseCommand.getRepid() + "\", " +
-                        "\"uimgsrc\": \"" + userMain.getImgsrc() + "\", " +
-                        "\"score\": \"" + courseCommand.getScore() + "\", " +
-                        "\"username\": \"" + userMain.getNickname() + "\"}, ";
-                res += temp;
-                i++;
+                Map<String, Object> rowMap = new HashMap<>(16);
+                rowMap.put("ctime", simpleDateFormat.format(courseCommand.getCtime()));
+                rowMap.put("info", courseCommand.getInfo());
+                rowMap.put("id", courseCommand.getId());
+                rowMap.put("repid", courseCommand.getRepid());
+                rowMap.put("uimgsrc", userMain.getImgsrc());
+                rowMap.put("username", userMain.getNickname());
+                rowMap.put("score", courseCommand.getScore());
+                rowList.add(rowMap);
             }
-            res = res.substring(0, res.length() - 2);
-            res += "}";
+            resultMap.put("list", rowList);
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -160,46 +158,40 @@ public class CourseCommandApiImpl implements CourseCommandApi {
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(4);
+        List<Object> rowList = new ArrayList<>();
 
-        if (username == null) {
-            res = "{\"status\": \"invalid\"}";
+        //判断当前用户是否购买了该课程  cid  username start=1
+        Integer state = 1;
+        if (courseOService.getByUserAndState(cid, username, state) == null) {
+            resultMap.put("status", "nobuy");
         } else {
-
-            //判断当前用户是否购买了该课程  cid  username start=1
-            Integer state = 1;
-            if (courseOService.getByUserAndState(cid, username, state) == null) {
-                res = "{\"status\": \"nobuy\"}";
+            List<org.framework.tutor.domain.CourseCommand> courseCommands = courseCMService.getMyCommand(username, cid);
+            int count = courseCommands.size();
+            if (count == 0) {
+                resultMap.put("count", courseCommands.size());
             } else {
-
-                List<org.framework.tutor.domain.CourseCommand> courseCommands = courseCMService.getMyCommand(username, cid);
-                int count = courseCommands.size();
-                if (count == 0) {
-                    res = "{\"count\": \"" + courseCommands.size() + "\"}";
-                } else {
-                    res = "{\"count\": \"" + courseCommands.size() + "\", ";
-                    int i = 1;
-                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-                    for (org.framework.tutor.domain.CourseCommand courseCommand : courseCommands) {
-                        UserMain userMain = userMService.getByUser(courseCommand.getUsername());
-                        res += "\"" + i + "\": ";
-                        String temp = "{\"ctime\": \"" + simpleDateFormat.format(courseCommand.getCtime()) + "\", " +
-                                "\"info\": \"" + courseCommand.getInfo() + "\", " +
-                                "\"id\": \"" + courseCommand.getId() + "\", " +
-                                "\"repid\": \"" + courseCommand.getRepid() + "\", " +
-                                "\"uimgsrc\": \"" + userMain.getImgsrc() + "\", " +
-                                "\"score\": \"" + courseCommand.getScore() + "\", " +
-                                "\"username\": \"" + userMain.getNickname() + "\"}, ";
-                        res += temp;
-                        i++;
-                    }
-                    res = res.substring(0, res.length() - 2);
-                    res += "}";
+                resultMap.put("count", courseCommands.size());
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+                for (org.framework.tutor.domain.CourseCommand courseCommand : courseCommands) {
+                    UserMain userMain = userMService.getByUser(courseCommand.getUsername());
+                    Map<String, Object> rowMap = new HashMap<>(16);
+                    rowMap.put("ctime", simpleDateFormat.format(courseCommand.getCtime()));
+                    rowMap.put("info", courseCommand.getInfo());
+                    rowMap.put("id", courseCommand.getId());
+                    rowMap.put("repid", courseCommand.getRepid());
+                    rowMap.put("uimgsrc", userMain.getImgsrc());
+                    rowMap.put("score", courseCommand.getScore());
+                    rowMap.put("username", userMain.getNickname());
+                    rowList.add(rowMap);
                 }
+                resultMap.put("list", rowList);
             }
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
+        writer.flush();
         writer.close();
     }
 
@@ -219,20 +211,21 @@ public class CourseCommandApiImpl implements CourseCommandApi {
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
         if (username == null) {
-            res = "{\"status\": \"invalid\"}";
+            resultMap.put("status", "invalid");
         } else {
             Integer row = courseCMService.subMyCommand(cid, command, score, username);
             if (row == 1) {
-                res = "{\"status\": \"valid\"}";
+                resultMap.put("status", "valid");
             } else {
-                res = "{\"status\": \"mysqlerr\"}";
+                resultMap.put("status","mysqlerr");
             }
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -250,14 +243,15 @@ public class CourseCommandApiImpl implements CourseCommandApi {
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String now = simpleDateFormat.format(new Date());
 
-        res = "{\"count\": \"" + courseCMService.getCommandCountNow(username, now) + "\"}";
+        resultMap.put("count", courseCMService.getCommandCountNow(username, now));
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -275,14 +269,14 @@ public class CourseCommandApiImpl implements CourseCommandApi {
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String now = simpleDateFormat.format(new Date());
+        resultMap.put("count", courseCMService.getScoreAvgNow(username, now));
 
-        res = "{\"count\": \"" + courseCMService.getScoreAvgNow(username, now) + "\"}";
-
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -302,30 +296,29 @@ public class CourseCommandApiImpl implements CourseCommandApi {
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
+        List<Object> rowList = new ArrayList<>();
 
         List<org.framework.tutor.domain.CourseCommand> courseCommands = courseCMService.loadMyCommandInfo(username);
         if (courseCommands.size() == 0) {
-            res = "{\"count\": \"0\"}";
+            resultMap.put("count", 0);
         } else {
-            res = "{";
-            int i = 1;
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
             for (org.framework.tutor.domain.CourseCommand courseCommand : courseCommands) {
                 CourseMain courseMain = courseMService.getCourseById(courseCommand.getCid());
-                res += "\"" + i + "\": ";
-                String temp = "{\"ctime\": \"" + simpleDateFormat.format(courseCommand.getCtime()) + "\", " +
-                        "\"info\": \"" + courseCommand.getInfo() + "\", " +
-                        "\"cid\": \"" + courseCommand.getCid() + "\", " +
-                        "\"imgsrc\": \"" + courseMain.getImgsrc() + "\", " +
-                        "\"score\": \"" + courseCommand.getScore() + "\"}, ";
-                res += temp;
-                i++;
+                Map<String, Object> rowMap = new HashMap<>(8);
+                rowMap.put("ctime", simpleDateFormat.format(courseCommand.getCtime()));
+                rowMap.put("info", courseCommand.getInfo());
+                rowMap.put("cid", courseCommand.getCid());
+                rowMap.put("imgsrc", courseMain.getImgsrc());
+                rowMap.put("score", courseCommand.getScore());
+                rowList.add(rowMap);
             }
-            res = res.substring(0, res.length() - 2);
-            res += "}";
+            resultMap.put("list", rowList);
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -464,10 +457,9 @@ public class CourseCommandApiImpl implements CourseCommandApi {
     }
 
     /**
-     *
-     * @Description 指定评论为神评
      * @param [id, request, response]
      * @return void
+     * @Description 指定评论为神评
      * @author yinjimin
      * @date 2018/4/18
      */
@@ -481,15 +473,15 @@ public class CourseCommandApiImpl implements CourseCommandApi {
         Map<String, Object> resultMap = new HashMap<>(1);
         //获取评论对应的课程所属username
         org.framework.tutor.domain.CourseCommand courseCommand = courseCMService.getCommandById(id);
-        if(courseCommand == null || !courseCommand.getUsername().equals(username)){
+        if (courseCommand == null || !courseCommand.getUsername().equals(username)) {
             resultMap.put("status", "invalid");
-        } else{
+        } else {
 
             //判断当前课程神评是否已经为三个了
             Integer count = courseCMService.getGodCountById(courseCommand.getCid());
-            if(count >= 3){
+            if (count >= 3) {
                 resultMap.put("status", "full");
-            }else {
+            } else {
                 //设置神评
                 courseCMService.setCommandGodstate(id);
                 resultMap.put("status", "valid");

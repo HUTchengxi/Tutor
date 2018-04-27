@@ -103,8 +103,8 @@ public interface UserMSMapper {
      * @return
      */
     @Insert("insert into user_message_delete(mid, username, status) (select id as mid, #{username} as username, 1 as status " +
-            "from user_message um where um.username=#{username} || um.identity=0) and stime > " +
-            "(select regtime from user_main u where u.username=#{username})")
+            "from user_message um where (um.username=#{username} || um.identity=0) and stime > " +
+            "(select regtime from user_main u where u.username=#{username}))")
     Integer setAllStatus(@Param("username") String username);
 
     @Select("select * from user_message where identity=#{identity} and title like CONCAT('%',#{title},'%') and stime like CONCAT('%',#{stime},'%')" +

@@ -12,6 +12,7 @@
  */
 package org.framework.tutor.api.impl;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonParser;
 import org.framework.tutor.api.BbsCardAnswerStarApi;
 import org.framework.tutor.domain.BbsCardAnswerStar;
@@ -28,6 +29,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author yinjimin
@@ -44,76 +47,69 @@ public class BbsCardAnswerStarApiImpl implements BbsCardAnswerStarApi {
     private BbsCardAnswerService bbsCardAnswerService;
 
     /**
-     *
-     * @Description 判断当前用户是否star指定回答
      * @param [cardId, request, response]
      * @return void
+     * @Description 判断当前用户是否star指定回答
      * @author yinjimin
      * @date 2018/4/10
      */
+    @Override
     public void checkUserStar(Integer aid, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
-        if(username == null){
-            res = "{\"status\": \"nologin\"}";
-        }
-        else{
-            BbsCardAnswerStar bbsCardAnswerStar = bbsCardAnswerStarService.checkUserStar(aid, username);
-            if(bbsCardAnswerStar == null){
-                res = "{\"status\": \"none\"}";
-            }
-            else{
-                Integer score = bbsCardAnswerStar.getScore();
-                if(score == 1){
-                    res = "{\"status\": \"star\"}";
-                }
-                else{
-                    res = "{\"status\": \"unstar\"}";
-                }
+        BbsCardAnswerStar bbsCardAnswerStar = bbsCardAnswerStarService.checkUserStar(aid, username);
+        if (bbsCardAnswerStar == null) {
+            resultMap.put("status", "none");
+        } else {
+            Integer score = bbsCardAnswerStar.getScore();
+            if (score == 1) {
+                resultMap.put("status", "star");
+            } else {
+                resultMap.put("status", "unstar");
             }
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
 
 
     /**
-     *
-     * @Description 用户star指定回答
      * @param [aid, score, request, response]
      * @return void
+     * @Description 用户star指定回答
      * @author yinjimin
      * @date 2018/4/10
      */
+    @Override
     public void addUserStar(Integer aid, Integer score, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
         //判断是否已经star过
-        if(bbsCardAnswerStarService.checkUserStar(aid, username) != null){
-            res = "{\"status\": \"invalid\"}";
-        }
-        else{
+        if (bbsCardAnswerStarService.checkUserStar(aid, username) != null) {
+            resultMap.put("status", "invalid");
+        } else {
             bbsCardAnswerStarService.addUserStar(aid, username, score);
-            if(score == 1){
+            if (score == 1) {
                 bbsCardAnswerService.addGcount(aid);
-            }
-            else{
+            } else {
                 bbsCardAnswerService.addBcount(aid);
             }
-            res = "{\"status\": \"valid\"}";
+            resultMap.put("status", "valid");
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }

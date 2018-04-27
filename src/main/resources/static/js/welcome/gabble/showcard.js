@@ -99,7 +99,7 @@ $(function () {
             success: function (data) {
                 var img = "";
                 $("#pubModal .modal-body select").empty();
-                $.each(data, function (index, item) {
+                $.each(data.list, function (index, item) {
                     var title = item.title;
                     var imgsrc = item.imgsrc;
                     if(img == ""){
@@ -169,7 +169,6 @@ $(function () {
                         success: function (data) {
                             var status = data.status;
                             if (status === "invalid") {
-                                window.location = "/forward_con/welcome";
                             }
                             else if (status === "mysqlerr") {
                                 window.alert("后台服务器异常导致无法获取通知数据，请刷新页面重试");
@@ -302,7 +301,7 @@ $(function () {
                     $(".mineblog").append("<p style='color: grey' class='text-center'>没有找到对应的结果</p>");
                     return ;
                 }
-                $.each(data, function(index, item){
+                $.each(data.list, function(index, item){
                     var title = item.title;
                     var id = item.id;
                     var bimgsrc = item.bimgsrc;
@@ -347,7 +346,7 @@ $(function () {
                     $(".hotblog").append("<p style='color: grey' class='text-center'>没有找到对应的结果</p>");
                     return ;
                 }
-                $.each(data, function(index, item){
+                $.each(data.list, function(index, item){
                     var title = item.title;
                     var id = item.id;
                     var bimgsrc = item.bimgsrc;

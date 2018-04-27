@@ -12,6 +12,7 @@
  */
 package org.framework.tutor.api.impl;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonParser;
 import org.framework.tutor.api.CourseChapterApi;
 import org.framework.tutor.domain.CourseChapter;
@@ -29,7 +30,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author yinjimin
@@ -55,29 +59,27 @@ public class CourseChapterApiImpl implements CourseChapterApi {
 
         response.setCharacterEncoding("utf-8");
         PrintWriter writer = response.getWriter();
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
+        List<Object> rowList = new ArrayList<>();
 
         List<CourseChapter> courseChapters = courseChService.getCourseChapter(cid);
         if(courseChapters.size() == 0){
-            res = "{\"count\": \"0\"}";
+            resultMap.put("count", 0);
         }
         else{
-            res = "{";
-            int i = 1;
             for (org.framework.tutor.domain.CourseChapter courseChapter: courseChapters) {
-                res += "\""+i+"\": ";
-                String temp = "{\"title\": \""+courseChapter.getTitle()+"\", " +
-                        "\"id\": \""+courseChapter.getId()+"\", " +
-                        "\"ord\": \""+courseChapter.getOrd()+"\", " +
-                        "\"descript\": \""+courseChapter.getDescript()+"\"}, ";
-                res += temp;
-                i++;
+                Map<String, Object> rowMap = new HashMap<>(8);
+                rowMap.put("title", courseChapter.getTitle());
+                rowMap.put("id", courseChapter.getId());
+                rowMap.put("ord", courseChapter.getOrd());
+                rowMap.put("descript", courseChapter.getDescript());
+                rowList.add(rowMap);
             }
-            res = res.substring(0, res.length()-2);
-            res += "}";
+            resultMap.put("list", rowList);
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -94,7 +96,8 @@ public class CourseChapterApiImpl implements CourseChapterApi {
     public void deleteChapter(Integer id, HttpServletResponse response, HttpServletRequest request) throws IOException {
 
         PrintWriter writer = response.getWriter();
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
         HttpSession session  = request.getSession();
         String username = (String) session.getAttribute("username");
@@ -102,21 +105,21 @@ public class CourseChapterApiImpl implements CourseChapterApi {
         //判断待删除的目录是否为当前登录用户的目录
         org.framework.tutor.domain.CourseChapter courseChapter = courseChService.getById(id);
         if(courseChapter == null){
-            res = "{\"status\": \"invalid\"}";
+            resultMap.put("status", "invalid");
         }
         else {
             CourseMain courseMain = courseMService.getCourseById(courseChapter.getCid());
             String realUser = courseMain.getUsername();
             if (!realUser.equals(username)) {
-                res = "{\"status\": \"invalid\"}";
+                resultMap.put("status", "invalid");
             }
             else{
                 courseChService.deleteChapter(id);
-                res = "{\"status\": \"valid\"}";
+                resultMap.put("status", "valid");
             }
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -133,7 +136,8 @@ public class CourseChapterApiImpl implements CourseChapterApi {
     public void modChapter(Integer id, Integer cid, String title, String descript, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         PrintWriter writer = response.getWriter();
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
@@ -141,13 +145,13 @@ public class CourseChapterApiImpl implements CourseChapterApi {
         //判断更新的目录是否为当前登录用户的目录
         org.framework.tutor.domain.CourseChapter courseChapter = courseChService.getById(cid);
         if(courseChapter == null){
-            res = "{\"status\": \"invalid\"}";
+            resultMap.put("status", "invalid");
         }
         else {
             CourseMain courseMain = courseMService.getCourseById(courseChapter.getCid());
             String realUser = courseMain.getUsername();
             if (!realUser.equals(username)) {
-                res = "{\"status\": \"invalid\"}";
+                resultMap.put("status", "invalid");
             }
             else{
                 //新增
@@ -160,11 +164,11 @@ public class CourseChapterApiImpl implements CourseChapterApi {
                 else{
                     courseChService.modChapter(id, title, descript);
                 }
-                res = "{\"status\": \"valid\"}";
+                resultMap.put("status", "valid");
             }
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }

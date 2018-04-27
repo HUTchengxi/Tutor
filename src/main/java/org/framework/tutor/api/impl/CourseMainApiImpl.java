@@ -19,6 +19,7 @@ import org.framework.tutor.domain.CourseMain;
 import org.framework.tutor.domain.CourseSummary;
 import org.framework.tutor.domain.UserMain;
 import org.framework.tutor.service.*;
+import org.omg.CORBA.MARSHAL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -80,14 +81,15 @@ public class CourseMainApiImpl implements CourseMainApi {
      * @param response
      * @throws IOException
      */
+    @Override
     public void getCourseList(Integer stype, String ctype, String sort, Integer startpos, Integer status, String keyword,
                               HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
-
         PrintWriter writer = response.getWriter();
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(4);
+        List<Object> rowList = new ArrayList<>();
         List<CourseMain> courseMains = null;
         //默认：不限进行排序
         if (ctype.equals("all")) {
@@ -194,28 +196,25 @@ public class CourseMainApiImpl implements CourseMainApi {
             }
         }
         if (courseMains.size() == 0) {
-            res = "{\"status\": \"valid\", \"len\": \"0\"}";
+            resultMap.put("status", "valid");
+            resultMap.put("len", 0);
         } else {
-            res = "{";
-            int i = 1;
             for (org.framework.tutor.domain.CourseMain courseMain : courseMains) {
                 UserMain userMain = userMService.getByUser(courseMain.getUsername());
-                res += "\"" + i + "\": ";
-                String temp = "{\"imgsrc\": \"" + courseMain.getImgsrc() + "\", " +
-                        "\"id\": \"" + courseMain.getId() + "\", " +
-                        "\"name\": \"" + courseMain.getName() + "\", " +
-                        "\"jcount\": \"" + courseMain.getJcount() + "\", " +
-                        "\"nickname\": \"" + userMain.getNickname() + "\", " +
-                        "\"price\": \"" + courseMain.getPrice() + "\", " +
-                        "\"uimgsrc\": \"" + userMain.getImgsrc() + "\", " +
-                        "\"descript\": \"" + courseMain.getDescript() + "\"}, ";
-                res += temp;
-                i++;
+                Map<String, Object> rowMap = new HashMap<>(16);
+                rowMap.put("imgsrc", courseMain.getImgsrc());
+                rowMap.put("id", courseMain.getId());
+                rowMap.put("name", courseMain.getName());
+                rowMap.put("jcount", courseMain.getJcount());
+                rowMap.put("price", courseMain.getPrice());
+                rowMap.put("nickname", userMain.getNickname());
+                rowMap.put("uimgsrc", userMain.getImgsrc());
+                rowMap.put("descript", courseMain.getDescript());
+                rowList.add(rowMap);
             }
-            res = res.substring(0, res.length() - 2);
-            res += "}";
+            resultMap.put("list", rowList);
         }
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -227,28 +226,29 @@ public class CourseMainApiImpl implements CourseMainApi {
      * @author yinjimin
      * @date 2018/4/15
      */
+    @Override
     public void getAllCourseType(HttpServletResponse response) throws IOException {
 
         response.setCharacterEncoding("utf-8");
         PrintWriter writer = response.getWriter();
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(4);
+        List<Object> rowList = new ArrayList<>();
 
         List<org.framework.tutor.domain.CourseMain> courseMains = courseMService.getAllCourseType();
         if (courseMains.size() == 0) {
-            res = "{\"status\": \"valid\", \"len\": \"0\"}";
+            resultMap.put("status", "valid");
+            resultMap.put("len", 0);
         } else {
-            res = "{";
-            int i = 0;
             for (org.framework.tutor.domain.CourseMain courseMain : courseMains) {
-                String temp = "\"ctype" + i + "\": \"" + courseMain.getCtype() + "\", ";
-                res += temp;
-                i++;
+                Map<String, Object> rowMap = new HashMap<>(2);
+                rowMap.put("ctype", courseMain.getCtype());
+                rowList.add(rowMap);
             }
-            res = res.substring(0, res.length() - 2);
-            res += "}";
+            resultMap.put("list", rowList);
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -261,28 +261,29 @@ public class CourseMainApiImpl implements CourseMainApi {
      * @param response
      * @throws IOException
      */
+    @Override
     public void getCourseType(String stype, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         response.setCharacterEncoding("utf-8");
         PrintWriter writer = response.getWriter();
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(4);
+        List<Object> rowList = new ArrayList<>();
 
         List<org.framework.tutor.domain.CourseMain> courseMains = courseMService.getCourseType(stype);
         if (courseMains.size() == 0) {
-            res = "{\"status\": \"valid\", \"len\": \"0\"}";
+            resultMap.put("status", "valid");
+            resultMap.put("len", 0);
         } else {
-            res = "{";
-            int i = 0;
             for (org.framework.tutor.domain.CourseMain courseMain : courseMains) {
-                String temp = "\"ctype" + i + "\": \"" + courseMain.getCtype() + "\", ";
-                res += temp;
-                i++;
+                Map<String, Object> rowMap = new HashMap<>(2);
+                rowMap.put("ctype", courseMain.getCtype());
+                rowList.add(rowMap);
             }
-            res = res.substring(0, res.length() - 2);
-            res += "}";
+            resultMap.put("list", rowList);
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -295,39 +296,39 @@ public class CourseMainApiImpl implements CourseMainApi {
      * @param response
      * @throws IOException
      */
+    @Override
     public void courseSearch(String keyword, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
 
         PrintWriter writer = response.getWriter();
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(4);
+        List<Object> rowList = new ArrayList<>();
 
         List<org.framework.tutor.domain.CourseMain> courseMains = courseMService.courseSearch(keyword);
         if (courseMains.size() == 0) {
-            res = "{\"status\": \"valid\", \"len\": \"0\"}";
+            resultMap.put("status", "valid");
+            resultMap.put("len", 0);
         } else {
-            res = "{";
-            int i = 1;
             for (org.framework.tutor.domain.CourseMain courseMain : courseMains) {
                 UserMain userMain = userMService.getByUser(courseMain.getUsername());
-                res += "\"" + i + "\": ";
-                String temp = "{\"imgsrc\": \"" + courseMain.getImgsrc() + "\", " +
-                        "\"id\": \"" + courseMain.getId() + "\", " +
-                        "\"name\": \"" + courseMain.getName() + "\", " +
-                        "\"jcount\": \"" + courseMain.getJcount() + "\", " +
-                        "\"nickname\": \"" + userMain.getNickname() + "\", " +
-                        "\"price\": \"" + courseMain.getPrice() + "\", " +
-                        "\"uimgsrc\": \"" + userMain.getImgsrc() + "\", " +
-                        "\"descript\": \"" + courseMain.getDescript() + "\"}, ";
-                res += temp;
-                i++;
+                Map<String, Object> rowMap = new HashMap<>(16);
+                rowMap.put("imgsrc", courseMain.getImgsrc());
+                rowMap.put("id", courseMain.getId());
+                rowMap.put("name", courseMain.getName());
+                rowMap.put("jcount", courseMain.getJcount());
+                rowMap.put("nickname", userMain.getNickname());
+                rowMap.put("price", courseMain.getPrice());
+                rowMap.put("uimgsrc", userMain.getImgsrc());
+                rowMap.put("descript", courseMain.getDescript());
+                rowList.add(rowMap);
             }
-            res = res.substring(0, res.length() - 2);
-            res += "}";
+            resultMap.put("list", rowList);
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -339,32 +340,33 @@ public class CourseMainApiImpl implements CourseMainApi {
      * @param response
      * @throws IOException
      */
+    @Override
     public void getCourseById(Integer id, HttpServletResponse response) throws IOException {
 
         response.setCharacterEncoding("utf-8");
         PrintWriter writer = response.getWriter();
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(16);
 
         org.framework.tutor.domain.CourseMain courseMain = courseMService.getCourseById(id);
         if (courseMain == null) {
-            res = "{\"status\": \"invalid\"}";
+            resultMap.put("status", "invalid");
         } else {
             UserMain userMain = userMService.getByUser(courseMain.getUsername());
-
-            res = "{\"imgsrc\": \"" + courseMain.getImgsrc() + "\", " +
-                    "\"id\": \"" + courseMain.getId() + "\", " +
-                    "\"stype\": \"" + courseMain.getStype() + "\", " +
-                    "\"ctype\": \"" + courseMain.getCtype() + "\", " +
-                    "\"name\": \"" + courseMain.getName() + "\", " +
-                    "\"jcount\": \"" + courseMain.getJcount() + "\", " +
-                    "\"nickname\": \"" + userMain.getNickname() + "\", " +
-                    "\"info\": \"" + userMain.getInfo() + "\", " +
-                    "\"price\": \"" + courseMain.getPrice() + "\", " +
-                    "\"uimgsrc\": \"" + userMain.getImgsrc() + "\", " +
-                    "\"total\": \"" + courseMain.getTotal() + "\", " +
-                    "\"descript\": \"" + courseMain.getDescript() + "\"}";
+            resultMap.put("imgsrc", courseMain.getImgsrc());
+            resultMap.put("id", courseMain.getId());
+            resultMap.put("stype", courseMain.getStype());
+            resultMap.put("ctype", courseMain.getCtype());
+            resultMap.put("name", courseMain.getName());
+            resultMap.put("jcount", courseMain.getJcount());
+            resultMap.put("nickname", userMain.getNickname());
+            resultMap.put("info", userMain.getInfo());
+            resultMap.put("price", courseMain.getPrice());
+            resultMap.put("uimgsrc", userMain.getImgsrc());
+            resultMap.put("total", courseMain.getTotal());
+            resultMap.put("descript", courseMain.getDescript());
         }
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -380,11 +382,13 @@ public class CourseMainApiImpl implements CourseMainApi {
      * @param response
      * @throws IOException
      */
+    @Override
     public void getCourseCount(Integer stype, String ctype, Integer status, String keyword, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         request.setCharacterEncoding("utf-8");
         PrintWriter writer = response.getWriter();
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
         Integer total = 0;
         //默认，不限课程类别进行排序
@@ -420,9 +424,8 @@ public class CourseMainApiImpl implements CourseMainApi {
             }
         }
 
-        res = "{\"total\": \"" + total + "\"}";
-
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        resultMap.put("total", total);
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -434,45 +437,42 @@ public class CourseMainApiImpl implements CourseMainApi {
      * @author yinjimin
      * @date 2018/4/14
      */
+    @Override
     public void getMyPublish(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         response.setCharacterEncoding("utf-8");
         PrintWriter writer = response.getWriter();
-        String res = null;
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
+        List<Object> rowList = new ArrayList<>();
 
         List<org.framework.tutor.domain.CourseMain> courseMains = courseMService.getMyPublish(username);
         if (courseMains.size() == 0) {
-            res = "{\"status\": \"0\"}";
+            resultMap.put("status", 0);
         } else {
-            res = "{";
-            int i = 1;
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy年MM月");
+            SimpleDateFormat simpleDateFormat2 = new SimpleDateFormat("yyyy-MM-dd");
             for (org.framework.tutor.domain.CourseMain courseMain : courseMains) {
                 UserMain userMain = userMService.getByUser(courseMain.getUsername());
                 Integer score = courseCMService.getMyPublishAvg(courseMain.getId());
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy年MM月");
-                SimpleDateFormat simpleDateFormat2 = new SimpleDateFormat("yyyy-MM-dd");
+                Map<String, Object> rowMap = new HashMap<>(16);
                 Integer buycount = courseOService.getMyCourseOrderCount(courseMain.getId()).size();
-                res += "\"" + i + "\": ";
-                String temp = "{\"imgsrc\": \"" + courseMain.getImgsrc() + "\", " +
-                        "\"id\": \"" + courseMain.getId() + "\", " +
-                        "\"name\": \"" + courseMain.getName() + "\", " +
-                        "\"viscount\": \"" + courseMain.getHcount() + "\", " +
-                        "\"ptime\": \"" + simpleDateFormat2.format(courseMain.getPtime()) + "\", " +
-                        "\"regtime\": \"" + simpleDateFormat.format(courseMain.getPtime()) + "\", " +
-                        "\"comcount\": \"" + courseMain.getCcount() + "\", " +
-                        "\"buycount\": \"" + courseMain.getCcount() + "\", " +
-                        "\"score\": \"" + score + "\"}, ";
-                res += temp;
-                i++;
+                rowMap.put("imgsrc", courseMain.getImgsrc());
+                rowMap.put("id", courseMain.getId());
+                rowMap.put("name", courseMain.getName());
+                rowMap.put("viscount", courseMain.getHcount());
+                rowMap.put("ptime", simpleDateFormat2.format(courseMain.getPtime()));
+                rowMap.put("regtime", simpleDateFormat.format(courseMain.getPtime()));
+                rowMap.put("comcount", courseMain.getCcount());
+                rowMap.put("buycount", courseMain.getCcount());
+                rowMap.put("score", score);
+                rowList.add(rowMap);
             }
-            res = res.substring(0, res.length() - 2);
-            res += "}";
+            resultMap.put("list", rowList);
         }
-
-
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -485,6 +485,7 @@ public class CourseMainApiImpl implements CourseMainApi {
      * @author yinjimin
      * @date 2018/4/15
      */
+    @Override
     @Transactional
     public void publishNewCourse(String name, Integer stype, String ctype, String descript,
                                  MultipartFile imgsrc, Integer total, Integer jcount,
@@ -494,19 +495,16 @@ public class CourseMainApiImpl implements CourseMainApi {
                                  HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         PrintWriter writer = response.getWriter();
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Integer identity = (Integer) session.getAttribute("identity");
-        //判断当前用户是否为家教身份
-        if (identity != 1) {
-            res = "{\"status\": \"invalid\"}";
-        } else {
             //判断课程名称是否已存在
             org.framework.tutor.domain.CourseMain nameCourseMain = courseMService.checkIsexistName(name);
             if (nameCourseMain != null) {
-                res = "{\"status\": \"courseexist\"}";
+                resultMap.put("status", "courseexist");
             } else {
                 //上传图片
                 String webPath = session.getServletContext().getRealPath("/");
@@ -516,50 +514,46 @@ public class CourseMainApiImpl implements CourseMainApi {
                 System.out.println(srcPath);
                 File file = new File(srcPath + File.separator + "/resources/static/images/user/course/" + imgsrc.getOriginalFilename());
                 if (file.exists()) {
-                    res = "{\"status\": \"filexist\"}";
-                    writer.print(new JsonParser().parse(res).getAsJsonObject());
-                    writer.flush();
-                    writer.close();
-                    throw new RuntimeException();
-                }
-                FileOutputStream fos = new FileOutputStream(file);
-                fos.write(imgsrc.getBytes());
-                fos.flush();
-                fos.close();
-                res = "{\"status\": \"valid\"}";
-                //保存课程基本信息
-                courseMService.publishCourse(username, name, "/images/user/course/" + imgsrc.getOriginalFilename(), stype, ctype, jcount, descript, price, total);
-                org.framework.tutor.domain.CourseMain courseMain = courseMService.getByName(username, name, stype, ctype);
-                //保存课程概述信息
-                courseSummaryService.addCourseSummary(username, courseMain.getId(), sumTitle1, sumDescript1);
-                courseSummaryService.addCourseSummary(username, courseMain.getId(), sumTitle2, sumDescript2);
-                courseSummaryService.addCourseSummary(username, courseMain.getId(), sumTitle3, sumDescript3);
-                //保存目录信息
-                String eq = "c03c1650fa940cd2f5de959bfbd6d8a6";
-                String[] titleArr = chapTitle.split(eq);
-                String[] descriptArr = chapDescript.split(eq);
-                int i = 1;
-                for (String title : titleArr) {
-                    courseChService.addChapter(courseMain.getId(), i, title, descriptArr[--i]);
-                    i += 2;
+                    resultMap.put("status", "fileexist");
+                }else {
+                    FileOutputStream fos = new FileOutputStream(file);
+                    fos.write(imgsrc.getBytes());
+                    fos.flush();
+                    fos.close();
+                    //保存课程基本信息
+                    courseMService.publishCourse(username, name, "/images/user/course/" + imgsrc.getOriginalFilename(), stype, ctype, jcount, descript, price, total);
+                    org.framework.tutor.domain.CourseMain courseMain = courseMService.getByName(username, name, stype, ctype);
+                    //保存课程概述信息
+                    courseSummaryService.addCourseSummary(username, courseMain.getId(), sumTitle1, sumDescript1);
+                    courseSummaryService.addCourseSummary(username, courseMain.getId(), sumTitle2, sumDescript2);
+                    courseSummaryService.addCourseSummary(username, courseMain.getId(), sumTitle3, sumDescript3);
+                    //保存目录信息
+                    String eq = "c03c1650fa940cd2f5de959bfbd6d8a6";
+                    String[] titleArr = chapTitle.split(eq);
+                    String[] descriptArr = chapDescript.split(eq);
+                    int i = 1;
+                    for (String title : titleArr) {
+                        courseChService.addChapter(courseMain.getId(), i, title, descriptArr[--i]);
+                        i += 2;
+                    }
+                    resultMap.put("status", "valid");
                 }
             }
-        }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
 
 
     /**
-     *
-     * @Description 获取课程概述
      * @param
      * @return java.lang.String
+     * @Description 获取课程概述
      * @author yinjimin
      * @date 2018/4/25
      */
+    @Override
     public String getCourseSummary(Integer cid) {
 
         Gson gson = new Gson();

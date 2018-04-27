@@ -12,6 +12,7 @@
  */
 package org.framework.tutor.api.impl;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonParser;
 import org.framework.tutor.api.UserLogApi;
 import org.framework.tutor.domain.UserLog;
@@ -26,7 +27,10 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author yinjimin
@@ -41,6 +45,7 @@ public class UserLogApiImpl implements UserLogApi {
 
     /**
      * 保存用户登录记录
+     *
      * @param logcity
      * @param ip
      * @param logsystem
@@ -56,28 +61,25 @@ public class UserLogApiImpl implements UserLogApi {
 
         HttpSession session = request.getSession();
         PrintWriter writer = response.getWriter();
-        String res = null;
         String username = (String) session.getAttribute("username");
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
+        List<Object> rowList = new ArrayList<>();
 
-        if(username == null){
-            res = "{\"status\": \"invalid\", \"url\": \"/forward_con/welcome\"}";
-        }
-        else{
-            if(userLService.saveUserlog(username, logcity, ip, logsystem)){
-                res = "{\"status\": \"valid\"}";
-            }
-            else{
-                res = "{\"status\": \"mysqlerr\"}";
-            }
+        if (userLService.saveUserlog(username, logcity, ip, logsystem)) {
+            resultMap.put("status", "valid");
+        } else {
+            resultMap.put("status", "mysqlerr");
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
 
     /**
      * 获取用户的登录记录
+     *
      * @param request
      * @param response
      */
@@ -90,36 +92,29 @@ public class UserLogApiImpl implements UserLogApi {
         HttpSession session = request.getSession();
         PrintWriter writer = response.getWriter();
         String username = (String) session.getAttribute("username");
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(4);
+        List<Object> rowList = new ArrayList<>();
 
-        if(username == null){
-            res = "{\"status\": \"invalid\", \"url\": \"forward_con/welcome\"}";
-        }
-        else{
             //获取登录记录
-            List<UserLog> userLogs  = userLService.getUserlog(username);
-            if(userLogs.size() == 0){
-                res = "{\"status\": \"ok\", \"len\": \"0\"}";
-            }
-            else {
-                res = "{";
-                int i = 1;
+            List<UserLog> userLogs = userLService.getUserlog(username);
+            if (userLogs.size() == 0) {
+                resultMap.put("status", "ok");
+                resultMap.put("len", 0);
+            } else {
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
                 for (org.framework.tutor.domain.UserLog userLog : userLogs) {
-                    res += "\""+i+"\": ";
-                    String temp = "{\"logtime\": \""+simpleDateFormat.format(userLog.getLogtime())+"\", " +
-                            "\"logcity\": \""+userLog.getLogcity()+"\", " +
-                            "\"logip\": \""+userLog.getLogip()+"\", " +
-                            "\"logsystem\": \""+userLog.getLogsys()+"\"}, ";
-                    res += temp;
-                    i++;
+                    Map<String, Object> rowMap = new HashMap<>(8);
+                    rowMap.put("logtime", simpleDateFormat.format(userLog.getLogtime()));
+                    rowMap.put("logcity", userLog.getLogcity());
+                    rowMap.put("logip", userLog.getLogip());
+                    rowMap.put("logsystem", userLog.getLogsys());
+                    rowList.add(rowMap);
                 }
-                res = res.substring(0, res.length()-2);
-                res += "}";
+                resultMap.put("list", rowList);
             }
-        }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }

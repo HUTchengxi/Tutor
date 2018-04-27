@@ -43,7 +43,6 @@ $(function() {
                 success: function(data){
                     console.log(data);
                     alert("退出成功");
-                    window.location = "/forward_con/welcome";
                 },
                 error: function(xhr, status){
                     alert("后台环境异常导致无法正确退出登录，请刷新页面重试");

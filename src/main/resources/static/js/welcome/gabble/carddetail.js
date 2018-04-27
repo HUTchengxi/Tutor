@@ -140,7 +140,7 @@ $(function () {
             success: function (data) {
                 var img = "";
                 $("#pubModal .modal-body select").empty();
-                $.each(data, function (index, item) {
+                $.each(data.list, function (index, item) {
                     var title = item.title;
                     var imgsrc = item.imgsrc;
                     if (img == "") {
@@ -212,7 +212,6 @@ $(function () {
                         success: function (data) {
                             var status = data.status;
                             if (status === "invalid") {
-                                window.location = "/forward_con/welcome";
                             }
                             else if (status === "mysqlerr") {
                                 window.alert("后台服务器异常导致无法获取通知数据，请刷新页面重试");
@@ -388,7 +387,7 @@ $(function () {
             success: function (data) {
                 var status = data.status;
                 if (status == "none") return;
-                $.each(data, function (index, item) {
+                $.each(data.list, function (index, item) {
                     $(".cardmainlist").append("<div class=\"cardmain\" data-id='" + item.id + "'>\n" +
                         "        <!--回帖用户个人信息展示-->\n" +
                         "        <div class=\"mainhead clearfix\">\n" +
@@ -515,7 +514,7 @@ $(function () {
                         }
                         else {
                             var count = 0;
-                            $.each(data, function (index, item) {
+                            $.each(data.list, function (index, item) {
                                 count++;
                                 var id = item.id;
                                 var comtime = item.comtime;
@@ -527,7 +526,7 @@ $(function () {
                                 var repfloor = item.repfloor;
                                 $this.closest("div.cardmain").find(".commandlist .commandmain").append("<div class=\"commandmainhead clearfix\">\n" +
                                     "    <img class=\"pull-left comuserface\" src=\"" + imgsrc + "\" />\n" +
-                                    "    <p class=\"pull-left comusernick\">" + nickname + "" + ((repfloor != "null" && repfloor.trim() != '') ? "<span>@</span>" + repfloor + "楼" : "") + "</p>" +
+                                    "    <p class=\"pull-left comusernick\">" + nickname + "" + ((repfloor != "null" && repfloor != '') ? "<span>@</span>" + repfloor + "楼" : "") + "</p>" +
                                     "    <p class=\"pull-right comfloor\">" + floor + "楼</p>\n" +
                                     "</div>\n" +
                                     "<div class=\"commandmaininfo\">\n" +
@@ -591,7 +590,7 @@ $(function () {
             success: function (data) {
                 var count = 0;
                 if(data.status != "none") {
-                    $.each(data, function (index, item) {
+                    $.each(data.list, function (index, item) {
                         count++;
                         var id = item.id;
                         var comtime = item.comtime;
@@ -823,7 +822,7 @@ $(function () {
             dataType: "json",
             success: function (data) {
                 $(".cardheader .header-left .writebtn").data("status", data.status);
-                if (status == "none") {
+                if (status == "invalid") {
                     $("#writeAnswer").remove();
                 }
             },
@@ -903,7 +902,7 @@ $(function () {
         }
         var status = $(this).data("status");
 
-        if (status == "nologin") {
+        if (status == "invalid") {
             alert("请先登录");
             return;
         }

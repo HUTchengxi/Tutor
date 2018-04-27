@@ -12,6 +12,7 @@
  */
 package org.framework.tutor.api.impl;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonParser;
 import org.framework.tutor.api.BbsCardAnswerCommandApi;
 import org.framework.tutor.domain.BbsCard;
@@ -33,7 +34,10 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author yinjimin
@@ -63,42 +67,41 @@ public class BbsCardAnswerCommandApiImpl implements BbsCardAnswerCommandApi {
      * @author yinjimin
      * @date 2018/4/10
      */
+    @Override
     public void getCommandListByAid(Integer startpos, Integer aid, HttpServletResponse response) throws IOException {
 
         response.setCharacterEncoding("utf-8");
         PrintWriter writer = response.getWriter();
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
+        List<Object> rowList = new ArrayList<>();
 
         startpos *= 5;
         List<BbsCardAnswerCommand> bbsCardAnswerCommands = bbsCardAnswerCommandService.getCommandListByAid(aid, startpos);
 
         int count = bbsCardAnswerCommands.size();
         if(count != 0){
-            res = "{";
-            int i = 1;
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
             for (BbsCardAnswerCommand bbsCardAnswerCommand: bbsCardAnswerCommands) {
                 UserMain userMain = userMService.getByUser(bbsCardAnswerCommand.getUsername());
-                res += "\""+i+"\": ";
-                String temp = "{\"comtime\": \""+simpleDateFormat.format(bbsCardAnswerCommand.getComtime())+"\", " +
-                        "\"nickname\": \""+userMain.getNickname()+"\", " +
-                        "\"imgsrc\": \""+userMain.getImgsrc()+"\", " +
-                        "\"cardid\": \""+bbsCardAnswerCommand.getCardid()+"\", " +
-                        "\"floor\": \""+bbsCardAnswerCommand.getFloor()+"\", " +
-                        "\"repfloor\": \""+bbsCardAnswerCommand.getRepfloor()+"\", " +
-                        "\"id\": \""+bbsCardAnswerCommand.getId()+"\", " +
-                        "\"descript\": \""+bbsCardAnswerCommand.getComment()+"\"}, ";
-                res += temp;
-                i++;
+                Map<String, Object> rowMap = new HashMap<>(16);
+                rowMap.put("comtime", simpleDateFormat.format(bbsCardAnswerCommand.getComtime()));
+                rowMap.put("nickname", userMain.getNickname());
+                rowMap.put("imgsrc", userMain.getImgsrc());
+                rowMap.put("cardid", bbsCardAnswerCommand.getCardid());
+                rowMap.put("floor", bbsCardAnswerCommand.getFloor());
+                rowMap.put("repfloor", bbsCardAnswerCommand.getRepfloor());
+                rowMap.put("id", bbsCardAnswerCommand.getId());
+                rowMap.put("descript", bbsCardAnswerCommand.getComment());
+                rowList.add(rowMap);
             }
-            res = res.substring(0, res.length()-2);
-            res += "}";
+            resultMap.put("list", rowList);
         }
         else{
-            res = "{\"status\": \"none\"}";
+            resultMap.put("status", "none");
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -112,12 +115,14 @@ public class BbsCardAnswerCommandApiImpl implements BbsCardAnswerCommandApi {
      * @author yinjimin
      * @date 2018/4/10
      */
+    @Override
     public void publishCommand(Integer cardid, Integer aid, String answer, Integer repfloor, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
         Integer floor = bbsCardAnswerCommandService.getCurrentFloor(cardid, aid);
         if(floor == null){
@@ -126,24 +131,26 @@ public class BbsCardAnswerCommandApiImpl implements BbsCardAnswerCommandApi {
         floor += 1;
         bbsCardAnswerCommandService.publishCommand(username, cardid, aid, answer, floor, repfloor);
         bbsCardAnswerService.addComcount(aid);
-        res = "{\"status\": \"valid\"}";
+        resultMap.put("status", "valid");
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
 
+    @Override
     public void getMyCommandCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         PrintWriter writer = response.getWriter();
-        String res = null;
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
         Integer count = bbsCardAnswerCommandService.getComcountByUser(username);
-        res = "{\"count\": \""+count+"\"}";
+        resultMap.put("count", count);
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -156,40 +163,39 @@ public class BbsCardAnswerCommandApiImpl implements BbsCardAnswerCommandApi {
      * @author yinjimin
      * @date 2018/4/14
      */
+    @Override
     public void getMyCommandInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         response.setCharacterEncoding("utf-8");
         PrintWriter writer = response.getWriter();
-        String res = null;
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
+        List<Object> rowList = new ArrayList<>();
 
         List<BbsCardAnswerCommand> bbsCardAnswerCommands = bbsCardAnswerCommandService.getMyCommandInfo(username);
 
         if(bbsCardAnswerCommands.size() == 0){
-            res = "{\"status\": \"none\"}";
+            resultMap.put("status", "none");
         }
         else {
-            res = "{";
-            int i = 1;
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             for (BbsCardAnswerCommand bbsCardAnswerCommand: bbsCardAnswerCommands) {
                 BbsCard bbsCard = bbsCardService.getCardById(bbsCardAnswerCommand.getCardid());
-                res += "\"" + i + "\": ";
-                String temp = "{\"comtime\": \"" + simpleDateFormat.format(bbsCardAnswerCommand.getComtime()) + "\", " +
-                        "\"title\": \"" + bbsCard.getTitle() + "\", " +
-                        "\"cid\": \"" + bbsCard.getId() + "\", " +
-                        "\"floor\": \"" + bbsCardAnswerCommand.getFloor() + "\", " +
-                        "\"repfloor\": \"" + bbsCardAnswerCommand.getRepfloor() + "\", " +
-                        "\"comment\": \"" + bbsCardAnswerCommand.getComment() + "\"}, ";
-                res += temp;
-                i++;
+                Map<String, Object> rowMap = new HashMap<>(16);
+                rowMap.put("comtime", simpleDateFormat.format(bbsCardAnswerCommand.getComtime()));
+                rowMap.put("title", bbsCard.getTitle());
+                rowMap.put("cid", bbsCard.getId());
+                rowMap.put("floor", bbsCardAnswerCommand.getFloor());
+                rowMap.put("repfloor", bbsCardAnswerCommand.getRepfloor());
+                rowMap.put("comment", bbsCardAnswerCommand.getComment());
+                rowList.add(rowMap);
             }
-            res = res.substring(0, res.length() - 2);
-            res += "}";
+            resultMap.put("list", rowList);
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }

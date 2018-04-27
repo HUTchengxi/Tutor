@@ -12,6 +12,7 @@
  */
 package org.framework.tutor.api.impl;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonParser;
 import org.framework.tutor.api.BbsCardCollectApi;
 import org.framework.tutor.domain.BbsCard;
@@ -30,7 +31,10 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author yinjimin
@@ -60,13 +64,13 @@ public class BbsCardCollectApiImpl implements BbsCardCollectApi {
         PrintWriter writer = response.getWriter();
         HttpSession sessions = request.getSession();
         String username = (String) sessions.getAttribute("username");
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(1);
 
         Integer count = bbsCardCollectService.getMyCollectCount(username);
+        resultMap.put("count", count);
 
-        res = "{\"count\": \""+count+"\"}";
-
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -84,20 +88,21 @@ public class BbsCardCollectApiImpl implements BbsCardCollectApi {
 
         HttpSession session = request.getSession();
         PrintWriter writer = response.getWriter();
-        String res = null;
         String username = (String) session.getAttribute("username");
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
         if(username == null){
-            res = "{\"status\": \"none\"}";
+            resultMap.put("status", "none");
         }
         else if(bbsCardCollectService.checkCollectStatus(cardId, username) != null){
-            res = "{\"status\": \"col\"}";
+            resultMap.put("status", "col");
         }
         else{
-            res = "{\"status\": \"uncol\"}";
+            resultMap.put("status", "uncol");
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -116,20 +121,21 @@ public class BbsCardCollectApiImpl implements BbsCardCollectApi {
 
         HttpSession session = request.getSession();
         PrintWriter writer = response.getWriter();
-        String res = null;
         String username = (String) session.getAttribute("username");
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
         //判断是否已收藏
         if(bbsCardCollectService.checkCollectStatus(cardId, username) != null){
-            res = "{\"status\": \"none\"}";
+            resultMap.put("status", "none");
         }
         else{
             bbsCardCollectService.collectCard(cardId, username);
             bbsCardService.addColCountByCardId(cardId);
-            res = "{\"status\": \"col\"}";
+            resultMap.put("status", "col");
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -147,20 +153,21 @@ public class BbsCardCollectApiImpl implements BbsCardCollectApi {
 
         HttpSession session = request.getSession();
         PrintWriter writer = response.getWriter();
-        String res = null;
         String username = (String) session.getAttribute("username");
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
         //判断是否已收藏
         if(bbsCardCollectService.checkCollectStatus(cardId, username) == null){
-            res = "{\"status\": \"none\"}";
+            resultMap.put("status", "none");
         }
         else{
             bbsCardCollectService.uncollectCard(cardId, username);
             bbsCardService.delColCountByCardId(cardId);
-            res = "{\"status\": \"uncol\"}";
+            resultMap.put("status", "uncol");
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -179,36 +186,34 @@ public class BbsCardCollectApiImpl implements BbsCardCollectApi {
 
         response.setCharacterEncoding("utf-8");
         PrintWriter writer = response.getWriter();
-        String res = null;
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
+        List<Object> resultList = new ArrayList<>();
 
         List<BbsCardCollect> bbsCardList = bbsCardCollectService.getMyCollectInfo(username);
         if(bbsCardList.size() == 0){
-            res = "{\"status\": \"none\"}";
+            resultMap.put("status", "none");
         }else{
-            res = "{";
-            int i = 1;
             SimpleDateFormat ysdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             for (BbsCardCollect bbsCardCollect: bbsCardList) {
                 BbsCard bbsCard = bbsCardService.getCardById(bbsCardCollect.getCardid());
-                res += "\""+i+"\": ";
-                String temp = "{\"id\": \""+bbsCard.getId()+"\", " +
-                        "\"crtime\": \""+ysdf.format(bbsCard.getCrttime())+"\", " +
-                        "\"coltime\": \""+ysdf.format(bbsCardCollect.getColtime())+"\", " +
-                        "\"title\": \""+bbsCard.getTitle()+"\", " +
-                        "\"comcount\": \""+bbsCard.getComcount()+"\", " +
-                        "\"viscount\": \""+bbsCard.getViscount()+"\", " +
-                        "\"colcount\": \""+bbsCard.getColcount()+"\", " +
-                        "\"descript\": \""+bbsCard.getDescript()+"\"}, ";
-                res += temp;
-                i++;
+                Map<String, Object> rowMap = new HashMap<>(16);
+                rowMap.put("id", bbsCard.getId());
+                rowMap.put("crtime", ysdf.format(bbsCard.getCrttime()));
+                rowMap.put("coltime", ysdf.format(bbsCardCollect.getColtime()));
+                rowMap.put("title", bbsCard.getTitle());
+                rowMap.put("comcount", bbsCard.getComcount());
+                rowMap.put("viscount", bbsCard.getViscount());
+                rowMap.put("colcount", bbsCard.getColcount());
+                rowMap.put("descript", bbsCard.getDescript());
+                resultList.add(rowMap);
             }
-            res = res.substring(0, res.length()-2);
-            res += "}";
+            resultMap.put("list", resultList);
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }

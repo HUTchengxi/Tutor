@@ -61,7 +61,7 @@ $(function() {
                         success: function(data){
                             var status = data.status;
                             if(status === "invalid"){
-                                window.location = "/forward_con/welcome";
+                                return ;
                             }
                             else if(status === "mysqlerr"){
                                 window.alert("后台服务器异常导致无法获取通知数据，请刷新页面重试");
@@ -169,7 +169,7 @@ $(function() {
                     $("div.listshow").append("<div class='none'><p>课程制作中，敬请期待！</p></div>");
                     return;
                 }
-                $.each(data, function (index, item) {
+                $.each(data.list, function (index, item) {
                     var imgsrc = item.imgsrc;
                     var id = item.id;
                     var descript = item.descript;
@@ -228,7 +228,7 @@ $(function() {
                     return;
                 }
                 $(".mainshow header ul").css("display", "block");
-                $.each(data, function (index, item) {
+                $.each(data.list, function (index, item) {
                     $(".mainshow header ul").append("<li class='pull-left'><a href='javascript:void(0);' data-ctype='" + item + "'>" + item + "</a>")
                 });
             },
@@ -269,7 +269,7 @@ $(function() {
                 }
                 $(".sortshow ul").css("display","block");
                 $(".mainshow header ul").append("<li class='pull-left cli'><a href='javascript:void(0);' data-ctype='all'>不限</a>");
-                $.each(data, function (index, item) {
+                $.each(data.list, function (index, item) {
                     $(".mainshow header ul").append("<li class='pull-left'><a href='javascript:void(0);' data-ctype='" + item + "'>" + item + "</a></li>");
                 });
             },
@@ -306,7 +306,7 @@ $(function() {
                 $("div.mainshow ul").css("display","block");
                 $("nav.sortshow").css("display","block");
                 var count = 0;
-                $.each(data, function (index, item) {
+                $.each(data.list, function (index, item) {
                     count++;
                     var imgsrc = item.imgsrc;
                     var id = item.id;
@@ -383,7 +383,7 @@ $(function() {
                 $("div.mainshow ul").css("display","block");
                 $("nav.sortshow").css("display","block");
                 var count = 0;
-                $.each(data, function (index, item) {
+                $.each(data.list, function (index, item) {
                     count++;
                     var imgsrc = item.imgsrc;
                     var id = item.id;
@@ -461,7 +461,7 @@ $(function() {
                 $("div.mainshow ul").css("display","block");
                 $("nav.sortshow").css("display","block");
                 var count = 0;
-                $.each(data, function (index, item) {
+                $.each(data.list, function (index, item) {
                     count++;
                     var imgsrc = item.imgsrc;
                     var id = item.id;
@@ -525,7 +525,7 @@ $(function() {
                 }
                 else{
                     var count = 0;
-                    $.each(data, function(index, item){
+                    $.each(data.list, function(index, item){
                         count++;
                         if(count <= 5){
                             var name = item.name;
@@ -1071,7 +1071,7 @@ $(function() {
                 $("div.listshow ul.main").empty();
                 $("div.mainshow ul").css("display","block");
                 $("nav.sortshow").css("display","block");
-                $.each(data, function (index, item) {
+                $.each(data.list, function (index, item) {
                     var imgsrc = item.imgsrc;
                     var id = item.id;
                     var descript = item.descript;

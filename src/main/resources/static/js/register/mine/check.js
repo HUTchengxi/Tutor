@@ -13,7 +13,7 @@
             success: function(data){
                 var status = data.status;
                 if(status == "invalid"){
-                    window.location = "/forward_con/welcome";
+                    return ;
                 }
                 else{
                     window.alert("邮件重发成功");

@@ -12,6 +12,7 @@
  */
 package org.framework.tutor.api.impl;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonParser;
 import org.framework.tutor.api.BbsCardAnswerApi;
 import org.framework.tutor.domain.BbsCardAnswer;
@@ -30,7 +31,10 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author yinjimin
@@ -57,44 +61,43 @@ public class BbsCardAnswerApiImpl implements BbsCardAnswerApi {
      * @author yinjimin
      * @date 2018/4/7
      */
+    @Override
     public void getCardAnswerByCardid(Integer cardId, HttpServletResponse response) throws IOException {
 
         response.setCharacterEncoding("utf-8");
         PrintWriter writer = response.getWriter();
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
+        List<Object> rowList = new ArrayList<>();
 
         try{
             List<BbsCardAnswer> bbsCardAnswerList = bbsCardAnswerService.getByCardid(cardId);
             if(bbsCardAnswerList.size() == 0){
-                res = "{\"status\": \"none\"}";
+                resultMap.put("status", "none");
             }
             else{
-                res = "{";
-                int i = 1;
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 for(BbsCardAnswer bbsCardAnswer: bbsCardAnswerList){
+                    Map<String, Object> rowMap = new HashMap<>(16);
                     UserMain userMain = userMService.getByUser(bbsCardAnswer.getUsername());
-                    res += "\""+i+"\": ";
-                    String temp = "{\"crttime\": \""+simpleDateFormat.format(bbsCardAnswer.getCrtime())+"\", " +
-                            "\"nickname\": \""+userMain.getNickname()+"\", " +
-                            "\"username\": \""+userMain.getUsername()+"\", " +
-                            "\"imgsrc\": \""+userMain.getImgsrc()+"\", " +
-                            "\"answer\": \""+bbsCardAnswer.getAnswer()+"\", " +
-                            "\"id\": \""+bbsCardAnswer.getId()+"\", " +
-                            "\"gcount\": \""+bbsCardAnswer.getGcount()+"\", " +
-                            "\"bcount\": \""+bbsCardAnswer.getBcount()+"\", " +
-                            "\"comcount\": \""+bbsCardAnswer.getComcount()+"\"}, ";
-                    res += temp;
-                    i++;
+                    rowMap.put("id", bbsCardAnswer.getId());
+                    rowMap.put("imgsrc", userMain.getImgsrc());
+                    rowMap.put("nickname", userMain.getNickname());
+                    rowMap.put("username", userMain.getUsername());
+                    rowMap.put("answer", bbsCardAnswer.getAnswer());
+                    rowMap.put("gcount", bbsCardAnswer.getGcount());
+                    rowMap.put("bcount", bbsCardAnswer.getBcount());
+                    rowMap.put("comcount", bbsCardAnswer.getComcount());
+                    rowMap.put("crttime", simpleDateFormat.format(bbsCardAnswer.getCrtime()));
+                    rowList.add(rowMap);
                 }
-                res = res.substring(0, res.length()-2);
-                res += "}";
-            }
+                resultMap.put("list", rowList);
+        }
         }catch (Exception e){
-            res = "{\"status\": \"sysexception\"}";
+            resultMap.put("status", "sysexception");
             e.printStackTrace();
         } finally {
-            writer.print(new JsonParser().parse(res).getAsJsonObject());
+            writer.print(gson.toJson(resultMap));
             writer.flush();
             writer.close();
         }
@@ -108,24 +111,23 @@ public class BbsCardAnswerApiImpl implements BbsCardAnswerApi {
      * @author yinjimin
      * @date 2018/4/9
      */
+    @Override
     public void checkUserCommand(Integer cardId, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
-        if(username == null){
-            res = "{\"status\": \"none\"}";
-        }
-        else if(bbsCardAnswerService.checkIsExistAnswer(cardId, username) == null){
-            res = "{\"status\": \"un\"}";
+        if(bbsCardAnswerService.checkIsExistAnswer(cardId, username) == null){
+            resultMap.put("status", "un");
         }
         else{
-            res = "{\"status\": \"ed\"}";
+            resultMap.put("status", "ed");
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -138,24 +140,26 @@ public class BbsCardAnswerApiImpl implements BbsCardAnswerApi {
      * @author yinjimin
      * @date 2018/4/9
      */
+    @Override
     public void addAnswer(Integer cardId, String answer, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         PrintWriter writer = response.getWriter();
-        String res = null;
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
         //判断是否已经有了回答
         if(bbsCardAnswerService.checkIsExistAnswer(cardId, username) != null){
-            res = "{\"status\": \"invalid\"}";
+            resultMap.put("status", "invalid");
         }
         else{
             bbsCardAnswerService.addAnswer(cardId, username, answer);
             bbsCardService.addComCountByCardId(cardId);
-            res = "{\"status\": \"valid\"}";
+            resultMap.put("status", "valid");
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -168,62 +172,63 @@ public class BbsCardAnswerApiImpl implements BbsCardAnswerApi {
      * @author yinjimin
      * @date 2018/4/12
      */
+    @Override
     public void getMyAnswerCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         PrintWriter writer = response.getWriter();
-        String res = null;
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
         Integer count = bbsCardAnswerService.getMyAnswerCount(username);
-        res = "{\"count\": \""+count+"\"}";
+        resultMap.put("count", count);
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
 
 
+    @Override
     public void getMyAnswerInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         response.setCharacterEncoding("utf-8");
         PrintWriter writer = response.getWriter();
-        String res = null;
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
+        List<Object> rowList = new ArrayList<>();
 
         try{
             List<BbsCardAnswer> bbsCardAnswerList = bbsCardAnswerService.getmyAnswerInfo(username);
             if(bbsCardAnswerList.size() == 0){
-                res = "{\"status\": \"none\"}";
+                resultMap.put("status", "none");
             }
             else{
-                res = "{";
-                int i = 1;
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 for(BbsCardAnswer bbsCardAnswer: bbsCardAnswerList){
+                    Map<String, Object> rowMap = new HashMap<>(16);
                     UserMain userMain = userMService.getByUser(bbsCardAnswer.getUsername());
-                    res += "\""+i+"\": ";
-                    String temp = "{\"crttime\": \""+simpleDateFormat.format(bbsCardAnswer.getCrtime())+"\", " +
-                            "\"nickname\": \""+userMain.getNickname()+"\", " +
-                            "\"imgsrc\": \""+userMain.getImgsrc()+"\", " +
-                            "\"answer\": \""+bbsCardAnswer.getAnswer()+"\", " +
-                            "\"cid\": \""+bbsCardAnswer.getCardid()+"\", " +
-                            "\"aid\": \""+bbsCardAnswer.getId()+"\", " +
-                            "\"gcount\": \""+bbsCardAnswer.getGcount()+"\", " +
-                            "\"bcount\": \""+bbsCardAnswer.getBcount()+"\", " +
-                            "\"comcount\": \""+bbsCardAnswer.getComcount()+"\"}, ";
-                    res += temp;
-                    i++;
+                    rowMap.put("aid", bbsCardAnswer.getId());
+                    rowMap.put("imgsrc", userMain.getImgsrc());
+                    rowMap.put("cid", bbsCardAnswer.getCardid());
+                    rowMap.put("nickname", userMain.getNickname());
+                    rowMap.put("answer", bbsCardAnswer.getAnswer());
+                    rowMap.put("gcount", bbsCardAnswer.getGcount());
+                    rowMap.put("bcount", bbsCardAnswer.getBcount());
+                    rowMap.put("comcount", bbsCardAnswer.getComcount());
+                    rowMap.put("crttime", simpleDateFormat.format(bbsCardAnswer.getCrtime()));
+                    rowList.add(rowMap);
                 }
-                res = res.substring(0, res.length()-2);
-                res += "}";
+                resultMap.put("list", rowList);
             }
         }catch (Exception e){
-            res = "{\"status\": \"sysexception\"}";
+            resultMap.put("status", "sysexception");
             e.printStackTrace();
         } finally {
-            writer.print(new JsonParser().parse(res).getAsJsonObject());
+            writer.print(gson.toJson(resultMap));
             writer.flush();
             writer.close();
         }

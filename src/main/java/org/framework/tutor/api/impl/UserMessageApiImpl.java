@@ -65,17 +65,14 @@ public class UserMessageApiImpl implements UserMessageApi {
 
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
-        String res = null;
         String username = (String) session.getAttribute("username");
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
-        if (username == null) {
-            res = "{\"status\": \"invalid\"}";
-        } else {
-            Integer count = userMSService.getMyMessageCount(username);
-            res = "{\"count\": \"" + count + "\"}";
-        }
+        Integer count = userMSService.getMyMessageCount(username);
+        resultMap.put("count", count);
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -94,39 +91,33 @@ public class UserMessageApiImpl implements UserMessageApi {
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
+        List<Object> rowList = new ArrayList<>();
 
-        if (username == null) {
-            res = "{\"status\": \"invalid\"}";
+        //首先获取所有的我的通知数据
+        List<UserMessage> userMessageList = userMSService.getMyMessage(username);
+        if (userMessageList.size() == 0) {
+            resultMap.put("status", "valid");
         } else {
-            //首先获取所有的我的通知数据
-            List<UserMessage> userMessageList = userMSService.getMyMessage(username);
-            if (userMessageList.size() == 0) {
-                res = "{\"status\": \"valid\"}";
+            for (org.framework.tutor.domain.UserMessage userMessage : userMessageList) {
+                //获取指定发送通知的管理员的指定用户的未读通知总数据
+                Integer nocount = userMSService.getNoMessageCount(userMessage.getSuser(), username);
+                Map<String, Object> rowMap = new HashMap<>(8);
+                rowMap.put("suser", userMessage.getSuser());
+                rowMap.put("nocount", nocount);
+                rowMap.put("imgsrc", "/images/user/face/bg.png");
+                rowMap.put("title", userMessage.getTitle());
+                rowList.add(rowMap);
+            }
+            if (rowList.size() == 0) {
+                resultMap.put("status", "valid");
             } else {
-                res = "{";
-                int i = 1;
-                for (org.framework.tutor.domain.UserMessage userMessage : userMessageList) {
-                    //获取指定发送通知的管理员的指定用户的未读通知总数据
-                    Integer nocount = userMSService.getNoMessageCount(userMessage.getSuser(), username);
-                    res += "\"" + i + "\": ";
-                    String temp = "{\"suser\": \"" + userMessage.getSuser() + "\", " +
-                            "\"nocount\": \"" + nocount + "\", " +
-                            "\"imgsrc\": \"/images/user/face/bg.png\", " +
-                            "\"title\": \"" + userMessage.getTitle() + "\"}, ";
-                    res += temp;
-                    i++;
-                }
-                if (res.equals("{")) {
-                    res = "{\"status\": \"valid\"}";
-                } else {
-                    res = res.substring(0, res.length() - 2);
-                    res += "}";
-                }
+                resultMap.put("list", rowList);
             }
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -147,46 +138,39 @@ public class UserMessageApiImpl implements UserMessageApi {
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
+        List<Object> rowList = new ArrayList<>();
 
-        if (username == null) {
-            res = "{\"status\": \"invalid\"}";
+        //首先获取所有的我的通知数据
+        List<org.framework.tutor.domain.UserMessage> userMessageList = userMSService.getMessageBySuser(suser, username);
+        if (userMessageList.size() == 0) {
+            resultMap.put("status", "valid");
         } else {
-            //首先获取所有的我的通知数据
-            List<org.framework.tutor.domain.UserMessage> userMessageList = userMSService.getMessageBySuser(suser, username);
-            if (userMessageList.size() == 0) {
-                res = "{\"status\": \"valid\"}";
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+            for (org.framework.tutor.domain.UserMessage userMessage : userMessageList) {
+                UserMessageDelete userMessageDelete = userMessageDeleteService.getStatus(userMessage.getId(), username);
+                Integer status = null;
+                if (userMessageDelete != null) {
+                    status = userMessageDelete.getStatus();
+                }
+                status = status == null ? 0 : 1;
+                Map<String, Object> rowMap = new HashMap<>(8);
+                rowMap.put("status", status);
+                rowMap.put("stime", simpleDateFormat.format(userMessage.getStime()));
+                rowMap.put("id", userMessage.getId());
+                rowMap.put("imgsrc", "/images/user/face/bg.png");
+                rowMap.put("descript", userMessage.getDescript());
+                rowList.add(rowMap);
+            }
+            if (rowList.size() == 0) {
+                resultMap.put("status", "valid");
             } else {
-                System.out.println(userMessageList.size());
-                res = "{";
-                int i = 1;
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-                for (org.framework.tutor.domain.UserMessage userMessage : userMessageList) {
-                    UserMessageDelete userMessageDelete = userMessageDeleteService.getStatus(userMessage.getId(), username);
-                    Integer status = null;
-                    if (userMessageDelete != null) {
-                        status = userMessageDelete.getStatus();
-                    }
-                    status = status == null ? 0 : 1;
-                    res += "\"" + i + "\": ";
-                    String temp = "{\"status\": \"" + status + "\", " +
-                            "\"stime\": \"" + simpleDateFormat.format(userMessage.getStime()) + "\", " +
-                            "\"id\": \"" + userMessage.getId() + "\", " +
-                            "\"imgsrc\": \"/images/user/face/bg.png\", " +
-                            "\"descript\": \"" + userMessage.getDescript() + "\"}, ";
-                    res += temp;
-                    i++;
-                }
-                if (res.equals("{")) {
-                    res = "{\"status\": \"valid\"}";
-                } else {
-                    res = res.substring(0, res.length() - 2);
-                    res += "}";
-                }
+                resultMap.put("list", rowList);
             }
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -206,22 +190,19 @@ public class UserMessageApiImpl implements UserMessageApi {
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
-        if (username == null) {
-            res = "{\"stauts\": \"invalid\"}";
+        //清空所有的suser和username相关的已读数据
+        userMessageDeleteService.deleteRepeatRead(suser, username);
+        Integer row = userMSService.setMessageRead(suser, username);
+        if (row > 0) {
+            resultMap.put("status", "ok");
         } else {
-            //清空所有的suser和username相关的已读数据
-            userMessageDeleteService.deleteRepeatRead(suser, username);
-            Integer row = userMSService.setMessageRead(suser, username);
-            if (row > 0) {
-                res = "{\"status\": \"ok\"}";
-            } else {
-                res = "{\"status\": \"valid\"}";
-            }
+            resultMap.put("status", "valid");
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -243,44 +224,38 @@ public class UserMessageApiImpl implements UserMessageApi {
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
+        List<Object> rowList = new ArrayList<>();
 
-        if (username == null) {
-            res = "{\"status\": \"invalid\"}";
+        Integer sta = "ed".equals(status) ? 1 : 0;
+        List<org.framework.tutor.domain.UserMessage> userMessages = null;
+        if (sta == 1) {
+            userMessages = userMSService.getReadMessage(suser, username);
         } else {
-            Integer sta = "ed".equals(status) ? 1 : 0;
-            List<org.framework.tutor.domain.UserMessage> userMessages = null;
-            if (sta == 1) {
-                userMessages = userMSService.getReadMessage(suser, username);
-            } else {
-                userMessages = userMSService.getUnreadMessage(suser, username);
+            userMessages = userMSService.getUnreadMessage(suser, username);
+        }
+        if (userMessages == null || userMessages.size() == 0) {
+            resultMap.put("status", "valid");
+        } else {
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+            for (org.framework.tutor.domain.UserMessage userMessage : userMessages) {
+                Map<String, Object> rowMap = new HashMap<>(8);
+                rowMap.put("status", sta);
+                rowMap.put("stime", simpleDateFormat.format(userMessage.getStime()));
+                rowMap.put("id", userMessage.getId());
+                rowMap.put("imgsrc", "/images/user/face/bg.png");
+                rowMap.put("descript", userMessage.getDescript());
+                rowList.add(rowMap);
             }
-            if (userMessages == null || userMessages.size() == 0) {
-                res = "{\"status\": \"valid\"}";
+            if (rowList.size() == 0) {
+                resultMap.put("status", "valid");
             } else {
-                res = "{";
-                int i = 1;
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-                for (org.framework.tutor.domain.UserMessage userMessage : userMessages) {
-                    res += "\"" + i + "\": ";
-                    String temp = "{\"status\": \"" + sta + "\", " +
-                            "\"stime\": \"" + simpleDateFormat.format(userMessage.getStime()) + "\", " +
-                            "\"id\": \"" + userMessage.getId() + "\", " +
-                            "\"imgsrc\": \"/images/user/face/bg.png\", " +
-                            "\"descript\": \"" + userMessage.getDescript() + "\"}, ";
-                    res += temp;
-                    i++;
-                }
-                if (res.equals("{")) {
-                    res = "{\"status\": \"valid\"}";
-                } else {
-                    res = res.substring(0, res.length() - 2);
-                    res += "}";
-                }
+                resultMap.put("list", rowList);
             }
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -299,20 +274,17 @@ public class UserMessageApiImpl implements UserMessageApi {
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
-        if (username == null) {
-            res = "{\"status\": \"invalid\"}";
+        Integer row = userMSService.delMyMessage(did, username);
+        if (row == 1) {
+            resultMap.put("status", "valid");
         } else {
-            Integer row = userMSService.delMyMessage(did, username);
-            if (row == 1) {
-                res = "{\"status\": \"valid\"}";
-            } else {
-                res = "{\"status\": \"mysqlerr\"}";
-            }
+            resultMap.put("status", "mysqlerr");
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -328,17 +300,14 @@ public class UserMessageApiImpl implements UserMessageApi {
 
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
-        String res = null;
         String username = (String) session.getAttribute("username");
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
-        if (username == null) {
-            res = "{\"status\": \"invalid\"}";
-        } else {
-            Integer row = userMSService.setAllStatus(username);
-            res = "{\"status\": \"valid\"}";
-        }
+        Integer row = userMSService.setAllStatus(username);
+        resultMap.put("status", "valid");
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -440,10 +409,9 @@ public class UserMessageApiImpl implements UserMessageApi {
     }
 
     /**
-     *
-     * @Description 发送通知
      * @param [emailParam, response]
      * @return void
+     * @Description 发送通知
      * @author yinjimin
      * @date 2018/4/24
      */
@@ -459,7 +427,7 @@ public class UserMessageApiImpl implements UserMessageApi {
         try {
             Integer identity = emailParam.getId();
             String username = suser;
-            if(emailParam.getSend()==null || emailParam.getSend().equals("")){
+            if (emailParam.getSend() == null || emailParam.getSend().equals("")) {
                 username = emailParam.getSend();
             }
             String title = emailParam.getTheme();
@@ -467,7 +435,7 @@ public class UserMessageApiImpl implements UserMessageApi {
 
             userMSService.seneMessage(identity, suser, username, title, message);
             resultMap.put("status", "valid");
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             resultMap.put("status", "sqlerr");
         }

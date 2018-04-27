@@ -12,6 +12,7 @@
  */
 package org.framework.tutor.api.impl;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonParser;
 import org.framework.tutor.api.TutorBtnsApi;
 import org.framework.tutor.domain.TutorBtns;
@@ -27,7 +28,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author yinjimin
@@ -55,31 +59,29 @@ public class TutorBtnsApiImpl implements TutorBtnsApi {
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
+        List<Object> rowList = new ArrayList<>();
 
         List<TutorBtns> tutorBtnsList = tutorBtnsService.getBtnsList(username);
 
         if(tutorBtnsList.size() == 0){
-            res = "{\"count\": \"0\"}";
+            resultMap.put("count", 0);
         }
         else{
-            res = "{";
-            int i = 1;
             for (TutorBtns tutorBtns: tutorBtnsList) {
                 //根据id获取对应的链接数据
                 TutorsysBtns tutorsysBtns = tutorSysBtnsService.getById(tutorBtns.getBid());
-                res += "\""+i+"\": ";
-                String temp = "{\"id\": \""+tutorBtns.getId()+"\", " +
-                        "\"name\": \""+tutorsysBtns.getName()+"\", "+
-                        "\"url\": \""+tutorsysBtns.getUrl()+"\"}, ";
-                res += temp;
-                i++;
+                Map<String, Object> rowMap = new HashMap<>(8);
+                rowMap.put("id", tutorBtns.getId());
+                rowMap.put("name", tutorsysBtns.getName());
+                rowMap.put("url", tutorsysBtns.getUrl());
+                rowList.add(rowMap);
             }
-            res = res.substring(0, res.length()-2);
-            res += "}";
+            resultMap.put("list", rowList);
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }

@@ -31,7 +31,6 @@ $(function(){
             success: function(data){
                 var status = data.status;
                 if(status === "nologin"){
-                    window.location = "/forward_con/welcome";
                 }
                 else {
                     var hour = new Date().getHours();
@@ -224,7 +223,6 @@ $(function(){
                 success: function(data){
                     var status = data.status;
                     if(status === "invalid"){
-                        window.location.href = "/forward_con/welcome";
                     }
                     else if(status === "mysqlerr"){
                         alert("后台数据库出了点问题，请稍后再试");
@@ -254,7 +252,6 @@ $(function(){
                 success: function(data){
                     var status = data.status;
                     if(status === "invalid"){
-                        window.location.href = "/forward_con/welcome";
                     }
                     else if(status === "mysqlerr"){
                         alert("后台数据库出了点问题，请稍后再试");
@@ -465,7 +462,6 @@ $(function(){
             success: function(data){
                 var status = data.status;
                 if(status == "invalid"){
-                    window.location = "/forward_con/welcome";
                 }
                 else{
                     var tel = data.tel;
@@ -517,7 +513,7 @@ $(function(){
                 $(".binddiv .mainbind .mb-phone p:nth-child(3) a").remove();
                 $(".alert-secretinfo .secret-one input").data("orig", "");
                 if(status == "invalid"){
-                    window.location = "/forward_con/welcome";
+                    return ;
                 }
                 else if(status == "valid"){
                     $(".binddiv .mainbind .mb-phone p:nth-child(3)").append("<a href=\"javacript:void(0)\" class=\"pull-right btn-modmb\">立即设置</a>");
@@ -621,7 +617,6 @@ $(function(){
             success: function(data){
                 var status = data.status;
                 if(status == "invalid"){
-                    window.location = "/forward_con/welcome";
                     return ;
                 }
             },
@@ -653,7 +648,7 @@ $(function(){
                         success: function (data) {
                             var status = data.status;
                             if(status == "invalid"){
-                                window.location = "/forward_con/welcome";
+                                return ;
                             }
                             else if(status == "mysqlerr"){
                                 windwo.alert("后台数据库异常导致密保数据更新异常");
@@ -747,7 +742,7 @@ $(function(){
                 success: function(data){
                     var status = data.status;
                     if(status == "invalid"){
-                        window.location = "/forward_con/welcome";
+                        return ;
                     }
                     else if(status == "codeerr"){
                         $(".alert-bind .err-vali").css("display", "block").text("验证码不正确");
@@ -813,7 +808,6 @@ $(function(){
             }
         }
         else{
-            window.location = "/forward_con/welcome";
             return ;
         }
 
@@ -828,7 +822,7 @@ $(function(){
             success: function(data){
                 var status = data.status;
                 if(status == "invalid"){
-                    window.location = "/forward_con/welcome";
+                    return ;
                 }
                 else if(status == "exist"){
                     if(showtype == "email") {
@@ -1004,7 +998,7 @@ $(function(){
                 success: function(data){
                     var status = data.status;
                     if(status == "invalid"){
-                        window.location = "/forward_con/welcome";
+                        return ;
                     }
                     else if(status == "mysqlerr"){
                         window.alert("后台数据库异常导致无法进行解除绑定，请稍后重试");
@@ -1060,7 +1054,7 @@ $(function(){
                 else if(status === "ok"){
                     return ;
                 }
-                $.each(data, function(index, item){
+                $.each(data.list, function(index, item){
                    var logtime = item.logtime;
                    var logip = item.logip;
                    var logsystem = item.logsystem;

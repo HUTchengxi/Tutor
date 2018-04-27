@@ -70,6 +70,7 @@ public class SysEmailManagerApiImpl implements SysEmailManagerApi {
      * @author yinjimin
      * @date 2018/4/20
      */
+    @Override
     public void sendEmail(EmailParam emailParam, HttpServletRequest request, HttpServletResponse response) throws IOException, MessagingException {
 
         PrintWriter writer = response.getWriter();
@@ -106,7 +107,7 @@ public class SysEmailManagerApiImpl implements SysEmailManagerApi {
      * @author yinjimin
      * @date 2018/4/20
      */
-    //TODO：保证邮件的完整性
+    @Override
     @Transactional(isolation = Isolation.REPEATABLE_READ)
     public void saveEmail(EmailParam emailParam, HttpServletRequest request, HttpServletResponse response) throws IOException, MessagingException {
 
@@ -154,6 +155,7 @@ public class SysEmailManagerApiImpl implements SysEmailManagerApi {
      * @author yinjimin
      * @date 2018/4/20
      */
+    @Override
     public void getEmailList(EmailParam emailParam, HttpServletResponse response) throws IOException {
 
         response.setCharacterEncoding("utf-8");
@@ -206,6 +208,7 @@ public class SysEmailManagerApiImpl implements SysEmailManagerApi {
      * @author yinjimin
      * @date 2018/4/20
      */
+    @Override
     public void getEmailDetail(Integer id, HttpServletResponse response) throws IOException {
 
         response.setCharacterEncoding("utf-8");
@@ -237,6 +240,7 @@ public class SysEmailManagerApiImpl implements SysEmailManagerApi {
      * @author yinjimin
      * @date 2018/4/20
      */
+    @Override
     public void deleteEmail(Integer id, HttpServletResponse response) throws IOException {
 
         PrintWriter writer = response.getWriter();
@@ -256,6 +260,7 @@ public class SysEmailManagerApiImpl implements SysEmailManagerApi {
         writer.close();
     }
 
+    @Override
     public void getModinfoById(Integer id, HttpServletResponse response) throws IOException {
 
         response.setCharacterEncoding("utf-8");

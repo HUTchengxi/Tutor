@@ -182,7 +182,6 @@ $(function () {
                         success: function (data) {
                             var status = data.status;
                             if (status === "invalid") {
-                                window.location = "/forward_con/welcome";
                             }
                             else if (status === "mysqlerr") {
                                 window.alert("后台服务器异常导致无法获取通知数据，请刷新页面重试");
@@ -270,7 +269,7 @@ $(function () {
      * 校验当前字段是否为空
      */
     var str_isnull = function(str){
-        return (str==null || str==undefined || str.trim()=="" || str=="null" || str=="undefined");
+        return (str==null || str==undefined || str=="" || str=="null" || str=="undefined");
     };
 
 
@@ -312,6 +311,7 @@ $(function () {
         $.ajax({
             type: "post",
             url: "/bbscard_con/getmycardinfo",
+            contentType: "application/json;charset=utf-8",
             dataType: "json",
             success: function(data){
                 var status = data.status;
@@ -319,13 +319,14 @@ $(function () {
                     $("#pubshow").append("<div class=\"none\">还没有发表过问题哦，点击去<a href=\"/forward_con/gabble\">发表</a></div>");
                 }
                 else{
+                    console.log(data.list);
                     //TODO: 一次性加载了所有的数据，后续加入分页
-                    $.each(data, function(index, item){
+                    $.each(data.list, function(index, item){
                         $("#pubshow").append("<div class=\"cardheader clearfix\">\n" +
                             "            <div class=\"pull-left header-left\">\n" +
                             "                <h4 class=\"title\">"+item.title+"</h4>\n" +
                             "                <p class=\"descript\">"+item.descript+"</p>\n" +
-                            "                <p class=\"ptimeinfo\">发起于<span class=\"ptime\">"+item.crtime+"</span></p>\n" +
+                            "                <p class=\"ptimeinfo\">发起于<span class=\"ptime\">"+item.crttime+"</span></p>\n" +
                             "                <div class=\"modbtn pull-left\">\n" +
                             "                    <button class=\"combtn btn btn-link\">\n" +
                             "                        <span class=\"glyphicon glyphicon-comment\"></span>\n" +
@@ -374,7 +375,7 @@ $(function () {
                 }
                 else{
                     //TODO: 一次性加载了所有的数据，后续加入分页
-                    $.each(data, function(index, item){
+                    $.each(data.list, function(index, item){
                         $("#ansshow .cardmainlist").append("<div class=\"cardmain\">\n" +
                             "                <div class=\"mainhead clearfix\">\n" +
                             "                    <img class=\"pull-left userface\" src=\""+item.imgsrc+"\" data-uname=\"chengxi\"/>\n" +
@@ -455,7 +456,7 @@ $(function () {
                 }
                 else{
                     //TODO: 一次性加载了所有的数据，后续加入分页
-                    $.each(data, function(index, item){
+                    $.each(data.list, function(index, item){
                         $("#colshow").append("<div class=\"cardheader clearfix\">\n" +
                             "            <div class=\"pull-left header-left\">\n" +
                             "                <h4 class=\"title\">"+item.title+"</h4>\n" +
@@ -508,7 +509,7 @@ $(function () {
                 }
                 else{
                     //TODO: 一次性加载了所有的数据，后续加入分页
-                    $.each(data, function(index, item){
+                    $.each(data.list, function(index, item){
                         $("#comshow").append("<div class=\"commandmain\">\n" +
                             "            <div class=\"commandmainhead clearfix\">\n" +
                             "                <p class=\"ptimeinfo pull-left\">您于<span class=\"ptime\">"+item.comtime+"</span> 评论帖子<a href=\"/forward_con/showcarddetail?cardId="+item.cid+"\">"+item.title+"</a></p>\n" +

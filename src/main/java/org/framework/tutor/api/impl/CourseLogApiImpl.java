@@ -12,6 +12,7 @@
  */
 package org.framework.tutor.api.impl;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonParser;
 import org.framework.tutor.api.CourseLogAPi;
 import org.framework.tutor.domain.CourseLog;
@@ -28,7 +29,10 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author yinjimin
@@ -46,6 +50,7 @@ public class CourseLogApiImpl implements CourseLogAPi {
 
     /**
      * 获取我的课程记录
+     *
      * @param request
      * @param response
      */
@@ -53,42 +58,34 @@ public class CourseLogApiImpl implements CourseLogAPi {
     public void getLog(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         response.setCharacterEncoding("utf-8");
-
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(4);
+        List<Object> rowList = new ArrayList<>();
 
-        if(username == null){
-            res = "{\"status\": \"invalid\", \"url\": \"/forward_con/welcome\"}";
-        }
-        else{
-            //获取课程记录
-            List<CourseLog> courseLogs  = courseLService.getUserlog(username);
-            if(courseLogs.size() == 0){
-                res = "{\"status\": \"ok\", \"len\": \"0\"}";
+        //获取课程记录
+        List<CourseLog> courseLogs = courseLService.getUserlog(username);
+        if (courseLogs.size() == 0) {
+            resultMap.put("status", "ok");
+            resultMap.put("len", 0);
+        } else {
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+            for (org.framework.tutor.domain.CourseLog courseLog : courseLogs) {
+                CourseMain courseMain = courseMService.getCourseById(courseLog.getCid());
+                Map<String, Object> rowMap = new HashMap<>(8);
+                rowMap.put("logtime", simpleDateFormat.format(courseLog.getLogtime()));
+                rowMap.put("imgsrc", courseMain.getImgsrc());
+                rowMap.put("id", courseLog.getId());
+                rowMap.put("cid", courseLog.getCid());
+                rowMap.put("cname", courseMain.getName());
+                rowList.add(rowMap);
             }
-            else {
-                res = "{";
-                int i = 1;
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-                for (org.framework.tutor.domain.CourseLog courseLog : courseLogs) {
-                    CourseMain courseMain = courseMService.getCourseById(courseLog.getCid());
-                    res += "\""+i+"\": ";
-                    String temp = "{\"logtime\": \""+simpleDateFormat.format(courseLog.getLogtime())+"\", " +
-                            "\"imgsrc\": \""+courseMain.getImgsrc()+"\", " +
-                            "\"id\": \""+courseLog.getId()+"\", " +
-                            "\"cid\": \""+courseLog.getCid()+"\", " +
-                            "\"cname\": \""+courseMain.getName()+"\"}, ";
-                    res += temp;
-                    i++;
-                }
-                res = res.substring(0, res.length()-2);
-                res += "}";
-            }
+            resultMap.put("list", rowList);
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -96,6 +93,7 @@ public class CourseLogApiImpl implements CourseLogAPi {
 
     /**
      * 删除指定的课程记录
+     *
      * @param id
      * @param request
      * @param response
@@ -108,21 +106,16 @@ public class CourseLogApiImpl implements CourseLogAPi {
         HttpSession session = request.getSession();
         PrintWriter writer = response.getWriter();
         String username = (String) session.getAttribute("username");
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
-        if(username == null){
-            res = "{\"status\": \"invalid\", \"url\": \"/forward_con/welcome\"}";
-        }
-        else{
-            if(!courseLService.delLog(id)){
-                res = "{\"status\": \"mysqlerr\", \"msg\": \"I'm sorry\"}";
-            }
-            else{
-                res = "{\"status\": \"ok\"}";
-            }
+        if (!courseLService.delLog(id)) {
+            resultMap.put("status", "mysqlerr");
+        } else {
+            resultMap.put("status", "ok");
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }

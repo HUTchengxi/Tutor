@@ -72,7 +72,7 @@
                             }
                             else{
                                 var cnt = 1;
-                                $.each(data, function(index, item){
+                                $.each(data.list, function(index, item){
                                     var question = item.question;
                                     $(".container .mainshow .main-secret form input.mb"+index)
                                         .attr("disabled", "disabled").val(question);

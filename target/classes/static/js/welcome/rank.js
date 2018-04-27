@@ -60,7 +60,7 @@ $(function(){
                         success: function(data){
                             var status = data.status;
                             if(status === "invalid"){
-                                window.location = "/forward_con/welcome";
+                                return ;
                             }
                             else if(status === "mysqlerr"){
                                 window.alert("后台服务器异常导致无法获取通知数据，请刷新页面重试");

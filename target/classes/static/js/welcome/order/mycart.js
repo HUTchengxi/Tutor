@@ -61,7 +61,7 @@ $(function() {
                         success: function(data){
                             var status = data.status;
                             if(status === "invalid"){
-                                window.location = "/forward_con/welcome";
+                                return ;
                             }
                             else if(status === "mysqlerr"){
                                 window.alert("后台服务器异常导致无法获取通知数据，请刷新页面重试");
@@ -137,7 +137,6 @@ $(function() {
             success: function(data){
                 var status = data.status;
                 if(status === "invalid"){
-                    window.location = "/forward_con/welcome";
                 }
                 else if(status === "valid"){
                     $(".cartmain .main").empty();
@@ -146,7 +145,7 @@ $(function() {
                 else{
                     var count = 0;
                     var total = 0;
-                    $.each(data, function(index, item){
+                    $.each(data.list, function(index, item){
                         var imgsrc = item.imgsrc;
                         var name = item.name;
                         var price = parseInt(item.price);
@@ -208,7 +207,7 @@ $(function() {
             success: function(data){
                 var status = data.status;
                 if(status === "invalid"){
-                    window.location = "/forward_con/welcome";
+                    return ;
                 }
                 else {
                     $(".total").text(data.count);

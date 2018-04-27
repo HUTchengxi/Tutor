@@ -12,6 +12,7 @@
  */
 package org.framework.tutor.api.impl;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonParser;
 import org.framework.tutor.api.RegisterApi;
 import org.framework.tutor.domain.UserMain;
@@ -32,7 +33,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.UUID;
+import java.util.*;
 
 /**
  * @author yinjimin
@@ -64,18 +65,17 @@ public class RegisterApiImpl implements RegisterApi {
     public void checkExistUser(HttpServletResponse response, String username) throws IOException {
 
         response.setCharacterEncoding("utf-8");
-        ;
-
         PrintWriter writer = response.getWriter();
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
         if (userMService.userExist(username)) {
-            res = "{\"status\":\"invalid\"}";
+            resultMap.put("status", "invalid");
         } else {
-            res = "{\"status\":\"valid\"}";
+            resultMap.put("status", "valid");
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -99,13 +99,14 @@ public class RegisterApiImpl implements RegisterApi {
         response.setCharacterEncoding("utf-8");
         HttpSession session = request.getSession();
         PrintWriter writer = response.getWriter();
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(4);
 
         //判断用户名是否已经被注册
         UserMain userMain = userMService.getByUser(username);
         //非法调用api
         if(userMain != null){
-            res = "{\"status\": \"invalid\"}";
+            resultMap.put("status", "invalid");
         }
         else {
             String nickname = "勤成游客" + UUID.randomUUID().toString().replaceAll("-", "")
@@ -120,9 +121,11 @@ public class RegisterApiImpl implements RegisterApi {
                 Integer identity = -2;
                 //进行游客注册
                 if (userMService.registerNoCheck(identity, username, password, nickname)) {
-                    res = "{\"status\": \"valid\", \"url\": \"/forward_con/gologin\"}";
+                    resultMap.put("status", "valid");
+                    resultMap.put("url", "/forward_con/gologin");
                 } else {
-                    res = "{\"status\": \"invalid\", \"url\": \"#\"}";
+                    resultMap.put("status", "invalid");
+                    resultMap.put("url", "#");
                 }
             }
             //手机号码注册
@@ -136,14 +139,15 @@ public class RegisterApiImpl implements RegisterApi {
                     //进行注册
                     Integer identity = 0;
                     if(userMService.registerByPhone(identity, username, password, nickname, telephone)){
-                        res = "{\"status\": \"valid\", \"url\": \"/forward_con/gologin\"}";
+                        resultMap.put("status", "valid");
+                        resultMap.put("url", "/forward_con/gologin");
                     }
                     else{
-                        res = "{\"status\": \"mysqlerr\"}";
+                        resultMap.put("status", "mysqlerr");
                     }
                 }
                 else{
-                    res = "{\"status\": \"codeerr\"}";
+                    resultMap.put("status", "codeerr");
                 }
 
             }
@@ -151,7 +155,7 @@ public class RegisterApiImpl implements RegisterApi {
             else if ("email".equals(checktype)) {
                 //邮箱已被注册
                 if (userMService.emailExist(email)) {
-                    res = "{\"status\": \"exist\"}";
+                    resultMap.put("status", "exist");
                 } else {
                     Integer identity = -2;
 
@@ -173,19 +177,20 @@ public class RegisterApiImpl implements RegisterApi {
                         //保存用户邮箱以便后续刷新状态
                         request.getSession().setAttribute("email", email + " " + username);
 
-                        res = "{\"status\": \"valid\", \"url\": \"/forward_con/register_info\"}";
+                        resultMap.put("status", "valid");
+                        resultMap.put("url", "forward_con/register_info");
                     } else {
-                        res = "{\"status\": \"mysqlerr\"}";
+                        resultMap.put("status", "mysqlerr");
                     }
                 }
             }
             //非法调用api
             else {
-                res = "{\"status\": \"invalid\"}";
+                resultMap.put("status", "invalid");
             }
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -205,10 +210,11 @@ public class RegisterApiImpl implements RegisterApi {
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String email = (String) session.getAttribute("email");
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
 
         if (email == null) {
-            res = "{\"status\": \"invalid\"}";
+            resultMap.put("status", "invalid");
         } else {
             String realemail = email.split(" ")[0];
             String realusername = email.split(" ")[1];
@@ -223,10 +229,10 @@ public class RegisterApiImpl implements RegisterApi {
 
             //更新邮箱注册码
             userVService.updateEmailCode(realusername, valicode);
-            res = "{\"status\": \"sendok\"}";
+            resultMap.put("status", "sendok");
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
