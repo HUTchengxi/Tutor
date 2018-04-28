@@ -49,7 +49,8 @@ public class UrlInterceptor extends AbstractHandlerInterceptor {
         HandlerMethod handlerMethod = (HandlerMethod) handler;
         RequireAuth requireAuth = handlerMethod.getMethod().getAnnotation(RequireAuth.class);
         if (requireAuth == null) {
-            System.out.println("INFO urlInterceptor : 无需校验权限的方法->" + handlerMethod.getMethod().getName());
+            String url = request.getRequestURI();
+            System.out.println("INFO urlInterceptor : 无需校验权限的url->" + url);
             return true;
         }
 

@@ -17,6 +17,7 @@ import com.google.gson.JsonParser;
 import org.framework.tutor.api.LoginApi;
 import org.framework.tutor.domain.UserMain;
 import org.framework.tutor.service.UserMService;
+import org.framework.tutor.util.CommonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +28,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.security.NoSuchAlgorithmException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author yinjimin
@@ -50,65 +54,74 @@ public class LoginApiImpl implements LoginApi{
      */
     @Override
     public void login(HttpServletRequest request, HttpServletResponse response,
-                      String username, String password, Integer remember) throws IOException {
+                      String username, String password, Integer remember) throws IOException, NoSuchAlgorithmException {
 
-
-        request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
         PrintWriter writer = response.getWriter();
 
         Gson gson = new Gson();
-        String res = "";
+        Map<String, Object> resultMap = new HashMap<>(4);
 
         //用户名不存在
         if(!userMService.userExist(username)){
-            res = "{status: \"nouser\",url: \"#\"}";
+            resultMap.put("status", "nouser");
+            resultMap.put("url", "#");
         }
         //密码错误
-        else if(!userMService.passCheck(username, password)){
-            res = "{status: \"passerr\",url: \"#\"}";
-        }
-        //登陆成功
-        else{
-            //保存当前登陆状态（以后考虑使用shiro）
-            HttpSession session = request.getSession();
-            session.setAttribute("username",username);
-            //保存昵称和当前用户身份
-            UserMain userMain = userMService.getByUser(username);
-            session.setAttribute("nickname",userMain.getNickname());
-            session.setAttribute("identity",userMain.getIdentity());
-            res = "{status: \"ok\",url: \"/forward_con/welcome\"}";
+        else {
+            //获取密码盐
+            Integer salt = userMService.getByUser(username).getSalt();
+            //明文传来的密码加盐判断
+            String MD5Pass = CommonUtil.getMd5Pass(password, salt);
 
-            //记住密码
-            if(remember == 1){
-                Cookie usercookie = new Cookie("username", username);
-                Cookie passcookie = new Cookie("password", password);
-                usercookie.setMaxAge(2*60*60*24);
-                passcookie.setMaxAge(2*60*60*24);
-                usercookie.setPath("/");
-                passcookie.setPath("/");
-                response.addCookie(usercookie);
-                response.addCookie(passcookie);
+            if (!userMService.passCheck(username, MD5Pass)) {
+
+                resultMap.put("status", "passerr");
+                resultMap.put("url", "#");
             }
-            //清空之前记住的密码
-            else{
-                Cookie[] cookies = request.getCookies();
-                for(Cookie cookie: cookies){
-                    if("username".equals(cookie.getName())){
-                        cookie.setMaxAge(0);
-                        cookie.setPath("/");
-                        response.addCookie(cookie);
-                    }
-                    if("password".equals(cookie.getName())){
-                        cookie.setMaxAge(0);
-                        cookie.setPath("/");
-                        response.addCookie(cookie);
+            //登陆成功
+            else {
+                //保存当前登陆状态（以后考虑使用shiro）
+                HttpSession session = request.getSession();
+                session.setAttribute("username", username);
+                //保存昵称和当前用户身份
+                UserMain userMain = userMService.getByUser(username);
+                session.setAttribute("nickname", userMain.getNickname());
+                session.setAttribute("identity", userMain.getIdentity());
+                resultMap.put("status", "ok");
+                resultMap.put("url", "/forward_con/welcome");
+
+                //记住密码
+                if (remember == 1) {
+                    Cookie usercookie = new Cookie("username", username);
+                    Cookie passcookie = new Cookie("password", password);
+                    usercookie.setMaxAge(2 * 60 * 60 * 24);
+                    passcookie.setMaxAge(2 * 60 * 60 * 24);
+                    usercookie.setPath("/");
+                    passcookie.setPath("/");
+                    response.addCookie(usercookie);
+                    response.addCookie(passcookie);
+                }
+                //清空之前记住的密码
+                else {
+                    Cookie[] cookies = request.getCookies();
+                    for (Cookie cookie : cookies) {
+                        if ("username".equals(cookie.getName())) {
+                            cookie.setMaxAge(0);
+                            cookie.setPath("/");
+                            response.addCookie(cookie);
+                        }
+                        if ("password".equals(cookie.getName())) {
+                            cookie.setMaxAge(0);
+                            cookie.setPath("/");
+                            response.addCookie(cookie);
+                        }
                     }
                 }
             }
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -124,12 +137,13 @@ public class LoginApiImpl implements LoginApi{
 
         Cookie[] cookies = request.getCookies();
         PrintWriter writer = response.getWriter();
-        String res = null;
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(4);
 
         String user = null;
         String pass = null;
         if(cookies == null || cookies.length <= 0){
-            res = "{\"status\": \"none\"}";
+            resultMap.put("status", "none");
         }
         else {
             for (int i = 0; i < cookies.length; i++) {
@@ -142,13 +156,14 @@ public class LoginApiImpl implements LoginApi{
             }
 
             if (user == null) {
-                res = "{\"status\": \"none\"}";
+                resultMap.put("status", "none");
             } else {
-                res = "{\"username\": \"" + user + "\", \"password\": \"" + pass + "\"}";
+                resultMap.put("username", user);
+                resultMap.put("password", pass);
             }
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -164,19 +179,24 @@ public class LoginApiImpl implements LoginApi{
         response.setCharacterEncoding("utf-8");
 
         PrintWriter writer = response.getWriter();
-        String res = null;
         HttpSession session = request.getSession();
         String nickname = (String) session.getAttribute("nickname");
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(8);
 
         if(nickname == null){
-            res = "{\"status\": \"nologin\", \"nick\": \"null\", \"ident\": \"null\"}";
+            resultMap.put("status", "nologin");
+            resultMap.put("nick", "null");
+            resultMap.put("ident", "null");
         }
         else{
             Integer ident = (Integer) session.getAttribute("identity");
-            res = "{\"status\": \"login\", \"nick\": \""+nickname+"\", \"ident\": \""+ident+"\"}";
+            resultMap.put("status", "login");
+            resultMap.put("nick", nickname);
+            resultMap.put("ident", ident);
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
@@ -191,23 +211,23 @@ public class LoginApiImpl implements LoginApi{
     public void loginOff(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         response.setCharacterEncoding("utf-8");
-
         PrintWriter writer = response.getWriter();
-        String res = null;
         HttpSession session = request.getSession();
         String nickname = (String) session.getAttribute("nickname");
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(4);
 
         //非法获取api侵入
         if(nickname == null){
-            res = "{\"status\": \"invalid url\"}";
+            resultMap.put("status", "invalid url");
         }
         else {
             //清楚session里的所有信息，并使session失效
             session.invalidate();
-            res = "{\"status\": \"logoff\"}";
+            resultMap.put("status", "logoff");
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
+        writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }

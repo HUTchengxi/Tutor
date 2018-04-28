@@ -33,6 +33,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.security.NoSuchAlgorithmException;
 import java.util.*;
 
 /**
@@ -94,7 +95,7 @@ public class RegisterApiImpl implements RegisterApi {
      */
     @Override
     public void registerNoCheck(HttpServletRequest request, HttpServletResponse response, String username, String password,
-                                String checktype, String telephone, String email, String phonecode) throws IOException, MessagingException {
+                                String checktype, String telephone, String email, String phonecode) throws IOException, MessagingException, NoSuchAlgorithmException {
 
         response.setCharacterEncoding("utf-8");
         HttpSession session = request.getSession();
@@ -116,11 +117,18 @@ public class RegisterApiImpl implements RegisterApi {
                 nickname = "勤成游客" + UUID.randomUUID().toString().replaceAll("-", "")
                         .substring(0, 8);
             }
+
+            //随机获取加密盐
+            Integer salt = CommonUtil.getMd5Salt();
+
+            //密码加盐
+            password = CommonUtil.getMd5Pass(password, salt);
+
             //游客身份注册
             if ("none".equals(checktype)) {
                 Integer identity = -2;
                 //进行游客注册
-                if (userMService.registerNoCheck(identity, username, password, nickname)) {
+                if (userMService.registerNoCheck(identity, username, password, nickname, salt)) {
                     resultMap.put("status", "valid");
                     resultMap.put("url", "/forward_con/gologin");
                 } else {

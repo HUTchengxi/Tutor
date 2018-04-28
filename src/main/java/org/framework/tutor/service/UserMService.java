@@ -45,7 +45,7 @@ public interface UserMService {
      * @param nickname
      * @return
      */
-    public boolean registerNoCheck(Integer identity, String username, String password, String nickname);
+    public boolean registerNoCheck(Integer identity, String username, String password, String nickname, Integer salt);
 
     /**
      * 更换指定用户的头像

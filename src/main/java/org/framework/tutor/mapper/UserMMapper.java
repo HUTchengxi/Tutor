@@ -45,9 +45,9 @@ public interface UserMMapper {
      * @param password
      * @param nickname
      */
-    @Insert("insert into user_main(identity,username, password, nickname) values(#{identity}, #{username},#{password},#{nickname})")
+    @Insert("insert into user_main(identity,username, password, nickname, salt) values(#{identity}, #{username},#{password},#{nickname}, #{salt})")
     Integer addUser(@Param("identity") Integer identity,@Param("username") String username,
-                    @Param("password") String password, @Param("nickname") String nickname);
+                    @Param("password") String password, @Param("nickname") String nickname, @Param("salt") Integer salt);
 
     /**
      * 更换指定用户的头像

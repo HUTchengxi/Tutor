@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.security.NoSuchAlgorithmException;
 
 public interface LoginApi {
 
@@ -26,7 +27,7 @@ public interface LoginApi {
      * @throws IOException
      */
     public void login(HttpServletRequest request, HttpServletResponse response,
-                      String username, String password, Integer remember) throws IOException ;
+                      String username, String password, Integer remember) throws IOException, NoSuchAlgorithmException;
 
     /**
      *  登录时判断是否已经记住密码并获取相关信息

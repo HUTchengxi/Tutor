@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.security.NoSuchAlgorithmException;
 import java.util.UUID;
 
 public interface RegisterApi {
@@ -43,7 +44,7 @@ public interface RegisterApi {
      * @param email
      */
     public void registerNoCheck(HttpServletRequest request, HttpServletResponse response, String username, String password,String checktype,
-                                String telephone, String email, String phonecode) throws IOException, MessagingException;
+                                String telephone, String email, String phonecode) throws IOException, MessagingException, NoSuchAlgorithmException;
 
     /**
      * 重发邮件

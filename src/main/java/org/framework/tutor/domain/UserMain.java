@@ -15,6 +15,16 @@ public class UserMain implements Serializable{
     private String username;
     private String password;
     private String nickname;
+    private Integer salt;
+
+    public Integer getSalt() {
+        return salt;
+    }
+
+    public void setSalt(Integer salt) {
+        this.salt = salt;
+    }
+
     private Integer sex;
     private Integer age;
     private String telephone;

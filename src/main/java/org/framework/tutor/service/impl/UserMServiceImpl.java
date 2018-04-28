@@ -75,9 +75,9 @@ public class UserMServiceImpl implements UserMService {
      * @return
      */
     @Override
-    public boolean registerNoCheck(Integer identity, String username, String password, String nickname) {
+    public boolean registerNoCheck(Integer identity, String username, String password, String nickname, Integer salt) {
 
-        if(userMMapper.addUser(identity, username, password, nickname) == 1) {
+        if(userMMapper.addUser(identity, username, password, nickname, salt) == 1) {
             return true;
         }
         return false;

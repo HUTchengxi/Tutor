@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.security.NoSuchAlgorithmException;
 import java.util.UUID;
 
 /**
@@ -60,7 +61,7 @@ public class Register {
     @RequestMapping("/register_main")
     public void registerNoCheck(HttpServletRequest request, HttpServletResponse response, @RequestParam("username") String username,
                                 @RequestParam("password") String password, @RequestParam("checktype") String checktype,
-                                String telephone, String email, String phonecode) throws IOException, MessagingException {
+                                String telephone, String email, String phonecode) throws IOException, MessagingException, NoSuchAlgorithmException {
         registerApi.registerNoCheck(request, response, username, password, checktype, telephone, email, phonecode);
     }
 

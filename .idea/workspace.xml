@@ -11,106 +11,18 @@
   <component name="ChangeListManager">
     <list default="true" id="bf479440-431d-499c-9612-40c14de1a166" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/AdminApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/AdminApiImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardAnswerApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardAnswerApiImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardAnswerCommandApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardAnswerCommandApiImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardAnswerStarApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardAnswerStarApiImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardApiImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardCollectApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardCollectApiImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CommandStarApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CommandStarApiImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CommonImgsrcApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CommonImgsrcApiImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseChapterApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseChapterApiImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseCollectionApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseCollectionApiImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseCommandApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseCommandApiImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseDeleteReqApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseDeleteReqApiImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseLogApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseLogApiImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseMainApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseMainApiImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseOrderApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseOrderApiImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseSummaryApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseSummaryApiImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseTreplyApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseTreplyApiImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/PublishLogApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/PublishLogApiImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/LoginApi.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/LoginApi.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/RegisterApi.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/RegisterApi.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/LoginApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/LoginApiImpl.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/RegisterApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/RegisterApiImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/SysEmailManagerApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/SysEmailManagerApiImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/TutorBtnsApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/TutorBtnsApiImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/UserLogApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/UserLogApiImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/UserMainApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/UserMainApiImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/UserMessageApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/UserMessageApiImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/UserSecretApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/UserSecretApiImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/UserSignApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/UserSignApiImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardController.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/Login.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/Login.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/Register.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/Register.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/UserMain.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/UserMain.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/interceptor/UrlInterceptor.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/interceptor/UrlInterceptor.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMSMapper.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMSMapper.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/login/mine/forget.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/login/mine/forget.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/register/mine/check.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/register/mine/check.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/tutor/index.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/tutor/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/tutor/mypublish.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/tutor/mypublish.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/tutor/publishnew.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/tutor/publishnew.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/tutor/sysmain.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/tutor/sysmain.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/classify.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/classify.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/contact.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/contact.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/carddetail.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/carddetail.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/gabble.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/gabble.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/mybbs.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/mybbs.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/showcard.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/showcard.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/mycourse/mycourse.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/mycourse/mycourse.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/mymessage.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/mymessage.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/mysetting.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/mysetting.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/order/mycart.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/order/mycart.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/order/myorder.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/order/myorder.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/personal/personal.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/personal/personal.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/rank.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/rank.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/welcome.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/welcome.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/AdminApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/AdminApiImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/BbsCardAnswerApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/BbsCardAnswerApiImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/BbsCardAnswerCommandApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/BbsCardAnswerCommandApiImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/BbsCardAnswerStarApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/BbsCardAnswerStarApiImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/BbsCardApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/BbsCardApiImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/BbsCardCollectApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/BbsCardCollectApiImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CommandStarApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CommandStarApiImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CommonImgsrcApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CommonImgsrcApiImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseChapterApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseChapterApiImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseCollectionApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseCollectionApiImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseCommandApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseCommandApiImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseDeleteReqApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseDeleteReqApiImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseLogApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseLogApiImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseMainApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseMainApiImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseOrderApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseOrderApiImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseSummaryApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseSummaryApiImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseTreplyApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseTreplyApiImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/PublishLogApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/PublishLogApiImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/RegisterApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/RegisterApiImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/SysEmailManagerApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/SysEmailManagerApiImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/TutorBtnsApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/TutorBtnsApiImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/UserLogApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/UserLogApiImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/UserMainApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/UserMainApiImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/UserMessageApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/UserMessageApiImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/UserSecretApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/UserSecretApiImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/UserSignApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/UserSignApiImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/BbsCardController.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/controller/BbsCardController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/interceptor/UrlInterceptor.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/interceptor/UrlInterceptor.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/mapper/UserMSMapper.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/mapper/UserMSMapper.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/login/mine/forget.js" afterPath="$PROJECT_DIR$/target/classes/static/js/login/mine/forget.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/register/mine/check.js" afterPath="$PROJECT_DIR$/target/classes/static/js/register/mine/check.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/sysconfig/tutor/index.js" afterPath="$PROJECT_DIR$/target/classes/static/js/sysconfig/tutor/index.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/sysconfig/tutor/mypublish.js" afterPath="$PROJECT_DIR$/target/classes/static/js/sysconfig/tutor/mypublish.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/sysconfig/tutor/publishnew.js" afterPath="$PROJECT_DIR$/target/classes/static/js/sysconfig/tutor/publishnew.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/sysconfig/tutor/sysmain.js" afterPath="$PROJECT_DIR$/target/classes/static/js/sysconfig/tutor/sysmain.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/classify.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/classify.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/contact.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/contact.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/gabble/carddetail.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/gabble/carddetail.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/gabble/gabble.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/gabble/gabble.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/gabble/mybbs.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/gabble/mybbs.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/gabble/showcard.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/gabble/showcard.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/mycourse/mycourse.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/mycourse/mycourse.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/mymessage.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/mymessage.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/mysetting.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/mysetting.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/order/mycart.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/order/mycart.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/order/myorder.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/order/myorder.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/personal/personal.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/personal/personal.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/rank.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/rank.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/showcourse.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/showcourse.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/welcome.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/welcome.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMMapper.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMService.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/util/CommonUtil.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/util/CommonUtil.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -156,66 +68,36 @@
     <favorites_list name="Tutor" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="myorder.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/order/myorder.js">
+    <leaf>
+      <file leaf-file-name="CommonUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/util/CommonUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="40" column="22" lean-forward="false" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
-              <folding>
-                <marker date="1524827628733" expanded="true" signature="1283:1294" ph="..." />
-                <marker date="1524827628733" expanded="true" signature="3282:3297" ph="..." />
-                <marker date="1524827628733" expanded="true" signature="3382:3395" ph="..." />
-                <marker date="1524827628733" expanded="true" signature="3449:3460" ph="..." />
-                <marker date="1524827628733" expanded="true" signature="7492:7507" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UrlInterceptor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/interceptor/UrlInterceptor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="78" column="60" lean-forward="true" selection-start-line="78" selection-start-column="60" selection-end-line="78" selection-end-column="60" />
+            <state relative-caret-position="450">
+              <caret line="152" column="5" lean-forward="true" selection-start-line="152" selection-start-column="5" selection-end-line="152" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="showcourse.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js">
+      <file leaf-file-name="RegisterApiImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/RegisterApiImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="945" column="40" lean-forward="true" selection-start-line="945" selection-start-column="40" selection-end-line="945" selection-end-column="40" />
+            <state relative-caret-position="-194">
+              <caret line="124" column="20" lean-forward="false" selection-start-line="124" selection-start-column="20" selection-end-line="124" selection-end-column="20" />
               <folding>
-                <marker date="1524828954094" expanded="true" signature="1378:1389" ph="..." />
-                <marker date="1524828954094" expanded="true" signature="3400:3415" ph="..." />
-                <marker date="1524828954094" expanded="true" signature="3504:3517" ph="..." />
-                <marker date="1524828954094" expanded="true" signature="3575:3586" ph="..." />
-                <marker date="1524828954094" expanded="true" signature="4867:4878" ph="..." />
-                <marker date="1524828954094" expanded="true" signature="11770:11776" ph="&amp;nbsp;" />
-                <marker date="1524828954094" expanded="true" signature="11776:11782" ph="&amp;nbsp;" />
-                <marker date="1524828954094" expanded="true" signature="11804:11812" ph="&amp;##xe605;" />
-                <marker date="1524828954094" expanded="true" signature="12083:12089" ph="&amp;nbsp;" />
-                <marker date="1524828954094" expanded="true" signature="12089:12095" ph="&amp;nbsp;" />
-                <marker date="1524828954094" expanded="true" signature="12117:12125" ph="&amp;##xe605;" />
-                <marker date="1524828954094" expanded="true" signature="14046:14052" ph="&amp;nbsp;" />
-                <marker date="1524828954094" expanded="true" signature="14052:14058" ph="&amp;nbsp;" />
-                <marker date="1524828954094" expanded="true" signature="14080:14088" ph="&amp;##xe605;" />
-                <marker date="1524828954094" expanded="true" signature="18248:18254" ph="&amp;nbsp;" />
-                <marker date="1524828954094" expanded="true" signature="18254:18260" ph="&amp;nbsp;" />
-                <marker date="1524828954094" expanded="true" signature="18260:18266" ph="&amp;nbsp;" />
-                <marker date="1524828954094" expanded="true" signature="18266:18272" ph="&amp;nbsp;" />
-                <marker date="1524828954094" expanded="true" signature="32687:32693" ph="&amp;nbsp;" />
-                <marker date="1524828954094" expanded="true" signature="34080:34086" ph="&amp;nbsp;" />
-                <marker date="1524828954094" expanded="true" signature="34086:34092" ph="&amp;nbsp;" />
-                <marker date="1524828954094" expanded="true" signature="34092:34098" ph="&amp;nbsp;" />
-                <marker date="1524828954094" expanded="true" signature="34098:34104" ph="&amp;nbsp;" />
-                <marker date="1524828954094" expanded="true" signature="42300:42308" ph="&amp;##xe651;" />
-                <marker date="1524828954094" expanded="true" signature="42380:42386" ph="&amp;nbsp;" />
-                <marker date="1524828954094" expanded="true" signature="42386:42392" ph="&amp;nbsp;" />
+                <element signature="method#checkExistUser#0;class#RegisterApiImpl#0" expanded="false" />
+                <element signature="method#emailResend#0;class#RegisterApiImpl#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Register.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/Register.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="64" column="20" lean-forward="false" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -235,8 +117,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getall</find>
-      <find>commonimgsrc_con/get</find>
       <find>addmystar</find>
       <find>getcoursesummaryinfo</find>
       <find>courselog_con/getlog</find>
@@ -265,6 +145,8 @@
       <find>getcommandlistbyaid</find>
       <find>getcoursechapter</find>
       <find>getCourseChapter</find>
+      <find>login</find>
+      <find>login(</find>
     </findStrings>
     <replaceStrings>
       <replace>replace(&quot;.&quot;,&quot;-&quot;).replace(&quot;.&quot;,&quot;-&quot;).replace(&quot;.&quot;,&quot;-&quot;)</replace>
@@ -313,14 +195,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseTreply.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseSummaryController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseOrderManagerController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserSign.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserSecret.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMessage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserLog.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/TutorBtnsController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/SysEmailManagerController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/PublishLogController.java" />
@@ -353,17 +227,25 @@
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/UserSecretApiImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/RankApiImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/PublishLogApiImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/RegisterApiImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/SysEmailManagerApiImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/TutorBtnsApiImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/UserLogApiImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/UserMainApiImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/UserMessageApiImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/order/myorder.js" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/interceptor/UrlInterceptor.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMSMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/tutor/mypublish.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/interceptor/UrlInterceptor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/UserMain.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/LoginApiImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/Login.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/util/CommonUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/Register.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/RegisterApiImpl.java" />
       </list>
     </option>
   </component>
@@ -500,8 +382,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -553,7 +435,38 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="framework" type="462c0819:PsiDirectoryNode" />
               <item name="tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="interceptor" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tutorweb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tutorweb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tutorweb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
@@ -821,7 +734,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main2">
+  <component name="RunManager" selected="Application.CommonUtil">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -1103,10 +1016,10 @@
     </list>
     <recent_temporary>
       <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Application.ReverseProject" />
-        <item index="1" class="java.lang.String" itemvalue="Application.UserMessage" />
-        <item index="2" class="java.lang.String" itemvalue="Application.TestMain" />
-        <item index="3" class="java.lang.String" itemvalue="Application.CommonUtil" />
+        <item index="0" class="java.lang.String" itemvalue="Application.CommonUtil" />
+        <item index="1" class="java.lang.String" itemvalue="Application.ReverseProject" />
+        <item index="2" class="java.lang.String" itemvalue="Application.UserMessage" />
+        <item index="3" class="java.lang.String" itemvalue="Application.TestMain" />
       </list>
     </recent_temporary>
   </component>
@@ -1292,7 +1205,8 @@
       <workItem from="1524704408753" duration="2200000" />
       <workItem from="1524725445457" duration="20820000" />
       <workItem from="1524797913689" duration="5926000" />
-      <workItem from="1524812911005" duration="15013000" />
+      <workItem from="1524812911005" duration="16736000" />
+      <workItem from="1524877349065" duration="4866000" />
     </task>
     <task id="LOCAL-00013" summary="邮箱注册以及后续的验证的实现，还未实现邮箱注册后的等待/重发界面">
       <created>1520780099718</created>
@@ -1641,7 +1555,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1212802000" />
+    <option name="totallyTimeSpent" value="1219391000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1654,7 +1568,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992035" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1672,10 +1585,10 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287827" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287827" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31968147" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31968147" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66870093" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287827" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16505896" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26259378" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1795,67 +1708,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/io/PrintWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="598" column="16" lean-forward="false" selection-start-line="598" selection-start-column="16" selection-end-line="598" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardApiImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2997">
-          <caret line="261" column="107" lean-forward="false" selection-start-line="261" selection-start-column="107" selection-end-line="261" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="148" column="12" lean-forward="false" selection-start-line="148" selection-start-column="12" selection-end-line="148" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardCollectController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="657">
-          <caret line="117" column="46" lean-forward="false" selection-start-line="117" selection-start-column="46" selection-end-line="117" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardAnswerStarController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="68" column="46" lean-forward="false" selection-start-line="68" selection-start-column="46" selection-end-line="68" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardCollectApiImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2618">
-          <caret line="184" column="110" lean-forward="true" selection-start-line="184" selection-start-column="110" selection-end-line="184" selection-end-column="110" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/carddetail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="931">
-          <caret line="448" column="26" lean-forward="true" selection-start-line="448" selection-start-column="26" selection-end-line="448" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/mybbs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
-          <caret line="568" column="3" lean-forward="true" selection-start-line="568" selection-start-column="3" selection-end-line="568" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardAnswerStarApiImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="516">
@@ -1867,7 +1719,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
           <caret line="108" column="46" lean-forward="false" selection-start-line="108" selection-start-column="46" selection-end-line="108" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1875,7 +1726,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="721">
           <caret line="57" column="7" lean-forward="false" selection-start-line="57" selection-start-column="7" selection-end-line="57" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1890,13 +1740,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="106">
           <caret line="167" column="6" lean-forward="true" selection-start-line="167" selection-start-column="6" selection-end-line="167" selection-end-column="6" />
-          <folding>
-            <element signature="method#getCardAnswerByCardid#0;class#BbsCardAnswerApiImpl#0" expanded="false" />
-            <element signature="method#checkUserCommand#0;class#BbsCardAnswerApiImpl#0" expanded="false" />
-            <element signature="method#addAnswer#0;class#BbsCardAnswerApiImpl#0" expanded="false" />
-            <element signature="method#getMyAnswerCount#0;class#BbsCardAnswerApiImpl#0" expanded="false" />
-            <element signature="method#getMyAnswerInfo#0;class#BbsCardAnswerApiImpl#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1904,12 +1747,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1397">
           <caret line="166" column="110" lean-forward="false" selection-start-line="166" selection-start-column="110" selection-end-line="166" selection-end-column="110" />
-          <folding>
-            <element signature="method#getCommandListByAid#0;class#BbsCardAnswerCommandApiImpl#0" expanded="false" />
-            <element signature="method#publishCommand#0;class#BbsCardAnswerCommandApiImpl#0" expanded="false" />
-            <element signature="method#getMyCommandCount#0;class#BbsCardAnswerCommandApiImpl#0" expanded="false" />
-            <element signature="method#getMyCommandInfo#0;class#BbsCardAnswerCommandApiImpl#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1917,7 +1754,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-268">
           <caret line="41" column="40" lean-forward="true" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1925,16 +1761,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
           <caret line="333" column="127" lean-forward="false" selection-start-line="333" selection-start-column="127" selection-end-line="333" selection-end-column="127" />
-          <folding>
-            <element signature="method#getCourseCommand#0;class#CourseCommandApiImpl#0" expanded="false" />
-            <element signature="method#getCourseCommandGod#0;class#CourseCommandApiImpl#0" expanded="false" />
-            <element signature="method#selMyCommand#0;class#CourseCommandApiImpl#0" expanded="false" />
-            <element signature="method#subMyCommand#0;class#CourseCommandApiImpl#0" expanded="false" />
-            <element signature="method#getCommandCount#0;class#CourseCommandApiImpl#0" expanded="false" />
-            <element signature="method#loadMyCommandInfo#0;class#CourseCommandApiImpl#0" expanded="false" />
-            <element signature="method#getCommandList#0;class#CourseCommandApiImpl#0" expanded="false" />
-            <element signature="method#setCommandGodstate#0;class#CourseCommandApiImpl#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1942,11 +1768,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="879">
           <caret line="180" column="8" lean-forward="false" selection-start-line="180" selection-start-column="8" selection-end-line="180" selection-end-column="8" />
-          <folding>
-            <element signature="method#getMyCollect#0;class#CourseCollectionApiImpl#0" expanded="false" />
-            <element signature="method#checkUserCollect#0;class#CourseCollectionApiImpl#0" expanded="false" />
-            <element signature="method#modUserCollect#0;class#CourseCollectionApiImpl#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1966,7 +1787,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="505">
           <caret line="37" column="29" lean-forward="false" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1974,7 +1794,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1347">
           <caret line="68" column="39" lean-forward="false" selection-start-line="68" selection-start-column="39" selection-end-line="68" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1982,9 +1801,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="953">
           <caret line="91" column="132" lean-forward="false" selection-start-line="91" selection-start-column="132" selection-end-line="91" selection-end-column="132" />
-          <folding>
-            <element signature="method#addMyStar#0;class#CommandStarApiImpl#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1992,9 +1808,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="777">
           <caret line="47" column="102" lean-forward="false" selection-start-line="47" selection-start-column="102" selection-end-line="47" selection-end-column="102" />
-          <folding>
-            <element signature="method#getTreply#0;class#CourseTreplyApiImpl#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2002,10 +1815,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1369">
           <caret line="95" column="128" lean-forward="false" selection-start-line="95" selection-start-column="128" selection-end-line="95" selection-end-column="128" />
-          <folding>
-            <element signature="method#getCourseSummaryInfo#0;class#CourseSummaryApiImpl#0" expanded="false" />
-            <element signature="method#updateCourseSummary#0;class#CourseSummaryApiImpl#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2013,7 +1822,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="653">
           <caret line="48" column="14" lean-forward="false" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2021,7 +1829,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
           <caret line="56" column="19" lean-forward="false" selection-start-line="56" selection-start-column="19" selection-end-line="56" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2029,9 +1836,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3302">
           <caret line="72" column="144" lean-forward="false" selection-start-line="72" selection-start-column="144" selection-end-line="72" selection-end-column="144" />
-          <folding>
-            <element signature="method#setMyCourseDeleteReq#0;class#CourseDeleteReqApiImpl#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2039,10 +1843,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1369">
           <caret line="101" column="112" lean-forward="false" selection-start-line="101" selection-start-column="112" selection-end-line="101" selection-end-column="112" />
-          <folding>
-            <element signature="method#getLog#0;class#CourseLogApiImpl#0" expanded="false" />
-            <element signature="method#delLog#0;class#CourseLogApiImpl#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2050,7 +1850,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-740">
           <caret line="48" column="10" lean-forward="true" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2058,7 +1857,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1767">
           <caret line="169" column="7" lean-forward="true" selection-start-line="169" selection-start-column="7" selection-end-line="169" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2066,9 +1864,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-620">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#884#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2076,17 +1871,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1952">
           <caret line="556" column="48" lean-forward="false" selection-start-line="556" selection-start-column="48" selection-end-line="556" selection-end-column="48" />
-          <folding>
-            <element signature="method#getCourseList#0;class#CourseMainApiImpl#0" expanded="false" />
-            <element signature="method#getAllCourseType#0;class#CourseMainApiImpl#0" expanded="false" />
-            <element signature="method#getCourseType#0;class#CourseMainApiImpl#0" expanded="false" />
-            <element signature="method#courseSearch#0;class#CourseMainApiImpl#0" expanded="false" />
-            <element signature="method#getCourseById#0;class#CourseMainApiImpl#0" expanded="false" />
-            <element signature="method#getCourseCount#0;class#CourseMainApiImpl#0" expanded="false" />
-            <element signature="method#getMyPublish#0;class#CourseMainApiImpl#0" expanded="false" />
-            <element signature="method#publishNewCourse#0;class#CourseMainApiImpl#0" expanded="false" />
-            <element signature="method#getCourseSummary#0;class#CourseMainApiImpl#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2094,24 +1878,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="842">
           <caret line="281" column="107" lean-forward="false" selection-start-line="281" selection-start-column="107" selection-end-line="281" selection-end-column="107" />
-          <folding>
-            <element signature="method#getOrderInfo#0;class#CourseOrderApiImpl#0" expanded="false" />
-            <element signature="method#addCart#0;class#CourseOrderApiImpl#0" expanded="false" />
-            <element signature="method#getMyCart#0;class#CourseOrderApiImpl#0" expanded="false" />
-            <element signature="method#delMyCart#0;class#CourseOrderApiImpl#0" expanded="false" />
-            <element signature="method#getMyCartCount#0;class#CourseOrderApiImpl#0" expanded="false" />
-            <element signature="method#getMyOrder#0;class#CourseOrderApiImpl#0" expanded="false" />
-            <element signature="method#setInCycle#0;class#CourseOrderApiImpl#0" expanded="false" />
-            <element signature="method#getOrderCount#0;class#CourseOrderApiImpl#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/LoginApiImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-161">
-          <caret line="36" column="13" lean-forward="false" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2119,10 +1885,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1036">
           <caret line="82" column="105" lean-forward="false" selection-start-line="82" selection-start-column="105" selection-end-line="82" selection-end-column="105" />
-          <folding>
-            <element signature="method#getMySign#0;class#UserSignApiImpl#0" expanded="false" />
-            <element signature="method#addUsersign#0;class#UserSignApiImpl#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2130,20 +1892,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="53" column="40" lean-forward="false" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
-          <folding>
-            <element signature="method#delUserSecret#0;class#UserSecretApiImpl#0" expanded="false" />
-            <element signature="method#addUserSecret#0;class#UserSecretApiImpl#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/PublishLogApiImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-139">
-          <caret line="80" column="31" lean-forward="false" selection-start-line="80" selection-start-column="31" selection-end-line="80" selection-end-column="31" />
-          <folding>
-            <element signature="method#getLogAll#0;class#PublishLogApiImpl#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2151,7 +1899,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-120">
           <caret line="61" column="26" lean-forward="true" selection-start-line="61" selection-start-column="26" selection-end-line="61" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2159,7 +1906,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-518">
           <caret line="109" column="4" lean-forward="false" selection-start-line="109" selection-start-column="4" selection-end-line="109" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2167,19 +1913,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1304">
           <caret line="80" column="43" lean-forward="false" selection-start-line="80" selection-start-column="43" selection-end-line="80" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/RegisterApiImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="205" column="125" lean-forward="true" selection-start-line="205" selection-start-column="125" selection-end-line="205" selection-end-column="125" />
-          <folding>
-            <element signature="method#checkExistUser#0;class#RegisterApiImpl#0" expanded="false" />
-            <element signature="method#registerNoCheck#0;class#RegisterApiImpl#0" expanded="false" />
-            <element signature="method#emailResend#0;class#RegisterApiImpl#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2198,15 +1931,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="274">
           <caret line="709" column="29" lean-forward="false" selection-start-line="709" selection-start-column="29" selection-end-line="709" selection-end-column="29" />
-          <folding>
-            <element signature="method#getImgsrc#0;class#UserMainApiImpl#0" expanded="false" />
-            <element signature="method#getUserinfo#0;class#UserMainApiImpl#0" expanded="false" />
-            <element signature="method#modImgfile#0;class#UserMainApiImpl#0" expanded="false" />
-            <element signature="method#modUserinfo#0;class#UserMainApiImpl#0" expanded="false" />
-            <element signature="method#getBindInfo#0;class#UserMainApiImpl#0" expanded="false" />
-            <element signature="method#modPass#0;class#UserMainApiImpl#0" expanded="false" />
-            <element signature="method#modPassBySecret#0;class#UserMainApiImpl#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2214,7 +1938,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="72" column="26" lean-forward="true" selection-start-line="72" selection-start-column="26" selection-end-line="72" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2222,36 +1945,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2317">
           <caret line="309" column="42" lean-forward="false" selection-start-line="309" selection-start-column="42" selection-end-line="309" selection-end-column="42" />
-          <folding>
-            <element signature="method#getMyMessageCount#0;class#UserMessageApiImpl#0" expanded="false" />
-            <element signature="method#getMyMessage#0;class#UserMessageApiImpl#0" expanded="false" />
-            <element signature="method#getMessageByUser#0;class#UserMessageApiImpl#0" expanded="false" />
-            <element signature="method#setMessageStatus#0;class#UserMessageApiImpl#0" expanded="false" />
-            <element signature="method#getMessageByStatus#0;class#UserMessageApiImpl#0" expanded="false" />
-            <element signature="method#delMyMessage#0;class#UserMessageApiImpl#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/order/myorder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="40" column="22" lean-forward="false" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
-          <folding>
-            <marker date="1524827628733" expanded="true" signature="1283:1294" ph="..." />
-            <marker date="1524827628733" expanded="true" signature="3282:3297" ph="..." />
-            <marker date="1524827628733" expanded="true" signature="3382:3395" ph="..." />
-            <marker date="1524827628733" expanded="true" signature="3449:3460" ph="..." />
-            <marker date="1524827628733" expanded="true" signature="7492:7507" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/interceptor/UrlInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="78" column="60" lean-forward="true" selection-start-line="78" selection-start-column="60" selection-end-line="78" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2259,7 +1952,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="122" column="32" lean-forward="false" selection-start-line="122" selection-start-column="32" selection-end-line="122" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2267,10 +1959,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="879">
           <caret line="115" column="36" lean-forward="false" selection-start-line="115" selection-start-column="36" selection-end-line="115" selection-end-column="36" />
-          <folding>
-            <marker date="1524828710906" expanded="true" signature="4373:4381" ph="&amp;##xe63f;" />
-            <marker date="1524828710906" expanded="true" signature="4927:4935" ph="&amp;##xe63f;" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2278,7 +1966,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="100" column="14" lean-forward="true" selection-start-line="100" selection-start-column="14" selection-end-line="100" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2292,8 +1979,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="945" column="40" lean-forward="true" selection-start-line="945" selection-start-column="40" selection-end-line="945" selection-end-column="40" />
+        <state relative-caret-position="875">
+          <caret line="949" column="39" lean-forward="true" selection-start-line="949" selection-start-column="39" selection-end-line="949" selection-end-column="39" />
           <folding>
             <marker date="1524828954094" expanded="true" signature="1378:1389" ph="..." />
             <marker date="1524828954094" expanded="true" signature="3400:3415" ph="..." />
@@ -2321,6 +2008,121 @@
             <marker date="1524828954094" expanded="true" signature="42300:42308" ph="&amp;##xe651;" />
             <marker date="1524828954094" expanded="true" signature="42380:42386" ph="&amp;nbsp;" />
             <marker date="1524828954094" expanded="true" signature="42386:42392" ph="&amp;nbsp;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/order/myorder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="40" column="22" lean-forward="false" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/interceptor/UrlInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="52" column="73" lean-forward="false" selection-start-line="52" selection-start-column="73" selection-end-line="52" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/PublishLogApiImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="54" column="75" lean-forward="false" selection-start-line="54" selection-start-column="75" selection-end-line="54" selection-end-column="75" />
+          <folding>
+            <element signature="method#getLogNew#0;class#PublishLogApiImpl#0" expanded="false" />
+            <element signature="method#getLogAll#0;class#PublishLogApiImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/UserMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="19" column="30" lean-forward="true" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+          <folding>
+            <element signature="e#454#455#0" expanded="true" />
+            <element signature="e#495#496#0" expanded="true" />
+            <element signature="e#527#528#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/LoginApiImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="668">
+          <caret line="56" column="119" lean-forward="false" selection-start-line="56" selection-start-column="119" selection-end-line="56" selection-end-column="119" />
+          <folding>
+            <element signature="method#login#0;class#LoginApiImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="36" column="47" lean-forward="true" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/RegisterApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="45" column="50" lean-forward="false" selection-start-line="45" selection-start-column="50" selection-end-line="45" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/util/CommonUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="152" column="5" lean-forward="true" selection-start-line="152" selection-start-column="5" selection-end-line="152" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/Register.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="64" column="20" lean-forward="false" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="47" column="4" lean-forward="false" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="47" column="116" lean-forward="false" selection-start-line="47" selection-start-column="116" selection-end-line="47" selection-end-column="116" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2068">
+          <caret line="13" column="45" lean-forward="true" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/RegisterApiImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-194">
+          <caret line="124" column="20" lean-forward="false" selection-start-line="124" selection-start-column="20" selection-end-line="124" selection-end-column="20" />
+          <folding>
+            <element signature="method#checkExistUser#0;class#RegisterApiImpl#0" expanded="false" />
+            <element signature="method#emailResend#0;class#RegisterApiImpl#0" expanded="false" />
           </folding>
         </state>
       </provider>

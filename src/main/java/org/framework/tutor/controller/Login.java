@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 
 /**
  * 处理登录的一系列请求
@@ -32,7 +33,7 @@ public class Login {
      */
     @RequestMapping("/login")
     public void login(HttpServletRequest request, HttpServletResponse response,
-                      @RequestParam String username, @RequestParam String password, Integer remember) throws IOException {
+                      @RequestParam String username, @RequestParam String password, Integer remember) throws IOException, NoSuchAlgorithmException {
         loginApi.login(request, response, username, password, remember);
     }
 
