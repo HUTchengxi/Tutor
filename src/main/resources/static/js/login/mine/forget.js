@@ -63,6 +63,8 @@
                         success: function(data){
                             var status = data.status;
                             if(status == "invalid"){
+                                $(".container .mainshow .main-secret").empty().append("<p class=\"none\">您暂未设置密保</p>");
+                                $(".container nav ul li a.bysecret").data("hg", "80");
                                 return;
                             }
                             else if(status == "valid"){

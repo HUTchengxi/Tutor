@@ -16,6 +16,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonParser;
 import org.apache.http.HttpResponse;
 import org.framework.tutor.api.UserMainApi;
+import org.framework.tutor.service.UserMSService;
 import org.framework.tutor.service.UserMService;
 import org.framework.tutor.service.UserSCService;
 import org.framework.tutor.util.CommonUtil;
@@ -34,6 +35,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.*;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -292,7 +294,11 @@ public class UserMainApiImpl implements UserMainApi {
             org.framework.tutor.domain.UserMain userMain = userMService.getByUserAndEmail(username, email);
             if (userMain == null) {
                 resultMap.put("status", "invalid");
-            } else {
+                writer.print(gson.toJson(resultMap));
+                writer.flush();
+                writer.close();
+            }
+        }else {
                 //发送校验断码邮件
                 String uuid = CommonUtil.getUUID().substring(0, 4);
                 SimpleMailMessage message = new SimpleMailMessage();
@@ -307,7 +313,6 @@ public class UserMainApiImpl implements UserMainApi {
                 request.getSession().setAttribute("valicode", uuid);
                 resultMap.put("status", "ok");
             }
-        }
 
 
         writer.print(gson.toJson(resultMap));
@@ -329,7 +334,7 @@ public class UserMainApiImpl implements UserMainApi {
      */
     @Override
     public void modPass(String username, String email, String phone, String valicode, String newpass, String repass,
-                        HttpServletRequest request, HttpServletResponse response) throws IOException {
+                        HttpServletRequest request, HttpServletResponse response) throws IOException, NoSuchAlgorithmException {
 
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
@@ -353,6 +358,8 @@ public class UserMainApiImpl implements UserMainApi {
                         resultMap.put("status", "inerr");
                     } else {
                         //可以修改密码
+                        Integer salt = userMService.getByUser(username).getSalt();
+                        newpass = CommonUtil.getMd5Pass(newpass, salt);
                         Integer row = userMService.modPassword(username, newpass);
                         if (row == 1) {
                             resultMap.put("status", "valid");
@@ -378,6 +385,8 @@ public class UserMainApiImpl implements UserMainApi {
                         resultMap.put("status", "inerr");
                     } else {
                         //可以修改密码
+                        Integer salt = userMService.getByUser(username).getSalt();
+                        newpass = CommonUtil.getMd5Pass(newpass, salt);
                         Integer row = userMService.modPassword(username, newpass);
                         if (row == 1) {
                             resultMap.put("status", "valid");
@@ -420,7 +429,7 @@ public class UserMainApiImpl implements UserMainApi {
      */
     @Override
     public void modPassBySecret(String queone, String ansone, String quetwo, String anstwo, String quethree, String ansthree, String password,
-                                String username, HttpServletRequest request, HttpServletResponse response) throws IOException {
+                                String username, HttpServletRequest request, HttpServletResponse response) throws IOException, NoSuchAlgorithmException {
 
         PrintWriter writer = response.getWriter();
         Gson gson = new Gson();
@@ -440,6 +449,8 @@ public class UserMainApiImpl implements UserMainApi {
                         }
                     } else {
                         //修改密码
+                        Integer salt = userMService.getByUser(username).getSalt();
+                        password = CommonUtil.getMd5Pass(password, salt);
                         userMService.modPassword(username, password);
                         resultMap.put("status", "ok");
                     }
@@ -448,6 +459,8 @@ public class UserMainApiImpl implements UserMainApi {
                 }
             } else {
                 //修改密码
+                Integer salt = userMService.getByUser(username).getSalt();
+                password = CommonUtil.getMd5Pass(password, salt);
                 userMService.modPassword(username, password);
                 resultMap.put("status", "ok");
             }

@@ -10,19 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf479440-431d-499c-9612-40c14de1a166" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/LoginApi.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/LoginApi.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/RegisterApi.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/RegisterApi.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/LoginApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/LoginApiImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/RegisterApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/RegisterApiImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/Login.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/Login.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/Register.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/Register.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/UserMain.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/UserMain.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/interceptor/UrlInterceptor.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/interceptor/UrlInterceptor.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMMapper.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMMapper.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMService.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserMServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/util/CommonUtil.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/util/CommonUtil.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/UserMainApi.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/UserMainApi.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/UserMainApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/UserMainApiImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/login/mine/forget.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/login/mine/forget.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -79,14 +70,42 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RegisterApiImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RegisterApiImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/RegisterApiImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-194">
-              <caret line="124" column="20" lean-forward="false" selection-start-line="124" selection-start-column="20" selection-end-line="124" selection-end-column="20" />
+            <state relative-caret-position="435">
+              <caret line="117" column="41" lean-forward="true" selection-start-line="117" selection-start-column="41" selection-end-line="117" selection-end-column="41" />
               <folding>
                 <element signature="method#checkExistUser#0;class#RegisterApiImpl#0" expanded="false" />
                 <element signature="method#emailResend#0;class#RegisterApiImpl#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserMain.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="98">
+              <caret line="133" column="19" lean-forward="true" selection-start-line="133" selection-start-column="19" selection-end-line="133" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserMainApiImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/UserMainApiImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="83">
+              <caret line="298" column="31" lean-forward="false" selection-start-line="298" selection-start-column="31" selection-end-line="298" selection-end-column="31" />
+              <folding>
+                <element signature="method#getImgsrc#0;class#UserMainApiImpl#0" expanded="false" />
+                <element signature="method#getUserinfo#0;class#UserMainApiImpl#0" expanded="false" />
+                <element signature="method#modImgfile#0;class#UserMainApiImpl#0" expanded="false" />
+                <element signature="method#modUserinfo#0;class#UserMainApiImpl#0" expanded="false" />
+                <element signature="method#getBindInfo#0;class#UserMainApiImpl#0" expanded="false" />
+                <element signature="method#modPass#0;class#UserMainApiImpl#0" expanded="false" />
+                <element signature="method#modPassBySecret#0;class#UserMainApiImpl#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -117,8 +136,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>addmystar</find>
-      <find>getcoursesummaryinfo</find>
       <find>courselog_con/getlog</find>
       <find>dellog</find>
       <find>getcourselist</find>
@@ -131,7 +148,6 @@
       <find>getmyorder</find>
       <find>getlogall</find>
       <find>getlognew</find>
-      <find>getsecretinfo</find>
       <find>getbtnslist</find>
       <find>getuserlog</find>
       <find>getmymessage</find>
@@ -147,6 +163,9 @@
       <find>getCourseChapter</find>
       <find>login</find>
       <find>login(</find>
+      <find>forget</find>
+      <find>getsecretinfo</find>
+      <find>forge</find>
     </findStrings>
     <replaceStrings>
       <replace>replace(&quot;.&quot;,&quot;-&quot;).replace(&quot;.&quot;,&quot;-&quot;).replace(&quot;.&quot;,&quot;-&quot;)</replace>
@@ -195,8 +214,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/TutorBtnsController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/SysEmailManagerController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/PublishLogController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/welcome/showcourse.css" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/showcard.js" />
@@ -230,7 +247,6 @@
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/SysEmailManagerApiImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/TutorBtnsApiImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/UserLogApiImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/UserMainApiImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/UserMessageApiImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/order/myorder.js" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMSMapper.java" />
@@ -246,6 +262,9 @@
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserMMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/RegisterApiImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/login/mine/forget.js" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/UserMainApiImpl.java" />
       </list>
     </option>
   </component>
@@ -1206,7 +1225,7 @@
       <workItem from="1524725445457" duration="20820000" />
       <workItem from="1524797913689" duration="5926000" />
       <workItem from="1524812911005" duration="16736000" />
-      <workItem from="1524877349065" duration="4866000" />
+      <workItem from="1524877349065" duration="5810000" />
     </task>
     <task id="LOCAL-00013" summary="邮箱注册以及后续的验证的实现，还未实现邮箱注册后的等待/重发界面">
       <created>1520780099718</created>
@@ -1555,7 +1574,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1219391000" />
+    <option name="totallyTimeSpent" value="1220335000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1708,20 +1727,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardAnswerStarApiImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="90" column="133" lean-forward="false" selection-start-line="90" selection-start-column="133" selection-end-line="90" selection-end-column="133" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardAnswerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="108" column="46" lean-forward="false" selection-start-line="108" selection-start-column="46" selection-end-line="108" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardAnswerCommandController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="721">
@@ -1754,6 +1759,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-268">
           <caret line="41" column="40" lean-forward="true" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1927,17 +1933,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/UserMainApiImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="709" column="29" lean-forward="false" selection-start-line="709" selection-start-column="29" selection-end-line="709" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMessage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="72" column="26" lean-forward="true" selection-start-line="72" selection-start-column="26" selection-end-line="72" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1952,6 +1952,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="122" column="32" lean-forward="false" selection-start-line="122" selection-start-column="32" selection-end-line="122" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1966,6 +1967,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="100" column="14" lean-forward="true" selection-start-line="100" selection-start-column="14" selection-end-line="100" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2016,6 +2018,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="40" column="22" lean-forward="false" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
+          <folding>
+            <marker date="1524827628733" expanded="true" signature="1283:1294" ph="..." />
+            <marker date="1524827628733" expanded="true" signature="3282:3297" ph="..." />
+            <marker date="1524827628733" expanded="true" signature="3382:3395" ph="..." />
+            <marker date="1524827628733" expanded="true" signature="3449:3460" ph="..." />
+            <marker date="1524827628733" expanded="true" signature="7492:7507" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2116,13 +2125,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/login/mine/forget.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="71" column="86" lean-forward="true" selection-start-line="71" selection-start-column="86" selection-end-line="71" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/RegisterApiImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-194">
-          <caret line="124" column="20" lean-forward="false" selection-start-line="124" selection-start-column="20" selection-end-line="124" selection-end-column="20" />
+        <state relative-caret-position="435">
+          <caret line="117" column="41" lean-forward="true" selection-start-line="117" selection-start-column="41" selection-end-line="117" selection-end-column="41" />
           <folding>
             <element signature="method#checkExistUser#0;class#RegisterApiImpl#0" expanded="false" />
             <element signature="method#emailResend#0;class#RegisterApiImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="133" column="19" lean-forward="true" selection-start-line="133" selection-start-column="19" selection-end-line="133" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/UserMainApiImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="298" column="31" lean-forward="false" selection-start-line="298" selection-start-column="31" selection-end-line="298" selection-end-column="31" />
+          <folding>
+            <element signature="method#getImgsrc#0;class#UserMainApiImpl#0" expanded="false" />
+            <element signature="method#getUserinfo#0;class#UserMainApiImpl#0" expanded="false" />
+            <element signature="method#modImgfile#0;class#UserMainApiImpl#0" expanded="false" />
+            <element signature="method#modUserinfo#0;class#UserMainApiImpl#0" expanded="false" />
+            <element signature="method#getBindInfo#0;class#UserMainApiImpl#0" expanded="false" />
+            <element signature="method#modPass#0;class#UserMainApiImpl#0" expanded="false" />
+            <element signature="method#modPassBySecret#0;class#UserMainApiImpl#0" expanded="false" />
           </folding>
         </state>
       </provider>

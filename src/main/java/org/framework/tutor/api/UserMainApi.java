@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.*;
+import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -107,7 +108,7 @@ public interface UserMainApi {
      * @param response
      */
     public void modPass(String username, String email, String phone, String valicode, String newpass, String repass,
-                        HttpServletRequest request, HttpServletResponse response) throws IOException;
+                        HttpServletRequest request, HttpServletResponse response) throws IOException, NoSuchAlgorithmException;
 
     /**
      * 通过密保的方式进行找回密码
@@ -126,7 +127,7 @@ public interface UserMainApi {
      */
     public void modPassBySecret(String queone, String ansone,
                                 String quetwo, String anstwo, String quethree, String ansthree, String password,
-                                String username, HttpServletRequest request, HttpServletResponse response) throws IOException;
+                                String username, HttpServletRequest request, HttpServletResponse response) throws IOException, NoSuchAlgorithmException;
 
     /**
      * 解除绑定

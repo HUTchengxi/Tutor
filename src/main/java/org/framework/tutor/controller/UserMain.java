@@ -22,6 +22,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.*;
+import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -155,7 +156,7 @@ public class UserMain {
      */
     @RequestMapping("/forget_modpass")
     public void modPass(String username, String email, String phone, String valicode, String newpass, String repass,
-                        HttpServletRequest request, HttpServletResponse response) throws IOException {
+                        HttpServletRequest request, HttpServletResponse response) throws IOException, NoSuchAlgorithmException {
 
         userMainApi.modPass(username, email, phone, valicode, newpass, repass, request, response);
     }
@@ -178,7 +179,7 @@ public class UserMain {
     @RequestMapping("/forget_modpassbysecret")
     public void modPassBySecret(@RequestParam("queone") String queone, @RequestParam("ansone") String ansone,
                                 String quetwo, String anstwo, String quethree, String ansthree, String password,
-                                String username, HttpServletRequest request, HttpServletResponse response) throws IOException {
+                                String username, HttpServletRequest request, HttpServletResponse response) throws IOException, NoSuchAlgorithmException {
 
         userMainApi.modPassBySecret(queone, ansone, quetwo, anstwo, quethree, ansthree, password, username, request, response);
     }
@@ -236,7 +237,6 @@ public class UserMain {
      * @param response
      * @throws IOException
      */
-    @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/sendunbindphone")
     public void sendUnbindPhone(@RequestParam("phone") String phone, String username, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
