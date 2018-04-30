@@ -4,6 +4,9 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.*;
 import org.framework.tutor.domain.BbsCard;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 
 @Mapper
 public interface BbsCardMapper {
@@ -23,7 +26,7 @@ public interface BbsCardMapper {
     /**
      *
      * @Description 获取标题对应的帖子
-     * @param [title]
+     * @param [title]k
      * @return org.framework.tutor.domain.BbsCard
      * @author yinjimin
      * @date 2018/4/1

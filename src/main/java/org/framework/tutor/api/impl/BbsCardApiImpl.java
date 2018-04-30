@@ -8,6 +8,7 @@ import org.framework.tutor.domain.UserMain;
 import org.framework.tutor.service.BbsCardService;
 import org.framework.tutor.service.UserMService;
 import org.framework.tutor.util.CommonUtil;
+import org.framework.tutor.util.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -56,8 +57,16 @@ public class BbsCardApiImpl implements BbsCardApi {
         Map<String, Object> resultMap = new HashMap<>(1);
         PrintWriter writer = response.getWriter();
 
-        Integer count = bbsCardService.getMyCardCount(username);
-        resultMap.put("count", count);
+        //判断redis缓存中是否已有该数据
+        String prop = "_mycardcount";
+        String redisValue = RedisUtil.getMapValue(username, prop);
+        if(redisValue != null){
+            resultMap.put("count", redisValue);
+        }else {
+            Integer count = bbsCardService.getMyCardCount(username);
+            resultMap.put("count", count);
+            RedisUtil.setMapKey(username, prop, String.valueOf(count));
+        }
 
         writer.print(gson.toJson(resultMap));
         writer.flush();
@@ -88,6 +97,13 @@ public class BbsCardApiImpl implements BbsCardApi {
         } else {
             bbsCardService.publishCard(username, title, imgsrc, descript);
             resultMap.put("status", "valid");
+
+            //相应的帖子数量如果已缓存就加1
+            String prop = "_mycardcount";
+            Integer count = Integer.valueOf(RedisUtil.getMapValue(username, prop));
+            if(count != null){
+                RedisUtil.setMapKey(username, prop, String.valueOf(count+1));
+            }
         }
 
         writer.print(gson.toJson(resultMap));

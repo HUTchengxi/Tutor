@@ -41,6 +41,8 @@ public class UrlInterceptor extends AbstractHandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
         response.setCharacterEncoding("utf-8");
+            String url = request.getRequestURI();
+        System.out.print("url: "+url+"\t");
         //目前该拦截器暂时只支持拦截方法级别
         if (!handler.getClass().isAssignableFrom(HandlerMethod.class)) {
             System.out.println("INFO urlInterceptor : 暂时不支持方法级别的拦截");
@@ -49,8 +51,7 @@ public class UrlInterceptor extends AbstractHandlerInterceptor {
         HandlerMethod handlerMethod = (HandlerMethod) handler;
         RequireAuth requireAuth = handlerMethod.getMethod().getAnnotation(RequireAuth.class);
         if (requireAuth == null) {
-            String url = request.getRequestURI();
-            System.out.println("INFO urlInterceptor : 无需校验权限的url->" + url);
+            System.out.println("未设置注解，可以访问");
             return true;
         }
 
@@ -59,25 +60,31 @@ public class UrlInterceptor extends AbstractHandlerInterceptor {
         HttpSession session = request.getSession();
         Integer identity = (Integer) session.getAttribute("identity");
         if (ident == null) {
+            System.out.println("未设置角色，可以访问");
             return true;
         }
         //url拦截
         if (type.equals("url")) {
             if (ident.equals("user") && identity != null) {
+                System.out.println("普通用户级别已登录，可以访问");
                 return true;
             }
             if (ident.equals("admin") && identity == -1) {
+                System.out.println("管理员级别已登录，可以访问");
                 return true;
             }
             if (ident.equals("tutor") && (identity == 1 || identity == -1)) {
+                System.out.println("家教级别已登录，可以访问");
                 return true;
             }
             //管理接口盗用时模拟404页面不存在
             if (ident.equals("admin") && identity != -1) {
                 request.getRequestDispatcher("/forward_con/zouyi").forward(request, response);
+                System.out.println("管理员级别未登录，拦截");
                 return false;
             }
             request.getRequestDispatcher("/forward_con/gologin").forward(request, response);
+            System.out.println("无相应权限，拦截");
         }
         //api接口拦截
         else {
@@ -85,22 +92,27 @@ public class UrlInterceptor extends AbstractHandlerInterceptor {
             PrintWriter writer = response.getWriter();
             Map<String, Object> resultMap = new HashMap<>(1);
             if (ident.equals("user") && identity != null) {
+                System.out.println("普通用户级别已登录，可以访问");
                 return true;
             }
             if (ident.equals("admin") && identity == -1) {
+                System.out.println("管理员级别已登录，可以访问");
                 return true;
             }
             if (ident.equals("tutor") && (identity == 1 || identity == -1)) {
+                System.out.println("家教级别已登录，可以访问");
                 return true;
             }
             //管理接口盗用时模拟404页面不存在
             if (ident.equals("admin") && identity != -1) {
+                System.out.println("管理员级别未登录，拦截");
                 resultMap.put("status", "notfound");
                 writer.print(gson.toJson(resultMap));
                 writer.flush();
                 writer.close();
                 return false;
             }
+            System.out.println("无相应权限或未登录，拦截");
             resultMap.put("status", "invalid");
             writer.print(gson.toJson(resultMap));
             writer.flush();
