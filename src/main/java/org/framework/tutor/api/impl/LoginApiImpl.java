@@ -18,10 +18,13 @@ import org.framework.tutor.api.LoginApi;
 import org.framework.tutor.domain.UserMain;
 import org.framework.tutor.service.UserMService;
 import org.framework.tutor.util.CommonUtil;
+import org.framework.tutor.util.LoginQueueUtil;
+import org.framework.tutor.util.ScheduledUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -118,6 +121,23 @@ public class LoginApiImpl implements LoginApi{
                         }
                     }
                 }
+
+                //加入用户队列中
+                LoginQueueUtil.addUser(username);
+
+                //设置定时任务，进行轮询判断是否被挤下线
+                Runnable oneLogin = new Runnable() {
+                    @Override
+                    public void run() {
+                        System.out.println("测试我是否一直在执行");
+                        //判断对应的outer队列是否有自己，有的话就退出登录
+                        if(LoginQueueUtil.checkOuterExist(username)){
+                            session.invalidate();
+                            LoginQueueUtil.removeOuter(username);
+                        }
+                    }
+                };
+                ScheduledUtil.addTask(oneLogin);
             }
         }
 
@@ -213,6 +233,7 @@ public class LoginApiImpl implements LoginApi{
         response.setCharacterEncoding("utf-8");
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
+        String username = (String) session.getAttribute("username");
         String nickname = (String) session.getAttribute("nickname");
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(4);
@@ -225,6 +246,10 @@ public class LoginApiImpl implements LoginApi{
             //清楚session里的所有信息，并使session失效
             session.invalidate();
             resultMap.put("status", "logoff");
+
+            //清除登录队列
+            LoginQueueUtil.removeUser(username);
+            LoginQueueUtil.removeOuter(username);
         }
 
         writer.print(gson.toJson(resultMap));

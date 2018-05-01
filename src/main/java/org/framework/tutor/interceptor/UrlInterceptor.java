@@ -41,8 +41,8 @@ public class UrlInterceptor extends AbstractHandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
         response.setCharacterEncoding("utf-8");
-            String url = request.getRequestURI();
-        System.out.print("url: "+url+"\t");
+        String url = request.getRequestURI();
+        System.out.print("url: " + url + "\t");
         //目前该拦截器暂时只支持拦截方法级别
         if (!handler.getClass().isAssignableFrom(HandlerMethod.class)) {
             System.out.println("INFO urlInterceptor : 暂时不支持方法级别的拦截");
@@ -69,16 +69,16 @@ public class UrlInterceptor extends AbstractHandlerInterceptor {
                 System.out.println("普通用户级别已登录，可以访问");
                 return true;
             }
-            if (ident.equals("admin") && identity == -1) {
+            if (ident.equals("admin") && identity != null && identity == -1) {
                 System.out.println("管理员级别已登录，可以访问");
                 return true;
             }
-            if (ident.equals("tutor") && (identity == 1 || identity == -1)) {
+            if (ident.equals("tutor") && identity != null && (identity == 1 || identity == -1)) {
                 System.out.println("家教级别已登录，可以访问");
                 return true;
             }
             //管理接口盗用时模拟404页面不存在
-            if (ident.equals("admin") && identity != -1) {
+            if (ident.equals("admin") && identity != null && identity != -1) {
                 request.getRequestDispatcher("/forward_con/zouyi").forward(request, response);
                 System.out.println("管理员级别未登录，拦截");
                 return false;
@@ -95,16 +95,16 @@ public class UrlInterceptor extends AbstractHandlerInterceptor {
                 System.out.println("普通用户级别已登录，可以访问");
                 return true;
             }
-            if (ident.equals("admin") && identity == -1) {
+            if (ident.equals("admin") && identity != null && identity == -1) {
                 System.out.println("管理员级别已登录，可以访问");
                 return true;
             }
-            if (ident.equals("tutor") && (identity == 1 || identity == -1)) {
+            if (ident.equals("tutor") && identity != null && (identity == 1 || identity == -1)) {
                 System.out.println("家教级别已登录，可以访问");
                 return true;
             }
             //管理接口盗用时模拟404页面不存在
-            if (ident.equals("admin") && identity != -1) {
+            if (ident.equals("admin") && identity != null && identity != -1) {
                 System.out.println("管理员级别未登录，拦截");
                 resultMap.put("status", "notfound");
                 writer.print(gson.toJson(resultMap));

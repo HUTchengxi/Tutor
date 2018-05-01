@@ -208,4 +208,17 @@ public class ForwardAll {
 
         return "/home/carddetail";
     }
+
+    /**
+     *
+     * @Description 被挤下线异常退出
+     * @param []
+     * @return java.lang.String
+     * @author yinjimin
+     * @date 2018/5/1
+     */
+    @RequestMapping("/err_logout")
+    public String errLogout(){
+        return "/error/err_logout";
+    }
 }
