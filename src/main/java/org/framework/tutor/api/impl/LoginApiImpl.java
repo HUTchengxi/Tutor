@@ -121,23 +121,6 @@ public class LoginApiImpl implements LoginApi{
                         }
                     }
                 }
-
-                //加入用户队列中
-                LoginQueueUtil.addUser(username);
-
-                //设置定时任务，进行轮询判断是否被挤下线
-                Runnable oneLogin = new Runnable() {
-                    @Override
-                    public void run() {
-                        System.out.println("测试我是否一直在执行");
-                        //判断对应的outer队列是否有自己，有的话就退出登录
-                        if(LoginQueueUtil.checkOuterExist(username)){
-                            session.invalidate();
-                            LoginQueueUtil.removeOuter(username);
-                        }
-                    }
-                };
-                ScheduledUtil.addTask(oneLogin);
             }
         }
 
@@ -246,10 +229,6 @@ public class LoginApiImpl implements LoginApi{
             //清楚session里的所有信息，并使session失效
             session.invalidate();
             resultMap.put("status", "logoff");
-
-            //清除登录队列
-            LoginQueueUtil.removeUser(username);
-            LoginQueueUtil.removeOuter(username);
         }
 
         writer.print(gson.toJson(resultMap));

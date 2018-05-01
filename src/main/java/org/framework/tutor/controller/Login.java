@@ -1,5 +1,6 @@
 package org.framework.tutor.controller;
 
+import org.framework.tutor.annotation.OneLogin;
 import org.framework.tutor.api.LoginApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,6 +32,7 @@ public class Login {
      * @param remember
      * @throws IOException
      */
+    @OneLogin
     @RequestMapping("/login")
     public void login(HttpServletRequest request, HttpServletResponse response,
                       @RequestParam String username, @RequestParam String password, Integer remember) throws IOException, NoSuchAlgorithmException {

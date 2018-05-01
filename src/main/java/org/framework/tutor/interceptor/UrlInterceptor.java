@@ -13,7 +13,9 @@
 package org.framework.tutor.interceptor;
 
 import com.google.gson.Gson;
+import org.framework.tutor.annotation.OneLogin;
 import org.framework.tutor.annotation.RequireAuth;
+import org.framework.tutor.entity.OneLoginSingle;
 import org.springframework.web.method.HandlerMethod;
 
 import javax.servlet.http.HttpServletRequest;
@@ -43,12 +45,37 @@ public class UrlInterceptor extends AbstractHandlerInterceptor {
         response.setCharacterEncoding("utf-8");
         String url = request.getRequestURI();
         System.out.print("url: " + url + "\t");
+        HandlerMethod handlerMethod = (HandlerMethod) handler;
+
+        HttpSession session = request.getSession();
+        String username = (String) session.getAttribute("username");
+        String sessionId = session.getId();
+        OneLogin oneLogin = handlerMethod.getMethod().getAnnotation(OneLogin.class);
+        if (username == null) {
+            username = request.getParameter("username");
+        }
+        String loginId = OneLoginSingle.getV(username);
+        if (loginId == null) {
+            OneLoginSingle.addKAndV(username, sessionId);
+        }
+        if (oneLogin != null) {
+            System.out.println("not null");
+            if (!sessionId.equals(loginId)) {
+                OneLoginSingle.addKAndV(username, sessionId);
+            }
+        } else {
+            System.out.println("is null");
+            //判断sessionId和最近登录Id是否对应，不对应就挤出
+            if (!sessionId.equals(loginId) && loginId != null) {
+                session.invalidate();
+            }
+        }
+
         //目前该拦截器暂时只支持拦截方法级别
         if (!handler.getClass().isAssignableFrom(HandlerMethod.class)) {
             System.out.println("INFO urlInterceptor : 暂时不支持方法级别的拦截");
             return true;
         }
-        HandlerMethod handlerMethod = (HandlerMethod) handler;
         RequireAuth requireAuth = handlerMethod.getMethod().getAnnotation(RequireAuth.class);
         if (requireAuth == null) {
             System.out.println("未设置注解，可以访问");
@@ -57,7 +84,6 @@ public class UrlInterceptor extends AbstractHandlerInterceptor {
 
         String ident = requireAuth.ident();
         String type = requireAuth.type();
-        HttpSession session = request.getSession();
         Integer identity = (Integer) session.getAttribute("identity");
         if (ident == null) {
             System.out.println("未设置角色，可以访问");
