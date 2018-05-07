@@ -227,7 +227,9 @@ public class LoginApiImpl implements LoginApi{
         }
         else {
             //清楚session里的所有信息，并使session失效
-            session.invalidate();
+            session.removeAttribute("identity");
+            session.removeAttribute("username");
+            session.removeAttribute("nickname");
             resultMap.put("status", "logoff");
         }
 

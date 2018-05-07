@@ -16,6 +16,7 @@ import com.google.gson.Gson;
 import org.framework.tutor.api.AdminApi;
 import org.framework.tutor.domain.UserMain;
 import org.framework.tutor.service.UserMService;
+import org.framework.tutor.util.CommonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,6 +27,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -49,14 +51,18 @@ public class AdminApiImpl implements AdminApi {
      * @date 2018/4/19
      */
     @Override
-    public void Login(String username, String password, HttpServletResponse response, HttpServletRequest request) throws IOException {
+    public void Login(String username, String password, HttpServletResponse response, HttpServletRequest request) throws IOException, NoSuchAlgorithmException {
 
         PrintWriter writer = response.getWriter();
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(1);
         HttpSession session = request.getSession();
 
-        UserMain userMain = userMService.checkAdminLogin(username, password);
+        //获取密码盐
+        Integer salt = userMService.getByUser(username).getSalt();
+        //明文传来的密码加盐判断
+        String MD5Pass = CommonUtil.getMd5Pass(password, salt);
+        UserMain userMain = userMService.checkAdminLogin(username, MD5Pass);
         if(userMain == null){
             resultMap.put("status", "error");
         }else{

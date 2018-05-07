@@ -274,8 +274,8 @@ public class CourseCommandApiImpl implements CourseCommandApi {
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String now = simpleDateFormat.format(new Date());
-        resultMap.put("count", courseCMService.getScoreAvgNow(username, now));
-
+        Double scoreAvg = courseCMService.getScoreAvgNow(username, now);
+        resultMap.put("count", scoreAvg==null?"null": scoreAvg);
         writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();

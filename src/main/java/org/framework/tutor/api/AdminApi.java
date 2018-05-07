@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,5 +26,5 @@ public interface AdminApi {
      * @author yinjimin
      * @date 2018/4/19
      */
-    public void Login(String username, String password, HttpServletResponse response, HttpServletRequest request) throws IOException;
+    public void Login(String username, String password, HttpServletResponse response, HttpServletRequest request) throws IOException, NoSuchAlgorithmException;
 }

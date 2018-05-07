@@ -59,12 +59,10 @@ public class UrlInterceptor extends AbstractHandlerInterceptor {
             OneLoginSingle.addKAndV(username, sessionId);
         }
         if (oneLogin != null) {
-            System.out.println("not null");
             if (!sessionId.equals(loginId)) {
                 OneLoginSingle.addKAndV(username, sessionId);
             }
         } else {
-            System.out.println("is null");
             //判断sessionId和最近登录Id是否对应，不对应就挤出
             if (!sessionId.equals(loginId) && loginId != null) {
                 session.invalidate();

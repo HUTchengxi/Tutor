@@ -1,5 +1,7 @@
 ;(function(){
 
+    var layer = layui.layer;
+
     /**
      * 在用户名输入框失去焦点时进行校验事件
      */
@@ -60,71 +62,73 @@
                 var url = data.url;
                 if(status == "nouser" || status == "passerr"){
                     $("#p_id_err").data("status",3).text("账号或密码错误").css("display","block");
-                }
-                else{
-                    window.alert("登陆成功");
-                    var logcity = "未知地区";
-                    var ip = "000.000.000.000";
+                }else{
+                    layer.msg('登录成功', {icon: 6});
+                    window.setTimeout(function(){
 
-                    //获取电脑的操作系统
-                    var logsystem = "位置的操作系统";
-                    var sUserAgent = navigator.userAgent;
-                    logsystem = (navigator.platform == "Win32") || (navigator.platform == "Windows")? "Windows" :
-                        ((navigator.platform == "Mac68K") || (navigator.platform == "MacPPC") || (navigator.platform == "Macintosh") || (navigator.platform == "MacIntel"))? Mac :
-                            (navigator.platform == "X11")? "Unix" :
-                                (String(navigator.platform).indexOf("Linux") > -1)? "Linux" : "未知的操作系统";
+                        var logcity = "未知地区";
+                        var ip = "000.000.000.000";
 
-                    //获取ip地址
-                    ip = returnCitySN["cip"];
+                        //获取电脑的操作系统
+                        var logsystem = "位置的操作系统";
+                        var sUserAgent = navigator.userAgent;
+                        logsystem = (navigator.platform == "Win32") || (navigator.platform == "Windows")? "Windows" :
+                            ((navigator.platform == "Mac68K") || (navigator.platform == "MacPPC") || (navigator.platform == "Macintosh") || (navigator.platform == "MacIntel"))? Mac :
+                                (navigator.platform == "X11")? "Unix" :
+                                    (String(navigator.platform).indexOf("Linux") > -1)? "Linux" : "未知的操作系统";
 
-                    //获取登录地区
-                    $.ajax({
-                        async: false,
-                        type: "get",
-                        url: "http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js",
-                        dataType: "jsonp",
-                        success: function(data){
-                            logcity = unescape(data.province + data.city);
-                        },
-                        error: function(xhr, status){
-                            alert("网络异常导致无法进行相关记录");
-                            console.log("http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js error");
+                        //获取ip地址
+                        ip = returnCitySN["cip"];
+
+                        //获取登录地区
+                        $.ajax({
+                            async: false,
+                            type: "get",
+                            url: "http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js",
+                            dataType: "jsonp",
+                            success: function(data){
+                                logcity = unescape(data.province + data.city);
+                            },
+                            error: function(xhr, status){
+                                layer.alert("网络异常导致无法进行相关记录");
+                                console.log("http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js error");
+                            }
+                        });
+
+                        //保存登录记录
+                        $.ajax({
+                            async: true,
+                            type: "post",
+                            url: "/userlog_con/loginlog",
+                            data: {"logcity": logcity, "ip": ip, "logsystem": logsystem},
+                            dataType: "json",
+                            success: function(data){
+                                console.log(data.status);
+                            },
+                            error: function(xhr, status){
+                                console.log("/usermain_con/loginlog error");
+                            }
+                        })
+                        if(window.location.href.indexOf("forward_con/gologin") < 0){
+                            window.history.go(0);
                         }
-                    });
-
-                    //保存登录记录
-                    $.ajax({
-                        async: true,
-                        type: "post",
-                        url: "/userlog_con/loginlog",
-                        data: {"logcity": logcity, "ip": ip, "logsystem": logsystem},
-                        dataType: "json",
-                        success: function(data){
-                            console.log(data.status);
-                        },
-                        error: function(xhr, status){
-                            console.log("/usermain_con/loginlog error");
+                        else if(document.referrer == window.location.href || document.referrer.trim() == ""){
+                            window.location.href = "/forward_con/welcome";
                         }
-                    })
-                    if(window.location.href.indexOf("forward_con/gologin") < 0){
-                        window.history.go(0);
-                    }
-                    else if(document.referrer == window.location.href || document.referrer.trim() == ""){
-                        window.location.href = "/forward_con/welcome";
-                    }
-                    else if(document.referrer.indexOf("forward_con/goforget") >= 0){
-                        window.location = "/forward_con/welcome";
-                    }
-                    else if(document.referrer.indexOf("forward_con/goregister") >= 0){
-                        window.location = "/forward_con/welcome";
-                    }
-                    else{
-                        window.location.href = document.referrer;
-                    }
+                        else if(document.referrer.indexOf("forward_con/goforget") >= 0){
+                            window.location = "/forward_con/welcome";
+                        }
+                        else if(document.referrer.indexOf("forward_con/goregister") >= 0){
+                            window.location = "/forward_con/welcome";
+                        }
+                        else{
+                            window.location.href = document.referrer;
+                        }
+                    }, 2000);
                 }
             },
             error: function(xhr, status){
-                window.alert("服务器环境异常，请稍后登陆");
+                layer.alert("服务器环境异常，请稍后登陆");
                 console.log(xhr);
             }
         });
@@ -170,7 +174,7 @@
                 }
             },
             error: function(xhr, status){
-                window.alert("后台环境异常导致无法获取记住密码数据，请稍后重试");
+                layer.alert("后台环境异常导致无法获取记住密码数据，请稍后重试");
                 window.console.log(xhr);
             }
         })

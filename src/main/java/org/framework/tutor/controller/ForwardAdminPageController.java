@@ -44,7 +44,6 @@ public class ForwardAdminPageController {
      * @author yinjimin
      * @date 2018/4/19
      */
-    @RequireAuth(ident = "admin")
     @RequestMapping("/adminloginpage")
     public String adminLoginPage(){
 

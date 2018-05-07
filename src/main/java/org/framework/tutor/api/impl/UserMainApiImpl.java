@@ -109,6 +109,7 @@ public class UserMainApiImpl implements UserMainApi {
         org.framework.tutor.domain.UserMain userMain = userMService.getByUser(username);
         resultMap.put("status", "valid");
         resultMap.put("username", userMain.getUsername());
+        resultMap.put("nickname", userMain.getNickname());
         resultMap.put("sex", userMain.getSex() == 1 ? "男" : "女");
         resultMap.put("age", userMain.getAge());
         resultMap.put("imgsrc", userMain.getImgsrc());

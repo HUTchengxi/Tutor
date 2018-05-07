@@ -229,7 +229,7 @@ $(function() {
                 }
                 $(".mainshow header ul").css("display", "block");
                 $.each(data.list, function (index, item) {
-                    $(".mainshow header ul").append("<li class='pull-left'><a href='javascript:void(0);' data-ctype='" + item + "'>" + item + "</a>")
+                    $(".mainshow header ul").append("<li class='pull-left'><a href='javascript:void(0);' data-ctype='" + item.ctype + "'>" + item.ctype + "</a>")
                 });
             },
             error: function (xhr, status) {
@@ -270,7 +270,7 @@ $(function() {
                 $(".sortshow ul").css("display","block");
                 $(".mainshow header ul").append("<li class='pull-left cli'><a href='javascript:void(0);' data-ctype='all'>不限</a>");
                 $.each(data.list, function (index, item) {
-                    $(".mainshow header ul").append("<li class='pull-left'><a href='javascript:void(0);' data-ctype='" + item + "'>" + item + "</a></li>");
+                    $(".mainshow header ul").append("<li class='pull-left'><a href='javascript:void(0);' data-ctype='" + item.ctype + "'>" + item.ctype + "</a></li>");
                 });
             },
             error: function (xhr, status) {

@@ -151,5 +151,6 @@ public class CommonUtil {
     }
 
     public static void main(String[] args) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+        System.out.println(getMd5Pass("Chengxi", 1234));
     }
 }

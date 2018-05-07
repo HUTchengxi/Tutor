@@ -17,7 +17,7 @@ import java.util.Map;
 
 /**
  * @author yinjimin
- * @Description:
+ * @Description: 一个账号一个用户登录控制类
  * @date 2018年05月01日
  */
 public class OneLoginSingle {
