@@ -113,7 +113,6 @@ public class UrlInterceptor extends AbstractHandlerInterceptor {
         //api接口拦截
         else {
             Gson gson = new Gson();
-            PrintWriter writer = response.getWriter();
             Map<String, Object> resultMap = new HashMap<>(1);
             if (ident.equals("user") && identity != null) {
                 System.out.println("普通用户级别已登录，可以访问");
@@ -128,6 +127,7 @@ public class UrlInterceptor extends AbstractHandlerInterceptor {
                 return true;
             }
             //管理接口盗用时模拟404页面不存在
+            PrintWriter writer = response.getWriter();
             if (ident.equals("admin") && identity != null && identity != -1) {
                 System.out.println("管理员级别未登录，拦截");
                 resultMap.put("status", "notfound");

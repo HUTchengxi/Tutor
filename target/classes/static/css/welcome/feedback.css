@@ -1,0 +1,140 @@
+.sliderbar {
+    position: fixed;
+    right: 2%;
+    bottom: 25%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container .m-main h3 {
+    padding: 1%;
+    font-size: 20px;
+}
+
+.container .m-main h2, .container .m-main p {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+.container .m-main ul, .container .m-main li {
+    list-style: none;
+    position: relative;
+}
+
+.container .m-main ul {
+    overflow: hidden;
+    padding: 3em;
+}
+
+.container .m-main ul li a, .container .m-main ul li p.write {
+    text-decoration: none;
+    color: #000;
+    background: #ffc;
+    display: block;
+    height: 17em;
+    width: 14em;
+    padding: 1em;
+}
+
+.container .m-main ul li p.write {
+    background-color: #0bdce35e;
+    color: #00000096;
+}
+
+.container .m-main ul li {
+    margin: 1em;
+    float: left;
+}
+
+.container .m-main ul li p.time {
+    height: 20px;
+    line-height: 20px;
+    color: grey;
+    font-size: 12px;
+    margin-top: -20px;
+    text-align: center;
+    position: relative;
+    top: -35px;
+}
+
+.container .m-main ul li button {
+    margin-top: -52px;
+    margin-left: 5em;
+    height: 30px;
+    font-size: 14px;
+}
+
+/*div.container .m-main .main-right .right-show{overflow: scroll;}*/
+.container .m-main .main-title {
+    padding: 1%;
+    border-bottom: 1px solid #8080804f;
+}
+
+.container .m-main .main-title h3 {
+    border-left: 2px solid #00dcff;
+}
+
+/**#b7bbbf**/
+div.container {
+    width: 100%;
+}
+
+div.container .m-bg {
+    height: 200px;
+    width: 100%;
+    background: url(/images/welcome/mysetting/timg.jpg) repeat-x center center;
+    background-size: 100% 100%;
+}
+
+div.container .m-main {
+    margin: auto;
+    width: 81%;
+    z-index: 99;
+    margin-top: -5%;
+    background-color: #f3f5f7;
+}
+
+footer.footer {
+    background-color: #000000;
+    width: 100%;
+}
+
+footer.footer .webmap, footer.footer .link, footer.footer .copyright {
+    margin: 0 auto;
+    width: 80%;
+    margin-bottom: 1%;
+}
+
+footer.footer h4 {
+    color: white;
+}
+
+footer.footer ul {
+    margin-left: 1%;
+}
+
+footer.footer ul li {
+    margin: 1%;
+}
+
+footer.footer ul li a {
+    color: #c8cdd2ad;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+footer.footer ul li a:hover {
+    color: #c8cdd2;
+    text-decoration: none;
+}
+
+footer.footer .copyright {
+    margin-top: -1%;
+}
+
+footer.footer .copyright h5 {
+    color: #787d82c7;
+}

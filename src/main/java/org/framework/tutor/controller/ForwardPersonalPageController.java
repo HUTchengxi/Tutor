@@ -86,10 +86,10 @@ public class ForwardPersonalPageController {
      * 进入设置中心
      */
     @RequireAuth(ident = "user")
-    @RequestMapping("/gosetting")
+    @RequestMapping("/gofeedback")
     public String goSetting(){
 
-        return "/home/mysetting";
+        return "/home/feedback";
     }
 
     /**

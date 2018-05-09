@@ -61,7 +61,7 @@ layui.config({
 	// 添加新窗口
 	$(".layui-nav .layui-nav-item a").on("click",function(){
 		addTab($(this));
-		// $(this).parent("li").siblings().removeClass("layui-nav-itemed");
+		$(this).parent("li").siblings().removeClass("layui-nav-itemed");
 	});
     //打开新窗口
     function addTab(_this){

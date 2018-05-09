@@ -427,7 +427,7 @@ public class UserMessageApiImpl implements UserMessageApi {
         try {
             Integer identity = emailParam.getId();
             String username = suser;
-            if (emailParam.getSend() == null || emailParam.getSend().equals("")) {
+            if (!(emailParam.getSend() == null || emailParam.getSend().equals(""))) {
                 username = emailParam.getSend();
             }
             String title = emailParam.getTheme();

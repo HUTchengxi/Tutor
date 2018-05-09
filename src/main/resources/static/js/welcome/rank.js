@@ -85,7 +85,7 @@ $(function(){
                         "                            <li><a href='/personalpage_con/gomycourse' target='_blank'>我的课程</a></li>\n" +
                         "                            <li class='sysconfig'><a href='/tutorpage_con/gosysconfig' target='_blank'><span class='mcount'>后台管理</span></a></li>\n" +
                         "                            <li><a href='/personalpage_con/gomessage' target='_blank'>通知<span class='mcount'>("+count+")</span></a></li>\n" +
-                        "                            <li><a href='/personalpage_con/gosetting'>设置</a></li>\n" +
+                        "                            <li><a href='/personalpage_con/gofeedback'>反饋</a></li>\n" +
                         "                            <li class='nav-logoff'><a href='#' style=\"color: red;\">注销</a></li>\n" +
                         "                        </ul>\n" +
                         "                    </li>");

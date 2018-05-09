@@ -29,22 +29,6 @@
                     <option value="2">form</option>
                     <option value="3">layim</option>
                     <option value="4">element</option>
-                    <option value="5">laytpl</option>
-                    <option value="6">upload</option>
-                    <option value="7">laydate</option>
-                    <option value="8">laypage</option>
-                    <option value="9">flow</option>
-                    <option value="10">util</option>
-                    <option value="11">code</option>
-                    <option value="12">tree</option>
-                    <option value="13">layedit</option>
-                    <option value="14">nav</option>
-                    <option value="15">tab</option>
-                    <option value="16">table</option>
-                    <option value="17">select</option>
-                    <option value="18">checkbox</option>
-                    <option value="19">switch</option>
-                    <option value="20">radio</option>
                 </select>
                 <i class="layui-icon">&#xe615;</i>
             </div>
@@ -68,7 +52,7 @@
                         <cite></cite>
                     </a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;" data-url="/tutorpage_con/gosystutorpersonal"><i class="iconfont icon-zhanghu" data-icon="icon-zhanghu"></i><cite>个人资料</cite></a></dd>
+                        <dd><a href="javascript:;" data-url="/forward_con/gosystutorpersonal"><i class="iconfont icon-zhanghu" data-icon="icon-zhanghu"></i><cite>个人资料</cite></a></dd>
                         <dd><a href="javascript:;" class="logoff"><i class="iconfont icon-loginout"></i><cite>退出</cite></a></dd>
                     </dl>
                 </li>
@@ -85,7 +69,7 @@
     </div>
     <!-- 右侧内容 -->
     <div class="layui-body layui-form">
-        <div class="layui-tab marg0" lay-filter="bodyTab">
+        <div class="layui-tab marg0" lay-interceptor="bodyTab">
             <ul class="layui-tab-title top_tab">
                 <li class="layui-this" lay-id=""><i class="iconfont icon-computer"></i> <cite>后台首页</cite></li>
             </ul>
@@ -113,7 +97,6 @@
 
 <script src="/js/common/jquery.min.js"></script>
 <script type="text/javascript" src="/layui/layui.js"></script>
-<script type="text/javascript" src="/layui-admin/js/bodyTab.js"></script>
 <script type="text/javascript" src="/layui-admin/js/nav.js"></script>
 <script type="text/javascript" src="/layui-admin/js/leftNav.js"></script>
 <script type="text/javascript" src="/layui-admin/js/index.js"></script>

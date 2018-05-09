@@ -115,8 +115,79 @@ $(function(){
     $(document).on("click", ".navbar-right .nav-logoff a", logoff_btn);
 
 
+    /**
+     * 获取用户的反馈记录数据
+     */
+    var async_getmyfeedback = function(){
 
+        $.ajax({
+            url: "/userfeedback_con/getmyfeedback.json",
+            dataType: "json",
+            success: function(data){
+                var rows = data.rows;
+                $(".container .m-main ul li.add").remove();
+                if(rows != null){
+                    $.each(rows, function(index, item){
+                        $(".container .m-main ul").append("<li class='add' data-id='"+item.id+"'>\n" +
+                            "                <a href=\"#\">"+item.info+"</a>\n" +
+                            "                <p class=\"time\">发布于：<span>"+item.ptime+"</span></p>\n" +
+                            "                <button class=\"btn btn-danger btn-remove\">删除</button>\n" +
+                            "            </li>");
+                    });
+                }
+            }
+        });
+    };
+    async_getmyfeedback();
 
+    /**
+     * 点击删除反馈记录
+     */
+    var btn_removemyfeedback = function(){
+
+        if(confirm("确定删除该反馈记录吗?")){
+            var id = $(this).closest("li").data("id");
+            var $this = $(this);
+            $.ajax({
+                url: "/userfeedback_con/removemyfeedback.json",
+                data: {
+                    id: id
+                },
+                dataType: "json",
+                success: function(data){
+                    var status = data.status;
+                    if(status == "valid"){
+                        alert("删除成功");
+                        $this.closest("li").remove();
+                    }
+                }
+            })
+        }
+    };
+    $(document).on("click", ".btn-remove", btn_removemyfeedback);
+
+    /**
+     * 点击发布反馈
+     */
+    var btn_savemyfeedback = function(){
+
+        var info = $(".write").text();
+        $.ajax({
+            url: "/userfeedback_con/savemyfeedback.json",
+            data: {
+                info: info
+            },
+            dataType: "json",
+            success: function(data){
+                var status = data.status;
+                if(status == "valid"){
+                    alert("反馈成功");
+                    async_getmyfeedback();
+                }
+            }
+        })
+    };
+    $(".btn-save").click(btn_savemyfeedback);
 
 
 

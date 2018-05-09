@@ -424,23 +424,14 @@ create table user_message_delete(
 );
 
 
+#用户反馈表
+create table user_feedback(
+  id int primary key auto_increment comment "唯一标识",
+  username varchar(20) not null comment "反馈的用户",
+  info varchar(200) not null comment "反馈的信息",
+  ptime datetime default now() comment "反馈的时间",
+  status int default 0 comment "0管理员未读，1管理员已读，-1用户删除",
+  foreign key(username) references user_main(username)
+);
 
-#家教老师标签表
-#实名认证表
-#课程表
-#课程评论表
-#课程报名表
-#科目类别表
-
-#今日我的课程收藏多少次
-select count(*) from course_collect where cid in (select id from course_main where username="chengxi") and coltime like '2018-03-22%';
-
-#今日我的课程评论了多少次
-select count(*) from course_command where cid in (select id from course_main where username=#{username}) and ctime like CONCAT('%', #{now}, '%')
-
-#今日我的课程下单了多少次
-select count(*) from course_order where cid in (select id from course_main where username=#{username}) and otime like CONCAT('%', #{NOW}, '%')
-
-
-#修改了user表的主键为username
 

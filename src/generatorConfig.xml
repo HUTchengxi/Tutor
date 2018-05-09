@@ -48,7 +48,7 @@
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
         <!-- 指定数据库表 -->
-        <!--<table schema="" tableName="course_delete_resp"></table>-->
+        <!--<table schema="" tableName="user_feedback"></table>-->
         <!--<table schema="" tableName="publish_type"></table>-->
         <!--<table schema="" tableName="publish_log"></table>-->
         <!--<table schema="" tableName="tutor_btns"></table>-->
