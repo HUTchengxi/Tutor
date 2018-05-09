@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50720
 File Encoding         : 65001
 
-Date: 2018-05-01 13:05:58
+Date: 2018-05-09 20:33:00
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -587,6 +587,32 @@ INSERT INTO `tutor_btns` VALUES ('4', 'chengxi', '4', '4');
 INSERT INTO `tutor_btns` VALUES ('5', 'chengxi', '5', '5');
 
 -- ----------------------------
+-- Table structure for `user_feedback`
+-- ----------------------------
+DROP TABLE IF EXISTS `user_feedback`;
+CREATE TABLE `user_feedback` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '唯一标识',
+  `username` varchar(20) NOT NULL COMMENT '反馈的用户',
+  `info` varchar(200) NOT NULL COMMENT '反馈的信息',
+  `ptime` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '反馈的时间',
+  `status` int(11) DEFAULT '0' COMMENT '0管理员未读，1管理员已读，-1用户删除',
+  PRIMARY KEY (`id`),
+  KEY `username` (`username`),
+  CONSTRAINT `user_feedback_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user_main` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of user_feedback
+-- ----------------------------
+INSERT INTO `user_feedback` VALUES ('1', 'chengxi', '电脑上可能都剋哦内卡收单弄i电脑i欧文文化ids但是你odd闹i的你死都', '2018-05-09 15:42:18', '-1');
+INSERT INTO `user_feedback` VALUES ('2', 'chengxi', '教授你都i的uihiOS你打开你哦你打死哦那o', '2018-05-09 16:21:19', '0');
+INSERT INTO `user_feedback` VALUES ('3', 'chengxi', 'asdjopa难道是叛逆的都发你哦对方能扫看到你哦都弄死电脑谁弄的拿到能扫荡你', '2018-05-09 16:21:29', '-1');
+INSERT INTO `user_feedback` VALUES ('5', 'chengxi', '反馈测试', '2018-05-09 17:14:22', '-1');
+INSERT INTO `user_feedback` VALUES ('6', 'chengxi', '你这个有点垃圾啊', '2018-05-09 17:14:38', '0');
+INSERT INTO `user_feedback` VALUES ('7', 'chengxi', '好多浪漫，好多的桥段', '2018-05-09 17:23:44', '-1');
+INSERT INTO `user_feedback` VALUES ('9', 'chengxi', 'fankui ', '2018-05-09 17:49:41', '1');
+
+-- ----------------------------
 -- Table structure for `user_log`
 -- ----------------------------
 DROP TABLE IF EXISTS `user_log`;
@@ -598,7 +624,7 @@ CREATE TABLE `user_log` (
   `logip` varchar(15) NOT NULL COMMENT '登录的ip地址',
   `logsys` varchar(10) NOT NULL COMMENT '电脑的操作系统',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=316 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=373 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user_log
@@ -917,6 +943,63 @@ INSERT INTO `user_log` VALUES ('312', 'chengxi', '2018-04-28 11:24:21', '未知�
 INSERT INTO `user_log` VALUES ('313', 'chengxi', '2018-04-28 11:26:25', '未知地区', '112.95.135.83', 'Windows');
 INSERT INTO `user_log` VALUES ('314', 'chengxi', '2018-04-28 16:55:35', '未知地区', '112.95.135.83', 'Windows');
 INSERT INTO `user_log` VALUES ('315', 'chengxi', '2018-04-28 17:14:08', '未知地区', '112.95.135.83', 'Windows');
+INSERT INTO `user_log` VALUES ('316', 'chengxi', '2018-05-01 14:39:50', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('317', 'chengxi', '2018-05-01 17:51:21', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('318', 'chengxi', '2018-05-01 17:52:28', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('319', 'chengxi', '2018-05-01 17:56:31', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('320', 'chengxi', '2018-05-01 18:02:05', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('321', 'chengxi', '2018-05-01 18:02:22', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('322', 'chengxi', '2018-05-01 18:07:27', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('323', 'chengxi', '2018-05-01 18:07:34', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('324', 'chengxi', '2018-05-01 18:12:26', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('325', 'chengxi', '2018-05-01 18:13:28', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('326', 'chengxi', '2018-05-01 18:21:33', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('327', 'chengxi', '2018-05-01 18:21:50', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('328', 'chengxi', '2018-05-01 18:22:03', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('329', 'chengxi', '2018-05-01 18:22:58', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('330', 'chengxi', '2018-05-01 18:23:11', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('331', 'chengxi', '2018-05-01 18:24:02', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('332', 'chengxi', '2018-05-01 18:24:14', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('333', 'chengxi', '2018-05-01 18:26:37', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('334', 'chengxi', '2018-05-01 18:26:52', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('335', 'chengxi', '2018-05-01 18:35:15', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('336', 'chengxi', '2018-05-01 19:37:09', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('337', 'chengxi', '2018-05-01 19:47:39', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('338', 'chengxi', '2018-05-01 19:50:14', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('339', 'chengxi', '2018-05-01 19:52:51', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('340', 'chengxi', '2018-05-01 19:53:04', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('341', 'chengxi', '2018-05-01 19:53:28', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('342', 'chengxi', '2018-05-01 19:53:39', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('343', 'chengxi', '2018-05-06 13:30:00', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('344', 'chengxi', '2018-05-06 21:43:38', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('345', 'chengxi', '2018-05-06 21:52:25', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('346', 'chengxi', '2018-05-06 21:55:20', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('347', 'chengxi', '2018-05-06 22:16:42', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('348', 'chengxi', '2018-05-06 22:22:24', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('349', 'chengxi', '2018-05-06 23:10:58', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('350', 'chengxi', '2018-05-07 12:25:02', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('351', 'chengxi', '2018-05-07 12:26:56', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('352', 'chengxi', '2018-05-07 12:29:31', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('353', 'chengxi', '2018-05-07 12:34:35', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('354', 'chengxi', '2018-05-07 12:36:03', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('355', 'chengxi', '2018-05-07 13:34:53', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('356', 'chengxi', '2018-05-07 13:57:43', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('357', 'chengxi', '2018-05-07 14:37:18', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('358', 'chengxi', '2018-05-07 15:12:32', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('359', 'chengxi', '2018-05-07 16:11:21', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('360', 'chengxi', '2018-05-07 18:45:37', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('361', 'chengxi', '2018-05-07 19:02:03', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('362', 'chengxi', '2018-05-07 19:44:07', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('363', 'chengxi', '2018-05-07 19:45:09', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('364', 'chengxi', '2018-05-07 20:13:54', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('365', 'chengxi', '2018-05-07 20:39:03', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('366', 'chengxi', '2018-05-09 13:53:19', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('367', 'chengxi', '2018-05-09 14:27:26', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('368', 'chengxi', '2018-05-09 17:12:38', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('369', 'chengxi', '2018-05-09 17:34:31', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('370', 'chengxi', '2018-05-09 19:49:22', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('371', '11111', '2018-05-09 20:25:13', '未知地区', '119.39.133.67', 'Windows');
+INSERT INTO `user_log` VALUES ('372', 'chengxi', '2018-05-09 20:26:26', '未知地区', '119.39.133.67', 'Windows');
 
 -- ----------------------------
 -- Table structure for `user_main`
@@ -943,11 +1026,11 @@ CREATE TABLE `user_main` (
 -- ----------------------------
 -- Records of user_main
 -- ----------------------------
-INSERT INTO `user_main` VALUES ('8', '-1', '11111', 'zACQzvrqGHGUIeMo/UUPLA==', '超管', '7399', '0', '0', null, 'dreamyjm@163.xom', '这位童鞋很懒，什么都没留下', '/images/user/face/112112.png', '2018-03-12 23:36:11');
+INSERT INTO `user_main` VALUES ('8', '-2', '11111', 'zACQzvrqGHGUIeMo/UUPLA==', '超管', '7399', '0', '0', null, 'dreamyjm@163.xom', '这位童鞋很懒，什么都没留下', '/images/user/face/112112.png', '2018-03-12 23:36:11');
 INSERT INTO `user_main` VALUES ('9', '0', '222222', 'O6m2MQOTsb1cgEaw2muVbg==', '勤成游客041e51c4', '1024', '0', '0', null, '1277309556@qq.com', '这位童鞋很懒，什么都没留下', 'images/default/user_face.jpg', '2018-03-12 23:38:54');
-INSERT INTO `user_main` VALUES ('10', '-2', 'admin', '8O7+qW8RnSNWkZ2kB8Lcxg==', '勤成游客d7f0c88b', '1050', '0', '0', null, null, '这位童鞋很懒，什么都没留下', '/images/user/face/112112.png', '2018-04-24 21:15:05');
+INSERT INTO `user_main` VALUES ('10', '-2', 'admin', '8O7+qW8RnSNWkZ2kB8Lcxg==', '勤成游客d7f0c88b', '1050', '0', '0', '15616371583', null, '这位童鞋很懒，什么都没留下', '/images/user/face/112112.png', '2018-04-24 21:15:05');
 INSERT INTO `user_main` VALUES ('12', '-2', 'ceshi', 'GnriloKXE0yG5g0XRemM8Q==', '勤成游客28e47898', '4132', '0', '0', null, null, '这位童鞋很懒，什么都没留下', 'images/default/user_face.jpg', '2018-04-28 11:10:23');
-INSERT INTO `user_main` VALUES ('1', '1', 'chengxi', 'JsbKAyT6sO8tAIsHQRbcxQ==', '成兮', '1234', '1', '21', '15616371583', 'dreamyjm@163.com', '很温柔的', '/images/user/face/123.jpg', '2018-02-08 22:27:36');
+INSERT INTO `user_main` VALUES ('1', '-1', 'chengxi', 'JsbKAyT6sO8tAIsHQRbcxQ==', '成兮', '1234', '1', '21', '15616371583', 'dreamyjm@163.com', '很温柔的', '/images/user/face/123.jpg', '2018-02-08 22:27:36');
 INSERT INTO `user_main` VALUES ('2', '0', 'yuanfen', '83MXjTveJO0Lm8Y+Rkp/7Q==', '立命安身', '7788', '0', '10', '18274786820', null, '这位童鞋很懒，什么都没留下', 'images/default/user_face.jpg', '2018-02-26 14:18:33');
 
 -- ----------------------------
@@ -966,7 +1049,7 @@ CREATE TABLE `user_message` (
   KEY `id` (`id`),
   KEY `username` (`username`),
   CONSTRAINT `user_message_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user_main` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user_message
@@ -989,6 +1072,10 @@ INSERT INTO `user_message` VALUES ('23', 'chengxi', '1', null, '私信测试1', 
 INSERT INTO `user_message` VALUES ('24', 'chengxi', '1', 'chengxi', 'chenxi私信', '车恩媳妇好is的hi', '2018-04-24 09:51:42');
 INSERT INTO `user_message` VALUES ('25', 'chengxi', '0', 'chengxi', '每日签到提醒', '新的一天到了，不要忘记签到哦', '2018-04-24 16:48:00');
 INSERT INTO `user_message` VALUES ('26', 'chengxi', '0', 'chengxi', '每日签到提醒--2018-04-24 16:51:00', '新的一天到了，不要忘记签到哦', '2018-04-24 16:51:00');
+INSERT INTO `user_message` VALUES ('27', 'chengxi', '1', 'chengxi', '反馈成功通知', '谢谢您的反馈，稍后我们会第一时间通知您反馈进度', '2018-05-09 17:23:44');
+INSERT INTO `user_message` VALUES ('28', 'chengxi', '1', 'chengxi', '反馈成功通知', '谢谢您的反馈，稍后我们会第一时间通知您反馈进度', '2018-05-09 17:25:54');
+INSERT INTO `user_message` VALUES ('29', 'chengxi', '1', 'chengxi', '反馈成功通知', '谢谢您的反馈，稍后我们会第一时间通知您反馈进度', '2018-05-09 17:49:41');
+INSERT INTO `user_message` VALUES ('30', 'chengxi', '1', 'chengxi', '反馈接收解决通知', '我们已经解决了您提出的问题，谢谢您的反馈', '2018-05-09 20:24:43');
 
 -- ----------------------------
 -- Table structure for `user_message_delete`
@@ -1004,7 +1091,7 @@ CREATE TABLE `user_message_delete` (
   KEY `username` (`username`),
   CONSTRAINT `user_message_delete_ibfk_1` FOREIGN KEY (`mid`) REFERENCES `user_message` (`id`),
   CONSTRAINT `user_message_delete_ibfk_2` FOREIGN KEY (`username`) REFERENCES `user_main` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=516 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=563 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user_message_delete
@@ -1056,8 +1143,6 @@ INSERT INTO `user_message_delete` VALUES ('494', '14', '1', 'chengxi');
 INSERT INTO `user_message_delete` VALUES ('495', '18', '1', 'chengxi');
 INSERT INTO `user_message_delete` VALUES ('496', '19', '1', 'chengxi');
 INSERT INTO `user_message_delete` VALUES ('497', '20', '1', 'chengxi');
-INSERT INTO `user_message_delete` VALUES ('501', '3', '1', 'chengxi');
-INSERT INTO `user_message_delete` VALUES ('502', '6', '1', 'chengxi');
 INSERT INTO `user_message_delete` VALUES ('503', '12', '1', 'chengxi');
 INSERT INTO `user_message_delete` VALUES ('504', '13', '1', 'chengxi');
 INSERT INTO `user_message_delete` VALUES ('505', '14', '1', 'chengxi');
@@ -1067,9 +1152,29 @@ INSERT INTO `user_message_delete` VALUES ('508', '18', '1', 'chengxi');
 INSERT INTO `user_message_delete` VALUES ('509', '19', '1', 'chengxi');
 INSERT INTO `user_message_delete` VALUES ('510', '20', '1', 'chengxi');
 INSERT INTO `user_message_delete` VALUES ('511', '22', '1', 'chengxi');
-INSERT INTO `user_message_delete` VALUES ('512', '24', '1', 'chengxi');
-INSERT INTO `user_message_delete` VALUES ('513', '25', '1', 'chengxi');
-INSERT INTO `user_message_delete` VALUES ('514', '26', '1', 'chengxi');
+INSERT INTO `user_message_delete` VALUES ('516', '14', '-1', 'chengxi');
+INSERT INTO `user_message_delete` VALUES ('517', '3', '-1', 'chengxi');
+INSERT INTO `user_message_delete` VALUES ('518', '22', '-1', 'chengxi');
+INSERT INTO `user_message_delete` VALUES ('519', '24', '-1', 'chengxi');
+INSERT INTO `user_message_delete` VALUES ('520', '25', '-1', 'chengxi');
+INSERT INTO `user_message_delete` VALUES ('521', '26', '-1', 'chengxi');
+INSERT INTO `user_message_delete` VALUES ('523', '18', '1', 'chengxi');
+INSERT INTO `user_message_delete` VALUES ('524', '19', '1', 'chengxi');
+INSERT INTO `user_message_delete` VALUES ('525', '20', '1', 'chengxi');
+INSERT INTO `user_message_delete` VALUES ('528', '12', '1', 'chengxi');
+INSERT INTO `user_message_delete` VALUES ('529', '13', '1', 'chengxi');
+INSERT INTO `user_message_delete` VALUES ('530', '14', '1', 'chengxi');
+INSERT INTO `user_message_delete` VALUES ('531', '16', '1', 'chengxi');
+INSERT INTO `user_message_delete` VALUES ('532', '17', '1', 'chengxi');
+INSERT INTO `user_message_delete` VALUES ('533', '18', '1', 'chengxi');
+INSERT INTO `user_message_delete` VALUES ('534', '19', '1', 'chengxi');
+INSERT INTO `user_message_delete` VALUES ('535', '20', '1', 'chengxi');
+INSERT INTO `user_message_delete` VALUES ('536', '22', '1', 'chengxi');
+INSERT INTO `user_message_delete` VALUES ('557', '18', '1', 'chengxi');
+INSERT INTO `user_message_delete` VALUES ('558', '19', '1', 'chengxi');
+INSERT INTO `user_message_delete` VALUES ('559', '20', '1', 'chengxi');
+INSERT INTO `user_message_delete` VALUES ('560', '27', '1', 'chengxi');
+INSERT INTO `user_message_delete` VALUES ('561', '28', '1', 'chengxi');
 
 -- ----------------------------
 -- Table structure for `user_secret`
