@@ -1004,6 +1004,23 @@ $(function () {
     async_loadcoursesummary();
 
 
+    /**
+     * 点击查看全部评价，默认触发对应的tab点击
+     */
+    var link_gousercommand = function(){
+        $("#link-gocommand").click();
+    };
+    $(".link-command").click(link_gousercommand);
+
+    /**
+     * 点击查看讲师信息，默认触发对应的tab点击
+     */
+    var link_gotutorinfo = function(){
+        $("#link-goinfo").click();
+    };
+    $(".link-tutorinfo").click(link_gotutorinfo);
+
+
     //-----------------侧边栏的点击事件------------------------
     /**
      * 点击回到顶部
