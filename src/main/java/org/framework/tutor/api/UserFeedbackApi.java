@@ -1,5 +1,7 @@
 package org.framework.tutor.api;
 
+import org.framework.tutor.entity.ParamMap;
+
 import javax.servlet.http.HttpServletRequest;
 
 public interface UserFeedbackApi {
@@ -17,4 +19,10 @@ public interface UserFeedbackApi {
     String removeMyFeedback(Integer id, HttpServletRequest request);
 
     String saveMyFeedback(String info, HttpServletRequest request);
+
+    String getUserFeedback(ParamMap paramMap);
+
+    String removeUserFeedback(Integer id);
+
+    String modUserFeedbackStatus(ParamMap paramMap);
 }

@@ -8,6 +8,16 @@ $(function () {
     };
 
     /**
+     * 获取url的请求参数
+     */
+    var str_geturlparam = function (name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    };
+
+    /**
      * 初始化markdown插件
      */
     var testEditor = null;
@@ -22,7 +32,18 @@ $(function () {
             tex: true,
             flowChart: true,
             sequenceDiagram: true,
-            saveHTMLToTextarea: true //注意3：这个配置，方便post提交表单
+            saveHTMLToTextarea: true, //注意3：这个配置，方便post提交表单
+            onload: function(){
+                var username = str_geturlparam("username");
+                var $this = this;
+                //反馈解决通知
+                if(!str_isnull(username)){
+                    $(".identity").val("1");
+                    $(".identity").trigger("change");
+                    $(".username").val(username).attr("disabled", "true");
+                    $(".title").val("反馈接收解决通知");
+                }
+            }
         });
     };
     async_loadeditormd();

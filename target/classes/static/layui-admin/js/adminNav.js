@@ -32,6 +32,12 @@ var navs = [{
             "icon": "&#xe631;",
             "href": "/adminpage_con/gosysadminmessagemanage",
             "spread": false
-        }
+        },
+        {
+            "title": "用户反馈管理",
+            "icon": "&#xe631;",
+            "href": "/adminpage_con/gosysadminfeedbackmanage",
+            "spread": false
+        },
     ]
 }]

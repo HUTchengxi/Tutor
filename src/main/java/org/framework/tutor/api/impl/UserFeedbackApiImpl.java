@@ -15,6 +15,7 @@ package org.framework.tutor.api.impl;
 import com.google.gson.Gson;
 import org.framework.tutor.api.UserFeedbackApi;
 import org.framework.tutor.domain.UserFeedback;
+import org.framework.tutor.entity.ParamMap;
 import org.framework.tutor.service.UserFeedbackService;
 import org.framework.tutor.service.UserMSService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -112,6 +113,81 @@ public class UserFeedbackApiImpl implements UserFeedbackApi {
             String title = "反馈成功通知";
             String message = "谢谢您的反馈，稍后我们会第一时间通知您反馈进度";
             userMSService.seneMessage(identity, suser, username, title, message);
+        }else{
+            resultMap.put("status", "sqlerr");
+        }
+        return gson.toJson(resultMap);
+    }
+
+    @Override
+    public String getUserFeedback(ParamMap paramMap) {
+
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
+        List<Object> rowList = new ArrayList<>();
+
+        String username = paramMap.getCourseName();
+        if(username == null){
+            username = "";
+        }
+        Integer status = paramMap.getStatus();
+        Integer pageNo = paramMap.getPageNo();
+        Integer pageSize = paramMap.getPageSize();
+        Integer offset = pageNo * pageSize;
+
+        List<UserFeedback> userFeedbacks = null;
+        Integer total = 0;
+        if(status != null) {
+             userFeedbacks = userFeedbackService.getUserFeedback(username, status, offset, pageSize);
+             total = userFeedbackService.getUserFeedbackCount(username, status);
+        }else{
+            userFeedbacks = userFeedbackService.getUserFeedback(username, offset, pageSize);
+            total = userFeedbackService.getUserFeedbackCount(username);
+        }
+        if(userFeedbacks.size() > 0){
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            for(UserFeedback userFeedback: userFeedbacks){
+                Map<String, Object> rowMap = new HashMap<>(8);
+                rowMap.put("id", userFeedback.getId());
+                rowMap.put("username", userFeedback.getUsername());
+                rowMap.put("info", userFeedback.getInfo());
+                rowMap.put("ptime", simpleDateFormat.format(userFeedback.getPtime()));
+                rowMap.put("status", userFeedback.getStatus());
+                rowList.add(rowMap);
+            }
+        }
+        resultMap.put("rows", rowList);
+        resultMap.put("total", total);
+        return gson.toJson(resultMap);
+    }
+
+    @Override
+    public String removeUserFeedback(Integer id) {
+
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
+
+        Integer row = userFeedbackService.removeUserFeedback(id);
+        if(row != 1){
+            resultMap.put("status", "sqlerr");
+        }else{
+            resultMap.put("status", "valid");
+        }
+        return gson.toJson(resultMap);
+    }
+
+    @Override
+    public String modUserFeedbackStatus(ParamMap paramMap) {
+
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
+
+        Integer id = paramMap.getPageNo();
+        Integer status = paramMap.getStatus();
+
+        Integer row = userFeedbackService.modMyFeedbackStatus(id, status);
+        if(row == 1){
+            resultMap.put("status", "valid");
         }else{
             resultMap.put("status", "sqlerr");
         }

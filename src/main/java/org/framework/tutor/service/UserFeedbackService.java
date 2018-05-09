@@ -14,4 +14,14 @@ public interface UserFeedbackService {
     Integer modMyFeedbackStatus(Integer id, Integer status);
 
     Integer saveMyFeedback(String username, String info);
+
+    List<UserFeedback> getUserFeedback(String username, Integer status, Integer offset, Integer pageSize);
+
+    List<UserFeedback> getUserFeedback(String username, Integer offset, Integer pageSize);
+
+    Integer getUserFeedbackCount(String username, Integer status);
+
+    Integer getUserFeedbackCount(String username);
+
+    Integer removeUserFeedback(Integer id);
 }

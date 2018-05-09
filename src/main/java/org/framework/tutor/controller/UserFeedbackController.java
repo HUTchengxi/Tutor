@@ -14,7 +14,9 @@ package org.framework.tutor.controller;
 
 import org.framework.tutor.annotation.RequireAuth;
 import org.framework.tutor.api.UserFeedbackApi;
+import org.framework.tutor.entity.ParamMap;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -49,5 +51,23 @@ public class UserFeedbackController {
     @RequestMapping("/savemyfeedback.json")
     public String saveMyFeedback(@RequestParam String info, HttpServletRequest request){
         return userFeedbackApi.saveMyFeedback(info, request);
+    }
+
+    @RequireAuth(ident = "admin", type = "api")
+    @RequestMapping("/getuserfeedback.json")
+    public String getUserFeedback(@RequestBody ParamMap paramMap){
+        return userFeedbackApi.getUserFeedback(paramMap);
+    }
+
+    @RequireAuth(ident = "admin", type = "api")
+    @RequestMapping("/removeuserfeedback.json")
+    public String removeUserFeedback(@RequestParam Integer id){
+        return userFeedbackApi.removeUserFeedback(id);
+    }
+
+    @RequireAuth(ident = "admin", type = "api")
+    @RequestMapping("/moduserfeedbackstatus.json")
+    public String modUserFeedbackStatus(@RequestBody ParamMap paramMap){
+        return userFeedbackApi.modUserFeedbackStatus(paramMap);
     }
 }

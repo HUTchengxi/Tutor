@@ -154,4 +154,11 @@ public class ForwardAdminPageController {
 
         return "sysconfig/admin/messagemanage";
     }
+
+    @RequireAuth(ident = "admin")
+    @RequestMapping("/gosysadminfeedbackmanage")
+    public String goAdminFeedbackManage(){
+
+        return "sysconfig/admin/feedbackmanage";
+    }
 }
