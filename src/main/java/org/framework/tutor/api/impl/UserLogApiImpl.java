@@ -13,13 +13,11 @@
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonParser;
 import org.framework.tutor.api.UserLogApi;
 import org.framework.tutor.domain.UserLog;
-import org.framework.tutor.service.UserLService;
+import org.framework.tutor.service.UserLogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -41,7 +39,7 @@ import java.util.Map;
 public class UserLogApiImpl implements UserLogApi {
 
     @Autowired
-    private UserLService userLService;
+    private UserLogService userLogService;
 
     /**
      * 保存用户登录记录
@@ -66,7 +64,7 @@ public class UserLogApiImpl implements UserLogApi {
         Map<String, Object> resultMap = new HashMap<>(2);
         List<Object> rowList = new ArrayList<>();
 
-        if (userLService.saveUserlog(username, logcity, ip, logsystem)) {
+        if (userLogService.saveUserlog(username, logcity, ip, logsystem)) {
             resultMap.put("status", "valid");
         } else {
             resultMap.put("status", "mysqlerr");
@@ -97,7 +95,7 @@ public class UserLogApiImpl implements UserLogApi {
         List<Object> rowList = new ArrayList<>();
 
             //获取登录记录
-            List<UserLog> userLogs = userLService.getUserlog(username);
+            List<UserLog> userLogs = userLogService.getUserlog(username);
             if (userLogs.size() == 0) {
                 resultMap.put("status", "ok");
                 resultMap.put("len", 0);

@@ -13,12 +13,10 @@
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonParser;
 import org.apache.http.HttpResponse;
 import org.framework.tutor.api.UserMainApi;
-import org.framework.tutor.service.UserMSService;
-import org.framework.tutor.service.UserMService;
-import org.framework.tutor.service.UserSCService;
+import org.framework.tutor.service.UserMainService;
+import org.framework.tutor.service.UserSecretService;
 import org.framework.tutor.util.CommonUtil;
 import org.framework.tutor.util.HttpUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +24,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.mail.MessagingException;
@@ -36,9 +32,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.*;
 import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -50,10 +44,10 @@ import java.util.Map;
 public class UserMainApiImpl implements UserMainApi {
 
     @Autowired
-    private UserMService userMService;
+    private UserMainService userMainService;
 
     @Autowired
-    private UserSCService userSCService;
+    private UserSecretService userSecretService;
 
     @Autowired
     private JavaMailSender javaMailSender;
@@ -79,7 +73,7 @@ public class UserMainApiImpl implements UserMainApi {
 
         String username = (String) session.getAttribute("username");
         //服务层获取数据
-        org.framework.tutor.domain.UserMain userMain = userMService.getByUser(username);
+        org.framework.tutor.domain.UserMain userMain = userMainService.getByUser(username);
         resultMap.put("status", "valid");
         resultMap.put("imgsrc", userMain.getImgsrc());
 
@@ -106,7 +100,7 @@ public class UserMainApiImpl implements UserMainApi {
 
         String username = (String) session.getAttribute("username");
         //服务层获取数据
-        org.framework.tutor.domain.UserMain userMain = userMService.getByUser(username);
+        org.framework.tutor.domain.UserMain userMain = userMainService.getByUser(username);
         resultMap.put("status", "valid");
         resultMap.put("username", userMain.getUsername());
         resultMap.put("nickname", userMain.getNickname());
@@ -138,7 +132,7 @@ public class UserMainApiImpl implements UserMainApi {
 
         String username = (String) session.getAttribute("username");
         //服务层实现我的头像的修改
-        if (userMService.modImgsrcByUser(username, imgsrc)) {
+        if (userMainService.modImgsrcByUser(username, imgsrc)) {
             resultMap.put("status", "modok");
             resultMap.put("imgsrc", imgsrc);
         } else {
@@ -181,7 +175,7 @@ public class UserMainApiImpl implements UserMainApi {
         bos.close();
 
         //服务层实现我的头像的修改
-        if (userMService.modImgsrcByUser(username, imgsrc)) {
+        if (userMainService.modImgsrcByUser(username, imgsrc)) {
 
             //然后删除原来的那张图片
             String oldimgsrc = "src/main/resources/static" + oimgsrc;
@@ -230,7 +224,7 @@ public class UserMainApiImpl implements UserMainApi {
             resultMap.put("status", "invalid");
             resultMap.put("url", "/forward_con/welcome");
         } else {
-            if (!userMService.modUserinfo(username, nickname, sex, age, info)) {
+            if (!userMainService.modUserinfo(username, nickname, sex, age, info)) {
                 resultMap.put("status", "mysqlerr");
                 resultMap.put("msg", "I'm sorry");
             } else {
@@ -260,7 +254,7 @@ public class UserMainApiImpl implements UserMainApi {
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(4);
 
-        org.framework.tutor.domain.UserMain userMain = userMService.getByUser(username);
+        org.framework.tutor.domain.UserMain userMain = userMainService.getByUser(username);
         if (userMain == null) {
             resultMap.put("status", "invalid");
         } else {
@@ -292,7 +286,7 @@ public class UserMainApiImpl implements UserMainApi {
         if (username == null) {
             username = (String) request.getSession().getAttribute("username");
             //判断用户名和邮箱是否对应
-            org.framework.tutor.domain.UserMain userMain = userMService.getByUserAndEmail(username, email);
+            org.framework.tutor.domain.UserMain userMain = userMainService.getByUserAndEmail(username, email);
             if (userMain == null) {
                 resultMap.put("status", "invalid");
                 writer.print(gson.toJson(resultMap));
@@ -354,14 +348,14 @@ public class UserMainApiImpl implements UserMainApi {
                 if (email.equals(realemail) && valicode != null && valicode.equals(realvalicode)) {
 
                     //判断邮箱和用户名是否对应
-                    org.framework.tutor.domain.UserMain userMain = userMService.getByUserAndEmail(username, email);
+                    org.framework.tutor.domain.UserMain userMain = userMainService.getByUserAndEmail(username, email);
                     if (userMain == null) {
                         resultMap.put("status", "inerr");
                     } else {
                         //可以修改密码
-                        Integer salt = userMService.getByUser(username).getSalt();
+                        Integer salt = userMainService.getByUser(username).getSalt();
                         newpass = CommonUtil.getMd5Pass(newpass, salt);
-                        Integer row = userMService.modPassword(username, newpass);
+                        Integer row = userMainService.modPassword(username, newpass);
                         if (row == 1) {
                             resultMap.put("status", "valid");
                         } else {
@@ -381,14 +375,14 @@ public class UserMainApiImpl implements UserMainApi {
                 if (phone.equals(realphone) && valicode != null && valicode.equals(realvalicode)) {
 
                     //判断手机号码和用户名是否对应
-                    org.framework.tutor.domain.UserMain userMain = userMService.getByUserAndPhone(username, phone);
+                    org.framework.tutor.domain.UserMain userMain = userMainService.getByUserAndPhone(username, phone);
                     if (userMain == null) {
                         resultMap.put("status", "inerr");
                     } else {
                         //可以修改密码
-                        Integer salt = userMService.getByUser(username).getSalt();
+                        Integer salt = userMainService.getByUser(username).getSalt();
                         newpass = CommonUtil.getMd5Pass(newpass, salt);
-                        Integer row = userMService.modPassword(username, newpass);
+                        Integer row = userMainService.modPassword(username, newpass);
                         if (row == 1) {
                             resultMap.put("status", "valid");
                         } else {
@@ -437,22 +431,22 @@ public class UserMainApiImpl implements UserMainApi {
         Map<String, Object> resultMap = new HashMap<>(2);
 
         //校验密保答案
-        if (userSCService.checkSecret(username, queone, ansone)) {
+        if (userSecretService.checkSecret(username, queone, ansone)) {
             if (quetwo != null) {
-                if (userSCService.checkSecret(username, quetwo, anstwo)) {
+                if (userSecretService.checkSecret(username, quetwo, anstwo)) {
                     if (quethree != null) {
-                        if (userSCService.checkSecret(username, quethree, ansthree)) {
+                        if (userSecretService.checkSecret(username, quethree, ansthree)) {
                             //修改密码
-                            userMService.modPassword(username, password);
+                            userMainService.modPassword(username, password);
                             resultMap.put("status", "ok");
                         } else {
                             resultMap.put("status", "err-mb3");
                         }
                     } else {
                         //修改密码
-                        Integer salt = userMService.getByUser(username).getSalt();
+                        Integer salt = userMainService.getByUser(username).getSalt();
                         password = CommonUtil.getMd5Pass(password, salt);
-                        userMService.modPassword(username, password);
+                        userMainService.modPassword(username, password);
                         resultMap.put("status", "ok");
                     }
                 } else {
@@ -460,9 +454,9 @@ public class UserMainApiImpl implements UserMainApi {
                 }
             } else {
                 //修改密码
-                Integer salt = userMService.getByUser(username).getSalt();
+                Integer salt = userMainService.getByUser(username).getSalt();
                 password = CommonUtil.getMd5Pass(password, salt);
-                userMService.modPassword(username, password);
+                userMainService.modPassword(username, password);
                 resultMap.put("status", "ok");
             }
         } else {
@@ -497,9 +491,9 @@ public class UserMainApiImpl implements UserMainApi {
             //进行邮箱解除绑定
             Integer row = null;
             if (type != null && type.equals("email")) {
-                row = userMService.unbindEmail(username);
+                row = userMainService.unbindEmail(username);
             } else if (type != null && type.equals("phone")) {
-                row = userMService.unbindPhone(username);
+                row = userMainService.unbindPhone(username);
             } else {
                 resultMap.put("status", "invalid");
             }
@@ -538,7 +532,7 @@ public class UserMainApiImpl implements UserMainApi {
         //发送邮件验证码
         if (type.equals("email")) {
             //判断邮箱是否存在
-            Boolean isExist = userMService.emailExist(email);
+            Boolean isExist = userMainService.emailExist(email);
             if (!isExist) {
                 //发送邮件验证码
                 String uuid = CommonUtil.getUUID().substring(0, 4);
@@ -557,7 +551,7 @@ public class UserMainApiImpl implements UserMainApi {
             }
         } else if (type.equals("phone")) {
             //判断手机号码是否已经被注册
-            Boolean isexist = userMService.phoneExist(phone);
+            Boolean isexist = userMainService.phoneExist(phone);
             if (isexist) {
                 resultMap.put("status", "exist");
             } else {
@@ -619,9 +613,9 @@ public class UserMainApiImpl implements UserMainApi {
             String realcode = (String) session.getAttribute("bindcode");
             if (realcode != null && realcode.equals(valicode) && realemail != null && realemail.equals(email)) {
                 if (type.equals("email")) {
-                    userMService.bindEmail(username, email);
+                    userMainService.bindEmail(username, email);
                 } else {
-                    userMService.bindPhone(username, email);
+                    userMainService.bindPhone(username, email);
                 }
                 resultMap.put("status", "valid");
             } else {
@@ -653,7 +647,7 @@ public class UserMainApiImpl implements UserMainApi {
             username = (String) session.getAttribute("username");
         }
         //判断用户名和手机号码是否对应
-        org.framework.tutor.domain.UserMain userMain = userMService.getByUserAndPhone(username, phone);
+        org.framework.tutor.domain.UserMain userMain = userMainService.getByUserAndPhone(username, phone);
             //发送手机验证码并保存到session中
             //发送手机语音验证短码
             String host = "http://yuyin.market.alicloudapi.com";
@@ -702,7 +696,7 @@ public class UserMainApiImpl implements UserMainApi {
         Map<String, Object> resultMap = new HashMap<>(2);
 
         //判断手机号码是否已经被注册
-        Boolean isexist = userMService.phoneExist(phone);
+        Boolean isexist = userMainService.phoneExist(phone);
         if (isexist) {
             resultMap.put("status", "exist");
         } else {

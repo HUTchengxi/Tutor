@@ -1,27 +1,12 @@
 package org.framework.tutor.api;
 
-import com.google.gson.JsonParser;
-import org.apache.http.HttpResponse;
-import org.framework.tutor.service.UserMService;
-import org.framework.tutor.service.UserSCService;
-import org.framework.tutor.util.CommonUtil;
-import org.framework.tutor.util.HttpUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.*;
 import java.security.NoSuchAlgorithmException;
-import java.util.HashMap;
-import java.util.Map;
 
 public interface UserMainApi {
 

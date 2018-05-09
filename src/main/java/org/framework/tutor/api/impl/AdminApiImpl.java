@@ -15,12 +15,10 @@ package org.framework.tutor.api.impl;
 import com.google.gson.Gson;
 import org.framework.tutor.api.AdminApi;
 import org.framework.tutor.domain.UserMain;
-import org.framework.tutor.service.UserMService;
+import org.framework.tutor.service.UserMainService;
 import org.framework.tutor.util.CommonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -40,7 +38,7 @@ import java.util.Map;
 public class AdminApiImpl implements AdminApi {
 
     @Autowired
-    private UserMService userMService;
+    private UserMainService userMainService;
 
     /**
      *
@@ -59,10 +57,10 @@ public class AdminApiImpl implements AdminApi {
         HttpSession session = request.getSession();
 
         //获取密码盐
-        Integer salt = userMService.getByUser(username).getSalt();
+        Integer salt = userMainService.getByUser(username).getSalt();
         //明文传来的密码加盐判断
         String MD5Pass = CommonUtil.getMd5Pass(password, salt);
-        UserMain userMain = userMService.checkAdminLogin(username, MD5Pass);
+        UserMain userMain = userMainService.checkAdminLogin(username, MD5Pass);
         if(userMain == null){
             resultMap.put("status", "error");
         }else{

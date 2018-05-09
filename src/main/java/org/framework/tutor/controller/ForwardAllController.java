@@ -1,18 +1,13 @@
 package org.framework.tutor.controller;
 
-import com.google.gson.JsonParser;
 import org.framework.tutor.domain.UserVali;
-import org.framework.tutor.service.UserMService;
-import org.framework.tutor.service.UserVService;
+import org.framework.tutor.service.UserMainService;
+import org.framework.tutor.service.UserValiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import sun.java2d.pipe.SpanShapeRenderer;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -25,10 +20,10 @@ import java.util.Date;
 public class ForwardAllController {
 
     @Autowired
-    private UserVService userVService;
+    private UserValiService userValiService;
 
     @Autowired
-    private UserMService userMService;
+    private UserMainService userMainService;
 
     /**
      * 进入登录界面
@@ -143,7 +138,7 @@ public class ForwardAllController {
         }
         else{
             //判断邮箱验证状态
-            UserVali userVali = userVService.checkEmailStatus(email.split(" ")[1]);
+            UserVali userVali = userValiService.checkEmailStatus(email.split(" ")[1]);
             //验证成功
             if(userVali == null){
                 return "/home/welcome";
@@ -164,17 +159,17 @@ public class ForwardAllController {
         //清空不是当天发送的验证码(留存23：59-24：00的bug)
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String now = simpleDateFormat.format(new Date());
-        userVService.checkAll(now);
+        userValiService.checkAll(now);
 
         //获取正确的邮箱验证码
-        String realcode = userVService.getCodeByUsername(username);
+        String realcode = userValiService.getCodeByUsername(username);
 
         if(realcode != null && realcode.equals(valicode)){
             Integer identity = 0;
             //设置当前用户的id为以验证普通用户
-            userMService.setIdentity(username, identity);
+            userMainService.setIdentity(username, identity);
             //清除未验证状态
-            userVService.delStatus(username);
+            userValiService.delStatus(username);
             return "/login/index";
         }
         else{

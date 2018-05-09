@@ -13,13 +13,11 @@
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonParser;
 import org.framework.tutor.api.UserSignApi;
 import org.framework.tutor.domain.UserSign;
-import org.framework.tutor.service.UserSService;
+import org.framework.tutor.service.UserSignService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -37,7 +35,7 @@ import java.util.*;
 public class UserSignApiImpl implements UserSignApi {
 
     @Autowired
-    private UserSService userSService;
+    private UserSignService userSignService;
 
     /**
      * 获取用户的签到数据
@@ -62,7 +60,7 @@ public class UserSignApiImpl implements UserSignApi {
         StringBuffer temp = new StringBuffer(monI.toString());
         String monthstr = temp.length() == 1 ? "-0" + temp.toString() + "-" : "-" + temp.toString() + "-";
 
-        List<UserSign> userSigns = userSService.getMySignNow(username, monthstr);
+        List<UserSign> userSigns = userSignService.getMySignNow(username, monthstr);
         if (userSigns.size() == 0) {
             resultMap.put("status", "valid");
         } else {
@@ -91,7 +89,7 @@ public class UserSignApiImpl implements UserSignApi {
         if (username == null) {
             resultMap.put("status", "invalid");
         } else {
-            Integer row = userSService.addUsersign(username);
+            Integer row = userSignService.addUsersign(username);
             if (row != 1) {
                 resultMap.put("status", "mysqlerr");
             } else {

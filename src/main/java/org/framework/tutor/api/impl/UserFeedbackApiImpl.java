@@ -17,7 +17,7 @@ import org.framework.tutor.api.UserFeedbackApi;
 import org.framework.tutor.domain.UserFeedback;
 import org.framework.tutor.entity.ParamMap;
 import org.framework.tutor.service.UserFeedbackService;
-import org.framework.tutor.service.UserMSService;
+import org.framework.tutor.service.UserMessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -41,7 +41,7 @@ public class UserFeedbackApiImpl implements UserFeedbackApi {
     private UserFeedbackService userFeedbackService;
 
     @Autowired
-    private UserMSService userMSService;
+    private UserMessageService userMessageService;
 
     @Override
     public String getMyFeedback(HttpServletRequest request) {
@@ -112,7 +112,7 @@ public class UserFeedbackApiImpl implements UserFeedbackApi {
             String suser= "chengxi";
             String title = "反馈成功通知";
             String message = "谢谢您的反馈，稍后我们会第一时间通知您反馈进度";
-            userMSService.seneMessage(identity, suser, username, title, message);
+            userMessageService.seneMessage(identity, suser, username, title, message);
         }else{
             resultMap.put("status", "sqlerr");
         }

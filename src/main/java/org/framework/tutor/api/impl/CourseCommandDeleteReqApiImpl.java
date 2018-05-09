@@ -15,13 +15,11 @@ package org.framework.tutor.api.impl;
 import com.google.gson.Gson;
 import org.framework.tutor.api.CourseCommandDeleteReqApi;
 import org.framework.tutor.domain.CourseCommand;
-import org.framework.tutor.service.CourseCMService;
+import org.framework.tutor.service.CourseCommandService;
 import org.framework.tutor.service.CourseCommandDeleteReqService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -43,7 +41,7 @@ public class CourseCommandDeleteReqApiImpl implements CourseCommandDeleteReqApi 
     private CourseCommandDeleteReqService courseCommandDeleteReqService;
 
     @Autowired
-    private CourseCMService courseCMService;
+    private CourseCommandService courseCommandService;
 
     /**
      *
@@ -64,7 +62,7 @@ public class CourseCommandDeleteReqApiImpl implements CourseCommandDeleteReqApi 
         String username = (String) session.getAttribute("username");
 
         //判断评论的课程username是否所属相同
-        CourseCommand courseCommand = courseCMService.getCommandById(cid);
+        CourseCommand courseCommand = courseCommandService.getCommandById(cid);
         if(courseCommand == null || !courseCommand.getUsername().equals(username)){
             resultMap.put("status", "invalid");
         }else{
@@ -73,7 +71,7 @@ public class CourseCommandDeleteReqApiImpl implements CourseCommandDeleteReqApi 
 
             //对应的评论状态更新
             Integer status = 1;
-            courseCMService.updateCommandStatus(cid,status);
+            courseCommandService.updateCommandStatus(cid,status);
             resultMap.put("status", "valid");
         }
 

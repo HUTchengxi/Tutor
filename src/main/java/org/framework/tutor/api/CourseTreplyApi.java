@@ -1,13 +1,7 @@
 package org.framework.tutor.api;
 
-import com.google.gson.JsonParser;
-import org.framework.tutor.service.CourseTService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 public interface CourseTreplyApi {
 

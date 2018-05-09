@@ -18,7 +18,7 @@ import org.framework.tutor.domain.SysEmailManage;
 import org.framework.tutor.domain.UserMain;
 import org.framework.tutor.entity.EmailParam;
 import org.framework.tutor.service.SysEmailManageService;
-import org.framework.tutor.service.UserMService;
+import org.framework.tutor.service.UserMainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -26,10 +26,6 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
@@ -55,7 +51,7 @@ public class SysEmailManagerApiImpl implements SysEmailManagerApi {
     private SysEmailManageService sysEmailManageService;
 
     @Autowired
-    private UserMService userMService;
+    private UserMainService userMainService;
 
     @Autowired
     private JavaMailSender javaMailSender;
@@ -77,7 +73,7 @@ public class SysEmailManagerApiImpl implements SysEmailManagerApi {
         Gson gson = new Gson();
 
         //获取对应用户的address
-        UserMain userMain = userMService.getByUser(emailParam.getSend());
+        UserMain userMain = userMainService.getByUser(emailParam.getSend());
         Map<String, Object> resultMap = new HashMap<>(1);
         if (userMain == null) {
             resultMap.put("status", "noaddress");
@@ -115,7 +111,7 @@ public class SysEmailManagerApiImpl implements SysEmailManagerApi {
         Gson gson = new Gson();
 
         //获取对应用户的address
-        UserMain userMain = userMService.getByUser(emailParam.getSend());
+        UserMain userMain = userMainService.getByUser(emailParam.getSend());
         Map<String, Object> resultMap = new HashMap<>(1);
         if (userMain == null) {
             resultMap.put("status", "noaddress");

@@ -1,16 +1,13 @@
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonParser;
 import org.framework.tutor.api.CourseOrderApi;
 import org.framework.tutor.domain.CourseMain;
 import org.framework.tutor.domain.CourseOrder;
-import org.framework.tutor.service.CourseMService;
-import org.framework.tutor.service.CourseOService;
+import org.framework.tutor.service.CourseMainService;
+import org.framework.tutor.service.CourseOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -29,10 +26,10 @@ import java.util.*;
 public class CourseOrderApiImpl implements CourseOrderApi {
 
     @Autowired
-    private CourseOService courseOService;
+    private CourseOrderService courseOrderService;
 
     @Autowired
-    private CourseMService courseMService;
+    private CourseMainService courseMainService;
 
     /**
      * 获取课程订购数据
@@ -51,10 +48,10 @@ public class CourseOrderApiImpl implements CourseOrderApi {
         Map<String, Object> resultMap = new HashMap<>(2);
 
         //获取课程订购人数
-        Integer ccount = courseOService.getOrderCount(cid);
+        Integer ccount = courseOrderService.getOrderCount(cid);
         resultMap.put("count", ccount);
 
-        org.framework.tutor.domain.CourseOrder courseOrder = courseOService.getUserOrder(username, cid);
+        org.framework.tutor.domain.CourseOrder courseOrder = courseOrderService.getUserOrder(username, cid);
         if (courseOrder == null) {
             resultMap.put("state", "valid");
         } else {
@@ -89,7 +86,7 @@ public class CourseOrderApiImpl implements CourseOrderApi {
         List<Object> rowList = new ArrayList<>();
 
         Integer state = 0;
-        if (!(courseOService.addUserOrder(username, cid, state))) {
+        if (!(courseOrderService.addUserOrder(username, cid, state))) {
             resultMap.put("status", "mysqlerr");
         } else {
             resultMap.put("statue", "valid");
@@ -118,12 +115,12 @@ public class CourseOrderApiImpl implements CourseOrderApi {
         List<Object> rowList = new ArrayList<>();
 
         Integer status = 0;
-        List<CourseOrder> courseOrders = courseOService.getMyOrder(username, status, startpos);
+        List<CourseOrder> courseOrders = courseOrderService.getMyOrder(username, status, startpos);
         if (courseOrders.size() == 0) {
             resultMap.put("status", "valid");
         } else {
             for (org.framework.tutor.domain.CourseOrder courseOrder : courseOrders) {
-                CourseMain courseMain = courseMService.getCourseById(courseOrder.getCid());
+                CourseMain courseMain = courseMainService.getCourseById(courseOrder.getCid());
                 Map<String, Object> rowMap = new HashMap<>(8);
                 rowMap.put("imgsrc", courseMain.getImgsrc());
                 rowMap.put("name", courseMain.getName());
@@ -157,7 +154,7 @@ public class CourseOrderApiImpl implements CourseOrderApi {
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
 
-        int len = courseOService.delMyCart(id, username);
+        int len = courseOrderService.delMyCart(id, username);
         if (len == 0) {
             resultMap.put("status", "invalid");
         } else {
@@ -183,7 +180,7 @@ public class CourseOrderApiImpl implements CourseOrderApi {
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
-        resultMap.put("count", courseOService.getMyCartCount(username));
+        resultMap.put("count", courseOrderService.getMyCartCount(username));
         writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
@@ -214,13 +211,13 @@ public class CourseOrderApiImpl implements CourseOrderApi {
         } else if (status.equals("edn")) {
             state = 2;
         }
-        List<org.framework.tutor.domain.CourseOrder> courseOrders = courseOService.getMyOrder(username, state, startpos);
+        List<org.framework.tutor.domain.CourseOrder> courseOrders = courseOrderService.getMyOrder(username, state, startpos);
         if (courseOrders.size() == 0) {
             resultMap.put("status", "valid");
         } else {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             for (org.framework.tutor.domain.CourseOrder courseOrder : courseOrders) {
-                CourseMain courseMain = courseMService.getCourseById(courseOrder.getCid());
+                CourseMain courseMain = courseMainService.getCourseById(courseOrder.getCid());
                 Map<String, Object> rowMap = new HashMap<>(8);
                 rowMap.put("name", courseMain.getName());
                 rowMap.put("id", courseOrder.getId());
@@ -254,11 +251,11 @@ public class CourseOrderApiImpl implements CourseOrderApi {
         Map<String, Object> resultMap = new HashMap<>(2);
 
         //判断用户名和订单是否对应，防止api非法调用
-        org.framework.tutor.domain.CourseOrder courseOrder = courseOService.getByIdAndUser(username, oid);
+        org.framework.tutor.domain.CourseOrder courseOrder = courseOrderService.getByIdAndUser(username, oid);
         if (courseOrder == null) {
             resultMap.put("status", "invalid");
         } else {
-            Integer row = courseOService.setInCycle(oid);
+            Integer row = courseOrderService.setInCycle(oid);
             if (row == 1) {
                 resultMap.put("status", "valid");
             } else {
@@ -290,7 +287,7 @@ public class CourseOrderApiImpl implements CourseOrderApi {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String now = simpleDateFormat.format(new Date());
 
-        resultMap.put("count", courseOService.getOrderCountNow(username, now));
+        resultMap.put("count", courseOrderService.getOrderCountNow(username, now));
         writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();

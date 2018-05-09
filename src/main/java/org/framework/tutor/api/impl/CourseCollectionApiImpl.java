@@ -13,15 +13,13 @@
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonParser;
 import org.framework.tutor.api.CourseCollectApi;
 import org.framework.tutor.domain.CourseCollect;
 import org.framework.tutor.domain.CourseMain;
-import org.framework.tutor.service.CourseCService;
-import org.framework.tutor.service.CourseMService;
+import org.framework.tutor.service.CourseCollectService;
+import org.framework.tutor.service.CourseMainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -40,10 +38,10 @@ import java.util.*;
 public class CourseCollectionApiImpl implements CourseCollectApi {
 
     @Autowired
-    private CourseCService courseCService;
+    private CourseCollectService courseCollectService;
 
     @Autowired
-    private CourseMService courseMService;
+    private CourseMainService courseMainService;
 
     /**
      * 获取我的课程收藏记录
@@ -65,7 +63,7 @@ public class CourseCollectionApiImpl implements CourseCollectApi {
         Map<String, Object> resultMap = new HashMap<>(4);
         List<Object> rowList = new ArrayList<>();
 
-        List<CourseCollect> courseCollects = courseCService.getMyCollect(username, startpos);
+        List<CourseCollect> courseCollects = courseCollectService.getMyCollect(username, startpos);
         if (courseCollects.size() == 0) {
             resultMap.put("status", "valid");
             resultMap.put("length", 0);
@@ -73,7 +71,7 @@ public class CourseCollectionApiImpl implements CourseCollectApi {
             SimpleDateFormat ysdf = new SimpleDateFormat("yyyy年");
             SimpleDateFormat osdf = new SimpleDateFormat("MM月dd日");
             for (org.framework.tutor.domain.CourseCollect courseCollect : courseCollects) {
-                CourseMain courseMain = courseMService.getCourseById(courseCollect.getId());
+                CourseMain courseMain = courseMainService.getCourseById(courseCollect.getId());
                 Map<String, Object> rowMap = new HashMap<>(16);
                 rowMap.put("cyear", ysdf.format(courseCollect.getColtime()));
                 rowMap.put("cday", osdf.format(courseCollect.getColtime()));
@@ -107,7 +105,7 @@ public class CourseCollectionApiImpl implements CourseCollectApi {
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
 
-        org.framework.tutor.domain.CourseCollect courseCollect = courseCService.getCollect(cid, username);
+        org.framework.tutor.domain.CourseCollect courseCollect = courseCollectService.getCollect(cid, username);
         if (courseCollect == null) {
             resultMap.put("status", "uncollect");
         } else {
@@ -140,7 +138,7 @@ public class CourseCollectionApiImpl implements CourseCollectApi {
 
         //收藏
         if ("collect".equals(mod)) {
-            if (courseCService.Collect(cid, username, descript)) {
+            if (courseCollectService.Collect(cid, username, descript)) {
                 resultMap.put("status", "valid");
             } else {
                 resultMap.put("status", "mysqlerr");
@@ -148,7 +146,7 @@ public class CourseCollectionApiImpl implements CourseCollectApi {
         }
         //取消收藏
         else {
-            if (courseCService.unCollect(cid, username)) {
+            if (courseCollectService.unCollect(cid, username)) {
                 resultMap.put("status", "valid");
             } else {
                 resultMap.put("status", "mysqlerr");
@@ -178,7 +176,7 @@ public class CourseCollectionApiImpl implements CourseCollectApi {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String now = simpleDateFormat.format(new Date());
 
-        resultMap.put("count", courseCService.getCollectCountNow(username, now));
+        resultMap.put("count", courseCollectService.getCollectCountNow(username, now));
 
         writer.print(gson.toJson(resultMap));
         writer.flush();

@@ -13,15 +13,13 @@
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonParser;
 import org.framework.tutor.api.CourseLogAPi;
 import org.framework.tutor.domain.CourseLog;
 import org.framework.tutor.domain.CourseMain;
-import org.framework.tutor.service.CourseLService;
-import org.framework.tutor.service.CourseMService;
+import org.framework.tutor.service.CourseLogService;
+import org.framework.tutor.service.CourseMainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -43,10 +41,10 @@ import java.util.Map;
 public class CourseLogApiImpl implements CourseLogAPi {
 
     @Autowired
-    private CourseLService courseLService;
+    private CourseLogService courseLogService;
 
     @Autowired
-    private CourseMService courseMService;
+    private CourseMainService courseMainService;
 
     /**
      * 获取我的课程记录
@@ -66,14 +64,14 @@ public class CourseLogApiImpl implements CourseLogAPi {
         List<Object> rowList = new ArrayList<>();
 
         //获取课程记录
-        List<CourseLog> courseLogs = courseLService.getUserlog(username);
+        List<CourseLog> courseLogs = courseLogService.getUserlog(username);
         if (courseLogs.size() == 0) {
             resultMap.put("status", "ok");
             resultMap.put("len", 0);
         } else {
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
             for (org.framework.tutor.domain.CourseLog courseLog : courseLogs) {
-                CourseMain courseMain = courseMService.getCourseById(courseLog.getCid());
+                CourseMain courseMain = courseMainService.getCourseById(courseLog.getCid());
                 Map<String, Object> rowMap = new HashMap<>(8);
                 rowMap.put("logtime", simpleDateFormat.format(courseLog.getLogtime()));
                 rowMap.put("imgsrc", courseMain.getImgsrc());
@@ -109,7 +107,7 @@ public class CourseLogApiImpl implements CourseLogAPi {
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
 
-        if (!courseLService.delLog(id)) {
+        if (!courseLogService.delLog(id)) {
             resultMap.put("status", "mysqlerr");
         } else {
             resultMap.put("status", "ok");

@@ -13,22 +13,17 @@
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonParser;
 import org.framework.tutor.api.CourseCommandApi;
 import org.framework.tutor.domain.CourseCommand;
 import org.framework.tutor.domain.CourseMain;
 import org.framework.tutor.domain.UserMain;
 import org.framework.tutor.entity.ParamMap;
-import org.framework.tutor.service.CourseCMService;
-import org.framework.tutor.service.CourseMService;
-import org.framework.tutor.service.CourseOService;
-import org.framework.tutor.service.UserMService;
+import org.framework.tutor.service.CourseCommandService;
+import org.framework.tutor.service.CourseMainService;
+import org.framework.tutor.service.CourseOrderService;
+import org.framework.tutor.service.UserMainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -47,16 +42,16 @@ import java.util.*;
 public class CourseCommandApiImpl implements CourseCommandApi {
 
     @Autowired
-    private CourseCMService courseCMService;
+    private CourseCommandService courseCommandService;
 
     @Autowired
-    private UserMService userMService;
+    private UserMainService userMainService;
 
     @Autowired
-    private CourseOService courseOService;
+    private CourseOrderService courseOrderService;
 
     @Autowired
-    private CourseMService courseMService;
+    private CourseMainService courseMainService;
 
     /**
      * 获取课程评论数据
@@ -73,15 +68,15 @@ public class CourseCommandApiImpl implements CourseCommandApi {
         Map<String, Object> resultMap = new HashMap<>(4);
         List<Object> rowList = new ArrayList<>();
 
-        List<CourseCommand> courseCommands = courseCMService.getCourseCommand(cid, startpos);
+        List<CourseCommand> courseCommands = courseCommandService.getCourseCommand(cid, startpos);
         int count = courseCommands.size();
         if (count == 0) {
             resultMap.put("count", courseCommands.size());
         } else {
             resultMap.put("count", courseCommands.size());
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             for (org.framework.tutor.domain.CourseCommand courseCommand : courseCommands) {
-                UserMain userMain = userMService.getByUser(courseCommand.getUsername());
+                UserMain userMain = userMainService.getByUser(courseCommand.getUsername());
                 Map<String, Object> rowMap = new HashMap<>(16);
                 rowMap.put("ctime", simpleDateFormat.format(courseCommand.getCtime()));
                 rowMap.put("info", courseCommand.getInfo());
@@ -116,15 +111,15 @@ public class CourseCommandApiImpl implements CourseCommandApi {
         Map<String, Object> resultMap = new HashMap<>(4);
         List<Object> rowList = new ArrayList<>();
 
-        List<org.framework.tutor.domain.CourseCommand> courseCommands = courseCMService.getCourseCommandGod(cid);
+        List<org.framework.tutor.domain.CourseCommand> courseCommands = courseCommandService.getCourseCommandGod(cid);
         int count = courseCommands.size();
         if (count == 0) {
             resultMap.put("count", courseCommands.size());
         } else {
             resultMap.put("count", courseCommands.size());
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             for (org.framework.tutor.domain.CourseCommand courseCommand : courseCommands) {
-                UserMain userMain = userMService.getByUser(courseCommand.getUsername());
+                UserMain userMain = userMainService.getByUser(courseCommand.getUsername());
                 Map<String, Object> rowMap = new HashMap<>(16);
                 rowMap.put("ctime", simpleDateFormat.format(courseCommand.getCtime()));
                 rowMap.put("info", courseCommand.getInfo());
@@ -164,18 +159,18 @@ public class CourseCommandApiImpl implements CourseCommandApi {
 
         //判断当前用户是否购买了该课程  cid  username start=1
         Integer state = 1;
-        if (courseOService.getByUserAndState(cid, username, state) == null) {
+        if (courseOrderService.getByUserAndState(cid, username, state) == null) {
             resultMap.put("status", "nobuy");
         } else {
-            List<org.framework.tutor.domain.CourseCommand> courseCommands = courseCMService.getMyCommand(username, cid);
+            List<org.framework.tutor.domain.CourseCommand> courseCommands = courseCommandService.getMyCommand(username, cid);
             int count = courseCommands.size();
             if (count == 0) {
                 resultMap.put("count", courseCommands.size());
             } else {
                 resultMap.put("count", courseCommands.size());
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 for (org.framework.tutor.domain.CourseCommand courseCommand : courseCommands) {
-                    UserMain userMain = userMService.getByUser(courseCommand.getUsername());
+                    UserMain userMain = userMainService.getByUser(courseCommand.getUsername());
                     Map<String, Object> rowMap = new HashMap<>(16);
                     rowMap.put("ctime", simpleDateFormat.format(courseCommand.getCtime()));
                     rowMap.put("info", courseCommand.getInfo());
@@ -217,7 +212,7 @@ public class CourseCommandApiImpl implements CourseCommandApi {
         if (username == null) {
             resultMap.put("status", "invalid");
         } else {
-            Integer row = courseCMService.subMyCommand(cid, command, score, username);
+            Integer row = courseCommandService.subMyCommand(cid, command, score, username);
             if (row == 1) {
                 resultMap.put("status", "valid");
             } else {
@@ -249,7 +244,7 @@ public class CourseCommandApiImpl implements CourseCommandApi {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String now = simpleDateFormat.format(new Date());
 
-        resultMap.put("count", courseCMService.getCommandCountNow(username, now));
+        resultMap.put("count", courseCommandService.getCommandCountNow(username, now));
 
         writer.print(gson.toJson(resultMap));
         writer.flush();
@@ -274,7 +269,7 @@ public class CourseCommandApiImpl implements CourseCommandApi {
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String now = simpleDateFormat.format(new Date());
-        Double scoreAvg = courseCMService.getScoreAvgNow(username, now);
+        Double scoreAvg = courseCommandService.getScoreAvgNow(username, now);
         resultMap.put("count", scoreAvg==null?"null": scoreAvg);
         writer.print(gson.toJson(resultMap));
         writer.flush();
@@ -300,13 +295,13 @@ public class CourseCommandApiImpl implements CourseCommandApi {
         Map<String, Object> resultMap = new HashMap<>(2);
         List<Object> rowList = new ArrayList<>();
 
-        List<org.framework.tutor.domain.CourseCommand> courseCommands = courseCMService.loadMyCommandInfo(username);
+        List<org.framework.tutor.domain.CourseCommand> courseCommands = courseCommandService.loadMyCommandInfo(username);
         if (courseCommands.size() == 0) {
             resultMap.put("count", 0);
         } else {
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             for (org.framework.tutor.domain.CourseCommand courseCommand : courseCommands) {
-                CourseMain courseMain = courseMService.getCourseById(courseCommand.getCid());
+                CourseMain courseMain = courseMainService.getCourseById(courseCommand.getCid());
                 Map<String, Object> rowMap = new HashMap<>(8);
                 rowMap.put("ctime", simpleDateFormat.format(courseCommand.getCtime()));
                 rowMap.put("info", courseCommand.getInfo());
@@ -353,7 +348,7 @@ public class CourseCommandApiImpl implements CourseCommandApi {
 
             if (courseName == null || "".equals(courseName)) {
 
-                List<CourseMain> courseMains = courseMService.getMyCourseList(username);
+                List<CourseMain> courseMains = courseMainService.getMyCourseList(username);
                 if (courseMains.size() == 0) {
                     rowMap.put("status", "courseNone");
                     rowMap.put("rows", rowList);
@@ -364,18 +359,18 @@ public class CourseCommandApiImpl implements CourseCommandApi {
                         courseIds.append(",");
                     }
                     String courseId = courseIds.substring(0, courseIds.length() - 1).toString();
-                    List<org.framework.tutor.domain.CourseCommand> courseCommands = courseCMService.getMyCommandList(courseId, pageNo * pageSize, pageSize);
+                    List<org.framework.tutor.domain.CourseCommand> courseCommands = courseCommandService.getMyCommandList(courseId, pageNo * pageSize, pageSize);
                     if (courseCommands.size() == 0) {
                         rowMap.put("status", "commandNone");
                         rowMap.put("rows", rowList);
                     } else {
                         //获取所有数据总数
-                        Integer count = courseCMService.getCommandCountByIdlist(courseId);
+                        Integer count = courseCommandService.getCommandCountByIdlist(courseId);
                         rowMap.put("total", count);
-                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                         for (org.framework.tutor.domain.CourseCommand courseCommand : courseCommands) {
                             resultMap = new HashMap<>(1);
-                            CourseMain courseMain = courseMService.getCourseById(courseCommand.getCid());
+                            CourseMain courseMain = courseMainService.getCourseById(courseCommand.getCid());
                             Integer stype = courseMain.getStype();
                             StringBuffer courseStype = new StringBuffer("");
                             if (stype == 1) {
@@ -401,7 +396,7 @@ public class CourseCommandApiImpl implements CourseCommandApi {
                     }
                 }
             } else {
-                List<CourseMain> courseMains = courseMService.getByCoursename(courseName);
+                List<CourseMain> courseMains = courseMainService.getByCoursename(courseName);
                 if (courseMains.size() == 0) {
                     rowMap.put("status", "courseNone");
                     rowMap.put("rows", rowList);
@@ -412,18 +407,18 @@ public class CourseCommandApiImpl implements CourseCommandApi {
                         courseIds.append(",");
                     }
                     String courseId = courseIds.substring(0, courseIds.length() - 1).toString();
-                    List<org.framework.tutor.domain.CourseCommand> courseCommands = courseCMService.getMyCommandList(courseId, pageNo * pageSize, pageSize);
+                    List<org.framework.tutor.domain.CourseCommand> courseCommands = courseCommandService.getMyCommandList(courseId, pageNo * pageSize, pageSize);
                     if (courseCommands.size() == 0) {
                         rowMap.put("status", "commandNone");
                         rowMap.put("rows", rowList);
                     } else {
                         //获取所有数据总数
-                        Integer count = courseCMService.getCommandCountByIdlist(courseId);
+                        Integer count = courseCommandService.getCommandCountByIdlist(courseId);
                         rowMap.put("total", count);
-                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                         for (org.framework.tutor.domain.CourseCommand courseCommand : courseCommands) {
                             resultMap = new HashMap<>(1);
-                            CourseMain courseMain = courseMService.getCourseById(courseCommand.getCid());
+                            CourseMain courseMain = courseMainService.getCourseById(courseCommand.getCid());
                             Integer stype = courseMain.getStype();
                             StringBuffer courseStype = new StringBuffer("");
                             if (stype == 1) {
@@ -472,18 +467,18 @@ public class CourseCommandApiImpl implements CourseCommandApi {
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(1);
         //获取评论对应的课程所属username
-        org.framework.tutor.domain.CourseCommand courseCommand = courseCMService.getCommandById(id);
+        org.framework.tutor.domain.CourseCommand courseCommand = courseCommandService.getCommandById(id);
         if (courseCommand == null || !courseCommand.getUsername().equals(username)) {
             resultMap.put("status", "invalid");
         } else {
 
             //判断当前课程神评是否已经为三个了
-            Integer count = courseCMService.getGodCountById(courseCommand.getCid());
+            Integer count = courseCommandService.getGodCountById(courseCommand.getCid());
             if (count >= 3) {
                 resultMap.put("status", "full");
             } else {
                 //设置神评
-                courseCMService.setCommandGodstate(id);
+                courseCommandService.setCommandGodstate(id);
                 resultMap.put("status", "valid");
             }
         }

@@ -13,12 +13,10 @@
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonParser;
 import org.framework.tutor.api.CourseTreplyApi;
-import org.framework.tutor.service.CourseTService;
+import org.framework.tutor.service.CourseTreplyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -35,7 +33,7 @@ import java.util.Map;
 public class CourseTreplyApiImpl implements CourseTreplyApi {
 
     @Autowired
-    private CourseTService courseTService;
+    private CourseTreplyService courseTreplyService;
 
     /**
      * 获取对应用户的指定课程的家教回复数据
@@ -52,7 +50,7 @@ public class CourseTreplyApiImpl implements CourseTreplyApi {
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
 
-        org.framework.tutor.domain.CourseTreply courseTreply = courseTService.getCourseTreply(cid, cmid);
+        org.framework.tutor.domain.CourseTreply courseTreply = courseTreplyService.getCourseTreply(cid, cmid);
 
         if(courseTreply == null){
             resultMap.put("info", "null");

@@ -13,20 +13,14 @@
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonParser;
 import org.framework.tutor.api.CourseMainApi;
 import org.framework.tutor.domain.CourseMain;
 import org.framework.tutor.domain.CourseSummary;
 import org.framework.tutor.domain.UserMain;
 import org.framework.tutor.service.*;
-import org.omg.CORBA.MARSHAL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -51,19 +45,19 @@ import java.util.Map;
 public class CourseMainApiImpl implements CourseMainApi {
 
     @Autowired
-    private CourseMService courseMService;
+    private CourseMainService courseMainService;
 
     @Autowired
-    private UserMService userMService;
+    private UserMainService userMainService;
 
     @Autowired
-    private CourseCMService courseCMService;
+    private CourseCommandService courseCommandService;
 
     @Autowired
-    private CourseOService courseOService;
+    private CourseOrderService courseOrderService;
 
     @Autowired
-    private CourseChService courseChService;
+    private CourseChapterService courseChapterService;
 
     @Autowired
     private CourseSummaryService courseSummaryService;
@@ -98,15 +92,15 @@ public class CourseMainApiImpl implements CourseMainApi {
                 //未指定主类别
                 if (stype == -1) {
                     if (status == null || status == 0) {
-                        courseMains = courseMService.getCourseListNew(startpos);
+                        courseMains = courseMainService.getCourseListNew(startpos);
                     } else {
-                        courseMains = courseMService.getCourseListNewKW(keyword, startpos);
+                        courseMains = courseMainService.getCourseListNewKW(keyword, startpos);
                     }
                 } else {
                     if (status == null || status == 0) {
-                        courseMains = courseMService.getCourseListNew(stype, startpos);
+                        courseMains = courseMainService.getCourseListNew(stype, startpos);
                     } else {
-                        courseMains = courseMService.getCourseListNewKW(stype, keyword, startpos);
+                        courseMains = courseMainService.getCourseListNewKW(stype, keyword, startpos);
                     }
                 }
             }
@@ -115,15 +109,15 @@ public class CourseMainApiImpl implements CourseMainApi {
                 //未指定主类别
                 if (stype == -1) {
                     if (status == null || status == 0) {
-                        courseMains = courseMService.getCourseListHot(startpos);
+                        courseMains = courseMainService.getCourseListHot(startpos);
                     } else {
-                        courseMains = courseMService.getCourseListHotKW(keyword, startpos);
+                        courseMains = courseMainService.getCourseListHotKW(keyword, startpos);
                     }
                 } else {
                     if (status == null || status == 0) {
-                        courseMains = courseMService.getCourseListHot(stype, startpos);
+                        courseMains = courseMainService.getCourseListHot(stype, startpos);
                     } else {
-                        courseMains = courseMService.getCourseListHotSKW(stype, keyword, startpos);
+                        courseMains = courseMainService.getCourseListHotSKW(stype, keyword, startpos);
                     }
                 }
             }
@@ -131,15 +125,15 @@ public class CourseMainApiImpl implements CourseMainApi {
             else {
                 if (stype == -1) {
                     if (status == null || status == 0) {
-                        courseMains = courseMService.getCourseListMore(startpos);
+                        courseMains = courseMainService.getCourseListMore(startpos);
                     } else {
-                        courseMains = courseMService.getCourseListMoreKW(keyword, startpos);
+                        courseMains = courseMainService.getCourseListMoreKW(keyword, startpos);
                     }
                 } else {
                     if (status == null || status == 0) {
-                        courseMains = courseMService.getCourseListMore(stype, startpos);
+                        courseMains = courseMainService.getCourseListMore(stype, startpos);
                     } else {
-                        courseMains = courseMService.getCourseListMoreSKW(stype, keyword, startpos);
+                        courseMains = courseMainService.getCourseListMoreSKW(stype, keyword, startpos);
                     }
                 }
             }
@@ -150,15 +144,15 @@ public class CourseMainApiImpl implements CourseMainApi {
             if (sort.equals("new")) {
                 if (stype == -1) {
                     if (status == null || status == 0) {
-                        courseMains = courseMService.getCourseListNewAC(ctype, startpos);
+                        courseMains = courseMainService.getCourseListNewAC(ctype, startpos);
                     } else {
-                        courseMains = courseMService.getCourseListNewACK(ctype, keyword, startpos);
+                        courseMains = courseMainService.getCourseListNewACK(ctype, keyword, startpos);
                     }
                 } else {
                     if (status == null || status == 0) {
-                        courseMains = courseMService.getCourseListNew(stype, ctype, startpos);
+                        courseMains = courseMainService.getCourseListNew(stype, ctype, startpos);
                     } else {
-                        courseMains = courseMService.getCourseListNewKW(stype, ctype, keyword, startpos);
+                        courseMains = courseMainService.getCourseListNewKW(stype, ctype, keyword, startpos);
                     }
                 }
             }
@@ -166,15 +160,15 @@ public class CourseMainApiImpl implements CourseMainApi {
             else if (sort.equals("hot")) {
                 if (stype == -1) {
                     if (status == null || status == 0) {
-                        courseMains = courseMService.getCourseListHotAC(ctype, startpos);
+                        courseMains = courseMainService.getCourseListHotAC(ctype, startpos);
                     } else {
-                        courseMains = courseMService.getCourseListHotACK(ctype, keyword, startpos);
+                        courseMains = courseMainService.getCourseListHotACK(ctype, keyword, startpos);
                     }
                 } else {
                     if (status == null || status == 0) {
-                        courseMains = courseMService.getCourseListHot(stype, ctype, startpos);
+                        courseMains = courseMainService.getCourseListHot(stype, ctype, startpos);
                     } else {
-                        courseMains = courseMService.getCourseListHotKW(stype, ctype, keyword, startpos);
+                        courseMains = courseMainService.getCourseListHotKW(stype, ctype, keyword, startpos);
                     }
                 }
             }
@@ -182,15 +176,15 @@ public class CourseMainApiImpl implements CourseMainApi {
             else {
                 if (stype == -1) {
                     if (status == null || status == 0) {
-                        courseMains = courseMService.getCourseListMoreAC(ctype, startpos);
+                        courseMains = courseMainService.getCourseListMoreAC(ctype, startpos);
                     } else {
-                        courseMains = courseMService.getCourseListMoreACK(ctype, keyword, startpos);
+                        courseMains = courseMainService.getCourseListMoreACK(ctype, keyword, startpos);
                     }
                 } else {
                     if (status == null || status == 0) {
-                        courseMains = courseMService.getCourseListMore(stype, ctype, startpos);
+                        courseMains = courseMainService.getCourseListMore(stype, ctype, startpos);
                     } else {
-                        courseMains = courseMService.getCourseListMoreKW(stype, ctype, keyword, startpos);
+                        courseMains = courseMainService.getCourseListMoreKW(stype, ctype, keyword, startpos);
                     }
                 }
             }
@@ -200,7 +194,7 @@ public class CourseMainApiImpl implements CourseMainApi {
             resultMap.put("len", 0);
         } else {
             for (org.framework.tutor.domain.CourseMain courseMain : courseMains) {
-                UserMain userMain = userMService.getByUser(courseMain.getUsername());
+                UserMain userMain = userMainService.getByUser(courseMain.getUsername());
                 Map<String, Object> rowMap = new HashMap<>(16);
                 rowMap.put("imgsrc", courseMain.getImgsrc());
                 rowMap.put("id", courseMain.getId());
@@ -235,7 +229,7 @@ public class CourseMainApiImpl implements CourseMainApi {
         Map<String, Object> resultMap = new HashMap<>(4);
         List<Object> rowList = new ArrayList<>();
 
-        List<org.framework.tutor.domain.CourseMain> courseMains = courseMService.getAllCourseType();
+        List<org.framework.tutor.domain.CourseMain> courseMains = courseMainService.getAllCourseType();
         if (courseMains.size() == 0) {
             resultMap.put("status", "valid");
             resultMap.put("len", 0);
@@ -270,7 +264,7 @@ public class CourseMainApiImpl implements CourseMainApi {
         Map<String, Object> resultMap = new HashMap<>(4);
         List<Object> rowList = new ArrayList<>();
 
-        List<org.framework.tutor.domain.CourseMain> courseMains = courseMService.getCourseType(stype);
+        List<org.framework.tutor.domain.CourseMain> courseMains = courseMainService.getCourseType(stype);
         if (courseMains.size() == 0) {
             resultMap.put("status", "valid");
             resultMap.put("len", 0);
@@ -307,13 +301,13 @@ public class CourseMainApiImpl implements CourseMainApi {
         Map<String, Object> resultMap = new HashMap<>(4);
         List<Object> rowList = new ArrayList<>();
 
-        List<org.framework.tutor.domain.CourseMain> courseMains = courseMService.courseSearch(keyword);
+        List<org.framework.tutor.domain.CourseMain> courseMains = courseMainService.courseSearch(keyword);
         if (courseMains.size() == 0) {
             resultMap.put("status", "valid");
             resultMap.put("len", 0);
         } else {
             for (org.framework.tutor.domain.CourseMain courseMain : courseMains) {
-                UserMain userMain = userMService.getByUser(courseMain.getUsername());
+                UserMain userMain = userMainService.getByUser(courseMain.getUsername());
                 Map<String, Object> rowMap = new HashMap<>(16);
                 rowMap.put("imgsrc", courseMain.getImgsrc());
                 rowMap.put("id", courseMain.getId());
@@ -348,11 +342,11 @@ public class CourseMainApiImpl implements CourseMainApi {
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(16);
 
-        org.framework.tutor.domain.CourseMain courseMain = courseMService.getCourseById(id);
+        org.framework.tutor.domain.CourseMain courseMain = courseMainService.getCourseById(id);
         if (courseMain == null) {
             resultMap.put("status", "invalid");
         } else {
-            UserMain userMain = userMService.getByUser(courseMain.getUsername());
+            UserMain userMain = userMainService.getByUser(courseMain.getUsername());
             resultMap.put("imgsrc", courseMain.getImgsrc());
             resultMap.put("id", courseMain.getId());
             resultMap.put("stype", courseMain.getStype());
@@ -397,29 +391,29 @@ public class CourseMainApiImpl implements CourseMainApi {
             if (stype == -1) {
                 //不是通过用户搜素
                 if (status == null || status == 0) {
-                    total = courseMService.getCourseCount();
+                    total = courseMainService.getCourseCount();
                 } else {
-                    total = courseMService.getCourseCountK(keyword);
+                    total = courseMainService.getCourseCountK(keyword);
                 }
             } else {
                 if (status == null || status == 0) {
-                    total = courseMService.getCourseCountS(stype);
+                    total = courseMainService.getCourseCountS(stype);
                 } else {
-                    total = courseMService.getCourseCountSK(stype, keyword);
+                    total = courseMainService.getCourseCountSK(stype, keyword);
                 }
             }
         } else {
             if (stype == -1) {
                 if (status == null || status == 0) {
-                    total = courseMService.getCourseCountC(ctype);
+                    total = courseMainService.getCourseCountC(ctype);
                 } else {
-                    total = courseMService.getCourseCountCK(ctype, keyword);
+                    total = courseMainService.getCourseCountCK(ctype, keyword);
                 }
             } else {
                 if (status == null || status == 0) {
-                    total = courseMService.getCourseCountCS(ctype, stype);
+                    total = courseMainService.getCourseCountCS(ctype, stype);
                 } else {
-                    total = courseMService.getCourseCountCSK(ctype, stype, keyword);
+                    total = courseMainService.getCourseCountCSK(ctype, stype, keyword);
                 }
             }
         }
@@ -448,17 +442,17 @@ public class CourseMainApiImpl implements CourseMainApi {
         Map<String, Object> resultMap = new HashMap<>(2);
         List<Object> rowList = new ArrayList<>();
 
-        List<org.framework.tutor.domain.CourseMain> courseMains = courseMService.getMyPublish(username);
+        List<org.framework.tutor.domain.CourseMain> courseMains = courseMainService.getMyPublish(username);
         if (courseMains.size() == 0) {
             resultMap.put("status", 0);
         } else {
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy年MM月");
             SimpleDateFormat simpleDateFormat2 = new SimpleDateFormat("yyyy-MM-dd");
             for (org.framework.tutor.domain.CourseMain courseMain : courseMains) {
-                UserMain userMain = userMService.getByUser(courseMain.getUsername());
-                Integer score = courseCMService.getMyPublishAvg(courseMain.getId());
+                UserMain userMain = userMainService.getByUser(courseMain.getUsername());
+                Integer score = courseCommandService.getMyPublishAvg(courseMain.getId());
                 Map<String, Object> rowMap = new HashMap<>(16);
-                Integer buycount = courseOService.getMyCourseOrderCount(courseMain.getId()).size();
+                Integer buycount = courseOrderService.getMyCourseOrderCount(courseMain.getId()).size();
                 rowMap.put("imgsrc", courseMain.getImgsrc());
                 rowMap.put("id", courseMain.getId());
                 rowMap.put("name", courseMain.getName());
@@ -502,7 +496,7 @@ public class CourseMainApiImpl implements CourseMainApi {
         String username = (String) session.getAttribute("username");
         Integer identity = (Integer) session.getAttribute("identity");
             //判断课程名称是否已存在
-            org.framework.tutor.domain.CourseMain nameCourseMain = courseMService.checkIsexistName(name);
+            org.framework.tutor.domain.CourseMain nameCourseMain = courseMainService.checkIsexistName(name);
             if (nameCourseMain != null) {
                 resultMap.put("status", "courseexist");
             } else {
@@ -521,8 +515,8 @@ public class CourseMainApiImpl implements CourseMainApi {
                     fos.flush();
                     fos.close();
                     //保存课程基本信息
-                    courseMService.publishCourse(username, name, "/images/user/course/" + imgsrc.getOriginalFilename(), stype, ctype, jcount, descript, price, total);
-                    org.framework.tutor.domain.CourseMain courseMain = courseMService.getByName(username, name, stype, ctype);
+                    courseMainService.publishCourse(username, name, "/images/user/course/" + imgsrc.getOriginalFilename(), stype, ctype, jcount, descript, price, total);
+                    org.framework.tutor.domain.CourseMain courseMain = courseMainService.getByName(username, name, stype, ctype);
                     //保存课程概述信息
                     courseSummaryService.addCourseSummary(username, courseMain.getId(), sumTitle1, sumDescript1);
                     courseSummaryService.addCourseSummary(username, courseMain.getId(), sumTitle2, sumDescript2);
@@ -533,7 +527,7 @@ public class CourseMainApiImpl implements CourseMainApi {
                     String[] descriptArr = chapDescript.split(eq);
                     int i = 1;
                     for (String title : titleArr) {
-                        courseChService.addChapter(courseMain.getId(), i, title, descriptArr[--i]);
+                        courseChapterService.addChapter(courseMain.getId(), i, title, descriptArr[--i]);
                         i += 2;
                     }
                     resultMap.put("status", "valid");
@@ -565,7 +559,7 @@ public class CourseMainApiImpl implements CourseMainApi {
             resultMap.put("status", "none");
         } else {
 
-            UserMain userMain = userMService.getByUser(courseSummarys.get(0).getUsername());
+            UserMain userMain = userMainService.getByUser(courseSummarys.get(0).getUsername());
             resultMap.put("nickname", userMain.getNickname());
             resultMap.put("imgsrc", userMain.getImgsrc());
             List<Object> rowList = new ArrayList<>(3);

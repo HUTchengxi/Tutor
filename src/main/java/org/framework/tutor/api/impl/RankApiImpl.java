@@ -17,11 +17,10 @@ import org.framework.tutor.api.RankApi;
 import org.framework.tutor.domain.RankTemp;
 import org.framework.tutor.domain.UserMain;
 import org.framework.tutor.domain.UserSign;
-import org.framework.tutor.service.UserMService;
-import org.framework.tutor.service.UserSService;
+import org.framework.tutor.service.UserMainService;
+import org.framework.tutor.service.UserSignService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -40,10 +39,10 @@ import java.util.List;
 public class RankApiImpl implements RankApi {
 
     @Autowired
-    private UserSService userSService;
+    private UserSignService userSignService;
 
     @Autowired
-    private UserMService userMService;
+    private UserMainService userMainService;
 
     /**
      * 获取rank榜数据
@@ -70,7 +69,7 @@ public class RankApiImpl implements RankApi {
                 SimpleDateFormat sdf = new SimpleDateFormat("-MM-dd");
                 String daystr = sdf.format(now);
 
-                List<UserSign> userSigns = userSService.rankSignDay(daystr, startpos);
+                List<UserSign> userSigns = userSignService.rankSignDay(daystr, startpos);
                 if(userSigns.size() == 0){
                     res = "{\"count\": \"0\"}";
                 }
@@ -79,7 +78,7 @@ public class RankApiImpl implements RankApi {
                     res = "{";
                     int i = 1;
                     for (UserSign userSign: userSigns) {
-                        UserMain userMain = userMService.getByUser(userSign.getUsername());
+                        UserMain userMain = userMainService.getByUser(userSign.getUsername());
                         res += "\""+i+"\": ";
                         String temp = "{\"nickname\": \""+userMain.getNickname()+"\", " +
                                 "\"stime\": \""+simpleDateFormat.format(userSign.getStime())+"\"}, ";
@@ -94,7 +93,7 @@ public class RankApiImpl implements RankApi {
             else if("total".equals(mark)){
 
                 System.out.println("total");
-                List<RankTemp> userSigns = userSService.rankSignTotal(startpos);
+                List<RankTemp> userSigns = userSignService.rankSignTotal(startpos);
                 if(userSigns.size() == 0){
                     res = "{\"count\": \"0\"}";
                 }
@@ -102,7 +101,7 @@ public class RankApiImpl implements RankApi {
                     res = "{";
                     int i = 1;
                     for (RankTemp userSign: userSigns) {
-                        UserMain userMain = userMService.getByUser(userSign.getUsername());
+                        UserMain userMain = userMainService.getByUser(userSign.getUsername());
                         res += "\"" + i + "\": ";
                         String temp = "{\"nickname\": \"" + userMain.getNickname() + "\", " +
                                 "\"stime\": \"" +userSign.getTotal()+ "\"}, ";

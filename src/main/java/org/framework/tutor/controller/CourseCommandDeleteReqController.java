@@ -12,14 +12,9 @@
  */
 package org.framework.tutor.controller;
 
-import com.google.gson.Gson;
 import org.framework.tutor.annotation.RequireAuth;
 import org.framework.tutor.api.CourseCommandDeleteReqApi;
-import org.framework.tutor.domain.CourseCommand;
-import org.framework.tutor.service.CourseCMService;
-import org.framework.tutor.service.CourseCommandDeleteReqService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,11 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author yinjimin

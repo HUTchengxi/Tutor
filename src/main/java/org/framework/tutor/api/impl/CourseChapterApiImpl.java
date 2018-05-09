@@ -13,17 +13,13 @@
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonParser;
 import org.framework.tutor.api.CourseChapterApi;
 import org.framework.tutor.domain.CourseChapter;
 import org.framework.tutor.domain.CourseMain;
-import org.framework.tutor.service.CourseChService;
-import org.framework.tutor.service.CourseMService;
+import org.framework.tutor.service.CourseChapterService;
+import org.framework.tutor.service.CourseMainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -44,10 +40,10 @@ import java.util.Map;
 public class CourseChapterApiImpl implements CourseChapterApi {
 
     @Autowired
-    private CourseChService courseChService;
+    private CourseChapterService courseChapterService;
 
     @Autowired
-    private CourseMService courseMService;
+    private CourseMainService courseMainService;
 
     /**
      * 获取指定课程的章节目录数据
@@ -63,7 +59,7 @@ public class CourseChapterApiImpl implements CourseChapterApi {
         Map<String, Object> resultMap = new HashMap<>(2);
         List<Object> rowList = new ArrayList<>();
 
-        List<CourseChapter> courseChapters = courseChService.getCourseChapter(cid);
+        List<CourseChapter> courseChapters = courseChapterService.getCourseChapter(cid);
         if(courseChapters.size() == 0){
             resultMap.put("count", 0);
         }
@@ -103,18 +99,18 @@ public class CourseChapterApiImpl implements CourseChapterApi {
         String username = (String) session.getAttribute("username");
 
         //判断待删除的目录是否为当前登录用户的目录
-        org.framework.tutor.domain.CourseChapter courseChapter = courseChService.getById(id);
+        org.framework.tutor.domain.CourseChapter courseChapter = courseChapterService.getById(id);
         if(courseChapter == null){
             resultMap.put("status", "invalid");
         }
         else {
-            CourseMain courseMain = courseMService.getCourseById(courseChapter.getCid());
+            CourseMain courseMain = courseMainService.getCourseById(courseChapter.getCid());
             String realUser = courseMain.getUsername();
             if (!realUser.equals(username)) {
                 resultMap.put("status", "invalid");
             }
             else{
-                courseChService.deleteChapter(id);
+                courseChapterService.deleteChapter(id);
                 resultMap.put("status", "valid");
             }
         }
@@ -143,12 +139,12 @@ public class CourseChapterApiImpl implements CourseChapterApi {
         String username = (String) session.getAttribute("username");
 
         //判断更新的目录是否为当前登录用户的目录
-        org.framework.tutor.domain.CourseChapter courseChapter = courseChService.getById(cid);
+        org.framework.tutor.domain.CourseChapter courseChapter = courseChapterService.getById(cid);
         if(courseChapter == null){
             resultMap.put("status", "invalid");
         }
         else {
-            CourseMain courseMain = courseMService.getCourseById(courseChapter.getCid());
+            CourseMain courseMain = courseMainService.getCourseById(courseChapter.getCid());
             String realUser = courseMain.getUsername();
             if (!realUser.equals(username)) {
                 resultMap.put("status", "invalid");
@@ -157,12 +153,12 @@ public class CourseChapterApiImpl implements CourseChapterApi {
                 //新增
                 if(id == null){
                     //获取最大的ord
-                    Integer ord = courseChService.getLastOrd(cid)+1;
-                    courseChService.addChapter(cid, ord, title, descript);
+                    Integer ord = courseChapterService.getLastOrd(cid)+1;
+                    courseChapterService.addChapter(cid, ord, title, descript);
                 }
                 //修改
                 else{
-                    courseChService.modChapter(id, title, descript);
+                    courseChapterService.modChapter(id, title, descript);
                 }
                 resultMap.put("status", "valid");
             }

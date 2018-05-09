@@ -1,25 +1,10 @@
 package org.framework.tutor.api;
 
-import com.google.gson.JsonParser;
-import org.framework.tutor.domain.UserMain;
-import org.framework.tutor.service.UserMService;
-import org.framework.tutor.service.UserVService;
-import org.framework.tutor.util.CommonUtil;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
 import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.security.NoSuchAlgorithmException;
-import java.util.UUID;
 
 public interface RegisterApi {
 

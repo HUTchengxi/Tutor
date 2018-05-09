@@ -13,12 +13,10 @@
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonParser;
 import org.framework.tutor.api.UserSecretApi;
-import org.framework.tutor.service.UserSCService;
+import org.framework.tutor.service.UserSecretService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -39,7 +37,7 @@ import java.util.Map;
 public class UserSecretApiImpl implements UserSecretApi {
 
     @Autowired
-    private UserSCService userSCService;
+    private UserSecretService userSecretService;
 
     /**
      * 获取当前用户的密保数据
@@ -57,7 +55,7 @@ public class UserSecretApiImpl implements UserSecretApi {
         Map<String, Object> resultMap = new HashMap<>(2);
         List<Object> rowList = new ArrayList<>();
 
-        List<main.java.org.framework.tutor.domain.UserSecret> userSecretList = userSCService.getSecretInfoByUsername(username);
+        List<main.java.org.framework.tutor.domain.UserSecret> userSecretList = userSecretService.getSecretInfoByUsername(username);
         if (userSecretList.size() == 0) {
             resultMap.put("status", "valid");
         } else {
@@ -93,7 +91,7 @@ public class UserSecretApiImpl implements UserSecretApi {
         Map<String, Object> resultMap = new HashMap<>(2);
 
         //删除当前用户的所有密保数据
-        userSCService.delUserSecret(username);
+        userSecretService.delUserSecret(username);
         resultMap.put("status", "valid");
 
         writer.print(gson.toJson(resultMap));
@@ -118,7 +116,7 @@ public class UserSecretApiImpl implements UserSecretApi {
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
 
-        Integer row = userSCService.addUserSecret(question, answer, username);
+        Integer row = userSecretService.addUserSecret(question, answer, username);
         if (row <= 0) {
             resultMap.put("status", "mysqlerr");
         } else {

@@ -13,7 +13,6 @@
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonParser;
 import org.framework.tutor.api.BbsCardAnswerCommandApi;
 import org.framework.tutor.domain.BbsCard;
 import org.framework.tutor.domain.BbsCardAnswerCommand;
@@ -21,12 +20,9 @@ import org.framework.tutor.domain.UserMain;
 import org.framework.tutor.service.BbsCardAnswerCommandService;
 import org.framework.tutor.service.BbsCardAnswerService;
 import org.framework.tutor.service.BbsCardService;
-import org.framework.tutor.service.UserMService;
+import org.framework.tutor.service.UserMainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -57,7 +53,7 @@ public class BbsCardAnswerCommandApiImpl implements BbsCardAnswerCommandApi {
     private BbsCardService bbsCardService;
 
     @Autowired
-    private UserMService userMService;
+    private UserMainService userMainService;
 
     /**
      *
@@ -81,9 +77,9 @@ public class BbsCardAnswerCommandApiImpl implements BbsCardAnswerCommandApi {
 
         int count = bbsCardAnswerCommands.size();
         if(count != 0){
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             for (BbsCardAnswerCommand bbsCardAnswerCommand: bbsCardAnswerCommands) {
-                UserMain userMain = userMService.getByUser(bbsCardAnswerCommand.getUsername());
+                UserMain userMain = userMainService.getByUser(bbsCardAnswerCommand.getUsername());
                 Map<String, Object> rowMap = new HashMap<>(16);
                 rowMap.put("comtime", simpleDateFormat.format(bbsCardAnswerCommand.getComtime()));
                 rowMap.put("nickname", userMain.getNickname());

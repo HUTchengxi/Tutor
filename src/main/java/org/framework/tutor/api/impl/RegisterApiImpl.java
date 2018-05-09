@@ -13,19 +13,16 @@
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonParser;
 import org.framework.tutor.api.RegisterApi;
 import org.framework.tutor.domain.UserMain;
-import org.framework.tutor.service.UserMService;
-import org.framework.tutor.service.UserVService;
+import org.framework.tutor.service.UserMainService;
+import org.framework.tutor.service.UserValiService;
 import org.framework.tutor.util.CommonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
@@ -45,10 +42,10 @@ import java.util.*;
 public class RegisterApiImpl implements RegisterApi {
 
     @Autowired
-    private UserMService userMService;
+    private UserMainService userMainService;
 
     @Autowired
-    private UserVService userVService;
+    private UserValiService userValiService;
 
     @Autowired
     private JavaMailSender javaMailSender;
@@ -70,7 +67,7 @@ public class RegisterApiImpl implements RegisterApi {
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
 
-        if (userMService.userExist(username)) {
+        if (userMainService.userExist(username)) {
             resultMap.put("status", "invalid");
         } else {
             resultMap.put("status", "valid");
@@ -104,7 +101,7 @@ public class RegisterApiImpl implements RegisterApi {
         Map<String, Object> resultMap = new HashMap<>(4);
 
         //判断用户名是否已经被注册
-        UserMain userMain = userMService.getByUser(username);
+        UserMain userMain = userMainService.getByUser(username);
         //非法调用api
         if(userMain != null){
             resultMap.put("status", "invalid");
@@ -113,7 +110,7 @@ public class RegisterApiImpl implements RegisterApi {
             String nickname = "勤成游客" + UUID.randomUUID().toString().replaceAll("-", "")
                     .substring(0, 8);
             //验证nickname的唯一性
-            while (userMService.NickExist(nickname)) {
+            while (userMainService.NickExist(nickname)) {
                 nickname = "勤成游客" + UUID.randomUUID().toString().replaceAll("-", "")
                         .substring(0, 8);
             }
@@ -128,7 +125,7 @@ public class RegisterApiImpl implements RegisterApi {
             if ("none".equals(checktype)) {
                 Integer identity = -2;
                 //进行游客注册
-                if (userMService.registerNoCheck(identity, username, password, nickname, salt)) {
+                if (userMainService.registerNoCheck(identity, username, password, nickname, salt)) {
                     resultMap.put("status", "valid");
                     resultMap.put("url", "/forward_con/gologin");
                 } else {
@@ -146,7 +143,7 @@ public class RegisterApiImpl implements RegisterApi {
 
                     //进行注册
                     Integer identity = 0;
-                    if(userMService.registerByPhone(identity, username, password, nickname, telephone)){
+                    if(userMainService.registerByPhone(identity, username, password, nickname, telephone)){
                         resultMap.put("status", "valid");
                         resultMap.put("url", "/forward_con/gologin");
                     }
@@ -162,12 +159,12 @@ public class RegisterApiImpl implements RegisterApi {
             //邮箱注册
             else if ("email".equals(checktype)) {
                 //邮箱已被注册
-                if (userMService.emailExist(email)) {
+                if (userMainService.emailExist(email)) {
                     resultMap.put("status", "exist");
                 } else {
                     Integer identity = -2;
 
-                    if (userMService.registerByEmail(identity, username, password, nickname, email)) {
+                    if (userMainService.registerByEmail(identity, username, password, nickname, email)) {
 
                         //发送邮箱验证码
                         String valicode = CommonUtil.getUUID();
@@ -180,7 +177,7 @@ public class RegisterApiImpl implements RegisterApi {
 
                         //保存邮箱验证码
                         Integer status = 0;
-                        userVService.addUserVali(username, valicode, status);
+                        userValiService.addUserVali(username, valicode, status);
 
                         //保存用户邮箱以便后续刷新状态
                         request.getSession().setAttribute("email", email + " " + username);
@@ -236,7 +233,7 @@ public class RegisterApiImpl implements RegisterApi {
             javaMailSender.send(message);
 
             //更新邮箱注册码
-            userVService.updateEmailCode(realusername, valicode);
+            userValiService.updateEmailCode(realusername, valicode);
             resultMap.put("status", "sendok");
         }
 

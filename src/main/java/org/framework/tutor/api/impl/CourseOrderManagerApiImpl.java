@@ -19,16 +19,13 @@ import org.framework.tutor.domain.CourseMain;
 import org.framework.tutor.domain.CourseOrder;
 import org.framework.tutor.domain.CourseOrderManager;
 import org.framework.tutor.entity.ParamMap;
-import org.framework.tutor.service.CourseMService;
-import org.framework.tutor.service.CourseOService;
+import org.framework.tutor.service.CourseMainService;
+import org.framework.tutor.service.CourseOrderService;
 import org.framework.tutor.service.CourseOrderManagerService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -55,10 +52,10 @@ public class CourseOrderManagerApiImpl implements CourseOrderManagerApi {
     private CourseOrderManagerService courseOrderManagerService;
 
     @Autowired
-    private CourseOService courseOService;
+    private CourseOrderService courseOrderService;
 
     @Autowired
-    private CourseMService courseMService;
+    private CourseMainService courseMainService;
 
     /**
      * @param [paramMap, request, response]
@@ -97,8 +94,8 @@ public class CourseOrderManagerApiImpl implements CourseOrderManagerApi {
                     rowMap.put("rows", rowList);
                 } else {
                     for (CourseOrderManager courseOrderManager : courseOrderManagers) {
-                        CourseOrder courseOrder = courseOService.getById(courseOrderManager.getOid());
-                        CourseMain courseMain = courseMService.getCourseById(courseOrder.getCid());
+                        CourseOrder courseOrder = courseOrderService.getById(courseOrderManager.getOid());
+                        CourseMain courseMain = courseMainService.getCourseById(courseOrder.getCid());
                         String tutorStatus = "";
                         Integer tStatus = courseOrderManager.getTutorstatus();
                         if(tStatus == 0){
@@ -155,8 +152,8 @@ public class CourseOrderManagerApiImpl implements CourseOrderManagerApi {
                     rowMap.put("rows", rowList);
                 } else {
                     for (CourseOrderManager courseOrderManager : courseOrderManagers) {
-                        CourseOrder courseOrder = courseOService.getById(courseOrderManager.getOid());
-                        CourseMain courseMain = courseMService.getCourseById(courseOrder.getCid());
+                        CourseOrder courseOrder = courseOrderService.getById(courseOrderManager.getOid());
+                        CourseMain courseMain = courseMainService.getCourseById(courseOrder.getCid());
                         String tutorStatus = "";
                         Integer tStatus = courseOrderManager.getTutorstatus();
                         if(tStatus == 0){
@@ -232,14 +229,14 @@ public class CourseOrderManagerApiImpl implements CourseOrderManagerApi {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
         //判断对应的订单编号的课程是否属于当前登录用户
-        Integer count =  courseMService.checkOrderBelongs(username, code);
+        Integer count =  courseMainService.checkOrderBelongs(username, code);
         if(count == 0){
             resultMap.put("status", "invalid");
         }else{
             //获取对应的订单管理数据详情
             CourseOrderManager courseOrderManager = courseOrderManagerService.getByCode(code);
-            CourseOrder courseOrder = courseOService.getById(courseOrderManager.getOid());
-            CourseMain courseMain = courseMService.getCourseById(courseOrder.getCid());
+            CourseOrder courseOrder = courseOrderService.getById(courseOrderManager.getOid());
+            CourseMain courseMain = courseMainService.getCourseById(courseOrder.getCid());
             String tutorStatus = "";
             Integer tStatus = courseOrderManager.getTutorstatus();
             if(tStatus == 0){
@@ -306,7 +303,7 @@ public class CourseOrderManagerApiImpl implements CourseOrderManagerApi {
         Map<String, Object> resultMap = new HashMap<>(1);
 
         //判断对应的订单编号的课程是否属于当前登录用户
-        Integer count =  courseMService.checkOrderBelongs(username, code);
+        Integer count =  courseMainService.checkOrderBelongs(username, code);
         if(count == 0){
             resultMap.put("status", "invalid");
         }else{
@@ -372,8 +369,8 @@ public class CourseOrderManagerApiImpl implements CourseOrderManagerApi {
             rowMap.put("total", 0);
         } else{
             for(CourseOrderManager courseOrderManager: courseOrderManagers){
-                CourseOrder courseOrder = courseOService.getById(courseOrderManager.getOid());
-                CourseMain courseMain = courseMService.getCourseById(courseOrder.getCid());
+                CourseOrder courseOrder = courseOrderService.getById(courseOrderManager.getOid());
+                CourseMain courseMain = courseMainService.getCourseById(courseOrder.getCid());
                 Map<String, Object> tempMap = new HashMap<>(1);
                 String tutorStatus = "";
                 Integer tStatus = courseOrderManager.getTutorstatus();
@@ -444,8 +441,8 @@ public class CourseOrderManagerApiImpl implements CourseOrderManagerApi {
         PrintWriter writer = response.getWriter();
 
         CourseOrderManager courseOrderManager = courseOrderManagerService.getByCode(code);
-        CourseOrder courseOrder = courseOService.getById(courseOrderManager.getOid());
-        CourseMain courseMain = courseMService.getCourseById(courseOrder.getCid());
+        CourseOrder courseOrder = courseOrderService.getById(courseOrderManager.getOid());
+        CourseMain courseMain = courseMainService.getCourseById(courseOrder.getCid());
         Map<String, Object> tempMap = new HashMap<>(1);
         String tutorStatus = "";
         Integer tStatus = courseOrderManager.getTutorstatus();

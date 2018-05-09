@@ -1,21 +1,14 @@
 package org.framework.tutor.controller;
 
-import com.google.gson.JsonParser;
 import org.framework.tutor.annotation.RequireAuth;
 import org.framework.tutor.api.UserSignApi;
-import org.framework.tutor.service.UserSService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
 
 /**
  * 用户签到控制类

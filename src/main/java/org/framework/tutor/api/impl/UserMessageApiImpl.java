@@ -13,21 +13,16 @@
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonParser;
 import org.framework.tutor.api.UserMessageApi;
 import org.framework.tutor.domain.UserMessage;
 import org.framework.tutor.domain.UserMessageDelete;
 import org.framework.tutor.entity.EmailParam;
 import org.framework.tutor.entity.ParamMap;
-import org.framework.tutor.service.UserMSService;
+import org.framework.tutor.service.UserMessageService;
 import org.framework.tutor.service.UserMessageDeleteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -49,7 +44,7 @@ import java.util.Map;
 public class UserMessageApiImpl implements UserMessageApi {
 
     @Autowired
-    private UserMSService userMSService;
+    private UserMessageService userMessageService;
 
     @Autowired
     private UserMessageDeleteService userMessageDeleteService;
@@ -69,7 +64,7 @@ public class UserMessageApiImpl implements UserMessageApi {
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
 
-        Integer count = userMSService.getMyMessageCount(username);
+        Integer count = userMessageService.getMyMessageCount(username);
         resultMap.put("count", count);
 
         writer.print(gson.toJson(resultMap));
@@ -96,13 +91,13 @@ public class UserMessageApiImpl implements UserMessageApi {
         List<Object> rowList = new ArrayList<>();
 
         //首先获取所有的我的通知数据
-        List<UserMessage> userMessageList = userMSService.getMyMessage(username);
+        List<UserMessage> userMessageList = userMessageService.getMyMessage(username);
         if (userMessageList.size() == 0) {
             resultMap.put("status", "valid");
         } else {
             for (org.framework.tutor.domain.UserMessage userMessage : userMessageList) {
                 //获取指定发送通知的管理员的指定用户的未读通知总数据
-                Integer nocount = userMSService.getNoMessageCount(userMessage.getSuser(), username);
+                Integer nocount = userMessageService.getNoMessageCount(userMessage.getSuser(), username);
                 Map<String, Object> rowMap = new HashMap<>(8);
                 rowMap.put("suser", userMessage.getSuser());
                 rowMap.put("nocount", nocount);
@@ -143,7 +138,7 @@ public class UserMessageApiImpl implements UserMessageApi {
         List<Object> rowList = new ArrayList<>();
 
         //首先获取所有的我的通知数据
-        List<org.framework.tutor.domain.UserMessage> userMessageList = userMSService.getMessageBySuser(suser, username);
+        List<org.framework.tutor.domain.UserMessage> userMessageList = userMessageService.getMessageBySuser(suser, username);
         if (userMessageList.size() == 0) {
             resultMap.put("status", "valid");
         } else {
@@ -195,7 +190,7 @@ public class UserMessageApiImpl implements UserMessageApi {
 
         //清空所有的suser和username相关的已读数据
         userMessageDeleteService.deleteRepeatRead(suser, username);
-        Integer row = userMSService.setMessageRead(suser, username);
+        Integer row = userMessageService.setMessageRead(suser, username);
         if (row > 0) {
             resultMap.put("status", "ok");
         } else {
@@ -231,9 +226,9 @@ public class UserMessageApiImpl implements UserMessageApi {
         Integer sta = "ed".equals(status) ? 1 : 0;
         List<org.framework.tutor.domain.UserMessage> userMessages = null;
         if (sta == 1) {
-            userMessages = userMSService.getReadMessage(suser, username);
+            userMessages = userMessageService.getReadMessage(suser, username);
         } else {
-            userMessages = userMSService.getUnreadMessage(suser, username);
+            userMessages = userMessageService.getUnreadMessage(suser, username);
         }
         if (userMessages == null || userMessages.size() == 0) {
             resultMap.put("status", "valid");
@@ -277,7 +272,7 @@ public class UserMessageApiImpl implements UserMessageApi {
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
 
-        Integer row = userMSService.delMyMessage(did, username);
+        Integer row = userMessageService.delMyMessage(did, username);
         if (row == 1) {
             resultMap.put("status", "valid");
         } else {
@@ -304,7 +299,7 @@ public class UserMessageApiImpl implements UserMessageApi {
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
 
-        Integer row = userMSService.setAllStatus(username);
+        Integer row = userMessageService.setAllStatus(username);
         resultMap.put("status", "valid");
 
         writer.print(gson.toJson(resultMap));
@@ -346,8 +341,8 @@ public class UserMessageApiImpl implements UserMessageApi {
         }
 
         //模糊查询所有的数据
-        List<org.framework.tutor.domain.UserMessage> userMessages = userMSService.getMessageListLimit(identity, title, startTime, offset, pageSize);
-        Integer count = userMSService.getMessageCountLimit(identity, title, startTime);
+        List<org.framework.tutor.domain.UserMessage> userMessages = userMessageService.getMessageListLimit(identity, title, startTime, offset, pageSize);
+        Integer count = userMessageService.getMessageCountLimit(identity, title, startTime);
         if (userMessages.size() == 0) {
             resultMap.put("rows", rowList);
             resultMap.put("total", 0);
@@ -389,7 +384,7 @@ public class UserMessageApiImpl implements UserMessageApi {
         Map<String, Object> resultMap = new HashMap<>(6);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-        org.framework.tutor.domain.UserMessage userMessage = userMSService.getById(id);
+        org.framework.tutor.domain.UserMessage userMessage = userMessageService.getById(id);
         if (userMessage == null) {
             resultMap.put("status", "invalid");
         } else {
@@ -433,7 +428,7 @@ public class UserMessageApiImpl implements UserMessageApi {
             String title = emailParam.getTheme();
             String message = emailParam.getEmail();
 
-            userMSService.seneMessage(identity, suser, username, title, message);
+            userMessageService.seneMessage(identity, suser, username, title, message);
             resultMap.put("status", "valid");
         } catch (Exception e) {
             e.printStackTrace();

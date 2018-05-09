@@ -12,15 +12,8 @@
  */
 package org.framework.tutor.controller;
 
-import com.google.gson.JsonParser;
 import org.framework.tutor.annotation.RequireAuth;
 import org.framework.tutor.api.BbsCardApi;
-import org.framework.tutor.domain.BbsCard;
-import org.framework.tutor.domain.CourseLog;
-import org.framework.tutor.domain.UserMain;
-import org.framework.tutor.service.BbsCardService;
-import org.framework.tutor.service.UserMService;
-import org.framework.tutor.util.CommonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,11 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.text.SimpleDateFormat;
-import java.util.List;
 
 /**
  * @Description: 论坛帖子控制类

@@ -13,7 +13,6 @@
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonParser;
 import org.framework.tutor.api.CourseDeleteReqApi;
 import org.framework.tutor.domain.CourseDeleteReq;
 import org.framework.tutor.domain.CourseDeleteResp;
@@ -22,13 +21,10 @@ import org.framework.tutor.domain.CourseOrderManager;
 import org.framework.tutor.entity.ParamMap;
 import org.framework.tutor.service.CourseDeleteReqService;
 import org.framework.tutor.service.CourseDeleteRespService;
-import org.framework.tutor.service.CourseMService;
+import org.framework.tutor.service.CourseMainService;
 import org.framework.tutor.service.CourseOrderManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -53,7 +49,7 @@ public class CourseDeleteReqApiImpl implements CourseDeleteReqApi {
     private CourseDeleteReqService courseDeleteReqService;
 
     @Autowired
-    private CourseMService courseMService;
+    private CourseMainService courseMainService;
 
     @Autowired
     private CourseDeleteRespService courseDeleteRespService;
@@ -79,7 +75,7 @@ public class CourseDeleteReqApiImpl implements CourseDeleteReqApi {
         String username = (String) session.getAttribute("username");
 
         //判断课程是否为当前登录用户的
-        CourseMain courseMain = courseMService.getCourseById(cid);
+        CourseMain courseMain = courseMainService.getCourseById(cid);
         if(courseMain == null || !courseMain.getUsername().equals(username)){
             resultMap.put("status", "invalid");
         }
@@ -143,7 +139,7 @@ public class CourseDeleteReqApiImpl implements CourseDeleteReqApi {
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             for(CourseDeleteReq courseDeleteReq: courseDeleteReqs){
                 CourseDeleteResp courseDeleteResp = courseDeleteRespService.getByRid(courseDeleteReq.getId());
-                CourseMain courseMain = courseMService.getCourseById(courseDeleteReq.getCid());
+                CourseMain courseMain = courseMainService.getCourseById(courseDeleteReq.getCid());
                 String respStatus = "";
                 if(courseDeleteResp == null){
                     respStatus = "待处理";
@@ -192,7 +188,7 @@ public class CourseDeleteReqApiImpl implements CourseDeleteReqApi {
         PrintWriter writer = response.getWriter();
 
         CourseDeleteReq courseDeleteReq = courseDeleteReqService.getById(reqid);
-        CourseMain courseMain = courseMService.getCourseById(courseDeleteReq.getCid());
+        CourseMain courseMain = courseMainService.getCourseById(courseDeleteReq.getCid());
         List<CourseOrderManager> courseOrderManagers = courseOrderManagerService.getByReqid(reqid);
         resultMap.put("courseName", courseMain.getName());
         resultMap.put("reqDesc", courseDeleteReq.getDescript());

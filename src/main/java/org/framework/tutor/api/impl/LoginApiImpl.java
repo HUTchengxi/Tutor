@@ -13,18 +13,13 @@
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonParser;
 import org.framework.tutor.api.LoginApi;
 import org.framework.tutor.domain.UserMain;
-import org.framework.tutor.service.UserMService;
+import org.framework.tutor.service.UserMainService;
 import org.framework.tutor.util.CommonUtil;
-import org.framework.tutor.util.LoginQueueUtil;
-import org.framework.tutor.util.ScheduledUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -44,7 +39,7 @@ import java.util.Map;
 public class LoginApiImpl implements LoginApi{
 
     @Autowired
-    private UserMService userMService;
+    private UserMainService userMainService;
 
     /**
      * 用户进行登陆
@@ -66,18 +61,18 @@ public class LoginApiImpl implements LoginApi{
         Map<String, Object> resultMap = new HashMap<>(4);
 
         //用户名不存在
-        if(!userMService.userExist(username)){
+        if(!userMainService.userExist(username)){
             resultMap.put("status", "nouser");
             resultMap.put("url", "#");
         }
         //密码错误
         else {
             //获取密码盐
-            Integer salt = userMService.getByUser(username).getSalt();
+            Integer salt = userMainService.getByUser(username).getSalt();
             //明文传来的密码加盐判断
             String MD5Pass = CommonUtil.getMd5Pass(password, salt);
 
-            if (!userMService.passCheck(username, MD5Pass)) {
+            if (!userMainService.passCheck(username, MD5Pass)) {
 
                 resultMap.put("status", "passerr");
                 resultMap.put("url", "#");
@@ -88,7 +83,7 @@ public class LoginApiImpl implements LoginApi{
                 HttpSession session = request.getSession();
                 session.setAttribute("username", username);
                 //保存昵称和当前用户身份
-                UserMain userMain = userMService.getByUser(username);
+                UserMain userMain = userMainService.getByUser(username);
                 session.setAttribute("nickname", userMain.getNickname());
                 session.setAttribute("identity", userMain.getIdentity());
                 resultMap.put("status", "ok");

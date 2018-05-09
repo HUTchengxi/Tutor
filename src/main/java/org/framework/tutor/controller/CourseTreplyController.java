@@ -1,15 +1,12 @@
 package org.framework.tutor.controller;
 
-import com.google.gson.JsonParser;
 import org.framework.tutor.api.CourseTreplyApi;
-import org.framework.tutor.service.CourseTService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 /**
  * 课程家教老师评价回复控制类

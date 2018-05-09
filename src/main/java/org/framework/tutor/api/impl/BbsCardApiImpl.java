@@ -1,25 +1,20 @@
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonParser;
 import org.framework.tutor.api.BbsCardApi;
 import org.framework.tutor.domain.BbsCard;
 import org.framework.tutor.domain.UserMain;
 import org.framework.tutor.service.BbsCardService;
-import org.framework.tutor.service.UserMService;
+import org.framework.tutor.service.UserMainService;
 import org.framework.tutor.util.CommonUtil;
 import org.framework.tutor.util.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -39,7 +34,7 @@ public class BbsCardApiImpl implements BbsCardApi {
     private BbsCardService bbsCardService;
 
     @Autowired
-    private UserMService userMService;
+    private UserMainService userMainService;
 
     /**
      * @param [request, response]
@@ -133,9 +128,9 @@ public class BbsCardApiImpl implements BbsCardApi {
         if (bbsCards.size() == 0) {
             resultMap.put("count", 0);
         } else {
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             for (BbsCard bbsCard : bbsCards) {
-                UserMain userMain = userMService.getByUser(bbsCard.getUsername());
+                UserMain userMain = userMainService.getByUser(bbsCard.getUsername());
                 Map<String, Object> rowMap = new HashMap<>(7);
                 rowMap.put("crttime", simpleDateFormat.format(bbsCard.getCrttime()));
                 rowMap.put("nickname", userMain.getNickname());
@@ -176,9 +171,9 @@ public class BbsCardApiImpl implements BbsCardApi {
         if (bbsCards.size() == 0) {
             resultMap.put("count", 0);
         } else {
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             for (BbsCard bbsCard : bbsCards) {
-                UserMain userMain = userMService.getByUser(bbsCard.getUsername());
+                UserMain userMain = userMainService.getByUser(bbsCard.getUsername());
                 Map<String, Object> rowMap = new HashMap<>(7);
                 rowMap.put("crttime", simpleDateFormat.format(bbsCard.getCrttime()));
                 rowMap.put("nickname", userMain.getNickname());
@@ -218,7 +213,7 @@ public class BbsCardApiImpl implements BbsCardApi {
             if (bbsCard == null) {
                 resultMap.put("status", "none");
             } else {
-                UserMain userMain = userMService.getByUser(bbsCard.getUsername());
+                UserMain userMain = userMainService.getByUser(bbsCard.getUsername());
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 resultMap.put("crttime", simpleDateFormat.format(bbsCard.getCrttime()));
                 resultMap.put("username", bbsCard.getUsername());

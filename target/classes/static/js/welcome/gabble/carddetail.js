@@ -526,7 +526,7 @@ $(function () {
                                 var repfloor = item.repfloor;
                                 $this.closest("div.cardmain").find(".commandlist .commandmain").append("<div class=\"commandmainhead clearfix\">\n" +
                                     "    <img class=\"pull-left comuserface\" src=\"" + imgsrc + "\" />\n" +
-                                    "    <p class=\"pull-left comusernick\">" + nickname + "" + ((repfloor != "null" && repfloor != '') ? "<span>@</span>" + repfloor + "楼" : "") + "</p>" +
+                                    "    <p class=\"pull-left comusernick\">" + nickname + "" + ((repfloor != "null" && repfloor != '' && repfloor != undefined) ? "<span>@</span>" + repfloor + "楼" : "") + "</p>" +
                                     "    <p class=\"pull-right comfloor\">" + floor + "楼</p>\n" +
                                     "</div>\n" +
                                     "<div class=\"commandmaininfo\">\n" +
