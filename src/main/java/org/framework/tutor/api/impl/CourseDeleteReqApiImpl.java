@@ -24,6 +24,7 @@ import org.framework.tutor.service.CourseDeleteRespService;
 import org.framework.tutor.service.CourseMainService;
 import org.framework.tutor.service.CourseOrderManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
@@ -56,6 +57,9 @@ public class CourseDeleteReqApiImpl implements CourseDeleteReqApi {
 
     @Autowired
     private CourseOrderManagerService courseOrderManagerService;
+
+    @Autowired
+    private StringRedisTemplate redis;
 
     /**
      *
@@ -104,6 +108,7 @@ public class CourseDeleteReqApiImpl implements CourseDeleteReqApi {
      * @author yinjimin
      * @date 2018/4/21
      */
+    //TODO：后续考虑使用redis
     @Override
     public void getReqList(ParamMap paramMap, HttpServletResponse response) throws IOException {
 
@@ -179,6 +184,7 @@ public class CourseDeleteReqApiImpl implements CourseDeleteReqApi {
      * @author yinjimin
      * @date 2018/4/21
      */
+    //TODO：后续考虑使用redis
     @Override
     public void getReqDetail(Integer reqid, HttpServletResponse response) throws IOException {
 

@@ -6,7 +6,91 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf479440-431d-499c-9612-40c14de1a166" name="Default" comment="" />
+    <list default="true" id="bf479440-431d-499c-9612-40c14de1a166" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/Main2.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/Main2.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardAnswerApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardAnswerApiImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardAnswerCommandApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardAnswerCommandApiImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardAnswerStarApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardAnswerStarApiImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardApiImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardCollectApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardCollectApiImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CommandStarApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CommandStarApiImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CommonImgsrcApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CommonImgsrcApiImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseChapterApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseChapterApiImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseCollectionApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseCollectionApiImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseCommandApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseCommandApiImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseDeleteReqApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseDeleteReqApiImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseLogApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseLogApiImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseMainApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseMainApiImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseOrderApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseOrderApiImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseOrderManagerApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseOrderManagerApiImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseSummaryApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseSummaryApiImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseTreplyApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseTreplyApiImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardAnswerController.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardAnswerController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/welcome/classify.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/welcome/classify.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/welcome/mycourse.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/welcome/mycourse.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/welcome/mymessage.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/welcome/mymessage.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/welcome/order/mycart.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/welcome/order/mycart.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/welcome/order/mycycle.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/welcome/order/mycycle.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/welcome/order/myorder.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/welcome/order/myorder.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/welcome/personal/personal.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/welcome/personal/personal.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/welcome/rank.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/welcome/rank.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/welcome/showcourse.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/welcome/showcourse.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/tutor/orderlist.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/tutor/orderlist.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/tutor/publishnew.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/tutor/publishnew.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/classify.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/classify.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/contact.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/contact.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/carddetail.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/carddetail.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/gabble.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/gabble.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/mybbs.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/mybbs.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/showcard.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/showcard.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/rank.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/rank.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/welcome.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/welcome.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/layui-admin/js/nav.js" afterPath="$PROJECT_DIR$/src/main/resources/static/layui-admin/js/nav.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/carddetail.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/carddetail.html" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/Main2$1.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/Main2$1.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/Main2.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/Main2.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/BbsCardAnswerApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/BbsCardAnswerApiImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/BbsCardAnswerCommandApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/BbsCardAnswerCommandApiImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/BbsCardAnswerStarApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/BbsCardAnswerStarApiImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/BbsCardApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/BbsCardApiImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/BbsCardCollectApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/BbsCardCollectApiImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CommandStarApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CommandStarApiImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CommonImgsrcApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CommonImgsrcApiImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseChapterApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseChapterApiImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseCollectionApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseCollectionApiImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseCommandApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseCommandApiImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseDeleteReqApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseDeleteReqApiImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseLogApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseLogApiImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseMainApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseMainApiImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseOrderApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseOrderApiImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseOrderManagerApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseOrderManagerApiImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseSummaryApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseSummaryApiImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseTreplyApiImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/framework/tutor/api/impl/CourseTreplyApiImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/welcome/classify.css" afterPath="$PROJECT_DIR$/target/classes/static/css/welcome/classify.css" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/welcome/mycourse.css" afterPath="$PROJECT_DIR$/target/classes/static/css/welcome/mycourse.css" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/welcome/mymessage.css" afterPath="$PROJECT_DIR$/target/classes/static/css/welcome/mymessage.css" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/welcome/order/mycart.css" afterPath="$PROJECT_DIR$/target/classes/static/css/welcome/order/mycart.css" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/welcome/order/mycycle.css" afterPath="$PROJECT_DIR$/target/classes/static/css/welcome/order/mycycle.css" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/welcome/order/myorder.css" afterPath="$PROJECT_DIR$/target/classes/static/css/welcome/order/myorder.css" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/welcome/personal/personal.css" afterPath="$PROJECT_DIR$/target/classes/static/css/welcome/personal/personal.css" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/welcome/rank.css" afterPath="$PROJECT_DIR$/target/classes/static/css/welcome/rank.css" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/welcome/showcourse.css" afterPath="$PROJECT_DIR$/target/classes/static/css/welcome/showcourse.css" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/sysconfig/tutor/orderlist.js" afterPath="$PROJECT_DIR$/target/classes/static/js/sysconfig/tutor/orderlist.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/sysconfig/tutor/publishnew.js" afterPath="$PROJECT_DIR$/target/classes/static/js/sysconfig/tutor/publishnew.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/classify.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/classify.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/contact.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/contact.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/gabble/carddetail.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/gabble/carddetail.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/gabble/gabble.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/gabble/gabble.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/gabble/mybbs.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/gabble/mybbs.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/gabble/showcard.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/gabble/showcard.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/rank.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/rank.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/showcourse.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/showcourse.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/welcome/welcome.js" afterPath="$PROJECT_DIR$/target/classes/static/js/welcome/welcome.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/layui-admin/js/nav.js" afterPath="$PROJECT_DIR$/target/classes/static/layui-admin/js/nav.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/carddetail.html" afterPath="$PROJECT_DIR$/target/classes/templates/home/carddetail.html" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,76 +135,7 @@
     <favorites_list name="Tutor" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="showcourse.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="200" column="54" lean-forward="true" selection-start-line="200" selection-start-column="54" selection-end-line="200" selection-end-column="54" />
-              <folding>
-                <element signature="e#7057#7564#0" expanded="false" />
-                <marker date="1525945784515" expanded="true" signature="1692:1703" ph="..." />
-                <marker date="1525945784515" expanded="true" signature="3714:3729" ph="..." />
-                <marker date="1525945784515" expanded="true" signature="3818:3831" ph="..." />
-                <marker date="1525945784515" expanded="true" signature="3889:3900" ph="..." />
-                <marker date="1525945784515" expanded="true" signature="5334:5345" ph="..." />
-                <marker date="1525945784515" expanded="true" signature="13259:13265" ph="&amp;nbsp;" />
-                <marker date="1525945784515" expanded="true" signature="13265:13271" ph="&amp;nbsp;" />
-                <marker date="1525945784515" expanded="true" signature="13293:13301" ph="&amp;##xe605;" />
-                <marker date="1525945784515" expanded="true" signature="13572:13578" ph="&amp;nbsp;" />
-                <marker date="1525945784515" expanded="true" signature="13578:13584" ph="&amp;nbsp;" />
-                <marker date="1525945784515" expanded="true" signature="13606:13614" ph="&amp;##xe605;" />
-                <marker date="1525945784515" expanded="true" signature="15581:15587" ph="&amp;nbsp;" />
-                <marker date="1525945784515" expanded="true" signature="15587:15593" ph="&amp;nbsp;" />
-                <marker date="1525945784515" expanded="true" signature="15615:15623" ph="&amp;##xe605;" />
-                <marker date="1525945784515" expanded="true" signature="19783:19789" ph="&amp;nbsp;" />
-                <marker date="1525945784515" expanded="true" signature="19789:19795" ph="&amp;nbsp;" />
-                <marker date="1525945784515" expanded="true" signature="19795:19801" ph="&amp;nbsp;" />
-                <marker date="1525945784515" expanded="true" signature="19801:19807" ph="&amp;nbsp;" />
-                <marker date="1525945784515" expanded="true" signature="34213:34219" ph="&amp;nbsp;" />
-                <marker date="1525945784515" expanded="true" signature="35606:35612" ph="&amp;nbsp;" />
-                <marker date="1525945784515" expanded="true" signature="35612:35618" ph="&amp;nbsp;" />
-                <marker date="1525945784515" expanded="true" signature="35618:35624" ph="&amp;nbsp;" />
-                <marker date="1525945784515" expanded="true" signature="35624:35630" ph="&amp;nbsp;" />
-                <marker date="1525945784515" expanded="true" signature="43834:43842" ph="&amp;##xe651;" />
-                <marker date="1525945784515" expanded="true" signature="43914:43920" ph="&amp;nbsp;" />
-                <marker date="1525945784515" expanded="true" signature="43920:43926" ph="&amp;nbsp;" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CourseCollectController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseCollectController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="59" column="46" lean-forward="true" selection-start-line="59" selection-start-column="46" selection-end-line="59" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CourseCollectionApiImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseCollectionApiImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="139" column="36" lean-forward="true" selection-start-line="139" selection-start-column="36" selection-end-line="139" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginApiImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/LoginApiImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="194" column="48" lean-forward="false" selection-start-line="194" selection-start-column="48" selection-end-line="194" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -136,18 +151,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>lay-f</find>
-      <find>lay-inter</find>
-      <find>login_logoff</find>
-      <find>设置</find>
-      <find>&lt;a href='/personalpage_con/gosetting'&gt;设置&lt;/a&gt;</find>
-      <find>getW</find>
-      <find>send</find>
-      <find>sendMessage</find>
-      <find>sendmessage</find>
-      <find>SimpleDateFormat</find>
-      <find>访问</find>
-      <find>getCourseList</find>
       <find>getCourseListMore</find>
       <find>getBean</find>
       <find>&lt;li&gt;&lt;a href='/personalpage_con/gomessage' target='_blank'&gt;通知&lt;span class='mcount'&gt;(&quot; + count + &quot;)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;\n&quot;</find>
@@ -161,18 +164,25 @@
       <find>getcoursetype</find>
       <find>RedisUtil</find>
       <find>发表</find>
-      <find>alert</find>
       <find>收藏</find>
       <find>loginstatuscheck</find>
       <find>请求参数</find>
       <find>modUserCollect</find>
+      <find>反饋</find>
+      <find>getallcoursetype</find>
+      <find>#808080a3</find>
+      <find>#80808030;</find>
+      <find>#0000004d;</find>
+      <find>#80808036;</find>
+      <find>redis</find>
+      <find>alert</find>
+      <find>col-lg-10</find>
+      <find>addmystar</find>
+      <find>data(&quot;status&quot;</find>
+      <find>getmycommandstar</find>
+      <find>checkusercommand</find>
     </findStrings>
     <replaceStrings>
-      <replace>&lt;br /&gt;</replace>
-      <replace>bootstrap-fileinput</replace>
-      <replace>common/jquery</replace>
-      <replace>col-lg-6 col-sm-6</replace>
-      <replace>#orderMore</replace>
       <replace>12</replace>
       <replace>/fonts/sysconfig/admin/login/</replace>
       <replace>../fonts/sysconfig/admin/login/</replace>
@@ -198,6 +208,11 @@
       <replace>/adminpage_con/sendmailpage</replace>
       <replace>/adminpage_con/sendmessagepage</replace>
       <replace>&lt;a href='/personalpage_con/gofeedback'&gt;反饋&lt;/a&gt;</replace>
+      <replace>反馈</replace>
+      <replace>#80808036</replace>
+      <replace>#e1dbdb30;</replace>
+      <replace>#00000017;</replace>
+      <replace>#80808063;</replace>
     </replaceStrings>
     <dirStrings>
       <dir>D:\gitrepo\tutorweb</dir>
@@ -214,31 +229,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserVService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMainService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserMessageService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserSecretService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserSignService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserValiService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserLogService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/CourseTreplyService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/CourseOService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/CourseOrderService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/CourseMainService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/CourseLogService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/CourseCService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/CourseCollectService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/CourseCommandService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/service/CourseChapterService.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/css/sysconfig/admin/websocket.css" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql" />
-        <option value="$PROJECT_DIR$/src/generatorConfig.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/ordermanage.html" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/config/WebSocketConfig.java" />
         <option value="/JSON Fragment (UserWebSocketController.java:1309).json" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/CourseMMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/Main2.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/util/WebsocketUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserWebSocketController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/UserWebsocketApi.java" />
@@ -258,13 +251,35 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/messagemanage.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/feedbackmanage.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/showcourse.html" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseMainApiImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/classify.js" />
-        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardApiImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/gabble.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home/gabble.html" />
         <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/LoginApiImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/tutor/publishnew.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/sysconfig/tutor/orderlist.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/layui-admin/js/nav.js" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/Main2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardAnswerController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardApiImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardAnswerApiImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/carddetail.js" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardAnswerCommandApiImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardAnswerStarApiImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardCollectApiImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/home/carddetail.html" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CommandStarApiImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CommonImgsrcApiImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseChapterApiImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseCollectionApiImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseCommandApiImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseDeleteReqApiImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseOrderApiImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseMainApiImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseLogApiImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseTreplyApiImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseSummaryApiImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseOrderManagerApiImpl.java" />
       </list>
     </option>
   </component>
@@ -401,6 +416,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -451,7 +468,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="framework" type="462c0819:PsiDirectoryNode" />
               <item name="tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
@@ -461,7 +478,18 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="framework" type="462c0819:PsiDirectoryNode" />
               <item name="tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tutorweb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
@@ -634,6 +662,25 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="layui-admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tutorweb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="layui-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tutorweb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tutorweb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -650,8 +697,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1215,7 +1260,8 @@
       <workItem from="1525847186261" duration="8448000" />
       <workItem from="1525856880140" duration="10788000" />
       <workItem from="1525872914762" duration="13283000" />
-      <workItem from="1525923140391" duration="17687000" />
+      <workItem from="1525923140391" duration="19850000" />
+      <workItem from="1525954663601" duration="11484000" />
     </task>
     <task id="LOCAL-00013" summary="邮箱注册以及后续的验证的实现，还未实现邮箱注册后的等待/重发界面">
       <created>1520780099718</created>
@@ -1564,7 +1610,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1338387000" />
+    <option name="totallyTimeSpent" value="1352034000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1577,7 +1623,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992035" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1598,7 +1643,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36973834" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66870093" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287827" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.414791" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2813505" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1718,267 +1763,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/log/1.21.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
-          <caret line="447" column="2" lean-forward="true" selection-start-line="447" selection-start-column="2" selection-end-line="447" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1739">
-          <caret line="53" column="41" lean-forward="true" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/domain/UserWebsocket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-296">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/sysconfig/admin/websocket.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1082">
-          <caret line="106" column="1" lean-forward="true" selection-start-line="106" selection-start-column="1" selection-end-line="106" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/sendmail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="15" lean-forward="true" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="155" column="20" lean-forward="true" selection-start-line="155" selection-start-column="20" selection-end-line="155" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/config/WebSocketConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="28" column="44" lean-forward="false" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/mybbs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-13896">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/mymessage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="507" column="7" lean-forward="true" selection-start-line="507" selection-start-column="7" selection-end-line="507" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/CourseCMMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/CourseCMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/CourseMainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="53" column="29" lean-forward="false" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/CourseMMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-22">
-          <caret line="61" column="7" lean-forward="true" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.23/tomcat-embed-core-8.5.23.jar!/javax/servlet/ServletContext.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="27" column="11" lean-forward="false" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.23/tomcat-embed-core-8.5.23.jar!/org/apache/catalina/core/ApplicationContext.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="104" column="32" lean-forward="true" selection-start-line="104" selection-start-column="32" selection-end-line="104" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/Main2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="45" column="33" lean-forward="true" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/util/WebsocketUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="96" column="9" lean-forward="true" selection-start-line="96" selection-start-column="9" selection-end-line="96" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/UserWebsocketApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="12" column="10" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/UserWebsocketService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="10" column="11" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/service/impl/UserWebsocketServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="740">
-          <caret line="40" column="35" lean-forward="false" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/UserWebsocketApiImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="94" column="31" lean-forward="true" selection-start-line="94" selection-start-column="31" selection-end-line="94" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardPersonalPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="749">
-          <caret line="114" column="5" lean-forward="false" selection-start-line="114" selection-start-column="5" selection-end-line="114" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/mapper/UserWebsocketMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="14" column="32" lean-forward="false" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/entity/ParamMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="29" column="30" lean-forward="true" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/UserWebSocketController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="601">
-          <caret line="46" column="32" lean-forward="false" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1595#1596#0" expanded="true" />
-            <element signature="e#1658#1659#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/ForwardAdminPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1">
-          <caret line="114" column="26" lean-forward="true" selection-start-line="114" selection-start-column="26" selection-end-line="114" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/showcard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4256">
-          <caret line="187" column="44" lean-forward="false" selection-start-line="187" selection-start-column="44" selection-end-line="187" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/websocket.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="180" column="44" lean-forward="false" selection-start-line="180" selection-start-column="44" selection-end-line="180" selection-end-column="44" />
-          <folding>
-            <element signature="e#152#838#0" expanded="false" />
-            <element signature="e#5379#5642#0" expanded="false" />
-            <element signature="e#5685#5892#0" expanded="false" />
-            <element signature="e#6012#6119#0" expanded="false" />
-            <marker date="1525934506291" expanded="true" signature="2248:2254" ph="&amp;nbsp;" />
-            <marker date="1525934506291" expanded="true" signature="7783:7789" ph="&amp;nbsp;" />
-            <marker date="1525934506291" expanded="true" signature="8199:8205" ph="&amp;nbsp;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/sysconfig/admin/coursedeletemanage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="186" column="74" lean-forward="true" selection-start-line="186" selection-start-column="74" selection-end-line="186" selection-end-column="74" />
-          <folding>
-            <marker date="1525935174378" expanded="true" signature="2562:2568" ph="&amp;nbsp;" />
-            <marker date="1525935174378" expanded="true" signature="2568:2574" ph="&amp;nbsp;" />
-            <marker date="1525935174378" expanded="true" signature="2735:2741" ph="&amp;nbsp;" />
-            <marker date="1525935174378" expanded="true" signature="2741:2747" ph="&amp;nbsp;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/messagemanage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="6" column="56" lean-forward="true" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/sysconfig/admin/ordermanage.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2590">
           <caret line="70" column="93" lean-forward="false" selection-start-line="70" selection-start-column="93" selection-end-line="70" selection-end-column="93" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1986,7 +1774,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1994,7 +1781,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="60" column="26" lean-forward="true" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2002,7 +1788,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="259">
           <caret line="79" column="90" lean-forward="false" selection-start-line="79" selection-start-column="90" selection-end-line="79" selection-end-column="90" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2010,12 +1795,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-897">
           <caret line="147" column="6" lean-forward="true" selection-start-line="147" selection-start-column="6" selection-end-line="147" selection-end-column="6" />
-          <folding>
-            <marker date="1525935361303" expanded="true" signature="2904:2910" ph="&amp;nbsp;" />
-            <marker date="1525935361303" expanded="true" signature="2910:2916" ph="&amp;nbsp;" />
-            <marker date="1525935361303" expanded="true" signature="3026:3032" ph="&amp;nbsp;" />
-            <marker date="1525935361303" expanded="true" signature="3032:3038" ph="&amp;nbsp;" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2023,12 +1802,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="145" column="13" lean-forward="true" selection-start-line="145" selection-start-column="13" selection-end-line="145" selection-end-column="13" />
-          <folding>
-            <marker date="1525935104505" expanded="true" signature="3021:3027" ph="&amp;nbsp;" />
-            <marker date="1525935104505" expanded="true" signature="3027:3033" ph="&amp;nbsp;" />
-            <marker date="1525935104505" expanded="true" signature="3194:3200" ph="&amp;nbsp;" />
-            <marker date="1525935104505" expanded="true" signature="3200:3206" ph="&amp;nbsp;" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2036,9 +1809,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
           <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-          <folding>
-            <element signature="n#style#0;n#p#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2068,7 +1838,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="453">
           <caret line="315" column="29" lean-forward="false" selection-start-line="315" selection-start-column="29" selection-end-line="315" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2076,23 +1845,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="592">
           <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseMainApiImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1504">
-          <caret line="240" column="6" lean-forward="true" selection-start-line="240" selection-start-column="6" selection-end-line="240" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardApiImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2094">
-          <caret line="38" column="33" lean-forward="true" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2100,60 +1852,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="274">
           <caret line="675" column="0" lean-forward="true" selection-start-line="675" selection-start-column="0" selection-end-line="675" selection-end-column="0" />
-          <folding>
-            <element signature="e#23367#25387#0" expanded="false" />
-            <element signature="e#25520#25665#0" expanded="false" />
-            <element signature="e#25824#26510#0" expanded="false" />
-            <element signature="e#26641#26818#0" expanded="false" />
-            <element signature="e#26954#30038#0" expanded="false" />
-            <marker date="1525940455412" expanded="true" signature="1283:1294" ph="..." />
-            <marker date="1525940455412" expanded="true" signature="3282:3297" ph="..." />
-            <marker date="1525940455412" expanded="true" signature="3382:3395" ph="..." />
-            <marker date="1525940455412" expanded="true" signature="3449:3460" ph="..." />
-            <marker date="1525940455412" expanded="true" signature="4886:4897" ph="..." />
-            <marker date="1525940455412" expanded="true" signature="8345:8351" ph="&amp;nbsp;" />
-            <marker date="1525940455412" expanded="true" signature="8351:8357" ph="&amp;nbsp;" />
-            <marker date="1525940455412" expanded="true" signature="8357:8363" ph="&amp;nbsp;" />
-            <marker date="1525940455412" expanded="true" signature="8363:8369" ph="&amp;nbsp;" />
-            <marker date="1525940455412" expanded="true" signature="8393:8401" ph="&amp;##xe612;" />
-            <marker date="1525940455412" expanded="true" signature="8967:8975" ph="&amp;##xe65b;" />
-            <marker date="1525940455412" expanded="true" signature="14499:14505" ph="&amp;nbsp;" />
-            <marker date="1525940455412" expanded="true" signature="14505:14511" ph="&amp;nbsp;" />
-            <marker date="1525940455412" expanded="true" signature="14511:14517" ph="&amp;nbsp;" />
-            <marker date="1525940455412" expanded="true" signature="14517:14523" ph="&amp;nbsp;" />
-            <marker date="1525940455412" expanded="true" signature="14547:14555" ph="&amp;##xe612;" />
-            <marker date="1525940455412" expanded="true" signature="15121:15129" ph="&amp;##xe65b;" />
-            <marker date="1525940455412" expanded="true" signature="18297:18303" ph="&amp;nbsp;" />
-            <marker date="1525940455412" expanded="true" signature="18303:18309" ph="&amp;nbsp;" />
-            <marker date="1525940455412" expanded="true" signature="18309:18315" ph="&amp;nbsp;" />
-            <marker date="1525940455412" expanded="true" signature="18315:18321" ph="&amp;nbsp;" />
-            <marker date="1525940455412" expanded="true" signature="18345:18353" ph="&amp;##xe612;" />
-            <marker date="1525940455412" expanded="true" signature="18919:18927" ph="&amp;##xe65b;" />
-            <marker date="1525940455412" expanded="true" signature="22117:22123" ph="&amp;nbsp;" />
-            <marker date="1525940455412" expanded="true" signature="22123:22129" ph="&amp;nbsp;" />
-            <marker date="1525940455412" expanded="true" signature="22129:22135" ph="&amp;nbsp;" />
-            <marker date="1525940455412" expanded="true" signature="22135:22141" ph="&amp;nbsp;" />
-            <marker date="1525940455412" expanded="true" signature="22165:22173" ph="&amp;##xe612;" />
-            <marker date="1525940455412" expanded="true" signature="22739:22747" ph="&amp;##xe65b;" />
-            <marker date="1525940455412" expanded="true" signature="29036:29042" ph="&amp;nbsp;" />
-            <marker date="1525940455412" expanded="true" signature="29042:29048" ph="&amp;nbsp;" />
-            <marker date="1525940455412" expanded="true" signature="29048:29054" ph="&amp;nbsp;" />
-            <marker date="1525940455412" expanded="true" signature="29054:29060" ph="&amp;nbsp;" />
-            <marker date="1525940455412" expanded="true" signature="29084:29092" ph="&amp;##xe612;" />
-            <marker date="1525940455412" expanded="true" signature="29642:29650" ph="&amp;##xe65b;" />
-            <marker date="1525940455412" expanded="true" signature="32635:32641" ph="&amp;nbsp;" />
-            <marker date="1525940455412" expanded="true" signature="32641:32647" ph="&amp;nbsp;" />
-            <marker date="1525940455412" expanded="true" signature="32647:32653" ph="&amp;nbsp;" />
-            <marker date="1525940455412" expanded="true" signature="32653:32659" ph="&amp;nbsp;" />
-            <marker date="1525940455412" expanded="true" signature="32683:32691" ph="&amp;##xe612;" />
-            <marker date="1525940455412" expanded="true" signature="33273:33281" ph="&amp;##xe65b;" />
-            <marker date="1525940455412" expanded="true" signature="47504:47510" ph="&amp;nbsp;" />
-            <marker date="1525940455412" expanded="true" signature="47510:47516" ph="&amp;nbsp;" />
-            <marker date="1525940455412" expanded="true" signature="47516:47522" ph="&amp;nbsp;" />
-            <marker date="1525940455412" expanded="true" signature="47522:47528" ph="&amp;nbsp;" />
-            <marker date="1525940455412" expanded="true" signature="47552:47560" ph="&amp;##xe612;" />
-            <marker date="1525940455412" expanded="true" signature="48126:48134" ph="&amp;##xe65b;" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2161,17 +1859,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
           <caret line="69" column="14" lean-forward="true" selection-start-line="69" selection-start-column="14" selection-end-line="69" selection-end-column="14" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/carddetail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="475" column="38" lean-forward="true" selection-start-line="475" selection-start-column="38" selection-end-line="475" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2188,11 +1875,11 @@
             <element signature="e#3206#3684#0" expanded="false" />
             <element signature="e#3765#4681#0" expanded="false" />
             <element signature="e#4779#9939#0" expanded="false" />
-            <marker date="1525941270222" expanded="true" signature="15153:15164" ph="..." />
-            <marker date="1525941270222" expanded="true" signature="15941:15957" ph="..." />
-            <marker date="1525941270222" expanded="true" signature="16038:16054" ph="..." />
-            <marker date="1525941270222" expanded="true" signature="16093:16137" ph="..." />
-            <marker date="1525941270222" expanded="true" signature="16244:16261" ph="..." />
+            <marker date="1525947497629" expanded="true" signature="15153:15164" ph="..." />
+            <marker date="1525947497629" expanded="true" signature="15941:15957" ph="..." />
+            <marker date="1525947497629" expanded="true" signature="16038:16054" ph="..." />
+            <marker date="1525947497629" expanded="true" signature="16093:16137" ph="..." />
+            <marker date="1525947497629" expanded="true" signature="16244:16261" ph="..." />
           </folding>
         </state>
       </provider>
@@ -2201,7 +1888,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="616">
           <caret line="194" column="48" lean-forward="false" selection-start-line="194" selection-start-column="48" selection-end-line="194" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2209,14 +1895,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1887">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseCollectionApiImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="139" column="36" lean-forward="true" selection-start-line="139" selection-start-column="36" selection-end-line="139" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -2229,38 +1907,359 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/SysEmailManagerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="32" column="13" lean-forward="false" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/layui-admin/js/adminNav.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/layui-admin/js/leftNav.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/layui-admin/js/nav.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="823">
+          <caret line="36" column="1" lean-forward="false" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/sysconfig/tutor/orderlist.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="193" column="37" lean-forward="false" selection-start-line="193" selection-start-column="37" selection-end-line="193" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/sysconfig/tutor/orderlist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-964">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/sysconfig/tutor/publishnew.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="42" column="31" lean-forward="true" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="124" column="20" lean-forward="true" selection-start-line="124" selection-start-column="20" selection-end-line="124" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/AdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardAnswerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="45" column="7" lean-forward="false" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/Main2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="37" column="48" lean-forward="false" selection-start-line="37" selection-start-column="48" selection-end-line="37" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardApiImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="89" column="31" lean-forward="false" selection-start-line="89" selection-start-column="31" selection-end-line="89" selection-end-column="31" />
+          <folding>
+            <element signature="method#getMyCardCount#0;class#BbsCardApiImpl#0" expanded="false" />
+            <element signature="method#publishCard#0;class#BbsCardApiImpl#0" expanded="false" />
+            <element signature="method#searchCard#0;class#BbsCardApiImpl#0" expanded="false" />
+            <element signature="method#loadHotCard#0;class#BbsCardApiImpl#0" expanded="false" />
+            <element signature="method#getCardById#0;class#BbsCardApiImpl#0" expanded="false" />
+            <element signature="method#addViscount#0;class#BbsCardApiImpl#0" expanded="false" />
+            <element signature="method#getMyCardInfo#0;class#BbsCardApiImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardAnswerCommandApiImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1397">
+          <caret line="118" column="48" lean-forward="true" selection-start-line="118" selection-start-column="48" selection-end-line="118" selection-end-column="48" />
+          <folding>
+            <element signature="method#getCommandListByAid#0;class#BbsCardAnswerCommandApiImpl#0" expanded="false" />
+            <element signature="method#publishCommand#0;class#BbsCardAnswerCommandApiImpl#0" expanded="false" />
+            <element signature="method#getMyCommandCount#0;class#BbsCardAnswerCommandApiImpl#0" expanded="false" />
+            <element signature="method#getMyCommandInfo#0;class#BbsCardAnswerCommandApiImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/controller/BbsCardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="47" column="46" lean-forward="true" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardAnswerStarApiImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1138">
+          <caret line="95" column="0" lean-forward="true" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+          <folding>
+            <element signature="method#checkUserStar#0;class#BbsCardAnswerStarApiImpl#0" expanded="false" />
+            <element signature="method#addUserStar#0;class#BbsCardAnswerStarApiImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardCollectApiImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1590">
+          <caret line="176" column="19" lean-forward="true" selection-start-line="176" selection-start-column="19" selection-end-line="176" selection-end-column="19" />
+          <folding>
+            <element signature="method#getMyCollectCount#0;class#BbsCardCollectApiImpl#0" expanded="false" />
+            <element signature="method#checkCollectStatus#0;class#BbsCardCollectApiImpl#0" expanded="false" />
+            <element signature="method#collectCard#0;class#BbsCardCollectApiImpl#0" expanded="false" />
+            <element signature="method#uncollectCard#0;class#BbsCardCollectApiImpl#0" expanded="false" />
+            <element signature="method#getMyCollectInfo#0;class#BbsCardCollectApiImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/gabble/carddetail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="783">
+          <caret line="441" column="71" lean-forward="true" selection-start-line="441" selection-start-column="71" selection-end-line="441" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home/carddetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1748">
+          <caret line="141" column="35" lean-forward="false" selection-start-line="141" selection-start-column="35" selection-end-line="141" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="41" column="29" lean-forward="true" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="200" column="54" lean-forward="true" selection-start-line="200" selection-start-column="54" selection-end-line="200" selection-end-column="54" />
+        <state relative-caret-position="186">
+          <caret line="120" column="24" lean-forward="true" selection-start-line="120" selection-start-column="24" selection-end-line="120" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CommandStarApiImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1101">
+          <caret line="163" column="1" lean-forward="true" selection-start-line="163" selection-start-column="1" selection-end-line="163" selection-end-column="1" />
           <folding>
-            <element signature="e#7057#7564#0" expanded="false" />
-            <marker date="1525945784515" expanded="true" signature="1692:1703" ph="..." />
-            <marker date="1525945784515" expanded="true" signature="3714:3729" ph="..." />
-            <marker date="1525945784515" expanded="true" signature="3818:3831" ph="..." />
-            <marker date="1525945784515" expanded="true" signature="3889:3900" ph="..." />
-            <marker date="1525945784515" expanded="true" signature="5334:5345" ph="..." />
-            <marker date="1525945784515" expanded="true" signature="13259:13265" ph="&amp;nbsp;" />
-            <marker date="1525945784515" expanded="true" signature="13265:13271" ph="&amp;nbsp;" />
-            <marker date="1525945784515" expanded="true" signature="13293:13301" ph="&amp;##xe605;" />
-            <marker date="1525945784515" expanded="true" signature="13572:13578" ph="&amp;nbsp;" />
-            <marker date="1525945784515" expanded="true" signature="13578:13584" ph="&amp;nbsp;" />
-            <marker date="1525945784515" expanded="true" signature="13606:13614" ph="&amp;##xe605;" />
-            <marker date="1525945784515" expanded="true" signature="15581:15587" ph="&amp;nbsp;" />
-            <marker date="1525945784515" expanded="true" signature="15587:15593" ph="&amp;nbsp;" />
-            <marker date="1525945784515" expanded="true" signature="15615:15623" ph="&amp;##xe605;" />
-            <marker date="1525945784515" expanded="true" signature="19783:19789" ph="&amp;nbsp;" />
-            <marker date="1525945784515" expanded="true" signature="19789:19795" ph="&amp;nbsp;" />
-            <marker date="1525945784515" expanded="true" signature="19795:19801" ph="&amp;nbsp;" />
-            <marker date="1525945784515" expanded="true" signature="19801:19807" ph="&amp;nbsp;" />
-            <marker date="1525945784515" expanded="true" signature="34213:34219" ph="&amp;nbsp;" />
-            <marker date="1525945784515" expanded="true" signature="35606:35612" ph="&amp;nbsp;" />
-            <marker date="1525945784515" expanded="true" signature="35612:35618" ph="&amp;nbsp;" />
-            <marker date="1525945784515" expanded="true" signature="35618:35624" ph="&amp;nbsp;" />
-            <marker date="1525945784515" expanded="true" signature="35624:35630" ph="&amp;nbsp;" />
-            <marker date="1525945784515" expanded="true" signature="43834:43842" ph="&amp;##xe651;" />
-            <marker date="1525945784515" expanded="true" signature="43914:43920" ph="&amp;nbsp;" />
-            <marker date="1525945784515" expanded="true" signature="43920:43926" ph="&amp;nbsp;" />
+            <element signature="method#getMyCommandStar#0;class#CommandStarApiImpl#0" expanded="false" />
+            <element signature="method#addMyStar#0;class#CommandStarApiImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CommonImgsrcApiImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="51" column="26" lean-forward="false" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseChapterApiImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="132" column="25" lean-forward="false" selection-start-line="132" selection-start-column="25" selection-end-line="132" selection-end-column="25" />
+          <folding>
+            <element signature="method#getCourseChapter#0;class#CourseChapterApiImpl#0" expanded="false" />
+            <element signature="method#deleteChapter#0;class#CourseChapterApiImpl#0" expanded="false" />
+            <element signature="method#modChapter#0;class#CourseChapterApiImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/BbsCardAnswerApiImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="126" column="44" lean-forward="false" selection-start-line="126" selection-start-column="44" selection-end-line="126" selection-end-column="44" />
+          <folding>
+            <element signature="method#getCardAnswerByCardid#0;class#BbsCardAnswerApiImpl#0" expanded="false" />
+            <element signature="method#addAnswer#0;class#BbsCardAnswerApiImpl#0" expanded="false" />
+            <element signature="method#getMyAnswerCount#0;class#BbsCardAnswerApiImpl#0" expanded="false" />
+            <element signature="method#getMyAnswerInfo#0;class#BbsCardAnswerApiImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseCollectionApiImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="737">
+          <caret line="209" column="109" lean-forward="false" selection-start-line="209" selection-start-column="109" selection-end-line="209" selection-end-column="109" />
+          <folding>
+            <element signature="method#getMyCollect#0;class#CourseCollectionApiImpl#0" expanded="false" />
+            <element signature="method#checkUserCollect#0;class#CourseCollectionApiImpl#0" expanded="false" />
+            <element signature="method#modUserCollect#0;class#CourseCollectionApiImpl#0" expanded="false" />
+            <element signature="method#getCollectCount#0;class#CourseCollectionApiImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseCommandApiImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="509">
+          <caret line="355" column="22" lean-forward="true" selection-start-line="355" selection-start-column="22" selection-end-line="355" selection-end-column="22" />
+          <folding>
+            <element signature="method#getCourseCommand#0;class#CourseCommandApiImpl#0" expanded="false" />
+            <element signature="method#getCourseCommandGod#0;class#CourseCommandApiImpl#0" expanded="false" />
+            <element signature="method#selMyCommand#0;class#CourseCommandApiImpl#0" expanded="false" />
+            <element signature="method#subMyCommand#0;class#CourseCommandApiImpl#0" expanded="false" />
+            <element signature="method#getCommandCount#0;class#CourseCommandApiImpl#0" expanded="false" />
+            <element signature="method#getScoreAvg#0;class#CourseCommandApiImpl#0" expanded="false" />
+            <element signature="method#loadMyCommandInfo#0;class#CourseCommandApiImpl#0" expanded="false" />
+            <element signature="method#getCommandList#0;class#CourseCommandApiImpl#0" expanded="false" />
+            <element signature="method#setCommandGodstate#0;class#CourseCommandApiImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseCommandDeleteReqApiImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="43" column="54" lean-forward="true" selection-start-line="43" selection-start-column="54" selection-end-line="43" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseDeleteReqApiImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="768">
+          <caret line="186" column="22" lean-forward="false" selection-start-line="186" selection-start-column="22" selection-end-line="186" selection-end-column="22" />
+          <folding>
+            <element signature="method#setMyCourseDeleteReq#0;class#CourseDeleteReqApiImpl#0" expanded="false" />
+            <element signature="method#getReqList#0;class#CourseDeleteReqApiImpl#0" expanded="false" />
+            <element signature="method#getReqDetail#0;class#CourseDeleteReqApiImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseDeleteRespApiImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="35" column="13" lean-forward="false" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+          <folding>
+            <element signature="method#modReqStatus#0;class#CourseDeleteRespApiImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseOrderApiImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="314" column="22" lean-forward="false" selection-start-line="314" selection-start-column="22" selection-end-line="314" selection-end-column="22" />
+          <folding>
+            <element signature="method#getOrderInfo#0;class#CourseOrderApiImpl#0" expanded="false" />
+            <element signature="method#addCart#0;class#CourseOrderApiImpl#0" expanded="false" />
+            <element signature="method#getMyCart#0;class#CourseOrderApiImpl#0" expanded="false" />
+            <element signature="method#delMyCart#0;class#CourseOrderApiImpl#0" expanded="false" />
+            <element signature="method#getMyCartCount#0;class#CourseOrderApiImpl#0" expanded="false" />
+            <element signature="method#getMyOrder#0;class#CourseOrderApiImpl#0" expanded="false" />
+            <element signature="method#setInCycle#0;class#CourseOrderApiImpl#0" expanded="false" />
+            <element signature="method#getOrderCount#0;class#CourseOrderApiImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseMainApiImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="657">
+          <caret line="549" column="22" lean-forward="false" selection-start-line="549" selection-start-column="22" selection-end-line="549" selection-end-column="22" />
+          <folding>
+            <element signature="method#getCourseList#0;class#CourseMainApiImpl#0" expanded="false" />
+            <element signature="method#getAllCourseType#0;class#CourseMainApiImpl#0" expanded="false" />
+            <element signature="method#getCourseType#0;class#CourseMainApiImpl#0" expanded="false" />
+            <element signature="method#courseSearch#0;class#CourseMainApiImpl#0" expanded="false" />
+            <element signature="method#getCourseById#0;class#CourseMainApiImpl#0" expanded="false" />
+            <element signature="method#getCourseCount#0;class#CourseMainApiImpl#0" expanded="false" />
+            <element signature="method#getMyPublish#0;class#CourseMainApiImpl#0" expanded="false" />
+            <element signature="method#publishNewCourse#0;class#CourseMainApiImpl#0" expanded="false" />
+            <element signature="method#getCourseSummary#0;class#CourseMainApiImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseLogApiImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1118">
+          <caret line="99" column="22" lean-forward="false" selection-start-line="99" selection-start-column="22" selection-end-line="99" selection-end-column="22" />
+          <folding>
+            <element signature="method#getLog#0;class#CourseLogApiImpl#0" expanded="false" />
+            <element signature="method#delLog#0;class#CourseLogApiImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseTreplyApiImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="44" column="22" lean-forward="false" selection-start-line="44" selection-start-column="22" selection-end-line="44" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseSummaryApiImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-194">
+          <caret line="95" column="22" lean-forward="false" selection-start-line="95" selection-start-column="22" selection-end-line="95" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/CourseOrderManagerApiImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1101">
+          <caret line="438" column="22" lean-forward="false" selection-start-line="438" selection-start-column="22" selection-end-line="438" selection-end-column="22" />
+          <folding>
+            <element signature="method#getCourseOrderList#0;class#CourseOrderManagerApiImpl#0" expanded="false" />
+            <element signature="method#getOrderDetail#0;class#CourseOrderManagerApiImpl#0" expanded="false" />
+            <element signature="method#updateTutorStatus#0;class#CourseOrderManagerApiImpl#0" expanded="false" />
+            <element signature="method#getErrorOrderList#0;class#CourseOrderManagerApiImpl#0" expanded="false" />
+            <element signature="method#getErrorOrderDetail#0;class#CourseOrderManagerApiImpl#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -52,6 +52,7 @@ public class CourseLogApiImpl implements CourseLogAPi {
      * @param request
      * @param response
      */
+    //TODO：后续考虑使用redis
     @Override
     public void getLog(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -96,6 +97,7 @@ public class CourseLogApiImpl implements CourseLogAPi {
      * @param request
      * @param response
      */
+    //TODO：后续考虑使用redis
     @Override
     public void delLog(Integer id, HttpServletRequest request, HttpServletResponse response) throws IOException {
 

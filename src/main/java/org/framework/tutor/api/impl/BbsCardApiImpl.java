@@ -8,6 +8,7 @@ import org.framework.tutor.service.BbsCardService;
 import org.framework.tutor.service.UserMainService;
 import org.framework.tutor.util.CommonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
@@ -36,12 +37,20 @@ public class BbsCardApiImpl implements BbsCardApi {
     private UserMainService userMainService;
 
     /**
+     *
+     * @Description 直接使用SpringBoot集成的Redis进行操作
+     */
+    @Autowired
+    private StringRedisTemplate redis;
+
+    /**
      * @param [request, response]
      * @return void
      * @Description 获取当前登录用户的帖子发表总数
      * @author yinjimin
      * @date 2018/3/31
      */
+    //TODO：使用了Redis   [username].cardcount
     @Override
     public void getMyCardCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -51,7 +60,15 @@ public class BbsCardApiImpl implements BbsCardApi {
         Map<String, Object> resultMap = new HashMap<>(1);
         PrintWriter writer = response.getWriter();
 
-        Integer count = bbsCardService.getMyCardCount(username);
+        StringBuffer keyTemp = new StringBuffer(username);
+        keyTemp.append(".cardcount");
+        Integer count = null;
+        if(redis.hasKey(keyTemp.toString())){
+            count = Integer.valueOf(redis.opsForValue().get(keyTemp.toString()));
+        }else{
+            count = bbsCardService.getMyCardCount(username);
+            redis.opsForValue().set(keyTemp.toString(), count.toString());
+        }
         resultMap.put("count", count);
 
         writer.print(gson.toJson(resultMap));
@@ -67,6 +84,7 @@ public class BbsCardApiImpl implements BbsCardApi {
      * @author yinjimin
      * @date 2018/4/1
      */
+    //TODO: 使用了Redis，发表之后redis中缓存的对应的用户帖子数加1
     @Override
     public void publishCard(String title, String imgsrc, String descript, HttpServletRequest request, HttpServletResponse response)
             throws IOException {
@@ -83,6 +101,13 @@ public class BbsCardApiImpl implements BbsCardApi {
         } else {
             bbsCardService.publishCard(username, title, imgsrc, descript);
             resultMap.put("status", "valid");
+            StringBuffer keyTemp = new StringBuffer(username);
+            keyTemp.append(".cardcount");
+            //更新缓存
+            if(redis.hasKey(keyTemp.toString())){
+                Integer count = Integer.valueOf(redis.opsForValue().get(keyTemp.toString())) + 1;
+                redis.opsForValue().set(keyTemp.toString(), count.toString());
+            }
         }
 
         writer.print(gson.toJson(resultMap));
@@ -98,6 +123,7 @@ public class BbsCardApiImpl implements BbsCardApi {
      * @author yinjimin
      * @date 2018/4/3
      */
+    //TODO: 可以使用redis，考虑到值的复杂性，后续加入
     @Override
     public void searchCard(String keyword, HttpServletResponse response) throws IOException {
 
@@ -183,6 +209,7 @@ public class BbsCardApiImpl implements BbsCardApi {
      * @author yinjimin
      * @date 2018/4/6
      */
+    //TODO: 可以使用redis，考虑到值的复杂性，后续加入
     @Override
     public void getCardById(String cardId, HttpServletResponse response) throws IOException {
 
@@ -253,6 +280,7 @@ public class BbsCardApiImpl implements BbsCardApi {
      * @author yinjimin
      * @date 2018/4/13
      */
+    //TODO: 可以使用redis，考虑到值的复杂性，后续加入
     @Override
     public void getMyCardInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
 

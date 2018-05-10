@@ -22,6 +22,7 @@ import org.framework.tutor.service.BbsCardAnswerService;
 import org.framework.tutor.service.BbsCardService;
 import org.framework.tutor.service.UserMainService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
@@ -55,6 +56,9 @@ public class BbsCardAnswerCommandApiImpl implements BbsCardAnswerCommandApi {
     @Autowired
     private UserMainService userMainService;
 
+    @Autowired
+    private StringRedisTemplate redis;
+
     /**
      *
      * @Description 每次获取五条评论数据
@@ -63,6 +67,7 @@ public class BbsCardAnswerCommandApiImpl implements BbsCardAnswerCommandApi {
      * @author yinjimin
      * @date 2018/4/10
      */
+    //TODO：后续可以考虑使用redis，目前基于值的复杂性暂时不考虑
     @Override
     public void getCommandListByAid(Integer startpos, Integer aid, HttpServletResponse response) throws IOException {
 
@@ -111,6 +116,7 @@ public class BbsCardAnswerCommandApiImpl implements BbsCardAnswerCommandApi {
      * @author yinjimin
      * @date 2018/4/10
      */
+    //TODO：这里使用了Redis  更新[username].commandcount
     @Override
     public void publishCommand(Integer cardid, Integer aid, String answer, Integer repfloor, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -129,11 +135,20 @@ public class BbsCardAnswerCommandApiImpl implements BbsCardAnswerCommandApi {
         bbsCardAnswerService.addComcount(aid);
         resultMap.put("status", "valid");
 
+        //[username].commandcount缓存数据更新
+        StringBuffer keyTemp = new StringBuffer(username);
+        keyTemp.append(".commandcount");
+        if(redis.hasKey(keyTemp.toString())){
+            Integer count = Integer.valueOf(redis.opsForValue().get(keyTemp.toString())) + 1;
+            redis.opsForValue().set(keyTemp.toString(), count.toString());
+        }
+
         writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
 
+    //TODO：这里使用了redis  保存[username].commandcount
     @Override
     public void getMyCommandCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -143,7 +158,15 @@ public class BbsCardAnswerCommandApiImpl implements BbsCardAnswerCommandApi {
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
 
-        Integer count = bbsCardAnswerCommandService.getComcountByUser(username);
+        StringBuffer keyTemp = new StringBuffer(username);
+        keyTemp.append(".commandcount");
+        Integer count = null;
+        if(redis.hasKey(keyTemp.toString())){
+            count = Integer.valueOf(redis.opsForValue().get(keyTemp.toString()));
+        }else {
+            count = bbsCardAnswerCommandService.getComcountByUser(username);
+            redis.opsForValue().set(keyTemp.toString(), count.toString());
+        }
         resultMap.put("count", count);
 
         writer.print(gson.toJson(resultMap));
@@ -159,6 +182,7 @@ public class BbsCardAnswerCommandApiImpl implements BbsCardAnswerCommandApi {
      * @author yinjimin
      * @date 2018/4/14
      */
+    //TODO：后续可以考虑使用redis，目前基于值的复杂性暂时不考虑
     @Override
     public void getMyCommandInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
 

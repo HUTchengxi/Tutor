@@ -20,6 +20,7 @@ import org.framework.tutor.service.BbsCardAnswerService;
 import org.framework.tutor.service.BbsCardService;
 import org.framework.tutor.service.UserMainService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
@@ -50,6 +51,9 @@ public class BbsCardAnswerApiImpl implements BbsCardAnswerApi {
     @Autowired
     private UserMainService userMainService;
 
+    @Autowired
+    private StringRedisTemplate redis;
+
     /**
      *
      * @Description 获取对应的帖子答案数据
@@ -58,6 +62,7 @@ public class BbsCardAnswerApiImpl implements BbsCardAnswerApi {
      * @author yinjimin
      * @date 2018/4/7
      */
+    //TODO: 可以使用redis，考虑到值的复杂性，后续加入
     @Override
     public void getCardAnswerByCardid(Integer cardId, HttpServletResponse response) throws IOException {
 
@@ -108,6 +113,7 @@ public class BbsCardAnswerApiImpl implements BbsCardAnswerApi {
      * @author yinjimin
      * @date 2018/4/9
      */
+    //TODO: 使用了Redis   [username].[cardId].checkusercommand
     @Override
     public void checkUserCommand(Integer cardId, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -117,11 +123,18 @@ public class BbsCardAnswerApiImpl implements BbsCardAnswerApi {
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
 
-        if(bbsCardAnswerService.checkIsExistAnswer(cardId, username) == null){
-            resultMap.put("status", "un");
-        }
-        else{
-            resultMap.put("status", "ed");
+        StringBuffer keyTemp = new StringBuffer(username);
+        keyTemp.append("."+cardId).append(".checkusercommand");
+        if(redis.hasKey(keyTemp.toString())){
+            resultMap.put("status", redis.opsForValue().get(keyTemp.toString()));
+        }else {
+            if (bbsCardAnswerService.checkIsExistAnswer(cardId, username) == null) {
+                resultMap.put("status", "un");
+                redis.opsForValue().set(keyTemp.toString(), "un");
+            } else {
+                resultMap.put("status", "ed");
+                redis.opsForValue().set(keyTemp.toString(), "ed");
+            }
         }
 
         writer.print(gson.toJson(resultMap));
@@ -137,6 +150,7 @@ public class BbsCardAnswerApiImpl implements BbsCardAnswerApi {
      * @author yinjimin
      * @date 2018/4/9
      */
+    //TODO：更新对应的键值   [username].[cardid].checkusercommand
     @Override
     public void addAnswer(Integer cardId, String answer, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -154,6 +168,19 @@ public class BbsCardAnswerApiImpl implements BbsCardAnswerApi {
             bbsCardAnswerService.addAnswer(cardId, username, answer);
             bbsCardService.addComCountByCardId(cardId);
             resultMap.put("status", "valid");
+
+            //[username].[cardid].checkusercommand缓存数据更新
+            StringBuffer keyTemp = new StringBuffer(username);
+            keyTemp.append("."+cardId).append(".checkusercommand");
+            redis.opsForValue().set(keyTemp.toString(), "ed");
+
+            //[username].answercount缓存数据更新
+            keyTemp = new StringBuffer(username);
+            keyTemp.append(".answercount");
+            if(redis.hasKey(keyTemp.toString())){
+                Integer count = Integer.valueOf(redis.opsForValue().get(keyTemp.toString())) + 1;
+                redis.opsForValue().set(keyTemp.toString(), count.toString());
+            }
         }
 
         writer.print(gson.toJson(resultMap));
@@ -169,6 +196,7 @@ public class BbsCardAnswerApiImpl implements BbsCardAnswerApi {
      * @author yinjimin
      * @date 2018/4/12
      */
+    //TODO: 使用redis：   [username].answercount
     @Override
     public void getMyAnswerCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -178,15 +206,31 @@ public class BbsCardAnswerApiImpl implements BbsCardAnswerApi {
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
 
-        Integer count = bbsCardAnswerService.getMyAnswerCount(username);
+        StringBuffer keyTemp = new StringBuffer(username);
+        keyTemp.append(".answercount");
+        Integer count = null;
+        if(redis.hasKey(keyTemp.toString())){
+            count = Integer.valueOf(redis.opsForValue().get(keyTemp.toString()));
+        }else{
+            count = bbsCardAnswerService.getMyAnswerCount(username);
+            redis.opsForValue().set(keyTemp.toString(), count.toString());
+        }
         resultMap.put("count", count);
 
         writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
     }
-
-
+    
+    /**  
+     *    
+     * @Description 获取用户的答案列表
+     * @param [request, response]
+     * @return void
+     * @author yinjimin  
+     * @date 2018/5/10
+     */
+    //TODO: 可以使用redis，考虑到值的复杂性，后续加入
     @Override
     public void getMyAnswerInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
 

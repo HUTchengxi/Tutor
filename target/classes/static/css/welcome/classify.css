@@ -82,8 +82,8 @@ header .searchmain ul li a {
     /*height: 35px;*/
     border: 1px solid black;
     text-decoration: none;
-    background-color: #80808030;
-    border-color: #0000004d;
+    background-color: #e1dbdb30;
+    border-color: #00000017;
 }
 .sliderbar ul li a.gotop{
     display: none;
@@ -93,7 +93,7 @@ header .searchmain ul li a {
 }
 .sliderbar ul li a i{
     font-size: 35px;
-    color: #808080a3;
+    color: #80808063;
     font-weight: bold;
 }
 

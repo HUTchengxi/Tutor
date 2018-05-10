@@ -23,6 +23,7 @@ import org.framework.tutor.service.CourseMainService;
 import org.framework.tutor.service.CourseOrderService;
 import org.framework.tutor.service.UserMainService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
@@ -53,12 +54,16 @@ public class CourseCommandApiImpl implements CourseCommandApi {
     @Autowired
     private CourseMainService courseMainService;
 
+    @Autowired
+    private StringRedisTemplate redis;
+
     /**
      * 获取课程评论数据
      *
      * @param cid
      * @param response
      */
+    //TODO: 后续考虑加入redis
     @Override
     public void getCourseCommand(Integer cid, Integer startpos, HttpServletResponse response) throws IOException {
 
@@ -102,6 +107,7 @@ public class CourseCommandApiImpl implements CourseCommandApi {
      * @param response
      * @throws IOException
      */
+    //TODO: 后续考虑加入redis
     @Override
     public void getCourseCommandGod(Integer cid, HttpServletResponse response) throws IOException {
 
@@ -146,6 +152,7 @@ public class CourseCommandApiImpl implements CourseCommandApi {
      * @param response
      * @throws IOException
      */
+    //TODO: 后续考虑加入redis
     @Override
     public void selMyCommand(Integer cid, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -199,6 +206,7 @@ public class CourseCommandApiImpl implements CourseCommandApi {
      * @param request
      * @param response
      */
+    //TODO：使用了redis    更新tutor.[username].coursecommandcount
     @Override
     public void subMyCommand(Integer cid, String command, Integer score, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -215,6 +223,16 @@ public class CourseCommandApiImpl implements CourseCommandApi {
             Integer row = courseCommandService.subMyCommand(cid, command, score, username);
             if (row == 1) {
                 resultMap.put("status", "valid");
+
+                //更新tutor.[username].coursecommandcount
+                CourseMain courseMain = courseMainService.getCourseById(cid);
+                String tutor = courseMain.getUsername();
+                StringBuffer keyTemp = new StringBuffer("tutor");
+                keyTemp.append("."+tutor).append(".coursecommandcount");
+                if(redis.hasKey(keyTemp.toString())){
+                    Integer count = Integer.valueOf(redis.opsForValue().get(keyTemp.toString())) + 1;
+                    redis.opsForValue().set(keyTemp.toString(), count.toString());
+                }
             } else {
                 resultMap.put("status","mysqlerr");
             }
@@ -232,6 +250,7 @@ public class CourseCommandApiImpl implements CourseCommandApi {
      * @param response
      * @throws IOException
      */
+    //TODO：使用了redis     保存tutor.[username].coursecommandcount
     @Override
     public void getCommandCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -244,7 +263,15 @@ public class CourseCommandApiImpl implements CourseCommandApi {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String now = simpleDateFormat.format(new Date());
 
-        resultMap.put("count", courseCommandService.getCommandCountNow(username, now));
+        StringBuffer keyTemp = new StringBuffer("tutor");
+        keyTemp.append("."+username).append(".coursecommandcount");
+        if(redis.hasKey(keyTemp.toString())){
+            resultMap.put("count", redis.opsForValue().get(keyTemp.toString()));
+        }else {
+            Integer count = courseCommandService.getCommandCountNow(username, now);
+            resultMap.put("count", count);
+            redis.opsForValue().set(keyTemp.toString(), count.toString());
+        }
 
         writer.print(gson.toJson(resultMap));
         writer.flush();
@@ -283,6 +310,7 @@ public class CourseCommandApiImpl implements CourseCommandApi {
      * @param response
      * @throws IOException
      */
+    //TODO：后续考虑使用redis
     @Override
     public void loadMyCommandInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -325,6 +353,7 @@ public class CourseCommandApiImpl implements CourseCommandApi {
      * @author yinjimin
      * @date 2018/4/18
      */
+    //TODO：后续考虑使用redis
     @Override
     public void getCommandList(ParamMap paramMap, HttpServletRequest request, HttpServletResponse response) throws IOException {
 

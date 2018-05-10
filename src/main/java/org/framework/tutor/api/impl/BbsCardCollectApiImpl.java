@@ -20,6 +20,7 @@ import org.framework.tutor.domain.BbsCardCollect;
 import org.framework.tutor.service.BbsCardCollectService;
 import org.framework.tutor.service.BbsCardService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -50,14 +51,17 @@ public class BbsCardCollectApiImpl implements BbsCardCollectApi {
     @Autowired
     private BbsCardService bbsCardService;
 
+    @Autowired
+    private StringRedisTemplate redis;
+
     /**
-     *
-     * @Description 获取当前用户的收藏总数
      * @param [request, response]
      * @return void
+     * @Description 获取当前用户的收藏总数
      * @author yinjimin
      * @date 2018/4/1
      */
+    //TODO：使用了Redis    保存[username].collectcount
     @Override
     public void getMyCollectCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -67,7 +71,15 @@ public class BbsCardCollectApiImpl implements BbsCardCollectApi {
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(1);
 
-        Integer count = bbsCardCollectService.getMyCollectCount(username);
+        Integer count = null;
+        StringBuffer keyTemp = new StringBuffer(username);
+        keyTemp.append(".collectcount");
+        if (redis.hasKey(keyTemp.toString())) {
+            count = Integer.valueOf(redis.opsForValue().get(keyTemp.toString()));
+        } else {
+            count = bbsCardCollectService.getMyCollectCount(username);
+            redis.opsForValue().set(keyTemp.toString(), count.toString());
+        }
         resultMap.put("count", count);
 
         writer.print(gson.toJson(resultMap));
@@ -76,13 +88,13 @@ public class BbsCardCollectApiImpl implements BbsCardCollectApi {
     }
 
     /**
-     *
-     * @Description 判断当前用户是否已收藏
      * @param [cardId, request, response]
      * @return void
+     * @Description 判断当前用户是否已收藏
      * @author yinjimin
      * @date 2018/4/8
      */
+    //TODO：使用了Redis    保存[username].[cardid].collectstatus
     @Override
     public void checkCollectStatus(Integer cardId, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -92,14 +104,20 @@ public class BbsCardCollectApiImpl implements BbsCardCollectApi {
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
 
-        if(username == null){
+        if (username == null) {
             resultMap.put("status", "none");
-        }
-        else if(bbsCardCollectService.checkCollectStatus(cardId, username) != null){
-            resultMap.put("status", "col");
-        }
-        else{
-            resultMap.put("status", "uncol");
+        } else {
+            StringBuffer keyTemp = new StringBuffer(username);
+            keyTemp.append("."+cardId).append(".collectstatus");
+            if (redis.hasKey(keyTemp.toString())) {
+                resultMap.put("status", redis.opsForValue().get(keyTemp.toString()));
+            } else if (bbsCardCollectService.checkCollectStatus(cardId, username) != null) {
+                resultMap.put("status", "col");
+                redis.opsForValue().set(keyTemp.toString(), "col");
+            } else {
+                resultMap.put("status", "uncol");
+                redis.opsForValue().set(keyTemp.toString(), "uncol");
+            }
         }
 
         writer.print(gson.toJson(resultMap));
@@ -109,13 +127,13 @@ public class BbsCardCollectApiImpl implements BbsCardCollectApi {
 
 
     /**
-     *
-     * @Description 收藏问题
      * @param [cardId, request, response]
      * @return void
+     * @Description 收藏问题
      * @author yinjimin
      * @date 2018/4/8
      */
+    //TODO：使用了Redis    更新 [username].collectcount 和  [username].[cardid].collectstatus
     @Override
     public void collectCard(Integer cardId, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -126,13 +144,27 @@ public class BbsCardCollectApiImpl implements BbsCardCollectApi {
         Map<String, Object> resultMap = new HashMap<>(2);
 
         //判断是否已收藏
-        if(bbsCardCollectService.checkCollectStatus(cardId, username) != null){
+        if (bbsCardCollectService.checkCollectStatus(cardId, username) != null) {
             resultMap.put("status", "none");
-        }
-        else{
+        } else {
             bbsCardCollectService.collectCard(cardId, username);
             bbsCardService.addColCountByCardId(cardId);
             resultMap.put("status", "col");
+
+            //更新[username].collectcount缓存数据
+            StringBuffer keyTemp = new StringBuffer(username);
+            keyTemp.append(".collectcount");
+            if(redis.hasKey(keyTemp.toString())){
+                Integer count = Integer.valueOf(redis.opsForValue().get(keyTemp.toString())) + 1;
+                redis.opsForValue().set(keyTemp.toString(), count.toString());
+            }
+
+            //更新[username].[cardid].collectstatus缓存数据
+            keyTemp = new StringBuffer(username);
+            keyTemp.append("."+cardId).append(".collectstatus");
+            if(redis.hasKey(keyTemp.toString())){
+                redis.opsForValue().set(keyTemp.toString(), "col");
+            }
         }
 
         writer.print(gson.toJson(resultMap));
@@ -141,13 +173,13 @@ public class BbsCardCollectApiImpl implements BbsCardCollectApi {
     }
 
     /**
-     *
-     * @Description 取消收藏问题
      * @param [cardId, request, response]
      * @return void
+     * @Description 取消收藏问题
      * @author yinjimin
      * @date 2018/4/8
      */
+    //TODO：使用了Redis    更新 [username].collectcount 和  [username].[cardid].collectstatus
     @Override
     public void uncollectCard(Integer cardId, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -158,13 +190,27 @@ public class BbsCardCollectApiImpl implements BbsCardCollectApi {
         Map<String, Object> resultMap = new HashMap<>(2);
 
         //判断是否已收藏
-        if(bbsCardCollectService.checkCollectStatus(cardId, username) == null){
+        if (bbsCardCollectService.checkCollectStatus(cardId, username) == null) {
             resultMap.put("status", "none");
-        }
-        else{
+        } else {
             bbsCardCollectService.uncollectCard(cardId, username);
             bbsCardService.delColCountByCardId(cardId);
             resultMap.put("status", "uncol");
+
+            //更新[username].collectcount缓存数据
+            StringBuffer keyTemp = new StringBuffer(username);
+            keyTemp.append(".collectcount");
+            if(redis.hasKey(keyTemp.toString())){
+                Integer count = Integer.valueOf(redis.opsForValue().get(keyTemp.toString())) - 1;
+                redis.opsForValue().set(keyTemp.toString(), count.toString());
+            }
+
+            //更新[username].[cardid].collectstatus缓存数据
+            keyTemp = new StringBuffer(username);
+            keyTemp.append("."+cardId).append(".collectstatus");
+            if(redis.hasKey(keyTemp.toString())){
+                redis.opsForValue().set(keyTemp.toString(), "uncol");
+            }
         }
 
         writer.print(gson.toJson(resultMap));
@@ -174,13 +220,13 @@ public class BbsCardCollectApiImpl implements BbsCardCollectApi {
 
 
     /**
-     *
-     * @Description 获取当前用户收藏的帖子数据
      * @param [request, response]
      * @return void
+     * @Description 获取当前用户收藏的帖子数据
      * @author yinjimin
      * @date 2018/4/13
      */
+    //TODO：后续可以考虑使用redis，目前基于值的复杂性暂时不考虑
     @Override
     public void getMyCollectInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -193,11 +239,11 @@ public class BbsCardCollectApiImpl implements BbsCardCollectApi {
         List<Object> resultList = new ArrayList<>();
 
         List<BbsCardCollect> bbsCardList = bbsCardCollectService.getMyCollectInfo(username);
-        if(bbsCardList.size() == 0){
+        if (bbsCardList.size() == 0) {
             resultMap.put("status", "none");
-        }else{
+        } else {
             SimpleDateFormat ysdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            for (BbsCardCollect bbsCardCollect: bbsCardList) {
+            for (BbsCardCollect bbsCardCollect : bbsCardList) {
                 BbsCard bbsCard = bbsCardService.getCardById(bbsCardCollect.getCardid());
                 Map<String, Object> rowMap = new HashMap<>(16);
                 rowMap.put("id", bbsCard.getId());

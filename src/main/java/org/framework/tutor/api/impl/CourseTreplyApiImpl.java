@@ -42,6 +42,7 @@ public class CourseTreplyApiImpl implements CourseTreplyApi {
      * @param response
      * @throws IOException
      */
+    //TODO：后续考虑使用redis
     @Override
     public void getTreply(Integer cid, Integer cmid, HttpServletResponse response) throws IOException {
 

@@ -83,7 +83,7 @@ $(function () {
                     formatter: function (value, row, index) {
                         var orderCode = value;
                         return "<button class='btn-primary btn btn-statusMod' data-toggle='modal' data-target='#orderStatusEditAlert' data-code='" + orderCode + "'>修改状态</button>&nbsp;&nbsp;" +
-                            "<button class='btn btn-danger' data-code='" + orderCode + "'>建立会话</button>&nbsp;&nbsp;" +
+                            "<button class='btn btn-danger btn-socket'>建立会话</button>&nbsp;&nbsp;" +
                             "<button class='btn btn-danger btn-more' data-toggle='modal' data-target='#orderMore' data-code='" + orderCode + "'>查看详情</button>&nbsp;&nbsp;";
                     }
                 }
@@ -187,4 +187,13 @@ $(function () {
         });
     };
     $("#orderStatusEditAlert button:nth-child(1)").click(click_openstatusmod);
+
+    /**
+     *
+     */
+    var btn_gowebsocket = function(){
+        var username = $(this).closest("tr").find("td:nth-child(2)").text();
+        window.open("/personalpage_con/websocketpage?username="+username);
+    };
+    $(document).on("click", ".btn-socket", btn_gowebsocket);
 });

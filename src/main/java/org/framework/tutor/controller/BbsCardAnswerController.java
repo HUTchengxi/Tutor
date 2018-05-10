@@ -43,7 +43,7 @@ public class BbsCardAnswerController {
      * @return void
      * @author yinjimin  
      * @date 2018/4/7
-     */  
+     */
     @PostMapping("/getcardanswerbycardid")
     public void getCardAnswerByCardid(@RequestParam Integer cardId, HttpServletResponse response) throws IOException {
 

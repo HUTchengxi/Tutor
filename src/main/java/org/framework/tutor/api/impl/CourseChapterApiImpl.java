@@ -50,6 +50,7 @@ public class CourseChapterApiImpl implements CourseChapterApi {
      * @param cid
      * @param response
      */
+    //TODO: 后续可以考虑加入redis
     @Override
     public void getCourseChapter(Integer cid, HttpServletResponse response) throws IOException {
 
@@ -88,6 +89,7 @@ public class CourseChapterApiImpl implements CourseChapterApi {
      * @author yinjimin
      * @date 2018/4/15
      */
+    //TODO: 后续可以考虑加入redis
     @Override
     public void deleteChapter(Integer id, HttpServletResponse response, HttpServletRequest request) throws IOException {
 
@@ -128,6 +130,7 @@ public class CourseChapterApiImpl implements CourseChapterApi {
      * @author yinjimin
      * @date 2018/4/15
      */
+    //TODO: 后续可以考虑加入redis
     @Override
     public void modChapter(Integer id, Integer cid, String title, String descript, HttpServletRequest request, HttpServletResponse response) throws IOException {
 

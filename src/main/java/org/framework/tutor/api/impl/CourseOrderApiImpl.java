@@ -7,6 +7,7 @@ import org.framework.tutor.domain.CourseOrder;
 import org.framework.tutor.service.CourseMainService;
 import org.framework.tutor.service.CourseOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
@@ -31,6 +32,9 @@ public class CourseOrderApiImpl implements CourseOrderApi {
     @Autowired
     private CourseMainService courseMainService;
 
+    @Autowired
+    private StringRedisTemplate redis;
+
     /**
      * 获取课程订购数据
      *
@@ -38,6 +42,7 @@ public class CourseOrderApiImpl implements CourseOrderApi {
      * @param request
      * @param response
      */
+    //TODO：后续考虑使用redis
     @Override
     public void getOrderInfo(Integer cid, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -75,6 +80,7 @@ public class CourseOrderApiImpl implements CourseOrderApi {
      * @param request
      * @param response
      */
+    //TODO：使用redis  更新[username].cartcount
     @Override
     public void addCart(Integer cid, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -90,6 +96,14 @@ public class CourseOrderApiImpl implements CourseOrderApi {
             resultMap.put("status", "mysqlerr");
         } else {
             resultMap.put("statue", "valid");
+
+            //更新[username].cartcount缓存数据
+            StringBuffer keyTemp = new StringBuffer(username);
+            keyTemp.append(".cartcount");
+            if(redis.hasKey(keyTemp.toString())){
+                Integer count = Integer.valueOf(redis.opsForValue().get(keyTemp.toString())) + 1;
+                redis.opsForValue().set(keyTemp.toString(), count.toString());
+            }
         }
 
         writer.print(gson.toJson(resultMap));
@@ -103,6 +117,7 @@ public class CourseOrderApiImpl implements CourseOrderApi {
      * @param request
      * @param response
      */
+    //TODO：后续考虑使用redis
     @Override
     public void getMyCart(Integer startpos, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -144,6 +159,7 @@ public class CourseOrderApiImpl implements CourseOrderApi {
      * @param request
      * @param response
      */
+    //TODO：使用redis   更新[username].cartcount
     @Override
     public void delMyCart(Integer id, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -159,6 +175,14 @@ public class CourseOrderApiImpl implements CourseOrderApi {
             resultMap.put("status", "invalid");
         } else {
             resultMap.put("status", "valid");
+
+            //更新[username].cartcount缓存数据
+            StringBuffer keyTemp = new StringBuffer(username);
+            keyTemp.append(".cartcount");
+            if(redis.hasKey(keyTemp.toString())){
+                Integer count = Integer.valueOf(redis.opsForValue().get(keyTemp.toString())) - 1;
+                redis.opsForValue().set(keyTemp.toString(), count.toString());
+            }
         }
 
         writer.print(gson.toJson(resultMap));
@@ -172,6 +196,7 @@ public class CourseOrderApiImpl implements CourseOrderApi {
      * @param response
      * @throws IOException
      */
+    //TODO：使用了redis    保存[username].cartcount
     @Override
     public void getMyCartCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -180,7 +205,17 @@ public class CourseOrderApiImpl implements CourseOrderApi {
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
-        resultMap.put("count", courseOrderService.getMyCartCount(username));
+
+        StringBuffer keyTemp = new StringBuffer(username);
+        keyTemp.append(".cartcount");
+        if(redis.hasKey(keyTemp.toString())){
+            resultMap.put("count", redis.opsForValue().get(keyTemp.toString()));
+        }else {
+            Integer count = courseOrderService.getMyCartCount(username);
+            resultMap.put("count", count);
+            redis.opsForValue().set(keyTemp.toString(), count.toString());
+        }
+
         writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();
@@ -194,6 +229,7 @@ public class CourseOrderApiImpl implements CourseOrderApi {
      * @param request
      * @param response
      */
+    //TODO：后续考虑使用redis
     @Override
     public void getMyOrder(String status, Integer startpos, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -241,6 +277,7 @@ public class CourseOrderApiImpl implements CourseOrderApi {
      * @param request
      * @param response
      */
+    //TODO：后续考虑使用redis
     @Override
     public void setInCycle(Integer oid, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -275,6 +312,7 @@ public class CourseOrderApiImpl implements CourseOrderApi {
      * @param response
      * @throws IOException
      */
+    //TODO：后续考虑使用redis
     @Override
     public void getOrderCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
 

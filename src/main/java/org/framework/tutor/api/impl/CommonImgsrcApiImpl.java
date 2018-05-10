@@ -49,6 +49,7 @@ public class CommonImgsrcApiImpl implements CommonImgsrcApi {
      * @author yinjimin
      * @date 2018/4/1
      */
+    //TODO：后续可以考虑加入redis缓存
     @Override
     public void getAll(HttpServletResponse response) throws IOException {
 

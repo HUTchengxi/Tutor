@@ -8,6 +8,7 @@ import org.framework.tutor.domain.CourseSummary;
 import org.framework.tutor.domain.UserMain;
 import org.framework.tutor.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -51,6 +52,9 @@ public class CourseMainApiImpl implements CourseMainApi {
     @Autowired
     private CourseSummaryService courseSummaryService;
 
+    @Autowired
+    private StringRedisTemplate redis;
+
     /**
      * 加载课程数据
      *
@@ -64,6 +68,7 @@ public class CourseMainApiImpl implements CourseMainApi {
      * @param response
      * @throws IOException
      */
+    //TODO：后续考虑使用redis
     @Override
     public void getCourseList(Integer stype, String ctype, String sort, Integer startpos, Integer status, String keyword,
                               HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -209,6 +214,7 @@ public class CourseMainApiImpl implements CourseMainApi {
      * @author yinjimin
      * @date 2018/4/15
      */
+    //TODO：后续考虑使用redis(保存list集合类型数据)
     @Override
     public void getAllCourseType(HttpServletResponse response) throws IOException {
 
@@ -244,6 +250,7 @@ public class CourseMainApiImpl implements CourseMainApi {
      * @param response
      * @throws IOException
      */
+    //TODO：后续考虑使用redis(保存list集合类型数据)
     @Override
     public void getCourseType(String stype, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -279,6 +286,7 @@ public class CourseMainApiImpl implements CourseMainApi {
      * @param response
      * @throws IOException
      */
+    //TODO：后续考虑使用redis
     @Override
     public void courseSearch(String keyword, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -323,6 +331,7 @@ public class CourseMainApiImpl implements CourseMainApi {
      * @param response
      * @throws IOException
      */
+    //TODO：后续考虑使用redis
     @Override
     public void getCourseById(Integer id, HttpServletResponse response) throws IOException {
 
@@ -420,6 +429,7 @@ public class CourseMainApiImpl implements CourseMainApi {
      * @author yinjimin
      * @date 2018/4/14
      */
+    //TODO：后续考虑使用redis
     @Override
     public void getMyPublish(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -468,6 +478,7 @@ public class CourseMainApiImpl implements CourseMainApi {
      * @author yinjimin
      * @date 2018/4/15
      */
+    //TODO：后续考虑使用redis
     @Override
     @Transactional
     public void publishNewCourse(String name, Integer stype, String ctype, String descript,
@@ -536,6 +547,7 @@ public class CourseMainApiImpl implements CourseMainApi {
      * @author yinjimin
      * @date 2018/4/25
      */
+    //TODO：后续考虑使用redis
     @Override
     public String getCourseSummary(Integer cid) {
 

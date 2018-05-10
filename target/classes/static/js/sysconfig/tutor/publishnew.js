@@ -44,7 +44,7 @@ $(function() {
             dataType: "json",
             success: function(data){
                 $.each(data.list, function(index, item){
-                   $(".courseCtype").append("<option value='"+item+"'>"+item+"</option>");
+                   $(".courseCtype").append("<option value='"+item.ctype+"'>"+item.ctype+"</option>");
                 });
             }
         });

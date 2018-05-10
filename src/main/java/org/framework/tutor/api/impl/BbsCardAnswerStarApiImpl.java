@@ -19,6 +19,7 @@ import org.framework.tutor.domain.BbsCardAnswerStar;
 import org.framework.tutor.service.BbsCardAnswerService;
 import org.framework.tutor.service.BbsCardAnswerStarService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,6 +47,9 @@ public class BbsCardAnswerStarApiImpl implements BbsCardAnswerStarApi {
     @Autowired
     private BbsCardAnswerService bbsCardAnswerService;
 
+    @Autowired
+    private StringRedisTemplate redis;
+
     /**
      * @param [cardId, request, response]
      * @return void
@@ -53,6 +57,7 @@ public class BbsCardAnswerStarApiImpl implements BbsCardAnswerStarApi {
      * @author yinjimin
      * @date 2018/4/10
      */
+    //TODO: 使用了Redis   保存[username].[aid].checkuserstar
     @Override
     public void checkUserStar(Integer aid, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -62,15 +67,24 @@ public class BbsCardAnswerStarApiImpl implements BbsCardAnswerStarApi {
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
 
-        BbsCardAnswerStar bbsCardAnswerStar = bbsCardAnswerStarService.checkUserStar(aid, username);
-        if (bbsCardAnswerStar == null) {
-            resultMap.put("status", "none");
+        StringBuffer keyTemp = new StringBuffer(username);
+        keyTemp.append("." + aid).append(".checkuserstar");
+        if (redis.hasKey(keyTemp.toString())) {
+            resultMap.put("status", redis.opsForValue().get(keyTemp.toString()));
         } else {
-            Integer score = bbsCardAnswerStar.getScore();
-            if (score == 1) {
-                resultMap.put("status", "star");
+            BbsCardAnswerStar bbsCardAnswerStar = bbsCardAnswerStarService.checkUserStar(aid, username);
+            if (bbsCardAnswerStar == null) {
+                resultMap.put("status", "none");
+                redis.opsForValue().set(keyTemp.toString(), "none");
             } else {
-                resultMap.put("status", "unstar");
+                Integer score = bbsCardAnswerStar.getScore();
+                if (score == 1) {
+                    resultMap.put("status", "star");
+                    redis.opsForValue().set(keyTemp.toString(), "star");
+                } else {
+                    resultMap.put("status", "unstar");
+                    redis.opsForValue().set(keyTemp.toString(), "unstar");
+                }
             }
         }
 
@@ -87,6 +101,7 @@ public class BbsCardAnswerStarApiImpl implements BbsCardAnswerStarApi {
      * @author yinjimin
      * @date 2018/4/10
      */
+    //TODO：使用了Redis   更新[username].[aid].checkuserstar
     @Override
     public void addUserStar(Integer aid, Integer score, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -101,10 +116,14 @@ public class BbsCardAnswerStarApiImpl implements BbsCardAnswerStarApi {
             resultMap.put("status", "invalid");
         } else {
             bbsCardAnswerStarService.addUserStar(aid, username, score);
+            StringBuffer keyTemp = new StringBuffer(username);
+            keyTemp.append("." + aid).append(".checkuserstar");
             if (score == 1) {
                 bbsCardAnswerService.addGcount(aid);
+                redis.opsForValue().set(keyTemp.toString(), "star");
             } else {
                 bbsCardAnswerService.addBcount(aid);
+                redis.opsForValue().set(keyTemp.toString(), "unstar");
             }
             resultMap.put("status", "valid");
         }

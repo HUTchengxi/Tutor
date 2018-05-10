@@ -64,6 +64,7 @@ public class CourseOrderManagerApiImpl implements CourseOrderManagerApi {
      * @author yinjimin
      * @date 2018/4/18
      */
+    //TODO：后续考虑使用redis
     @Override
     public void getCourseOrderList(ParamMap paramMap, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -217,6 +218,7 @@ public class CourseOrderManagerApiImpl implements CourseOrderManagerApi {
      * @author yinjimin
      * @date 2018/4/19
      */
+    //TODO：后续考虑使用redis
     @Override
     public void getOrderDetail(String code, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -325,6 +327,7 @@ public class CourseOrderManagerApiImpl implements CourseOrderManagerApi {
      * @author yinjimin
      * @date 2018/4/19
      */
+    //TODO：后续考虑使用redis
     @Override
     public void getErrorOrderList(ParamMap paramMap, HttpServletResponse response) throws IOException {
 
@@ -433,6 +436,7 @@ public class CourseOrderManagerApiImpl implements CourseOrderManagerApi {
      * @author yinjimin
      * @date 2018/4/19
      */
+    //TODO：后续考虑使用redis
     @Override
     public void getErrorOrderDetail(String code, HttpServletResponse response) throws IOException {
 

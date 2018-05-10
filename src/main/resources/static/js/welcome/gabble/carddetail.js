@@ -1,5 +1,7 @@
 $(function () {
 
+    var layer = layui.layer;
+
 //获取系统时间-----------------
     Date.prototype.format = function (format) {
         var o = {
@@ -237,7 +239,7 @@ $(function () {
                         "                            <li class='sysconfig'><a href='/tutorpage_con/gosysconfig' target='_blank'><span class='mcount'>后台管理</span></a></li>\n" +
                         "                            <li><a href='/personalpage_con/gomessage' target='_blank'>通知<span class='mcount'>(" + count + ")</span></a></li>\n" +
                         "                            <li><a href='/personalpage_con/websocketpage?username=chengxi' target='_blank'>联系管理员</a></li>\n" +
-                        "                            <li><a href='/personalpage_con/gofeedback'>反饋</a></li>\n" +
+                        "                            <li><a href='/personalpage_con/gofeedback'>反馈</a></li>\n" +
                         "                            <li class='nav-logoff'><a href='#' style=\"color: red;\">注销</a></li>\n" +
                         "                        </ul>\n" +
                         "                    </li>");
@@ -273,7 +275,7 @@ $(function () {
                 url: "/login_con/login_logoff",
                 dataType: "json",
                 success: function (data) {
-                    alert("注销成功");
+                    layer.msg("注销成功", {icon: 6});
                     login_check();
                 },
                 error: function (xhr, status) {
@@ -436,7 +438,7 @@ $(function () {
                         "            <div class=\"commandmain\"></div>\n" +
                         "            <!--输入评论form表单框-->\n" +
                         "            <div class=\"mycommandinfo clearfix\">\n" +
-                        "                <input type=\"text\" class=\"pull-left col-lg-10\" name=\"mycommand\" placeholder=\"在这里输入你的评论\" />\n" +
+                        "                <input type=\"text\" class=\"pull-left col-lg-10 col-sm-10 col-xs-10\" name=\"mycommand\" placeholder=\"在这里输入你的评论\" />\n" +
                         "                <button class=\"btn subcommand pull-left\" data-cardid='"+cardId+"'>发表评论</button>\n" +
                         "            </div>\n" +
                         "        </div>\n" +
@@ -653,7 +655,7 @@ $(function () {
     var click_publishCommand = function(){
 
         if(!logstatus){
-            alert("请先登录");
+            layer.msg("请先登录");
             return ;
         }
 
@@ -666,7 +668,7 @@ $(function () {
         if(answer.indexOf("@"+repfloor+"楼:") == 0){
             answer = answer.replace("@"+repfloor+"楼:", "");
             if(answer.trim() == ""){
-                alert("回复内容不能为空");
+                layer.msg("回复内容不能为空");
                 return ;
             }
             $.ajax({
@@ -683,7 +685,7 @@ $(function () {
                 success: function(data){
                     var status = data.status;
                     if(status == "valid"){
-                        alert("回复成功");
+                        layer.msg("回复成功", {icon: 6});
                         $(".commandlist .mycommandinfo input").val("");
                         return ;
                     }
@@ -694,7 +696,7 @@ $(function () {
         else{
             console.log(answer);
             if(answer.trim() == ""){
-                alert("回复内容不能为空");
+                layer.msg("回复内容不能为空");
                 return ;
             }
             $.ajax({
@@ -710,7 +712,7 @@ $(function () {
                 success: function(data){
                     var status = data.status;
                     if(status == "valid"){
-                        alert("评论成功");
+                        layer.msg("评论成功", {icon: 6});
                         $(".commandlist .mycommandinfo input").val("");
                         return ;
                     }
@@ -782,7 +784,7 @@ $(function () {
             return;
         }
         if (status == "none") {
-            alert("请先登录");
+            layer.msg("请先登录");
             return;
         }
         $.ajax({
@@ -842,11 +844,11 @@ $(function () {
 
         var status = $(this).data("status");
         if (status == "none") {
-            alert("请先登录");
+            layer.msg("请先登录");
             return false;
         }
         if (status == "ed") {
-            alert("您已回答了");
+            layer.msg("您已回答了");
             return false;
         }
     };
@@ -859,7 +861,7 @@ $(function () {
     var click_submitAnswerModal = function () {
 
         if (!logstatus) {
-            alert("请先登录");
+            layer.msg("请先登录");
             return;
         }
         var answer = $("#writeAnswer .modal-body p.answer").text();
@@ -876,11 +878,11 @@ $(function () {
             success: function (data) {
                 var status = data.status;
                 if (status == "valid") {
-                    alert("发布成功");
+                    layer.msg("发布成功", {icon: 6});
                     window.history.go(0);
                 }
                 else {
-                    alert("非法操作哦");
+                    layer.msg("非法操作哦");
                     window.history.go(0);
                 }
             },
@@ -898,13 +900,13 @@ $(function () {
     var click_starAndUnstar = function () {
 
         if (!logstatus) {
-            alert("请先登录");
+            layer.msg("请先登录");
             return;
         }
         var status = $(this).data("status");
 
         if (status == "invalid") {
-            alert("请先登录");
+            layer.msg("请先登录");
             return;
         }
         //以评论过

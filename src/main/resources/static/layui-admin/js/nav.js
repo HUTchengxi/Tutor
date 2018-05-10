@@ -34,9 +34,4 @@ var navs = [{
             "spread": false
         }
     ]
-}, {
-    "title": "通知中心",
-    "icon": "icon-text",
-    "href": "/tutorpage_con/gosystutormessage",
-    "spread": false
 }]

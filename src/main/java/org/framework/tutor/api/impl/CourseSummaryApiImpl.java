@@ -51,6 +51,7 @@ public class CourseSummaryApiImpl implements CourseSummaryApi {
      * @author yinjimin
      * @date 2018/4/15
      */
+    //TODO：后续考虑使用redis
     @Override
     public void getCourseSummaryInfo(Integer cid, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -92,6 +93,7 @@ public class CourseSummaryApiImpl implements CourseSummaryApi {
      * @author yinjimin
      * @date 2018/4/15
      */
+    //TODO：后续考虑使用redis
     @Override
     public void updateCourseSummary(Integer id, String title, String descript, HttpServletResponse response) throws IOException {
 
