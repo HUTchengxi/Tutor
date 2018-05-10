@@ -435,3 +435,16 @@ create table user_feedback(
 );
 
 
+#用户会话表
+create table user_websocket(
+  id int primary key auto_increment comment "唯一标识",
+  writer varchar(20) not null comment "发送者",
+  reader varchar(20) not null comment "接收者",
+  info varchar(200) not null comment "消息内容",
+  ptime datetime default now() comment "发送时间",
+  status int default 0 comment "接收者是否已读",
+  foreign key(writer) references user_main(username),
+  foreign key(reader) references user_main(username)
+);
+
+

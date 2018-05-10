@@ -117,6 +117,14 @@ $(function () {
     };
     $("#pageorder form").submit(click_selectorderlist);
 
+    /**
+     * 点击打开操作进行数据绑定
+     */
+    var click_openerrdeal = function(){
+        $('#errDear').data("username", $(this).closest("tr").find("td:nth-child(2)").text());
+    };
+    $(document).on("click", ".btn-errdear", click_openerrdeal);
+
 
     /**
      * 打开订单模态框进行数据渲染
@@ -140,4 +148,12 @@ $(function () {
     };
     $(document).on("click", "#orderTable button.btn-more", click_openordermore);
 
+    /**
+     * 建立会话
+     */
+    var click_gowebsocket = function(){
+        var username = $("#errDear").data("username");
+        window.open("/personalpage_con/websocketpage?username="+username);
+    };
+    $(".link-websocket").click(click_gowebsocket);
 });

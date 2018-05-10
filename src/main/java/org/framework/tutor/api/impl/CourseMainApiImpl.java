@@ -1,15 +1,4 @@
-/*
- * Copyright (C) 2011-2013 ShenZhen iBoxpay Information Technology Co. Ltd.
- *
- * All right reserved.
- *
- * This software is the confidential and proprietary information of iBoxPay Company of China.
- * ("Confidential Information").
- * You shall not disclose such Confidential Information and shall use it only
- * in accordance with the terms of the contract agreement you entered into with iBoxpay inc.
- *
- *
- */
+
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
@@ -451,7 +440,7 @@ public class CourseMainApiImpl implements CourseMainApi {
             for (org.framework.tutor.domain.CourseMain courseMain : courseMains) {
                 UserMain userMain = userMainService.getByUser(courseMain.getUsername());
                 Integer score = courseCommandService.getMyPublishAvg(courseMain.getId());
-                Map<String, Object> rowMap = new HashMap<>(16);
+                Map<String, Object> rowMap = new HashMap<>();
                 Integer buycount = courseOrderService.getMyCourseOrderCount(courseMain.getId()).size();
                 rowMap.put("imgsrc", courseMain.getImgsrc());
                 rowMap.put("id", courseMain.getId());

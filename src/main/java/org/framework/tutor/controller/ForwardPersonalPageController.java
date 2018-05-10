@@ -106,4 +106,11 @@ public class ForwardPersonalPageController {
 
         return "/home/mybbs";
     }
+
+    @RequireAuth(ident = "user")
+    @RequestMapping("/websocketpage")
+    public String goWebSocketPage(){
+
+        return "sysconfig/admin/websocket";
+    }
 }

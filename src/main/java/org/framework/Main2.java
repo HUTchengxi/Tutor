@@ -1,5 +1,7 @@
 package org.framework;
 
+import org.apache.catalina.core.ApplicationContext;
+import org.framework.tutor.util.WebsocketUtil;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,6 +9,7 @@ import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletCont
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
 import org.springframework.boot.web.servlet.ErrorPage;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 
@@ -39,6 +42,8 @@ public class Main2 {
 
     public static void main(String[] args){
 
-        SpringApplication.run(Main2.class, args);
+        ConfigurableApplicationContext applicationContext = SpringApplication.run(Main2.class, args);
+        //解决WebSocket无法注入其他类实例的问题
+        WebsocketUtil.setApplicationContext(applicationContext);
     }
 }

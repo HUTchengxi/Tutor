@@ -1,0 +1,108 @@
+body{
+    background: url(/images/background/websocket.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+.editor-header{
+    margin-top: 2%;
+}
+.editor-header .col-lg-12{
+    margin-bottom: 1%;
+}
+.editor-footer{
+    width: 90%;
+    margin: auto;
+}
+.userdiv{
+    display: none;
+}
+
+div.container .m-main {
+    background-color: #f3f5f7;
+    width: 80%;
+    height: 500px;
+    margin: auto;
+    position: relative;
+    overflow: auto;
+    padding: 2% 0;
+}
+.container .m-main .p-enterinfo{
+    text-align: center;
+    color: grey;
+    font-size: 1.3rem;
+}
+.container .m-main .p-enterinfo span{
+    color: red;
+    margin: 0 1%;
+}
+.container .m-main ul li{
+    list-style-type: none;
+}
+.container .m-main .main-show img.img-userface{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.container .m-main li.li-info{
+    width: 55%;
+}
+.container .m-main li.li-ptime{
+    margin-left: 1%;
+    font-size: 12px;
+    text-shadow: 1px 1px 0 #FFF;
+    margin-top: 1%;
+    color: #919496;
+}
+.container .m-main pre.main-info{
+    padding: 10px;
+    background:  #fff;
+    color:  #1F2427;
+    font-size:  14px;
+    line-height:  20px;
+    white-space:  pre-wrap;
+    word-wrap: break-word;
+}
+
+
+.container .m-main .show-right{
+    margin-right: 45px;
+}
+.container .m-main .show-right .li-info{
+    width: 60%;
+}
+.container .m-main .show-right .li-info pre{
+    background-color: #00bb04;
+    color: white;
+}
+.container .m-main .show-right .li-ptime{
+    margin-right: 1%;
+}
+
+
+.container .m-write{
+    margin: auto;
+    width: 80%;
+    height: 165px;
+    background: white;
+}
+.container .m-write p{
+    height: 120px;
+    padding:  1%;
+    font-size: 1.5rem;
+    color: grey;
+    line-height: 25px;
+    overflow: auto;
+}
+.container .m-write button{
+    float:  right;
+    margin-right:  3%;
+    background:  white;
+    border: none;
+    color: black;
+    border: 1px solid #80808080;
+}
+.container .m-write button:hover{
+    background-color: #00bb04;
+    color: white;
+}
+

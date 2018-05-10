@@ -194,4 +194,13 @@ $(function () {
         window.open("/adminpage_con/sendmessagepage?username="+$("#errDear").data("username"));
     };
     $("#errDear .link-sendmessage").click(click_opensendmessagepage);
+
+    /**
+     * 建立会话
+     */
+    var click_gowebsocket = function(){
+        var username = $("#errDear").data("username");
+        window.open("/personalpage_con/websocketpage?username="+username);
+    };
+    $(".link-socket").click(click_gowebsocket);
 });

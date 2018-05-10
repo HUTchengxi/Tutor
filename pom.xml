@@ -142,6 +142,25 @@
             <version>1.6</version>
         </dependency>
 
+        <!--websocket-->
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-websocket -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+            <version>1.5.9.RELEASE</version>
+        </dependency>
+
+        <!--
+            如果使用SpringBoot内置的容器就不需要加上这个，否则需要加上才能使用websocket
+         https://mvnrepository.com/artifact/javax/javaee-api
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>7.0</version>
+            <scope>provided</scope>
+        </dependency>
+        -->
+
     </dependencies>
     <build>
         <finalName>tutor</finalName>
