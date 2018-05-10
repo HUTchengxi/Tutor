@@ -179,6 +179,7 @@ public class LoginApiImpl implements LoginApi{
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String nickname = (String) session.getAttribute("nickname");
+        String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(8);
 
@@ -191,6 +192,7 @@ public class LoginApiImpl implements LoginApi{
             Integer ident = (Integer) session.getAttribute("identity");
             resultMap.put("status", "login");
             resultMap.put("nick", nickname);
+            resultMap.put("username", username);
             resultMap.put("ident", ident);
         }
 

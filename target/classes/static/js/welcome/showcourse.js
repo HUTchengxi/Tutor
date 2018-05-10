@@ -22,6 +22,16 @@ $(function () {
     }
 
     /**
+     * 获取url的请求参数
+     */
+    var str_geturlparam = function (name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    };
+
+    /**
      * 判断当前用户是否登录
      */
     var login_check = function () {
@@ -100,6 +110,25 @@ $(function () {
                     if (ident != 1) {
                         $("nav ul.navbar-right li.sysconfig").remove();
                     }
+
+                    //判斷当前用户是否已收藏
+                    var cid = str_geturlparam("id");
+                    $.ajax({
+                        url: "/coursecollect_con/checkusercollect",
+                        data: {
+                            cid: cid
+                        },
+                        dataType: "json",
+                        success: function(data){
+                            var status = data.status;
+                            $(".coursecontainer .container-top .collect a").data("status", status);
+                            if(status == "collect"){
+                                $(".coursecontainer .container-top .collect a span").text("已收藏");
+                            }else{
+                                $(".coursecontainer .container-top .collect a span").text("收藏");
+                            }
+                        }
+                    });
                 }
 
                 //让时间一直轮播
@@ -151,7 +180,7 @@ $(function () {
             return;
         }
         //取消收藏
-        var cid = -1;
+        var cid = str_geturlparam("id");
         var reg = new RegExp("(^|&)id=([^&]*)(&|$)", "i");
         var r = window.location.search.substr(1).match(reg);
         if (r != null) cid = unescape(r[2]);
@@ -168,7 +197,8 @@ $(function () {
                         window.alert("后台数据库异常导致无法取消收藏，请稍后再试");
                     }
                     else {
-                        $(".coursecontainer .container-top .collect").data("status", "uncollect").removeClass("col").find("span").text("收藏");
+                        layer.msg("已取消收藏", {icon: 6});
+                        $(".coursecontainer .container-top .collect").removeClass("col").find("a").data("status", "uncollect").find("span").text("收藏");
                     }
                 },
                 error: function (xhr, status) {
@@ -188,7 +218,7 @@ $(function () {
      */
     var course_reacollect = function () {
 
-        var cid = -1;
+        var cid = str_geturlparam("id");
         var reg = new RegExp("(^|&)id=([^&]*)(&|$)", "i");
         var r = window.location.search.substr(1).match(reg);
         if (r != null) cid = unescape(r[2]);
@@ -207,7 +237,7 @@ $(function () {
                 }
                 else {
                     layer.msg("收藏成功", {icon: 6});
-                    $(".coursecontainer .container-top .collect").addClass("col").data("status", "collect").find("span").text("已收藏");
+                    $(".coursecontainer .container-top .collect").addClass("col").find("a").data("status", "collect").find("span").text("已收藏");
                 }
             },
             error: function (xhr, status) {
