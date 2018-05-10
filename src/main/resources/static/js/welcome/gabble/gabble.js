@@ -1,5 +1,7 @@
 $(function () {
 
+    var layer = layui.layer;
+
 //获取系统时间-----------------
     Date.prototype.format = function (format) {
         var o = {
@@ -273,7 +275,7 @@ $(function () {
                 url: "/login_con/login_logoff",
                 dataType: "json",
                 success: function (data) {
-                    alert("注销成功");
+                    layer.msg("注销成功", {icon: 6});
                     login_check();
                 },
                 error: function (xhr, status) {
@@ -370,7 +372,7 @@ $(function () {
                         $("#pubModal .modal-body p.terr").css("display", "block").text("标题已被使用");
                     }
                     else if (status == "valid") {
-                        window.alert("发表成功");
+                        layer.msg("发表成功", {icon: 6});
                         $(".pubdiscuss p.descript").text("在这里写你的问题...");
                         $("#pubModal .modal-body input").val("");
                         async_getImgsrc();

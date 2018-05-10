@@ -282,7 +282,6 @@ public class CourseMainApiImpl implements CourseMainApi {
     @Override
     public void courseSearch(String keyword, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
 
         PrintWriter writer = response.getWriter();
@@ -311,6 +310,7 @@ public class CourseMainApiImpl implements CourseMainApi {
             resultMap.put("list", rowList);
         }
 
+        System.out.println(gson.toJson(resultMap));
         writer.print(gson.toJson(resultMap));
         writer.flush();
         writer.close();

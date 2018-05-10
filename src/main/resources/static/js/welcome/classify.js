@@ -672,7 +672,7 @@ $(function() {
         $(this).closest("div").find("i.del").delay(10).css("visibility","hidden");
         $(".mainshow ul.main").empty();
 
-        async_defaultct();
+        async_defaultct(1);
 
         $.ajax({
             async: true,
@@ -698,7 +698,7 @@ $(function() {
                     $("div.mainshow ul").css("display","block");
                     $("nav.sortshow").css("display","block");
                     var count = 0;
-                    $.each(data, function (index, item) {
+                    $.each(data.list, function (index, item) {
                         count++;
                         var imgsrc = item.imgsrc;
                         var id = item.id;

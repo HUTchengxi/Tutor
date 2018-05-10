@@ -1,4 +1,7 @@
 $(function () {
+
+    var layer = layui.layer;
+
     //获取系统时间-----------------
     Date.prototype.format = function (format) {
         var o = {
@@ -124,7 +127,7 @@ $(function () {
                 url: "/login_con/login_logoff",
                 dataType: "json",
                 success: function (data) {
-                    alert("注销成功");
+                    layer.msg("注销成功", {icon: 6});
                     login_check();
                 },
                 error: function (xhr, status) {
@@ -144,7 +147,7 @@ $(function () {
 
         var status = $(this).data("status");
         if (status === "nologin") {
-            window.alert("请您先登录");
+            layer.msg("请您先登录");
             return;
         }
         //取消收藏
@@ -203,7 +206,7 @@ $(function () {
                     window.alert("后台数据库异常导致无法收藏课程，请稍后再试");
                 }
                 else {
-                    window.alert("收藏成功");
+                    layer.msg("收藏成功", {icon: 6});
                     $(".coursecontainer .container-top .collect").addClass("col").data("status", "collect").find("span").text("已收藏");
                 }
             },
@@ -309,7 +312,7 @@ $(function () {
         var state = $(this).data("state");
 
         if (state === "invalid") {
-            window.alert("订购前需要先登录哟！");
+            layer.msg("订购前需要先登录哟！");
         }
         //订购
         else if (state === "valid") {
@@ -340,12 +343,13 @@ $(function () {
             success: function (data) {
                 var status = data.status;
                 if (status == "invalid") {
-                    window.alert("加入购物车前请先登录哟");
+                    layer.msg("加入购物车前请先登录哟");
                 }
                 else if (status == "mysqlerr") {
                     window.alert("后台数据库异常导致无法加入购物车，请稍后在试");
                 }
                 else {
+                    layer.msg("已加入购物车", {icon: 6});
                     $(".coursecontainer .container-top .sale div .addcart").remove();
                     $(".coursecontainer .container-top .sale div .buynow").empty().css("width", "14%").append("已加入购物车&nbsp;&nbsp;<i class='layui-icon'>&#xe605;</i>").data("state", "cart");
                 }
@@ -538,7 +542,7 @@ $(function () {
     var cli_subcommandstar = function () {
 
         if (!$(this).hasClass("uns")) {
-            window.alert("您已打过分了哦");
+            layer.msg("您已打过分了哟");
             return;
         }
 
@@ -560,11 +564,11 @@ $(function () {
                     $(".main-show .cscore span a.uns").removeClass("uns");
                 }
                 else if (status == "stared") {
-                    window.alert("您已打过分了哦");
+                    layer.msg("您已打过分了哦");
                     return;
                 }
                 else if (status == "invalid") {
-                    window.alert("请先登录");
+                    layer.msg("请先登录");
                     return;
                 }
                 else {
@@ -610,7 +614,7 @@ $(function () {
                             var username = item.username;
                             var uimgsrc = item.uimgsrc;
                             var score = parseInt(item.score);
-                            if (index == "1") {
+                            if (index == "0") {
                                 $("#usercommand .header ul").append("<li class=\"pull-left\">\n" +
                                     "                                <div class=\"hot-bg\">\n" +
                                     "                                    <p>热评推荐</p>\n" +
@@ -901,7 +905,7 @@ $(function () {
                         window.location = "/forward_con/gologin";
                     }
                     else {
-                        window.alert("发表成功");
+                        layer.msg("发表成功", {icon: 6});
                         window.location.reload();
                     }
                 },
