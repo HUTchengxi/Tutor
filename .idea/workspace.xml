@@ -6,10 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf479440-431d-499c-9612-40c14de1a166" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/LoginApiImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/framework/tutor/api/impl/LoginApiImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js" />
-    </list>
+    <list default="true" id="bf479440-431d-499c-9612-40c14de1a166" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,8 +55,8 @@
       <file leaf-file-name="showcourse.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="187" column="20" lean-forward="true" selection-start-line="187" selection-start-column="20" selection-end-line="187" selection-end-column="20" />
+            <state relative-caret-position="157">
+              <caret line="200" column="54" lean-forward="true" selection-start-line="200" selection-start-column="54" selection-end-line="200" selection-end-column="54" />
               <folding>
                 <element signature="e#7057#7564#0" expanded="false" />
                 <marker date="1525945784515" expanded="true" signature="1692:1703" ph="..." />
@@ -1218,7 +1215,7 @@
       <workItem from="1525847186261" duration="8448000" />
       <workItem from="1525856880140" duration="10788000" />
       <workItem from="1525872914762" duration="13283000" />
-      <workItem from="1525923140391" duration="17613000" />
+      <workItem from="1525923140391" duration="17687000" />
     </task>
     <task id="LOCAL-00013" summary="邮箱注册以及后续的验证的实现，还未实现邮箱注册后的等待/重发界面">
       <created>1520780099718</created>
@@ -1567,7 +1564,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1338313000" />
+    <option name="totallyTimeSpent" value="1338387000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2234,8 +2231,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/welcome/showcourse.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="187" column="20" lean-forward="true" selection-start-line="187" selection-start-column="20" selection-end-line="187" selection-end-column="20" />
+        <state relative-caret-position="157">
+          <caret line="200" column="54" lean-forward="true" selection-start-line="200" selection-start-column="54" selection-end-line="200" selection-end-column="54" />
           <folding>
             <element signature="e#7057#7564#0" expanded="false" />
             <marker date="1525945784515" expanded="true" signature="1692:1703" ph="..." />
