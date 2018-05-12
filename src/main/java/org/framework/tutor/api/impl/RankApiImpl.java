@@ -68,7 +68,6 @@ public class RankApiImpl implements RankApi {
             //总榜
             else if("total".equals(mark)){
 
-                System.out.println("total");
                 List<RankTemp> userSigns = userSignService.rankSignTotal(startpos);
                 if(userSigns.size() == 0){
                     res = "{\"count\": \"0\"}";

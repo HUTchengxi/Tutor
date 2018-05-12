@@ -31,7 +31,6 @@ public class LoginQueueUtil {
                 return false;
             }else{
                 userList.add(username);
-                System.out.println(username+"用户加入登录队列");
                 return true;
             }
         }
@@ -42,7 +41,6 @@ public class LoginQueueUtil {
         synchronized (userList){
             if(checkUserExist(username)){
                 userList.remove(username);
-                System.out.println(username+"被挤下线，等待退出");
                 return true;
             }
             return false;
@@ -63,7 +61,6 @@ public class LoginQueueUtil {
                 return false;
             }else{
                 outerList.add(username);
-                System.out.println(username+"被加入退出队列");
             }
         }
         return false;
@@ -74,7 +71,6 @@ public class LoginQueueUtil {
         synchronized (outerList){
             if(checkOuterExist(username)){
                 outerList.remove(username);
-                System.out.println(username+"用户已退出");
                 return true;
             }
             return false;

@@ -65,7 +65,6 @@ public class WebsocketUtil {
         if(!sessionList.contains(session)) {
             sessionList.add(session);
         }
-        System.out.println("open  当前连接数" + sessionList.size());
     }
 
     /**
@@ -79,7 +78,6 @@ public class WebsocketUtil {
     @OnMessage
     public void onMessage(String message) throws IOException {
 
-        System.out.println("接收消息：" + message);
         for(Session session: sessionList){
             session.getBasicRemote().sendText(message);
         }
@@ -99,6 +97,5 @@ public class WebsocketUtil {
     public void onClose(){
         sessionList.remove(session);
         session = null;
-        System.out.println("close  当前连接数" + sessionList.size());
     }
 }

@@ -82,7 +82,7 @@ public interface CourseMMapper {
      * @param keyword
      * @return
      */
-    @Select("select * from course_main where name like CONCAT('%', #{keyword}, '%')  ")
+    @Select("select * from course_main where name like CONCAT('%', #{keyword}, '%') limit 0, 8")
     List<CourseMain> courseSearch(@Param("keyword")String keyword);
 
     /**

@@ -66,7 +66,6 @@ public class UserWebsocketApiImpl implements UserWebsocketApi {
 
         String strArr[] = message.split("\\{别学我}: ");
         for(String str: strArr){
-            System.out.println(str);
         }
     }
 

@@ -267,7 +267,6 @@ public class CourseMainApiImpl implements CourseMainApi {
             resultMap.put("list", rowList);
         }
 
-        System.out.println(gson.toJson(resultMap));
         return gson.toJson(resultMap);
     }
 
@@ -406,10 +405,8 @@ public class CourseMainApiImpl implements CourseMainApi {
             } else {
                 //上传图片
                 String webPath = session.getServletContext().getRealPath("/");
-                System.out.println(webPath);
                 String srcPath = webPath.substring(0, webPath.lastIndexOf("\\"));
                 srcPath = srcPath.substring(0, srcPath.lastIndexOf("\\"));
-                System.out.println(srcPath);
                 File file = new File(srcPath + File.separator + "/resources/static/images/user/course/" + imgsrc.getOriginalFilename());
                 if (file.exists()) {
                     resultMap.put("status", "fileexist");

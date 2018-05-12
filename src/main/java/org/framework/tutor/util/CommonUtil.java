@@ -149,8 +149,4 @@ public class CommonUtil {
         String md5Pass = base64Encoder.encode(md5.digest(transPass.getBytes("utf-8")));
         return md5Pass;
     }
-
-    public static void main(String[] args) throws UnsupportedEncodingException, NoSuchAlgorithmException {
-        System.out.println(getMd5Pass("Chengxi", 1234));
-    }
 }
