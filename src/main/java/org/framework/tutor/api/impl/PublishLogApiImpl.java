@@ -1,15 +1,3 @@
-/*
- * Copyright (C) 2011-2013 ShenZhen iBoxpay Information Technology Co. Ltd.
- *
- * All right reserved.
- *
- * This software is the confidential and proprietary information of iBoxPay Company of China.
- * ("Confidential Information").
- * You shall not disclose such Confidential Information and shall use it only
- * in accordance with the terms of the contract agreement you entered into with iBoxpay inc.
- *
- *
- */
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
@@ -32,11 +20,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author yinjimin
- * @Description:
- * @date 2018年04月25日
- */
 @Component
 public class PublishLogApiImpl implements PublishLogApi {
 
@@ -46,16 +29,10 @@ public class PublishLogApiImpl implements PublishLogApi {
     @Autowired
     private PublishTypeService publishTypeService;
 
-    /**
-     * 加载最新的版本更新记录
-     * @param response
-     * @return
-     */
-    @Override
-    public void getLogNew(HttpServletResponse response) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
+    @Override
+    public String getLogNew() throws IOException {
+
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
         List<Object> rowList = new ArrayList<>();
@@ -81,25 +58,13 @@ public class PublishLogApiImpl implements PublishLogApi {
             resultMap.put("list", rowList);
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
 
-    /**
-     *
-     * @Description 获取所有的版本更新记录
-     * @param [response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/3/31
-     */
     @Override
-    public void getLogAll(HttpServletResponse response) throws IOException {
+    public String getLogAll() throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
         List<Object> rowList = new ArrayList<>();
@@ -124,8 +89,6 @@ public class PublishLogApiImpl implements PublishLogApi {
             resultMap.put("list", rowList);
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 }

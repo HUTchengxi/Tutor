@@ -33,11 +33,6 @@ import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author yinjimin
- * @Description:
- * @date 2018年04月25日
- */
 @Component
 public class BbsCardAnswerStarApiImpl implements BbsCardAnswerStarApi {
 
@@ -50,18 +45,14 @@ public class BbsCardAnswerStarApiImpl implements BbsCardAnswerStarApi {
     @Autowired
     private StringRedisTemplate redis;
 
-    /**
-     * @param [cardId, request, response]
-     * @return void
-     * @Description 判断当前用户是否star指定回答
-     * @author yinjimin
-     * @date 2018/4/10
-     */
+    @Autowired
+    private HttpServletRequest request;
+
+
     //TODO: 使用了Redis   保存[username].[aid].checkuserstar
     @Override
-    public void checkUserStar(Integer aid, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String checkUserStar(Integer aid) throws IOException {
 
-        PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -88,24 +79,14 @@ public class BbsCardAnswerStarApiImpl implements BbsCardAnswerStarApi {
             }
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
 
-    /**
-     * @param [aid, score, request, response]
-     * @return void
-     * @Description 用户star指定回答
-     * @author yinjimin
-     * @date 2018/4/10
-     */
     //TODO：使用了Redis   更新[username].[aid].checkuserstar
     @Override
-    public void addUserStar(Integer aid, Integer score, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String addUserStar(Integer aid, Integer score) throws IOException {
 
-        PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -128,8 +109,6 @@ public class BbsCardAnswerStarApiImpl implements BbsCardAnswerStarApi {
             resultMap.put("status", "valid");
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 }

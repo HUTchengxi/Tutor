@@ -1,15 +1,3 @@
-/*
- * Copyright (C) 2011-2013 ShenZhen iBoxpay Information Technology Co. Ltd.
- *
- * All right reserved.
- *
- * This software is the confidential and proprietary information of iBoxPay Company of China.
- * ("Confidential Information").
- * You shall not disclose such Confidential Information and shall use it only
- * in accordance with the terms of the contract agreement you entered into with iBoxpay inc.
- *
- *
- */
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
@@ -26,28 +14,19 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.*;
 
-/**
- * @author yinjimin
- * @Description:
- * @date 2018年04月25日
- */
 @Component
 public class UserSignApiImpl implements UserSignApi {
 
     @Autowired
     private UserSignService userSignService;
 
-    /**
-     * 获取用户的签到数据
-     *
-     * @param request
-     * @param response
-     * @throws IOException
-     */
-    @Override
-    public void getMySign(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    @Autowired
+    private HttpServletRequest request;
 
-        PrintWriter writer = response.getWriter();
+
+    @Override
+    public String getMySign() throws IOException {
+
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -71,16 +50,13 @@ public class UserSignApiImpl implements UserSignApi {
             resultMap.put("date", date.toString());
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
 
     @Override
-    public void addUsersign(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String addUsersign() throws IOException {
 
-        PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -97,8 +73,6 @@ public class UserSignApiImpl implements UserSignApi {
             }
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 }

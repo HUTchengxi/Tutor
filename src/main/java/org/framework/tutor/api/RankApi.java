@@ -8,12 +8,9 @@ public interface RankApi {
 
     /**
      * 获取rank榜数据
-     * @param type
-     * @param mark
-     * @param startpos
-     * @param request
-     * @param response
-     * @throws IOException
+     * @param type 榜单类型
+     * @param mark 日/周/总榜
+     * @param startpos 开始位置
      */
-    public void rankSelect(String type, String mark, Integer startpos, HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String rankSelect(String type, String mark, Integer startpos) throws IOException;
 }

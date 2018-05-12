@@ -1,15 +1,3 @@
-/*
- * Copyright (C) 2011-2013 ShenZhen iBoxpay Information Technology Co. Ltd.
- *
- * All right reserved.
- *
- * This software is the confidential and proprietary information of iBoxPay Company of China.
- * ("Confidential Information").
- * You shall not disclose such Confidential Information and shall use it only
- * in accordance with the terms of the contract agreement you entered into with iBoxpay inc.
- *
- *
- */
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
@@ -30,35 +18,20 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author yinjimin
- * @Description:
- * @date 2018年04月25日
- */
 @Component
 public class UserLogApiImpl implements UserLogApi {
 
     @Autowired
     private UserLogService userLogService;
 
-    /**
-     * 保存用户登录记录
-     *
-     * @param logcity
-     * @param ip
-     * @param logsystem
-     * @param request
-     * @param response
-     */
-    @Override
-    public void loginLog(String logcity, String ip, String logsystem, HttpServletRequest request,
-                         HttpServletResponse response) throws IOException {
+    @Autowired
+    private HttpServletRequest request;
 
-        request.setCharacterEncoding("utf-8");
-        response.setCharacterEncoding("utf-8");
+
+    @Override
+    public String loginLog(String logcity, String ip, String logsystem) throws IOException {
 
         HttpSession session = request.getSession();
-        PrintWriter writer = response.getWriter();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
@@ -70,25 +43,14 @@ public class UserLogApiImpl implements UserLogApi {
             resultMap.put("status", "mysqlerr");
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 获取用户的登录记录
-     *
-     * @param request
-     * @param response
-     */
-    @Override
-    public void getUserlog(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        request.setCharacterEncoding("utf-8");
-        response.setCharacterEncoding("utf-8");
+    @Override
+    public String getUserlog() throws IOException {
 
         HttpSession session = request.getSession();
-        PrintWriter writer = response.getWriter();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(4);
@@ -112,8 +74,6 @@ public class UserLogApiImpl implements UserLogApi {
                 resultMap.put("list", rowList);
             }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 }

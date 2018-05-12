@@ -1,15 +1,3 @@
-/*
- * Copyright (C) 2011-2013 ShenZhen iBoxpay Information Technology Co. Ltd.
- *
- * All right reserved.
- *
- * This software is the confidential and proprietary information of iBoxPay Company of China.
- * ("Confidential Information").
- * You shall not disclose such Confidential Information and shall use it only
- * in accordance with the terms of the contract agreement you entered into with iBoxpay inc.
- *
- *
- */
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
@@ -27,11 +15,6 @@ import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-/**
- * @author yinjimin
- * @Description:
- * @date 2018年05月09日
- */
 @Component
 public class UserWebsocketApiImpl implements UserWebsocketApi {
 
@@ -41,8 +24,11 @@ public class UserWebsocketApiImpl implements UserWebsocketApi {
     @Autowired
     private UserMainService userMainService;
 
+    @Autowired
+    private HttpServletRequest request;
+
     @Override
-    public String loadMySocketList(String reader, HttpServletRequest request) {
+    public String loadMySocketList(String reader) {
 
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");

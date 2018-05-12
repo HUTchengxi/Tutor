@@ -16,12 +16,10 @@ import java.util.Map;
 public interface CourseDeleteRespApi {
 
     /**
-     *
      * @Description 更新状态
-     * @param [reqid, status, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/21
+     * @param id: 课程下线响应id
+     * @param status：课程下线状态
+     * @param respDesc：课程下线响应备注
      */
-    public void modReqStatus(Integer id, Integer status, String respDesc, HttpServletResponse response) throws IOException;
+    public String modReqStatus(Integer id, Integer status, String respDesc) throws IOException;
 }

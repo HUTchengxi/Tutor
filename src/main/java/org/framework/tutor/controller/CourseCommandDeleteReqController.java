@@ -1,15 +1,3 @@
-/*
- * Copyright (C) 2011-2013 ShenZhen iBoxpay Information Technology Co. Ltd.
- *
- * All right reserved.
- *
- * This software is the confidential and proprietary information of iBoxPay Company of China.
- * ("Confidential Information").
- * You shall not disclose such Confidential Information and shall use it only
- * in accordance with the terms of the contract agreement you entered into with iBoxpay inc.
- *
- *
- */
 package org.framework.tutor.controller;
 
 import org.framework.tutor.annotation.RequireAuth;
@@ -37,17 +25,12 @@ public class CourseCommandDeleteReqController {
     private CourseCommandDeleteReqApi courseCommandDeleteReqApi;
 
     /**
-     *
      * @Description 提交评论删除申请
-     * @param [cid, info, request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/18
      */
     @RequireAuth(ident = "tutor", type = "api")
     @PostMapping("/addcommanddeletereq")
-    public void addCommandDeleteReq(@RequestParam Integer cid, @RequestParam String info, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String addCommandDeleteReq(@RequestParam Integer cid, @RequestParam String info) throws IOException {
 
-        courseCommandDeleteReqApi.addCommandDeleteReq(cid, info, request, response);
+        return courseCommandDeleteReqApi.addCommandDeleteReq(cid, info);
     }
 }

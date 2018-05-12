@@ -1,15 +1,3 @@
-/*
- * Copyright (C) 2011-2013 ShenZhen iBoxpay Information Technology Co. Ltd.
- *
- * All right reserved.
- *
- * This software is the confidential and proprietary information of iBoxPay Company of China.
- * ("Confidential Information").
- * You shall not disclose such Confidential Information and shall use it only
- * in accordance with the terms of the contract agreement you entered into with iBoxpay inc.
- *
- *
- */
 package org.framework.tutor.controller;
 
 import org.framework.tutor.annotation.RequireAuth;
@@ -45,9 +33,9 @@ public class BbsCardAnswerCommandController {
      * @date 2018/4/10
      */
     @RequestMapping("/getcommandlistbyaid")
-    public void getCommandListByAid(@RequestParam Integer startpos, @RequestParam Integer aid, HttpServletResponse response) throws IOException {
+    public String getCommandListByAid(@RequestParam Integer startpos, @RequestParam Integer aid) throws IOException {
 
-        bbsCardAnswerCommandApi.getCommandListByAid(startpos, aid, response);
+        return bbsCardAnswerCommandApi.getCommandListByAid(startpos, aid);
     }
 
 
@@ -61,16 +49,16 @@ public class BbsCardAnswerCommandController {
      */
     @RequireAuth(ident = "user", type = "api")
     @PostMapping("/publishcommand")
-    public void publishCommand(@RequestParam Integer cardid, @RequestParam Integer aid, @RequestParam String answer, Integer repfloor, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String publishCommand(@RequestParam Integer cardid, @RequestParam Integer aid, @RequestParam String answer, Integer repfloor) throws IOException {
 
-        bbsCardAnswerCommandApi.publishCommand(cardid, aid, answer, repfloor, request, response);
+        return bbsCardAnswerCommandApi.publishCommand(cardid, aid, answer, repfloor);
     }
 
     @RequireAuth(ident = "user", type = "api")
     @PostMapping("getmycommandcount")
-    public void getMyCommandCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getMyCommandCount() throws IOException {
 
-        bbsCardAnswerCommandApi.getMyCommandCount(request, response);
+        return bbsCardAnswerCommandApi.getMyCommandCount();
     }
 
     /**
@@ -83,8 +71,8 @@ public class BbsCardAnswerCommandController {
      */
     @RequireAuth(ident = "user", type = "api")
     @PostMapping("/getmycommandinfo")
-    public void getMyCommandInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getMyCommandInfo() throws IOException {
 
-        bbsCardAnswerCommandApi.getMyCommandInfo(request, response);
+        return bbsCardAnswerCommandApi.getMyCommandInfo();
     }
 }

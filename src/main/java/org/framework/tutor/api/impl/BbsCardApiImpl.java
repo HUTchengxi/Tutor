@@ -22,11 +22,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author yinjimin
- * @Description:
- * @date 2018年04月25日
- */
 @Component
 public class BbsCardApiImpl implements BbsCardApi {
 
@@ -37,28 +32,23 @@ public class BbsCardApiImpl implements BbsCardApi {
     private UserMainService userMainService;
 
     /**
-     *
      * @Description 直接使用SpringBoot集成的Redis进行操作
      */
     @Autowired
     private StringRedisTemplate redis;
 
-    /**
-     * @param [request, response]
-     * @return void
-     * @Description 获取当前登录用户的帖子发表总数
-     * @author yinjimin
-     * @date 2018/3/31
-     */
+    @Autowired
+    private HttpServletRequest request;
+
+
     //TODO：使用了Redis   [username].cardcount
     @Override
-    public void getMyCardCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getMyCardCount() throws IOException {
 
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(1);
-        PrintWriter writer = response.getWriter();
 
         StringBuffer keyTemp = new StringBuffer(username);
         keyTemp.append(".cardcount");
@@ -71,25 +61,14 @@ public class BbsCardApiImpl implements BbsCardApi {
         }
         resultMap.put("count", count);
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
 
-    /**
-     * @param [title, imgsrc, descript, request, response]
-     * @return void
-     * @Description 指定用户发表讨论
-     * @author yinjimin
-     * @date 2018/4/1
-     */
     //TODO: 使用了Redis，发表之后redis中缓存的对应的用户帖子数加1
     @Override
-    public void publishCard(String title, String imgsrc, String descript, HttpServletRequest request, HttpServletResponse response)
-            throws IOException {
+    public String publishCard(String title, String imgsrc, String descript) throws IOException {
 
-        PrintWriter writer = response.getWriter();
         Gson gson = new Gson();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
@@ -110,25 +89,14 @@ public class BbsCardApiImpl implements BbsCardApi {
             }
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
 
-    /**
-     * @param [keyword, response]
-     * @return void
-     * @Description 获取指定关键字的帖子数据
-     * @author yinjimin
-     * @date 2018/4/3
-     */
     //TODO: 可以使用redis，考虑到值的复杂性，后续加入
     @Override
-    public void searchCard(String keyword, HttpServletResponse response) throws IOException {
+    public String searchCard(String keyword) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(1);
         List<Object> rowList = new ArrayList<>();
@@ -154,24 +122,13 @@ public class BbsCardApiImpl implements BbsCardApi {
             resultMap.put("list", rowList);
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
 
-    /**
-     * @param [response]
-     * @return void
-     * @Description 加载最新五条热门帖子
-     * @author yinjimin
-     * @date 2018/4/3
-     */
     @Override
-    public void loadHotCard(HttpServletResponse response) throws IOException {
+    public String loadHotCard() throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(1);
         List<Object> rowList = new ArrayList<>();
@@ -197,24 +154,14 @@ public class BbsCardApiImpl implements BbsCardApi {
             resultMap.put("list", rowList);
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * @param [cardId, response]
-     * @return void
-     * @Description 获取对应问题数据
-     * @author yinjimin
-     * @date 2018/4/6
-     */
+
     //TODO: 可以使用redis，考虑到值的复杂性，后续加入
     @Override
-    public void getCardById(String cardId, HttpServletResponse response) throws IOException {
+    public String getCardById(String cardId) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(9);
 
@@ -240,16 +187,14 @@ public class BbsCardApiImpl implements BbsCardApi {
             resultMap.put("status", "sysexception");
             e.printStackTrace();
         } finally {
-            writer.print(gson.toJson(resultMap));
-            writer.flush();
-            writer.close();
+            return gson.toJson(resultMap);
         }
     }
 
-    @Override
-    public void addViscount(Integer cardid, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        PrintWriter writer = response.getWriter();
+    @Override
+    public String addViscount(Integer cardid) throws IOException {
+
         String res = null;
         HttpSession session = request.getSession();
         String curIp = (String) session.getAttribute("ip");
@@ -268,24 +213,14 @@ public class BbsCardApiImpl implements BbsCardApi {
             resultMap.put("status", "valid");
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * @param [request, response]
-     * @return void
-     * @Description 获取当前用户发表的帖子数据
-     * @author yinjimin
-     * @date 2018/4/13
-     */
+
     //TODO: 可以使用redis，考虑到值的复杂性，后续加入
     @Override
-    public void getMyCardInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getMyCardInfo() throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -311,8 +246,6 @@ public class BbsCardApiImpl implements BbsCardApi {
             resultMap.put("list", rowList);
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 }

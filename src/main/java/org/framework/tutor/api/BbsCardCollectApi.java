@@ -21,54 +21,32 @@ import java.util.List;
 public interface BbsCardCollectApi {
 
     /**
-     *
      * @Description 获取当前用户的收藏总数
-     * @param [request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/1
      */
-    public void getMyCollectCount(HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String getMyCollectCount() throws IOException;
 
     /**
-     *
      * @Description 判断当前用户是否已收藏
-     * @param [cardId, request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/8
+     * @param cardId: 帖子id
      */
-    public void checkCollectStatus(Integer cardId, HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String checkCollectStatus(Integer cardId) throws IOException;
 
 
     /**
-     *
      * @Description 收藏问题
-     * @param [cardId, request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/8
+     * @param cardId：帖子id
      */
-    public void collectCard(Integer cardId, HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String collectCard(Integer cardId) throws IOException;
 
     /**
-     *
      * @Description 取消收藏问题
-     * @param [cardId, request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/8
+     * @param cardId：帖子id
      */
-    public void uncollectCard(Integer cardId, HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String uncollectCard(Integer cardId) throws IOException;
 
 
     /**
-     *
      * @Description 获取当前用户收藏的帖子数据
-     * @param [request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/13
      */
-    public void getMyCollectInfo(HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String getMyCollectInfo() throws IOException;
 }

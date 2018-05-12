@@ -1,15 +1,3 @@
-/*
- * Copyright (C) 2011-2013 ShenZhen iBoxpay Information Technology Co. Ltd.
- *
- * All right reserved.
- *
- * This software is the confidential and proprietary information of iBoxPay Company of China.
- * ("Confidential Information").
- * You shall not disclose such Confidential Information and shall use it only
- * in accordance with the terms of the contract agreement you entered into with iBoxpay inc.
- *
- *
- */
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
@@ -35,11 +23,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author yinjimin
- * @Description:
- * @date 2018年04月25日
- */
 @Component
 public class UserMessageApiImpl implements UserMessageApi {
 
@@ -49,16 +32,13 @@ public class UserMessageApiImpl implements UserMessageApi {
     @Autowired
     private UserMessageDeleteService userMessageDeleteService;
 
-    /**
-     * 获取我的未读通知的数量
-     *
-     * @param request
-     * @param response
-     */
-    @Override
-    public void getMyMessageCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    @Autowired
+    private HttpServletRequest request;
 
-        PrintWriter writer = response.getWriter();
+
+    @Override
+    public String getMyMessageCount() throws IOException {
+
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -67,23 +47,13 @@ public class UserMessageApiImpl implements UserMessageApi {
         Integer count = userMessageService.getMyMessageCount(username);
         resultMap.put("count", count);
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 获取我的通知数据(简单数据)
-     *
-     * @param request
-     * @param response
-     * @throws IOException
-     */
-    @Override
-    public void getMyMessage(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
+    @Override
+    public String getMyMessage() throws IOException {
+
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -112,25 +82,13 @@ public class UserMessageApiImpl implements UserMessageApi {
             }
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 获取指定管理员发送的我的通知数据
-     *
-     * @param suser
-     * @param request
-     * @param response
-     * @throws IOException
-     */
-    @Override
-    public void getMessageByUser(String suser, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        request.setCharacterEncoding("utf-8");
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
+    @Override
+    public String getMessageByUser(String suser) throws IOException {
+
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -165,24 +123,14 @@ public class UserMessageApiImpl implements UserMessageApi {
             }
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 通知阅读完毕之后的读状态的更改
-     *
-     * @param suser
-     * @param request
-     * @param response
-     */
+
     @Override
     @Transactional
-    public void setMessageStatus(String suser, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String setMessageStatus(String suser) throws IOException {
 
-        request.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -197,26 +145,13 @@ public class UserMessageApiImpl implements UserMessageApi {
             resultMap.put("status", "valid");
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 获取未读/已读消息
-     *
-     * @param suser
-     * @param status
-     * @param request
-     * @param response
-     * @throws IOException
-     */
-    @Override
-    public void getMessageByStatus(String suser, String status, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        request.setCharacterEncoding("utf-8");
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
+    @Override
+    public String getMessageByStatus(String suser, String status) throws IOException {
+
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -250,23 +185,13 @@ public class UserMessageApiImpl implements UserMessageApi {
             }
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 删除所选通知数据
-     *
-     * @param did
-     * @param request
-     * @param response
-     * @throws IOException
-     */
-    @Override
-    public void delMyMessage(Integer did, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        PrintWriter writer = response.getWriter();
+    @Override
+    public String delMyMessage(Integer did) throws IOException {
+
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -279,21 +204,13 @@ public class UserMessageApiImpl implements UserMessageApi {
             resultMap.put("status", "mysqlerr");
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 标记全部为已读
-     *
-     * @param request
-     * @param response
-     */
-    @Override
-    public void setAllStatus(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        PrintWriter writer = response.getWriter();
+    @Override
+    public String setAllStatus() throws IOException {
+
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -302,25 +219,15 @@ public class UserMessageApiImpl implements UserMessageApi {
         Integer row = userMessageService.setAllStatus(username);
         resultMap.put("status", "valid");
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * @param [paramMap, response]
-     * @return void
-     * @Description 管理员身份获取通知数据列表
-     * @author yinjimin
-     * @date 2018/4/22
-     */
-    @Override
-    public void getMessageList(ParamMap paramMap, HttpServletResponse response) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
+    @Override
+    public String getMessageList(ParamMap paramMap) throws IOException {
+
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
-        PrintWriter writer = response.getWriter();
         List<Object> rowList = new ArrayList<>();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
@@ -363,23 +270,13 @@ public class UserMessageApiImpl implements UserMessageApi {
             resultMap.put("total", count);
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * @param [id, response]
-     * @return void
-     * @Description 管理员身份查看通知详情
-     * @author yinjimin
-     * @date 2018/4/22
-     */
-    @Override
-    public void getMessageDetail(Integer id, HttpServletResponse response) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
+    @Override
+    public String getMessageDetail(Integer id) throws IOException {
+
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(6);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -398,22 +295,13 @@ public class UserMessageApiImpl implements UserMessageApi {
             resultMap.put("time", simpleDateFormat.format(userMessage.getStime()));
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * @param [emailParam, response]
-     * @return void
-     * @Description 发送通知
-     * @author yinjimin
-     * @date 2018/4/24
-     */
-    @Override
-    public void sendMessage(EmailParam emailParam, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        PrintWriter writer = response.getWriter();
+    @Override
+    public String sendMessage(EmailParam emailParam) throws IOException {
+
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(1);
         HttpSession session = request.getSession();
@@ -436,8 +324,6 @@ public class UserMessageApiImpl implements UserMessageApi {
         }
 
         //TODO: 使用try/catch之后的下面的语句还是可以执行的，就算是调用了e.printStackTrace();
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 }

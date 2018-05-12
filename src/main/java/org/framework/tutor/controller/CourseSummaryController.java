@@ -1,15 +1,3 @@
-/*
- * Copyright (C) 2011-2013 ShenZhen iBoxpay Information Technology Co. Ltd.
- *
- * All right reserved.
- *
- * This software is the confidential and proprietary information of iBoxPay Company of China.
- * ("Confidential Information").
- * You shall not disclose such Confidential Information and shall use it only
- * in accordance with the terms of the contract agreement you entered into with iBoxpay inc.
- *
- *
- */
 package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
@@ -44,33 +32,23 @@ public class CourseSummaryController {
 
 
     /**
-     *
      * @Description 获取指定课程的课程概述
-     * @param [cid, request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/15
      */
     @PostMapping("/getcoursesummaryinfo")
-    public void getCourseSummaryInfo(@RequestParam Integer cid, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getCourseSummaryInfo(@RequestParam Integer cid) throws IOException {
 
-        courseSummaryApi.getCourseSummaryInfo(cid, request, response);
+        return courseSummaryApi.getCourseSummaryInfo(cid);
     }
 
 
     /**
-     *
      * @Description 更新课程概述
-     * @param [id, title, descript, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/15
      */
     @RequireAuth(ident = "tutor", type = "api")
     @PostMapping("/updatecoursesummary")
-    public void updateCourseSummary(@RequestParam Integer id, String title, String descript, HttpServletResponse response) throws IOException {
+    public String updateCourseSummary(@RequestParam Integer id, String title, String descript) throws IOException {
 
-        courseSummaryApi.updateCourseSummary(id, title, descript, response);
+        return courseSummaryApi.updateCourseSummary(id, title, descript);
     }
 
 }

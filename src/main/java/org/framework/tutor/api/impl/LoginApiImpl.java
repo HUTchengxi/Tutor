@@ -1,15 +1,3 @@
-/*
- * Copyright (C) 2011-2013 ShenZhen iBoxpay Information Technology Co. Ltd.
- *
- * All right reserved.
- *
- * This software is the confidential and proprietary information of iBoxPay Company of China.
- * ("Confidential Information").
- * You shall not disclose such Confidential Information and shall use it only
- * in accordance with the terms of the contract agreement you entered into with iBoxpay inc.
- *
- *
- */
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
@@ -30,32 +18,21 @@ import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author yinjimin
- * @Description:
- * @date 2018年04月25日
- */
 @Component
 public class LoginApiImpl implements LoginApi{
 
     @Autowired
     private UserMainService userMainService;
 
-    /**
-     * 用户进行登陆
-     * @param request
-     * @param response
-     * @param username
-     * @param password
-     * @param remember
-     * @throws IOException
-     */
-    @Override
-    public void login(HttpServletRequest request, HttpServletResponse response,
-                      String username, String password, Integer remember) throws IOException, NoSuchAlgorithmException {
+    @Autowired
+    private HttpServletRequest request;
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
+    @Autowired
+    private HttpServletResponse response;
+
+
+    @Override
+    public String login(String username, String password, Integer remember) throws IOException, NoSuchAlgorithmException {
 
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(4);
@@ -119,22 +96,14 @@ public class LoginApiImpl implements LoginApi{
             }
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     *  登录时判断是否已经记住密码并获取相关信息
-     * @param request
-     * @param response
-     * @throws IOException
-     */
+
     @Override
-    public void getRememberUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getRememberUser() throws IOException {
 
         Cookie[] cookies = request.getCookies();
-        PrintWriter writer = response.getWriter();
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(4);
 
@@ -161,22 +130,13 @@ public class LoginApiImpl implements LoginApi{
             }
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 返回当前用户登录状态信息
-     * @param response
-     */
+
     @Override
-    public void loginStatusCheck(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String loginStatusCheck() throws IOException {
 
-        request.setCharacterEncoding("utf-8");
-        response.setCharacterEncoding("utf-8");
-
-        PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String nickname = (String) session.getAttribute("nickname");
         String username = (String) session.getAttribute("username");
@@ -196,22 +156,13 @@ public class LoginApiImpl implements LoginApi{
             resultMap.put("ident", ident);
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 退出登录
-     * @param request
-     * @param response
-     * @throws IOException
-     */
-    @Override
-    public void loginOff(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
+    @Override
+    public String loginOff() throws IOException {
+
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         String nickname = (String) session.getAttribute("nickname");
@@ -230,8 +181,6 @@ public class LoginApiImpl implements LoginApi{
             resultMap.put("status", "logoff");
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 }

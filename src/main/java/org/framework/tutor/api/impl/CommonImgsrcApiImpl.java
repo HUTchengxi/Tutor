@@ -1,15 +1,3 @@
-/*
- * Copyright (C) 2011-2013 ShenZhen iBoxpay Information Technology Co. Ltd.
- *
- * All right reserved.
- *
- * This software is the confidential and proprietary information of iBoxPay Company of China.
- * ("Confidential Information").
- * You shall not disclose such Confidential Information and shall use it only
- * in accordance with the terms of the contract agreement you entered into with iBoxpay inc.
- *
- *
- */
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
@@ -29,11 +17,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author yinjimin
- * @Description:
- * @date 2018年04月25日
- */
 @Component
 public class CommonImgsrcApiImpl implements CommonImgsrcApi {
 
@@ -41,20 +24,10 @@ public class CommonImgsrcApiImpl implements CommonImgsrcApi {
     private CommonImgsrcService commonImgsrcService;
 
 
-    /**
-     *
-     * @Description 获取所有图片数据
-     * @param [response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/1
-     */
     //TODO：后续可以考虑加入redis缓存
     @Override
-    public void getAll(HttpServletResponse response) throws IOException {
+    public String getAll() throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
         List<Object> rowList = new ArrayList<>();
@@ -69,8 +42,6 @@ public class CommonImgsrcApiImpl implements CommonImgsrcApi {
         }
         resultMap.put("list", rowList);
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 }

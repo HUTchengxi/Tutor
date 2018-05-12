@@ -36,82 +36,62 @@ public class SysEmailManagerController {
     private SysEmailManagerApi sysEmailManagerApi;
 
     /**
-     * @param [emailParam, request, response]
-     * @return void
      * @Description 发送邮件
-     * @author yinjimin
-     * @date 2018/4/20
      */
     @RequireAuth(ident = "tutor", type = "api")
     @RequestMapping("/sendemail")
-    public void sendEmail(@RequestBody EmailParam emailParam, HttpServletRequest request, HttpServletResponse response) throws IOException, MessagingException {
+    public String sendEmail(@RequestBody EmailParam emailParam) throws IOException, MessagingException {
 
-        sysEmailManagerApi.sendEmail(emailParam, request, response);
+        return sysEmailManagerApi.sendEmail(emailParam);
     }
 
     /**
-     * @param [emailParam, request, response]
-     * @return void
      * @Description 保存邮件
-     * @author yinjimin
-     * @date 2018/4/20
      */
     @RequireAuth(ident = "tutor", type = "api")
     @RequestMapping("/saveemail")
-    public void saveEmail(@RequestBody EmailParam emailParam, HttpServletRequest request, HttpServletResponse response) throws IOException, MessagingException {
+    public String saveEmail(@RequestBody EmailParam emailParam) throws IOException, MessagingException {
 
-        sysEmailManagerApi.saveEmail(emailParam, request, response);
+        return sysEmailManagerApi.saveEmail(emailParam);
     }
 
     /**
-     *
      * @Description 获取邮箱列表
-     * @param [emailParam, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/20
      */
     @RequireAuth(ident = "tutor", type = "api")
     @RequestMapping("/getemaillist")
-    public void getEmailList(@RequestBody EmailParam emailParam, HttpServletResponse response) throws IOException {
+    public String getEmailList(@RequestBody EmailParam emailParam) throws IOException {
 
-        sysEmailManagerApi.getEmailList(emailParam, response);
+        return sysEmailManagerApi.getEmailList(emailParam);
     }
 
     /**
-     *
      * @Description 获取对应的邮件详情
-     * @param [id, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/20
      */
     @RequireAuth(ident = "tutor", type = "api")
     @PostMapping("/getemaildetail")
-    public void getEmailDetail(@RequestParam Integer id, HttpServletResponse response) throws IOException {
+    public String getEmailDetail(@RequestParam Integer id) throws IOException {
 
-        sysEmailManagerApi.getEmailDetail(id, response);
+        return sysEmailManagerApi.getEmailDetail(id);
     }
 
     /**
-     *
      * @Description 删除指定邮件
-     * @param [id, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/20
      */
     @RequireAuth(ident = "tutor", type = "api")
     @PostMapping("/deleteemail")
-    public void deleteEmail(@RequestParam Integer id, HttpServletResponse response) throws IOException {
+    public String deleteEmail(@RequestParam Integer id) throws IOException {
 
-        sysEmailManagerApi.deleteEmail(id, response);
+        return sysEmailManagerApi.deleteEmail(id);
     }
 
+    /**  
+     * @Description 获取指定修改的邮件数据
+     */
     @RequireAuth(ident = "tutor", type = "api")
     @PostMapping("/getmodinfobyid")
-    public void getModinfoById(@RequestParam Integer id, HttpServletResponse response) throws IOException {
+    public String getModinfoById(@RequestParam Integer id) throws IOException {
 
-        sysEmailManagerApi.getModinfoById(id, response);
+        return sysEmailManagerApi.getModinfoById(id);
     }
 }

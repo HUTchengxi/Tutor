@@ -18,19 +18,12 @@ public interface PublishLogApi {
 
     /**
      * 加载最新的版本更新记录
-     * @param response
-     * @return
      */
-    public void getLogNew(HttpServletResponse response) throws IOException ;
+    public String getLogNew() throws IOException ;
 
 
     /**
-     *
      * @Description 获取所有的版本更新记录
-     * @param [response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/3/31
      */
-    public void getLogAll(HttpServletResponse response) throws IOException;
+    public String getLogAll() throws IOException;
 }

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * 课程记录控制类
+ * @Description 课程记录控制类
  * @author chengxi
  */
 @RestController
@@ -23,27 +23,22 @@ public class CourseLogController {
 
     /**
      * 获取我的课程记录
-     * @param request
-     * @param response
      */
     @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/getlog")
-    public void getLog(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getLog() throws IOException {
 
-        courseLogAPi.getLog(request, response);
+        return courseLogAPi.getLog();
     }
 
 
     /**
      * 删除指定的课程记录
-     * @param id
-     * @param request
-     * @param response
      */
     @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/dellog")
-    public void delLog(Integer id, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String delLog(Integer id) throws IOException {
 
-        courseLogAPi.delLog(id, request, response);
+        return courseLogAPi.delLog(id);
     }
 }

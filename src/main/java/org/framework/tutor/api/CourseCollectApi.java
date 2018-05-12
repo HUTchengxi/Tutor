@@ -7,37 +7,27 @@ import java.io.IOException;
 public interface CourseCollectApi {
 
     /**
-     * 获取我的课程收藏记录
-     * @param request
-     * @param response
-     * @param startpos
-     * @throws IOException
+     * @Description 获取我的课程收藏记录
+     * @param startpos 开始位置
      */
-    public void getMyCollect(HttpServletRequest request, HttpServletResponse response, Integer startpos) throws IOException;
+    public String getMyCollect(Integer startpos) throws IOException;
 
     /**
-     * 判断当前用户是否收藏了指定的课程
-     * @param cid
-     * @param request
-     * @param response
+     * @Description 判断当前用户是否收藏了指定的课程
+     * @param cid 课程id
      */
-    public void checkUserCollect(Integer cid, HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String checkUserCollect(Integer cid) throws IOException;
 
     /**
-     * 收藏/取消收藏
-     * @param cid
-     * @param mod
-     * @param descript
-     * @param request
-     * @param response
-     * @throws IOException
+     * @Description 收藏/取消收藏
+     * @param cid 课程id
+     * @param mod 操作（1/-1）
+     * @param descript 收藏描述
      */
-    public void modUserCollect(Integer cid, String mod, String descript, HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String modUserCollect(Integer cid, String mod, String descript) throws IOException;
 
     /**
-     * 获取家教的今日课程收藏数量
-     * @param request
-     * @param response
+     * @Description 获取家教的今日课程收藏数量
      */
-    public void getCollectCount(HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String getCollectCount() throws IOException;
 }

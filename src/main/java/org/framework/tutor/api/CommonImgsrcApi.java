@@ -14,12 +14,7 @@ import java.util.List;
 public interface CommonImgsrcApi {
 
     /**
-     *
      * @Description 获取所有图片数据
-     * @param [response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/1
      */
-    public void getAll(HttpServletResponse response) throws IOException;
+    public String getAll() throws IOException;
 }

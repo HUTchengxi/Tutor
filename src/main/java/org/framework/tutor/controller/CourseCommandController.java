@@ -11,7 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * 课程评价控制类
+ * @Description 课程评价控制类
+ * @author chengxi
  */
 @RestController
 @RequestMapping("/coursecommand_con")
@@ -21,128 +22,89 @@ public class CourseCommandController {
     private CourseCommandApi courseCommandApi;
 
     /**
-     * 获取课程评论数据
-     *
-     * @param cid
-     * @param response
+     * @Description 获取课程评论数据
      */
     @RequestMapping("/getcoursecommand")
-    public void getCourseCommand(Integer cid, Integer startpos, HttpServletResponse response) throws IOException {
+    public String getCourseCommand(Integer cid, Integer startpos) throws IOException {
 
-        courseCommandApi.getCourseCommand(cid, startpos, response);
+        return courseCommandApi.getCourseCommand(cid, startpos);
     }
 
     /**
-     * 获取课程神评
-     *
-     * @param cid
-     * @param response
-     * @throws IOException
+     * @Description 获取课程神评
      */
     @RequestMapping("/getcommandgod")
-    public void getCourseCommandGod(Integer cid, HttpServletResponse response) throws IOException {
+    public String getCourseCommandGod(Integer cid) throws IOException {
 
-        courseCommandApi.getCourseCommandGod(cid, response);
+        return courseCommandApi.getCourseCommandGod(cid);
     }
 
     /**
-     * 查看当前用户对指定课程的评价
-     *
-     * @param cid
-     * @param request
-     * @param response
-     * @throws IOException
+     * @Dscription 查看当前用户对指定课程的评价
      */
     @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/selmycommand")
-    public void selMyCommand(Integer cid, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String selMyCommand(Integer cid) throws IOException {
 
-        courseCommandApi.selMyCommand(cid, request, response);
+        return courseCommandApi.selMyCommand(cid);
     }
 
     /**
-     * 发表用户评价
-     *
-     * @param cid
-     * @param command
-     * @param score
-     * @param request
-     * @param response
+     * @Description 发表用户评价
      */
     @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/submycommand")
-    public void subMyCommand(Integer cid, String command, Integer score, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String subMyCommand(Integer cid, String command, Integer score) throws IOException {
 
-        courseCommandApi.subMyCommand(cid, command, score, request, response);
+        return courseCommandApi.subMyCommand(cid, command, score);
     }
 
     /**
-     * 获取当前登录家教的课程评论总数
-     *
-     * @param request
-     * @param response
-     * @throws IOException
+     * @Description 获取当前登录家教的课程评论总数
      */
     @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/getcommandcount")
-    public void getCommandCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getCommandCount() throws IOException {
 
-        courseCommandApi.getCommandCount(request, response);
+        return courseCommandApi.getCommandCount();
     }
 
     /**
-     * 获取当前登录家教的课程评分平均值
-     *
-     * @param request
-     * @param response
-     * @throws IOException
+     * @Description 获取当前登录家教的课程评分平均值
      */
     @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/getscoreavg")
-    public void getScoreAvg(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getScoreAvg() throws IOException {
 
-        courseCommandApi.getScoreAvg(request, response);
+        return courseCommandApi.getScoreAvg();
     }
 
     /**
-     * 获取当前用户的课程评论数据
-     *
-     * @param request
-     * @param response
-     * @throws IOException
+     * @Description 获取当前用户的课程评论数据
      */
     @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/loadmycommandinfo")
-    public void loadMyCommandInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String loadMyCommandInfo() throws IOException {
 
-        courseCommandApi.loadMyCommandInfo(request, response);
+        return courseCommandApi.loadMyCommandInfo();
     }
 
     /**
-     * @param [paramMap, request, response]
-     * @return void
      * @Description 获取课程评论列表
-     * @author yinjimin
-     * @date 2018/4/18
      */
     @RequestMapping("/getcommandlist")
-    public void getCommandList(@RequestBody ParamMap paramMap, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getCommandList(@RequestBody ParamMap paramMap) throws IOException {
 
-        courseCommandApi.getCommandList(paramMap, request, response);
+        return courseCommandApi.getCommandList(paramMap);
     }
 
     /**
-     *
      * @Description 指定评论为神评
-     * @param [id, request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/18
      */
     @RequireAuth(ident = "user", type = "api")
     @PostMapping("/setcommandgodstate")
-    public void setCommandGodstate(@RequestParam Integer id, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String setCommandGodstate(@RequestParam Integer id) throws IOException {
 
-        courseCommandApi.setCommandGodstate(id, request, response);
+        return courseCommandApi.setCommandGodstate(id);
     }
 }

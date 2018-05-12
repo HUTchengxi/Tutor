@@ -1,15 +1,3 @@
-/*
- * Copyright (C) 2011-2013 ShenZhen iBoxpay Information Technology Co. Ltd.
- *
- * All right reserved.
- *
- * This software is the confidential and proprietary information of iBoxPay Company of China.
- * ("Confidential Information").
- * You shall not disclose such Confidential Information and shall use it only
- * in accordance with the terms of the contract agreement you entered into with iBoxpay inc.
- *
- *
- */
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
@@ -29,11 +17,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author yinjimin
- * @Description:
- * @date 2018年05月09日
- */
 @Component
 public class UserFeedbackApiImpl implements UserFeedbackApi {
 
@@ -43,8 +26,12 @@ public class UserFeedbackApiImpl implements UserFeedbackApi {
     @Autowired
     private UserMessageService userMessageService;
 
+    @Autowired
+    private HttpServletRequest request;
+
+
     @Override
-    public String getMyFeedback(HttpServletRequest request) {
+    public String getMyFeedback() {
 
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
@@ -69,7 +56,7 @@ public class UserFeedbackApiImpl implements UserFeedbackApi {
     }
 
     @Override
-    public String removeMyFeedback(Integer id, HttpServletRequest request) {
+    public String removeMyFeedback(Integer id) {
 
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
@@ -96,7 +83,7 @@ public class UserFeedbackApiImpl implements UserFeedbackApi {
     }
 
     @Override
-    public String saveMyFeedback(String info, HttpServletRequest request) {
+    public String saveMyFeedback(String info) {
 
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");

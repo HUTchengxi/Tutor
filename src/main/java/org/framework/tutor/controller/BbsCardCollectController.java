@@ -46,79 +46,54 @@ public class BbsCardCollectController {
     private BbsCardCollectApi bbsCardCollectApi;
     
     /**  
-     *    
      * @Description 获取当前用户的收藏总数
-     * @param [request, response]    
-     * @return void
-     * @author yinjimin  
-     * @date 2018/4/1
      */
     @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/getmycollectcount")
-    public void getMyCollectCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getMyCollectCount() throws IOException {
 
-        bbsCardCollectApi.getMyCollectCount(request, response);
+        return bbsCardCollectApi.getMyCollectCount();
     }
 
     /**
-     *
      * @Description 判断当前用户是否已收藏
-     * @param [cardId, request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/8
      */
     @RequireAuth(ident = "user", type = "api")
     @PostMapping("/checkcollectstatus")
-    public void checkCollectStatus(@RequestParam Integer cardId, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String checkCollectStatus(@RequestParam Integer cardId) throws IOException {
 
-        bbsCardCollectApi.checkCollectStatus(cardId, request, response);
+        return bbsCardCollectApi.checkCollectStatus(cardId);
     }
 
 
     /**
-     *
      * @Description 收藏问题
-     * @param [cardId, request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/8
      */
     @RequireAuth(ident = "user", type = "api")
     @PostMapping("/collectcard")
-    public void collectCard(@RequestParam Integer cardId, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String collectCard(@RequestParam Integer cardId) throws IOException {
 
-        bbsCardCollectApi.collectCard(cardId, request, response);
+        return bbsCardCollectApi.collectCard(cardId);
     }
 
     /**
-     *
      * @Description 取消收藏问题
-     * @param [cardId, request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/8
      */
     @RequireAuth(ident = "user", type = "api")
     @PostMapping("/uncollectcard")
-    public void uncollectCard(@RequestParam Integer cardId, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String uncollectCard(@RequestParam Integer cardId) throws IOException {
 
-        bbsCardCollectApi.uncollectCard(cardId, request, response);
+        return bbsCardCollectApi.uncollectCard(cardId);
     }
 
 
     /**
-     *
      * @Description 获取当前用户收藏的帖子数据
-     * @param [request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/13
      */
     @RequireAuth(ident = "user", type = "api")
     @PostMapping("/getmycollectinfo")
-    public void getMyCollectInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getMyCollectInfo() throws IOException {
 
-        bbsCardCollectApi.getMyCollectInfo(request, response);
+        return bbsCardCollectApi.getMyCollectInfo();
     }
 }

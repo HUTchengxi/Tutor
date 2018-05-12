@@ -1,15 +1,3 @@
-/*
- * Copyright (C) 2011-2013 ShenZhen iBoxpay Information Technology Co. Ltd.
- *
- * All right reserved.
- *
- * This software is the confidential and proprietary information of iBoxPay Company of China.
- * ("Confidential Information").
- * You shall not disclose such Confidential Information and shall use it only
- * in accordance with the terms of the contract agreement you entered into with iBoxpay inc.
- *
- *
- */
 package org.framework.tutor.controller;
 
 import org.framework.tutor.annotation.RequireAuth;
@@ -25,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author yinjimin
- * @Description:
+ * @Description: 用户建立会话
  * @date 2018年05月09日
  */
 @RestController
@@ -35,12 +23,18 @@ public class UserWebSocketController {
     @Autowired
     private UserWebsocketApi userWebsocketApi;
 
+    /**  
+     * @Description 获取历史消息
+     */
     @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/loadmysocketlist.json")
-    public String loadMySocketList(@RequestParam String reader, HttpServletRequest request){
-        return userWebsocketApi.loadMySocketList(reader, request);
+    public String loadMySocketList(@RequestParam String reader){
+        return userWebsocketApi.loadMySocketList(reader);
     }
 
+    /**
+     * @Description 保存发送的消息
+     */
     @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/savewebsocket.json")
     public String saveWebsocket(@RequestBody ParamMap paramMap){

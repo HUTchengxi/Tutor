@@ -25,48 +25,38 @@ public class LoginController {
 
     /**
      * 用户进行登陆
-     * @param request
-     * @param response
-     * @param username
-     * @param password
-     * @param remember
-     * @throws IOException
      */
     @OneLogin
     @RequestMapping("/login")
-    public void login(HttpServletRequest request, HttpServletResponse response,
-                      @RequestParam String username, @RequestParam String password, Integer remember) throws IOException, NoSuchAlgorithmException {
-        loginApi.login(request, response, username, password, remember);
+    public String login(@RequestParam String username, @RequestParam String password, Integer remember) throws IOException, NoSuchAlgorithmException {
+
+        return loginApi.login(username, password, remember);
     }
 
     /**
      *  登录时判断是否已经记住密码并获取相关信息
-     * @param request
-     * @param response
-     * @throws IOException
      */
     @RequestMapping("/getrememberuser")
-    public void getRememberUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        loginApi.getRememberUser(request, response);
+    public String getRememberUser() throws IOException {
+
+        return loginApi.getRememberUser();
     }
 
     /**
      * 返回当前用户登录状态信息
-     * @param response
      */
     @RequestMapping("/login_statuscheck")
-    public void loginStatusCheck(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        loginApi.loginStatusCheck(request, response);
+    public String loginStatusCheck() throws IOException {
+
+        return loginApi.loginStatusCheck();
     }
 
     /**
      * 退出登录
-     * @param request
-     * @param response
-     * @throws IOException
      */
     @RequestMapping("/login_logoff")
-    public void loginOff(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        loginApi.loginOff(request, response);
+    public String loginOff() throws IOException {
+
+        return loginApi.loginOff();
     }
 }

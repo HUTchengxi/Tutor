@@ -1,15 +1,3 @@
-/*
- * Copyright (C) 2011-2013 ShenZhen iBoxpay Information Technology Co. Ltd.
- *
- * All right reserved.
- *
- * This software is the confidential and proprietary information of iBoxPay Company of China.
- * ("Confidential Information").
- * You shall not disclose such Confidential Information and shall use it only
- * in accordance with the terms of the contract agreement you entered into with iBoxpay inc.
- *
- *
- */
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
@@ -31,13 +19,8 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
-/**
- * @author yinjimin
- * @Description:
- * @date 2018年04月25日
- */
 @Component
-public class CourseCollectionApiImpl implements CourseCollectApi {
+public class CourseCollectApiImpl implements CourseCollectApi {
 
     @Autowired
     private CourseCollectService courseCollectService;
@@ -48,22 +31,15 @@ public class CourseCollectionApiImpl implements CourseCollectApi {
     @Autowired
     private StringRedisTemplate redis;
 
-    /**
-     * 获取我的课程收藏记录
-     *
-     * @param request
-     * @param response
-     * @param startpos
-     * @throws IOException
-     */
+    @Autowired
+    private HttpServletRequest request;
+
+
     //TODO: 后续可以考虑加入redis
     @Override
-    public void getMyCollect(HttpServletRequest request, HttpServletResponse response, Integer startpos) throws IOException {
-
-        response.setCharacterEncoding("utf-8");
+    public String getMyCollect(Integer startpos) throws IOException {
 
         HttpSession session = request.getSession();
-        PrintWriter writer = response.getWriter();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(4);
@@ -90,23 +66,14 @@ public class CourseCollectionApiImpl implements CourseCollectApi {
             resultMap.put("list", rowList);
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 判断当前用户是否收藏了指定的课程
-     *
-     * @param cid
-     * @param request
-     * @param response
-     */
+
     //TODO: 使用了Redis   保存[username].[cid].checkusercollect
     @Override
-    public void checkUserCollect(Integer cid, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String checkUserCollect(Integer cid) throws IOException {
 
-        PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -127,26 +94,14 @@ public class CourseCollectionApiImpl implements CourseCollectApi {
             }
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 收藏/取消收藏
-     *
-     * @param cid
-     * @param mod
-     * @param descript
-     * @param request
-     * @param response
-     * @throws IOException
-     */
+
     //TODO：使用了redis    更新[username].[cid].checkusercollect    tutor.[username].collectcount
     @Override
-    public void modUserCollect(Integer cid, String mod, String descript, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String modUserCollect(Integer cid, String mod, String descript) throws IOException {
 
-        PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -194,22 +149,14 @@ public class CourseCollectionApiImpl implements CourseCollectApi {
             }
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 获取家教的今日课程收藏数量
-     *
-     * @param request
-     * @param response
-     */
+
     //TODO: 使用了redis    保存tutor.[username].collectcount
     @Override
-    public void getCollectCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getCollectCount() throws IOException {
 
-        PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -228,8 +175,6 @@ public class CourseCollectionApiImpl implements CourseCollectApi {
             redis.opsForValue().set(keyTemp.toString(), count.toString());
             redis.expire(keyTemp.toString(), 1800, TimeUnit.SECONDS);
         }
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 }

@@ -1,15 +1,3 @@
-/*
- * Copyright (C) 2011-2013 ShenZhen iBoxpay Information Technology Co. Ltd.
- *
- * All right reserved.
- *
- * This software is the confidential and proprietary information of iBoxPay Company of China.
- * ("Confidential Information").
- * You shall not disclose such Confidential Information and shall use it only
- * in accordance with the terms of the contract agreement you entered into with iBoxpay inc.
- *
- *
- */
 package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
@@ -39,16 +27,11 @@ public class CommonImgsrcController {
 
 
     /**
-     *
      * @Description 获取所有图片数据
-     * @param [response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/1
      */
     @RequestMapping("/getAll")
-    public void getAll(HttpServletResponse response) throws IOException {
+    public String getAll() throws IOException {
 
-        commonImgsrcApi.getAll(response);
+        return commonImgsrcApi.getAll();
     }
 }

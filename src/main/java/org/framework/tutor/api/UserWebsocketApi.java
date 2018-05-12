@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 
 public interface UserWebsocketApi {
 
-    String loadMySocketList(String reader, HttpServletRequest request);
+    String loadMySocketList(String reader);
 
     void saveMessage(String message);
 

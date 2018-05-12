@@ -24,43 +24,31 @@ public class CourseChapterController {
     private CourseChapterApi courseChapterApi;
 
     /**
-     * 获取指定课程的章节目录数据
-     * @param cid
-     * @param response
+     * @Description 获取指定课程的章节目录数据
      */
     @RequestMapping("/getcoursechapter")
-    public void getCourseChapter(Integer cid, HttpServletResponse response) throws IOException {
+    public String getCourseChapter(Integer cid) throws IOException {
 
-        courseChapterApi.getCourseChapter(cid, response);
+        return courseChapterApi.getCourseChapter(cid);
     }
 
     /**
-     *
      * @Description 删除指定目录
-     * @param [id, response, request]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/15
      */
     @RequireAuth(ident = "tutor", type = "api")
     @PostMapping("/deletechapter")
-    public void deleteChapter(Integer id, HttpServletResponse response, HttpServletRequest request) throws IOException {
+    public String deleteChapter(Integer id) throws IOException {
 
-        courseChapterApi.deleteChapter(id, response, request);
+        return courseChapterApi.deleteChapter(id);
     }
 
     /**
-     *
      * @Description 更新目录
-     * @param [id, title, descript, request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/15
      */
     @RequireAuth(ident = "tutor", type = "api")
     @PostMapping("/modchapter")
-    public void modChapter(Integer id, @RequestParam Integer cid, @RequestParam String title, @RequestParam String descript, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String modChapter(Integer id, @RequestParam Integer cid, @RequestParam String title, @RequestParam String descript) throws IOException {
 
-        courseChapterApi.modChapter(id, cid, title, descript, request, response);
+        return courseChapterApi.modChapter(id, cid, title, descript);
     }
 }

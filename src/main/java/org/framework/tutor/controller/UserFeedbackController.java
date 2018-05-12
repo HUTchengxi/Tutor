@@ -1,15 +1,3 @@
-/*
- * Copyright (C) 2011-2013 ShenZhen iBoxpay Information Technology Co. Ltd.
- *
- * All right reserved.
- *
- * This software is the confidential and proprietary information of iBoxPay Company of China.
- * ("Confidential Information").
- * You shall not disclose such Confidential Information and shall use it only
- * in accordance with the terms of the contract agreement you entered into with iBoxpay inc.
- *
- *
- */
 package org.framework.tutor.controller;
 
 import org.framework.tutor.annotation.RequireAuth;
@@ -25,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author yinjimin
- * @Description:
+ * @Description: 用户反馈
  * @date 2018年05月09日
  */
 @RestController
@@ -35,36 +23,54 @@ public class UserFeedbackController {
     @Autowired
     private UserFeedbackApi userFeedbackApi;
 
+    /**
+     * @Description 获取用户所有反馈数据
+     */
     @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/getmyfeedback.json")
-    public String getMyFeedback(HttpServletRequest request){
-        return userFeedbackApi.getMyFeedback(request);
+    public String getMyFeedback(){
+        return userFeedbackApi.getMyFeedback();
     }
 
+    /**
+     * @Description 删除当前用户的指定反馈数据
+     */
     @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/removemyfeedback.json")
-    public String removeMyFeedback(@RequestParam Integer id, HttpServletRequest request){
-        return userFeedbackApi.removeMyFeedback(id, request);
+    public String removeMyFeedback(@RequestParam Integer id){
+        return userFeedbackApi.removeMyFeedback(id);
     }
 
+    /**
+     * @Description 新增用户反馈
+     */
     @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/savemyfeedback.json")
-    public String saveMyFeedback(@RequestParam String info, HttpServletRequest request){
-        return userFeedbackApi.saveMyFeedback(info, request);
+    public String saveMyFeedback(@RequestParam String info){
+        return userFeedbackApi.saveMyFeedback(info);
     }
 
+    /**  
+     * @Description 获取所有用户的反馈数据（admin)
+     */
     @RequireAuth(ident = "admin", type = "api")
     @RequestMapping("/getuserfeedback.json")
     public String getUserFeedback(@RequestBody ParamMap paramMap){
         return userFeedbackApi.getUserFeedback(paramMap);
     }
 
+    /**
+     * @Description 删除用户的反馈数据
+     */
     @RequireAuth(ident = "admin", type = "api")
     @RequestMapping("/removeuserfeedback.json")
     public String removeUserFeedback(@RequestParam Integer id){
         return userFeedbackApi.removeUserFeedback(id);
     }
 
+    /**
+     * @Description 更新用户反馈的处理状态
+     */
     @RequireAuth(ident = "admin", type = "api")
     @RequestMapping("/moduserfeedbackstatus.json")
     public String modUserFeedbackStatus(@RequestBody ParamMap paramMap){

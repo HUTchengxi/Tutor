@@ -17,23 +17,17 @@ import java.util.List;
 public interface CourseSummaryApi {
 
     /**
-     *
      * @Description 获取指定课程的课程概述
-     * @param [cid, request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/15
+     * @param cid 课程id
      */
-    public void getCourseSummaryInfo(Integer cid, HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String getCourseSummaryInfo(Integer cid) throws IOException;
 
 
     /**
-     *
      * @Description 更新课程概述
-     * @param [id, title, descript, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/15
+     * @param id 课程id
+     * @param title 课程概述标题
+     * @param descript 课程概述
      */
-    public void updateCourseSummary(Integer id, String title, String descript, HttpServletResponse response) throws IOException;
+    public String updateCourseSummary(Integer id, String title, String descript) throws IOException;
 }

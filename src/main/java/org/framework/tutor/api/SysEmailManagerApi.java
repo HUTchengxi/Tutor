@@ -10,52 +10,38 @@ import java.io.IOException;
 public interface SysEmailManagerApi {
 
     /**
-     * @param [emailParam, request, response]
-     * @return void
      * @Description 发送邮件
-     * @author yinjimin
-     * @date 2018/4/20
+     * @param emailParam
      */
-    public void sendEmail(EmailParam emailParam, HttpServletRequest request, HttpServletResponse response) throws IOException, MessagingException;
+    public String sendEmail(EmailParam emailParam) throws IOException, MessagingException;
 
     /**
-     * @param [emailParam, request, response]
-     * @return void
      * @Description 发送邮件
-     * @author yinjimin
-     * @date 2018/4/20
+     * @param emailParam
      */
-    public void saveEmail(EmailParam emailParam, HttpServletRequest request, HttpServletResponse response) throws IOException, MessagingException;
+    public String saveEmail(EmailParam emailParam) throws IOException, MessagingException;
 
     /**
-     *
      * @Description 获取邮箱列表
-     * @param [emailParam, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/20
+     * @param emailParam
      */
-    public void getEmailList(EmailParam emailParam, HttpServletResponse response) throws IOException;
+    public String getEmailList(EmailParam emailParam) throws IOException;
 
     /**
-     *
      * @Description 获取对应的邮件详情
-     * @param [id, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/20
+     * @param id
      */
-    public void getEmailDetail(Integer id, HttpServletResponse response) throws IOException;
+    public String getEmailDetail(Integer id) throws IOException;
 
     /**
-     *
      * @Description 删除指定邮件
-     * @param [id, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/20
+     * @param id 邮件id
      */
-    public void deleteEmail(Integer id, HttpServletResponse response) throws IOException;
+    public String deleteEmail(Integer id) throws IOException;
 
-    public void getModinfoById(Integer id, HttpServletResponse response) throws IOException;
+    /**  
+     * @Description 获取指定邮件的修改数据
+     * @param id email的id    
+     */
+    public String getModinfoById(Integer id) throws IOException;
 }

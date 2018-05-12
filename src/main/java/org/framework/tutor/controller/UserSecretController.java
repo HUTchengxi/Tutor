@@ -12,7 +12,6 @@ import java.io.IOException;
 
 /**
  * 用户密保控制器
- *
  * @author chengxi
  */
 @RestController
@@ -24,44 +23,32 @@ public class UserSecretController {
 
     /**
      * 获取当前用户的密保数据
-     *
-     * @param request
-     * @param response
      */
     @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/getsecretinfo")
-    public void getSecretInfo(String username, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getSecretInfo(String username) throws IOException {
 
-        userSecretApi.getSecretInfo(username, request, response);
+        return userSecretApi.getSecretInfo(username);
     }
 
     /**
      * 删除指定用户的密保数据
-     *
-     * @param request
-     * @param response
-     * @throws IOException
      */
     @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/delusersecret")
-    public void delUserSecret(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String delUserSecret() throws IOException {
 
-        userSecretApi.delUserSecret(request, response);
+        return userSecretApi.delUserSecret();
     }
 
     /**
      * 为指定用户添加密保数据
-     *
-     * @param question
-     * @param answer
-     * @param response
-     * @param request
      */
     @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/addusersecret")
-    public void addUserSecret(String question, String answer, HttpServletResponse response, HttpServletRequest request) throws IOException {
+    public String addUserSecret(String question, String answer) throws IOException {
 
-        userSecretApi.addUserSecret(question, answer, response, request);
+        return userSecretApi.addUserSecret(question, answer);
     }
 
 }

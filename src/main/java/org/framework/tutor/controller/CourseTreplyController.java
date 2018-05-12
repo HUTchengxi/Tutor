@@ -21,13 +21,9 @@ public class CourseTreplyController {
 
     /**
      * 获取对应用户的指定课程的家教回复数据
-     * @param cid
-     * @param id
-     * @param response
-     * @throws IOException
      */
     @RequestMapping("/gettreply")
-    public void getTreply(Integer cid, Integer cmid, HttpServletResponse response) throws IOException {
-        courseTreplyApi.getTreply(cid, cmid, response);
+    public String getTreply(Integer cid, Integer cmid) throws IOException {
+        return courseTreplyApi.getTreply(cid, cmid);
     }
 }

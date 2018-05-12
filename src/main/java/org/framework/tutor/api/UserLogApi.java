@@ -8,19 +8,14 @@ public interface UserLogApi {
 
     /**
      * 保存用户登录记录
-     * @param logcity
-     * @param ip
-     * @param logsystem
-     * @param request
-     * @param response
+     * @param logcity 登录城市
+     * @param ip 登录ip
+     * @param logsystem 登录的操作系统
      */
-    public void loginLog(String logcity, String ip, String logsystem, HttpServletRequest request,
-                         HttpServletResponse response) throws IOException;
+    public String loginLog(String logcity, String ip, String logsystem) throws IOException;
 
     /**
      * 获取用户的登录记录
-     * @param request
-     * @param response
      */
-    public void getUserlog(HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String getUserlog() throws IOException;
 }

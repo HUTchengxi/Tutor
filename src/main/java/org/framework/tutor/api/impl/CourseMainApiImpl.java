@@ -1,4 +1,3 @@
-
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
@@ -26,11 +25,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author yinjimin
- * @Description:
- * @date 2018年04月25日
- */
 @Component
 public class CourseMainApiImpl implements CourseMainApi {
 
@@ -55,26 +49,14 @@ public class CourseMainApiImpl implements CourseMainApi {
     @Autowired
     private StringRedisTemplate redis;
 
-    /**
-     * 加载课程数据
-     *
-     * @param stype
-     * @param ctype
-     * @param sort
-     * @param startpos
-     * @param status
-     * @param keyword
-     * @param request
-     * @param response
-     * @throws IOException
-     */
+    @Autowired
+    private HttpServletRequest request;
+
+
     //TODO：后续考虑使用redis
     @Override
-    public void getCourseList(Integer stype, String ctype, String sort, Integer startpos, Integer status, String keyword,
-                              HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getCourseList(Integer stype, String ctype, String sort, Integer startpos, Integer status, String keyword) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(4);
         List<Object> rowList = new ArrayList<>();
@@ -202,24 +184,14 @@ public class CourseMainApiImpl implements CourseMainApi {
             }
             resultMap.put("list", rowList);
         }
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * @param [response]
-     * @return void
-     * @Description 获取所有科目类别
-     * @author yinjimin
-     * @date 2018/4/15
-     */
+
     //TODO：后续考虑使用redis(保存list集合类型数据)
     @Override
-    public void getAllCourseType(HttpServletResponse response) throws IOException {
+    public String getAllCourseType() throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(4);
         List<Object> rowList = new ArrayList<>();
@@ -237,25 +209,14 @@ public class CourseMainApiImpl implements CourseMainApi {
             resultMap.put("list", rowList);
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 获取指定主类别的所有科目类别
-     *
-     * @param stype
-     * @param request
-     * @param response
-     * @throws IOException
-     */
+
     //TODO：后续考虑使用redis(保存list集合类型数据)
     @Override
-    public void getCourseType(String stype, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getCourseType(String stype) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(4);
         List<Object> rowList = new ArrayList<>();
@@ -273,26 +234,14 @@ public class CourseMainApiImpl implements CourseMainApi {
             resultMap.put("list", rowList);
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 关键字获取所有对应的课程数据
-     *
-     * @param keyword
-     * @param request
-     * @param response
-     * @throws IOException
-     */
+
     //TODO：后续考虑使用redis
     @Override
-    public void courseSearch(String keyword, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String courseSearch(String keyword) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-
-        PrintWriter writer = response.getWriter();
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(4);
         List<Object> rowList = new ArrayList<>();
@@ -319,24 +268,14 @@ public class CourseMainApiImpl implements CourseMainApi {
         }
 
         System.out.println(gson.toJson(resultMap));
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 获取指定的课程的数据
-     *
-     * @param id
-     * @param response
-     * @throws IOException
-     */
+
     //TODO：后续考虑使用redis
     @Override
-    public void getCourseById(Integer id, HttpServletResponse response) throws IOException {
+    public String getCourseById(Integer id) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(16);
 
@@ -358,27 +297,13 @@ public class CourseMainApiImpl implements CourseMainApi {
             resultMap.put("total", courseMain.getTotal());
             resultMap.put("descript", courseMain.getDescript());
         }
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 获取所搜索的课程数量，便于实现分页
-     *
-     * @param stype
-     * @param ctype
-     * @param status
-     * @param keyword
-     * @param request
-     * @param response
-     * @throws IOException
-     */
-    @Override
-    public void getCourseCount(Integer stype, String ctype, Integer status, String keyword, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        request.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
+    @Override
+    public String getCourseCount(Integer stype, String ctype, Integer status, String keyword) throws IOException {
+
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
 
@@ -417,24 +342,14 @@ public class CourseMainApiImpl implements CourseMainApi {
         }
 
         resultMap.put("total", total);
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * @param [request, response]
-     * @return void
-     * @Description 获取当前家教的所有发布数据
-     * @author yinjimin
-     * @date 2018/4/14
-     */
+
     //TODO：后续考虑使用redis
     @Override
-    public void getMyPublish(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getMyPublish() throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -465,30 +380,19 @@ public class CourseMainApiImpl implements CourseMainApi {
             }
             resultMap.put("list", rowList);
         }
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * @param [name, stype, ctype, imgsrc, total, jcount, price, sumTitle1, sumTitle2, sumTitle3,
-     *               sumDescript1, sumDescript2, sumDescript3, chapTitle, chaDescript, request, response]
-     * @return void
-     * @Description 发布课程
-     * @author yinjimin
-     * @date 2018/4/15
-     */
+
     //TODO：后续考虑使用redis
     @Override
     @Transactional
-    public void publishNewCourse(String name, Integer stype, String ctype, String descript,
+    public String publishNewCourse(String name, Integer stype, String ctype, String descript,
                                  MultipartFile imgsrc, Integer total, Integer jcount,
                                  Double price, String sumTitle1, String sumTitle2,
                                  String sumTitle3, String sumDescript1, String sumDescript2,
-                                 String sumDescript3, String chapTitle, String chapDescript,
-                                 HttpServletRequest request, HttpServletResponse response) throws IOException {
+                                 String sumDescript3, String chapTitle, String chapDescript) throws IOException {
 
-        PrintWriter writer = response.getWriter();
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
 
@@ -534,19 +438,10 @@ public class CourseMainApiImpl implements CourseMainApi {
                 }
             }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
 
-    /**
-     * @param
-     * @return java.lang.String
-     * @Description 获取课程概述
-     * @author yinjimin
-     * @date 2018/4/25
-     */
     //TODO：后续考虑使用redis
     @Override
     public String getCourseSummary(Integer cid) {

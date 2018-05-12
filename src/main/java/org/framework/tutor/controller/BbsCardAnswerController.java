@@ -36,70 +36,52 @@ public class BbsCardAnswerController {
     @Autowired
     private BbsCardAnswerApi bbsCardAnswerApi;
 
-    /**  
-     *    
+    /**
      * @Description 获取对应的帖子答案数据
-     * @param [cardId, response]
-     * @return void
-     * @author yinjimin  
-     * @date 2018/4/7
      */
     @PostMapping("/getcardanswerbycardid")
-    public void getCardAnswerByCardid(@RequestParam Integer cardId, HttpServletResponse response) throws IOException {
+    public String getCardAnswerByCardid(@RequestParam Integer cardId, HttpServletResponse response) throws IOException {
 
-        bbsCardAnswerApi.getCardAnswerByCardid(cardId, response);
+        return bbsCardAnswerApi.getCardAnswerByCardid(cardId);
     }
 
     /**
-     *
      * @Description 判断当前用户是否已回答问题
-     * @param [cardId, request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/9
      */
     @RequireAuth(ident = "user", type = "api")
     @PostMapping("/checkusercommand")
-    public void checkUserCommand(@RequestParam Integer cardId, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String checkUserCommand(@RequestParam Integer cardId) throws IOException {
 
-        bbsCardAnswerApi.checkUserCommand(cardId, request, response);
+        return bbsCardAnswerApi.checkUserCommand(cardId);
     }
 
     /**
-     *
      * @Description 添加回答
-     * @param [cardId, answer, request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/9
      */
     @RequireAuth(ident = "user", type = "api")
     @PostMapping("/addanswer")
-    public void addAnswer(@RequestParam Integer cardId, @RequestParam String answer, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String addAnswer(@RequestParam Integer cardId, @RequestParam String answer) throws IOException {
 
-        bbsCardAnswerApi.addAnswer(cardId, answer, request, response);
+        return bbsCardAnswerApi.addAnswer(cardId, answer);
     }
 
     /**
-     *
      * @Description 获取用户回答总数
-     * @param [request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/12
      */
     @RequireAuth(ident = "user", type = "api")
     @PostMapping("/getmyanswercount")
-    public void getMyAnswerCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getMyAnswerCount() throws IOException {
 
-        bbsCardAnswerApi.getMyAnswerCount(request, response);
+        return bbsCardAnswerApi.getMyAnswerCount();
     }
 
-
+    /**  
+     * @Description 获取当前登录用户的回答数据
+     */
     @RequireAuth(ident = "user", type = "api")
     @PostMapping("/getmyanswerinfo")
-    public void getMyAnswerInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getMyAnswerInfo() throws IOException {
 
-        bbsCardAnswerApi.getMyAnswerInfo(request, response);
+        return bbsCardAnswerApi.getMyAnswerInfo();
     }
 }

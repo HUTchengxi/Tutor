@@ -4,38 +4,37 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * @author yinjimin
+ * @Description: 帖子答案评论服务层
+ * @date 2018年04月25日
+ */
 public interface BbsCardAnswerCommandApi {
 
     /**
-     *
      * @Description 每次获取五条评论数据
-     * @param [aid, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/10
+     * @param startpos: 开始位置
+     * @param aid: 帖子回答id
      */
-    public void getCommandListByAid(Integer startpos, Integer aid, HttpServletResponse response) throws IOException;
+    public String getCommandListByAid(Integer startpos, Integer aid) throws IOException;
 
 
     /**
-     *
      * @Description 发表评论
-     * @param [cardid, answer, request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/10
+     * @param cardid: 帖子id
+     * @param aid: 帖子回答id
+     * @param answer: 评论
+     * @param repfloor: 回复的楼层
      */
-    public void publishCommand(Integer cardid, Integer aid, String answer, Integer repfloor, HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String publishCommand(Integer cardid, Integer aid, String answer, Integer repfloor) throws IOException;
 
-    public void getMyCommandCount(HttpServletRequest request, HttpServletResponse response) throws IOException;
+    /**  
+     * @Description 获取当前用户的评论数
+     */
+    public String getMyCommandCount() throws IOException;
 
     /**
-     *
      * @Description 获取当前用户的评论数据
-     * @param [request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/14
      */
-    public void getMyCommandInfo(HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String getMyCommandInfo() throws IOException;
 }

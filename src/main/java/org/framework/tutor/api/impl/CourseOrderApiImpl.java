@@ -35,18 +35,14 @@ public class CourseOrderApiImpl implements CourseOrderApi {
     @Autowired
     private StringRedisTemplate redis;
 
-    /**
-     * 获取课程订购数据
-     *
-     * @param cid
-     * @param request
-     * @param response
-     */
+    @Autowired
+    private HttpServletRequest request;
+
+
     //TODO：后续考虑使用redis
     @Override
-    public void getOrderInfo(Integer cid, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getOrderInfo(Integer cid) throws IOException {
 
-        PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -68,23 +64,14 @@ public class CourseOrderApiImpl implements CourseOrderApi {
             }
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 加入购物车
-     *
-     * @param cid
-     * @param request
-     * @param response
-     */
+
     //TODO：使用redis  更新[username].cartcount
     @Override
-    public void addCart(Integer cid, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String addCart(Integer cid) throws IOException {
 
-        PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -106,23 +93,14 @@ public class CourseOrderApiImpl implements CourseOrderApi {
             }
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 获取用户购物车数据
-     *
-     * @param request
-     * @param response
-     */
+
     //TODO：后续考虑使用redis
     @Override
-    public void getMyCart(Integer startpos, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getMyCart(Integer startpos) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -147,24 +125,14 @@ public class CourseOrderApiImpl implements CourseOrderApi {
             resultMap.put("list", rowList);
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 删除指定用户的购物车物品
-     *
-     * @param id
-     * @param request
-     * @param response
-     */
+
     //TODO：使用redis   更新[username].cartcount
     @Override
-    public void delMyCart(Integer id, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String delMyCart(Integer id) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -185,23 +153,15 @@ public class CourseOrderApiImpl implements CourseOrderApi {
             }
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 获取指定用户的购物车物品总数
-     *
-     * @param request
-     * @param response
-     * @throws IOException
-     */
+
     //TODO：使用了redis    保存[username].cartcount
     @Override
-    public void getMyCartCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getMyCartCount() throws IOException {
 
         HttpSession session = request.getSession();
-        PrintWriter writer = response.getWriter();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
@@ -216,25 +176,14 @@ public class CourseOrderApiImpl implements CourseOrderApi {
             redis.opsForValue().set(keyTemp.toString(), count.toString());
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 获取用户已支付/未支付/已失效订单数据
-     *
-     * @param status
-     * @param startpos
-     * @param request
-     * @param response
-     */
+
     //TODO：后续考虑使用redis
     @Override
-    public void getMyOrder(String status, Integer startpos, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getMyOrder(String status, Integer startpos) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -265,24 +214,15 @@ public class CourseOrderApiImpl implements CourseOrderApi {
             resultMap.put("status", rowList);
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 将指定订单放入回收站
-     *
-     * @param oid
-     * @param request
-     * @param response
-     */
+
     //TODO：后续考虑使用redis
     @Override
-    public void setInCycle(Integer oid, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String setInCycle(Integer oid) throws IOException {
 
         HttpSession session = request.getSession();
-        PrintWriter writer = response.getWriter();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
@@ -300,23 +240,14 @@ public class CourseOrderApiImpl implements CourseOrderApi {
             }
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 获取家教的课程订单总数
-     *
-     * @param request
-     * @param response
-     * @throws IOException
-     */
+
     //TODO：后续考虑使用redis
     @Override
-    public void getOrderCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getOrderCount() throws IOException {
 
-        PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -326,8 +257,6 @@ public class CourseOrderApiImpl implements CourseOrderApi {
         String now = simpleDateFormat.format(new Date());
 
         resultMap.put("count", courseOrderService.getOrderCountNow(username, now));
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 }

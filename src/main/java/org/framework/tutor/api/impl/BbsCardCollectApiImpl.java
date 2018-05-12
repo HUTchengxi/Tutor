@@ -1,15 +1,3 @@
-/*
- * Copyright (C) 2011-2013 ShenZhen iBoxpay Information Technology Co. Ltd.
- *
- * All right reserved.
- *
- * This software is the confidential and proprietary information of iBoxPay Company of China.
- * ("Confidential Information").
- * You shall not disclose such Confidential Information and shall use it only
- * in accordance with the terms of the contract agreement you entered into with iBoxpay inc.
- *
- *
- */
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
@@ -37,11 +25,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author yinjimin
- * @Description:
- * @date 2018年04月25日
- */
 @Component
 public class BbsCardCollectApiImpl implements BbsCardCollectApi {
 
@@ -54,18 +37,14 @@ public class BbsCardCollectApiImpl implements BbsCardCollectApi {
     @Autowired
     private StringRedisTemplate redis;
 
-    /**
-     * @param [request, response]
-     * @return void
-     * @Description 获取当前用户的收藏总数
-     * @author yinjimin
-     * @date 2018/4/1
-     */
+    @Autowired
+    private HttpServletRequest request;
+
+
     //TODO：使用了Redis    保存[username].collectcount
     @Override
-    public void getMyCollectCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getMyCollectCount() throws IOException {
 
-        PrintWriter writer = response.getWriter();
         HttpSession sessions = request.getSession();
         String username = (String) sessions.getAttribute("username");
         Gson gson = new Gson();
@@ -82,24 +61,15 @@ public class BbsCardCollectApiImpl implements BbsCardCollectApi {
         }
         resultMap.put("count", count);
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * @param [cardId, request, response]
-     * @return void
-     * @Description 判断当前用户是否已收藏
-     * @author yinjimin
-     * @date 2018/4/8
-     */
+
     //TODO：使用了Redis    保存[username].[cardid].collectstatus
     @Override
-    public void checkCollectStatus(Integer cardId, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String checkCollectStatus(Integer cardId) throws IOException {
 
         HttpSession session = request.getSession();
-        PrintWriter writer = response.getWriter();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
@@ -120,25 +90,15 @@ public class BbsCardCollectApiImpl implements BbsCardCollectApi {
             }
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
 
-    /**
-     * @param [cardId, request, response]
-     * @return void
-     * @Description 收藏问题
-     * @author yinjimin
-     * @date 2018/4/8
-     */
     //TODO：使用了Redis    更新 [username].collectcount 和  [username].[cardid].collectstatus
     @Override
-    public void collectCard(Integer cardId, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String collectCard(Integer cardId) throws IOException {
 
         HttpSession session = request.getSession();
-        PrintWriter writer = response.getWriter();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
@@ -167,24 +127,15 @@ public class BbsCardCollectApiImpl implements BbsCardCollectApi {
             }
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * @param [cardId, request, response]
-     * @return void
-     * @Description 取消收藏问题
-     * @author yinjimin
-     * @date 2018/4/8
-     */
+
     //TODO：使用了Redis    更新 [username].collectcount 和  [username].[cardid].collectstatus
     @Override
-    public void uncollectCard(Integer cardId, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String uncollectCard(Integer cardId) throws IOException {
 
         HttpSession session = request.getSession();
-        PrintWriter writer = response.getWriter();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
@@ -213,25 +164,14 @@ public class BbsCardCollectApiImpl implements BbsCardCollectApi {
             }
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
 
-    /**
-     * @param [request, response]
-     * @return void
-     * @Description 获取当前用户收藏的帖子数据
-     * @author yinjimin
-     * @date 2018/4/13
-     */
     //TODO：后续可以考虑使用redis，目前基于值的复杂性暂时不考虑
     @Override
-    public void getMyCollectInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getMyCollectInfo() throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -259,8 +199,6 @@ public class BbsCardCollectApiImpl implements BbsCardCollectApi {
             resultMap.put("list", resultList);
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 }

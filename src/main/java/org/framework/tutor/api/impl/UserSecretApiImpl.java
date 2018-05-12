@@ -1,15 +1,3 @@
-/*
- * Copyright (C) 2011-2013 ShenZhen iBoxpay Information Technology Co. Ltd.
- *
- * All right reserved.
- *
- * This software is the confidential and proprietary information of iBoxPay Company of China.
- * ("Confidential Information").
- * You shall not disclose such Confidential Information and shall use it only
- * in accordance with the terms of the contract agreement you entered into with iBoxpay inc.
- *
- *
- */
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
@@ -28,29 +16,20 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author yinjimin
- * @Description:
- * @date 2018年04月25日
- */
 @Component
 public class UserSecretApiImpl implements UserSecretApi {
 
     @Autowired
     private UserSecretService userSecretService;
 
-    /**
-     * 获取当前用户的密保数据
-     *
-     * @param request
-     * @param response
-     */
-    @Override
-    public void getSecretInfo(String username, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    @Autowired
+    private HttpServletRequest request;
 
-        response.setCharacterEncoding("utf-8");
+
+    @Override
+    public String getSecretInfo(String username) throws IOException {
+
         HttpSession session = request.getSession();
-        PrintWriter writer = response.getWriter();
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
         List<Object> rowList = new ArrayList<>();
@@ -68,23 +47,13 @@ public class UserSecretApiImpl implements UserSecretApi {
             resultMap.put("list", rowList);
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 删除指定用户的密保数据
-     *
-     * @param request
-     * @param response
-     * @throws IOException
-     */
-    @Override
-    public void delUserSecret(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
+    @Override
+    public String delUserSecret() throws IOException {
+
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -94,23 +63,13 @@ public class UserSecretApiImpl implements UserSecretApi {
         userSecretService.delUserSecret(username);
         resultMap.put("status", "valid");
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 为指定用户添加密保数据
-     *
-     * @param question
-     * @param answer
-     * @param response
-     * @param request
-     */
-    @Override
-    public void addUserSecret(String question, String answer, HttpServletResponse response, HttpServletRequest request) throws IOException {
 
-        PrintWriter writer = response.getWriter();
+    @Override
+    public String addUserSecret(String question, String answer) throws IOException {
+
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -123,8 +82,6 @@ public class UserSecretApiImpl implements UserSecretApi {
             resultMap.put("status", "valid");
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 }

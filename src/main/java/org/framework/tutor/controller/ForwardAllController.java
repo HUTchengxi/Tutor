@@ -25,6 +25,9 @@ public class ForwardAllController {
     @Autowired
     private UserMainService userMainService;
 
+    @Autowired
+    private HttpServletRequest request;
+
     /**
      * 进入登录界面
      * @return
@@ -130,7 +133,7 @@ public class ForwardAllController {
      * @return
      */
     @RequestMapping("/register_info")
-    public String goRegisterInfo(HttpServletRequest request){
+    public String goRegisterInfo(){
 
         String email = (String) request.getSession().getAttribute("email");
         if(email == null){

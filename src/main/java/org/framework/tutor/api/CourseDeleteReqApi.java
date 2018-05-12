@@ -9,32 +9,21 @@ import java.io.IOException;
 public interface CourseDeleteReqApi {
 
     /**
-     *
      * @Description 提交课程下线申请
-     * @param [cid, descript, request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/15
+     * @param cid 课程id
+     * @param descript 申请备注信息
      */
-    public void setMyCourseDeleteReq(Integer cid, String descript, HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String setMyCourseDeleteReq(Integer cid, String descript) throws IOException;
 
     /**
-     *
      * @Description 获取课程下线申请数据列表
-     * @param [paramMap, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/21
+     * @param paramMap
      */
-    public void getReqList(ParamMap paramMap, HttpServletResponse response) throws IOException;
+    public String getReqList(ParamMap paramMap) throws IOException;
 
     /**
-     *
      * @Description 获取课程下线申请详情
-     * @param [reqid, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/21
+     * @param reqid 下线申请id
      */
-    public void getReqDetail(Integer reqid, HttpServletResponse response) throws IOException;
+    public String getReqDetail(Integer reqid) throws IOException;
 }

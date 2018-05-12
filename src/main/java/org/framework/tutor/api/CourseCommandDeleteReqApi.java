@@ -7,12 +7,9 @@ import java.io.IOException;
 public interface CourseCommandDeleteReqApi {
 
     /**
-     *
      * @Description 提交评论删除申请
-     * @param [cid, info, request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/18
+     * @param cid 待删除评论id
+     * @param info 申请备注信息
      */
-    public void addCommandDeleteReq(Integer cid, String info, HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String addCommandDeleteReq(Integer cid, String info) throws IOException;
 }

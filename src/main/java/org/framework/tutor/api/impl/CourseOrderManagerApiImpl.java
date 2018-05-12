@@ -1,15 +1,3 @@
-/*
- * Copyright (C) 2011-2013 ShenZhen iBoxpay Information Technology Co. Ltd.
- *
- * All right reserved.
- *
- * This software is the confidential and proprietary information of iBoxPay Company of China.
- * ("Confidential Information").
- * You shall not disclose such Confidential Information and shall use it only
- * in accordance with the terms of the contract agreement you entered into with iBoxpay inc.
- *
- *
- */
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
@@ -38,11 +26,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author yinjimin
- * @Description:
- * @date 2018年04月25日
- */
 @Component
 public class CourseOrderManagerApiImpl implements CourseOrderManagerApi {
 
@@ -57,19 +40,13 @@ public class CourseOrderManagerApiImpl implements CourseOrderManagerApi {
     @Autowired
     private CourseMainService courseMainService;
 
-    /**
-     * @param [paramMap, request, response]
-     * @return void
-     * @Description 获取指定家教课程订单列表
-     * @author yinjimin
-     * @date 2018/4/18
-     */
+    @Autowired
+    private HttpServletRequest request;
+
     //TODO：后续考虑使用redis
     @Override
-    public void getCourseOrderList(ParamMap paramMap, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getCourseOrderList(ParamMap paramMap) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -205,25 +182,14 @@ public class CourseOrderManagerApiImpl implements CourseOrderManagerApi {
             }
         }
 
-        writer.print(gson.toJson(rowMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     *
-     * @Description 获取订单详情数据
-     * @param [code, request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/19
-     */
+
     //TODO：后续考虑使用redis
     @Override
-    public void getOrderDetail(String code, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getOrderDetail(String code) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -282,23 +248,13 @@ public class CourseOrderManagerApiImpl implements CourseOrderManagerApi {
             resultMap.put("tutorStatus", tutorStatus);
             resultMap.put("userStatus", userStatus);
         }
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     *
-     * @Description 更新家教处理状态
-     * @param [tutorStatus, tutorInfo, request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/19
-     */
-    @Override
-    public void updateTutorStatus(String code, Integer tutorStatus, String tutorInfo, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        PrintWriter writer = response.getWriter();
+    @Override
+    public String updateTutorStatus(String code, Integer tutorStatus, String tutorInfo) throws IOException {
+
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -314,25 +270,14 @@ public class CourseOrderManagerApiImpl implements CourseOrderManagerApi {
             resultMap.put("status", "valid");
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     *
-     * @Description 获取异常订单数据
-     * @param [paramMap, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/19
-     */
+
     //TODO：后续考虑使用redis
     @Override
-    public void getErrorOrderList(ParamMap paramMap, HttpServletResponse response) throws IOException {
+    public String getErrorOrderList(ParamMap paramMap) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
         Gson gson = new Gson();
         List<Object> resultList = new ArrayList<>();
         Map<String, Object> rowMap = new HashMap<>();
@@ -423,27 +368,15 @@ public class CourseOrderManagerApiImpl implements CourseOrderManagerApi {
             rowMap.put("total", count);
         }
 
-        writer.print(gson.toJson(rowMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(rowMap);
     }
 
-    /**
-     *
-     * @Description 查看指定异常订单详情数据
-     * @param [code, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/19
-     */
+
     //TODO：后续考虑使用redis
     @Override
-    public void getErrorOrderDetail(String code, HttpServletResponse response) throws IOException {
+    public String getErrorOrderDetail(String code) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
         Gson gson = new Gson();
-        PrintWriter writer = response.getWriter();
-
         CourseOrderManager courseOrderManager = courseOrderManagerService.getByCode(code);
         CourseOrder courseOrder = courseOrderService.getById(courseOrderManager.getOid());
         CourseMain courseMain = courseMainService.getCourseById(courseOrder.getCid());
@@ -490,8 +423,6 @@ public class CourseOrderManagerApiImpl implements CourseOrderManagerApi {
         tempMap.put("tutorStatus", tutorStatus);
         tempMap.put("tutorInfo", courseOrderManager.getTutorinfo());
 
-        writer.print(gson.toJson(tempMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(tempMap);
     }
 }

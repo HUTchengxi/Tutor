@@ -23,29 +23,21 @@ public class UserLogController {
 
     /**
      * 保存用户登录记录
-     * @param logcity
-     * @param ip
-     * @param logsystem
-     * @param request
-     * @param response
      */
     @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/loginlog")
-    public void loginLog(String logcity, String ip, String logsystem, HttpServletRequest request,
-                         HttpServletResponse response) throws IOException {
+    public String loginLog(String logcity, String ip, String logsystem) throws IOException {
 
-        userLogApi.loginLog(logcity, ip, logsystem, request, response);
+        return userLogApi.loginLog(logcity, ip, logsystem);
     }
 
     /**
      * 获取用户的登录记录
-     * @param request
-     * @param response
      */
     @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/getuserlog")
-    public void getUserlog(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getUserlog() throws IOException {
 
-        userLogApi.getUserlog(request, response);
+        return userLogApi.getUserlog();
     }
 }

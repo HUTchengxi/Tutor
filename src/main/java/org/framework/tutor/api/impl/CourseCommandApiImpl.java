@@ -1,15 +1,3 @@
-/*
- * Copyright (C) 2011-2013 ShenZhen iBoxpay Information Technology Co. Ltd.
- *
- * All right reserved.
- *
- * This software is the confidential and proprietary information of iBoxPay Company of China.
- * ("Confidential Information").
- * You shall not disclose such Confidential Information and shall use it only
- * in accordance with the terms of the contract agreement you entered into with iBoxpay inc.
- *
- *
- */
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
@@ -34,11 +22,6 @@ import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-/**
- * @author yinjimin
- * @Description:
- * @date 2018年04月25日
- */
 @Component
 public class CourseCommandApiImpl implements CourseCommandApi {
 
@@ -57,18 +40,14 @@ public class CourseCommandApiImpl implements CourseCommandApi {
     @Autowired
     private StringRedisTemplate redis;
 
-    /**
-     * 获取课程评论数据
-     *
-     * @param cid
-     * @param response
-     */
+    @Autowired
+    private HttpServletRequest request;
+
+
     //TODO: 后续考虑加入redis
     @Override
-    public void getCourseCommand(Integer cid, Integer startpos, HttpServletResponse response) throws IOException {
+    public String getCourseCommand(Integer cid, Integer startpos) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(4);
         List<Object> rowList = new ArrayList<>();
@@ -95,24 +74,14 @@ public class CourseCommandApiImpl implements CourseCommandApi {
             resultMap.put("list", rowList);
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 获取课程神评
-     *
-     * @param cid
-     * @param response
-     * @throws IOException
-     */
+
     //TODO: 后续考虑加入redis
     @Override
-    public void getCourseCommandGod(Integer cid, HttpServletResponse response) throws IOException {
+    public String getCourseCommandGod(Integer cid) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(4);
         List<Object> rowList = new ArrayList<>();
@@ -139,25 +108,14 @@ public class CourseCommandApiImpl implements CourseCommandApi {
             resultMap.put("list", rowList);
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 查看当前用户对指定课程的评价
-     *
-     * @param cid
-     * @param request
-     * @param response
-     * @throws IOException
-     */
+
     //TODO: 后续考虑加入redis
     @Override
-    public void selMyCommand(Integer cid, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String selMyCommand(Integer cid) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -192,26 +150,14 @@ public class CourseCommandApiImpl implements CourseCommandApi {
             }
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 发表用户评价
-     *
-     * @param cid
-     * @param command
-     * @param score
-     * @param request
-     * @param response
-     */
+
     //TODO：使用了redis    更新tutor.[username].coursecommandcount
     @Override
-    public void subMyCommand(Integer cid, String command, Integer score, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String subMyCommand(Integer cid, String command, Integer score) throws IOException {
 
-        request.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -238,23 +184,14 @@ public class CourseCommandApiImpl implements CourseCommandApi {
             }
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 获取当前登录家教的课程评论总数
-     *
-     * @param request
-     * @param response
-     * @throws IOException
-     */
+
     //TODO：使用了redis     保存tutor.[username].coursecommandcount
     @Override
-    public void getCommandCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getCommandCount() throws IOException {
 
-        PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -273,22 +210,13 @@ public class CourseCommandApiImpl implements CourseCommandApi {
             redis.opsForValue().set(keyTemp.toString(), count.toString());
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 获取当前登录家教的课程评分平均值
-     *
-     * @param request
-     * @param response
-     * @throws IOException
-     */
-    @Override
-    public void getScoreAvg(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        PrintWriter writer = response.getWriter();
+    @Override
+    public String getScoreAvg() throws IOException {
+
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -298,24 +226,14 @@ public class CourseCommandApiImpl implements CourseCommandApi {
         String now = simpleDateFormat.format(new Date());
         Double scoreAvg = courseCommandService.getScoreAvgNow(username, now);
         resultMap.put("count", scoreAvg==null?"null": scoreAvg);
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 获取当前用户的课程评论数据
-     *
-     * @param request
-     * @param response
-     * @throws IOException
-     */
+
     //TODO：后续考虑使用redis
     @Override
-    public void loadMyCommandInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String loadMyCommandInfo() throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         String res = null;
@@ -341,24 +259,14 @@ public class CourseCommandApiImpl implements CourseCommandApi {
             resultMap.put("list", rowList);
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * @param [paramMap, request, response]
-     * @return void
-     * @Description 获取课程评论列表
-     * @author yinjimin
-     * @date 2018/4/18
-     */
+
     //TODO：后续考虑使用redis
     @Override
-    public void getCommandList(ParamMap paramMap, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getCommandList(ParamMap paramMap) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -475,22 +383,13 @@ public class CourseCommandApiImpl implements CourseCommandApi {
             }
         }
 
-        writer.print(gson.toJson(rowMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * @param [id, request, response]
-     * @return void
-     * @Description 指定评论为神评
-     * @author yinjimin
-     * @date 2018/4/18
-     */
-    @Override
-    public void setCommandGodstate(Integer id, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        PrintWriter writer = response.getWriter();
+    @Override
+    public String setCommandGodstate(Integer id) throws IOException {
+
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -512,8 +411,6 @@ public class CourseCommandApiImpl implements CourseCommandApi {
             }
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 }

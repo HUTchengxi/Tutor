@@ -23,22 +23,19 @@ public class UserSignController {
 
     /**
      * 获取用户的签到数据
-     * @param request
-     * @param response
-     * @throws IOException
      */
     @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/getmysign")
-    public void getMySign(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getMySign() throws IOException {
 
-        userSignApi.getMySign(request, response);
+        return userSignApi.getMySign();
     }
 
 
     @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/addusersign")
-    public void addUsersign(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String addUsersign() throws IOException {
 
-        userSignApi.addUsersign(request, response);
+        return userSignApi.addUsersign();
     }
 }

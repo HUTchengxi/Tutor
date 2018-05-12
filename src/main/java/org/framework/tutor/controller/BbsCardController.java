@@ -1,15 +1,3 @@
-/*
- * Copyright (C) 2011-2013 ShenZhen iBoxpay Information Technology Co. Ltd.
- *
- * All right reserved.
- *
- * This software is the confidential and proprietary information of iBoxPay Company of China.
- * ("Confidential Information").
- * You shall not disclose such Confidential Information and shall use it only
- * in accordance with the terms of the contract agreement you entered into with iBoxpay inc.
- *
- *
- */
 package org.framework.tutor.controller;
 
 import org.framework.tutor.annotation.RequireAuth;
@@ -36,110 +24,72 @@ public class BbsCardController {
     @Autowired
     private BbsCardApi bbsCardApi;
 
-
     /**
-     *
      * @Description 获取当前登录用户的帖子发表总数
-     * @param [request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/3/31
      */
     @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/getmycardcount")
-    public void getMyCardCount(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getMyCardCount() throws IOException {
 
-        bbsCardApi.getMyCardCount(request, response);
+        return bbsCardApi.getMyCardCount();
     }
 
 
     /**  
-     *    
      * @Description 指定用户发表讨论
-     * @param [title, imgsrc, descript, request, response]    
-     * @return void
-     * @author yinjimin  
-     * @date 2018/4/1
      */
     @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/publishCard")
-    public void publishCard(String title, String imgsrc, String descript, HttpServletRequest request, HttpServletResponse response)
-            throws IOException {
+    public String publishCard(String title, String imgsrc, String descript) throws IOException {
 
-        bbsCardApi.publishCard(title, imgsrc, descript, request, response);
+        return bbsCardApi.publishCard(title, imgsrc, descript);
     }
 
 
     /**
-     *
      * @Description 获取指定关键字的帖子数据
-     * @param [keyword, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/3
      */
     @PostMapping("/searchCard")
-    public void searchCard(String keyword, HttpServletResponse response) throws IOException {
+    public String searchCard(String keyword) throws IOException {
 
-        bbsCardApi.searchCard(keyword, response);
+        return bbsCardApi.searchCard(keyword);
     }
 
 
-    /**  
-     *    
+    /**
      * @Description 加载最新五条热门帖子
-     * @param [response]
-     * @return void
-     * @author yinjimin  
-     * @date 2018/4/3
-     */  
+     */
     @PostMapping("/loadhotcard")
-    public void loadHotCard(HttpServletResponse response) throws IOException {
+    public String loadHotCard() throws IOException {
 
-        bbsCardApi.loadHotCard(response);
+        return bbsCardApi.loadHotCard();
     }
 
     /**  
-     *    
      * @Description 获取对应问题数据
-     * @param [cardId, response]    
-     * @return void
-     * @author yinjimin  
-     * @date 2018/4/6
-     */  
+     */
     @PostMapping("/getcardbyid")
-    public void getCardById(@RequestParam String cardId, HttpServletResponse response) throws IOException {
+    public String getCardById(@RequestParam String cardId) throws IOException {
 
-        bbsCardApi.getCardById(cardId, response);
+        return bbsCardApi.getCardById(cardId);
     }
 
     /**
-     *
      * @Description 访问量加1
-     * @param [cardid, request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/26
      */
     @PostMapping("/addviscount")
-    public void addViscount(@RequestParam Integer cardid, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String addViscount(@RequestParam Integer cardid) throws IOException {
 
-        bbsCardApi.addViscount(cardid, request, response);
+        return bbsCardApi.addViscount(cardid);
     }
 
     /**
-     *
      * @Description 获取当前用户发表的帖子数据
-     * @param [request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/13
      */
     @RequireAuth(ident = "user", type = "api")
     @PostMapping("/getmycardinfo")
-    public void getMyCardInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getMyCardInfo() throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        bbsCardApi.getMyCardInfo(request, response);
+        return bbsCardApi.getMyCardInfo();
     }
 }

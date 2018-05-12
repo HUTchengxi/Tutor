@@ -1,15 +1,3 @@
-/*
- * Copyright (C) 2011-2013 ShenZhen iBoxpay Information Technology Co. Ltd.
- *
- * All right reserved.
- *
- * This software is the confidential and proprietary information of iBoxPay Company of China.
- * ("Confidential Information").
- * You shall not disclose such Confidential Information and shall use it only
- * in accordance with the terms of the contract agreement you entered into with iBoxpay inc.
- *
- *
- */
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
@@ -45,19 +33,14 @@ public class CommandStarApiImpl implements CommandStarApi {
     @Autowired
     private StringRedisTemplate redis;
 
-    /**
-     * 获取指定用户的指定课程评论的点赞数据
-     *
-     * @param cmid
-     * @param request
-     * @param response
-     */
+    @Autowired
+    private HttpServletRequest request;
+
+
     //TODO：使用了Redis   保存[username].[cmid].commandstar    [cmid].commandgoodcount/commandbadcount
     @Override
-    public void getMyCommandStar(Integer cmid, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getMyCommandStar(Integer cmid) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -101,25 +84,14 @@ public class CommandStarApiImpl implements CommandStarApi {
             redis.opsForValue().set(keyTemp.toString(), commandStarList1.size()+"");
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 实现评论的点赞与踩
-     *
-     * @param status
-     * @param cmid
-     * @param request
-     * @param response
-     * @throws IOException
-     */
+
     //TODO：使用了Redis   更新[username].[cmid].commandstar    [cmid].commandgoodcount/commandbadcount
     @Override
-    public void addMyStar(Integer score, Integer cmid, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String addMyStar(Integer score, Integer cmid) throws IOException {
 
-        PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -157,8 +129,6 @@ public class CommandStarApiImpl implements CommandStarApi {
             }
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 }

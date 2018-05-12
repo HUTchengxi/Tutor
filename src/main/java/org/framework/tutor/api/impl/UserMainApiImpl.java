@@ -1,15 +1,3 @@
-/*
- * Copyright (C) 2011-2013 ShenZhen iBoxpay Information Technology Co. Ltd.
- *
- * All right reserved.
- *
- * This software is the confidential and proprietary information of iBoxPay Company of China.
- * ("Confidential Information").
- * You shall not disclose such Confidential Information and shall use it only
- * in accordance with the terms of the contract agreement you entered into with iBoxpay inc.
- *
- *
- */
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
@@ -35,11 +23,6 @@ import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author yinjimin
- * @Description:
- * @date 2018年04月25日
- */
 @Component
 public class UserMainApiImpl implements UserMainApi {
 
@@ -55,19 +38,14 @@ public class UserMainApiImpl implements UserMainApi {
     @Value("${spring.mail.username}")
     private String from;
 
-    /**
-     * 获取我的个人头像
-     *
-     * @param request
-     * @param response
-     * @throws IOException
-     */
-    @Override
-    public void getImgsrc(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    @Autowired
+    private HttpServletRequest request;
 
-        response.setCharacterEncoding("utf-8");
+
+    @Override
+    public String getImgsrc() throws IOException {
+
         HttpSession session = request.getSession();
-        PrintWriter writer = response.getWriter();
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(4);
 
@@ -77,24 +55,14 @@ public class UserMainApiImpl implements UserMainApi {
         resultMap.put("status", "valid");
         resultMap.put("imgsrc", userMain.getImgsrc());
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 获取我的个人信息
-     *
-     * @param request
-     * @param response
-     * @throws IOException
-     */
-    @Override
-    public void getUserinfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
+    @Override
+    public String getUserinfo() throws IOException {
+
         HttpSession session = request.getSession();
-        PrintWriter writer = response.getWriter();
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(16);
 
@@ -109,24 +77,14 @@ public class UserMainApiImpl implements UserMainApi {
         resultMap.put("imgsrc", userMain.getImgsrc());
         resultMap.put("info", userMain.getInfo());
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 我帮你换修改我的头像
-     *
-     * @param request
-     * @param response
-     * @param imgsrc
-     */
-    @Override
-    public void modImgsrc(HttpServletRequest request, HttpServletResponse response, String imgsrc) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
+    @Override
+    public String modImgsrc(String imgsrc) throws IOException {
+
         HttpSession session = request.getSession();
-        PrintWriter writer = response.getWriter();
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(4);
 
@@ -139,28 +97,14 @@ public class UserMainApiImpl implements UserMainApi {
             resultMap.put("status", "mysqlerr");
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 手动上传修改我的头像
-     *
-     * @param request
-     * @param response
-     * @param imgfile
-     * @param oimgsrc
-     */
-    @Override
-    public void modImgfile(HttpServletRequest request, HttpServletResponse response,
-                           MultipartFile imgfile, String oimgsrc) throws IOException {
 
-        request.setCharacterEncoding("utf-8");
-        response.setCharacterEncoding("utf-8");
+    @Override
+    public String modImgfile(MultipartFile imgfile, String oimgsrc) throws IOException {
 
         HttpSession session = request.getSession();
-        PrintWriter writer = response.getWriter();
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(8);
 
@@ -193,29 +137,14 @@ public class UserMainApiImpl implements UserMainApi {
             resultMap.put("status", "mysqlerr");
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 修改我的个人信息
-     *
-     * @param username
-     * @param nickname
-     * @param sex
-     * @param age
-     * @param info
-     * @param request
-     * @param response
-     */
-    @Override
-    public void modUserinfo(String username, String nickname, Integer sex, Integer age, String info,
-                            HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
+    @Override
+    public String modUserinfo(String username, String nickname, Integer sex, Integer age, String info) throws IOException {
+
         HttpSession session = request.getSession();
-        PrintWriter writer = response.getWriter();
         String rusername = (String) session.getAttribute("username");
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
@@ -233,22 +162,13 @@ public class UserMainApiImpl implements UserMainApi {
             }
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 获取当前用户的绑定数据
-     *
-     * @param request
-     * @param response
-     */
-    @Override
-    public void getBindInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
+    @Override
+    public String getBindInfo() throws IOException {
+
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -262,24 +182,13 @@ public class UserMainApiImpl implements UserMainApi {
             resultMap.put("ema", userMain.getEmail());
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 通过发送邮件找回密码
-     *
-     * @param email
-     * @param username
-     * @param response
-     * @throws IOException
-     */
-    @Override
-    public void sendMail(String email, String username, HttpServletRequest request, HttpServletResponse response) throws IOException, MessagingException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
+    @Override
+    public String sendMail(String email, String username) throws IOException, MessagingException {
+
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
 
@@ -289,9 +198,7 @@ public class UserMainApiImpl implements UserMainApi {
             org.framework.tutor.domain.UserMain userMain = userMainService.getByUserAndEmail(username, email);
             if (userMain == null) {
                 resultMap.put("status", "invalid");
-                writer.print(gson.toJson(resultMap));
-                writer.flush();
-                writer.close();
+                return gson.toJson(resultMap);
             }
         }else {
                 //发送校验断码邮件
@@ -310,28 +217,13 @@ public class UserMainApiImpl implements UserMainApi {
             }
 
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 根据手机号/邮箱来重设密码
-     *
-     * @param username
-     * @param email
-     * @param phone
-     * @param valicode
-     * @param newpass
-     * @param repass
-     * @param request
-     * @param response
-     */
-    @Override
-    public void modPass(String username, String email, String phone, String valicode, String newpass, String repass,
-                        HttpServletRequest request, HttpServletResponse response) throws IOException, NoSuchAlgorithmException {
 
-        PrintWriter writer = response.getWriter();
+    @Override
+    public String modPass(String username, String email, String phone, String valicode, String newpass, String repass) throws IOException, NoSuchAlgorithmException {
+
         HttpSession session = request.getSession();
         String realvalicode = (String) session.getAttribute("valicode");
         Gson gson = new Gson();
@@ -402,31 +294,14 @@ public class UserMainApiImpl implements UserMainApi {
             }
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 通过密保的方式进行找回密码
-     *
-     * @param queone
-     * @param ansone
-     * @param quetwo
-     * @param anstwo
-     * @param quethree
-     * @param ansthree
-     * @param password
-     * @param username
-     * @param request
-     * @param response
-     * @throws IOException
-     */
-    @Override
-    public void modPassBySecret(String queone, String ansone, String quetwo, String anstwo, String quethree, String ansthree, String password,
-                                String username, HttpServletRequest request, HttpServletResponse response) throws IOException, NoSuchAlgorithmException {
 
-        PrintWriter writer = response.getWriter();
+    @Override
+    public String modPassBySecret(String queone, String ansone, String quetwo, String anstwo, String quethree, String ansthree, String password,
+                                String username) throws IOException, NoSuchAlgorithmException {
+
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
 
@@ -463,23 +338,13 @@ public class UserMainApiImpl implements UserMainApi {
             resultMap.put("status", "err-mb1");
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 解除绑定
-     *
-     * @param type
-     * @param valicode
-     * @param request
-     * @param response
-     */
-    @Override
-    public void userUnbind(String type, String valicode, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        PrintWriter writer = response.getWriter();
+    @Override
+    public String userUnbind(String type, String valicode) throws IOException {
+
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -506,24 +371,13 @@ public class UserMainApiImpl implements UserMainApi {
             resultMap.put("status", "codeerr");
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 发送绑定的验证短码
-     *
-     * @param type
-     * @param email
-     * @param phone
-     * @param request
-     * @param response
-     */
-    @Override
-    public void sendBindCode(String type, String email, String phone, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        PrintWriter writer = response.getWriter();
+    @Override
+    public String sendBindCode(String type, String email, String phone) throws IOException {
+
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -585,24 +439,13 @@ public class UserMainApiImpl implements UserMainApi {
             resultMap.put("status", "invalid");
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 进行邮箱/手机号码的绑定
-     *
-     * @param type
-     * @param email
-     * @param valicode
-     * @param response
-     * @param request
-     */
-    @Override
-    public void userBind(String type, String email, String valicode, HttpServletResponse response, HttpServletRequest request) throws IOException {
 
-        PrintWriter writer = response.getWriter();
+    @Override
+    public String userBind(String type, String email, String valicode) throws IOException {
+
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -622,23 +465,12 @@ public class UserMainApiImpl implements UserMainApi {
                 resultMap.put("status", "codeerr");
             }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 发送解除手机绑定的验证码
-     *
-     * @param phone
-     * @param request
-     * @param response
-     * @throws IOException
-     */
     @Override
-    public void sendUnbindPhone(String phone, String username, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String sendUnbindPhone(String phone, String username) throws IOException {
 
-        PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
@@ -675,22 +507,13 @@ public class UserMainApiImpl implements UserMainApi {
             session.setAttribute("valiemail", phone);
             resultMap.put("status", "ok");
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * 发送手机注册验证码
-     *
-     * @param phone
-     * @param request
-     * @param response
-     */
-    @Override
-    public void sendRegisterBindCode(String phone, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        PrintWriter writer = response.getWriter();
+    @Override
+    public String sendRegisterBindCode(String phone) throws IOException {
+
         HttpSession session = request.getSession();
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
@@ -727,8 +550,6 @@ public class UserMainApiImpl implements UserMainApi {
             resultMap.put("status", "sendok");
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 }

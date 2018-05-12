@@ -8,17 +8,13 @@ public interface CourseLogAPi {
 
     /**
      * 获取我的课程记录
-     * @param request
-     * @param response
      */
-    public void getLog(HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String getLog() throws IOException;
 
 
     /**
      * 删除指定的课程记录
-     * @param id
-     * @param request
-     * @param response
+     * @param id 课程记录id
      */
-    public void delLog(Integer id, HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String delLog(Integer id) throws IOException;
 }

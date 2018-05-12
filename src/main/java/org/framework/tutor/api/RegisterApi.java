@@ -10,33 +10,24 @@ public interface RegisterApi {
 
     /**
      * 校验注册的用户名是否已经存在
-     *
-     * @param response
      * @param username
      */
-    public void checkExistUser(HttpServletResponse response, String username) throws IOException;
+    public String checkExistUser(String username) throws IOException;
 
     /**
-     * 进行注册
-     *
-     * @param request
-     * @param response
+     * 进行注册(三种方式都用这一个注册：手机/邮箱/暂不验证)
      * @param username
      * @param password
-     * @param checktype
+     * @param checktype 注册的方式，三种之一
      * @param telephone
      * @param phonecode
      * @param email
      */
-    public void registerNoCheck(HttpServletRequest request, HttpServletResponse response, String username, String password,String checktype,
-                                String telephone, String email, String phonecode) throws IOException, MessagingException, NoSuchAlgorithmException;
+    public String registerNoCheck(String username, String password,String checktype, String telephone, String email,
+                                  String phonecode) throws IOException, MessagingException, NoSuchAlgorithmException;
 
     /**
      * 重发邮件
-     *
-     * @param request
-     * @param response
-     * @throws IOException
      */
-    public void emailResend(HttpServletRequest request, HttpServletResponse response) throws IOException, MessagingException;
+    public String emailResend() throws IOException, MessagingException;
 }

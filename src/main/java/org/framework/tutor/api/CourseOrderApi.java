@@ -8,65 +8,48 @@ public interface CourseOrderApi {
 
     /**
      * 获取课程订购数据
-     * @param cid
-     * @param request
-     * @param response
+     * @param cid 课程id
      */
-    public void getOrderInfo(Integer cid, HttpServletRequest request, HttpServletResponse response) throws IOException ;
+    public String getOrderInfo(Integer cid) throws IOException ;
 
     /**
      * 加入购物车
-     * @param cid
-     * @param request
-     * @param response
+     * @param cid 课程id
      */
-    public void addCart(Integer cid, HttpServletRequest request, HttpServletResponse response) throws IOException ;
+    public String addCart(Integer cid) throws IOException ;
 
     /**
      * 获取用户购物车数据
-     * @param request
-     * @param response
+     * @param startpos 开始位置
      */
-    public void getMyCart(Integer startpos, HttpServletRequest request, HttpServletResponse response) throws IOException ;
+    public String getMyCart(Integer startpos) throws IOException ;
 
     /**
      * 删除指定用户的购物车物品
-     * @param id
-     * @param request
-     * @param response
+     * @param id 购物车物品id
      */
-    public void delMyCart(Integer id, HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String delMyCart(Integer id) throws IOException;
 
     /**
      * 获取指定用户的购物车物品总数
-     * @param request
-     * @param response
-     * @throws IOException
      */
-    public void getMyCartCount(HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String getMyCartCount() throws IOException;
 
     /**
      * 获取用户已支付/未支付/已失效订单数据
-     * @param status
-     * @param startpos
-     * @param request
-     * @param response
+     * @param status 订单状态
+     * @param startpos 开始位置
      */
-    public void getMyOrder(String status, Integer startpos, HttpServletRequest request, HttpServletResponse response) throws IOException ;
+    public String getMyOrder(String status, Integer startpos) throws IOException ;
 
     /**
      * 将指定订单放入回收站
-     * @param oid
-     * @param request
-     * @param response
+     * @param oid 订单id
      */
-    public void setInCycle(Integer oid, HttpServletRequest request, HttpServletResponse response) throws IOException ;
+    public String setInCycle(Integer oid) throws IOException ;
 
     /**
      * 获取家教的课程订单总数
-     * @param request
-     * @param response
-     * @throws IOException
      */
-    public void getOrderCount(HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String getOrderCount() throws IOException;
 }

@@ -18,23 +18,16 @@ import java.io.PrintWriter;
 public interface BbsCardAnswerStarApi {
 
     /**
-     *
      * @Description 判断当前用户是否star指定回答
-     * @param [cardId, request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/10
+     * @param aid: 帖子回答id
      */
-    public void checkUserStar(Integer aid, HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String checkUserStar(Integer aid) throws IOException;
 
 
     /**
-     *
      * @Description 用户star指定回答
-     * @param [aid, score, request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/10
+     * @param aid: 帖子回答id
+     * @param score: 用户star分数（1/-1）
      */
-    public void addUserStar(Integer aid, Integer score, HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String addUserStar(Integer aid, Integer score) throws IOException;
 }

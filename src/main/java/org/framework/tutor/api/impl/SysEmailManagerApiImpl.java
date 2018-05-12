@@ -1,15 +1,3 @@
-/*
- * Copyright (C) 2011-2013 ShenZhen iBoxpay Information Technology Co. Ltd.
- *
- * All right reserved.
- *
- * This software is the confidential and proprietary information of iBoxPay Company of China.
- * ("Confidential Information").
- * You shall not disclose such Confidential Information and shall use it only
- * in accordance with the terms of the contract agreement you entered into with iBoxpay inc.
- *
- *
- */
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
@@ -39,11 +27,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author yinjimin
- * @Description:
- * @date 2018年04月25日
- */
 @Component
 public class SysEmailManagerApiImpl implements SysEmailManagerApi {
 
@@ -59,17 +42,13 @@ public class SysEmailManagerApiImpl implements SysEmailManagerApi {
     @Value("${spring.mail.username}")
     private String from;
 
-    /**
-     * @param [emailParam, request, response]
-     * @return void
-     * @Description 发送邮件
-     * @author yinjimin
-     * @date 2018/4/20
-     */
-    @Override
-    public void sendEmail(EmailParam emailParam, HttpServletRequest request, HttpServletResponse response) throws IOException, MessagingException {
+    @Autowired
+    private HttpServletRequest request;
 
-        PrintWriter writer = response.getWriter();
+
+    @Override
+    public String sendEmail(EmailParam emailParam) throws IOException, MessagingException {
+
         Gson gson = new Gson();
 
         //获取对应用户的address
@@ -91,25 +70,15 @@ public class SysEmailManagerApiImpl implements SysEmailManagerApi {
             resultMap.put("status", "sendok");
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     * @param [emailParam, request, response]
-     * @return void
-     * @Description 发送邮件
-     * @author yinjimin
-     * @date 2018/4/20
-     */
+
     @Override
     @Transactional(isolation = Isolation.REPEATABLE_READ)
-    public void saveEmail(EmailParam emailParam, HttpServletRequest request, HttpServletResponse response) throws IOException, MessagingException {
+    public String saveEmail(EmailParam emailParam) throws IOException, MessagingException {
 
-        PrintWriter writer = response.getWriter();
         Gson gson = new Gson();
-
         //获取对应用户的address
         UserMain userMain = userMainService.getByUser(emailParam.getSend());
         Map<String, Object> resultMap = new HashMap<>(1);
@@ -138,24 +107,13 @@ public class SysEmailManagerApiImpl implements SysEmailManagerApi {
             resultMap.put("status", "valid");
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     *
-     * @Description 获取邮箱列表
-     * @param [emailParam, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/20
-     */
-    @Override
-    public void getEmailList(EmailParam emailParam, HttpServletResponse response) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
+    @Override
+    public String getEmailList(EmailParam emailParam) throws IOException {
+
         Gson gson = new Gson();
 
         Integer emailStatus = emailParam.getEmailStatus();
@@ -191,26 +149,15 @@ public class SysEmailManagerApiImpl implements SysEmailManagerApi {
             resultMap.put("total", total);
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     *
-     * @Description 获取对应的邮件详情
-     * @param [id, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/20
-     */
-    @Override
-    public void getEmailDetail(Integer id, HttpServletResponse response) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
+    @Override
+    public String getEmailDetail(Integer id) throws IOException {
+
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(4);
-        PrintWriter writer = response.getWriter();
 
         SysEmailManage sysEmailManage = sysEmailManageService.getById(id);
         if(sysEmailManage == null){
@@ -223,23 +170,13 @@ public class SysEmailManagerApiImpl implements SysEmailManagerApi {
             resultMap.put("status", status);
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
-    /**
-     *
-     * @Description 删除指定邮件
-     * @param [id, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/20
-     */
-    @Override
-    public void deleteEmail(Integer id, HttpServletResponse response) throws IOException {
 
-        PrintWriter writer = response.getWriter();
+    @Override
+    public String deleteEmail(Integer id) throws IOException {
+
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(1);
 
@@ -251,18 +188,14 @@ public class SysEmailManagerApiImpl implements SysEmailManagerApi {
             resultMap.put("status", "valid");
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
     @Override
-    public void getModinfoById(Integer id, HttpServletResponse response) throws IOException {
+    public String getModinfoById(Integer id) throws IOException {
 
-        response.setCharacterEncoding("utf-8");
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(4);
-        PrintWriter writer = response.getWriter();
 
         SysEmailManage sysEmailManage = sysEmailManageService.getById(id);
         if(sysEmailManage == null){
@@ -274,8 +207,6 @@ public class SysEmailManagerApiImpl implements SysEmailManagerApi {
             resultMap.put("email", sysEmailManage.getEmail());
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 }

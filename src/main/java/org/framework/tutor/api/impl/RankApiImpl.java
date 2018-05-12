@@ -1,15 +1,3 @@
-/*
- * Copyright (C) 2011-2013 ShenZhen iBoxpay Information Technology Co. Ltd.
- *
- * All right reserved.
- *
- * This software is the confidential and proprietary information of iBoxPay Company of China.
- * ("Confidential Information").
- * You shall not disclose such Confidential Information and shall use it only
- * in accordance with the terms of the contract agreement you entered into with iBoxpay inc.
- *
- *
- */
 package org.framework.tutor.api.impl;
 
 import com.google.gson.JsonParser;
@@ -30,11 +18,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-/**
- * @author yinjimin
- * @Description:
- * @date 2018年04月25日
- */
 @Component
 public class RankApiImpl implements RankApi {
 
@@ -44,20 +27,13 @@ public class RankApiImpl implements RankApi {
     @Autowired
     private UserMainService userMainService;
 
-    /**
-     * 获取rank榜数据
-     * @param type
-     * @param mark
-     * @param startpos
-     * @param request
-     * @param response
-     * @throws IOException
-     */
-    @Override
-    public void rankSelect(String type, String mark, Integer startpos, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    @Autowired
+    private HttpServletRequest request;
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
+
+    @Override
+    public String rankSelect(String type, String mark, Integer startpos) throws IOException {
+
         String res = null;
 
         //最勤打卡榜
@@ -114,8 +90,6 @@ public class RankApiImpl implements RankApi {
             }
         }
 
-        writer.print(new JsonParser().parse(res).getAsJsonObject());
-        writer.flush();
-        writer.close();
+        return  new JsonParser().parse(res).getAsJsonObject().toString();
     }
 }

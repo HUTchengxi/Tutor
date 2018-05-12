@@ -1,15 +1,3 @@
-/*
- * Copyright (C) 2011-2013 ShenZhen iBoxpay Information Technology Co. Ltd.
- *
- * All right reserved.
- *
- * This software is the confidential and proprietary information of iBoxPay Company of China.
- * ("Confidential Information").
- * You shall not disclose such Confidential Information and shall use it only
- * in accordance with the terms of the contract agreement you entered into with iBoxpay inc.
- *
- *
- */
 package org.framework.tutor.controller;
 
 import com.google.gson.Gson;
@@ -31,7 +19,7 @@ import java.util.Map;
 
 /**
  * @author yinjimin
- * @Description:
+ * @Description: 课程下线响应
  * @date 2018年04月21日
  */
 @RestController
@@ -42,17 +30,12 @@ public class CourseDeleteRespController {
     private CourseDeleteRespApi courseDeleteRespApi;
 
     /**
-     *
      * @Description 更新状态
-     * @param [reqid, status, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/21
      */
     @RequireAuth(ident = "admin", type = "api")
     @PostMapping("/modreqstatus")
-    public void modReqStatus(@RequestParam Integer id, @RequestParam Integer status, @RequestParam String respDesc, HttpServletResponse response) throws IOException {
+    public String modReqStatus(@RequestParam Integer id, @RequestParam Integer status, @RequestParam String respDesc) throws IOException {
 
-        courseDeleteRespApi.modReqStatus(id, status, respDesc, response);
+        return courseDeleteRespApi.modReqStatus(id, status, respDesc);
     }
 }

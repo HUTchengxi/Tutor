@@ -1,15 +1,3 @@
-/*
- * Copyright (C) 2011-2013 ShenZhen iBoxpay Information Technology Co. Ltd.
- *
- * All right reserved.
- *
- * This software is the confidential and proprietary information of iBoxPay Company of China.
- * ("Confidential Information").
- * You shall not disclose such Confidential Information and shall use it only
- * in accordance with the terms of the contract agreement you entered into with iBoxpay inc.
- *
- *
- */
 package org.framework.tutor.api.impl;
 
 import com.google.gson.Gson;
@@ -32,11 +20,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author yinjimin
- * @Description:
- * @date 2018年04月25日
- */
 @Component
 public class CourseLogApiImpl implements CourseLogAPi {
 
@@ -46,18 +29,14 @@ public class CourseLogApiImpl implements CourseLogAPi {
     @Autowired
     private CourseMainService courseMainService;
 
-    /**
-     * 获取我的课程记录
-     *
-     * @param request
-     * @param response
-     */
+    @Autowired
+    private HttpServletRequest request;
+
+
     //TODO：后续考虑使用redis
     @Override
-    public void getLog(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getLog() throws IOException {
 
-        response.setCharacterEncoding("utf-8");
-        PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
@@ -84,27 +63,15 @@ public class CourseLogApiImpl implements CourseLogAPi {
             resultMap.put("list", rowList);
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 
 
-    /**
-     * 删除指定的课程记录
-     *
-     * @param id
-     * @param request
-     * @param response
-     */
     //TODO：后续考虑使用redis
     @Override
-    public void delLog(Integer id, HttpServletRequest request, HttpServletResponse response) throws IOException {
-
-        response.setCharacterEncoding("utf-8");
+    public String delLog(Integer id) throws IOException {
 
         HttpSession session = request.getSession();
-        PrintWriter writer = response.getWriter();
         String username = (String) session.getAttribute("username");
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
@@ -115,8 +82,6 @@ public class CourseLogApiImpl implements CourseLogAPi {
             resultMap.put("status", "ok");
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 }

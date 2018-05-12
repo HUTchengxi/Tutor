@@ -17,19 +17,14 @@ public interface CommandStarApi {
 
     /**
      * 获取指定用户的指定课程评论的点赞数据
-     * @param cmid
-     * @param request
-     * @param response
+     * @param cmid 评论id
      */
-    public void getMyCommandStar(Integer cmid, HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String getMyCommandStar(Integer cmid) throws IOException;
 
     /**
      * 实现评论的点赞与踩
-     * @param status
-     * @param cmid
-     * @param request
-     * @param response
-     * @throws IOException
+     * @param status 用户评分（1/-1）
+     * @param cmid 评论id
      */
-    public void addMyStar(Integer score, Integer cmid, HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String addMyStar(Integer score, Integer cmid) throws IOException;
 }

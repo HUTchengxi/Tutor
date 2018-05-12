@@ -8,12 +8,11 @@ public interface UserSignApi {
 
     /**
      * 获取用户的签到数据
-     * @param request
-     * @param response
-     * @throws IOException
      */
-    public void getMySign(HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String getMySign() throws IOException;
 
-
-    public void addUsersign(HttpServletRequest request, HttpServletResponse response) throws IOException;
+    /**
+     * @Description 用户签到
+     */
+    public String addUsersign() throws IOException;
 }

@@ -19,8 +19,6 @@ public interface TutorBtnsApi {
 
     /**
      * 获取当前家教的所有常用链接数据
-     * @param request
-     * @param response
      */
-    public void getBtnsList(HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String getBtnsList() throws IOException;
 }

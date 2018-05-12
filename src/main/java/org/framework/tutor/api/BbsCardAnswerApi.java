@@ -4,48 +4,40 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * @Description: 帖子答案表服务层
+ * @author yinjimin
+ */
 public interface BbsCardAnswerApi {
 
     /**
-     *
      * @Description 获取对应的帖子答案数据
-     * @param [cardId, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/7
+     * @param cardId：帖子Id
      */
-    public void getCardAnswerByCardid(Integer cardId, HttpServletResponse response) throws IOException;
+    public String getCardAnswerByCardid(Integer cardId) throws IOException;
 
     /**
-     *
      * @Description 判断当前用户是否已回答问题
-     * @param [cardId, request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/9
+     * @param cardId: 帖子id
      */
-    public void checkUserCommand(Integer cardId, HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String checkUserCommand(Integer cardId) throws IOException;
 
     /**
-     *
      * @Description 添加回答
-     * @param [cardId, answer, request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/9
+     * @param cardId: 帖子id
+     * @param answer: 用户回答
      */
-    public void addAnswer(Integer cardId, String answer, HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String addAnswer(Integer cardId, String answer) throws IOException;
 
     /**
-     *
      * @Description 获取用户回答总数
-     * @param [request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/12
+     * @param
      */
-    public void getMyAnswerCount(HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String getMyAnswerCount() throws IOException;
 
-
-    public void getMyAnswerInfo(HttpServletRequest request, HttpServletResponse response) throws IOException;
+    /**  
+     * @Description 获取用户的回答数据
+     * @param
+     */
+    public String getMyAnswerInfo() throws IOException;
 }

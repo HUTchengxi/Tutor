@@ -16,7 +16,6 @@ import java.security.NoSuchAlgorithmException;
 
 /**
  * 用户个人信息控制类
- *
  * @author chengxi
  */
 @RestController
@@ -28,219 +27,136 @@ public class UserMainController {
 
     /**
      * 获取我的个人头像
-     *
-     * @param request
-     * @param response
-     * @throws IOException
      */
     @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/getimgsrc")
-    public void getImgsrc(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getImgsrc() throws IOException {
 
-        userMainApi.getImgsrc(request, response);
+        return userMainApi.getImgsrc();
     }
 
     /**
      * 获取我的个人信息
-     *
-     * @param request
-     * @param response
-     * @throws IOException
      */
     @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/getuserinfo")
-    public void getUserinfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getUserinfo() throws IOException {
 
-        userMainApi.getUserinfo(request, response);
+        return userMainApi.getUserinfo();
     }
 
     /**
      * 我帮你换修改我的头像
-     *
-     * @param request
-     * @param response
-     * @param imgsrc
      */
     @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/modimgsrc")
-    public void modImgsrc(HttpServletRequest request, HttpServletResponse response, String imgsrc) throws IOException {
+    public String modImgsrc(String imgsrc) throws IOException {
 
-        userMainApi.modImgsrc(request, response, imgsrc);
+        return userMainApi.modImgsrc(imgsrc);
     }
 
     /**
      * 手动上传修改我的头像
-     *
-     * @param request
-     * @param response
-     * @param imgfile
-     * @param oimgsrc
      */
     @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/modimgfile")
-    public void modImgfile(HttpServletRequest request, HttpServletResponse response,
-                           MultipartFile imgfile, String oimgsrc) throws IOException {
+    public String modImgfile(MultipartFile imgfile, String oimgsrc) throws IOException {
 
-        userMainApi.modImgfile(request, response, imgfile, oimgsrc);
+        return userMainApi.modImgfile(imgfile, oimgsrc);
     }
 
     /**
      * 修改我的个人信息
-     *
-     * @param username
-     * @param nickname
-     * @param sex
-     * @param age
-     * @param info
-     * @param request
-     * @param response
      */
     @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/moduserinfo")
-    public void modUserinfo(String username, String nickname, Integer sex, Integer age, String info,
-                            HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String modUserinfo(String username, String nickname, Integer sex, Integer age, String info) throws IOException {
 
-        userMainApi.modUserinfo(username, nickname, sex, age, info, request, response);
+        return userMainApi.modUserinfo(username, nickname, sex, age, info);
     }
 
     /**
      * 获取当前用户的绑定数据
-     *
-     * @param request
-     * @param response
      */
     @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/getbindinfo")
-    public void getBindInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getBindInfo() throws IOException {
 
-        userMainApi.getBindInfo(request, response);
+        return userMainApi.getBindInfo();
     }
 
     /**
      * 通过发送邮件找回密码
-     *
-     * @param email
-     * @param username
-     * @param response
-     * @throws IOException
      */
     @RequestMapping("/forget_sendmail")
-    public void sendMail(String email, String username, HttpServletRequest request, HttpServletResponse response) throws IOException, MessagingException {
+    public String sendMail(String email, String username) throws IOException, MessagingException {
 
-        userMainApi.sendMail(email, username, request, response);
+        return userMainApi.sendMail(email, username);
     }
 
     /**
      * 根据手机号/邮箱来重设密码
-     *
-     * @param username
-     * @param email
-     * @param phone
-     * @param valicode
-     * @param newpass
-     * @param repass
-     * @param request
-     * @param response
      */
     @RequestMapping("/forget_modpass")
-    public void modPass(String username, String email, String phone, String valicode, String newpass, String repass,
-                        HttpServletRequest request, HttpServletResponse response) throws IOException, NoSuchAlgorithmException {
+    public String modPass(String username, String email, String phone, String valicode, String newpass, String repass) throws IOException, NoSuchAlgorithmException {
 
-        userMainApi.modPass(username, email, phone, valicode, newpass, repass, request, response);
+        return userMainApi.modPass(username, email, phone, valicode, newpass, repass);
     }
 
     /**
      * 通过密保的方式进行找回密码
-     *
-     * @param queone
-     * @param ansone
-     * @param quetwo
-     * @param anstwo
-     * @param quethree
-     * @param ansthree
-     * @param password
-     * @param username
-     * @param request
-     * @param response
-     * @throws IOException
      */
     @RequestMapping("/forget_modpassbysecret")
-    public void modPassBySecret(@RequestParam("queone") String queone, @RequestParam("ansone") String ansone,
+    public String modPassBySecret(@RequestParam("queone") String queone, @RequestParam("ansone") String ansone,
                                 String quetwo, String anstwo, String quethree, String ansthree, String password,
-                                String username, HttpServletRequest request, HttpServletResponse response) throws IOException, NoSuchAlgorithmException {
+                                String username) throws IOException, NoSuchAlgorithmException {
 
-        userMainApi.modPassBySecret(queone, ansone, quetwo, anstwo, quethree, ansthree, password, username, request, response);
+        return userMainApi.modPassBySecret(queone, ansone, quetwo, anstwo, quethree, ansthree, password, username);
     }
 
     /**
      * 解除绑定
-     *
-     * @param type
-     * @param valicode
-     * @param request
-     * @param response
      */
     @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/unbind_valicode")
-    public void userUnbind(String type, String valicode, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String userUnbind(String type, String valicode) throws IOException {
 
-        userMainApi.userUnbind(type, valicode, request, response);
+        return userMainApi.userUnbind(type, valicode);
     }
 
     /**
      * 发送绑定的验证短码
-     *
-     * @param type
-     * @param email
-     * @param phone
-     * @param request
-     * @param response
      */
     @RequestMapping("/sendbindcode")
-    public void sendBindCode(@RequestParam("type") String type, String email, String phone, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String sendBindCode(@RequestParam("type") String type, String email, String phone) throws IOException {
 
-        userMainApi.sendBindCode(type, email, phone, request, response);
+        return userMainApi.sendBindCode(type, email, phone);
     }
 
     /**
      * 进行邮箱/手机号码的绑定
-     *
-     * @param type
-     * @param email
-     * @param valicode
-     * @param response
-     * @param request
      */
     @RequestMapping("/userbind")
-    public void userBind(@RequestParam("type") String type, String email, String valicode, HttpServletResponse response, HttpServletRequest request) throws IOException {
+    public String userBind(@RequestParam("type") String type, String email, String valicode) throws IOException {
 
-        userMainApi.userBind(type, email, valicode, response, request);
+        return userMainApi.userBind(type, email, valicode);
     }
 
     /**
      * 发送解除手机绑定的验证码
-     *
-     * @param phone
-     * @param request
-     * @param response
-     * @throws IOException
      */
     @RequestMapping("/sendunbindphone")
-    public void sendUnbindPhone(@RequestParam("phone") String phone, String username, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String sendUnbindPhone(@RequestParam("phone") String phone, String username) throws IOException {
 
-        userMainApi.sendUnbindPhone(phone, username, request, response);
+        return userMainApi.sendUnbindPhone(phone, username);
     }
 
     /**
      * 发送手机注册验证码
-     *
-     * @param phone
-     * @param request
-     * @param response
      */
     @RequestMapping("/register_sendbindcode")
-    public void sendRegisterBindCode(@RequestParam("phone") String phone, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String sendRegisterBindCode(@RequestParam("phone") String phone) throws IOException {
 
-        userMainApi.sendRegisterBindCode(phone, request, response);
+        return userMainApi.sendRegisterBindCode(phone);
     }
 }

@@ -8,28 +8,19 @@ public interface UserSecretApi {
 
     /**
      * 获取当前用户的密保数据
-     *
-     * @param request
-     * @param response
+     * @param username
      */
-    public void getSecretInfo(String username, HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String getSecretInfo(String username) throws IOException;
 
     /**
      * 删除指定用户的密保数据
-     *
-     * @param request
-     * @param response
-     * @throws IOException
      */
-    public void delUserSecret(HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String delUserSecret() throws IOException;
 
     /**
      * 为指定用户添加密保数据
-     *
-     * @param question
-     * @param answer
-     * @param response
-     * @param request
+     * @param question 密保问题
+     * @param answer 密保答案
      */
-    public void addUserSecret(String question, String answer, HttpServletResponse response, HttpServletRequest request) throws IOException;
+    public String addUserSecret(String question, String answer) throws IOException;
 }

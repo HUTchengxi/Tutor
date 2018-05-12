@@ -20,7 +20,6 @@ import java.util.List;
  * 用户评论点赞控制器
  * @author chengxi
  */
-
 @RestController
 @RequestMapping("/commandstar_con")
 public class CommandStarController {
@@ -30,29 +29,21 @@ public class CommandStarController {
 
     /**
      * 获取指定用户的指定课程评论的点赞数据
-     * @param cmid
-     * @param request
-     * @param response
      */
     @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/getmycommandstar")
-    public void getMyCommandStar( Integer cmid, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getMyCommandStar( Integer cmid) throws IOException {
 
-        commandStarApi.getMyCommandStar(cmid, request, response);
+        return commandStarApi.getMyCommandStar(cmid);
     }
 
     /**
      * 实现评论的点赞与踩
-     * @param status
-     * @param cmid
-     * @param request
-     * @param response
-     * @throws IOException
      */
     @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/addmystar")
-    public void addMyStar(Integer score, Integer cmid, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String addMyStar(Integer score, Integer cmid) throws IOException {
 
-        commandStarApi.addMyStar(score, cmid, request, response);
+        return commandStarApi.addMyStar(score, cmid);
     }
 }

@@ -9,86 +9,56 @@ import java.io.IOException;
 public interface CourseCommandApi {
 
     /**
-     * 获取课程评论数据
-     *
-     * @param cid
-     * @param response
+     * @Description 获取课程评论数据
+     * @param cid 课程id
+     * @param startpos 开始位置
      */
-    public void getCourseCommand(Integer cid, Integer startpos, HttpServletResponse response) throws IOException;
+    public String getCourseCommand(Integer cid, Integer startpos) throws IOException;
 
     /**
-     * 获取课程神评
-     *
-     * @param cid
-     * @param response
-     * @throws IOException
+     * @Description 获取课程神评
+     * @param cid 课程id
      */
-    public void getCourseCommandGod(Integer cid, HttpServletResponse response) throws IOException;
+    public String getCourseCommandGod(Integer cid) throws IOException;
 
     /**
-     * 查看当前用户对指定课程的评价
-     *
-     * @param cid
-     * @param request
-     * @param response
-     * @throws IOException
+     * @Description 查看当前用户对指定课程的评价
+     * @param cid 课程id
      */
-    public void selMyCommand(Integer cid, HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String selMyCommand(Integer cid) throws IOException;
 
     /**
-     * 发表用户评价
-     *
-     * @param cid
-     * @param command
-     * @param score
-     * @param request
-     * @param response
+     * @Description 发表用户评价
+     * @param cid 课程id
+     * @param command 用户评价
+     * @param score 用户评分
      */
-    public void subMyCommand(Integer cid, String command, Integer score, HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String subMyCommand(Integer cid, String command, Integer score) throws IOException;
 
     /**
-     * 获取当前登录家教的课程评论总数
-     *
-     * @param request
-     * @param response
-     * @throws IOException
+     * @Description 获取当前登录家教的课程评论总数
      */
-    public void getCommandCount(HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String getCommandCount() throws IOException;
 
     /**
-     * 获取当前登录家教的课程评分平均值
-     *
-     * @param request
-     * @param response
-     * @throws IOException
+     * @Descrption 获取当前登录家教的课程评分平均值
      */
-    public void getScoreAvg(HttpServletRequest request, HttpServletResponse response) throws IOException ;
+    public String getScoreAvg() throws IOException ;
 
     /**
      * 获取当前用户的课程评论数据
-     *
-     * @param request
-     * @param response
-     * @throws IOException
      */
-    public void loadMyCommandInfo(HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String loadMyCommandInfo() throws IOException;
 
     /**
-     * @param [paramMap, request, response]
-     * @return void
      * @Description 获取课程评论列表
-     * @author yinjimin
-     * @date 2018/4/18
+     * @param paramMap
      */
-    public void getCommandList(ParamMap paramMap, HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String getCommandList(ParamMap paramMap) throws IOException;
 
     /**
-     *
      * @Description 指定评论为神评
-     * @param [id, request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/18
+     * @param id 评论id
      */
-    public void setCommandGodstate(Integer id, HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public String setCommandGodstate(Integer id) throws IOException;
 }

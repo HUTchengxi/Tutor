@@ -30,28 +30,22 @@ public class PublishLogController {
 
     /**
      * 加载最新的版本更新记录
-     * @param response
-     * @return
      */
     @RequireAuth(ident = "tutor", type = "api")
     @RequestMapping("/getlognew")
-    public void getLogNew(HttpServletResponse response) throws IOException {
+    public String getLogNew() throws IOException {
 
-        publishLogApi.getLogNew(response);
+       return publishLogApi.getLogNew();
     }
 
 
     /**
-     *
      * @Description 获取所有的版本更新记录
-     * @param [response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/3/31
      */
     @RequireAuth(ident = "tutor", type = "api")
     @RequestMapping("/getlogall")
-    public void getLogAll(HttpServletResponse response) throws IOException {
-        publishLogApi.getLogAll(response);
+    public String getLogAll() throws IOException {
+
+        return publishLogApi.getLogAll();
     }
 }

@@ -43,33 +43,23 @@ public class BbsCardAnswerStarController {
     private BbsCardAnswerStarApi bbsCardAnswerStarApi;
 
     /**
-     *
      * @Description 判断当前用户是否star指定回答
-     * @param [cardId, request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/10
      */
     @RequireAuth(ident = "user", type = "api")
     @RequestMapping("/checkuserstar")
-    public void checkUserStar(@RequestParam Integer aid, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String checkUserStar(@RequestParam Integer aid) throws IOException {
 
-        bbsCardAnswerStarApi.checkUserStar(aid, request, response);
+        return bbsCardAnswerStarApi.checkUserStar(aid);
     }
 
 
     /**
-     *
      * @Description 用户star指定回答
-     * @param [aid, score, request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/10
      */
     @RequireAuth(ident = "user", type = "api")
     @PostMapping("/adduserstar")
-    public void addUserStar(@RequestParam Integer aid, @RequestParam Integer score, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String addUserStar(@RequestParam Integer aid, @RequestParam Integer score) throws IOException {
 
-        bbsCardAnswerStarApi.addUserStar(aid, score, request, response);
+        return bbsCardAnswerStarApi.addUserStar(aid, score);
     }
 }

@@ -1,15 +1,3 @@
-/*
- * Copyright (C) 2011-2013 ShenZhen iBoxpay Information Technology Co. Ltd.
- *
- * All right reserved.
- *
- * This software is the confidential and proprietary information of iBoxPay Company of China.
- * ("Confidential Information").
- * You shall not disclose such Confidential Information and shall use it only
- * in accordance with the terms of the contract agreement you entered into with iBoxpay inc.
- *
- *
- */
 package org.framework.tutor.controller;
 
 import org.framework.tutor.annotation.RequireAuth;
@@ -35,76 +23,53 @@ public class CourseOrderManagerController {
     private CourseOrderManagerApi courseOrderManagerApi;
 
     /**
-     * @param [paramMap, request, response]
-     * @return void
      * @Description 获取指定家教课程订单列表
-     * @author yinjimin
-     * @date 2018/4/18
      */
     @RequireAuth(ident = "tutor", type = "api")
     @PostMapping("/getcourseorderlist")
-    public void getCourseOrderList(@RequestBody ParamMap paramMap, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getCourseOrderList(@RequestBody ParamMap paramMap) throws IOException {
 
-        courseOrderManagerApi.getCourseOrderList(paramMap, request, response);
+        return courseOrderManagerApi.getCourseOrderList(paramMap);
     }
 
     /**
-     *
      * @Description 获取订单详情数据
-     * @param [code, request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/19
      */
     @RequireAuth(ident = "tutor", type = "api")
     @PostMapping("/getorderdetail")
-    public void getOrderDetail(@RequestParam String code, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getOrderDetail(@RequestParam String code) throws IOException {
 
-        courseOrderManagerApi.getOrderDetail(code, request, response);
+        return courseOrderManagerApi.getOrderDetail(code);
     }
 
     /**
      *
      * @Description 更新家教处理状态
-     * @param [tutorStatus, tutorInfo, request, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/19
      */
     @RequireAuth(ident = "admin", type = "api")
     @PostMapping("/updatetutorstatus")
-    public void updateTutorStatus(@RequestParam String code, @RequestParam Integer tutorStatus, @RequestParam String tutorInfo, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String updateTutorStatus(@RequestParam String code, @RequestParam Integer tutorStatus, @RequestParam String tutorInfo) throws IOException {
 
-        courseOrderManagerApi.updateTutorStatus(code, tutorStatus, tutorInfo, request, response);
+        return courseOrderManagerApi.updateTutorStatus(code, tutorStatus, tutorInfo);
     }
 
     /**
-     *
      * @Description 获取异常订单数据
-     * @param [paramMap, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/19
      */
     @RequireAuth(ident = "admin", type = "api")
     @PostMapping("/geterrororderlist")
-    public void getErrorOrderList(@RequestBody ParamMap paramMap, HttpServletResponse response) throws IOException {
+    public String getErrorOrderList(@RequestBody ParamMap paramMap) throws IOException {
 
-        courseOrderManagerApi.getErrorOrderList(paramMap, response);
+        return courseOrderManagerApi.getErrorOrderList(paramMap);
     }
 
     /**
-     *
      * @Description 查看指定异常订单详情数据
-     * @param [code, response]
-     * @return void
-     * @author yinjimin
-     * @date 2018/4/19
      */
     @RequireAuth(ident = "admin", type = "api")
     @PostMapping("/geterrororderdetail")
-    public void getErrorOrderDetail(@RequestParam String code, HttpServletResponse response) throws IOException {
+    public String getErrorOrderDetail(@RequestParam String code) throws IOException {
 
-        courseOrderManagerApi.getErrorOrderDetail(code, response);
+        return courseOrderManagerApi.getErrorOrderDetail(code);
     }
 }

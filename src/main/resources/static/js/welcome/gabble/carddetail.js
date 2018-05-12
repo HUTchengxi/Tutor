@@ -91,7 +91,7 @@ $(function () {
     /**
      * 获取用户的评论总数
      */
-    var async_getanscount = function(){
+    var async_getanscount = function () {
 
         $.ajax({
             async: true,
@@ -112,7 +112,7 @@ $(function () {
     /**
      * 获取用户的回答总数
      */
-    var async_getcomcount = function(){
+    var async_getcomcount = function () {
 
         $.ajax({
             async: true,
@@ -245,7 +245,7 @@ $(function () {
                         "                    </li>");
 
                     var ident = data.ident;
-                    if(ident != 1){
+                    if (ident != 1) {
                         $("nav ul.navbar-right li.sysconfig").remove();
                     }
                 }
@@ -331,7 +331,7 @@ $(function () {
             },
             dataType: "json",
             success: function (data) {
-                $("html head title").text(data.title+"----论坛中心----勤成家教网");
+                $("html head title").text(data.title + "----论坛中心----勤成家教网");
                 $(".cardheader .title").text(data.title);
                 $(".cardheader .descript").text(data.descript);
                 $(".cardheader span.ptime").text(data.crttime);
@@ -355,7 +355,7 @@ $(function () {
     /**
      * 对应的问题访问量加1
      */
-    var async_addcardviscount = function(){
+    var async_addcardviscount = function () {
 
         $.ajax({
             async: true,
@@ -363,9 +363,9 @@ $(function () {
             url: "/bbscard_con/addviscount",
             data: {cardid: str_geturlparam("cardId")},
             dataType: "json",
-            success: function(data){
+            success: function (data) {
             },
-            error: function(xhr, status){
+            error: function (xhr, status) {
                 console.log(xhr);
             }
         });
@@ -439,7 +439,7 @@ $(function () {
                         "            <!--输入评论form表单框-->\n" +
                         "            <div class=\"mycommandinfo clearfix\">\n" +
                         "                <input type=\"text\" class=\"pull-left col-lg-10 col-sm-10 col-xs-10\" name=\"mycommand\" placeholder=\"在这里输入你的评论\" />\n" +
-                        "                <button class=\"btn subcommand pull-left\" data-cardid='"+cardId+"'>发表评论</button>\n" +
+                        "                <button class=\"btn subcommand pull-left\" data-cardid='" + cardId + "'>发表评论</button>\n" +
                         "            </div>\n" +
                         "        </div>\n" +
                         "    </div>");
@@ -486,7 +486,6 @@ $(function () {
     /**
      * 点击查看指定的答案的评论数据
      */
-    var state = false;
     var click_showanswercommand = function () {
 
         var status = $(this).data("status");
@@ -497,67 +496,65 @@ $(function () {
                 .addClass("glyphicon-arrow-up");
             $(this).closest("div.cardmain").find("div.commandlist").css("display", "block");
 
-            if (!state) {
-                //获取五条评论数据
-                state = true;
-                var $this = $(this);
-                $.ajax({
-                    async: true,
-                    type: "post",
-                    url: "/bbscardanswercommand_con/getcommandlistbyaid",
-                    data: {
-                        aid: aid,
-                        startpos: 0
-                    },
-                    dataType: "json",
-                    success: function (data) {
-                        var status = data.status;
-                        if (status == "none") {
-                            $this.closest("div.cardmain").find(".commandlist .commandmain").append("<div class='none'>当前暂无评论，快来抢沙发吧</div>");
+            //获取五条评论数据
+            var $this = $(this);
+            $.ajax({
+                async: true,
+                type: "post",
+                url: "/bbscardanswercommand_con/getcommandlistbyaid",
+                data: {
+                    aid: aid,
+                    startpos: 0
+                },
+                dataType: "json",
+                success: function (data) {
+                    var status = data.status;
+                        $this.closest("div.cardmain").find(".commandlist .commandmain").empty();
+                    if (status == "none") {
+                        $this.closest("div.cardmain").find(".commandlist .commandmain").append("<div class='none'>当前暂无评论，快来抢沙发吧</div>");
+                    }
+                    else {
+                        var count = 0;
+                        $.each(data.list, function (index, item) {
+                            count++;
+                            var id = item.id;
+                            var comtime = item.comtime;
+                            var command = item.descript;
+                            var floor = item.floor;
+                            var cardid = item.cardid;
+                            var imgsrc = item.imgsrc;
+                            var nickname = item.nickname;
+                            var repfloor = item.repfloor;
+                            $this.closest("div.cardmain").find(".commandlist .commandmain").append("<div class=\"commandmainhead clearfix\">\n" +
+                                "    <img class=\"pull-left comuserface\" src=\"" + imgsrc + "\" />\n" +
+                                "    <p class=\"pull-left comusernick\">" + nickname + "" + ((repfloor != "null" && repfloor != '' && repfloor != undefined) ? "<span>@</span>" + repfloor + "楼" : "") + "</p>" +
+                                "    <p class=\"pull-right comfloor\">" + floor + "楼</p>\n" +
+                                "</div>\n" +
+                                "<div class=\"commandmaininfo\">\n" +
+                                "    <p class=\"info\">" + command + "</p>\n" +
+                                "    <p class=\"ptimeinfo\">评论于<span class=\"ptime\">" + comtime + "</span></p>\n" +
+                                "</div>\n" +
+                                "<div class=\"btngroup\">\n" +
+                                "    <a href=\"javascript:;\" class=\"recommand\" data-repfloor='" + floor + "' data-cardid='" + cardid + "' data-aid='" + id + "'>\n" +
+                                "        <span class=\"glyphicon glyphicon-share-alt\"></span>回复\n" +
+                                "    </a>\n" +
+                                "    <a href=\"javascript:;\" class=\"report btn btn-link\">\n" +
+                                "        <span class=\"glyphicon glyphicon-bell\"></span>举报\n" +
+                                "    </a>\n" +
+                                "</div>");
+                        });
+                        if (count < 5) {
+                            $this.closest("div.cardmain").find(".commandlist .commandmain").append("<div class='loadmore'><a href='javascript:;' data-status='none'>--我是有底线的--</a></div>");
                         }
                         else {
-                            var count = 0;
-                            $.each(data.list, function (index, item) {
-                                count++;
-                                var id = item.id;
-                                var comtime = item.comtime;
-                                var command = item.descript;
-                                var floor = item.floor;
-                                var cardid = item.cardid;
-                                var imgsrc = item.imgsrc;
-                                var nickname = item.nickname;
-                                var repfloor = item.repfloor;
-                                $this.closest("div.cardmain").find(".commandlist .commandmain").append("<div class=\"commandmainhead clearfix\">\n" +
-                                    "    <img class=\"pull-left comuserface\" src=\"" + imgsrc + "\" />\n" +
-                                    "    <p class=\"pull-left comusernick\">" + nickname + "" + ((repfloor != "null" && repfloor != '' && repfloor != undefined) ? "<span>@</span>" + repfloor + "楼" : "") + "</p>" +
-                                    "    <p class=\"pull-right comfloor\">" + floor + "楼</p>\n" +
-                                    "</div>\n" +
-                                    "<div class=\"commandmaininfo\">\n" +
-                                    "    <p class=\"info\">" + command + "</p>\n" +
-                                    "    <p class=\"ptimeinfo\">评论于<span class=\"ptime\">" + comtime + "</span></p>\n" +
-                                    "</div>\n" +
-                                    "<div class=\"btngroup\">\n" +
-                                    "    <a href=\"javascript:;\" class=\"recommand\" data-repfloor='"+floor+"' data-cardid='"+cardid+"' data-aid='"+id+"'>\n" +
-                                    "        <span class=\"glyphicon glyphicon-share-alt\"></span>回复\n" +
-                                    "    </a>\n" +
-                                    "    <a href=\"javascript:;\" class=\"report btn btn-link\">\n" +
-                                    "        <span class=\"glyphicon glyphicon-bell\"></span>举报\n" +
-                                    "    </a>\n" +
-                                    "</div>");
-                            });
-                            if (count < 5) {
-                                $this.closest("div.cardmain").find(".commandlist .commandmain").append("<div class='loadmore'><a href='javascript:;' data-status='none'>--我是有底线的--</a></div>");
-                            }
-                            else {
-                                $this.closest("div.cardmain").find(".commandlist .commandmain").append("<div class='loadmore'><a href='javascript:;' data-startpos='1' data-id='" + aid + "'>加载更多</a></div>");
-                            }
+                            $this.closest("div.cardmain").find(".commandlist .commandmain").append("<div class='loadmore'><a href='javascript:;' data-startpos='1' data-id='" + aid + "'>加载更多</a></div>");
                         }
-                    },
-                    error: function (xhr, status) {
-                        console.log(xhr);
                     }
-                });
-            }
+                },
+                error: function (xhr, status) {
+                    console.log(xhr);
+                }
+            });
         }
         else {
             $(this).closest("div.cardmain").find("div.commandlist").css("display", "none");
@@ -592,7 +589,7 @@ $(function () {
             dataType: "json",
             success: function (data) {
                 var count = 0;
-                if(data.status != "none") {
+                if (data.status != "none") {
                     $.each(data.list, function (index, item) {
                         count++;
                         var id = item.id;
@@ -625,7 +622,7 @@ $(function () {
                     $this.closest("div.cardmain").find(".commandlist .commandmain").append("<div class='loadmore'><a href='javascript:;' data-status='none'>--我是有底线的--</a></div>");
                 }
                 else {
-                    $this.closest("div.cardmain").find(".commandlist .commandmain").append("<div class='loadmore'><a href='javascript:;' data-startpos='"+(startpos+1)+"' data-id='" + aid + "'>加载更多</a></div>");
+                    $this.closest("div.cardmain").find(".commandlist .commandmain").append("<div class='loadmore'><a href='javascript:;' data-startpos='" + (startpos + 1) + "' data-id='" + aid + "'>加载更多</a></div>");
                 }
                 $this.closest("div.loadmore").remove();
             },
@@ -640,10 +637,10 @@ $(function () {
     /**
      * 点击回复指定评论
      */
-    var click_openRepCommand = function(){
+    var click_openRepCommand = function () {
 
         var repfloor = $(this).data("repfloor");
-        $(this).closest("div.commandlist").find(".mycommandinfo input").val("@"+repfloor+"楼:").focus();
+        $(this).closest("div.commandlist").find(".mycommandinfo input").val("@" + repfloor + "楼:").focus();
         $(this).closest("div.commandlist").find(".mycommandinfo button").data("repfloor", repfloor);
     };
     $(document).on("click", ".cardmainlist .commandmain a.recommand", click_openRepCommand);
@@ -652,11 +649,11 @@ $(function () {
     /**
      * 点击发表评论
      */
-    var click_publishCommand = function(){
+    var click_publishCommand = function () {
 
-        if(!logstatus){
+        if (!logstatus) {
             layer.msg("请先登录");
-            return ;
+            return;
         }
 
         var answer = $(this).closest("div.mycommandinfo").find("input").val();
@@ -665,11 +662,11 @@ $(function () {
         answer = answer.trim();
         var repfloor = $(this).data("repfloor");
         //进行回复
-        if(answer.indexOf("@"+repfloor+"楼:") == 0){
-            answer = answer.replace("@"+repfloor+"楼:", "");
-            if(answer.trim() == ""){
+        if (answer.indexOf("@" + repfloor + "楼:") == 0) {
+            answer = answer.replace("@" + repfloor + "楼:", "");
+            if (answer.trim() == "") {
                 layer.msg("回复内容不能为空");
-                return ;
+                return;
             }
             $.ajax({
                 async: true,
@@ -682,22 +679,22 @@ $(function () {
                     repfloor: repfloor
                 },
                 dataType: "json",
-                success: function(data){
+                success: function (data) {
                     var status = data.status;
-                    if(status == "valid"){
+                    if (status == "valid") {
                         layer.msg("回复成功", {icon: 6});
                         $(".commandlist .mycommandinfo input").val("");
-                        return ;
+                        return;
                     }
                 }
             });
         }
         //进行评论
-        else{
+        else {
             console.log(answer);
-            if(answer.trim() == ""){
+            if (answer.trim() == "") {
                 layer.msg("回复内容不能为空");
-                return ;
+                return;
             }
             $.ajax({
                 async: true,
@@ -709,12 +706,12 @@ $(function () {
                     aid: aid
                 },
                 dataType: "json",
-                success: function(data){
+                success: function (data) {
                     var status = data.status;
-                    if(status == "valid"){
+                    if (status == "valid") {
                         layer.msg("评论成功", {icon: 6});
                         $(".commandlist .mycommandinfo input").val("");
-                        return ;
+                        return;
                     }
                 }
             });

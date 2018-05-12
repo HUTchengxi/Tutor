@@ -22,16 +22,10 @@ public class RankController {
 
     /**
      * 获取rank榜数据
-     * @param type
-     * @param mark
-     * @param startpos
-     * @param request
-     * @param response
-     * @throws IOException
      */
     @RequestMapping("/rank_select")
-    public void rankSelect(String type, String mark, Integer startpos, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String rankSelect(String type, String mark, Integer startpos) throws IOException {
 
-        rankApi.rankSelect(type, mark, startpos, request, response);
+        return rankApi.rankSelect(type, mark, startpos);
     }
 }
