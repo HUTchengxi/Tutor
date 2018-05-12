@@ -46,8 +46,8 @@ public class AdminController {
      * @date 2018/4/19
      */
     @PostMapping("login.json")
-    public void Login(@RequestParam String username, @RequestParam String password, HttpServletResponse response, HttpServletRequest request) throws IOException, NoSuchAlgorithmException {
+    public String Login(@RequestParam String username, @RequestParam String password) throws IOException, NoSuchAlgorithmException {
 
-        adminApi.Login(username, password, response, request);
+        return adminApi.Login(username, password);
     }
 }

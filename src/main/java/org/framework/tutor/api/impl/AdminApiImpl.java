@@ -41,6 +41,12 @@ public class AdminApiImpl implements AdminApi {
     private UserMainService userMainService;
 
     /**
+     * @Description 自动注入的request原理是通过代理的方式进行按需获取的，线程安全
+     */
+    @Autowired
+    private HttpServletRequest request;
+
+    /**
      *
      * @Description 管理员登录
      * @param [username, password, remember, request]
@@ -49,9 +55,8 @@ public class AdminApiImpl implements AdminApi {
      * @date 2018/4/19
      */
     @Override
-    public void Login(String username, String password, HttpServletResponse response, HttpServletRequest request) throws IOException, NoSuchAlgorithmException {
+    public String Login(String username, String password) throws IOException, NoSuchAlgorithmException {
 
-        PrintWriter writer = response.getWriter();
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(1);
         HttpSession session = request.getSession();
@@ -71,8 +76,6 @@ public class AdminApiImpl implements AdminApi {
             resultMap.put("url", "/adminpage_con/gosysadminmain");
         }
 
-        writer.print(gson.toJson(resultMap));
-        writer.flush();
-        writer.close();
+        return gson.toJson(resultMap);
     }
 }

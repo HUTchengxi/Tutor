@@ -15,5 +15,5 @@ public interface AdminApi {
      * @author yinjimin
      * @date 2018/4/19
      */
-    public void Login(String username, String password, HttpServletResponse response, HttpServletRequest request) throws IOException, NoSuchAlgorithmException;
+    public String Login(String username, String password) throws IOException, NoSuchAlgorithmException;
 }

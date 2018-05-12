@@ -65,7 +65,10 @@ public class UrlInterceptor extends AbstractHandlerInterceptor {
         } else {
             //判断sessionId和最近登录Id是否对应，不对应就挤出
             if (!sessionId.equals(loginId) && loginId != null) {
-                session.invalidate();
+//                session.invalidate();
+                session.removeAttribute("username");
+                session.removeAttribute("nickname");
+                session.removeAttribute("identity");
             }
         }
 
