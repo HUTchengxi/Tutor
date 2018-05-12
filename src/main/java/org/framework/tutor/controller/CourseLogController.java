@@ -3,7 +3,9 @@ package org.framework.tutor.controller;
 import org.framework.tutor.annotation.RequireAuth;
 import org.framework.tutor.api.CourseLogAPi;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
@@ -29,6 +31,17 @@ public class CourseLogController {
     public String getLog() throws IOException {
 
         return courseLogAPi.getLog();
+    }
+
+
+    /**  
+     * @Description 新增课程浏览记录
+     */
+    @RequireAuth(ident = "user", type = "api")
+    @RequestMapping("/addlog")
+    public String addLog(@RequestParam Integer cid){
+
+        return courseLogAPi.addLog(cid);
     }
 
 

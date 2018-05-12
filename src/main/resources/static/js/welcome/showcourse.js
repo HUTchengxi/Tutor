@@ -144,6 +144,24 @@ $(function () {
     login_check();
 
     /**
+     * 用户访问记录
+     */
+    var async_coursevislog = function(){
+
+        var cid = str_geturlparam("id");
+        $.ajax({
+            url: "/courselog_con/addlog",
+            data: {
+                cid: cid
+            },
+            dataType: "json",
+            success: function(data){
+            }
+        });
+    };
+    async_coursevislog();
+
+    /**
      * 点击注销按钮的功能实现
      */
     var logoff_btn = function () {

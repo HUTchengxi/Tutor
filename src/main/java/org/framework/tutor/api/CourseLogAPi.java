@@ -17,4 +17,10 @@ public interface CourseLogAPi {
      * @param id 课程记录id
      */
     public String delLog(Integer id) throws IOException;
+
+    /**  
+     * @Description 新增课程浏览记录
+     * @param cid 课程id
+     */
+    String addLog(Integer cid);
 }

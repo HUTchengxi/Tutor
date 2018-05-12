@@ -40,4 +40,19 @@ public class CourseLogServiceImpl implements CourseLogService {
 
         return courseLMapper.delLog(id);
     }
+
+    @Override
+    public void addLog(Integer cid, String username) {
+        courseLMapper.addLog(cid, username);
+    }
+
+    @Override
+    public Integer getUserlogCount(String username) {
+        return courseLMapper.getUserlogCount(username);
+    }
+
+    @Override
+    public CourseLog getFirstLog(String username) {
+        return courseLMapper.getFirseLog(username);
+    }
 }
