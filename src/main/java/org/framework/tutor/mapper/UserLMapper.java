@@ -32,6 +32,6 @@ public interface UserLMapper {
      * @param username
      * @return
      */
-    @Select("select * from user_log where username = #{username} limit 0, 10")
+    @Select("select * from user_log where username = #{username} order by logtime desc limit 0, 10")
     List<UserLog> getUserlog(@Param("username") String username);
 }

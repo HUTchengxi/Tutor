@@ -62,7 +62,7 @@ public class UserLogApiImpl implements UserLogApi {
                 resultMap.put("status", "ok");
                 resultMap.put("len", 0);
             } else {
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 for (org.framework.tutor.domain.UserLog userLog : userLogs) {
                     Map<String, Object> rowMap = new HashMap<>(8);
                     rowMap.put("logtime", simpleDateFormat.format(userLog.getLogtime()));

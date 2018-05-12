@@ -81,49 +81,41 @@
                         ip = returnCitySN["cip"];
 
                         //获取登录地区
-                        $.ajax({
-                            async: false,
-                            type: "get",
-                            url: "http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js",
-                            dataType: "jsonp",
-                            success: function(data){
-                                logcity = unescape(data.province + data.city);
-                            },
-                            error: function(xhr, status){
-                                layer.alert("网络异常导致无法进行相关记录");
-                                console.log("http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js error");
+                        $.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js',function(){
+
+                            logcity = remote_ip_info.country+remote_ip_info.province+remote_ip_info.city;
+
+                            //保存登录记录
+                            $.ajax({
+                                async: false,
+                                type: "post",
+                                url: "/userlog_con/loginlog",
+                                data: {"logcity": logcity, "ip": ip, "logsystem": logsystem},
+                                dataType: "json",
+                                success: function(data){
+                                    console.log(data.status);
+                                },
+                                error: function(xhr, status){
+                                    console.log("/usermain_con/loginlog error");
+                                }
+                            });
+
+                            if(window.location.href.indexOf("forward_con/gologin") < 0){
+                                window.history.go(0);
+                            }
+                            else if(document.referrer == window.location.href || document.referrer.trim() == ""){
+                                window.location.href = "/forward_con/welcome";
+                            }
+                            else if(document.referrer.indexOf("forward_con/goforget") >= 0){
+                                window.location = "/forward_con/welcome";
+                            }
+                            else if(document.referrer.indexOf("forward_con/goregister") >= 0){
+                                window.location = "/forward_con/welcome";
+                            }
+                            else{
+                                window.location.href = document.referrer;
                             }
                         });
-
-                        //保存登录记录
-                        $.ajax({
-                            async: true,
-                            type: "post",
-                            url: "/userlog_con/loginlog",
-                            data: {"logcity": logcity, "ip": ip, "logsystem": logsystem},
-                            dataType: "json",
-                            success: function(data){
-                                console.log(data.status);
-                            },
-                            error: function(xhr, status){
-                                console.log("/usermain_con/loginlog error");
-                            }
-                        })
-                        if(window.location.href.indexOf("forward_con/gologin") < 0){
-                            window.history.go(0);
-                        }
-                        else if(document.referrer == window.location.href || document.referrer.trim() == ""){
-                            window.location.href = "/forward_con/welcome";
-                        }
-                        else if(document.referrer.indexOf("forward_con/goforget") >= 0){
-                            window.location = "/forward_con/welcome";
-                        }
-                        else if(document.referrer.indexOf("forward_con/goregister") >= 0){
-                            window.location = "/forward_con/welcome";
-                        }
-                        else{
-                            window.location.href = document.referrer;
-                        }
                     }, 2000);
                 }
             },
