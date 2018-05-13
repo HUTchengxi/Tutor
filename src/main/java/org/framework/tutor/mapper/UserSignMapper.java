@@ -15,7 +15,7 @@ import java.util.Map;
  * @author chengxi
  */
 @Mapper
-public interface UserSMapper {
+public interface UserSignMapper {
 
     /**
      * 获取用户的签到数据

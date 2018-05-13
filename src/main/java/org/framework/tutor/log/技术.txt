@@ -321,7 +321,7 @@
 64.decimal(n,m)表示：数值总位数为n，其中包含m个小数，超出的小数按照四舍五入进行计算
 
 
-65.在使用mapper的过程中对函数进行了重载的时候报错：Mapped Statements collection already contains value for org.framework.tutor.mapper.CourseMMapper.getCourseListMore
+65.在使用mapper的过程中对函数进行了重载的时候报错：Mapped Statements collection already contains value for org.framework.tutor.mapper.CourseMainMapper.getCourseListMore
     这是因为；在mapper中使用的是每个注解对应的方法名作为id的，如果方法重载的话，就会使id重复，所以mapper中不能进行方法重载
 
 

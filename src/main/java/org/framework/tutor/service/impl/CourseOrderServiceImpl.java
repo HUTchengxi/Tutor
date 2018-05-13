@@ -1,7 +1,7 @@
 package org.framework.tutor.service.impl;
 
 import org.framework.tutor.domain.CourseOrder;
-import org.framework.tutor.mapper.CourseOMapper;
+import org.framework.tutor.mapper.CourseOrderMapper;
 import org.framework.tutor.service.CourseOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -16,7 +16,7 @@ import java.util.List;
 public class CourseOrderServiceImpl implements CourseOrderService {
 
     @Autowired
-    private CourseOMapper courseOMapper;
+    private CourseOrderMapper courseOrderMapper;
 
     /**
      * 获取指定课程的订购数量
@@ -26,7 +26,7 @@ public class CourseOrderServiceImpl implements CourseOrderService {
     @Override
     public Integer getOrderCount(Integer cid) {
 
-        return courseOMapper.getOrderCount(cid);
+        return courseOrderMapper.getOrderCount(cid);
     }
 
     /**
@@ -38,7 +38,7 @@ public class CourseOrderServiceImpl implements CourseOrderService {
     @Override
     public CourseOrder getUserOrder(String username, Integer cid) {
 
-        return courseOMapper.getUserOrder(username, cid);
+        return courseOrderMapper.getUserOrder(username, cid);
     }
 
     /**
@@ -51,7 +51,7 @@ public class CourseOrderServiceImpl implements CourseOrderService {
     @Override
     public boolean modUserState(String username, Integer cid, Integer state) {
 
-        return courseOMapper.modUserState(username, cid, state);
+        return courseOrderMapper.modUserState(username, cid, state);
     }
 
     /**
@@ -64,7 +64,7 @@ public class CourseOrderServiceImpl implements CourseOrderService {
     @Override
     public boolean addUserOrder(String username, Integer cid, Integer state) {
 
-        return courseOMapper.addUserOrder(username, cid, state);
+        return courseOrderMapper.addUserOrder(username, cid, state);
     }
 
     /**
@@ -77,7 +77,7 @@ public class CourseOrderServiceImpl implements CourseOrderService {
     @Override
     public List<CourseOrder> getMyOrder(String username, Integer status, Integer startpos) {
 
-        return courseOMapper.getMyOrder(username, status, startpos);
+        return courseOrderMapper.getMyOrder(username, status, startpos);
     }
 
     /**
@@ -89,7 +89,7 @@ public class CourseOrderServiceImpl implements CourseOrderService {
     @Override
     public int delMyCart(Integer id, String username) {
 
-        return courseOMapper.delMyCart(id, username);
+        return courseOrderMapper.delMyCart(id, username);
     }
 
     /**
@@ -100,7 +100,7 @@ public class CourseOrderServiceImpl implements CourseOrderService {
     @Override
     public Integer getMyCartCount(String username) {
 
-        return courseOMapper.getMyCartCount(username);
+        return courseOrderMapper.getMyCartCount(username);
     }
 
     /**
@@ -111,7 +111,7 @@ public class CourseOrderServiceImpl implements CourseOrderService {
     @Override
     public Integer setInCycle(Integer oid) {
 
-        return courseOMapper.setInCycle(oid);
+        return courseOrderMapper.setInCycle(oid);
     }
 
     /**
@@ -123,7 +123,7 @@ public class CourseOrderServiceImpl implements CourseOrderService {
     @Override
     public CourseOrder getByIdAndUser(String username, Integer oid) {
 
-        return courseOMapper.getByIdAndUser(username, oid);
+        return courseOrderMapper.getByIdAndUser(username, oid);
     }
 
     /**
@@ -135,7 +135,7 @@ public class CourseOrderServiceImpl implements CourseOrderService {
     @Override
     public Integer getOrderCountNow(String username, String now) {
 
-        return courseOMapper.getOrderCountNow(username, now);
+        return courseOrderMapper.getOrderCountNow(username, now);
     }
 
     /**
@@ -148,21 +148,21 @@ public class CourseOrderServiceImpl implements CourseOrderService {
     @Override
     public CourseOrder getByUserAndState(Integer cid, String username, Integer state) {
 
-        return courseOMapper.getByUserAndState(cid, username, state);
+        return courseOrderMapper.getByUserAndState(cid, username, state);
     }
 
     @Override
     public List<CourseOrder> getMyCourseOrderCount(Integer id) {
-        return courseOMapper.getMyCourseOrderCount(id);
+        return courseOrderMapper.getMyCourseOrderCount(id);
     }
 
     @Override
     public List<CourseOrder> getMyOrderListByIdList(String courseId) {
-        return courseOMapper.getMyOrderListByIdList(courseId);
+        return courseOrderMapper.getMyOrderListByIdList(courseId);
     }
 
     @Override
     public CourseOrder getById(Integer oid) {
-        return courseOMapper.getById(oid);
+        return courseOrderMapper.getById(oid);
     }
 }

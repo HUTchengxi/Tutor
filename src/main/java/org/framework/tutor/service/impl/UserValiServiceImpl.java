@@ -1,7 +1,7 @@
 package org.framework.tutor.service.impl;
 
 import org.framework.tutor.domain.UserVali;
-import org.framework.tutor.mapper.UserVMapper;
+import org.framework.tutor.mapper.UserValiMapper;
 import org.framework.tutor.service.UserValiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 public class UserValiServiceImpl implements UserValiService {
 
     @Autowired
-    private UserVMapper userVMapper;
+    private UserValiMapper userValiMapper;
 
     /**
      * 添加注册队列
@@ -25,7 +25,7 @@ public class UserValiServiceImpl implements UserValiService {
     @Override
     public void addUserVali(String username, String valicode, Integer status) {
 
-        userVMapper.addUserVali(username, valicode, status);
+        userValiMapper.addUserVali(username, valicode, status);
     }
 
     /**
@@ -36,7 +36,7 @@ public class UserValiServiceImpl implements UserValiService {
     @Override
     public String getCodeByUsername(String username) {
 
-        return userVMapper.getCodeByUsername(username);
+        return userValiMapper.getCodeByUsername(username);
     }
 
     /**
@@ -46,7 +46,7 @@ public class UserValiServiceImpl implements UserValiService {
     @Override
     public void delStatus(String username) {
 
-        userVMapper.delStatus(username);
+        userValiMapper.delStatus(username);
     }
 
     /**
@@ -56,7 +56,7 @@ public class UserValiServiceImpl implements UserValiService {
     @Override
     public void checkAll(String now) {
 
-        userVMapper.checkAll(now);
+        userValiMapper.checkAll(now);
     }
 
     /**
@@ -67,7 +67,7 @@ public class UserValiServiceImpl implements UserValiService {
     @Override
     public UserVali checkEmailStatus(String email) {
 
-        return userVMapper.checkEmailStatus(email);
+        return userValiMapper.checkEmailStatus(email);
     }
 
     /**
@@ -78,6 +78,6 @@ public class UserValiServiceImpl implements UserValiService {
     @Override
     public void updateEmailCode(String email, String valicode) {
 
-        userVMapper.updateEmailCode(email, valicode);
+        userValiMapper.updateEmailCode(email, valicode);
     }
 }

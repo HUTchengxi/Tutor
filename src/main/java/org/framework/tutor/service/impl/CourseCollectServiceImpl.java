@@ -1,7 +1,7 @@
 package org.framework.tutor.service.impl;
 
 import org.framework.tutor.domain.CourseCollect;
-import org.framework.tutor.mapper.CourseCMapper;
+import org.framework.tutor.mapper.CourseCollectMapper;
 import org.framework.tutor.service.CourseCollectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -16,7 +16,7 @@ import java.util.List;
 public class CourseCollectServiceImpl implements CourseCollectService {
 
     @Autowired
-    private CourseCMapper courseCMapper;
+    private CourseCollectMapper courseCollectMapper;
 
     /**
      * 获取我的课程收藏记录
@@ -26,7 +26,7 @@ public class CourseCollectServiceImpl implements CourseCollectService {
     @Override
     public List<CourseCollect> getMyCollect(String username, Integer startpos) {
 
-        return courseCMapper.getMyCollect(username, startpos);
+        return courseCollectMapper.getMyCollect(username, startpos);
     }
 
     /**
@@ -38,7 +38,7 @@ public class CourseCollectServiceImpl implements CourseCollectService {
     @Override
     public boolean unCollect(Integer cid, String username) {
 
-        return courseCMapper.unCollect(cid, username);
+        return courseCollectMapper.unCollect(cid, username);
     }
 
     /**
@@ -50,7 +50,7 @@ public class CourseCollectServiceImpl implements CourseCollectService {
     @Override
     public CourseCollect getCollect(Integer cid, String username) {
 
-        return courseCMapper.getCollect(cid, username);
+        return courseCollectMapper.getCollect(cid, username);
     }
 
     /**
@@ -62,7 +62,7 @@ public class CourseCollectServiceImpl implements CourseCollectService {
     @Override
     public boolean Collect(Integer cid, String username, String descript) {
 
-        return courseCMapper.Collect(cid, username, descript);
+        return courseCollectMapper.Collect(cid, username, descript);
     }
 
     /**
@@ -74,6 +74,6 @@ public class CourseCollectServiceImpl implements CourseCollectService {
     @Override
     public Integer getCollectCountNow(String username, String now) {
 
-        return courseCMapper.getCollectCountNow(username, now);
+        return courseCollectMapper.getCollectCountNow(username, now);
     }
 }

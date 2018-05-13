@@ -9,7 +9,7 @@ import org.apache.ibatis.annotations.*;
  * @author chengxi
  */
 @Mapper
-public interface UserSCMapper {
+public interface UserSecretMapper {
 
     /**
      * 获取指定用户的密保数据

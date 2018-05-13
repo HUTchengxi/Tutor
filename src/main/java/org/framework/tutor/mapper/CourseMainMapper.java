@@ -10,7 +10,7 @@ import java.util.List;
  * @author chengxi
  */
 @Mapper
-public interface CourseMMapper {
+public interface CourseMainMapper {
 
     /**
      * 指定学科进行最新发布排序

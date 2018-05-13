@@ -13,7 +13,7 @@ import java.util.List;
  * @author chengxi
  */
 @Mapper
-public interface UserLMapper {
+public interface UserLogMapper {
 
     /**
      * 保存用户登录记录

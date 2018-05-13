@@ -1,7 +1,7 @@
 package org.framework.tutor.service.impl;
 
 import org.framework.tutor.domain.CourseMain;
-import org.framework.tutor.mapper.CourseMMapper;
+import org.framework.tutor.mapper.CourseMainMapper;
 import org.framework.tutor.service.CourseMainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -16,7 +16,7 @@ import java.util.List;
 public class CourseMainServiceImpl implements CourseMainService {
 
     @Autowired
-    private CourseMMapper courseMMapper;
+    private CourseMainMapper courseMainMapper;
 
 
     /**
@@ -28,7 +28,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public List<CourseMain> getCourseListNew(Integer stype, Integer startpos) {
 
-        return courseMMapper.getCourseListANew(stype, startpos);
+        return courseMainMapper.getCourseListANew(stype, startpos);
     }
 
     /**
@@ -40,7 +40,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public List<CourseMain> getCourseListHot(Integer stype, Integer startpos) {
 
-        return courseMMapper.getCourseListAHot(stype, startpos);
+        return courseMainMapper.getCourseListAHot(stype, startpos);
     }
 
     /**
@@ -52,7 +52,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public List<CourseMain> getCourseListMore(Integer stype, Integer startpos) {
 
-        return courseMMapper.getCourseListAMore(stype, startpos);
+        return courseMainMapper.getCourseListAMore(stype, startpos);
     }
 
     /**
@@ -65,7 +65,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public List<CourseMain> getCourseListNew(Integer stype, String ctype, Integer startpos) {
 
-        return courseMMapper.getCourseListNew(stype, ctype, startpos);
+        return courseMainMapper.getCourseListNew(stype, ctype, startpos);
     }
 
     /**
@@ -78,7 +78,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public List<CourseMain> getCourseListHot(Integer stype, String ctype, Integer startpos) {
 
-        return courseMMapper.getCourseListHot(stype, ctype, startpos);
+        return courseMainMapper.getCourseListHot(stype, ctype, startpos);
     }
 
     /**
@@ -91,7 +91,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public List<CourseMain> getCourseListMore(Integer stype, String ctype, Integer startpos) {
 
-        return courseMMapper.getCourseListMore(stype, ctype, startpos);
+        return courseMainMapper.getCourseListMore(stype, ctype, startpos);
     }
 
     /**
@@ -102,7 +102,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public List<CourseMain> getCourseType(String stype) {
 
-        return courseMMapper.getCourseType(stype);
+        return courseMainMapper.getCourseType(stype);
     }
 
     /**
@@ -113,7 +113,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public List<CourseMain> courseSearch(String keyword) {
 
-        return courseMMapper.courseSearch(keyword);
+        return courseMainMapper.courseSearch(keyword);
     }
 
     /**
@@ -124,7 +124,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public CourseMain getCourseById(Integer id) {
 
-        return courseMMapper.getCourseById(id);
+        return courseMainMapper.getCourseById(id);
     }
 
     /**
@@ -135,7 +135,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public List<CourseMain> getCourseListHot(Integer startpos) {
 
-        return courseMMapper.getCourseListAHotA(startpos);
+        return courseMainMapper.getCourseListAHotA(startpos);
     }
 
     /**
@@ -146,7 +146,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public List<CourseMain> getCourseListMore(Integer startpos) {
 
-        return courseMMapper.getCourseListAMoreA(startpos);
+        return courseMainMapper.getCourseListAMoreA(startpos);
     }
 
     /**
@@ -157,7 +157,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public List<CourseMain> getCourseListNew(Integer startpos) {
 
-        return courseMMapper.getCourseListANewA(startpos);
+        return courseMainMapper.getCourseListANewA(startpos);
     }
 
     /**
@@ -169,7 +169,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public List<CourseMain> getCourseListNewAC(String ctype, Integer startpos) {
 
-        return courseMMapper.getCourseListNewAC(ctype, startpos);
+        return courseMainMapper.getCourseListNewAC(ctype, startpos);
     }
 
     /**
@@ -181,7 +181,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public List<CourseMain> getCourseListHotAC(String ctype, Integer startpos) {
 
-        return courseMMapper.getCourseListHotAC(ctype, startpos);
+        return courseMainMapper.getCourseListHotAC(ctype, startpos);
     }
 
     /**
@@ -193,7 +193,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public List<CourseMain> getCourseListMoreAC(String ctype, Integer startpos) {
 
-        return courseMMapper.getCourseListMoreAC(ctype, startpos);
+        return courseMainMapper.getCourseListMoreAC(ctype, startpos);
     }
 
     /**
@@ -205,7 +205,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public List<CourseMain> getCourseListNewKW(String keyword, Integer startpos) {
 
-        return courseMMapper.getCourseListNewKW(keyword, startpos);
+        return courseMainMapper.getCourseListNewKW(keyword, startpos);
     }
 
     /**
@@ -218,7 +218,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public List<CourseMain> getCourseListNewKW(Integer stype, String keyword, Integer startpos) {
 
-        return courseMMapper.getCourseListNewSKW(stype, keyword, startpos);
+        return courseMainMapper.getCourseListNewSKW(stype, keyword, startpos);
     }
 
     /**
@@ -230,7 +230,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public List<CourseMain> getCourseListHotKW(String keyword, Integer startpos) {
 
-        return courseMMapper.getCourseListHotKW(keyword, startpos);
+        return courseMainMapper.getCourseListHotKW(keyword, startpos);
     }
 
     /**
@@ -243,7 +243,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public List<CourseMain> getCourseListHotSKW(Integer stype, String keyword, Integer startpos) {
 
-        return courseMMapper.getCourseListHotSKW(stype, keyword, startpos);
+        return courseMainMapper.getCourseListHotSKW(stype, keyword, startpos);
     }
 
     /**
@@ -255,7 +255,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public List<CourseMain> getCourseListMoreKW(String keyword, Integer startpos) {
 
-        return courseMMapper.getCourseListMoreKW(keyword, startpos);
+        return courseMainMapper.getCourseListMoreKW(keyword, startpos);
     }
 
     /**
@@ -268,7 +268,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public List<CourseMain> getCourseListMoreSKW(Integer stype, String keyword, Integer startpos) {
 
-        return courseMMapper.getCourseListMoreSKW(stype, keyword, startpos);
+        return courseMainMapper.getCourseListMoreSKW(stype, keyword, startpos);
     }
 
     /**
@@ -281,7 +281,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public List<CourseMain> getCourseListNewACK(String ctype, String keyword, Integer startpos) {
 
-        return courseMMapper.getCourseListNewACK(ctype, keyword, startpos);
+        return courseMainMapper.getCourseListNewACK(ctype, keyword, startpos);
     }
 
     /**
@@ -295,7 +295,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public List<CourseMain> getCourseListNewKW(Integer stype, String ctype, String keyword, Integer startpos) {
 
-        return courseMMapper.getCourseListNewCKW(stype, ctype, keyword, startpos);
+        return courseMainMapper.getCourseListNewCKW(stype, ctype, keyword, startpos);
     }
 
     /**
@@ -308,7 +308,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public List<CourseMain> getCourseListHotACK(String ctype, String keyword, Integer startpos) {
 
-        return courseMMapper.getCourseListHotACK(ctype, keyword, startpos);
+        return courseMainMapper.getCourseListHotACK(ctype, keyword, startpos);
     }
 
     /**
@@ -322,7 +322,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public List<CourseMain> getCourseListHotKW(Integer stype, String ctype, String keyword, Integer startpos) {
 
-        return courseMMapper.getCourseListHotCKW(stype, ctype, keyword, startpos);
+        return courseMainMapper.getCourseListHotCKW(stype, ctype, keyword, startpos);
     }
 
     /**
@@ -335,7 +335,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public List<CourseMain> getCourseListMoreACK(String ctype, String keyword, Integer startpos) {
 
-        return courseMMapper.getCourseListMoreACK(ctype, keyword, startpos);
+        return courseMainMapper.getCourseListMoreACK(ctype, keyword, startpos);
     }
 
     /**
@@ -349,7 +349,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public List<CourseMain> getCourseListMoreKW(Integer stype, String ctype, String keyword, Integer startpos) {
 
-        return courseMMapper.getCourseListMoreCKW(stype, ctype, keyword, startpos);
+        return courseMainMapper.getCourseListMoreCKW(stype, ctype, keyword, startpos);
     }
 
     /**
@@ -359,7 +359,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public Integer getCourseCount() {
 
-        return courseMMapper.getCourseCount();
+        return courseMainMapper.getCourseCount();
     }
 
     /**
@@ -370,7 +370,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public Integer getCourseCountK(String keyword) {
 
-        return courseMMapper.getCourseCountK(keyword);
+        return courseMainMapper.getCourseCountK(keyword);
     }
 
     /**
@@ -381,7 +381,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public Integer getCourseCountS(Integer stype) {
 
-        return courseMMapper.getCourseCountS(stype);
+        return courseMainMapper.getCourseCountS(stype);
     }
 
     /**
@@ -393,7 +393,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public Integer getCourseCountSK(Integer stype, String keyword) {
 
-        return courseMMapper.getCourseCountSK(stype, keyword);
+        return courseMainMapper.getCourseCountSK(stype, keyword);
     }
 
     /**
@@ -404,7 +404,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public Integer getCourseCountC(String ctype) {
 
-        return courseMMapper.getCourseCountC(ctype);
+        return courseMainMapper.getCourseCountC(ctype);
     }
 
     /**
@@ -416,7 +416,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public Integer getCourseCountCK(String ctype, String keyword) {
 
-        return courseMMapper.getCourseCountCK(ctype, keyword);
+        return courseMainMapper.getCourseCountCK(ctype, keyword);
     }
 
     /**
@@ -428,7 +428,7 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public Integer getCourseCountCS(String ctype, Integer stype) {
 
-        return courseMMapper.getCourseCountCS(ctype, stype);
+        return courseMainMapper.getCourseCountCS(ctype, stype);
     }
 
     /**
@@ -441,46 +441,46 @@ public class CourseMainServiceImpl implements CourseMainService {
     @Override
     public Integer getCourseCountCSK(String ctype, Integer stype, String keyword) {
 
-        return courseMMapper.getCourseCountCSK(ctype, stype, keyword);
+        return courseMainMapper.getCourseCountCSK(ctype, stype, keyword);
     }
 
     @Override
     public List<CourseMain> getMyPublish(String username) {
-        return courseMMapper.getMyPublish(username);
+        return courseMainMapper.getMyPublish(username);
     }
 
     @Override
     public List<CourseMain> getAllCourseType() {
-        return courseMMapper.getAllCourseType();
+        return courseMainMapper.getAllCourseType();
     }
 
     @Override
     public void publishCourse(String username, String name, String originalFilename, Integer stype, String ctype, Integer jcount, String descript, Double price, Integer total) {
-        courseMMapper.publishCourse(username, name, originalFilename, stype, ctype, jcount, descript, price, total);
+        courseMainMapper.publishCourse(username, name, originalFilename, stype, ctype, jcount, descript, price, total);
     }
 
     @Override
     public CourseMain getByName(String username, String name, Integer stype, String ctype) {
-        return  courseMMapper.getByName(username, name, stype, ctype);
+        return  courseMainMapper.getByName(username, name, stype, ctype);
     }
 
     @Override
     public CourseMain checkIsexistName(String name) {
-        return courseMMapper.checkIsexistName(name);
+        return courseMainMapper.checkIsexistName(name);
     }
 
     @Override
     public List<CourseMain> getMyCourseList(String username) {
-        return courseMMapper.getMyCommandList(username);
+        return courseMainMapper.getMyCommandList(username);
     }
 
     @Override
     public List<CourseMain> getByCoursename(String courseName) {
-        return courseMMapper.getByCoursename(courseName);
+        return courseMainMapper.getByCoursename(courseName);
     }
 
     @Override
     public Integer checkOrderBelongs(String username, String code) {
-        return courseMMapper.checkOrderBelongs(username, code);
+        return courseMainMapper.checkOrderBelongs(username, code);
     }
 }

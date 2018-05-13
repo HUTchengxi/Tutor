@@ -1,7 +1,7 @@
 package org.framework.tutor.service.impl;
 
 import main.java.org.framework.tutor.domain.UserSecret;
-import org.framework.tutor.mapper.UserSCMapper;
+import org.framework.tutor.mapper.UserSecretMapper;
 import org.framework.tutor.service.UserSecretService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -16,7 +16,7 @@ import java.util.List;
 public class UserSecretServiceImpl implements UserSecretService {
 
     @Autowired
-    private UserSCMapper userSCMapper;
+    private UserSecretMapper userSecretMapper;
 
     /**
      * 获取指定用户的密保数据
@@ -26,7 +26,7 @@ public class UserSecretServiceImpl implements UserSecretService {
     @Override
     public List<UserSecret> getSecretInfoByUsername(String username) {
 
-        return userSCMapper.getSecretInfoByUsername(username);
+        return userSecretMapper.getSecretInfoByUsername(username);
     }
 
     /**
@@ -37,7 +37,7 @@ public class UserSecretServiceImpl implements UserSecretService {
     @Override
     public boolean delUserSecret(String username) {
 
-        return userSCMapper.delUserSecret(username);
+        return userSecretMapper.delUserSecret(username);
     }
 
     /**
@@ -50,7 +50,7 @@ public class UserSecretServiceImpl implements UserSecretService {
     @Override
     public Integer addUserSecret(String question, String answer, String username) {
 
-        return userSCMapper.addUserSecret(question, answer, username);
+        return userSecretMapper.addUserSecret(question, answer, username);
     }
 
     /**
@@ -63,7 +63,7 @@ public class UserSecretServiceImpl implements UserSecretService {
     @Override
     public boolean checkSecret(String username, String queone, String ansone) {
 
-        if (userSCMapper.checkSecret(username, queone, ansone) != null) {
+        if (userSecretMapper.checkSecret(username, queone, ansone) != null) {
             return true;
         }
         return false;

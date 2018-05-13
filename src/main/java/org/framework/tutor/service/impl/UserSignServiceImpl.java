@@ -2,7 +2,7 @@ package org.framework.tutor.service.impl;
 
 import org.framework.tutor.domain.RankTemp;
 import org.framework.tutor.domain.UserSign;
-import org.framework.tutor.mapper.UserSMapper;
+import org.framework.tutor.mapper.UserSignMapper;
 import org.framework.tutor.service.UserSignService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -17,7 +17,7 @@ import java.util.List;
 public class UserSignServiceImpl implements UserSignService {
 
     @Autowired
-    private UserSMapper userSMapper;
+    private UserSignMapper userSignMapper;
 
     /**
      * 获取用户的签到数据
@@ -27,7 +27,7 @@ public class UserSignServiceImpl implements UserSignService {
     @Override
     public List<UserSign> getMySign(String username) {
 
-        return userSMapper.getMySign(username);
+        return userSignMapper.getMySign(username);
     }
 
     /**
@@ -39,7 +39,7 @@ public class UserSignServiceImpl implements UserSignService {
     @Override
     public List<UserSign> getMySignNow(String username, String monthstr) {
 
-        return userSMapper.getMySignNow(username, monthstr);
+        return userSignMapper.getMySignNow(username, monthstr);
     }
 
     /**
@@ -50,7 +50,7 @@ public class UserSignServiceImpl implements UserSignService {
     @Override
     public Integer addUsersign(String username) {
 
-        return userSMapper.addUsersign(username);
+        return userSignMapper.addUsersign(username);
     }
 
     /**
@@ -60,7 +60,7 @@ public class UserSignServiceImpl implements UserSignService {
     @Override
     public List<UserSign> rankSignDay(String daystr, Integer startpos) {
 
-        return userSMapper.getSignDay(daystr, startpos);
+        return userSignMapper.getSignDay(daystr, startpos);
     }
 
     /**
@@ -71,6 +71,6 @@ public class UserSignServiceImpl implements UserSignService {
     @Override
     public List<RankTemp> rankSignTotal(Integer startpos) {
 
-        return userSMapper.getSignTotal(startpos);
+        return userSignMapper.getSignTotal(startpos);
     }
 }

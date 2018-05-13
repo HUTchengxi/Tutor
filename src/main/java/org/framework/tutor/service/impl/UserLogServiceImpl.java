@@ -1,7 +1,7 @@
 package org.framework.tutor.service.impl;
 
 import org.framework.tutor.domain.UserLog;
-import org.framework.tutor.mapper.UserLMapper;
+import org.framework.tutor.mapper.UserLogMapper;
 import org.framework.tutor.service.UserLogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -16,7 +16,7 @@ import java.util.List;
 public class UserLogServiceImpl implements UserLogService {
 
     @Autowired
-    private UserLMapper userLMapper;
+    private UserLogMapper userLogMapper;
 
     /**
      * 保存用户登录记录
@@ -29,7 +29,7 @@ public class UserLogServiceImpl implements UserLogService {
     @Override
     public boolean saveUserlog(String username, String logcity, String ip, String logsystem) {
 
-        return userLMapper.saveUserlog(username, logcity, ip, logsystem);
+        return userLogMapper.saveUserlog(username, logcity, ip, logsystem);
     }
 
     /**
@@ -40,6 +40,6 @@ public class UserLogServiceImpl implements UserLogService {
     @Override
     public List<UserLog> getUserlog(String username) {
 
-        return userLMapper.getUserlog(username);
+        return userLogMapper.getUserlog(username);
     }
 }

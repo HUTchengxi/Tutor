@@ -10,7 +10,7 @@ import org.framework.tutor.domain.UserVali;
  *  @author chengxi
  */
 @Mapper
-public interface UserVMapper {
+public interface UserValiMapper {
 
     /**
      * 添加注册队列

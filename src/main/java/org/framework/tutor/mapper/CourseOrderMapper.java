@@ -10,7 +10,7 @@ import java.util.List;
  * @author chengxi
  */
 @Mapper
-public interface CourseOMapper {
+public interface CourseOrderMapper {
 
     /**
      * 获取课程订购人数

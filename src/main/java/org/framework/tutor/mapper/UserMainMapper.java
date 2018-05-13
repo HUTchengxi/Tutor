@@ -11,7 +11,7 @@ import java.util.List;
  * @author chengxi
  */
 @Mapper
-public interface UserMMapper {
+public interface UserMainMapper {
 
     /**
      * 根据用户名获取并返回对应的用户

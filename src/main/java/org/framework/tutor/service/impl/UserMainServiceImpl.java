@@ -1,7 +1,7 @@
 package org.framework.tutor.service.impl;
 
 import org.framework.tutor.domain.UserMain;
-import org.framework.tutor.mapper.UserMMapper;
+import org.framework.tutor.mapper.UserMainMapper;
 import org.framework.tutor.service.UserMainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 public class UserMainServiceImpl implements UserMainService {
 
     @Autowired
-    private UserMMapper userMMapper;
+    private UserMainMapper userMainMapper;
 
     /**
      * 判断指定用户名是否存在
@@ -24,7 +24,7 @@ public class UserMainServiceImpl implements UserMainService {
     @Override
     public boolean userExist(String username) {
 
-        if(userMMapper.getByUsername(username) == null){
+        if(userMainMapper.getByUsername(username) == null){
             return false;
         }
         return true;
@@ -39,7 +39,7 @@ public class UserMainServiceImpl implements UserMainService {
     @Override
     public boolean passCheck(String username, String password) {
 
-        if(userMMapper.getByUserPass(username, password) == null){
+        if(userMainMapper.getByUserPass(username, password) == null){
             return false;
         }
         return true;
@@ -53,7 +53,7 @@ public class UserMainServiceImpl implements UserMainService {
     @Override
     public UserMain getByUser(String username) {
 
-        return userMMapper.getByUsername(username);
+        return userMainMapper.getByUsername(username);
     }
 
     /**
@@ -63,7 +63,7 @@ public class UserMainServiceImpl implements UserMainService {
      */
     @Override
     public boolean NickExist(String nickname) {
-        return userMMapper.getByNickname(nickname) != null;
+        return userMainMapper.getByNickname(nickname) != null;
     }
 
     /**
@@ -77,7 +77,7 @@ public class UserMainServiceImpl implements UserMainService {
     @Override
     public boolean registerNoCheck(Integer identity, String username, String password, String nickname, Integer salt) {
 
-        if(userMMapper.addUser(identity, username, password, nickname, salt) == 1) {
+        if(userMainMapper.addUser(identity, username, password, nickname, salt) == 1) {
             return true;
         }
         return false;
@@ -92,7 +92,7 @@ public class UserMainServiceImpl implements UserMainService {
     @Override
     public boolean modImgsrcByUser(String username, String imgsrc) {
 
-        return userMMapper.modImgsrcByUser(username, imgsrc);
+        return userMainMapper.modImgsrcByUser(username, imgsrc);
     }
 
     /**
@@ -107,7 +107,7 @@ public class UserMainServiceImpl implements UserMainService {
     @Override
     public boolean modUserinfo(String username, String nickname, Integer sex, Integer age, String info) {
 
-        return userMMapper.modUserinfo(username, nickname, sex, age, info);
+        return userMainMapper.modUserinfo(username, nickname, sex, age, info);
     }
 
     /**
@@ -118,7 +118,7 @@ public class UserMainServiceImpl implements UserMainService {
     @Override
     public boolean emailExist(String email) {
 
-        if(userMMapper.emailExist(email) != null){
+        if(userMainMapper.emailExist(email) != null){
             return true;
         }
         return false;
@@ -136,7 +136,7 @@ public class UserMainServiceImpl implements UserMainService {
     @Override
     public boolean registerByEmail(Integer identity, String username, String password, String nickname, String email) {
 
-        return userMMapper.registerByEmail(identity, username, password, nickname, email);
+        return userMainMapper.registerByEmail(identity, username, password, nickname, email);
     }
 
     /**
@@ -148,7 +148,7 @@ public class UserMainServiceImpl implements UserMainService {
     @Override
     public UserMain getByUserAndEmail(String username, String email) {
 
-        return userMMapper.getByUserAndEmail(username, email);
+        return userMainMapper.getByUserAndEmail(username, email);
     }
 
     /**
@@ -160,7 +160,7 @@ public class UserMainServiceImpl implements UserMainService {
     @Override
     public Integer modPassword(String username, String newpass) {
 
-        return userMMapper.modPassword(username, newpass);
+        return userMainMapper.modPassword(username, newpass);
     }
 
     /**
@@ -171,7 +171,7 @@ public class UserMainServiceImpl implements UserMainService {
     @Override
     public Integer unbindEmail(String username) {
 
-        return userMMapper.unbindEmail(username);
+        return userMainMapper.unbindEmail(username);
     }
 
     /**
@@ -182,7 +182,7 @@ public class UserMainServiceImpl implements UserMainService {
     @Override
     public void bindPhone(String username, String email) {
 
-        userMMapper.bindPhone(username, email);
+        userMainMapper.bindPhone(username, email);
     }
 
     /**
@@ -192,7 +192,7 @@ public class UserMainServiceImpl implements UserMainService {
      */
     @Override
     public void bindEmail(String username, String email) {
-        userMMapper.bindEmail(username, email);
+        userMainMapper.bindEmail(username, email);
     }
 
     /**
@@ -203,7 +203,7 @@ public class UserMainServiceImpl implements UserMainService {
     @Override
     public Boolean phoneExist(String phone) {
 
-        if(userMMapper.phoneExist(phone) != null){
+        if(userMainMapper.phoneExist(phone) != null){
             return true;
         }
         return false;
@@ -217,7 +217,7 @@ public class UserMainServiceImpl implements UserMainService {
     @Override
     public void setIdentity(String username, Integer identity) {
 
-        userMMapper.setIdentity(username, identity);
+        userMainMapper.setIdentity(username, identity);
     }
 
     /**
@@ -228,7 +228,7 @@ public class UserMainServiceImpl implements UserMainService {
     @Override
     public Integer unbindPhone(String username) {
 
-        return userMMapper.unbindPhone(username);
+        return userMainMapper.unbindPhone(username);
     }
 
     /**
@@ -240,7 +240,7 @@ public class UserMainServiceImpl implements UserMainService {
     @Override
     public UserMain getByUserAndPhone(String username, String phone) {
 
-        return userMMapper.getByUserAndPhone(username, phone);
+        return userMainMapper.getByUserAndPhone(username, phone);
     }
 
     /**
@@ -255,11 +255,11 @@ public class UserMainServiceImpl implements UserMainService {
     @Override
     public Boolean registerByPhone(Integer identity, String username, String password, String nickname, String telephone) {
 
-        return userMMapper.registerByPhone(identity, username, password, nickname, telephone);
+        return userMainMapper.registerByPhone(identity, username, password, nickname, telephone);
     }
 
     @Override
     public UserMain checkAdminLogin(String username, String password) {
-        return userMMapper.checkAdminLogin(username, password);
+        return userMainMapper.checkAdminLogin(username, password);
     }
 }

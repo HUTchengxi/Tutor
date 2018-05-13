@@ -10,7 +10,7 @@ import java.util.List;
  * @author chengxi
  */
 @Mapper
-public interface CourseChMapper {
+public interface CourseChapterMapper {
 
     /**
      * 获取指定课程的章节目录数据

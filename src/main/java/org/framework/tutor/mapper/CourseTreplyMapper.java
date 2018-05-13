@@ -10,7 +10,7 @@ import org.framework.tutor.domain.CourseTreply;
  * @author chengxi
  */
 @Mapper
-public interface CourseTMapper {
+public interface CourseTreplyMapper {
 
     /**
      * 获取指定课程的对应用户评价的讲师回复

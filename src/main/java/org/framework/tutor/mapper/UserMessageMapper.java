@@ -10,7 +10,7 @@ import java.util.List;
  * @author chengxi
  */
 @Mapper
-public interface UserMSMapper {
+public interface UserMessageMapper {
 
     /**
      * 获取指定用户当前未读通知总数量

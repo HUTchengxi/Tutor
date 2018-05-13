@@ -1,7 +1,7 @@
 package org.framework.tutor.service.impl;
 
 import org.framework.tutor.domain.UserMessage;
-import org.framework.tutor.mapper.UserMSMapper;
+import org.framework.tutor.mapper.UserMessageMapper;
 import org.framework.tutor.service.UserMessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -16,7 +16,7 @@ import java.util.List;
 public class UserMessageServiceImpl implements UserMessageService {
 
     @Autowired
-    private UserMSMapper userMSMapper;
+    private UserMessageMapper userMessageMapper;
 
     /**
      * 获取指定用户的未读通知的总数量
@@ -26,7 +26,7 @@ public class UserMessageServiceImpl implements UserMessageService {
     @Override
     public Integer getMyMessageCount(String username) {
 
-        return userMSMapper.getMyMessageCount(username);
+        return userMessageMapper.getMyMessageCount(username);
     }
 
     /**
@@ -36,7 +36,7 @@ public class UserMessageServiceImpl implements UserMessageService {
     @Override
     public List<UserMessage> getMyMessage(String username) {
 
-        return userMSMapper.getMyMessage(username);
+        return userMessageMapper.getMyMessage(username);
     }
 
     /**
@@ -48,7 +48,7 @@ public class UserMessageServiceImpl implements UserMessageService {
     @Override
     public Integer getNoMessageCount(String suser, String username) {
 
-        return userMSMapper.getNoMessageCount(suser, username);
+        return userMessageMapper.getNoMessageCount(suser, username);
     }
 
     /**
@@ -60,7 +60,7 @@ public class UserMessageServiceImpl implements UserMessageService {
     @Override
     public List<UserMessage> getMessageBySuser(String suser, String username) {
 
-        return userMSMapper.getMessageBySuser(suser, username);
+        return userMessageMapper.getMessageBySuser(suser, username);
     }
 
     /**
@@ -72,7 +72,7 @@ public class UserMessageServiceImpl implements UserMessageService {
     @Override
     public Integer setMessageRead(String suser, String username) {
 
-        return userMSMapper.setMessageRead(suser, username);
+        return userMessageMapper.setMessageRead(suser, username);
     }
 
     /**
@@ -85,7 +85,7 @@ public class UserMessageServiceImpl implements UserMessageService {
     @Override
     public List<UserMessage> getReadMessage(String suser, String username) {
 
-        return userMSMapper.getReadMessage(suser, username);
+        return userMessageMapper.getReadMessage(suser, username);
     }
 
     /**
@@ -98,7 +98,7 @@ public class UserMessageServiceImpl implements UserMessageService {
     @Override
     public List<UserMessage> getUnreadMessage(String suser, String username) {
 
-        return userMSMapper.getUnreadMessage(suser, username);
+        return userMessageMapper.getUnreadMessage(suser, username);
     }
 
     /**
@@ -109,7 +109,7 @@ public class UserMessageServiceImpl implements UserMessageService {
     @Override
     public Integer delMyMessage(Integer did, String username) {
 
-        return userMSMapper.delMyMessage(did, username);
+        return userMessageMapper.delMyMessage(did, username);
     }
 
     /**
@@ -120,26 +120,26 @@ public class UserMessageServiceImpl implements UserMessageService {
     @Override
     public Integer setAllStatus(String username) {
 
-        return userMSMapper.setAllStatus(username);
+        return userMessageMapper.setAllStatus(username);
     }
 
     @Override
     public List<UserMessage> getMessageListLimit(Integer identity, String title, String startTime, Integer offset, Integer pageSize) {
-        return userMSMapper.getMessageListLimit(identity, title, startTime, offset, pageSize);
+        return userMessageMapper.getMessageListLimit(identity, title, startTime, offset, pageSize);
     }
 
     @Override
     public Integer getMessageCountLimit(Integer identity, String title, String startTime) {
-        return userMSMapper.getMessageCountLimit(identity, title, startTime);
+        return userMessageMapper.getMessageCountLimit(identity, title, startTime);
     }
 
     @Override
     public UserMessage getById(Integer id) {
-        return userMSMapper.getById(id);
+        return userMessageMapper.getById(id);
     }
 
     @Override
     public void seneMessage(Integer identity, String suser, String username, String title, String message) {
-        userMSMapper.sendMessage(identity, suser, username, title, message);
+        userMessageMapper.sendMessage(identity, suser, username, title, message);
     }
 }

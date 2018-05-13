@@ -1,7 +1,7 @@
 package org.framework.tutor.service.impl;
 
 import org.framework.tutor.domain.CourseCommand;
-import org.framework.tutor.mapper.CourseCMMapper;
+import org.framework.tutor.mapper.CourseCommandMapper;
 import org.framework.tutor.service.CourseCommandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -16,7 +16,7 @@ import java.util.List;
 public class CourseCommandServiceImpl implements CourseCommandService {
 
     @Autowired
-    private CourseCMMapper courseCMMapper;
+    private CourseCommandMapper courseCommandMapper;
 
     /**
      * 获取课程评论数据
@@ -27,7 +27,7 @@ public class CourseCommandServiceImpl implements CourseCommandService {
     @Override
     public List<CourseCommand> getCourseCommand(Integer cid, Integer startpos) {
 
-        return courseCMMapper.getCourseCommand(cid, startpos);
+        return courseCommandMapper.getCourseCommand(cid, startpos);
     }
 
     /**
@@ -38,7 +38,7 @@ public class CourseCommandServiceImpl implements CourseCommandService {
     @Override
     public List<CourseCommand> getCourseCommandGod(Integer cid) {
 
-        return courseCMMapper.getCourseCommandGod(cid);
+        return courseCommandMapper.getCourseCommandGod(cid);
     }
 
     /**
@@ -50,7 +50,7 @@ public class CourseCommandServiceImpl implements CourseCommandService {
     @Override
     public List<CourseCommand> getMyCommand(String username, Integer cid) {
 
-        return courseCMMapper.getMyCommand(username, cid);
+        return courseCommandMapper.getMyCommand(username, cid);
     }
 
     /**
@@ -63,7 +63,7 @@ public class CourseCommandServiceImpl implements CourseCommandService {
     @Override
     public Integer subMyCommand(Integer cid, String command, Integer score, String username) {
 
-        return courseCMMapper.subMyCommand(cid, command, score, username);
+        return courseCommandMapper.subMyCommand(cid, command, score, username);
     }
 
     /**
@@ -75,7 +75,7 @@ public class CourseCommandServiceImpl implements CourseCommandService {
     @Override
     public Integer getCommandCountNow(String username, String now) {
 
-        return courseCMMapper.getCommandCountNow(username, now);
+        return courseCommandMapper.getCommandCountNow(username, now);
     }
 
     /**
@@ -87,7 +87,7 @@ public class CourseCommandServiceImpl implements CourseCommandService {
     @Override
     public Double getScoreAvgNow(String username, String now) {
 
-        return courseCMMapper.getScoreAvgNow(username, now);
+        return courseCommandMapper.getScoreAvgNow(username, now);
     }
 
     /**
@@ -98,41 +98,41 @@ public class CourseCommandServiceImpl implements CourseCommandService {
     @Override
     public List<CourseCommand> loadMyCommandInfo(String username) {
 
-        return courseCMMapper.loadMyCommandInfo(username);
+        return courseCommandMapper.loadMyCommandInfo(username);
     }
 
     @Override
     public Integer getMyPublishAvg(Integer id) {
-        return courseCMMapper.getMyPublishAvg(id);
+        return courseCommandMapper.getMyPublishAvg(id);
     }
 
     @Override
     public List<CourseCommand> getMyCommandList(String courseId, Integer offset, Integer pageSize) {
-        return courseCMMapper.getMyCommandList(courseId, offset, pageSize);
+        return courseCommandMapper.getMyCommandList(courseId, offset, pageSize);
     }
 
     @Override
     public Integer getCommandCountByIdlist(String courseId) {
-        return courseCMMapper.getCommandCountByIdlist(courseId);
+        return courseCommandMapper.getCommandCountByIdlist(courseId);
     }
 
     @Override
     public CourseCommand getCommandById(Integer id) {
-        return courseCMMapper.getCommandById(id);
+        return courseCommandMapper.getCommandById(id);
     }
 
     @Override
     public void setCommandGodstate(Integer id) {
-        courseCMMapper.setCommandGodstate(id);
+        courseCommandMapper.setCommandGodstate(id);
     }
 
     @Override
     public Integer getGodCountById(Integer cid) {
-        return courseCMMapper.geGodCountById(cid);
+        return courseCommandMapper.geGodCountById(cid);
     }
 
     @Override
     public void updateCommandStatus(Integer cid, Integer status) {
-        courseCMMapper.updateCommandStatus(cid, status);
+        courseCommandMapper.updateCommandStatus(cid, status);
     }
 }

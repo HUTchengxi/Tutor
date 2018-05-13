@@ -11,7 +11,7 @@ import java.util.List;
  * @author chengxi
  */
 @Mapper
-public interface CourseCMMapper {
+public interface CourseCommandMapper {
 
     /**
      * 获取课程评论数据
