@@ -65,8 +65,8 @@ $(function(){
                 var mine = data.mine;
                 var now = data.now;
                 page_writer = mine;
-                $(".container .m-main").append("<p class=\"p-enterinfo\">------------------------------    <span>"+mine+"</span>"+now+"&nbsp;加入了会话    ------------------------------</p>");
                 if(list == null){
+                    $(".container .m-main").append("<p class=\"p-enterinfo\">------------------------------    <span>"+mine+"</span>"+now+"&nbsp;加入了会话    ------------------------------</p>");
                     return ;
                 }
                 $.each(list, function(index, item){
@@ -114,6 +114,7 @@ $(function(){
                             "        </div>");
                     }
                 });
+                $(".container .m-main").append("<p class=\"p-enterinfo\">------------------------------    <span>"+mine+"</span>"+now+"&nbsp;加入了会话    ------------------------------</p>");
             }
         });
     };
@@ -195,13 +196,13 @@ $(function(){
         var msg = obj[3];
         var ptime = obj[4];
         if(msg === "open" && ptime == null){
-            var now = new Date().Format("yyyy-MM-dd hh:mm:ss");
+            var now = new Date().Format("hh:mm:ss");
             if(writer === page_reader && reader === page_writer){
                 $(".container .m-main").append("<p class=\"p-enterinfo\">------------------------------    <span>"+ writer +"</span>"+now+"&nbsp;加入了会话    ------------------------------</p>");
             }
             return ;
         }else if(msg === "close" && ptime == null){
-            var now = new Date().Format("yyyy-MM-dd hh:mm:ss");
+            var now = new Date().Format("hh:mm:ss");
             if(writer === page_reader && reader === page_writer) {
                 $(".container .m-main").append("<p class=\"p-enterinfo\">------------------------------    <span>" + writer + "</span>" + now + "&nbsp;离开了会话    ------------------------------</p>");
                 $(".m-main.new").removeClass("new");

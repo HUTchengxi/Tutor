@@ -60,7 +60,7 @@ $(function () {
                     valign: 'middle'
                 },
                 {
-                    title: '通知方式',
+                    title: '私信',
                     field: 'identity',
                     align: 'center',
                     valign: 'middle'

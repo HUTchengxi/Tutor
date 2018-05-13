@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import org.framework.tutor.api.UserLogApi;
 import org.framework.tutor.domain.UserLog;
 import org.framework.tutor.service.UserLogService;
+import org.framework.tutor.util.CommonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -36,6 +37,8 @@ public class UserLogApiImpl implements UserLogApi {
         Gson gson = new Gson();
         Map<String, Object> resultMap = new HashMap<>(2);
         List<Object> rowList = new ArrayList<>();
+
+        ip = CommonUtil.getIpAddr(request);
 
         if (userLogService.saveUserlog(username, logcity, ip, logsystem)) {
             resultMap.put("status", "valid");

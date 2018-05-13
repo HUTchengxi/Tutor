@@ -598,6 +598,10 @@ $(function() {
      */
     var coursesearch_go = function(){
 
+        if($(this).hasClass("none")){
+            return ;
+        }
+
         var id = $(this).data("id");
         //查看搜索到的全部课程
         if(id == "all"){

@@ -1,5 +1,7 @@
 $(function(){
 
+    var layer = layui.layer;
+
     //获取系统时间-----------------
     Date.prototype.format = function(format) {
         var o ={
@@ -56,7 +58,7 @@ $(function(){
                 }
             },
             error: function(xhr, status){
-                alert("后台环境异常导致无法正确获得登录信息，请刷新页面重试");
+                layer.msg("后台环境异常导致无法正确获得登录信息，请刷新页面重试");
             }
         });
     };
@@ -75,11 +77,11 @@ $(function(){
                 dataType: "json",
                 success: function(data){
                     console.log(data);
-                    alert("登录成功");
+                    layer.msg("退出成功", {icon: 6});
                     login_check();
                 },
                 error: function(xhr, status){
-                    alert("后台环境异常导致无法正确退出登录，请刷新页面重试");
+                    layer.msg("后台环境异常导致无法正确退出登录，请刷新页面重试");
                 }
             });
         }
@@ -108,7 +110,7 @@ $(function(){
                 }
             },
             error: function(xhr, status){
-                window.alert("后台环境异常导致无法获取用户头像，请刷新页面重试");
+                layer.msg("后台环境异常导致无法获取用户头像，请刷新页面重试");
                 console.log(status);
             }
         });
@@ -203,7 +205,7 @@ $(function(){
         var imgsrc = $(".logo").data("imgsrc");
         var oldimgsrc = $(".logo").data("oldimgsrc");
         if(imgsrc === oldimgsrc){
-            window.alert("没有做任何修改");
+            layer.msg("没有做任何修改");
         }
         //手动上传的提交
         else if(imgsrc === "hand"){
@@ -225,10 +227,10 @@ $(function(){
                     if(status === "invalid"){
                     }
                     else if(status === "mysqlerr"){
-                        alert("后台数据库出了点问题，请稍后再试");
+                        layer.msg("后台数据库出了点问题，请稍后再试");
                     }
                     else{
-                        alert("更换成功");
+                        layer.msg("更换成功", {icon: 6});
                         var imgsrc = data.imgsrc;
                         $(".modface .close").trigger("click");
                         $(".logo").css("background","url("+imgsrc+") no-repeat center center")
@@ -236,7 +238,7 @@ $(function(){
                     }
                 },
                 error: function(xhr, status){
-                    window.alert("后台环境异常导致头像修改失败，请稍后重试");
+                    layer.msg("后台环境异常导致头像修改失败，请稍后重试");
                     console.log(xhr);
                 }
             });
@@ -254,10 +256,10 @@ $(function(){
                     if(status === "invalid"){
                     }
                     else if(status === "mysqlerr"){
-                        alert("后台数据库出了点问题，请稍后再试");
+                        layer.msg("后台数据库出了点问题，请稍后再试");
                     }
                     else{
-                        alert("更换成功");
+                        layer.msg("更换成功", {icon: 6});
                         var imgsrc = data.imgsrc;
                         $(".modface .close").trigger("click");
                         $(".logo").css("background","url("+imgsrc+") no-repeat center center")
@@ -265,7 +267,7 @@ $(function(){
                     }
                 },
                 error: function(xhr, status){
-                    alert("后台环境异常导致头像修改失败，请稍后重试");
+                    layer.msg("后台环境异常导致头像修改失败，请稍后重试");
                     console.log(xhr);
                 }
             });
@@ -350,7 +352,7 @@ $(function(){
                 }
             },
             error: function(xhr, status){
-                window.alert("后台环境异常导致无法获取用户个人信息，请刷新页面重试");
+                layer.msg("后台环境异常导致无法获取用户个人信息，请刷新页面重试");
                 console.log(xhr);
             }
         });
@@ -422,18 +424,20 @@ $(function(){
             success: function(data){
                 var status = data.status;
                 if(status === "mysqlerr"){
-                    window.alert("后台数据库异常导致无法修改个人信息，请稍后再试");
+                    layer.msg("后台数据库异常导致无法修改个人信息，请稍后再试");
                 }
                 else if(status === "invalid"){
                     window.location = data.url;
                 }
                 else{
-                    window.alert("更改成功");
-                    window.history.go(0);
+                    layer.msg("更改成功", {icon: 6});
+                    window.setTimeout(function() {
+                        window.history.go(0);
+                    },2000);
                 }
             },
             error: function(xhr, status){
-                window.alert("后台环境异常导致无法修改个人信息，可以尝试刷新页面或者稍后重试");
+                layer.msg("后台环境异常导致无法修改个人信息，可以尝试刷新页面或者稍后重试");
                 console.log(xhr);
             }
         })
@@ -491,7 +495,7 @@ $(function(){
                 }
             },
             error: function(xhr, status){
-                window.alert("后台环境异常导致无法获取绑定数据，请刷新页面重试");
+                layer.msg("后台环境异常导致无法获取绑定数据，请刷新页面重试");
                 window.console.log(xhr);
             }
         })
@@ -531,7 +535,7 @@ $(function(){
                 }
             },
             error: function(xhr, status){
-                window.alert("后台环境异常导致无法获取密保数据，请稍后再试");
+                layer.msg("后台环境异常导致无法获取密保数据，请稍后再试");
                 window.console.log(xhr);
             }
         });
@@ -621,7 +625,7 @@ $(function(){
                 }
             },
             error: function(xhr, status){
-                window.alert("后台环境异常导致无法更新密保数据，请稍后再试");
+                layer.msg("后台环境异常导致无法更新密保数据，请稍后再试");
                 window.console.log(xhr);
                 return ;
             }
@@ -651,13 +655,13 @@ $(function(){
                                 return ;
                             }
                             else if(status == "mysqlerr"){
-                                windwo.alert("后台数据库异常导致密保数据更新异常");
+                                layer.msg("后台数据库异常导致密保数据更新异常");
                                 window.console.log(xhr);
                                 return ;
                             }
                         },
                         error: function (xhr, status) {
-                            window.alert("后台环境异常导致无法修改密保数据，请稍后再试");
+                            layer.msg("后台环境异常导致无法修改密保数据，请稍后再试");
                             window.console.log(xhr);
                         }
                     });
@@ -666,7 +670,7 @@ $(function(){
                 answer = null;
             }
         });
-        window.alert("密保设置成功");
+        layer.msg("密保设置成功", {icon: 6});
         async_getsecretinfo();
         $(".zhezhao").trigger("click");
     };
@@ -682,10 +686,10 @@ $(function(){
 
         var info = "";
         if(type == "email"){
-            info = "           确定要接触邮箱";
+            info = "           确定要解除邮箱";
         }
         else{
-            info = "           确定要接触手机号码";
+            info = "           确定要解除手机号码";
         }
         info += val+"的绑定吗？";
         if(window.confirm(info)){
@@ -749,12 +753,14 @@ $(function(){
                     }
                     else{
                         $(".alert-bind .err-vali").css("display", "none");
-                        window.alert("您已成功绑定");
-                        window.history.go(0);
+                        layer.msg("您已成功绑定", {icon: 6});
+                        window.setTimeout(function(){
+                            window.history.go(0);
+                        }, 2000);
                     }
                 },
                 error: function(xhr, status){
-                    window.alert("后台环境异常导致无法进行绑定，请稍后再试");
+                    layer.msg("后台环境异常导致无法进行绑定，请稍后再试");
                     window.console.log(xhr);
                 }
             });
@@ -833,7 +839,7 @@ $(function(){
                     }
                 }
                 else{
-                    window.alert("发送成功");
+                    layer.msg("发送成功", {icon: 6});
                     var interval;
                     var time = 60;
                     //邮件验证码发送成功的冷却事件
@@ -850,7 +856,7 @@ $(function(){
                 }
             },
             error: function(xhr, status) {
-                window.alert("后台环境异常导致无法进行绑定，请稍后再试");
+                layer.msg("后台环境异常导致无法进行绑定，请稍后再试");
                 window.console.log(xhr);
             }
         });
@@ -902,7 +908,7 @@ $(function(){
                     }
                     else{
                         $(".err-email").css("display", "none");
-                        window.alert("发送成功，请查看您的邮箱");
+                        layer.msg("发送成功，请查看您的邮箱", {icon: 6});
                         var interval;
                         var time = 60;
                         //邮件验证码发送成功的冷却事件
@@ -919,7 +925,7 @@ $(function(){
                     }
                 },
                 error: function(xhr, status){
-                    window.alert("后台环境异常导致无法发送邮箱短码，请稍后再试");
+                    layer.msg("后台环境异常导致无法发送邮箱短码，请稍后再试");
                     window.console.log(xhr);
                 }
             });
@@ -946,7 +952,7 @@ $(function(){
                     }
                     else{
                         $(".err-email").css("display", "none");
-                        window.alert("发送成功");
+                        layer.msg("发送成功", {icon: 6});
                         var interval;
                         var time = 60;
                         //邮件验证码发送成功的冷却事件
@@ -963,7 +969,7 @@ $(function(){
                     }
                 },
                 error: function(xhr, status){
-                    window.alert("后台环境异常导致无法发送邮箱短码，请稍后再试");
+                    layer.msg("后台环境异常导致无法发送邮箱短码，请稍后再试");
                     window.console.log(xhr);
                 }
             });
@@ -1001,18 +1007,20 @@ $(function(){
                         return ;
                     }
                     else if(status == "mysqlerr"){
-                        window.alert("后台数据库异常导致无法进行解除绑定，请稍后重试");
+                        layer.msg("后台数据库异常导致无法进行解除绑定，请稍后重试");
                     }
                     else if(status == "codeerr"){
                         $(".err-email").css("display", "block").text("验证码不正确");
                     }
                     else{
-                        window.alert("您已成功解除绑定");
-                        window.history.go(0);
+                        layer.msg("您已成功解除绑定", {icon: 6});
+                        window.setTimeout(function() {
+                            window.history.go(0);
+                        }, 2000);
                     }
                 },
                 error: function(xhr, status){
-                    window.alert("后台环境异常导致无法进行解除绑定，请稍后重试");
+                    layer.msg("后台环境异常导致无法进行解除绑定，请稍后重试");
                     window.console.log(xhr);
                 }
             });
@@ -1067,7 +1075,7 @@ $(function(){
                 });
             },
             error: function(xhr, status){
-                window.alert("后台环境异常导致无法获取登录记录，请稍后重试");
+                layer.msg("后台环境异常导致无法获取登录记录，请稍后重试");
                 console.log(xhr);
             }
         });
@@ -1140,15 +1148,14 @@ $(function(){
                 //进行签到标记
                 $(".signdiv .signmain table tbody tr td").each(function(){
                    var tdate = ","+$(this).data("date")+",";
-                   if(date.indexOf(tdate) != -1){
-                       $(this).css("background-color", "#ff8000").css("color", "white")
-                           .css("box-shadow", "none");
+                   if( date != null && date.indexOf(tdate) != -1){
+                       $(this).css("background-color", "#ff8000").css("color", "white").css("box-shadow", "none");
                    }
                 });
                 //判断今天是否需要签到
                 var now = new Date();
                 var ndate = ","+now.getDate()+",";
-                if(date.indexOf(ndate) != -1){
+                if( date != null && date.indexOf(ndate) != -1){
                     $(".signdiv header a").data("status","ed").text("今日已签到");
                     $("#usersign").remove();
                 }
@@ -1157,7 +1164,7 @@ $(function(){
                 }
             },
             error: function(xhr, status){
-                window.alert("后台环境异常导致无法获取签到数据，请刷新页面重试");
+                layer.msg("后台环境异常导致无法获取签到数据，请刷新页面重试");
                 window.console.log(xhr);
             }
         });
@@ -1180,16 +1187,16 @@ $(function(){
                     window.location = "/forward_con/gologin";
                 }
                 else if(status === "mysqlerr"){
-                    window.alert("后台数据库异常导致无法进行签到，请稍后重试");
+                    layer.msg("后台数据库异常导致无法进行签到，请稍后重试");
                 }
                 else{
-                    window.alert("签到成功");
+                    layer.msg("签到成功", {icon: 6});
                     asyc_getusersign();
                 }
                 $("#usersign .main a.close").trigger("click");
             },
             error: function(xhr, status){
-                window.alert("后台环境异常导致无法进行签到，请刷新页面重试");
+                layer.msg("后台环境异常导致无法进行签到，请刷新页面重试");
                 window.console.log(xhr);
             }
         });

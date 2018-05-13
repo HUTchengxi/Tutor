@@ -69,13 +69,16 @@
                         var logcity = "未知地区";
                         var ip = "000.000.000.000";
 
-                        //获取电脑的操作系统
-                        var logsystem = "位置的操作系统";
-                        var sUserAgent = navigator.userAgent;
-                        logsystem = (navigator.platform == "Win32") || (navigator.platform == "Windows")? "Windows" :
-                            ((navigator.platform == "Mac68K") || (navigator.platform == "MacPPC") || (navigator.platform == "Macintosh") || (navigator.platform == "MacIntel"))? Mac :
-                                (navigator.platform == "X11")? "Unix" :
-                                    (String(navigator.platform).indexOf("Linux") > -1)? "Linux" : "未知的操作系统";
+                        //获取客户端类型
+                        var logsystem = "PC端";
+                        var platformInfo = navigator.platform;
+                        if(platformInfo.indexOf("Win") == 0){
+                            logsystem = "Windows";
+                        }else if(platformInfo.indexOf("Mac") == 0){
+                            logsystem = "Mac";
+                        }else if(platformInfo === "x11"){
+                            logsystem = "Linux";
+                        }
 
                         //获取ip地址
                         ip = returnCitySN["cip"];
@@ -83,7 +86,8 @@
                         //获取登录地区
                         $.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js',function(){
 
-                            logcity = remote_ip_info.country+remote_ip_info.province+remote_ip_info.city;
+                            // logcity = remote_ip_info.country+remote_ip_info.province+remote_ip_info.city;
+                            logcity = remote_ip_info.province+remote_ip_info.city;
 
                             //保存登录记录
                             $.ajax({

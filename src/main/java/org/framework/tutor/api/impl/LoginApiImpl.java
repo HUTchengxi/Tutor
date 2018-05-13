@@ -44,12 +44,33 @@ public class LoginApiImpl implements LoginApi{
         }
         //密码错误
         else {
+
+            //是否为cookie记住密码的方式登入的
+            int flag = 0;
+            boolean userflag = true;   //username只验证一次
+            boolean passflag = true;   //password只验证一次
+            Cookie[] cookies = request.getCookies();
+            for (Cookie cookie : cookies) {
+                if ("username".equals(cookie.getName()) && userflag) {
+                    if(cookie.getValue().equals(username)){
+                        flag++;
+                        userflag = false;
+                    }
+                }
+                if ("password".equals(cookie.getName()) && passflag) {
+                    if(cookie.getValue().equals(password)){
+                        flag++;
+                        passflag = false;
+                    }
+                }
+            }
+
             //获取密码盐
             Integer salt = userMainService.getByUser(username).getSalt();
             //明文传来的密码加盐判断
             String MD5Pass = CommonUtil.getMd5Pass(password, salt);
 
-            if (!userMainService.passCheck(username, MD5Pass)) {
+            if (!userMainService.passCheck(username, MD5Pass) && flag != 2) {
 
                 resultMap.put("status", "passerr");
                 resultMap.put("url", "#");
@@ -69,7 +90,7 @@ public class LoginApiImpl implements LoginApi{
                 //记住密码
                 if (remember == 1) {
                     Cookie usercookie = new Cookie("username", username);
-                    Cookie passcookie = new Cookie("password", password);
+                    Cookie passcookie = new Cookie("password", MD5Pass);
                     usercookie.setMaxAge(2 * 60 * 60 * 24);
                     passcookie.setMaxAge(2 * 60 * 60 * 24);
                     usercookie.setPath("/");
@@ -79,7 +100,6 @@ public class LoginApiImpl implements LoginApi{
                 }
                 //清空之前记住的密码
                 else {
-                    Cookie[] cookies = request.getCookies();
                     for (Cookie cookie : cookies) {
                         if ("username".equals(cookie.getName())) {
                             cookie.setMaxAge(0);
