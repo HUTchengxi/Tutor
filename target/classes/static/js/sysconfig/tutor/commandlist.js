@@ -13,7 +13,7 @@ $(function () {
     var load_getcommandlist = function () {
 
         $('#courseTable').bootstrapTable({
-            url: "/coursecommand_con/getcommandlist",
+            url: "/coursecommand_con/getcommandlist.json",
             dataType: "json",
             undefinedText: "",
             pagination: true,
@@ -111,7 +111,7 @@ $(function () {
 
         $.ajax({
             type: "post",
-            url: "/coursecommand_con/getcommandlist",
+            url: "/coursecommand_con/getcommandlist.json",
             data: JSON.stringify({
                 "pageNo": 0,
                 "pageSize": 10,
@@ -143,7 +143,7 @@ $(function () {
         if(confirm("确认指定用户'" + commandUser + "'的评论为神评吗? ")){
             $.ajax({
                 type: "post",
-                url: "/coursecommand_con/setcommandgodstate",
+                url: "/coursecommand_con/setcommandgodstate.json",
                 data: {
                     id: id
                 },
@@ -186,7 +186,7 @@ $(function () {
 
         $.ajax({
             type: "post",
-            url: "/coursecommanddeletereq_con/addcommanddeletereq",
+            url: "/coursecommanddeletereq_con/addcommanddeletereq.json",
             data: {
                 cid: id,
                 info: reqInfo

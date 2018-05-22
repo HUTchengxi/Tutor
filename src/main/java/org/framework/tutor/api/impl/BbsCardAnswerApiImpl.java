@@ -81,7 +81,7 @@ public class BbsCardAnswerApiImpl implements BbsCardAnswerApi {
     }
 
 
-    //TODO: 使用了Redis   [username].[cardId].checkusercommand
+    //TODO: 使用了Redis   [username].[cardId].checkusercommand.json
     @Override
     public String checkUserCommand(Integer cardId) throws IOException {
 
@@ -91,7 +91,7 @@ public class BbsCardAnswerApiImpl implements BbsCardAnswerApi {
         Map<String, Object> resultMap = new HashMap<>(2);
 
         StringBuffer keyTemp = new StringBuffer(username);
-        keyTemp.append("."+cardId).append(".checkusercommand");
+        keyTemp.append("."+cardId).append(".checkusercommand.json");
         if(redis.hasKey(keyTemp.toString())){
             resultMap.put("status", redis.opsForValue().get(keyTemp.toString()));
         }else {
@@ -107,7 +107,7 @@ public class BbsCardAnswerApiImpl implements BbsCardAnswerApi {
     }
 
 
-    //TODO：更新对应的键值   [username].[cardid].checkusercommand
+    //TODO：更新对应的键值   [username].[cardid].checkusercommand.json
     @Override
     public String addAnswer(Integer cardId, String answer) throws IOException {
 
@@ -125,9 +125,9 @@ public class BbsCardAnswerApiImpl implements BbsCardAnswerApi {
             bbsCardService.addComCountByCardId(cardId);
             resultMap.put("status", "valid");
 
-            //[username].[cardid].checkusercommand缓存数据更新
+            //[username].[cardid].checkusercommand.json缓存数据更新
             StringBuffer keyTemp = new StringBuffer(username);
-            keyTemp.append("."+cardId).append(".checkusercommand");
+            keyTemp.append("."+cardId).append(".checkusercommand.json");
             redis.opsForValue().set(keyTemp.toString(), "ed");
 
             //[username].answercount缓存数据更新

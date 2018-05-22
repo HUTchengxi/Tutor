@@ -2,11 +2,8 @@ package org.framework.tutor.mapper;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 import org.framework.tutor.domain.CourseOrderManager;
-import org.apache.ibatis.annotations.Param;
 
 @Mapper
 public interface CourseOrderManagerMapper {
@@ -56,4 +53,10 @@ public interface CourseOrderManagerMapper {
     @Select("select * from course_order_manager com where com.oid in (select co.id from course_order co where co.cid in (" +
             "select cdr.cid from course_delete_req cdr where cdr.id=#{reqid}))")
     List<CourseOrderManager> getByReqid(@Param("reqid") Integer reqid);
+
+    @Insert("insert into course_order_manager(code, oid, tutorstatus, userstatus, userinfo, tutorinfo, tutorname) values(" +
+            "#{code}, #{oid}, #{tutorstatus}, #{userstatus}, #{userinfo}, #{tutorinfo}, #{tutorname})")
+    void addCourseOrderManager(@Param("code") String code, @Param("oid") Integer oid, @Param("tutorstatus") Integer tutorStatus,
+                               @Param("userstatus") Integer userStatus, @Param("userinfo") String userInfo, @Param("tutorinfo") String tutorInfo,
+                               @Param("tutorname") String tutorName);
 }

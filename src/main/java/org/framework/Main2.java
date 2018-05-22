@@ -14,6 +14,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.http.HttpStatus;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 /**
  * SpringBoot测试启动类
@@ -22,6 +23,8 @@ import org.springframework.http.HttpStatus;
 @SpringBootApplication
 //开启缓存
 @EnableCaching
+//开启异步
+@EnableAsync
 public class Main2 {
 
     /**

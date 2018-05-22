@@ -1,5 +1,6 @@
 package org.framework.tutor.api;
 
+import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -52,4 +53,9 @@ public interface CourseOrderApi {
      * 获取家教的课程订单总数
      */
     public String getOrderCount() throws IOException;
+
+    /**
+     * 课程联系申请
+     */
+    String addCourseOrder(Integer cardId) throws MessagingException;
 }

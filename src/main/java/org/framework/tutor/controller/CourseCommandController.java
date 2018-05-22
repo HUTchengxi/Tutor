@@ -24,8 +24,8 @@ public class CourseCommandController {
     /**
      * @Description 获取课程评论数据
      */
-    @RequestMapping("/getcoursecommand")
-    public String getCourseCommand(Integer cid, Integer startpos) throws IOException {
+    @PostMapping("/getcoursecommand.json")
+    public String getCourseCommand(@RequestParam Integer cid, @RequestParam Integer startpos) throws IOException {
 
         return courseCommandApi.getCourseCommand(cid, startpos);
     }
@@ -33,8 +33,8 @@ public class CourseCommandController {
     /**
      * @Description 获取课程神评
      */
-    @RequestMapping("/getcommandgod")
-    public String getCourseCommandGod(Integer cid) throws IOException {
+    @PostMapping("/getcommandgod.json")
+    public String getCourseCommandGod(@RequestParam Integer cid) throws IOException {
 
         return courseCommandApi.getCourseCommandGod(cid);
     }
@@ -43,7 +43,7 @@ public class CourseCommandController {
      * @Dscription 查看当前用户对指定课程的评价
      */
     @RequireAuth(ident = "user", type = "api")
-    @RequestMapping("/selmycommand")
+    @PostMapping("/selmycommand.json")
     public String selMyCommand(Integer cid) throws IOException {
 
         return courseCommandApi.selMyCommand(cid);
@@ -53,7 +53,7 @@ public class CourseCommandController {
      * @Description 发表用户评价
      */
     @RequireAuth(ident = "user", type = "api")
-    @RequestMapping("/submycommand")
+    @RequestMapping("/submycommand.json")
     public String subMyCommand(Integer cid, String command, Integer score) throws IOException {
 
         return courseCommandApi.subMyCommand(cid, command, score);
@@ -63,7 +63,7 @@ public class CourseCommandController {
      * @Description 获取当前登录家教的课程评论总数
      */
     @RequireAuth(ident = "user", type = "api")
-    @RequestMapping("/getcommandcount")
+    @RequestMapping("/getcommandcount.json")
     public String getCommandCount() throws IOException {
 
         return courseCommandApi.getCommandCount();
@@ -73,7 +73,7 @@ public class CourseCommandController {
      * @Description 获取当前登录家教的课程评分平均值
      */
     @RequireAuth(ident = "user", type = "api")
-    @RequestMapping("/getscoreavg")
+    @RequestMapping("/getscoreavg.json")
     public String getScoreAvg() throws IOException {
 
         return courseCommandApi.getScoreAvg();
@@ -83,7 +83,7 @@ public class CourseCommandController {
      * @Description 获取当前用户的课程评论数据
      */
     @RequireAuth(ident = "user", type = "api")
-    @RequestMapping("/loadmycommandinfo")
+    @RequestMapping("/loadmycommandinfo.json")
     public String loadMyCommandInfo() throws IOException {
 
         return courseCommandApi.loadMyCommandInfo();
@@ -92,7 +92,7 @@ public class CourseCommandController {
     /**
      * @Description 获取课程评论列表
      */
-    @RequestMapping("/getcommandlist")
+    @PostMapping("/getcommandlist.json")
     public String getCommandList(@RequestBody ParamMap paramMap) throws IOException {
 
         return courseCommandApi.getCommandList(paramMap);
@@ -102,7 +102,7 @@ public class CourseCommandController {
      * @Description 指定评论为神评
      */
     @RequireAuth(ident = "user", type = "api")
-    @PostMapping("/setcommandgodstate")
+    @PostMapping("/setcommandgodstate.json")
     public String setCommandGodstate(@RequestParam Integer id) throws IOException {
 
         return courseCommandApi.setCommandGodstate(id);

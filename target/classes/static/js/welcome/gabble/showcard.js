@@ -51,7 +51,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/bbscard_con/getmycardcount",
+            url: "/bbscard_con/getmycardcount.json",
             dataType: "json",
             success: function (data) {
                 var count = data.count;
@@ -73,7 +73,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/bbscardcollect_con/getmycollectcount",
+            url: "/bbscardcollect_con/getmycollectcount.json",
             dataType: "json",
             success: function (data) {
                 var count = data.count;
@@ -94,7 +94,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/commonimgsrc_con/getAll",
+            url: "/commonimgsrc_con/getAll.json",
             dataType: "json",
             success: function (data) {
                 var img = "";
@@ -291,7 +291,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/bbscard_con/searchCard",
+            url: "/bbscard_con/searchCard.json",
             data: {keyword: keyword},
             dataType: "json",
             success: function(data){
@@ -337,7 +337,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/bbscard_con/loadhotcard",
+            url: "/bbscard_con/loadhotcard.json",
             dataType: "json",
             success: function(data){
                 var count = data.count;

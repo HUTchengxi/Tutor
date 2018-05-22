@@ -32,7 +32,7 @@ public class BbsCardAnswerCommandController {
      * @author yinjimin
      * @date 2018/4/10
      */
-    @RequestMapping("/getcommandlistbyaid")
+    @PostMapping("/getcommandlistbyaid.json")
     public String getCommandListByAid(@RequestParam Integer startpos, @RequestParam Integer aid) throws IOException {
 
         return bbsCardAnswerCommandApi.getCommandListByAid(startpos, aid);
@@ -48,14 +48,15 @@ public class BbsCardAnswerCommandController {
      * @date 2018/4/10
      */
     @RequireAuth(ident = "user", type = "api")
-    @PostMapping("/publishcommand")
+    @PostMapping("/publishcommand.json")
     public String publishCommand(@RequestParam Integer cardid, @RequestParam Integer aid, @RequestParam String answer, Integer repfloor) throws IOException {
 
         return bbsCardAnswerCommandApi.publishCommand(cardid, aid, answer, repfloor);
     }
 
+
     @RequireAuth(ident = "user", type = "api")
-    @PostMapping("getmycommandcount")
+    @PostMapping("/getmycommandcount.json")
     public String getMyCommandCount() throws IOException {
 
         return bbsCardAnswerCommandApi.getMyCommandCount();
@@ -70,7 +71,7 @@ public class BbsCardAnswerCommandController {
      * @date 2018/4/14
      */
     @RequireAuth(ident = "user", type = "api")
-    @PostMapping("/getmycommandinfo")
+    @PostMapping("/getmycommandinfo.json")
     public String getMyCommandInfo() throws IOException {
 
         return bbsCardAnswerCommandApi.getMyCommandInfo();

@@ -73,4 +73,9 @@ public class CourseOrderManagerServiceImpl implements CourseOrderManagerService 
     public List<CourseOrderManager> getByReqid(Integer reqid) {
         return courseOrderManagerMapper.getByReqid(reqid);
     }
+
+    @Override
+    public void addCourseOrderManager(String code, Integer oid, Integer tutorStatus, Integer userStatus, String userInfo, String tutorInfo, String tutorName) {
+        courseOrderManagerMapper.addCourseOrderManager(code, oid, tutorStatus, userStatus, userInfo, tutorInfo, tutorName);
+    }
 }

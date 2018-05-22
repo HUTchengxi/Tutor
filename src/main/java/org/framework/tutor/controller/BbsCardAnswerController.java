@@ -27,7 +27,7 @@ public class BbsCardAnswerController {
     /**
      * @Description 获取对应的帖子答案数据
      */
-    @PostMapping("/getcardanswerbycardid")
+    @PostMapping("/getcardanswerbycardid.json")
     public String getCardAnswerByCardid(@RequestParam Integer cardId, HttpServletResponse response) throws IOException {
 
         return bbsCardAnswerApi.getCardAnswerByCardid(cardId);
@@ -37,7 +37,7 @@ public class BbsCardAnswerController {
      * @Description 判断当前用户是否已回答问题
      */
     @RequireAuth(ident = "user", type = "api")
-    @PostMapping("/checkusercommand")
+    @PostMapping("/checkusercommand.json")
     public String checkUserCommand(@RequestParam Integer cardId) throws IOException {
 
         return bbsCardAnswerApi.checkUserCommand(cardId);
@@ -47,7 +47,7 @@ public class BbsCardAnswerController {
      * @Description 添加回答
      */
     @RequireAuth(ident = "user", type = "api")
-    @PostMapping("/addanswer")
+    @PostMapping("/addanswer.json")
     public String addAnswer(@RequestParam Integer cardId, @RequestParam String answer) throws IOException {
 
         return bbsCardAnswerApi.addAnswer(cardId, answer);
@@ -57,7 +57,7 @@ public class BbsCardAnswerController {
      * @Description 获取用户回答总数
      */
     @RequireAuth(ident = "user", type = "api")
-    @PostMapping("/getmyanswercount")
+    @PostMapping("/getmyanswercount.json")
     public String getMyAnswerCount() throws IOException {
 
         return bbsCardAnswerApi.getMyAnswerCount();
@@ -67,7 +67,7 @@ public class BbsCardAnswerController {
      * @Description 获取当前登录用户的回答数据
      */
     @RequireAuth(ident = "user", type = "api")
-    @PostMapping("/getmyanswerinfo")
+    @PostMapping("/getmyanswerinfo.json")
     public String getMyAnswerInfo() throws IOException {
 
         return bbsCardAnswerApi.getMyAnswerInfo();

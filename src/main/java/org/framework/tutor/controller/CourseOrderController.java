@@ -3,10 +3,12 @@ package org.framework.tutor.controller;
 import org.framework.tutor.annotation.RequireAuth;
 import org.framework.tutor.api.CourseOrderApi;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -90,6 +92,17 @@ public class CourseOrderController {
     public String setInCycle(Integer oid) throws IOException {
 
         return courseOrderApi.setInCycle(oid);
+    }
+
+    /**  
+     * @Description 课程联系申请
+     * @param [cardId]
+     */
+    @RequireAuth(ident = "user", type = "api")
+    @PostMapping("/addCourseOrder.json")
+    public String addCourseOrder(@RequestParam Integer cardId) throws MessagingException {
+
+        return courseOrderApi.addCourseOrder(cardId);
     }
 
     /**

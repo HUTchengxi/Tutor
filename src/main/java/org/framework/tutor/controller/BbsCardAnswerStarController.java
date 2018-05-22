@@ -34,7 +34,7 @@ public class BbsCardAnswerStarController {
      * @Description 判断当前用户是否star指定回答
      */
     @RequireAuth(ident = "user", type = "api")
-    @RequestMapping("/checkuserstar")
+    @RequestMapping("/checkuserstar.json")
     public String checkUserStar(@RequestParam Integer aid) throws IOException {
 
         return bbsCardAnswerStarApi.checkUserStar(aid);
@@ -45,7 +45,7 @@ public class BbsCardAnswerStarController {
      * @Description 用户star指定回答
      */
     @RequireAuth(ident = "user", type = "api")
-    @PostMapping("/adduserstar")
+    @PostMapping("/adduserstar.json")
     public String addUserStar(@RequestParam Integer aid, @RequestParam Integer score) throws IOException {
 
         return bbsCardAnswerStarApi.addUserStar(aid, score);

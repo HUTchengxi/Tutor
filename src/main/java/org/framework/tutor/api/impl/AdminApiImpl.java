@@ -56,6 +56,7 @@ public class AdminApiImpl implements AdminApi {
         UserMain userMain = userMainService.checkAdminLogin(username, MD5Pass);
         if(userMain == null){
             resultMap.put("status", "error");
+            resultMap.put("url", "#");
         }else{
             session.setAttribute("username", userMain.getUsername());
             session.setAttribute("nickname", userMain.getNickname());

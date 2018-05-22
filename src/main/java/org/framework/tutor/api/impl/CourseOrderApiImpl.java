@@ -4,12 +4,21 @@ import com.google.gson.Gson;
 import org.framework.tutor.api.CourseOrderApi;
 import org.framework.tutor.domain.CourseMain;
 import org.framework.tutor.domain.CourseOrder;
-import org.framework.tutor.service.CourseMainService;
-import org.framework.tutor.service.CourseOrderService;
+import org.framework.tutor.domain.UserMain;
+import org.framework.tutor.service.*;
+import org.framework.tutor.util.CommonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -30,13 +39,31 @@ public class CourseOrderApiImpl implements CourseOrderApi {
     private CourseOrderService courseOrderService;
 
     @Autowired
+    private CourseOrderManagerService courseOrderManagerService;
+
+    @Autowired
     private CourseMainService courseMainService;
+
+    @Autowired
+    private UserMainService userMainService;
+
+    @Autowired
+    private UserMessageService userMessageService;
+
+    @Autowired
+    private SysEmailManageService sysEmailManageService;
 
     @Autowired
     private StringRedisTemplate redis;
 
     @Autowired
     private HttpServletRequest request;
+
+    @Autowired
+    private JavaMailSender javaMailSender;
+
+    @Value("${spring.mail.username}")
+    private String from;
 
 
     //TODO：后续考虑使用redis
@@ -211,7 +238,7 @@ public class CourseOrderApiImpl implements CourseOrderApi {
                 rowMap.put("price", courseMain.getPrice());
                 rowList.add(rowMap);
             }
-            resultMap.put("status", rowList);
+            resultMap.put("list", rowList);
         }
 
         return gson.toJson(resultMap);
@@ -258,5 +285,73 @@ public class CourseOrderApiImpl implements CourseOrderApi {
 
         resultMap.put("count", courseOrderService.getOrderCountNow(username, now));
         return gson.toJson(resultMap);
+    }
+
+    @Override
+//    @Async
+    @Transactional   //支持当前事务
+    public String addCourseOrder(Integer cardId) throws MessagingException {
+
+        Gson gson = new Gson();
+        Map<String, Object> resultMap = new HashMap<>(2);
+
+        try {
+
+            //添加到课程订单中
+            HttpSession session = request.getSession();
+            String username = (String) session.getAttribute("username");
+            Integer status = 1;
+            courseOrderService.addCourseOrder(cardId, username, status);
+
+            //获取对应课程的家教用户
+            CourseMain courseMain = courseMainService.getCourseById(cardId);
+            UserMain tutorUser = userMainService.getByUser(courseMain.getUsername());
+
+            //订单算法生成订单编号
+            StringBuffer codeName = new StringBuffer(courseMain.getName());
+            codeName.append(username);
+            String code = CommonUtil.getOrderCode(codeName.toString());
+            CourseOrder courseOrder = courseOrderService.getUserOrder(username, cardId);
+            Integer oid = courseOrder.getId();
+            Integer tutorStatus = 0;
+            Integer userStatus = 0;
+            String userInfo = "";
+            String tutorInfo = "";
+            String tutorName = tutorUser.getUsername();
+            courseOrderManagerService.addCourseOrderManager(code, oid, tutorStatus, userStatus, userInfo, tutorInfo, tutorName);
+
+            //发送申请成功通知给用户
+            Integer identity = 1;
+            String suser = "chengxi";
+            String title = "订阅成功";
+            String message = "尊敬的用户" + username + "，您已成功申请课程‘" + courseMain.getName() + "’的联系，稍后成功" +
+                    "会发送通知给您，请注意查收";
+            userMessageService.seneMessage(identity, suser, username, title, message);
+
+
+            //发送申请通知给家教
+            title = "您有新的订阅";
+            message = "尊敬的用户" + tutorUser.getUsername() + "，您的课程‘" + courseMain.getName() + "’有新的联系申请，" +
+                    "请到后台查看";
+            userMessageService.seneMessage(identity, suser, tutorUser.getUsername(), title, message);
+
+            //发送通知邮件给家教
+            String address = tutorUser.getEmail();
+            MimeMessage mimeMessage = javaMailSender.createMimeMessage();
+            MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage, true, "utf-8");
+            messageHelper.setFrom(from);
+            messageHelper.setTo(address);
+            messageHelper.setSubject(title);
+            messageHelper.setText(message, true);
+            javaMailSender.send(mimeMessage);
+            sysEmailManageService.sendEmail(tutorUser.getUsername(), address, title, message, status);
+
+            resultMap.put("status", "valid");
+        } catch (Exception e){
+            e.printStackTrace();
+            resultMap.put("status", "sqlerr");
+        } finally {
+            return gson.toJson(resultMap);
+        }
     }
 }

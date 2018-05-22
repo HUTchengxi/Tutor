@@ -6,7 +6,9 @@ import org.framework.tutor.api.CommandStarApi;
 import org.framework.tutor.domain.CommandStar;
 import org.framework.tutor.service.CommandStarService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
@@ -31,8 +33,8 @@ public class CommandStarController {
      * 获取指定用户的指定课程评论的点赞数据
      */
     @RequireAuth(ident = "user", type = "api")
-    @RequestMapping("/getmycommandstar")
-    public String getMyCommandStar( Integer cmid) throws IOException {
+    @PostMapping("/getmycommandstar.json")
+    public String getMyCommandStar(@RequestParam Integer cmid) throws IOException {
 
         return commandStarApi.getMyCommandStar(cmid);
     }
@@ -41,7 +43,7 @@ public class CommandStarController {
      * 实现评论的点赞与踩
      */
     @RequireAuth(ident = "user", type = "api")
-    @RequestMapping("/addmystar")
+    @PostMapping("/addmystar.json")
     public String addMyStar(Integer score, Integer cmid) throws IOException {
 
         return commandStarApi.addMyStar(score, cmid);

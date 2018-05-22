@@ -51,7 +51,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/bbscard_con/getmycardcount",
+            url: "/bbscard_con/getmycardcount.json",
             dataType: "json",
             success: function (data) {
                 var count = data.count;
@@ -73,7 +73,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/bbscardcollect_con/getmycollectcount",
+            url: "/bbscardcollect_con/getmycollectcount.json",
             dataType: "json",
             success: function (data) {
                 var count = data.count;
@@ -94,7 +94,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/bbscardanswercommand_con/getmycommandcount",
+            url: "/bbscardanswercommand_con/getmycommandcount.json",
             dataType: "json",
             success: function (data) {
                 var count = data.count;
@@ -115,7 +115,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/bbscardanswer_con/getmyanswercount",
+            url: "/bbscardanswer_con/getmyanswercount.json",
             dataType: "json",
             success: function (data) {
                 var count = data.count;
@@ -311,7 +311,7 @@ $(function () {
 
         $.ajax({
             type: "post",
-            url: "/bbscard_con/getmycardinfo",
+            url: "/bbscard_con/getmycardinfo.json",
             contentType: "application/json;charset=utf-8",
             dataType: "json",
             success: function(data){
@@ -366,7 +366,7 @@ $(function () {
 
         $.ajax({
             type: "post",
-            url: "/bbscardanswer_con/getmyanswerinfo",
+            url: "/bbscardanswer_con/getmyanswerinfo.json",
             dataType: "json",
             success: function(data){
                 var status = data.status;
@@ -414,7 +414,7 @@ $(function () {
                         $.ajax({
                             async: false,
                             type: "post",
-                            url: "/bbscardanswerstar_con/checkuserstar",
+                            url: "/bbscardanswerstar_con/checkuserstar.json",
                             data: {
                                 "aid": item.aid
                             },
@@ -448,7 +448,7 @@ $(function () {
 
         $.ajax({
             type: "post",
-            url: "/bbscardcollect_con/getmycollectinfo",
+            url: "/bbscardcollect_con/getmycollectinfo.json",
             dataType: "json",
             success: function(data){
                 var status = data.status;
@@ -501,7 +501,7 @@ $(function () {
 
         $.ajax({
             type: "post",
-            url: "/bbscardanswercommand_con/getmycommandinfo",
+            url: "/bbscardanswercommand_con/getmycommandinfo.json",
             dataType: "json",
             success: function(data){
                 var status = data.status;
@@ -551,7 +551,7 @@ $(function () {
         if(window.confirm("确定取消收藏吗？")){
             $.ajax({
                 type: "post",
-                url: "/bbscardcollect_con/uncollectcard",
+                url: "/bbscardcollect_con/uncollectcard.json",
                 data: {
                     cardId: cid
                 },

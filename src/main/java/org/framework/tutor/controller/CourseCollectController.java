@@ -3,7 +3,9 @@ package org.framework.tutor.controller;
 import org.framework.tutor.annotation.RequireAuth;
 import org.framework.tutor.api.CourseCollectApi;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
@@ -25,8 +27,8 @@ public class CourseCollectController {
      * 获取我的课程收藏记录
      */
     @RequireAuth(ident = "user", type = "api")
-    @RequestMapping("/getmycollect")
-    public String getMyCollect(Integer startpos) throws IOException {
+    @RequestMapping("/getmycollect.json")
+    public String getMyCollect(@RequestParam Integer startpos) throws IOException {
 
         return courseCollectApi.getMyCollect(startpos);
     }
@@ -35,8 +37,8 @@ public class CourseCollectController {
      * 判断当前用户是否收藏了指定的课程
      */
     @RequireAuth(ident = "user", type = "api")
-    @RequestMapping("/checkusercollect")
-    public String checkUserCollect(Integer cid) throws IOException {
+    @PostMapping("/checkusercollect.json")
+    public String checkUserCollect(@RequestParam Integer cid) throws IOException {
 
         return courseCollectApi.checkUserCollect(cid);
     }
@@ -45,8 +47,8 @@ public class CourseCollectController {
      * 收藏/取消收藏
      */
     @RequireAuth(ident = "user", type = "api")
-    @RequestMapping("/modusercollect")
-    public String modUserCollect(Integer cid, String mod, String descript) throws IOException {
+    @PostMapping("/modusercollect.json")
+    public String modUserCollect(@RequestParam Integer cid, @RequestParam String mod, String descript) throws IOException {
 
         return courseCollectApi.modUserCollect(cid, mod, descript);
     }
@@ -55,7 +57,7 @@ public class CourseCollectController {
      * 获取家教的今日课程收藏数量
      */
     @RequireAuth(ident = "tutor", type = "api")
-    @RequestMapping("/getcollectcount")
+    @RequestMapping("/getcollectcount.json")
     public String getCollectCount() throws IOException {
 
         return courseCollectApi.getCollectCount();

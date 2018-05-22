@@ -83,4 +83,6 @@ public interface CourseOrderManagerService {
     Integer getAllErrs();
 
     List<CourseOrderManager> getByReqid(Integer reqid);
+
+    void addCourseOrderManager(String code, Integer oid, Integer tutorStatus, Integer userStatus, String userInfo, String tutorInfo, String tutorName);
 }

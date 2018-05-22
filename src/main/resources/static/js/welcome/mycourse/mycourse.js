@@ -421,7 +421,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/coursecommand_con/loadmycommandinfo",
+            url: "/coursecommand_con/loadmycommandinfo.json",
             dataType: "json",
             success: function(data){
                 var count = data.count;
@@ -479,7 +479,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/coursecollect_con/getmycollect",
+            url: "/coursecollect_con/getmycollect.json",
             data: {startpos: 0},
             dataType: "json",
             success: function (data) {
@@ -559,7 +559,7 @@ $(function () {
             $.ajax({
                 async: true,
                 type: "post",
-                url: "/coursecollect_con/modusercollect",
+                url: "/coursecollect_con/modusercollect.json",
                 data: {cid: cid, mod: "uncollect"},
                 dataType: "json",
                 success: function (data) {

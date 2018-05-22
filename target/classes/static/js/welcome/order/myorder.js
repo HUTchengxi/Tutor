@@ -154,7 +154,7 @@ $(function() {
             });
         }
     };
-    $(document).on("click", "#mytable tbody tr td button", cli_removeorder);
+    // $(document).on("click", "#mytable tbody tr td button", cli_removeorder);
 
 
     /**
@@ -190,13 +190,8 @@ $(function() {
                         var price = item.price;
                         $("#mytable tbody").append("<tr>\n" +
                             "                    <td><a href='/forward_con/showcourse?id="+cid+"' target='_blank'>"+name+"</a></td>\n" +
-                            "                    <td>"+price+"</td>\n" +
+                            "                    <td>*</td>\n" +
                             "                    <td>"+otime+"</td>\n" +
-                            "                    <td>\n" +
-                            "                        <button id=\"bElim\" type=\"button\" class=\"btn btn-sm btn-default\" data-oid='"+id+"' style=\"display: block;\">\n" +
-                            "                            <span class=\"glyphicon glyphicon-trash\"> </span>\n" +
-                            "                        </button>\n" +
-                            "                    </td>\n" +
                             "                </tr>");
                     });
                 }

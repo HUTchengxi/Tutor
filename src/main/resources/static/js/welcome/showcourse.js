@@ -113,7 +113,8 @@ $(function () {
                     //判斷当前用户是否已收藏
                     var cid = str_geturlparam("id");
                     $.ajax({
-                        url: "/coursecollect_con/checkusercollect",
+                        type: "post",
+                        url: "/coursecollect_con/checkusercollect.json",
                         data: {
                             cid: cid
                         },
@@ -123,6 +124,7 @@ $(function () {
                             $(".coursecontainer .container-top .collect a").data("status", status);
                             if(status == "collect"){
                                 $(".coursecontainer .container-top .collect a span").text("已收藏");
+                                $(".coursecontainer .container-top .collect").addClass("col").find("a").data("status", "collect").find("span").text("已收藏");
                             }else{
                                 $(".coursecontainer .container-top .collect a span").text("收藏");
                             }
@@ -205,7 +207,7 @@ $(function () {
             $.ajax({
                 async: true,
                 type: "post",
-                url: "/coursecollect_con/modusercollect",
+                url: "/coursecollect_con/modusercollect.json",
                 data: {cid: cid, mod: "uncollect"},
                 dataType: "json",
                 success: function (data) {
@@ -244,7 +246,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/coursecollect_con/modusercollect",
+            url: "/coursecollect_con/modusercollect.json",
             data: {cid: cid, mod: "collect", descript: descript},
             dataType: "json",
             success: function (data) {
@@ -333,11 +335,11 @@ $(function () {
                 //已加入购物车
                 if (state == "cart") {
                     $(".coursecontainer .container-top .sale div .addcart").remove();
-                    $(".coursecontainer .container-top .sale div .buynow").empty().css("width", "14%").append("已加入购物车&nbsp;&nbsp;<i class='layui-icon'>&#xe605;</i>").data("state", "cart");
+                    $(".coursecontainer .container-top .sale div .buynow").empty().css("width", "14%").append("已在购物车&nbsp;&nbsp;<i class='layui-icon'>&#xe605;</i>").data("state", "cart");
                 }
                 else if (state == "buy") {
                     $(".coursecontainer .container-top .sale div .addcart").remove();
-                    $(".coursecontainer .container-top .sale div .buynow").empty().append("已订购&nbsp;&nbsp;<i class='layui-icon'>&#xe605;</i>").data("state", "ok");
+                    $(".coursecontainer .container-top .sale div .buynow").empty().append("已申请&nbsp;&nbsp;<i class='layui-icon'>&#xe605;</i>").data("state", "ok");
                 }
                 else {
                     $(".coursecontainer .container-top .sale div .buynow").data("state", state);
@@ -357,9 +359,10 @@ $(function () {
     var cli_buynow = function () {
 
         var state = $(this).data("state");
+        console.log(state);
 
         if (state === "invalid") {
-            layer.msg("订购前需要先登录哟！");
+            layer.msg("请先登录！");
         }
         //订购
         else if (state === "valid") {
@@ -367,6 +370,28 @@ $(function () {
             var reg = new RegExp("(^|&)id=([^&]*)(&|$)", "i");
             var r = window.location.search.substr(1).match(reg);
             if (r != null) cid = unescape(r[2]);
+            //申请ajax
+            $.ajax({
+                type: "post",
+                url: "/courseorder_con/addCourseOrder.json",
+                data: {
+                    cardId: cid
+                },
+                dataType: "json",
+                success: function(data){
+                    console.log(data);
+                    var status = data.status;
+                    if(status == "sqlerr"){
+                        layer.msg("后台环境异常，请稍后再试");
+                    }else if(status == "valid"){
+                        layer.msg("申请成功", {icon: 6});
+                        $(".coursecontainer .container-top .sale div .addcart").remove();
+                        $(".coursecontainer .container-top .sale div .buynow").empty().append("已申请&nbsp;&nbsp;<i class='layui-icon'>&#xe605;</i>").data("state", "ok");
+                    }else{
+                        layer.msg("请先登录！");
+                    }
+                }
+            });
         }
     };
     $(".coursecontainer .container-top .sale div .buynow").click(cli_buynow);
@@ -398,7 +423,7 @@ $(function () {
                 else {
                     layer.msg("已加入购物车", {icon: 6});
                     $(".coursecontainer .container-top .sale div .addcart").remove();
-                    $(".coursecontainer .container-top .sale div .buynow").empty().css("width", "14%").append("已加入购物车&nbsp;&nbsp;<i class='layui-icon'>&#xe605;</i>").data("state", "cart");
+                    $(".coursecontainer .container-top .sale div .buynow").empty().css("width", "14%").append("已在购物车&nbsp;&nbsp;<i class='layui-icon'>&#xe605;</i>").data("state", "cart");
                 }
             },
             error: function (xhr, status) {
@@ -425,7 +450,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/coursecommand_con/getcoursecommand",
+            url: "/coursecommand_con/getcoursecommand.json",
             data: {cid: cid, startpos: startpos},
             dataType: "json",
             success: function (data) {
@@ -496,7 +521,7 @@ $(function () {
                             $.ajax({
                                 async: false,
                                 type: "post",
-                                url: "/commandstar_con/getmycommandstar",
+                                url: "/commandstar_con/getmycommandstar.json",
                                 data: {cmid: id},
                                 dataType: "json",
                                 success: function (data) {
@@ -599,7 +624,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/commandstar_con/addmystar",
+            url: "/commandstar_con/addmystar.json",
             data: {cmid: cmid, score: score},
             dataType: "json",
             success: function (data) {
@@ -644,7 +669,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/coursecommand_con/getcommandgod",
+            url: "/coursecommand_con/getcommandgod.json",
             data: {cid: cid},
             dataType: "json",
             success: function (data) {
@@ -742,7 +767,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/coursecommand_con/selmycommand",
+            url: "/coursecommand_con/selmycommand.json",
             data: {cid: cid},
             dataType: "json",
             success: function (data) {
@@ -980,7 +1005,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/coursechapter_con/getcoursechapter",
+            url: "/coursechapter_con/getcoursechapter.json",
             data: {cid: cid},
             dataType: "json",
             success: function (data) {

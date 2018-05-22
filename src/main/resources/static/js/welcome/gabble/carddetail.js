@@ -53,7 +53,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/bbscard_con/getmycardcount",
+            url: "/bbscard_con/getmycardcount.json",
             dataType: "json",
             success: function (data) {
                 var count = data.count;
@@ -75,7 +75,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/bbscardcollect_con/getmycollectcount",
+            url: "/bbscardcollect_con/getmycollectcount.json",
             dataType: "json",
             success: function (data) {
                 var count = data.count;
@@ -96,7 +96,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/bbscardanswer_con/getmyanswercount",
+            url: "/bbscardanswer_con/getmyanswercount.json",
             dataType: "json",
             success: function (data) {
                 var count = data.count;
@@ -117,7 +117,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/bbscardanswercommand_con/getmycommandcount",
+            url: "/bbscardanswercommand_con/getmycommandcount.json",
             dataType: "json",
             success: function (data) {
                 var count = data.count;
@@ -137,7 +137,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/commonimgsrc_con/getAll",
+            url: "/commonimgsrc_con/getAll.json",
             dataType: "json",
             success: function (data) {
                 var img = "";
@@ -325,7 +325,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/bbscard_con/getcardbyid",
+            url: "/bbscard_con/getcardbyid.json",
             data: {
                 cardId: cardId
             },
@@ -360,7 +360,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/bbscard_con/addviscount",
+            url: "/bbscard_con/addviscount.json",
             data: {cardid: str_geturlparam("cardId")},
             dataType: "json",
             success: function (data) {
@@ -382,7 +382,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/bbscardanswer_con/getcardanswerbycardid",
+            url: "/bbscardanswer_con/getcardanswerbycardid.json",
             data: {
                 cardId: cardId
             },
@@ -452,7 +452,7 @@ $(function () {
                         $.ajax({
                             async: false,
                             type: "post",
-                            url: "/bbscardanswerstar_con/checkuserstar",
+                            url: "/bbscardanswerstar_con/checkuserstar.json",
                             data: {
                                 "aid": item.id
                             },
@@ -501,7 +501,7 @@ $(function () {
             $.ajax({
                 async: true,
                 type: "post",
-                url: "/bbscardanswercommand_con/getcommandlistbyaid",
+                url: "/bbscardanswercommand_con/getcommandlistbyaid.json",
                 data: {
                     aid: aid,
                     startpos: 0
@@ -581,7 +581,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/bbscardanswercommand_con/getcommandlistbyaid",
+            url: "/bbscardanswercommand_con/getcommandlistbyaid.json",
             data: {
                 aid: aid,
                 startpos: startpos
@@ -601,7 +601,7 @@ $(function () {
                         var repfloor = item.repfloor;
                         $this.closest("div.cardmain").find(".commandlist .commandmain").append("<div class=\"commandmainhead clearfix\">\n" +
                             "    <img class=\"pull-left comuserface\" src=\"" + imgsrc + "\" />\n" +
-                            "    <p class=\"pull-left comusernick\">" + nickname + "" + (repfloor != "null" ? "<span>@</span>" + repfloor + "楼" : "") + "</p>" +
+                            "    <p class=\"pull-left comusernick\">" + nickname + "" + ((repfloor != "null" && repfloor != '' && repfloor != undefined) ? "<span>@</span>" + repfloor + "楼" : "") + "</p>" +
                             "    <p class=\"pull-right comfloor\">" + floor + "楼</p>\n" +
                             "</div>\n" +
                             "<div class=\"commandmaininfo\">\n" +
@@ -671,7 +671,7 @@ $(function () {
             $.ajax({
                 async: true,
                 type: "post",
-                url: "/bbscardanswercommand_con/publishcommand",
+                url: "/bbscardanswercommand_con/publishcommand.json",
                 data: {
                     answer: answer.trim(),
                     cardid: cardid,
@@ -699,7 +699,7 @@ $(function () {
             $.ajax({
                 async: true,
                 type: "post",
-                url: "/bbscardanswercommand_con/publishcommand",
+                url: "/bbscardanswercommand_con/publishcommand.json",
                 data: {
                     answer: answer.trim(),
                     cardid: cardid,
@@ -729,7 +729,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/bbscardcollect_con/checkcollectstatus",
+            url: "/bbscardcollect_con/checkcollectstatus.json",
             data: {
                 cardId: cardId
             },
@@ -763,7 +763,7 @@ $(function () {
             $.ajax({
                 async: true,
                 type: "post",
-                url: "/bbscardcollect_con/uncollectcard",
+                url: "/bbscardcollect_con/uncollectcard.json",
                 data: {
                     cardId: cardId
                 },
@@ -772,6 +772,8 @@ $(function () {
                     var status = data.status;
                     if (status == "uncol") {
                         $(".cardheader .header-left .modbtn .colbtn").text("收藏问题").data("status", status);
+                        var count = parseInt($(".cardheader .header-right .colcount").text()) - 1;
+                        $(".cardheader .header-right .colcount").text(count);
                     }
                 },
                 error: function (xhr, status) {
@@ -780,14 +782,14 @@ $(function () {
             });
             return;
         }
-        if (status == "none") {
+        if (status == "invalid") {
             layer.msg("请先登录");
             return;
         }
         $.ajax({
             async: true,
             type: "post",
-            url: "/bbscardcollect_con/collectcard",
+            url: "/bbscardcollect_con/collectcard.json",
             data: {
                 cardId: cardId
             },
@@ -796,6 +798,8 @@ $(function () {
                 var status = data.status;
                 if (status == "col") {
                     $(".cardheader .header-left .modbtn .colbtn").text("已收藏").data("status", status);
+                    var count = parseInt($(".cardheader .header-right .colcount").text()) + 1;
+                    $(".cardheader .header-right .colcount").text(count);
                 }
             },
             error: function (xhr, status) {
@@ -815,7 +819,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/bbscardanswer_con/checkusercommand",
+            url: "/bbscardanswer_con/checkusercommand.json",
             data: {
                 cardId: cardId
             },
@@ -840,7 +844,7 @@ $(function () {
     var click_openAnswerModal = function () {
 
         var status = $(this).data("status");
-        if (status == "none") {
+        if (status == "invalid") {
             layer.msg("请先登录");
             return false;
         }
@@ -866,7 +870,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/bbscardanswer_con/addanswer",
+            url: "/bbscardanswer_con/addanswer.json",
             data: {
                 "answer": answer,
                 "cardId": cardId
@@ -917,7 +921,7 @@ $(function () {
         $.ajax({
             async: false,
             type: "post",
-            url: "/bbscardanswerstar_con/adduserstar",
+            url: "/bbscardanswerstar_con/adduserstar.json",
             data: {
                 "aid": aid,
                 "score": score
@@ -939,5 +943,4 @@ $(function () {
     };
     $(document).on("click", ".cardmain .cardfooter .btndiv .starlink", click_starAndUnstar);
     $(document).on("click", ".cardmain .cardfooter .btndiv .unstarlink", click_starAndUnstar);
-
 });

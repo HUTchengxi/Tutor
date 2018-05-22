@@ -182,7 +182,7 @@ public class CourseOrderManagerApiImpl implements CourseOrderManagerApi {
             }
         }
 
-        return gson.toJson(resultMap);
+        return gson.toJson(rowMap);
     }
 
 

@@ -4,7 +4,7 @@ $(function() {
      * 字段判空
      */
     var str_isnull = function(param){
-        return (param==null || param==undefined || param=="undefined" || param.trim()=="" || param=="null");
+        return (param==null || param==undefined || param=="undefined" || param=="" || param=="null");
     }
 
     /**
@@ -108,7 +108,7 @@ $(function() {
         $("#chapterModal").data("cid", cid);
         $.ajax({
             type: "post",
-            url: "/coursechapter_con/getcoursechapter",
+            url: "/coursechapter_con/getcoursechapter.json",
             data: {
                 cid: cid
             },
@@ -174,7 +174,7 @@ $(function() {
             var $this = $(this);
             $.ajax({
                 type: "post",
-                url: "/coursechapter_con/deletechapter",
+                url: "/coursechapter_con/deletechapter.json",
                 data: {
                     id: id
                 },
@@ -239,7 +239,7 @@ $(function() {
             $.ajax({
                 async: false,
                 type: "post",
-                url: "/coursechapter_con/modchapter",
+                url: "/coursechapter_con/modchapter.json",
                 data: {
                     id: id,
                     cid: cid,

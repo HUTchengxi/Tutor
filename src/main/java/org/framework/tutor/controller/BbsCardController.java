@@ -28,7 +28,7 @@ public class BbsCardController {
      * @Description 获取当前登录用户的帖子发表总数
      */
     @RequireAuth(ident = "user", type = "api")
-    @RequestMapping("/getmycardcount")
+    @RequestMapping("/getmycardcount.json")
     public String getMyCardCount() throws IOException {
 
         return bbsCardApi.getMyCardCount();
@@ -39,8 +39,8 @@ public class BbsCardController {
      * @Description 指定用户发表讨论
      */
     @RequireAuth(ident = "user", type = "api")
-    @RequestMapping("/publishCard")
-    public String publishCard(String title, String imgsrc, String descript) throws IOException {
+    @PostMapping("/publishCard.json")
+    public String publishCard(@RequestParam String title, @RequestParam String imgsrc, @RequestParam String descript) throws IOException {
 
         return bbsCardApi.publishCard(title, imgsrc, descript);
     }
@@ -49,7 +49,7 @@ public class BbsCardController {
     /**
      * @Description 获取指定关键字的帖子数据
      */
-    @PostMapping("/searchCard")
+    @PostMapping("/searchCard.json")
     public String searchCard(String keyword) throws IOException {
 
         return bbsCardApi.searchCard(keyword);
@@ -59,7 +59,7 @@ public class BbsCardController {
     /**
      * @Description 加载最新五条热门帖子
      */
-    @PostMapping("/loadhotcard")
+    @PostMapping("/loadhotcard.json")
     public String loadHotCard() throws IOException {
 
         return bbsCardApi.loadHotCard();
@@ -68,7 +68,7 @@ public class BbsCardController {
     /**  
      * @Description 获取对应问题数据
      */
-    @PostMapping("/getcardbyid")
+    @PostMapping("/getcardbyid.json")
     public String getCardById(@RequestParam String cardId) throws IOException {
 
         return bbsCardApi.getCardById(cardId);
@@ -77,7 +77,7 @@ public class BbsCardController {
     /**
      * @Description 访问量加1
      */
-    @PostMapping("/addviscount")
+    @PostMapping("/addviscount.json")
     public String addViscount(@RequestParam Integer cardid) throws IOException {
 
         return bbsCardApi.addViscount(cardid);
@@ -87,7 +87,7 @@ public class BbsCardController {
      * @Description 获取当前用户发表的帖子数据
      */
     @RequireAuth(ident = "user", type = "api")
-    @PostMapping("/getmycardinfo")
+    @PostMapping("/getmycardinfo.json")
     public String getMyCardInfo() throws IOException {
 
         return bbsCardApi.getMyCardInfo();

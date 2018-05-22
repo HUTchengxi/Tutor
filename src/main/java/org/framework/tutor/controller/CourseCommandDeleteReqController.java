@@ -28,7 +28,7 @@ public class CourseCommandDeleteReqController {
      * @Description 提交评论删除申请
      */
     @RequireAuth(ident = "tutor", type = "api")
-    @PostMapping("/addcommanddeletereq")
+    @PostMapping("/addcommanddeletereq.json")
     public String addCommandDeleteReq(@RequestParam Integer cid, @RequestParam String info) throws IOException {
 
         return courseCommandDeleteReqApi.addCommandDeleteReq(cid, info);

@@ -383,7 +383,7 @@ public class CourseCommandApiImpl implements CourseCommandApi {
             }
         }
 
-        return gson.toJson(resultMap);
+        return gson.toJson(rowMap);
     }
 
 

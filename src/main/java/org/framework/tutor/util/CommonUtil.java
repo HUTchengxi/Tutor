@@ -149,4 +149,17 @@ public class CommonUtil {
         String md5Pass = base64Encoder.encode(md5.digest(transPass.getBytes("utf-8")));
         return md5Pass;
     }
+
+    /**  
+     * @Description 根据指定字符串生成订单编号
+     * @param [str]
+     * @return java.lang.String
+     */  
+    public static String getOrderCode(String name) {
+
+        UUID uuid=UUID.nameUUIDFromBytes(name.getBytes());
+        String str = uuid.toString();
+        String uuidStr=str.replace("-", "");
+        return uuidStr.substring(0, 20);
+    }
 }

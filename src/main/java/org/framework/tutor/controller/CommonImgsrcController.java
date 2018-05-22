@@ -29,7 +29,7 @@ public class CommonImgsrcController {
     /**
      * @Description 获取所有图片数据
      */
-    @RequestMapping("/getAll")
+    @RequestMapping("/getAll.json")
     public String getAll() throws IOException {
 
         return commonImgsrcApi.getAll();

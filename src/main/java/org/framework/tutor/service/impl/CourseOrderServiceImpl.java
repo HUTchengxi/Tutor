@@ -165,4 +165,9 @@ public class CourseOrderServiceImpl implements CourseOrderService {
     public CourseOrder getById(Integer oid) {
         return courseOrderMapper.getById(oid);
     }
+
+    @Override
+    public void addCourseOrder(Integer cardId, String username, Integer status) {
+        courseOrderMapper.addCourseOrder(cardId, username, status);
+    }
 }

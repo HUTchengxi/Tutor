@@ -141,4 +141,7 @@ public interface CourseOrderMapper {
      */
     @Select("select * from course_order where id=#{oid}")
     CourseOrder getById(@Param("oid") Integer oid);
+
+    @Insert("insert into course_order(cid, username, state) values(#{cardId}, #{username}, #{status})")
+    void addCourseOrder(@Param("cardId") Integer cardId, @Param("username") String username, @Param("status") Integer status);
 }

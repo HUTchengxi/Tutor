@@ -170,7 +170,7 @@ $(function() {
         $.ajax({
             async: true,
             type: "post",
-            url: "/coursecollect_con/getcollectcount",
+            url: "/coursecollect_con/getcollectcount.json",
             dataType: "json",
             success: function(data){
                 var count = data.count;
@@ -200,7 +200,7 @@ $(function() {
         $.ajax({
             async: true,
             type: "post",
-            url: "/coursecommand_con/getcommandcount",
+            url: "/coursecommand_con/getcommandcount.json",
             dataType: "json",
             success: function(data){
                 var count = data.count;
@@ -260,7 +260,7 @@ $(function() {
         $.ajax({
             async: true,
             type: "post",
-            url: "/coursecommand_con/getscoreavg",
+            url: "/coursecommand_con/getscoreavg.json",
             dataType: "json",
             success: function(data){
                 var count = data.count;

@@ -128,4 +128,12 @@ public interface CourseOrderService {
      * @date 2018/4/18
      */
     CourseOrder getById(Integer oid);
+
+    /**  
+     * @Description 课程联系申请
+     * @param cardId
+     * @param cardId
+     * @param cardId
+     */
+    void addCourseOrder(Integer cardId, String username, Integer status);
 }

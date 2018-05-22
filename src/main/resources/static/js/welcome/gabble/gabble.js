@@ -53,7 +53,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/bbscard_con/getmycardcount",
+            url: "/bbscard_con/getmycardcount.json",
             dataType: "json",
             success: function (data) {
                 var count = data.count;
@@ -74,7 +74,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/bbscardcollect_con/getmycollectcount",
+            url: "/bbscardcollect_con/getmycollectcount.json",
             dataType: "json",
             success: function (data) {
                 var count = data.count;
@@ -95,7 +95,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/bbscardanswercommand_con/getmycommandcount",
+            url: "/bbscardanswercommand_con/getmycommandcount.json",
             dataType: "json",
             success: function (data) {
                 var count = data.count;
@@ -116,7 +116,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/bbscardanswer_con/getmyanswercount",
+            url: "/bbscardanswer_con/getmyanswercount.json",
             dataType: "json",
             success: function (data) {
                 var count = data.count;
@@ -137,7 +137,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/commonimgsrc_con/getAll",
+            url: "/commonimgsrc_con/getAll.json",
             dataType: "json",
             success: function (data) {
                 var img = "";
@@ -359,7 +359,7 @@ $(function () {
             $.ajax({
                 async: true,
                 type: "post",
-                url: "/bbscard_con/publishCard",
+                url: "/bbscard_con/publishCard.json",
                 data: {
                     title: title,
                     imgsrc: imgsrc,
@@ -425,7 +425,7 @@ $(function () {
         $.ajax({
             async: true,
             type: "post",
-            url: "/bbscard_con/loadhotcard",
+            url: "/bbscard_con/loadhotcard.json",
             dataType: "json",
             success: function (data) {
                 var count = data.count;

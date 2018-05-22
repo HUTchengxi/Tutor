@@ -26,7 +26,7 @@ public class CourseChapterController {
     /**
      * @Description 获取指定课程的章节目录数据
      */
-    @RequestMapping("/getcoursechapter")
+    @PostMapping("/getcoursechapter.json")
     public String getCourseChapter(Integer cid) throws IOException {
 
         return courseChapterApi.getCourseChapter(cid);
@@ -36,7 +36,7 @@ public class CourseChapterController {
      * @Description 删除指定目录
      */
     @RequireAuth(ident = "tutor", type = "api")
-    @PostMapping("/deletechapter")
+    @PostMapping("/deletechapter.json")
     public String deleteChapter(Integer id) throws IOException {
 
         return courseChapterApi.deleteChapter(id);
@@ -46,8 +46,8 @@ public class CourseChapterController {
      * @Description 更新目录
      */
     @RequireAuth(ident = "tutor", type = "api")
-    @PostMapping("/modchapter")
-    public String modChapter(Integer id, @RequestParam Integer cid, @RequestParam String title, @RequestParam String descript) throws IOException {
+    @PostMapping("/modchapter.json")
+    public String modChapter(@RequestParam Integer id, @RequestParam Integer cid, @RequestParam String title, @RequestParam String descript) throws IOException {
 
         return courseChapterApi.modChapter(id, cid, title, descript);
     }
